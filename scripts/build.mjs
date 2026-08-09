@@ -111,6 +111,22 @@ for (const t of terms) {
     if (!tr.zh) err(t.id, 'translation with no "zh"')
     if (!VALID_STATUS.has(tr.status)) err(t.id, `bad translation status "${tr.status}" on ${tr.zh}`)
 
+    // Normalise the rendering. Research passes sometimes cram a slash-list of variants
+    // or a parenthetical gloss into `zh`; the schema wants one bare rendering per entry.
+    // Where variants exist, keep the one the attestations actually quote — that is the
+    // one we have evidence for — and preserve the original in `notes` so nothing is lost.
+    const rawZh = tr.zh
+    const stripped = rawZh.replace(/[（(][^）)]*[）)]\s*$/, '').trim()
+    const variants = stripped.split(/\s*[/／、]\s*/).map((s) => s.trim()).filter(Boolean)
+    if (variants.length > 1 || stripped !== rawZh) {
+      const quoted = variants.find((v) => tr.attestations.some((a) => (a.quote_zh || '').includes(v)))
+      tr.zh = quoted ?? variants[0] ?? rawZh
+      tr.zh_variants = variants.length > 1 ? variants : undefined
+      tr.notes = [tr.notes, `Recorded in research as “${rawZh}”.`].filter(Boolean).join(' ')
+      warn(t.id, `normalised zh "${rawZh}" → "${tr.zh}"`)
+      if (t.preferred_zh === rawZh) t.preferred_zh = tr.zh
+    }
+
     // SCHEMA.md: a proposed rendering is ours, so it cannot carry attestations,
     // and it must justify itself.
     if (tr.status === 'proposed') {

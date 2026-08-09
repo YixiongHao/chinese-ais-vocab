@@ -1,0 +1,1949 @@
+[
+  {
+    "id": "pretraining",
+    "en": "pretraining",
+    "en_aliases": ["pre-training"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled", "core-pipeline"],
+    "definition_en": "The first and most compute-intensive training stage, in which a model learns next-token prediction over a very large unlabelled corpus. Everything else — SFT, RL, alignment — is done on top of the resulting base model.",
+    "definition_zh": "大模型训练的第一个阶段，在超大规模无标注语料上做下一个词预测，得到基座模型。后续的微调、对齐都建立在预训练模型之上，也是整个流程中算力消耗最大的一步。",
+    "preferred_zh": "预训练",
+    "translation_difficulty": "low",
+    "pitfalls": null,
+    "translations": [
+      {
+        "zh": "预训练",
+        "pinyin": "yù xùnliàn",
+        "status": "established",
+        "literal_back": "pre-training",
+        "notes": "Completely settled. Universal across Chinese labs, textbooks, framework docs and media; no competing rendering exists. 增量预训练 = continued/incremental pretraining, 预训练模型/基座模型 = base model.",
+        "attestations": [
+          {
+            "quote_zh": "语言和多模态模型均在大规模、多语言、多模态数据上进行预训练",
+            "quote_en": "Both the language and multimodal models are pretrained on large-scale, multilingual, multimodal data.",
+            "source_title": "核心概念 — Qwen 中文文档",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "github",
+            "url": "https://qwen.readthedocs.io/zh-cn/latest/getting_started/concepts.html",
+            "date": "2025"
+          },
+          {
+            "quote_zh": "Qwen2.5是在 18 万亿个 token 上进行预训练的，而 Qwen3 使用的数据量几乎是其两倍，达到了约 36 万亿个 token",
+            "quote_en": "Qwen2.5 was pretrained on 18 trillion tokens, while Qwen3 uses nearly twice as much data, about 36 trillion tokens.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "集成方法：（增量）预训练、（多模态）指令监督微调、奖励模型训练、PPO 训练、DPO 训练、KTO 训练、ORPO 训练等等。",
+            "quote_en": "Integrated methods: (incremental) pretraining, (multimodal) instruction supervised fine-tuning, reward model training, PPO training, DPO training, KTO training, ORPO training, etc.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "预训练模型",
+        "pinyin": "yù xùnliàn móxíng",
+        "status": "established",
+        "literal_back": "pretrained model",
+        "notes": "The output of pretraining. Note that Chinese practitioners more often say 基座模型 (base model) when contrasting with an instruct-tuned model.",
+        "attestations": [
+          {
+            "quote_zh": "注意 PaliGemma 是预训练模型，你需要使用 paligemma 模板进行微调使其获得对话能力。",
+            "quote_en": "Note that PaliGemma is a pretrained model; you need to fine-tune it with the paligemma template to give it conversational ability.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2024-05"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "预训练", "note": "official Chinese blog and docs" },
+      { "org": "中国人民大学 RUC AI Box《大语言模型》", "zh_used": "预训练", "note": "book chapter title 第三课 预训练" }
+    ],
+    "usage_examples": [
+      { "zh": "这个模型在超过 20 万亿 token 的语料上完成了预训练。", "en": "This model was pretrained on a corpus of over 20 trillion tokens.", "source": "constructed" }
+    ],
+    "related": ["post-training", "supervised-fine-tuning", "synthetic-data"],
+    "sources": [
+      "https://qwen.readthedocs.io/zh-cn/latest/getting_started/concepts.html",
+      "https://qwenlm.github.io/zh/blog/qwen3/",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://github.com/LLMBook-zh/LLMBook-zh.github.io"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "supervised-fine-tuning",
+    "en": "supervised fine-tuning",
+    "en_aliases": ["instruction tuning", "SFT"],
+    "abbr": "SFT",
+    "category": "training-methods",
+    "tags": ["settled", "loanword-heavy", "core-pipeline"],
+    "definition_en": "Fine-tuning a pretrained base model on curated (prompt, response) pairs so that it follows instructions and adopts a chat format. Usually the first stage of post-training, before any RL.",
+    "definition_zh": "在预训练得到的基座模型上，用人工整理的「指令—回复」样本做有监督训练，让模型学会遵循指令、按对话格式作答。通常是后训练的第一步，在强化学习之前进行。",
+    "preferred_zh": "监督微调（SFT）",
+    "translation_difficulty": "low",
+    "pitfalls": "The Chinese rendering is settled but rarely used bare: practitioners overwhelmingly write the Latin abbreviation \"SFT\" inside Chinese sentences (SFT 阶段, SFT 数据, 做完 SFT). Three Chinese variants circulate — 监督微调, 有监督微调, 指令微调 — and 指令微调 (instruction tuning) is not strictly a synonym, though Chinese sources often treat it as one. LLaMA-Factory splits the difference with 指令监督微调.",
+    "translations": [
+      {
+        "zh": "SFT",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The dominant form in practice. Chinese framework docs, tutorials and practitioner speech use the bare Latin abbreviation mid-sentence and gloss it in Chinese only once, if at all. OpenRLHF's Chinese README labels the section '监督微调' but tags every script and table row 'SFT'.",
+        "attestations": [
+          {
+            "quote_zh": "训练指南 - SFT、奖励模型、RL 训练",
+            "quote_en": "Training guide — SFT, reward model, RL training.",
+            "source_title": "OpenRLHF README_zh.md",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "监督微调",
+        "pinyin": "jiāndū wēitiáo",
+        "status": "established",
+        "literal_back": "supervised fine-tuning",
+        "notes": "The standard written gloss. Used as the section heading in OpenRLHF's Chinese README even though the body text says SFT.",
+        "attestations": [
+          {
+            "quote_zh": "带打包的监督微调",
+            "quote_en": "Supervised fine-tuning with packing.",
+            "source_title": "OpenRLHF README_zh.md（训练脚本表：SFT）",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "有监督微调",
+        "pinyin": "yǒu jiāndū wēitiáo",
+        "status": "common",
+        "literal_back": "having-supervision fine-tuning",
+        "notes": "Equally acceptable variant, slightly more common in academic Chinese writing than in framework docs. No semantic difference from 监督微调.",
+        "attestations": [
+          {
+            "quote_zh": "强化学习和有监督学习的学习目标其实是一致的，即在某个数据分布下优化一个分数值的期望。",
+            "quote_en": "The learning objectives of reinforcement learning and supervised learning are in fact the same: optimising the expectation of a scalar score under some data distribution.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "指令微调",
+        "pinyin": "zhǐlìng wēitiáo",
+        "status": "common",
+        "literal_back": "instruction fine-tuning",
+        "notes": "Strictly this is 'instruction tuning', a subset of SFT, but Chinese sources frequently use it as the label for the whole SFT stage. 《大语言模型》(RUC) devotes a chapter titled 指令微调 to it. LLaMA-Factory hedges with the compound 指令监督微调.",
+        "attestations": [
+          {
+            "quote_zh": "第四课 指令微调（对应本书第七章）",
+            "quote_en": "Lecture 4: Instruction tuning (corresponding to Chapter 7 of this book).",
+            "source_title": "《大语言模型》课程资源目录",
+            "publisher": "中国人民大学 RUC AI Box（赵鑫等，高等教育出版社）",
+            "source_type": "github",
+            "url": "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+            "date": "2024"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "OpenRLHF", "zh_used": "监督微调 / SFT", "note": "Chinese README uses both, Chinese for headings, English for body" },
+      { "org": "LLaMA-Factory", "zh_used": "指令监督微调", "note": "feature list" },
+      { "org": "中国人民大学 RUC AI Box", "zh_used": "指令微调", "note": "chapter title in《大语言模型》" }
+    ],
+    "usage_examples": [
+      { "zh": "我们先做了一轮 SFT，再上强化学习。", "en": "We first ran a round of SFT, then moved to RL.", "source": "constructed" }
+    ],
+    "related": ["pretraining", "post-training", "rlhf", "reward-model"],
+    "sources": [
+      "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+      "https://cloud.tencent.com/developer/article/2503293"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "reinforcement-learning",
+    "en": "reinforcement learning",
+    "en_aliases": [],
+    "abbr": "RL",
+    "category": "training-methods",
+    "tags": ["settled", "textbook"],
+    "definition_en": "Training a policy by having it act, receive a scalar reward, and update toward higher expected reward. In LLM post-training it is the stage that turns a fine-tuned model into one optimised against a reward model or a verifier.",
+    "definition_zh": "让模型（策略）不断产生动作、获得奖励信号，并朝着期望奖励更高的方向更新参数的训练范式。在大模型后训练中，它是把微调后的模型进一步对着奖励模型或验证器优化的那一步。",
+    "preferred_zh": "强化学习",
+    "translation_difficulty": "low",
+    "pitfalls": "None as a translation. Worth noting only that the bare Latin \"RL\" is extremely common in Chinese practitioner text as a modifier (RL 训练, RL 算法, RL 阶段), even though 强化学习 is a fully settled textbook term — the abbreviation is used for brevity, not because the Chinese is unavailable.",
+    "translations": [
+      {
+        "zh": "强化学习",
+        "pinyin": "qiánghuà xuéxí",
+        "status": "established",
+        "literal_back": "strengthening learning",
+        "notes": "Textbook-stable since long before LLMs; used identically in classical RL, robotics and LLM post-training. No competing rendering.",
+        "attestations": [
+          {
+            "quote_zh": "第二阶段的重点是大规模强化学习，利用基于规则的奖励来增强模型的探索和钻研能力",
+            "quote_en": "The focus of the second stage is large-scale reinforcement learning, using rule-based rewards to strengthen the model's exploration and deep-dive ability.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "一个高效可扩展的多模态强化学习框架，支持高效的 GRPO 训练。",
+            "quote_en": "An efficient and scalable multimodal reinforcement learning framework supporting efficient GRPO training.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025-02"
+          }
+        ]
+      },
+      {
+        "zh": "RL",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Used bare as a modifier in Chinese sentences — RL 训练, RL 算法, 无评论家 RL 方法. Coexists with 强化学习 rather than replacing it.",
+        "attestations": [
+          {
+            "quote_zh": "在大语言模型（LLMs）时代，RL最初作为人类对齐的后训练策略而崭露头角。",
+            "quote_en": "In the era of large language models (LLMs), RL first came to prominence as a post-training strategy for human alignment.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "强化学习", "note": "Qwen3 Chinese release blog" },
+      { "org": "OpenRLHF", "zh_used": "强化学习 / RL", "note": "Chinese README" }
+    ],
+    "usage_examples": [
+      { "zh": "第二阶段用大规模强化学习进一步提升模型的推理能力。", "en": "The second stage uses large-scale reinforcement learning to further improve the model's reasoning ability.", "source": "constructed" }
+    ],
+    "related": ["rlhf", "ppo", "grpo", "rlvr", "post-training"],
+    "sources": [
+      "https://qwenlm.github.io/zh/blog/qwen3/",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://cloud.tencent.com/developer/article/2637181"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "rlhf",
+    "en": "reinforcement learning from human feedback",
+    "en_aliases": [],
+    "abbr": "RLHF",
+    "category": "training-methods",
+    "tags": ["settled", "loanword-heavy", "alignment"],
+    "definition_en": "Post-training a language model against a reward model fitted to human preference comparisons. The canonical InstructGPT/ChatGPT alignment recipe: SFT, then reward modelling, then PPO.",
+    "definition_zh": "先用人类对模型输出的偏好比较训练一个奖励模型，再用强化学习让语言模型朝奖励更高的方向优化。这是 InstructGPT/ChatGPT 那一套经典的对齐流程：先 SFT，再训奖励模型，最后 PPO。",
+    "preferred_zh": "RLHF（人类反馈强化学习）",
+    "translation_difficulty": "low",
+    "pitfalls": "The Chinese expansion exists in at least three word orders — 人类反馈强化学习, 基于人类反馈的强化学习, 从人类反馈中强化学习 — with no winner, precisely because nobody actually says them. The abbreviation RLHF is what circulates; the Chinese expansion appears once in parentheses as a gloss and then disappears. Treat the Chinese form as an explanatory apposition, not a usable term.",
+    "translations": [
+      {
+        "zh": "RLHF",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Overwhelmingly dominant. Even a project whose own name is Chinese-documented (OpenRLHF) writes RLHF 框架, RLHF 流程, RLHF 训练 throughout, glossing it in Chinese only in the opening sentence.",
+        "attestations": [
+          {
+            "quote_zh": "OpenRLHF 是首个结合 Ray + vLLM 分布式架构与统一 Agent 设计范式的高性能、生产就绪的开源 RLHF 框架，用于可扩展和可扩展的人类反馈强化学习。",
+            "quote_en": "OpenRLHF is the first high-performance, production-ready open-source RLHF framework combining a Ray + vLLM distributed architecture with a unified agent design paradigm, for scalable reinforcement learning from human feedback.",
+            "source_title": "OpenRLHF README_zh.md",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026"
+          },
+          {
+            "quote_zh": "混合引擎调度：所有模型和 vLLM 引擎可以共享 GPU 资源，最大限度地减少空闲时间并提高 GPU 利用率。这允许在有限的硬件上运行完整的 RLHF 流程。",
+            "quote_en": "Hybrid engine scheduling: all models and vLLM engines can share GPU resources, minimising idle time and improving GPU utilisation. This allows a complete RLHF pipeline to run on limited hardware.",
+            "source_title": "OpenRLHF README_zh.md",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "人类反馈强化学习",
+        "pinyin": "rénlèi fǎnkuì qiánghuà xuéxí",
+        "status": "common",
+        "literal_back": "human feedback reinforcement learning",
+        "notes": "The most compact and most frequent Chinese expansion. Used as the parenthetical gloss in translated papers and tech media.",
+        "attestations": [
+          {
+            "quote_zh": "人类反馈强化学习(RLHF)可以有效地将大型语言模型(LLM)与人类偏好对齐",
+            "quote_en": "Reinforcement learning from human feedback (RLHF) can effectively align large language models (LLMs) with human preferences.",
+            "source_title": "【论文解读】RLAIF基于人工智能反馈的强化学习",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2352114",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "我们打算将模型规范作为研究人员和 AI 训练者进行人类反馈强化学习的指南。",
+            "quote_en": "We intend the Model Spec to serve as a guideline for researchers and AI trainers doing reinforcement learning from human feedback.",
+            "source_title": "OpenAI 发布 GPT 模型规范，可作为模型微调指南",
+            "publisher": "InfoQ 中文站",
+            "source_type": "media",
+            "url": "https://www.infoq.cn/article/lffslndj4iznwkvoowoj",
+            "date": "2024-06"
+          }
+        ]
+      },
+      {
+        "zh": "基于人类反馈的强化学习",
+        "pinyin": "jīyú rénlèi fǎnkuì de qiánghuà xuéxí",
+        "status": "common",
+        "literal_back": "reinforcement learning based on human feedback",
+        "notes": "Longer and grammatically more explicit variant; competes with 人类反馈强化学习 with no clear winner. Both are glosses rather than working vocabulary. No independently fetched attestation recorded here — see the parallel 基于可验证奖励的强化学习 construction under rlvr for the same pattern.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "OpenRLHF", "zh_used": "RLHF / 人类反馈强化学习", "note": "Chinese README; abbreviation in body, Chinese gloss once" },
+      { "org": "InfoQ 中文站", "zh_used": "人类反馈强化学习", "note": "Model Spec coverage" }
+    ],
+    "usage_examples": [
+      { "zh": "这个模型在 SFT 之后还做了一轮 RLHF。", "en": "After SFT this model also went through a round of RLHF.", "source": "constructed" }
+    ],
+    "related": ["reward-model", "ppo", "rlaif", "supervised-fine-tuning", "post-training"],
+    "sources": [
+      "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+      "https://cloud.tencent.com/developer/article/2352114",
+      "https://www.infoq.cn/article/lffslndj4iznwkvoowoj"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "rlaif",
+    "en": "reinforcement learning from AI feedback",
+    "en_aliases": [],
+    "abbr": "RLAIF",
+    "category": "training-methods",
+    "tags": ["loanword-heavy"],
+    "definition_en": "RLHF with the human preference labeller replaced by an LLM. The preference data used to fit the reward model is generated by a model rather than collected from people.",
+    "definition_zh": "把 RLHF 里的人类标注者换成大模型：偏好数据由模型自己产生，再用这些数据训练奖励模型并做强化学习，从而摆脱对人工标注规模的依赖。",
+    "preferred_zh": "RLAIF（基于 AI 反馈的强化学习）",
+    "translation_difficulty": "low",
+    "pitfalls": "Two Chinese expansions coexist — 基于人工智能反馈的强化学习 (formal, matches PRC register where 人工智能 is preferred to AI) and 基于 AI 反馈的强化学习 (practitioner shorthand). Neither is used as a working term; RLAIF is. Note that Chinese sources routinely present RLAIF as the mechanism behind Constitutional AI, so the two entries cross-contaminate.",
+    "translations": [
+      {
+        "zh": "RLAIF",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The working form. Chinese article titles typically place the abbreviation first and the Chinese expansion after it, as an apposition.",
+        "attestations": [
+          {
+            "quote_zh": "【论文解读】RLAIF基于人工智能反馈的强化学习",
+            "quote_en": "[Paper explainer] RLAIF: reinforcement learning from artificial-intelligence feedback.",
+            "source_title": "【论文解读】RLAIF基于人工智能反馈的强化学习",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2352114",
+            "date": "2023-10"
+          }
+        ]
+      },
+      {
+        "zh": "基于人工智能反馈的强化学习",
+        "pinyin": "jīyú réngōng zhìnéng fǎnkuì de qiánghuà xuéxí",
+        "status": "common",
+        "literal_back": "reinforcement learning based on artificial-intelligence feedback",
+        "notes": "The formal gloss. 人工智能 rather than AI is the norm in written/academic Chinese; practitioner text shortens to 基于 AI 反馈的强化学习.",
+        "attestations": [
+          {
+            "quote_zh": "来自人工智能反馈的强化学习（RLAIF）",
+            "quote_en": "Reinforcement learning from artificial-intelligence feedback (RLAIF).",
+            "source_title": "【论文解读】RLAIF基于人工智能反馈的强化学习",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2352114",
+            "date": "2023-10"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "用 RLAIF 代替人工标注，可以大幅降低偏好数据的成本。", "en": "Replacing human annotation with RLAIF can sharply cut the cost of preference data.", "source": "constructed" }
+    ],
+    "related": ["rlhf", "constitutional-ai", "reward-model", "synthetic-data"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2352114"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "rlvr",
+    "en": "reinforcement learning with verifiable rewards",
+    "en_aliases": [],
+    "abbr": "RLVR",
+    "category": "training-methods",
+    "tags": ["recent", "loanword-heavy", "reasoning"],
+    "definition_en": "RL in which the reward comes from a programmatic verifier — a unit test, an exact-match answer checker, a format validator — rather than a learned reward model. The DeepSeek-R1 / Tülu 3 era recipe for training reasoning models.",
+    "definition_zh": "奖励信号不来自学出来的奖励模型，而来自可以程序化判定的验证器：数学答案是否匹配、代码是否通过单元测试、输出格式是否合规。这是 DeepSeek-R1、Tülu 3 这一代推理模型的主流后训练做法。",
+    "preferred_zh": "RLVR（可验证奖励的强化学习）",
+    "translation_difficulty": "low",
+    "pitfalls": "Recent enough that the Chinese expansion is still unstable: 可验证奖励的强化学习 and 基于可验证奖励的强化学习 both circulate, and the abbreviation dominates both. Despite Chinese labs (DeepSeek, Moonshot) being central to the technique, the term itself was coined in English (Tülu 3) and Chinese sources import it — so this is NOT a case of Chinese being the source language.",
+    "translations": [
+      {
+        "zh": "RLVR",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Working form in Chinese technical writing. The Chinese expansion appears in parentheses on first mention.",
+        "attestations": [
+          {
+            "quote_zh": "Tülu 3中被正式命名为RLVR（基于可验证奖励的强化学习），其核心是用程序化验证器替代学习得到的奖励模型。",
+            "quote_en": "It was formally named RLVR (reinforcement learning based on verifiable rewards) in Tülu 3; its core idea is to replace the learned reward model with a programmatic verifier.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "基于可验证奖励的强化学习",
+        "pinyin": "jīyú kě yànzhèng jiǎnglì de qiánghuà xuéxí",
+        "status": "common",
+        "literal_back": "reinforcement learning based on verifiable rewards",
+        "notes": "The fuller gloss, used in survey translations. The shorter 可验证奖励的强化学习 (dropping 基于) is also widely seen; the two are freely interchangeable.",
+        "attestations": [
+          {
+            "quote_zh": "Tülu 3中被正式命名为RLVR（基于可验证奖励的强化学习），其核心是用程序化验证器替代学习得到的奖励模型。",
+            "quote_en": "It was formally named RLVR (reinforcement learning based on verifiable rewards) in Tülu 3; its core idea is to replace the learned reward model with a programmatic verifier.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "可验证奖励的强化学习",
+        "pinyin": "kě yànzhèng jiǎnglì de qiánghuà xuéxí",
+        "status": "common",
+        "literal_back": "verifiable-reward reinforcement learning",
+        "notes": "The shorter of the two competing expansions; widely used in Chinese explainer articles and CSDN/知乎 posts. Recorded here as a variant; no independently fetched verbatim attestation, so confidence for this specific form is lower than for the 基于… form.",
+        "attestations": []
+      },
+      {
+        "zh": "基于规则的奖励",
+        "pinyin": "jīyú guīzé de jiǎnglì",
+        "status": "descriptive",
+        "literal_back": "rule-based reward",
+        "notes": "Chinese labs often describe the same technique without naming RLVR at all, saying instead that RL used 'rule-based rewards'. Qwen3's Chinese release blog does exactly this. Worth knowing that the concept frequently appears in Chinese without the term.",
+        "attestations": [
+          {
+            "quote_zh": "第二阶段的重点是大规模强化学习，利用基于规则的奖励来增强模型的探索和钻研能力",
+            "quote_en": "The focus of the second stage is large-scale reinforcement learning, using rule-based rewards to strengthen the model's exploration and deep-dive ability.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "基于规则的奖励", "note": "describes the mechanism without naming RLVR" }
+    ],
+    "usage_examples": [
+      { "zh": "数学和代码这类任务天然适合做 RLVR，因为答案可以自动判对错。", "en": "Tasks like maths and code are naturally suited to RLVR, because answers can be checked automatically.", "source": "constructed" }
+    ],
+    "related": ["reinforcement-learning", "grpo", "reasoning-model", "reward-model"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2637181",
+      "https://qwenlm.github.io/zh/blog/qwen3/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "constitutional-ai",
+    "en": "Constitutional AI",
+    "en_aliases": [],
+    "abbr": "CAI",
+    "category": "training-methods",
+    "tags": ["anthropic", "false-friend", "high-value"],
+    "definition_en": "Anthropic's alignment method in which a model critiques and revises its own outputs against a written set of principles (the \"constitution\"), and those revisions replace human harmlessness labels in the training loop.",
+    "definition_zh": "Anthropic 提出的一种对齐方法：给模型一份写明的原则清单，让它按照这些原则自我批评、自我修改输出，用这些自我修订的数据取代人工标注的有害性标签来训练模型。",
+    "preferred_zh": "Constitutional AI（宪法式 AI）",
+    "translation_difficulty": "high",
+    "pitfalls": "The headline pitfall in this category. 宪法 in Chinese means specifically a state constitution — the supreme law of a country, a term with heavy political-legal weight in the PRC context. Applying it to a company's internal list of behavioural principles reads as either grandiose or faintly political, and invites a reader to think about constitutional law, sovereignty and 依宪治国 rather than about a document of training principles. The English \"constitution\" carries a looser sense (a founding charter, the constitution of a club) that Chinese 宪法 does not. Chinese sources feel this: many simply leave \"Constitutional AI\" in English, and the more careful ones write 宪法式 AI with the 式 (\"-style\", \"-like\") acting as a hedge that signals metaphor. 章程 (charter, articles of association) or 准则 (code of conduct) would be semantically closer but are not attested for this term.",
+    "translations": [
+      {
+        "zh": "Constitutional AI",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Chinese tech media frequently keeps the English term in quotation marks rather than committing to a Chinese rendering — a direct symptom of the 宪法 problem. This is a legitimate and common answer.",
+        "attestations": [
+          {
+            "quote_zh": "「Constitutional AI」训练方法",
+            "quote_en": "The \"Constitutional AI\" training method.",
+            "source_title": "Anthropic 展示它的 AI 训练与 OpenAI 不同之处：不需要人工标注有害信息",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/news/1071939",
+            "date": "2023-05"
+          }
+        ]
+      },
+      {
+        "zh": "宪法式 AI",
+        "pinyin": "xiànfǎ shì AI",
+        "status": "common",
+        "literal_back": "constitution-style AI",
+        "notes": "The best of the Chinese options. The 式 suffix marks the word as an analogy rather than a claim that a real constitution is involved, which materially reduces the political-law misreading. Recommended when a Chinese rendering is required.",
+        "attestations": [
+          {
+            "quote_zh": "这项技术不仅是 Claude 的核心差异化优势，更代表了 AI 对齐（Alignment）领域的一次重大范式转变。",
+            "quote_en": "This technique is not only Claude's core differentiator but also represents a major paradigm shift in the field of AI alignment.",
+            "source_title": "11.1 宪法式 AI —《Claude 技术指南》",
+            "publisher": "Claude Guide (yeasy)",
+            "source_type": "blog",
+            "url": "https://yeasy.gitbook.io/claude_guide/di-si-bu-fen-shi-zhan-pian/11_safety/11.1_cai",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "宪法 AI",
+        "pinyin": "xiànfǎ AI",
+        "status": "common",
+        "literal_back": "constitution AI",
+        "notes": "The bare calque, widely seen in blog posts and article titles. Recommended against relative to 宪法式 AI: without the 式 hedge it reads as if an actual constitution governs the model, which is the connotation drift we want to avoid.",
+        "attestations": []
+      },
+      {
+        "zh": "宪法式人工智能",
+        "pinyin": "xiànfǎ shì réngōng zhìnéng",
+        "status": "common",
+        "literal_back": "constitution-style artificial intelligence",
+        "notes": "The fully-Chinese formal register variant, used in policy-adjacent and journalistic writing where 人工智能 is preferred to the letters AI. Same hedging benefit as 宪法式 AI. No independently fetched verbatim attestation recorded.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "Claude Guide（中文社区技术指南）", "zh_used": "宪法式 AI", "note": "chapter title 11.1 宪法式 AI" }
+    ],
+    "usage_examples": [
+      { "zh": "Anthropic 用宪法式 AI 让模型按一份写明的原则自我修订，从而减少对人工标注的依赖。", "en": "Anthropic uses Constitutional AI to have the model revise itself against a written set of principles, reducing reliance on human annotation.", "source": "constructed" }
+    ],
+    "related": ["rlaif", "rlhf", "post-training", "model-spec"],
+    "sources": [
+      "https://cloud.tencent.com/developer/news/1071939",
+      "https://yeasy.gitbook.io/claude_guide/di-si-bu-fen-shi-zhan-pian/11_safety/11.1_cai"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "reward-model",
+    "en": "reward model",
+    "en_aliases": ["preference model"],
+    "abbr": "RM",
+    "category": "training-methods",
+    "tags": ["settled", "core-pipeline"],
+    "definition_en": "A model trained on preference comparisons to score candidate responses, used as the reward signal during RL post-training. Replaced or supplemented by programmatic verifiers in the RLVR era.",
+    "definition_zh": "用人类（或模型）的偏好比较数据训练出来的打分模型，在强化学习阶段给候选回复打分，充当奖励信号。在 RLVR 时代，它部分被程序化验证器取代。",
+    "preferred_zh": "奖励模型",
+    "translation_difficulty": "low",
+    "pitfalls": null,
+    "translations": [
+      {
+        "zh": "奖励模型",
+        "pinyin": "jiǎnglì móxíng",
+        "status": "established",
+        "literal_back": "reward model",
+        "notes": "Fully settled across frameworks and explainers. The informal synonym 打分模型 (scoring model) is used to explain it to newcomers.",
+        "attestations": [
+          {
+            "quote_zh": "奖励模型也叫打分模型，是一种通过量化方式对模型输出结果进行质量评估并打分。",
+            "quote_en": "The reward model, also called a scoring model, quantitatively assesses and scores the quality of a model's outputs.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          },
+          {
+            "quote_zh": "非常适合无需训练奖励模型的强化微调。",
+            "quote_en": "Very well suited to reinforcement fine-tuning without training a reward model.",
+            "source_title": "OpenRLHF README_zh.md",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026"
+          },
+          {
+            "quote_zh": "学习得到的奖励模型，以预测人类更偏好的响应；最后，该奖励模型与一个价值函数共同用于训练LLM。",
+            "quote_en": "A learned reward model, to predict which responses humans prefer; finally that reward model is used together with a value function to train the LLM.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "打分模型",
+        "pinyin": "dǎfēn móxíng",
+        "status": "common",
+        "literal_back": "scoring model",
+        "notes": "Informal explanatory synonym, not a replacement for 奖励模型 in technical writing.",
+        "attestations": [
+          {
+            "quote_zh": "奖励模型也叫打分模型，是一种通过量化方式对模型输出结果进行质量评估并打分。",
+            "quote_en": "The reward model, also called a scoring model, quantitatively assesses and scores the quality of a model's outputs.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "OpenRLHF", "zh_used": "奖励模型", "note": "section heading 奖励模型训练" },
+      { "org": "LLaMA-Factory", "zh_used": "奖励模型", "note": "feature list 奖励模型训练" }
+    ],
+    "usage_examples": [
+      { "zh": "奖励模型打分偏高，容易让策略模型学会钻空子。", "en": "If the reward model scores too generously, the policy model easily learns to game it.", "source": "constructed" }
+    ],
+    "related": ["rlhf", "ppo", "rlvr", "rlaif"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2503293",
+      "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+      "https://cloud.tencent.com/developer/article/2637181"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "ppo",
+    "en": "proximal policy optimization",
+    "en_aliases": [],
+    "abbr": "PPO",
+    "category": "training-methods",
+    "tags": ["settled", "loanword-heavy", "algorithm"],
+    "definition_en": "A policy-gradient RL algorithm that constrains each update to stay close to the previous policy via a clipped objective. The default RL algorithm in classic RLHF pipelines.",
+    "definition_zh": "一种策略梯度强化学习算法，通过裁剪目标函数限制每次更新与旧策略的偏离程度，从而保持训练稳定。经典 RLHF 流程里默认使用的强化学习算法。",
+    "preferred_zh": "PPO（近端策略优化）",
+    "translation_difficulty": "low",
+    "pitfalls": "The Chinese name is stable and correct but almost never used on its own — algorithm names in Chinese ML writing are kept as Latin acronyms. 近端 renders \"proximal\" accurately (close/adjacent), so there is no meaning loss; the term simply doesn't circulate.",
+    "translations": [
+      {
+        "zh": "PPO",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The working form. Chinese framework docs list PPO 训练 alongside DPO 训练, KTO 训练 etc. with no Chinese expansions at all.",
+        "attestations": [
+          {
+            "quote_zh": "集成方法：（增量）预训练、（多模态）指令监督微调、奖励模型训练、PPO 训练、DPO 训练、KTO 训练、ORPO 训练等等。",
+            "quote_en": "Integrated methods: (incremental) pretraining, (multimodal) instruction supervised fine-tuning, reward model training, PPO training, DPO training, KTO training, ORPO training, etc.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025"
+          },
+          {
+            "quote_zh": "PPO 就像是教你的 LLM 一步步走路，确保它在每次更新时不会摔倒。",
+            "quote_en": "PPO is like teaching your LLM to walk step by step, making sure it doesn't fall over at each update.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "近端策略优化",
+        "pinyin": "jìnduān cèlüè yōuhuà",
+        "status": "established",
+        "literal_back": "near-end policy optimisation",
+        "notes": "The settled Chinese expansion; appears on first mention in explainer articles, then the acronym takes over.",
+        "attestations": [
+          {
+            "quote_zh": "近端策略优化 (PPO) 等传统 RL 方法在应用于 LLM 中的推理任务时面临着重大挑战",
+            "quote_en": "Traditional RL methods such as proximal policy optimization (PPO) face significant challenges when applied to reasoning tasks in LLMs.",
+            "source_title": "DeepSeek 背后的数学原理：深入探究群体相对策略优化 (GRPO)",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2495699",
+            "date": "2025-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "LLaMA-Factory", "zh_used": "PPO", "note": "bare acronym in Chinese feature list" },
+      { "org": "OpenRLHF", "zh_used": "PPO", "note": "bare acronym in Chinese README" }
+    ],
+    "usage_examples": [
+      { "zh": "早期的 RLHF 流程基本都用 PPO，现在越来越多团队改用 GRPO。", "en": "Early RLHF pipelines nearly all used PPO; more and more teams now switch to GRPO.", "source": "constructed" }
+    ],
+    "related": ["rlhf", "grpo", "dpo", "reward-model"],
+    "sources": [
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://cloud.tencent.com/developer/article/2503293",
+      "https://cloud.tencent.com/developer/article/2495699"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "dpo",
+    "en": "direct preference optimization",
+    "en_aliases": [],
+    "abbr": "DPO",
+    "category": "training-methods",
+    "tags": ["settled", "loanword-heavy", "algorithm"],
+    "definition_en": "An alignment method that optimises a language model directly on preference pairs with a closed-form loss, removing the need for a separate reward model and RL loop.",
+    "definition_zh": "直接在「更好/更差」的偏好对上用一个闭式损失函数优化语言模型，不需要单独训练奖励模型，也不需要跑强化学习循环。",
+    "preferred_zh": "DPO（直接偏好优化）",
+    "translation_difficulty": "low",
+    "pitfalls": null,
+    "translations": [
+      {
+        "zh": "DPO",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The working form, listed bare alongside PPO/KTO/ORPO in Chinese framework documentation.",
+        "attestations": [
+          {
+            "quote_zh": "集成方法：（增量）预训练、（多模态）指令监督微调、奖励模型训练、PPO 训练、DPO 训练、KTO 训练、ORPO 训练等等。",
+            "quote_en": "Integrated methods: (incremental) pretraining, (multimodal) instruction supervised fine-tuning, reward model training, PPO training, DPO training, KTO training, ORPO training, etc.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025"
+          },
+          {
+            "quote_zh": "DPO 就像是直接告诉 LLM：响应 A 比响应 B 更好。",
+            "quote_en": "DPO is like telling the LLM directly: response A is better than response B.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "直接偏好优化",
+        "pinyin": "zhíjiē piānhào yōuhuà",
+        "status": "established",
+        "literal_back": "direct preference optimisation",
+        "notes": "Uncontested Chinese expansion; appears as the section label in Chinese explainers of post-training RL algorithms, but the acronym is what circulates.",
+        "attestations": [
+          {
+            "quote_zh": "DPO 就像是直接告诉 LLM：响应 A 比响应 B 更好。",
+            "quote_en": "DPO is like telling the LLM directly: response A is better than response B.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇（DPO直接偏好优化 一节）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "LLaMA-Factory", "zh_used": "DPO", "note": "bare acronym in Chinese feature list" }
+    ],
+    "usage_examples": [
+      { "zh": "数据量不大的时候，直接跑 DPO 通常比搭一整套 RLHF 流程划算。", "en": "When the dataset is small, running DPO directly is usually more economical than standing up a full RLHF pipeline.", "source": "constructed" }
+    ],
+    "related": ["rlhf", "ppo", "reward-model", "post-training"],
+    "sources": [
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://cloud.tencent.com/developer/article/2503293"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "grpo",
+    "en": "group relative policy optimization",
+    "en_aliases": [],
+    "abbr": "GRPO",
+    "category": "training-methods",
+    "tags": ["deepseek", "algorithm", "loanword-heavy", "high-value"],
+    "definition_en": "DeepSeek's critic-free RL algorithm: sample a group of responses to the same prompt, use their normalised relative rewards as the advantage, and drop the value network entirely. The workhorse of the DeepSeek-R1 era.",
+    "definition_zh": "DeepSeek 提出的免价值网络强化学习算法：对同一个问题采样一组回答，用组内相对奖励做优势估计，从而完全去掉 critic。DeepSeek-R1 之后成为推理模型训练的主流算法。",
+    "preferred_zh": "GRPO（群体相对策略优化）",
+    "translation_difficulty": "low",
+    "pitfalls": "The seed hypothesis that Chinese might be the primary language here does NOT hold. GRPO originated at DeepSeek but was published in English (DeepSeekMath, 2024) and named in English; Chinese sources treat 群体相对策略优化 as a translation of the English name, and it shows the instability of a translated term — 群体相对策略优化 competes with 群相对策略优化 and 组相对策略优化. A Chinese-origin technique can still have an English-origin name.",
+    "translations": [
+      {
+        "zh": "GRPO",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "By far the dominant form, including in Chinese-authored frameworks. LLaMA-Factory and OpenRLHF both write GRPO bare in Chinese sentences with no gloss.",
+        "attestations": [
+          {
+            "quote_zh": "一个高效可扩展的多模态强化学习框架，支持高效的 GRPO 训练。",
+            "quote_en": "An efficient and scalable multimodal reinforcement learning framework supporting efficient GRPO training.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025-02"
+          },
+          {
+            "quote_zh": "目前最流行的无评论家RL方法之一是GRPO。GRPO是对PPO的一种无评论家改进。",
+            "quote_en": "One of the most popular critic-free RL methods at present is GRPO. GRPO is a critic-free improvement on PPO.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "群体相对策略优化",
+        "pinyin": "qúntǐ xiāngduì cèlüè yōuhuà",
+        "status": "common",
+        "literal_back": "group relative policy optimisation",
+        "notes": "The most frequent Chinese expansion, used on first mention in explainer articles. Competes with the shorter 群相对策略优化 and with 组相对策略优化 (组 = group/batch, arguably a better rendering of the technical sense since the 'group' is a sampled batch of responses, not a social group).",
+        "attestations": [
+          {
+            "quote_zh": "群体相对策略优化 (GRPO，Group Relative Policy Optimization) 是一种强化学习 (RL) 算法，专门用于增强大型语言模型 (LLM) 中的推理能力。",
+            "quote_en": "Group Relative Policy Optimization (GRPO) is a reinforcement learning (RL) algorithm designed specifically to enhance the reasoning ability of large language models (LLMs).",
+            "source_title": "DeepSeek 背后的数学原理：深入探究群体相对策略优化 (GRPO)",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2495699",
+            "date": "2025-02"
+          },
+          {
+            "quote_zh": "GRPO 就像是 PPO 的精简版表亲。它保留了 PPO 的核心思想，但去掉了独立的价值函数。",
+            "quote_en": "GRPO is like a slimmed-down cousin of PPO. It keeps PPO's core idea but drops the separate value function.",
+            "source_title": "推理大模型的后训练增强技术-强化学习篇（GRPO群体相对策略优化 一节）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2503293",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "群相对策略优化",
+        "pinyin": "qún xiāngduì cèlüè yōuhuà",
+        "status": "common",
+        "literal_back": "group-relative policy optimisation",
+        "notes": "Shorter variant seen in 知乎 explainers; identical meaning. Recorded as evidence that the Chinese expansion is not settled. No independently fetched verbatim attestation.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "LLaMA-Factory / EasyR1", "zh_used": "GRPO", "note": "bare acronym in Chinese README" },
+      { "org": "OpenRLHF", "zh_used": "GRPO", "note": "listed among PPO、REINFORCE++、GRPO、RLOO" }
+    ],
+    "usage_examples": [
+      { "zh": "GRPO 去掉了 critic，显存开销比 PPO 小很多。", "en": "GRPO drops the critic, so its memory footprint is much smaller than PPO's.", "source": "constructed" }
+    ],
+    "related": ["ppo", "rlvr", "reasoning-model", "reinforcement-learning"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2495699",
+      "https://cloud.tencent.com/developer/article/2503293",
+      "https://cloud.tencent.com/developer/article/2637181",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "distillation",
+    "en": "distillation",
+    "en_aliases": ["knowledge distillation"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled", "policy-relevant"],
+    "definition_en": "Training a smaller student model to imitate a larger teacher model's outputs. Originally a compression technique; now also a policy-charged term because frontier models' outputs can be distilled into cheap competitors.",
+    "definition_zh": "用一个大的教师模型的输出来训练一个小的学生模型，使小模型逼近大模型的能力。最初是模型压缩技术；如今也成了政策议题，因为前沿模型的输出可以被蒸馏成廉价的竞争者。",
+    "preferred_zh": "蒸馏 / 知识蒸馏",
+    "translation_difficulty": "low",
+    "pitfalls": "The translation itself is settled. The live issue is semantic drift: 知识蒸馏 classically means logit-matching compression, whereas post-DeepSeek-R1 usage of 蒸馏 usually means fine-tuning a small model on a big model's generated outputs (which is closer to synthetic-data SFT). Chinese sources use the same word for both. In policy discussion 蒸馏 additionally carries an accusatory sense (unauthorised extraction from a competitor's model) with no separate Chinese term.",
+    "translations": [
+      {
+        "zh": "知识蒸馏",
+        "pinyin": "zhīshi zhēngliú",
+        "status": "established",
+        "literal_back": "knowledge distillation",
+        "notes": "The classical, textbook form; standard in Chinese deep-learning literature since well before LLMs.",
+        "attestations": [
+          {
+            "quote_zh": "知识蒸馏是一种模型压缩技术，其基本思想是通过训练一个较小的模型（学生模型）来模仿一个大型的、已经训练好的模型（教师模型）。",
+            "quote_en": "Knowledge distillation is a model-compression technique whose basic idea is to train a smaller model (the student model) to imitate a large, already-trained model (the teacher model).",
+            "source_title": "知识蒸馏——深度学习的简化之道 ！！",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2400364",
+            "date": "2024-03"
+          }
+        ]
+      },
+      {
+        "zh": "蒸馏",
+        "pinyin": "zhēngliú",
+        "status": "established",
+        "literal_back": "distillation",
+        "notes": "The bare form dominates in LLM-era writing (蒸馏模型, 蒸馏数据, R1 蒸馏版). Used freely as a verb: 把 R1 蒸馏到 7B.",
+        "attestations": [
+          {
+            "quote_zh": "一个全链路 RAG 检索模型微调、推理和蒸馏代码库。",
+            "quote_en": "An end-to-end code library for fine-tuning, inference and distillation of RAG retrieval models.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "教师模型 / 学生模型",
+        "pinyin": "jiàoshī móxíng / xuéshēng móxíng",
+        "status": "established",
+        "literal_back": "teacher model / student model",
+        "notes": "The paired terminology is fully calqued and universal. Some older Chinese literature keeps Teacher/Student in English inside Chinese sentences.",
+        "attestations": [
+          {
+            "quote_zh": "知识蒸馏是一种模型压缩技术，其基本思想是通过训练一个较小的模型（学生模型）来模仿一个大型的、已经训练好的模型（教师模型）。",
+            "quote_en": "Knowledge distillation is a model-compression technique whose basic idea is to train a smaller model (the student model) to imitate a large, already-trained model (the teacher model).",
+            "source_title": "知识蒸馏——深度学习的简化之道 ！！",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2400364",
+            "date": "2024-03"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "LLaMA-Factory", "zh_used": "蒸馏", "note": "Chinese README ecosystem list" }
+    ],
+    "usage_examples": [
+      { "zh": "他们把 R1 的推理轨迹蒸馏进了一个 7B 的小模型。", "en": "They distilled R1's reasoning traces into a small 7B model.", "source": "constructed" }
+    ],
+    "related": ["synthetic-data", "reasoning-model", "open-weights"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2400364",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "chain-of-thought",
+    "en": "chain of thought",
+    "en_aliases": ["CoT prompting"],
+    "abbr": "CoT",
+    "category": "training-methods",
+    "tags": ["settled", "high-frequency"],
+    "definition_en": "Having a model generate explicit intermediate reasoning steps before its final answer, either by prompting or because it was trained to. The substrate that reasoning models and CoT monitoring both depend on.",
+    "definition_zh": "让模型在给出最终答案之前先写出中间推理步骤，可以靠提示引导，也可以靠训练内化。它既是推理模型能力的来源，也是思维链监控这类安全手段的前提。",
+    "preferred_zh": "思维链",
+    "translation_difficulty": "low",
+    "pitfalls": "Settled, but note two things. First, 中文维基百科 renders it 思路链 (\"train-of-thought chain\") rather than 思维链 — a minority variant a reader may encounter. Second, in practitioner speech 思维链 is often displaced by 思考 / 长思考 / 慢思考 when describing what a reasoning model does internally, and by the bare CoT when used as a modifier (CoT 数据, CoT 长度).",
+    "translations": [
+      {
+        "zh": "思维链",
+        "pinyin": "sīwéi liàn",
+        "status": "established",
+        "literal_back": "thought chain",
+        "notes": "Dominant everywhere: Chinese lab blogs, textbooks, media. 长思维链 = long CoT, 思维链提示 = CoT prompting.",
+        "attestations": [
+          {
+            "quote_zh": "在第一阶段，我们使用多样的的长思维链数据对模型进行了微调",
+            "quote_en": "In the first stage we fine-tuned the model on diverse long chain-of-thought data.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "提示设计、上下文学习、思维链提示、检索增强生成",
+            "quote_en": "Prompt design, in-context learning, chain-of-thought prompting, retrieval-augmented generation.",
+            "source_title": "《大语言模型》课程资源 — 第七课 提示学习（对应本书第十章）",
+            "publisher": "中国人民大学 RUC AI Box（赵鑫等，高等教育出版社）",
+            "source_type": "github",
+            "url": "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+            "date": "2024"
+          }
+        ]
+      },
+      {
+        "zh": "思路链",
+        "pinyin": "sīlù liàn",
+        "status": "deprecated",
+        "literal_back": "train-of-thought chain",
+        "notes": "Used by 中文维基百科's prompt-engineering article. Comprehensible but a minority form; 思维链 is what the field uses. Recommend against.",
+        "attestations": [
+          {
+            "quote_zh": "思路链（Chain-of-thought）(CoT) 是文字提示（Textual prompting）的一种技术，该技术通过提示 LLM 生成一系列中间步骤来提高 LLM 的推理能力。",
+            "quote_en": "Chain-of-thought (CoT) is a textual-prompting technique that improves an LLM's reasoning ability by prompting it to generate a series of intermediate steps.",
+            "source_title": "提示工程（中文维基百科，思维链 重定向）",
+            "publisher": "维基百科",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/wiki/%E6%80%9D%E7%BB%B4%E9%93%BE",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "慢思考",
+        "pinyin": "màn sīkǎo",
+        "status": "common",
+        "literal_back": "slow thinking",
+        "notes": "Not a translation of CoT but the framing Chinese sources use for the same phenomenon at model level, borrowed from Kahneman's System 1/System 2. 《大语言模型》pairs it with 复杂推理 in a chapter title. Useful to know because a Chinese reader may meet 慢思考 where English says 'reasoning' or 'extended CoT'.",
+        "attestations": [
+          {
+            "quote_zh": "第八课 复杂推理（对应本书第十一章）",
+            "quote_en": "Lecture 8: Complex reasoning (corresponding to Chapter 11 of this book).",
+            "source_title": "《大语言模型》课程资源（含课件「复杂推理与慢思考」）",
+            "publisher": "中国人民大学 RUC AI Box（赵鑫等，高等教育出版社）",
+            "source_type": "github",
+            "url": "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+            "date": "2024"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "长思维链", "note": "Qwen3 Chinese release blog" },
+      { "org": "中国人民大学 RUC AI Box", "zh_used": "思维链提示", "note": "《大语言模型》course module" }
+    ],
+    "usage_examples": [
+      { "zh": "我们用长思维链数据做了一轮冷启动微调。", "en": "We did a round of cold-start fine-tuning on long chain-of-thought data.", "source": "constructed" }
+    ],
+    "related": ["reasoning-model", "test-time-compute", "post-training"],
+    "sources": [
+      "https://qwenlm.github.io/zh/blog/qwen3/",
+      "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+      "https://zh.wikipedia.org/wiki/%E6%80%9D%E7%BB%B4%E9%93%BE"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "reasoning-model",
+    "en": "reasoning model",
+    "en_aliases": ["large reasoning model", "LRM", "thinking model"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["ambiguity", "high-value", "recent"],
+    "definition_en": "A model trained (usually with RL on verifiable tasks) to produce extended internal reasoning before answering — o1, DeepSeek-R1, Qwen3 thinking mode. Distinguished from a chat model by spending far more output tokens on deliberation.",
+    "definition_zh": "经过训练（通常是在可验证任务上做强化学习）后，会在回答前先进行长篇内部推理的模型，例如 o1、DeepSeek-R1、Qwen3 的思考模式。与普通对话模型的区别在于把大量输出 token 花在思考上。",
+    "preferred_zh": "推理模型",
+    "translation_difficulty": "high",
+    "pitfalls": "The single worst ambiguity in this category. Chinese 推理 covers BOTH English senses: (a) reasoning — logical inference, deliberation; and (b) inference — the forward pass, serving, deployment. They are unrelated concepts in English engineering vocabulary but one word in Chinese. So 推理模型 can mean 'reasoning model' (o1-like), 推理引擎 means 'inference engine' (vLLM), 推理速度 means 'inference speed', and 推理能力 means 'reasoning ability'. OpenRLHF's Chinese README contains both senses within a few lines of each other. LLaMA-Factory's Chinese README uses 推理 for inference throughout, then writes 推理 / 非推理两个版本 meaning reasoning / non-reasoning model variants. There is no disambiguating convention; readers rely entirely on context. When precision matters, write 推理（reasoning）模型 or use 思考模型 / 慢思考模型 for the reasoning sense and 部署 / 服务 / 前向推理 to force the inference sense. Chinese labs partly sidestep this by branding the behaviour 思考模式 (thinking mode) rather than calling the model a 推理模型.",
+    "translations": [
+      {
+        "zh": "推理模型",
+        "pinyin": "tuīlǐ móxíng",
+        "status": "established",
+        "literal_back": "reasoning/inference model",
+        "notes": "The dominant rendering despite the ambiguity. Also 大型推理模型 / 大推理模型 (LRM) in survey translations, and 推理大模型 in Chinese media.",
+        "attestations": [
+          {
+            "quote_zh": "使用 REINFORCE++-baseline 通过长期 RL 训练训练最先进的 1.5B 推理模型。",
+            "quote_en": "Uses REINFORCE++-baseline to train a state-of-the-art 1.5B reasoning model via prolonged RL training.",
+            "source_title": "OpenRLHF README_zh.md",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "当前大语言模型（LLM）最有趣的研究趋势之一，是推理模型的兴起 —— 这类模型在给出答案前会花费时间进行思考。",
+            "quote_en": "One of the most interesting research trends in current LLMs is the rise of reasoning models — models that spend time thinking before giving an answer.",
+            "source_title": "系统梳理 Test-Time Compute 的主要实现路径",
+            "publisher": "Baihai_IDP（中文编译，原作 Davis Treybig）/ SegmentFault 思否",
+            "source_type": "blog",
+            "url": "https://segmentfault.com/a/1190000047239107",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "推理（= inference）",
+        "pinyin": "tuīlǐ",
+        "status": "established",
+        "literal_back": "inference",
+        "notes": "The collision, documented. The very same Chinese word, in the very same documents, denotes the forward pass / serving. This attestation is included deliberately as evidence of the ambiguity, not as a translation of 'reasoning model'.",
+        "attestations": [
+          {
+            "quote_zh": "vLLM - 高性能推理引擎",
+            "quote_en": "vLLM — high-performance inference engine.",
+            "source_title": "OpenRLHF README_zh.md",
+            "publisher": "OpenRLHF",
+            "source_type": "github",
+            "url": "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+            "date": "2026"
+          },
+          {
+            "quote_zh": "我们集成了 vLLM 以实现极速并发推理。请使用 infer_backend: vllm 来获得 270% 的推理速度。",
+            "quote_en": "We integrated vLLM for extremely fast concurrent inference. Use infer_backend: vllm to get 270% inference speed.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2024-03"
+          },
+          {
+            "quote_zh": "如果模型有推理 / 非推理两个版本，请使用 _nothink 后缀来区分不同的模板。",
+            "quote_en": "If a model has reasoning / non-reasoning versions, use the _nothink suffix to distinguish the templates.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "思考模式",
+        "pinyin": "sīkǎo móshì",
+        "status": "common",
+        "literal_back": "thinking mode",
+        "notes": "Qwen's branding for the reasoning behaviour, and a genuinely useful escape from the 推理 ambiguity — 思考 unambiguously means deliberation. Increasingly common in Chinese product copy (思考模式/非思考模式, 深度思考).",
+        "attestations": [
+          {
+            "quote_zh": "在这种模式下，模型会逐步推理，经过深思熟虑后给出最终答案",
+            "quote_en": "In this mode the model reasons step by step and gives its final answer after careful deliberation.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          }
+        ]
+      },
+      {
+        "zh": "大型推理模型",
+        "pinyin": "dàxíng tuīlǐ móxíng",
+        "status": "common",
+        "literal_back": "large reasoning model",
+        "notes": "Renders LRM; used in translated surveys, often abbreviated back to LRMs in the Chinese text.",
+        "attestations": [
+          {
+            "quote_zh": "一种新趋势正在兴起：面向大推理模型（LRMs）的强化学习，其目标不仅是对齐行为，更是激励推理本身。",
+            "quote_en": "A new trend is emerging: reinforcement learning for large reasoning models (LRMs), whose goal is not merely to align behaviour but to incentivise reasoning itself.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "思考模式", "note": "avoids 推理模型 for the model-level branding" },
+      { "org": "OpenRLHF", "zh_used": "推理模型", "note": "Chinese README, alongside 推理引擎 for inference" }
+    ],
+    "usage_examples": [
+      { "zh": "推理模型在推理阶段会消耗多得多的 token —— 这句话里两个「推理」意思完全不同。", "en": "A reasoning model consumes far more tokens at inference time — the two instances of 推理 in this Chinese sentence mean entirely different things.", "source": "constructed" }
+    ],
+    "related": ["chain-of-thought", "test-time-compute", "rlvr", "grpo"],
+    "sources": [
+      "https://github.com/OpenRLHF/OpenRLHF/blob/main/README_zh.md",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+      "https://segmentfault.com/a/1190000047239107",
+      "https://qwenlm.github.io/zh/blog/qwen3/",
+      "https://cloud.tencent.com/developer/article/2637181"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "test-time-compute",
+    "en": "test-time compute",
+    "en_aliases": ["inference-time scaling", "test-time scaling"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["ambiguity", "recent", "scaling"],
+    "definition_en": "Spending more computation at answer time — longer chains of thought, sampling and voting, search over candidates — to improve quality, as an axis of scaling distinct from training compute.",
+    "definition_zh": "在回答阶段而不是训练阶段投入更多算力：让模型想得更久、采样更多候选再投票或搜索，以此换取更好的结果。它是与训练算力并列的另一条扩展轴。",
+    "preferred_zh": "测试时计算",
+    "translation_difficulty": "high",
+    "pitfalls": "Two problems compound. First, the 推理 collision again: the most natural Chinese phrasing for this concept is 推理时扩展 / 推理阶段扩展 (\"inference-time scaling\"), where 推理 means the serving phase — but the thing being scaled is 推理 in the other sense (deliberation). A Chinese sentence about this topic can contain 推理 twice with two different meanings and read perfectly naturally, which is exactly what makes it treacherous. Second, 测试时计算 is a literal calque of \"test-time\", and 测试 in Chinese reads as software testing or examination, not \"at test time\" in the ML train/test sense — Chinese readers outside ML find it opaque. Neither rendering is fully satisfactory; the field has not settled.",
+    "translations": [
+      {
+        "zh": "测试时计算",
+        "pinyin": "cèshì shí jìsuàn",
+        "status": "common",
+        "literal_back": "test-time computation",
+        "notes": "The most direct rendering, usually presented with the English in parentheses on first mention — a sign the Chinese alone is not yet self-sufficient.",
+        "attestations": [
+          {
+            "quote_zh": "这种技术通常被称为「测试时计算」（test-time compute），即在推理阶段进行深度推理。",
+            "quote_en": "This technique is usually called \"test-time compute\", i.e. performing deep reasoning during the inference phase.",
+            "source_title": "系统梳理 Test-Time Compute 的主要实现路径",
+            "publisher": "Baihai_IDP（中文编译，原作 Davis Treybig）/ SegmentFault 思否",
+            "source_type": "blog",
+            "url": "https://segmentfault.com/a/1190000047239107",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "Test-Time Compute",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Frequently kept in English, including in the titles of Chinese explainer articles, precisely because neither Chinese rendering is settled.",
+        "attestations": [
+          {
+            "quote_zh": "系统梳理 Test-Time Compute 的主要实现路径",
+            "quote_en": "A systematic survey of the main implementation paths for test-time compute.",
+            "source_title": "系统梳理 Test-Time Compute 的主要实现路径",
+            "publisher": "Baihai_IDP（中文编译）/ SegmentFault 思否",
+            "source_type": "blog",
+            "url": "https://segmentfault.com/a/1190000047239107",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "推理时扩展",
+        "pinyin": "tuīlǐ shí kuòzhǎn",
+        "status": "common",
+        "literal_back": "inference-time scaling",
+        "notes": "Renders 'inference-time scaling'. Reads more naturally than 测试时计算 to a Chinese engineer, but detonates the 推理 ambiguity. Variants: 推理阶段扩展, 推理时计算. No independently fetched verbatim attestation for this exact string; the adjacent phrasing 在推理阶段进行深度推理 is attested above and illustrates the same collision.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "与其继续堆预训练算力，不如把预算投到测试时计算上。", "en": "Rather than keep piling on pretraining compute, put the budget into test-time compute.", "source": "constructed" },
+      { "zh": "推理不再仅仅是模型推理问题，更演变为系统工程问题 —— 需要引入某种控制流或流程编排机制。", "en": "Reasoning is no longer merely a model-inference problem; it has become a systems-engineering problem requiring some form of control flow or orchestration.", "source": "https://segmentfault.com/a/1190000047239107" }
+    ],
+    "related": ["reasoning-model", "chain-of-thought", "compute"],
+    "sources": [
+      "https://segmentfault.com/a/1190000047239107"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "mixture-of-experts",
+    "en": "mixture of experts",
+    "en_aliases": [],
+    "abbr": "MoE",
+    "category": "training-methods",
+    "tags": ["settled", "loanword-heavy", "architecture"],
+    "definition_en": "An architecture in which a router activates only a few of many feed-forward \"expert\" sub-networks per token, so total parameters can be large while per-token compute stays small.",
+    "definition_zh": "模型里有很多个前馈「专家」子网络，路由器为每个 token 只激活其中少数几个，因此总参数量可以很大而单 token 计算量很小。DeepSeek、Qwen 的大模型普遍采用这种架构。",
+    "preferred_zh": "MoE（混合专家）",
+    "translation_difficulty": "low",
+    "pitfalls": "Chinese labs writing in Chinese overwhelmingly write MoE rather than 混合专家 — Qwen's own Chinese release blog says MoE 模型 throughout. 混合专家模型 is correct and understood, but is the gloss, not the working term. Note 总参数 / 激活参数 (total vs activated parameters) as the standard Chinese pair for describing MoE size.",
+    "translations": [
+      {
+        "zh": "MoE",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The working form, including in official Chinese-language releases by Chinese labs.",
+        "attestations": [
+          {
+            "quote_zh": "我们开源了两个 MoE 模型的权重：Qwen3-235B-A22B，一个拥有 2350 多亿总参数和 220 多亿激活参数的大模型",
+            "quote_en": "We open-sourced the weights of two MoE models: Qwen3-235B-A22B, a large model with over 235 billion total parameters and over 22 billion activated parameters.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "Qwen2.5-Max：探索大规模 MoE 模型的智能",
+            "quote_en": "Qwen2.5-Max: exploring the intelligence of large-scale MoE models.",
+            "source_title": "Qwen2.5-Max：探索大规模 MoE 模型的智能",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen2.5-max/",
+            "date": "2025-01"
+          }
+        ]
+      },
+      {
+        "zh": "混合专家模型",
+        "pinyin": "hùnhé zhuānjiā móxíng",
+        "status": "established",
+        "literal_back": "mixed-expert model",
+        "notes": "The standard Chinese gloss; used in framework docs and textbook writing. 混合专家 without 模型 is equally acceptable.",
+        "attestations": [
+          {
+            "quote_zh": "我们支持了微调最新的混合专家模型 Mixtral 8x7B。",
+            "quote_en": "We now support fine-tuning the latest mixture-of-experts model, Mixtral 8x7B.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2023-12"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "MoE", "note": "bare acronym in Chinese release blogs and titles" },
+      { "org": "LLaMA-Factory", "zh_used": "混合专家模型", "note": "Chinese changelog" }
+    ],
+    "usage_examples": [
+      { "zh": "这是个 MoE 模型，总参数 2350 亿，每个 token 只激活 220 亿。", "en": "This is an MoE model: 235B total parameters, only 22B activated per token.", "source": "constructed" }
+    ],
+    "related": ["pretraining", "open-weights"],
+    "sources": [
+      "https://qwenlm.github.io/zh/blog/qwen3/",
+      "https://qwenlm.github.io/zh/blog/qwen2.5-max/",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "context-window",
+    "en": "context window",
+    "en_aliases": ["context length"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled"],
+    "definition_en": "The maximum number of tokens a model can attend to in a single forward pass — prompt plus generated output. A hard architectural limit, distinct from how well the model actually uses that span.",
+    "definition_zh": "模型一次前向计算中能够处理的最大 token 数，包括输入提示和生成内容。这是架构层面的硬性上限，和模型能否真正用好这么长的上下文是两回事。",
+    "preferred_zh": "上下文窗口",
+    "translation_difficulty": "low",
+    "pitfalls": "Two renderings split by usage rather than meaning: 上下文窗口 for the concept/limit, 上下文长度 for the number you configure or extend (扩展上下文长度, 32K 上下文). Both are established; neither is wrong. Chinese product copy often shortens to bare 上下文 (支持 128K 上下文).",
+    "translations": [
+      {
+        "zh": "上下文窗口",
+        "pinyin": "shàngxiàwén chuāngkǒu",
+        "status": "established",
+        "literal_back": "context window",
+        "notes": "Standard for the concept. Used in explainer titles and product documentation.",
+        "attestations": [
+          {
+            "quote_zh": "该模型可以处理并记住最多 32,000 个标记（tokens）的输入。",
+            "quote_en": "The model can process and remember an input of at most 32,000 tokens.",
+            "source_title": "什么是大语言模型的上下文窗口",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2635092",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "上下文长度",
+        "pinyin": "shàngxiàwén chángdù",
+        "status": "established",
+        "literal_back": "context length",
+        "notes": "Preferred when the span is being measured or extended. 长上下文 = long context.",
+        "attestations": [
+          {
+            "quote_zh": "在最后阶段，我们使用高质量的长上下文数据将上下文长度扩展到 32K token",
+            "quote_en": "In the final stage we used high-quality long-context data to extend the context length to 32K tokens.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "我们支持了 RoPE 插值来扩展 LLaMA 模型的上下文长度。",
+            "quote_en": "We now support RoPE interpolation to extend the context length of LLaMA models.",
+            "source_title": "LLaMA-Factory README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md",
+            "date": "2023-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "上下文长度", "note": "Qwen3 Chinese release blog" }
+    ],
+    "usage_examples": [
+      { "zh": "上下文窗口是硬上限，但模型未必真的用得好这么长的上下文。", "en": "The context window is a hard ceiling, but the model may not actually use that much context well.", "source": "constructed" }
+    ],
+    "related": ["in-context-learning", "system-prompt"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2635092",
+      "https://qwenlm.github.io/zh/blog/qwen3/",
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "in-context-learning",
+    "en": "in-context learning",
+    "en_aliases": ["few-shot prompting"],
+    "abbr": "ICL",
+    "category": "training-methods",
+    "tags": ["settled"],
+    "definition_en": "A model's ability to pick up a task from examples placed in the prompt, without any weight update. The capability that made few-shot prompting work and that first marked LLMs as qualitatively different.",
+    "definition_zh": "模型仅凭提示中给出的少量示例就能学会一个任务，权重完全不更新。这是少样本提示之所以有效的原因，也是大模型区别于以往模型的标志性能力之一。",
+    "preferred_zh": "上下文学习",
+    "translation_difficulty": "low",
+    "pitfalls": "Mildly misleading on its own: 上下文学习 read literally suggests 'learning the context' rather than 'learning from what is in the context', and there is no 训练 in it at all despite 学习. Some Chinese writing adds 情境学习 or keeps ICL. The dominant form is nonetheless 上下文学习.",
+    "translations": [
+      {
+        "zh": "上下文学习",
+        "pinyin": "shàngxiàwén xuéxí",
+        "status": "established",
+        "literal_back": "context learning",
+        "notes": "Dominant. Used as a chapter/module title in the standard Chinese LLM textbook.",
+        "attestations": [
+          {
+            "quote_zh": "提示设计、上下文学习、思维链提示、检索增强生成",
+            "quote_en": "Prompt design, in-context learning, chain-of-thought prompting, retrieval-augmented generation.",
+            "source_title": "《大语言模型》课程资源 — 第七课 提示学习（对应本书第十章）",
+            "publisher": "中国人民大学 RUC AI Box（赵鑫等，高等教育出版社）",
+            "source_type": "github",
+            "url": "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+            "date": "2024"
+          }
+        ]
+      },
+      {
+        "zh": "ICL",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Used as a compact modifier in papers and practitioner writing (ICL 能力, ICL 示例), less pervasive than SFT/RLHF/MoE. No independently fetched verbatim attestation.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "中国人民大学 RUC AI Box", "zh_used": "上下文学习", "note": "《大语言模型》course module 7.2" }
+    ],
+    "usage_examples": [
+      { "zh": "不用微调，靠上下文学习给几个例子就能让模型照做。", "en": "Without fine-tuning, a few examples via in-context learning are enough to get the model to follow suit.", "source": "constructed" }
+    ],
+    "related": ["chain-of-thought", "context-window", "system-prompt"],
+    "sources": [
+      "https://github.com/LLMBook-zh/LLMBook-zh.github.io"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "post-training",
+    "en": "post-training",
+    "en_aliases": ["alignment training"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled", "core-pipeline"],
+    "definition_en": "Everything done to a base model after pretraining — SFT, reward modelling, RL, safety tuning — to make it usable and aligned. The umbrella term that replaced \"alignment\" as the pipeline stage name.",
+    "definition_zh": "预训练之后对基座模型做的全部工作：SFT、奖励建模、强化学习、安全微调等，目的是让模型可用且与人类偏好一致。它已经取代「对齐」成为这一阶段的标准称呼。",
+    "preferred_zh": "后训练",
+    "translation_difficulty": "low",
+    "pitfalls": "Settled. The seed hypothesis that 对齐训练 serves as a near-synonym is only partly right: Chinese sources treat 人类对齐 / 对齐 as the *goal* of post-training, and 后训练 as the *stage*. Chinese labs' own release blogs use 后训练 for the stage and 对齐 for what it achieves, in the same sentence — see the Qwen docs attestation. 微调 (fine-tuning) is narrower and should not be substituted.",
+    "translations": [
+      {
+        "zh": "后训练",
+        "pinyin": "hòu xùnliàn",
+        "status": "established",
+        "literal_back": "post-training",
+        "notes": "Universal in Chinese lab blogs, docs and technical media. 后训练增强技术 / 后训练策略 are common collocations.",
+        "attestations": [
+          {
+            "quote_zh": "使用超过 20 万亿 token 的预训练数据及精心设计的后训练方案进行训练",
+            "quote_en": "Trained using over 20 trillion tokens of pretraining data together with a carefully designed post-training scheme.",
+            "source_title": "Qwen2.5-Max：探索大规模 MoE 模型的智能",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen2.5-max/",
+            "date": "2025-01"
+          },
+          {
+            "quote_zh": "并在高质量语料上后训练以与人类偏好对齐",
+            "quote_en": "And post-trained on high-quality corpora to align with human preferences.",
+            "source_title": "核心概念 — Qwen 中文文档",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "github",
+            "url": "https://qwen.readthedocs.io/zh-cn/latest/getting_started/concepts.html",
+            "date": "2025"
+          },
+          {
+            "quote_zh": "在大语言模型（LLMs）时代，RL最初作为人类对齐的后训练策略而崭露头角。",
+            "quote_en": "In the era of large language models, RL first came to prominence as a post-training strategy for human alignment.",
+            "source_title": "大型推理模型的强化学习综述（1-4章）",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2637181",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "人类对齐",
+        "pinyin": "rénlèi duìqí",
+        "status": "common",
+        "literal_back": "human alignment",
+        "notes": "Names the goal rather than the stage. 《大语言模型》uses it as the title of the chapter covering RLHF. Not interchangeable with 后训练 when precision matters.",
+        "attestations": [
+          {
+            "quote_zh": "第五课 人类对齐（对应本书第八章）",
+            "quote_en": "Lecture 5: Human alignment (corresponding to Chapter 8 of this book).",
+            "source_title": "《大语言模型》课程资源",
+            "publisher": "中国人民大学 RUC AI Box（赵鑫等，高等教育出版社）",
+            "source_type": "github",
+            "url": "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+            "date": "2024"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "后训练", "note": "official Chinese blog and docs" },
+      { "org": "中国人民大学 RUC AI Box", "zh_used": "人类对齐", "note": "chapter title for the RLHF material" }
+    ],
+    "usage_examples": [
+      { "zh": "预训练决定上限，后训练决定体验。", "en": "Pretraining sets the ceiling; post-training determines the experience.", "source": "constructed" }
+    ],
+    "related": ["pretraining", "supervised-fine-tuning", "rlhf", "rlvr"],
+    "sources": [
+      "https://qwenlm.github.io/zh/blog/qwen2.5-max/",
+      "https://qwen.readthedocs.io/zh-cn/latest/getting_started/concepts.html",
+      "https://cloud.tencent.com/developer/article/2637181",
+      "https://github.com/LLMBook-zh/LLMBook-zh.github.io"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "synthetic-data",
+    "en": "synthetic data",
+    "en_aliases": ["model-generated data"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled"],
+    "definition_en": "Training data produced by a model or an algorithm rather than collected from the world. Now central to post-training, where most SFT and preference data is model-generated and filtered.",
+    "definition_zh": "由模型或算法生成、而非从真实世界采集的训练数据。如今在后训练中占据核心地位——大部分 SFT 数据和偏好数据都是模型生成再筛选出来的。",
+    "preferred_zh": "合成数据",
+    "translation_difficulty": "low",
+    "pitfalls": "Settled as a term. Worth noting the boundary with 蒸馏 is blurry in Chinese usage: generating SFT data from a stronger model is called both 合成数据 and 蒸馏 depending on whether the writer wants a neutral or an accusatory framing.",
+    "translations": [
+      {
+        "zh": "合成数据",
+        "pinyin": "héchéng shùjù",
+        "status": "established",
+        "literal_back": "synthesised data",
+        "notes": "Uncontested. Also used in the privacy/statistics sense predating LLMs.",
+        "attestations": [
+          {
+            "quote_zh": "合成数据，简单来说，就是通过算法和技术生成的数据，目的是模仿真实世界中的数据特征。",
+            "quote_en": "Synthetic data, put simply, is data generated by algorithms and techniques, with the aim of imitating the characteristics of real-world data.",
+            "source_title": "一文速览-合成数据在大模型训练和性能优化中的运用",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2486808",
+            "date": "2025-01"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "后训练阶段的数据基本都是合成数据，再靠规则和模型打分过滤。", "en": "The data in the post-training stage is basically all synthetic, then filtered by rules and model scoring.", "source": "constructed" }
+    ],
+    "related": ["distillation", "post-training", "data-contamination", "rlaif"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2486808"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "data-contamination",
+    "en": "data contamination",
+    "en_aliases": ["benchmark contamination", "test set leakage"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled", "evaluation-adjacent"],
+    "definition_en": "Benchmark items appearing in a model's training data, inflating measured performance. The main reason published benchmark scores overstate real capability.",
+    "definition_zh": "评测集里的题目出现在模型的训练数据中，导致评测分数虚高。这是公开榜单成绩往往高于真实能力的主要原因。",
+    "preferred_zh": "数据污染",
+    "translation_difficulty": "low",
+    "pitfalls": "数据污染 and 数据泄露 are used almost interchangeably in Chinese ML writing for this concept, but 数据泄露 also means a privacy/security data breach — the same collision English avoids by saying \"leakage\" vs \"breach\". Prefer 数据污染 when the sense is benchmark contamination; reserve 数据泄露 for the security sense, or say 基准泄漏 when you must use the leakage framing. Note the vivid native term 刷榜 (\"grinding the leaderboard\") for the behaviour contamination enables.",
+    "translations": [
+      {
+        "zh": "数据污染",
+        "pinyin": "shùjù wūrǎn",
+        "status": "established",
+        "literal_back": "data contamination",
+        "notes": "The standard term for the benchmark sense. Used by 机器之心 and downstream Chinese tech media.",
+        "attestations": [
+          {
+            "quote_zh": "当前火热的大模型领域让人们关心基准测试的排名，但其公平性和可靠性正在受到质疑。其中主要的问题就是数据污染和泄露。",
+            "quote_en": "The current hot field of large models has people caring about benchmark rankings, but their fairness and reliability are being questioned. The main problem is data contamination and leakage.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          },
+          {
+            "quote_zh": "训练语料库的详细组成（例如数据源）通常被视为现有大模型的核心「秘密」。这就更难去探究数据污染的问题了。",
+            "quote_en": "The detailed composition of the training corpus (e.g. data sources) is generally treated as a core \"secret\" of existing large models, which makes investigating data contamination even harder.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "基准泄漏",
+        "pinyin": "jīzhǔn xièlòu",
+        "status": "common",
+        "literal_back": "benchmark leakage",
+        "notes": "Used alongside 数据污染 in the same article; slightly narrower, naming the mechanism. 泄露/泄漏 are both written.",
+        "attestations": [
+          {
+            "quote_zh": "基准泄漏会导致大模型跑出夸张的成绩：例如1.3B的模型可以在某些任务上超越10倍体量的模型。",
+            "quote_en": "Benchmark leakage causes large models to post exaggerated scores: for example a 1.3B model can beat a model ten times its size on certain tasks.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "刷榜",
+        "pinyin": "shuā bǎng",
+        "status": "common",
+        "literal_back": "grinding the leaderboard",
+        "notes": "Native Chinese slang with no clean English equivalent — gaming a leaderboard, whether by contamination or by over-fitting to the benchmark. Vivid, informal, widely used in Chinese ML discourse and worth borrowing conceptually.",
+        "attestations": [
+          {
+            "quote_zh": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "quote_en": "Are large models taking shortcuts to \"grind the leaderboard\"? The data contamination problem deserves attention.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "机器之心", "zh_used": "数据污染", "note": "feature article on benchmark contamination" }
+    ],
+    "usage_examples": [
+      { "zh": "这个分数不能信，很可能有数据污染。", "en": "This score can't be trusted — there's very likely data contamination.", "source": "constructed" }
+    ],
+    "related": ["synthetic-data", "pretraining"],
+    "sources": [
+      "https://cloud.tencent.com/developer/article/2357653"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "model-spec",
+    "en": "Model Spec",
+    "en_aliases": ["model specification"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["openai", "governance-adjacent"],
+    "definition_en": "OpenAI's published document specifying how its models should behave — objectives, hard rules, and default behaviours — used as the reference for training and for adjudicating disputed model responses.",
+    "definition_zh": "OpenAI 公开发布的、规定其模型应当如何行为的文档，分为目标、规则和默认行为三层，既作为训练（尤其是 RLHF 标注）的依据，也作为判定模型回复是否恰当的参照。",
+    "preferred_zh": "模型规范",
+    "translation_difficulty": "medium",
+    "pitfalls": "模型规范 is the settled rendering but is weaker than the English: 规范 in Chinese engineering usage means a technical specification or norm (like a coding 规范), which undersells that the document is a normative statement of intended values and behaviour, closer to a code of conduct. 行为规范 (code of conduct) is more accurate to the content and does appear in Chinese coverage. Also note the collision risk with 模型备案/技术规范 in PRC regulatory vocabulary, where 规范 means a formal standards document with legal weight — a Chinese policy reader may over-read the term's authority. No Chinese lab has published a direct equivalent document under this name at the time of research; Chinese labs express intended behaviour through 模型卡, 安全策略 and 使用规范 instead.",
+    "translations": [
+      {
+        "zh": "模型规范",
+        "pinyin": "móxíng guīfàn",
+        "status": "established",
+        "literal_back": "model specification/norm",
+        "notes": "The dominant rendering across Chinese tech media coverage of OpenAI's document.",
+        "attestations": [
+          {
+            "quote_zh": "OpenAI 最近发布了其模型规范，这是一份描述 GPT 模型行为规则和目标的文档。",
+            "quote_en": "OpenAI recently released its Model Spec, a document describing the behavioural rules and objectives of GPT models.",
+            "source_title": "OpenAI 发布 GPT 模型规范，可作为模型微调指南",
+            "publisher": "InfoQ 中文站",
+            "source_type": "media",
+            "url": "https://www.infoq.cn/article/lffslndj4iznwkvoowoj",
+            "date": "2024-06"
+          },
+          {
+            "quote_zh": "我们打算将模型规范作为研究人员和 AI 训练者进行人类反馈强化学习的指南。",
+            "quote_en": "We intend the Model Spec to serve as a guideline for researchers and AI trainers doing reinforcement learning from human feedback.",
+            "source_title": "OpenAI 发布 GPT 模型规范，可作为模型微调指南",
+            "publisher": "InfoQ 中文站",
+            "source_type": "media",
+            "url": "https://www.infoq.cn/article/lffslndj4iznwkvoowoj",
+            "date": "2024-06"
+          }
+        ]
+      },
+      {
+        "zh": "模型行为规范",
+        "pinyin": "móxíng xíngwéi guīfàn",
+        "status": "common",
+        "literal_back": "model behaviour norms",
+        "notes": "More explicit and closer to the document's actual content; used in Chinese security/policy media headlines. Recommended when the normative character matters more than matching OpenAI's product name.",
+        "attestations": []
+      },
+      {
+        "zh": "Model Spec",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Frequently retained in English as a proper-noun product name alongside the Chinese gloss, in the pattern 模型规范（Model Spec）.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "InfoQ 中文站", "zh_used": "模型规范", "note": "news coverage of the Model Spec release" }
+    ],
+    "usage_examples": [
+      { "zh": "标注员判断回复好坏时，依据的是模型规范里写明的默认行为。", "en": "When annotators judge whether a response is good, they go by the default behaviours written in the Model Spec.", "source": "constructed" }
+    ],
+    "related": ["constitutional-ai", "rlhf", "system-prompt", "post-training"],
+    "sources": [
+      "https://www.infoq.cn/article/lffslndj4iznwkvoowoj"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "system-prompt",
+    "en": "system prompt",
+    "en_aliases": ["system message"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["settled"],
+    "definition_en": "The developer-supplied instruction placed in the `system` role at the head of a conversation, setting persona, constraints and behaviour above user turns in the instruction hierarchy.",
+    "definition_zh": "由开发者提供、放在对话最前面 system 角色里的指令，用来设定模型的身份、边界和行为方式，在指令层级上高于用户输入。",
+    "preferred_zh": "系统提示词",
+    "translation_difficulty": "low",
+    "pitfalls": "系统提示词 and 系统提示 are both established and are used interchangeably even within a single document. 提示词 is the more colloquial/product-facing form (parallel to 提示词工程 for prompt engineering); 提示 alone is the more formal/academic form. The English word `system` is usually left untranslated when naming the API role.",
+    "translations": [
+      {
+        "zh": "系统提示词",
+        "pinyin": "xìtǒng tíshìcí",
+        "status": "established",
+        "literal_back": "system prompt-word",
+        "notes": "The more common form in developer-facing Chinese documentation and product copy.",
+        "attestations": [
+          {
+            "quote_zh": "如果指定，system 列对应的内容将被作为系统提示词。",
+            "quote_en": "If specified, the content of the `system` column will be used as the system prompt.",
+            "source_title": "LLaMA-Factory data/README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README_zh.md",
+            "date": "2025"
+          },
+          {
+            "quote_zh": "OpenAI 格式仅仅是 sharegpt 格式的一种特殊情况，其中第一条消息可能是系统提示词。",
+            "quote_en": "The OpenAI format is merely a special case of the sharegpt format, in which the first message may be a system prompt.",
+            "source_title": "LLaMA-Factory data/README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README_zh.md",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "系统提示",
+        "pinyin": "xìtǒng tíshì",
+        "status": "established",
+        "literal_back": "system prompt",
+        "notes": "The shorter form; used in the same document for the dataset field description. Slightly more formal register.",
+        "attestations": [
+          {
+            "quote_zh": "数据集代表系统提示的表头名称（默认：None）",
+            "quote_en": "The column name in the dataset that represents the system prompt (default: None).",
+            "source_title": "LLaMA-Factory data/README_zh.md",
+            "publisher": "hiyouga / LLaMA-Factory",
+            "source_type": "github",
+            "url": "https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README_zh.md",
+            "date": "2025"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "LLaMA-Factory", "zh_used": "系统提示词 / 系统提示", "note": "Chinese dataset format documentation, both forms in one file" }
+    ],
+    "usage_examples": [
+      { "zh": "把安全要求写进系统提示词，比写在用户消息里更难被绕过。", "en": "Putting safety requirements in the system prompt is harder to bypass than putting them in a user message.", "source": "constructed" }
+    ],
+    "related": ["model-spec", "context-window", "in-context-learning"],
+    "sources": [
+      "https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README_zh.md"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "open-weights",
+    "en": "open weights",
+    "en_aliases": ["open-weight model"],
+    "abbr": null,
+    "category": "training-methods",
+    "tags": ["governance-adjacent", "high-value", "contested"],
+    "definition_en": "Publishing a model's trained parameters for download, without necessarily publishing training data, training code, or granting an OSI-conformant licence. Distinct from open source, which requires the means to reproduce the artefact.",
+    "definition_zh": "把训练好的模型参数公开供下载，但不一定公开训练数据、训练代码，也不一定采用符合开源定义的许可证。与「开源」不同——开源要求提供足以复现该成果的全部要素。",
+    "preferred_zh": "开放权重",
+    "translation_difficulty": "high",
+    "pitfalls": "The most consequential terminology problem in this category. Chinese discourse — including the labs themselves — routinely says 开源 (open source) for what is actually a weights release. Qwen's own Chinese release blog writes 我们开源了两个 MoE 模型的权重 (\"we open-sourced the weights of two MoE models\"), collapsing the distinction in a single phrase; DeepSeek is universally described in Chinese as an 开源大模型. The consequence is that Chinese-language debate about \"开源模型\" and English-language debate about \"open-weight models\" are often not about the same object, and a Chinese reader may not register that training data and code were withheld. 开放权重 exists, is correct, and is gaining ground — largely imported through coverage of OpenAI's gpt-oss, which was explicitly marketed as open-weight rather than open-source — but it remains the minority form against the entrenched 开源. When precision matters, write 开放权重（open-weight）and explicitly contrast with 开源.",
+    "translations": [
+      {
+        "zh": "开放权重",
+        "pinyin": "kāifàng quánzhòng",
+        "status": "common",
+        "literal_back": "open weights",
+        "notes": "The precise term. Chinese commentators use it specifically when they want to deny that a release is fully open source. Recommended.",
+        "attestations": [
+          {
+            "quote_zh": "虽然开放权重并非严格意义上的开源，但它赋予了AI技术透明性",
+            "quote_en": "Although open weights is not open source in the strict sense, it grants AI technology transparency.",
+            "source_title": "大模型时代的开源：从开放代码到开放权重的演进",
+            "publisher": "Jimmy Song《智能体构建指南》",
+            "source_type": "blog",
+            "url": "https://jimmysong.io/zh/book/ai-handbook/llm/open-model/",
+            "date": "2025-11"
+          },
+          {
+            "quote_zh": "开放权重 ≠ 完全开源",
+            "quote_en": "Open weights ≠ fully open source.",
+            "source_title": "大模型时代的开源：从开放代码到开放权重的演进",
+            "publisher": "Jimmy Song《智能体构建指南》",
+            "source_type": "blog",
+            "url": "https://jimmysong.io/zh/book/ai-handbook/llm/open-model/",
+            "date": "2025-11"
+          }
+        ]
+      },
+      {
+        "zh": "开源（模型）",
+        "pinyin": "kāiyuán (móxíng)",
+        "status": "deprecated",
+        "literal_back": "open source (model)",
+        "notes": "By far the dominant Chinese usage, and the one to argue against. Chinese labs describe weight releases as 开源, which is what makes the pitfall load-bearing rather than pedantic. Recorded as deprecated for precision work, not because it is rare — it is the default.",
+        "attestations": [
+          {
+            "quote_zh": "我们开源了两个 MoE 模型的权重：Qwen3-235B-A22B，一个拥有 2350 多亿总参数和 220 多亿激活参数的大模型",
+            "quote_en": "We open-sourced the weights of two MoE models: Qwen3-235B-A22B, a large model with over 235 billion total parameters and over 22 billion activated parameters.",
+            "source_title": "Qwen3: 思深，行速",
+            "publisher": "阿里巴巴通义千问 (Qwen)",
+            "source_type": "blog",
+            "url": "https://qwenlm.github.io/zh/blog/qwen3/",
+            "date": "2025-04"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "开源……权重", "note": "conflates the two in its own Chinese release blog" }
+    ],
+    "usage_examples": [
+      { "zh": "严格来说它只是开放权重，训练数据和训练代码都没公开，不算完全开源。", "en": "Strictly speaking it is only open-weight: neither the training data nor the training code was released, so it isn't fully open source.", "source": "constructed" }
+    ],
+    "related": ["distillation", "mixture-of-experts", "pretraining"],
+    "sources": [
+      "https://jimmysong.io/zh/book/ai-handbook/llm/open-model/",
+      "https://qwenlm.github.io/zh/blog/qwen3/"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]

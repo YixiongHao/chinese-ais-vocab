@@ -1,0 +1,1688 @@
+[
+  {
+    "id": "scalable-oversight",
+    "en": "scalable oversight",
+    "en_aliases": ["scalable supervision"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["core", "superalignment"],
+    "definition_en": "Techniques that let humans reliably supervise and evaluate AI systems on tasks the humans themselves cannot competently judge, typically by recruiting AI assistance into the evaluation loop. The umbrella under which debate, recursive reward modeling and iterated amplification sit.",
+    "definition_zh": "当任务复杂到人类自己都难以判断对错时，仍然能给 AI 提供可靠监督信号的一类方法，通常做法是让 AI 来辅助人类做评估。辩论、递归奖励建模、迭代放大都属于这一范畴。",
+    "preferred_zh": "可扩展监督",
+    "translation_difficulty": "low",
+    "pitfalls": "监督 vs 监管: 监督 (oversight/supervision) is the standard ML-register choice and matches the English; 监管 (regulation) appears in a few early translations (e.g. 「可扩展的监管」) and wrongly imports a governmental-regulatory flavour. Also note the 扩展/拓展 orthographic split — 安远AI writes 可拓展监督, most others 可扩展监督; they are the same word, not a conceptual distinction.",
+    "translations": [
+      {
+        "zh": "可扩展监督",
+        "pinyin": "kě kuòzhǎn jiāndū",
+        "status": "established",
+        "literal_back": "expandable oversight",
+        "notes": "Dominant rendering across ML-research, think-tank and media registers. Often written with the English in parentheses on first use.",
+        "attestations": [
+          {
+            "quote_zh": "其中一个重要手段就是可扩展监督（Scalable Oversight），即在确保模型能力超过人类水平后，仍旧能够与人类期望保持一致",
+            "quote_en": "One important means is scalable oversight, i.e. ensuring that after model capability exceeds the human level it can still stay consistent with human expectations.",
+            "source_title": "独家｜OpenAI超级对齐负责人Jan Leike：如何破解对齐难题？用可扩展监督",
+            "publisher": "腾讯新闻",
+            "source_type": "media",
+            "url": "https://news.qq.com/rain/a/20231016A03U5Y00",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "第二类解决思路为可扩展监督（scalable oversight），即如何监督一个在特定领域表现超出人类的系统。",
+            "quote_en": "The second class of approach is scalable oversight, i.e. how to supervise a system that outperforms humans in a given domain.",
+            "source_title": "万字长文详解：大模型时代AI价值对齐的问题、对策和展望",
+            "publisher": "腾讯研究院（集智俱乐部转载）；作者 曹建峰、陈欣、要苏慧",
+            "source_type": "report",
+            "url": "https://swarma.org/?p=46724",
+            "date": "2023-11"
+          },
+          {
+            "quote_zh": "可扩展监督旨在确保人工智能系统即使在超越了人类的专业知识的情况下，仍然与人类的意图保持一致。",
+            "quote_en": "Scalable oversight aims to ensure AI systems remain consistent with human intent even when they surpass human expertise.",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / 第二十三届中国计算语言学大会 (CCL 2024)",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          }
+        ]
+      },
+      {
+        "zh": "可拓展监督",
+        "pinyin": "kě tuòzhǎn jiāndū",
+        "status": "common",
+        "literal_back": "expandable oversight (variant character)",
+        "notes": "Orthographic variant using 拓展 rather than 扩展. Used consistently by 安远AI (Concordia AI). Same meaning; not a separate concept.",
+        "attestations": [
+          {
+            "quote_zh": "可拓展监督问的问题是：「如何保证人类在极其困难以至于难以评估的任务上还能对系统提供可靠的监督信号？」",
+            "quote_en": "Scalable oversight asks: how do we guarantee that humans can still supply a reliable supervision signal on tasks so difficult they are hard to evaluate?",
+            "source_title": "Anthropic团队可拓展监督前沿",
+            "publisher": "安远AI（安全内参转载）",
+            "source_type": "report",
+            "url": "https://www.secrss.com/articles/63415",
+            "date": "2024-02"
+          }
+        ]
+      },
+      {
+        "zh": "可扩展的监管",
+        "pinyin": "kě kuòzhǎn de jiānguǎn",
+        "status": "deprecated",
+        "literal_back": "expandable regulation",
+        "notes": "Appears in some 2023-era 知乎 explainers. Recommend against: 监管 means regulatory supervision by an authority, which imports a governance connotation the English technical term does not carry. No attestation fetched verbatim; recorded here as a variant to avoid, not as a recommendation.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "可拓展监督", "note": "in their coverage of Sam Bowman / NYU alignment work" },
+      { "org": "腾讯研究院", "zh_used": "可扩展监督", "note": "in their AI value-alignment long read" },
+      { "org": "北京大学 人工智能安全与治理中心", "zh_used": "可扩展监督", "note": "CCL 2024 alignment survey" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "当任务难度超过标注员的判断力时，就必须依靠可扩展监督来维持训练信号的质量。",
+        "en": "Once task difficulty exceeds annotators' judgement, you have to rely on scalable oversight to keep the training signal meaningful.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["ai-debate", "recursive-reward-modeling", "iterated-amplification", "weak-to-strong-generalization", "human-oversight"],
+    "sources": [
+      "https://news.qq.com/rain/a/20231016A03U5Y00",
+      "https://swarma.org/?p=46724",
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://www.secrss.com/articles/63415"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "ai-debate",
+    "en": "debate",
+    "en_aliases": ["AI safety via debate"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["scalable-oversight"],
+    "definition_en": "A scalable-oversight proposal (Irving et al. 2018) in which two AI agents argue opposing sides of a question and a weaker human judge decides the winner, on the assumption that defending a true position is easier than defending a false one.",
+    "definition_zh": "让两个模型就同一问题各执一方轮流陈述，由能力较弱的人类裁判判定胜负的一种可扩展监督方案，其前提假设是「为真理辩护比为谎言辩护更容易」。",
+    "preferred_zh": "辩论",
+    "translation_difficulty": "medium",
+    "pitfalls": "Bare 辩论 is the correct and universally used word, but it is a completely ordinary Chinese noun — in isolation a reader cannot tell that an alignment technique is meant. Chinese authors therefore almost always write 辩论（Debate） with the English in parentheses on first use, or qualify it as 模型辩论 / AI-AI 辩论. Compounding the ambiguity, 智源 runs a Chinese LLM benchmark literally called FlagEval Debate（大模型辩论平台）which is an evaluation leaderboard, not the alignment technique.",
+    "translations": [
+      {
+        "zh": "辩论",
+        "pinyin": "biànlùn",
+        "status": "established",
+        "literal_back": "debate",
+        "notes": "The standard term, always glossed with the English on first use in technical writing.",
+        "attestations": [
+          {
+            "quote_zh": "辩论的基本过程是两个智能体轮流提供答案和陈述，而人类裁判根据辩论过程进行最终结果的评判(Irving et al., 2018)。",
+            "quote_en": "The basic process of debate is that two agents take turns giving answers and statements, and a human judge decides the final outcome based on the debate.",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / CCL 2024",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          },
+          {
+            "quote_zh": "关于可扩展监督比较典型的例子包括辩论（debate）、递归奖励建模（recursive reward modeling）、迭代放大（iterated amplification）等。",
+            "quote_en": "Typical examples of scalable oversight include debate, recursive reward modeling, and iterated amplification.",
+            "source_title": "万字长文详解：大模型时代AI价值对齐的问题、对策和展望",
+            "publisher": "腾讯研究院（集智俱乐部转载）",
+            "source_type": "report",
+            "url": "https://swarma.org/?p=46724",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "人类主持的 AI-AI 辩论",
+        "pinyin": "rénlèi zhǔchí de AI-AI biànlùn",
+        "status": "descriptive",
+        "literal_back": "human-moderated AI-AI debate",
+        "notes": "Descriptive expansion used when the bare 辩论 would be ambiguous. Calque of Sam Bowman's 'Human-Moderated AI-AI Debate'.",
+        "attestations": [
+          {
+            "quote_zh": "Bowman的讲座主要介绍了他在可拓展监督上的研究方向：人类主持的AI-AI辩论（Human-Moderated AI-AI Debate）",
+            "quote_en": "Bowman's talk mainly introduced his research direction in scalable oversight: human-moderated AI-AI debate.",
+            "source_title": "Anthropic团队可拓展监督前沿",
+            "publisher": "安远AI（安全内参转载）",
+            "source_type": "report",
+            "url": "https://www.secrss.com/articles/63415",
+            "date": "2024-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "北京大学 人工智能安全与治理中心", "zh_used": "辩论（Debate）", "note": "CCL 2024 alignment survey, scalable-oversight section" },
+      { "org": "安远 AI (Concordia AI)", "zh_used": "人类主持的 AI-AI 辩论", "note": "Bowman lecture writeup" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "辩论的前提假设依赖于一个关键的假设：为真理辩护通常比为虚假辩护更容易。",
+        "en": "Debate rests on a key assumption: defending the truth is usually easier than defending a falsehood.",
+        "source": "https://aclanthology.org/2024.ccl-2.7.pdf"
+      }
+    ],
+    "related": ["scalable-oversight", "recursive-reward-modeling", "iterated-amplification"],
+    "sources": [
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://swarma.org/?p=46724",
+      "https://www.secrss.com/articles/63415"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "iterated-amplification",
+    "en": "iterated distillation and amplification",
+    "en_aliases": ["iterated amplification", "IDA"],
+    "abbr": "IDA",
+    "category": "alignment-techniques",
+    "tags": ["scalable-oversight", "thinly-attested"],
+    "definition_en": "Paul Christiano's scalable-oversight scheme: decompose a hard task into easier subtasks that a human plus copies of a weaker model can handle (amplification), then distil the amplified overseer back into a single model, and iterate.",
+    "definition_zh": "Christiano 提出的可扩展监督方案：把难任务分解成人类和若干弱模型副本能处理的子任务（放大），再把放大后的监督者蒸馏回单个模型，如此反复迭代。",
+    "preferred_zh": "迭代放大",
+    "translation_difficulty": "medium",
+    "pitfalls": "Two problems. (1) The abbreviation IDA is unusable in Chinese search space: 「IDA」 overwhelmingly returns IDA* (迭代加深A*搜索), a classical search algorithm, and IDA Pro the disassembler. (2) Chinese sources overwhelmingly render only the short form 迭代放大; the full 迭代蒸馏与放大 is essentially unattested, and 蒸馏 in Chinese ML now strongly means knowledge distillation between models (and, since 2025, model-theft policy discourse), so restoring it would mislead more than help.",
+    "translations": [
+      {
+        "zh": "迭代放大",
+        "pinyin": "diédài fàngdà",
+        "status": "common",
+        "literal_back": "iterated amplification",
+        "notes": "The only form with attested use. Appears as a listed member of the scalable-oversight family rather than as a topic in its own right — Chinese-language treatment of IDA is thin.",
+        "attestations": [
+          {
+            "quote_zh": "关于可扩展监督比较典型的例子包括辩论（debate）、递归奖励建模（recursive reward modeling）、迭代放大（iterated amplification）等。",
+            "quote_en": "Typical examples of scalable oversight include debate, recursive reward modeling, and iterated amplification.",
+            "source_title": "万字长文详解：大模型时代AI价值对齐的问题、对策和展望",
+            "publisher": "腾讯研究院（集智俱乐部转载）",
+            "source_type": "report",
+            "url": "https://swarma.org/?p=46724",
+            "date": "2023-11"
+          },
+          {
+            "quote_zh": "Paul Christiano等人提出「迭代放大」的对齐方案，即通过将任务分解为更简单的子任务的方式。",
+            "quote_en": "Paul Christiano and colleagues proposed the 'iterated amplification' alignment scheme, decomposing a task into simpler subtasks.",
+            "source_title": "万字长文详解：大模型时代AI价值对齐的问题、对策和展望",
+            "publisher": "腾讯研究院（集智俱乐部转载）",
+            "source_type": "report",
+            "url": "https://swarma.org/?p=46724",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "迭代蒸馏与放大",
+        "pinyin": "diédài zhēngliú yǔ fàngdà",
+        "status": "proposed",
+        "literal_back": "iterated distillation and amplification",
+        "notes": "Faithful calque of the full English name. We record it as proposed, not attested: no Chinese source we fetched uses it. Use only when the distillation half of the loop is actually the point; otherwise 迭代放大 is what a Chinese reader will recognise.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "腾讯研究院", "zh_used": "迭代放大", "note": "listed among scalable-oversight techniques" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "迭代放大的思路是把一个人类无法直接评估的任务，拆成一串人类能评估的子任务。",
+        "en": "The idea of iterated amplification is to break a task humans cannot directly evaluate into a chain of subtasks they can.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["scalable-oversight", "recursive-reward-modeling", "ai-debate", "distillation"],
+    "sources": ["https://swarma.org/?p=46724", "https://aclanthology.org/2024.ccl-2.7.pdf"],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "recursive-reward-modeling",
+    "en": "recursive reward modeling",
+    "en_aliases": ["RRM"],
+    "abbr": "RRM",
+    "category": "alignment-techniques",
+    "tags": ["scalable-oversight"],
+    "definition_en": "Leike et al.'s scheme in which a reward model is trained with the help of AI assistants that were themselves trained by reward modelling, recursively bootstrapping supervision up to tasks humans cannot evaluate unaided.",
+    "definition_zh": "Leike 等人提出的方案：用已经训练好的 AI 助手来帮助人类训练下一级奖励模型，如此递归地把监督能力自举到人类无法独立评估的任务上。",
+    "preferred_zh": "递归奖励建模",
+    "translation_difficulty": "low",
+    "pitfalls": "None significant. Note 建模 (modelling, the activity) vs 模型 (model, the object): the technique is 递归奖励建模, while the artefact it produces is an 奖励模型. Chinese writers keep these apart correctly.",
+    "translations": [
+      {
+        "zh": "递归奖励建模",
+        "pinyin": "dìguī jiǎnglì jiànmó",
+        "status": "established",
+        "literal_back": "recursive reward modelling",
+        "notes": "Stable across academic and think-tank sources; the English abbreviation RRM is usually given alongside.",
+        "attestations": [
+          {
+            "quote_zh": "递归奖励建模(Recursive Reward Modleing, RRM)(Leike et al., 2018; Hubinger, 2020)旨在将奖励建模的应用扩展到更复杂的任务。",
+            "quote_en": "Recursive reward modeling aims to extend the application of reward modeling to more complex tasks. [The English spelling 'Modleing' is a typo in the original.]",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / CCL 2024",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          },
+          {
+            "quote_zh": "关于可扩展监督比较典型的例子包括辩论（debate）、递归奖励建模（recursive reward modeling）、迭代放大（iterated amplification）等。",
+            "quote_en": "Typical examples of scalable oversight include debate, recursive reward modeling, and iterated amplification.",
+            "source_title": "万字长文详解：大模型时代AI价值对齐的问题、对策和展望",
+            "publisher": "腾讯研究院（集智俱乐部转载）",
+            "source_type": "report",
+            "url": "https://swarma.org/?p=46724",
+            "date": "2023-11"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "北京大学 人工智能安全与治理中心", "zh_used": "递归奖励建模", "note": "CCL 2024 alignment survey" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "RRM的核心思想是递归使用训练得到的智能体，来为训练更复杂任务的智能体提供反馈。",
+        "en": "The core idea of RRM is to recursively use trained agents to provide feedback for training agents on more complex tasks.",
+        "source": "https://aclanthology.org/2024.ccl-2.7.pdf"
+      }
+    ],
+    "related": ["scalable-oversight", "reward-model", "iterated-amplification", "ai-debate"],
+    "sources": ["https://aclanthology.org/2024.ccl-2.7.pdf", "https://swarma.org/?p=46724"],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "weak-to-strong-generalization",
+    "en": "weak-to-strong generalization",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["superalignment", "openai"],
+    "definition_en": "OpenAI's 2023 empirical analogy for superalignment: fine-tune a strong pretrained model on labels from a much weaker supervisor and measure how far the strong model's performance exceeds its supervisor's, as a proxy for humans supervising superhuman AI.",
+    "definition_zh": "OpenAI 2023 年提出的超级对齐类比实验：用能力弱得多的模型产生的标签去微调强模型，看强模型能在多大程度上超过它的弱监督者，以此模拟人类监督超人类 AI 的情形。",
+    "preferred_zh": "弱到强泛化",
+    "translation_difficulty": "low",
+    "pitfalls": "Minor: both 弱到强泛化 and 弱到强的泛化 circulate (the 的 is optional), and a few sources write 弱至强. All are the same term. Do not confuse with the derived Chinese-coined phrase 弱至强欺骗 (weak-to-strong deception), which is a separate 2024 finding.",
+    "translations": [
+      {
+        "zh": "弱到强泛化",
+        "pinyin": "ruò dào qiáng fànhuà",
+        "status": "established",
+        "literal_back": "weak-to-strong generalisation",
+        "notes": "Fixed by the wave of Chinese coverage of the OpenAI superalignment paper in Dec 2023 – Jan 2024. 泛化 for 'generalization' is textbook-stable in Chinese ML.",
+        "attestations": [
+          {
+            "quote_zh": "一言以蔽之，当在弱模型生成的标签上对强预训练模型进行简单微调时，它们的性能始终优于它们的弱监督者，这一现象被OpenAI定义为「弱到强的泛化」。",
+            "quote_en": "In a word: when a strong pretrained model is simply fine-tuned on labels generated by a weak model, its performance consistently exceeds that of its weak supervisor — a phenomenon OpenAI defines as 'weak-to-strong generalization'.",
+            "source_title": "「超级对齐」能让人类管住AI吗？OpenAI最新论文，弱模型监督强模型是突破口？",
+            "publisher": "腾讯新闻 / 清华大学人工智能国际治理研究院",
+            "source_type": "media",
+            "url": "https://news.qq.com/rain/a/20240110A0907B00",
+            "date": "2024-01"
+          }
+        ]
+      },
+      {
+        "zh": "弱到强的泛化",
+        "pinyin": "ruò dào qiáng de fànhuà",
+        "status": "common",
+        "literal_back": "the generalisation from weak to strong",
+        "notes": "Variant with the possessive 的; used in the Chinese rendering of the paper title 《弱到强的泛化：通过弱监督引出强性能》.",
+        "attestations": [
+          {
+            "quote_zh": "《弱到强的泛化：通过弱监督引出强性能》（Weak-to-Strong Generalization）",
+            "quote_en": "'Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision'",
+            "source_title": "「超级对齐」能让人类管住AI吗？OpenAI最新论文，弱模型监督强模型是突破口？",
+            "publisher": "腾讯新闻 / 清华大学人工智能国际治理研究院",
+            "source_type": "media",
+            "url": "https://news.qq.com/rain/a/20240110A0907B00",
+            "date": "2024-01"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "清华大学人工智能国际治理研究院 (I-AIIG)", "zh_used": "弱到强的泛化", "note": "paper commentary" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "该论文试图证明：通过弱模型监管强模型，或会是一条行之有效的路径。",
+        "en": "The paper tries to show that supervising a strong model with a weak one may be a viable path.",
+        "source": "https://news.qq.com/rain/a/20240110A0907B00"
+      }
+    ],
+    "related": ["scalable-oversight", "superalignment", "human-oversight"],
+    "sources": [
+      "https://news.qq.com/rain/a/20240110A0907B00",
+      "https://zhuanlan.zhihu.com/p/672365780",
+      "https://openai.com/index/weak-to-strong-generalization/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "process-supervision",
+    "en": "process supervision",
+    "en_aliases": ["process reward model", "PRM"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["reward-modelling", "reasoning"],
+    "definition_en": "Rewarding each step of a model's reasoning chain rather than only the final answer. Contrasted with outcome supervision; produces process reward models (PRMs) and is argued to be more alignment-friendly because it rewards a human-endorsed chain of reasoning, not just a correct output.",
+    "definition_zh": "对模型推理链条的每一步分别给予奖励，而不是只看最终答案对不对。与结果监督相对，训练出的是过程奖励模型（PRM）；由于它奖励的是人类认可的推理过程本身，通常被认为对对齐更友好。",
+    "preferred_zh": "过程监督",
+    "translation_difficulty": "low",
+    "pitfalls": "The 过程监督 / 结果监督 pair is clean and stable; the main risk is the adjacent abbreviations PRM / ORM, which Chinese writers almost always leave in Latin letters (过程奖励模型（PRM）). Note also that 监督 here means supervision in the ML sense (as in 监督学习), not oversight in the governance sense — the same character string that renders 'oversight' in scalable-oversight.",
+    "translations": [
+      {
+        "zh": "过程监督",
+        "pinyin": "guòchéng jiāndū",
+        "status": "established",
+        "literal_back": "process supervision",
+        "notes": "Fixed by Chinese coverage of OpenAI's 'Let's Verify Step by Step' (2023) and reinforced by the o1/R1-era reasoning-model literature.",
+        "attestations": [
+          {
+            "quote_zh": "过程监督相比结果监督有一个明显的优势，那就是它提供了比结果监督更精确的反馈",
+            "quote_en": "Process supervision has one obvious advantage over outcome supervision: it provides more precise feedback.",
+            "source_title": "OpenAI最新研究Let's verify step-by-step，过程胜于结果！",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2315340",
+            "date": "2023-08"
+          },
+          {
+            "quote_zh": "过程监督不仅在性能上有所改进，还对于模型的对齐性有重要意义",
+            "quote_en": "Process supervision not only improves performance, it also matters for model alignment.",
+            "source_title": "OpenAI最新研究Let's verify step-by-step，过程胜于结果！",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2315340",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "结果监督",
+        "pinyin": "jiéguǒ jiāndū",
+        "status": "established",
+        "literal_back": "outcome supervision",
+        "notes": "The contrast term (outcome supervision). Always introduced as a pair with 过程监督.",
+        "attestations": [
+          {
+            "quote_zh": "与仅仅奖励最终正确结果的结果监督 (outcome supervision) 不同，他们通过在每个推理步骤上给予奖励",
+            "quote_en": "Unlike outcome supervision, which only rewards the final correct result, they give a reward at each reasoning step.",
+            "source_title": "OpenAI最新研究Let's verify step-by-step，过程胜于结果！",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com/developer/article/2315340",
+            "date": "2023-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "通过过程监督可以训练出比结果监督更可靠的奖励模型。",
+        "en": "Process supervision can train a more reliable reward model than outcome supervision.",
+        "source": "https://cloud.tencent.com/developer/article/2315340"
+      }
+    ],
+    "related": ["reward-model", "chain-of-thought", "cot-monitoring", "scalable-oversight"],
+    "sources": ["https://cloud.tencent.com/developer/article/2315340"],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "cot-monitoring",
+    "en": "chain-of-thought monitoring",
+    "en_aliases": ["CoT monitorability", "CoT monitoring"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["2025", "cross-lab-position-paper"],
+    "definition_en": "Reading a reasoning model's chain of thought at inference time to detect misbehaviour, misaligned intent, or awareness of being evaluated. The subject of a July 2025 cross-lab position paper arguing that CoT monitorability is a fragile and possibly temporary safety affordance.",
+    "definition_zh": "在推理阶段直接读模型的思维链，用来发现违规意图、失准苗头或模型察觉到自己正在被测试等信号。2025 年 7 月 OpenAI、DeepMind、Anthropic 等联合发表立场文件，认为这种「可监测性」脆弱且可能是暂时的。",
+    "preferred_zh": "思维链监控",
+    "translation_difficulty": "medium",
+    "pitfalls": "Heavy code-switching: Chinese coverage of the 2025 position paper frequently leaves 'CoT monitoring' in English inside otherwise-Chinese sentences, and where it does translate, it prefers 可监测性 (detectability/observability) over the more literal 可监控性 (monitorability). 监测 and 监控 are not identical: 监控 carries surveillance/CCTV overtones, 监测 reads as instrumented measurement. English 'monitorability' is closer to 监控 in spirit (an overseer watching an agent), so the common Chinese choice quietly softens the term.",
+    "translations": [
+      {
+        "zh": "思维链监控",
+        "pinyin": "sīwéiliàn jiānkòng",
+        "status": "common",
+        "literal_back": "chain-of-thought monitoring",
+        "notes": "The most natural full Chinese rendering; competes with the code-switched 'CoT 监控'. 思维链 for chain-of-thought is itself fully established.",
+        "attestations": [
+          {
+            "quote_zh": "随着 AI agent 的普及和能力提升，CoT monitoring 可能成为控制其行为的核心方法",
+            "quote_en": "As AI agents proliferate and grow more capable, CoT monitoring may become a core method for controlling their behaviour.",
+            "source_title": "AI教父联名OpenAI、DeepMind、Anthropic：警惕CoT！",
+            "publisher": "智源社区 (BAAI hub)",
+            "source_type": "media",
+            "url": "https://hub.baai.ac.cn/view/47381",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "CoT 可监测性",
+        "pinyin": "CoT kě jiāncèxìng",
+        "status": "common",
+        "literal_back": "CoT detectability/observability",
+        "notes": "The rendering actually used for 'monitorability' in Chinese coverage of the cross-lab position paper. Note the loanword-plus-suffix construction: the English abbreviation is kept and only the suffix is Chinese.",
+        "attestations": [
+          {
+            "quote_zh": "目前这种可见性程度能否持续尚无保证。我们鼓励研究界和前沿 AI 开发者充分利用 CoT 可监测性",
+            "quote_en": "There is no guarantee the current degree of visibility will persist. We encourage the research community and frontier AI developers to make full use of CoT monitorability.",
+            "source_title": "AI教父联名OpenAI、DeepMind、Anthropic：警惕CoT！",
+            "publisher": "智源社区 (BAAI hub)",
+            "source_type": "media",
+            "url": "https://hub.baai.ac.cn/view/47381",
+            "date": "2025-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "智源社区 (BAAI)", "zh_used": "CoT 可监测性 / CoT monitoring", "note": "coverage of the July 2025 cross-lab position paper" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "连续潜在空间中推理的模型自然限制了其思维过程的可见性。",
+        "en": "Models that reason in a continuous latent space inherently limit the visibility of their thinking process.",
+        "source": "https://hub.baai.ac.cn/view/47381"
+      }
+    ],
+    "related": ["cot-faithfulness", "chain-of-thought", "ai-control", "scalable-oversight", "steganography"],
+    "sources": ["https://hub.baai.ac.cn/view/47381", "https://blog.csdn.net/QbitAI/article/details/149411538"],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "cot-faithfulness",
+    "en": "chain-of-thought faithfulness",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["2025", "anthropic"],
+    "definition_en": "The degree to which a model's written chain of thought actually reflects the computation that produced its answer. Anthropic's 2025 results found reasoning models frequently use hints without mentioning them, undercutting CoT monitoring.",
+    "definition_zh": "模型写出来的思维链在多大程度上真实反映了它得出答案的实际过程。Anthropic 2025 年的实验发现，推理模型常常用了提示却在思维链里只字不提，这直接动摇了思维链监控的可行性。",
+    "preferred_zh": "思维链忠实性",
+    "translation_difficulty": "medium",
+    "pitfalls": "忠实性 and 忠实度 both circulate and mean the same thing (-ness vs -degree); 忠实度 is slightly more common when a measured number is meant. The bigger trap is 保真度, the established Chinese rendering of 'fidelity' in signal processing and image compression — it is a false friend here and does not carry the 'says what it actually did' sense. Also beware 忠诚 (loyalty), which some casual writing reaches for and which anthropomorphises in the wrong direction.",
+    "translations": [
+      {
+        "zh": "思维链忠实性",
+        "pinyin": "sīwéiliàn zhōngshíxìng",
+        "status": "common",
+        "literal_back": "chain-of-thought faithfulness",
+        "notes": "Used in Chinese technical write-ups of the Anthropic 2025 CoT faithfulness paper, normally with the English 'faithfulness' in parentheses. Attestation below is the article's own headline, verbatim; the precise publication date was not independently confirmed, so confidence is held at medium.",
+        "attestations": [
+          {
+            "quote_zh": "Anthropic的论文探讨推理模型的CoT忠实性（faithfulness）：它们并不总是「说真话」",
+            "quote_en": "Anthropic's paper examines the CoT faithfulness of reasoning models: they do not always 'tell the truth'.",
+            "source_title": "Anthropic的论文探讨推理模型的CoT忠实性（faithfulness）：它们并不总是「说真话」",
+            "publisher": "CSDN 博客",
+            "source_type": "blog",
+            "url": "https://blog.csdn.net/shizheng_Li/article/details/146998928",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "思维链忠实度",
+        "pinyin": "sīwéiliàn zhōngshídù",
+        "status": "common",
+        "literal_back": "chain-of-thought degree-of-faithfulness",
+        "notes": "Preferred when a measured quantity is intended (e.g. a revelation rate). No verbatim attestation fetched; recorded as an observed variant.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "如果思维链忠实性很低，那么依赖思维链监控来发现欺骗行为就靠不住。",
+        "en": "If chain-of-thought faithfulness is low, relying on CoT monitoring to catch deception is unreliable.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["cot-monitoring", "chain-of-thought", "deceptive-alignment", "reward-hacking"],
+    "sources": [
+      "https://blog.csdn.net/shizheng_Li/article/details/146998928",
+      "https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "ai-control",
+    "en": "AI control",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["redwood-research", "high-value", "term-of-art"],
+    "definition_en": "The Redwood Research agenda: designing deployment protocols (trusted monitoring, untrusted monitoring, resampling, auditing) that keep you safe even if the model is actively misaligned and deliberately trying to subvert your safeguards. Control is explicitly the complement of alignment — it assumes the model may already want to defect and asks whether it can succeed.",
+    "definition_zh": "Redwood Research 提出的研究议程：设计一套部署协议（可信监控、不可信监控、重采样、审计等），使得即便模型已经失准、并且在有意规避安全措施，你依然是安全的。控制与对齐互补——对齐问「模型想不想搞破坏」，控制问「就算它想，能不能得逞」。",
+    "preferred_zh": "人工智能控制",
+    "translation_difficulty": "high",
+    "pitfalls": "THIS IS THE HEADLINE PROBLEM IN THIS CATEGORY. Bare 控制 and 管控 in Chinese AI discourse mean administrative or regulatory control of AI by the state or by developers — the register of 「确保人工智能始终处于人类控制之下」 (Global AI Governance Initiative) and 「安全、可信、可控」 (TC260). Redwood's 'control' means something almost orthogonal: a technical, adversarial, deployment-time discipline that explicitly grants the premise that the model is misaligned. A Chinese reader meeting 人工智能控制 with no gloss will read policy-controllability (可控性), i.e. the very thing the control agenda assumes you have already lost. The distinction that must be preserved is the 'despite' — safety DESPITE misalignment, not safety BY achieving alignment. CSET's official Chinese translation solves this with an explicit contrast sentence rather than with a coined term, which is currently the best practice available: state the alignment/control contrast in full the first time. Do not use 管控 (which adds a supervisory-authority flavour) and do not use 可控性 (controllability, a property, not a research programme).",
+    "translations": [
+      {
+        "zh": "人工智能控制",
+        "pinyin": "réngōng zhìnéng kòngzhì",
+        "status": "common",
+        "literal_back": "artificial intelligence control",
+        "notes": "Used in CSET's own Chinese translation of its explainer, which is a genuine attested EN↔ZH pair (English original 'AI Control: How to Make Use of Misbehaving AI Agents'). The source itself flags the term as new: 「人工智能控制」是一个相对较新的术语. In running Chinese ML text the code-switched AI 控制 is at least as common.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能对齐旨在确保人工智能体从一开始就不会试图违规，而人工智能控制旨在确保即使人工智能体追求不当目标，也无法成功达成。",
+            "quote_en": "AI alignment aims to ensure AI agents never attempt to misbehave in the first place, whereas AI control aims to ensure that even if AI agents pursue improper goals, they cannot succeed.",
+            "source_title": "人工智能控制：如何利用违规人工智能体",
+            "publisher": "Center for Security and Emerging Technology (CSET), Georgetown University；作者 Kendrea Beers, Cody Rushing",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/ai-control-chinese/",
+            "date": "2025-11"
+          }
+        ]
+      },
+      {
+        "zh": "AI 控制",
+        "pinyin": "AI kòngzhì",
+        "status": "common",
+        "literal_back": "AI control",
+        "notes": "Code-switched form typical of Chinese ML writing. Same ambiguity problem as 人工智能控制 — needs a gloss on first use.",
+        "attestations": []
+      },
+      {
+        "zh": "失准前提下的安全保障",
+        "pinyin": "shīzhǔn qiántí xià de ānquán bǎozhàng",
+        "status": "proposed",
+        "literal_back": "safety assurance under the premise of misalignment",
+        "notes": "We propose this as an explanatory apposition, not a replacement headword: write 人工智能控制（失准前提下的安全保障）on first use. It is unattested — coined here — but it is the only formulation we found that carries the load-bearing 'despite' which every existing Chinese rendering drops. Do not use it as a bare term; a Chinese reader will not recognise it.",
+        "attestations": []
+      },
+      {
+        "zh": "可控性",
+        "pinyin": "kěkòngxìng",
+        "status": "deprecated",
+        "literal_back": "controllability",
+        "notes": "Widely used in PRC policy text (TC260 framework, RICE principles in the PKU alignment survey) but it names a desired PROPERTY of a system, not Redwood's research programme. Using it for 'AI control' collapses exactly the distinction the term exists to make. Attested in that other sense: the PKU CCL 2024 survey lists 可控性(Controllability) as one of the four RICE goals.",
+        "attestations": [
+          {
+            "quote_zh": "可控性是一种必要的属性，它确保系统的行动和决策过程始终受到人类监督和约束。",
+            "quote_en": "Controllability is a necessary property ensuring that a system's actions and decision processes remain under human oversight and constraint.",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / CCL 2024",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "CSET (Georgetown)", "zh_used": "人工智能控制", "note": "in the Chinese edition of their AI control explainer; also coins 可信模型 / 不可信模型 / 可信监控 / 不可信监控" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "「不可信模型」的定义为功能更强但可能具有蓄意破坏性的新型智能体。",
+        "en": "An 'untrusted model' is defined as a newer, more capable agent that may be deliberately subversive.",
+        "source": "https://cset.georgetown.edu/publication/ai-control-chinese/"
+      },
+      {
+        "zh": "控制类措施的出发点是：先假设模型已经失准，再问它能不能绕过我们的监控。",
+        "en": "Control measures start by assuming the model is already misaligned, then ask whether it can get around our monitoring.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["scalable-oversight", "cot-monitoring", "human-oversight", "loss-of-control", "deceptive-alignment", "guardrails"],
+    "sources": [
+      "https://cset.georgetown.edu/publication/ai-control-chinese/",
+      "https://cset.georgetown.edu/article/ai-control-how-to-make-use-of-misbehaving-ai-agents/",
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://arxiv.org/pdf/2312.06942",
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "deliberative-alignment",
+    "en": "deliberative alignment",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["openai", "reasoning"],
+    "definition_en": "OpenAI's o-series safety training method: teach the model the text of the safety specification directly, and train it to reason explicitly over that specification in its chain of thought before answering, rather than learning safe behaviour implicitly from human preference labels.",
+    "definition_zh": "OpenAI 在 o 系列模型上使用的安全训练方法：把安全规范原文直接教给模型，并训练它在回答前先在思维链里显式地对照这些规范做推理，而不是靠人类偏好标注隐式地学会「什么不能说」。",
+    "preferred_zh": "审慎对齐",
+    "translation_difficulty": "medium",
+    "pitfalls": "审慎 means prudent/circumspect, which captures 'deliberate' in the sense of careful but loses the sense of 'deliberating', i.e. explicitly reasoning something through — which is the actual mechanism (the model reasons over the spec in its CoT). 深思熟虑对齐 preserves the deliberation sense but is clumsy and much rarer. 审慎 is nonetheless what stuck, largely via CSDN/知乎 translations of the paper in the days after its Dec 2024 release.",
+    "translations": [
+      {
+        "zh": "审慎对齐",
+        "pinyin": "shěnshèn duìqí",
+        "status": "common",
+        "literal_back": "prudent alignment",
+        "notes": "The rendering that stuck in Chinese technical blogging within days of the December 2024 paper. Attestation is an article headline quoted verbatim; the exact publication date was not confirmed independently, hence medium confidence.",
+        "attestations": [
+          {
+            "quote_zh": "OpenAI o3：带 CoT 的审慎对齐（Deliberative Alignment）",
+            "quote_en": "OpenAI o3: deliberative alignment with CoT",
+            "source_title": "OpenAI o3：带 CoT 的审慎对齐（Deliberative Alignment）",
+            "publisher": "知乎专栏",
+            "source_type": "zhihu",
+            "url": "https://zhuanlan.zhihu.com/p/14861589916",
+            "date": "2024-12"
+          }
+        ]
+      },
+      {
+        "zh": "深思熟虑对齐",
+        "pinyin": "shēnsī-shúlǜ duìqí",
+        "status": "proposed",
+        "literal_back": "deep-thinking-and-careful-consideration alignment",
+        "notes": "More faithful to 'deliberation' as a process, but four-character idiom + 对齐 reads awkwardly and it has not been taken up. Recorded as an alternative we do not recommend over 审慎对齐.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "审慎对齐不再依赖人类反馈数据，而是让模型直接学习安全规范文本并在推理时逐条对照。",
+        "en": "Deliberative alignment no longer relies on human feedback data; the model learns the safety specification text directly and checks against it point by point while reasoning.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["chain-of-thought", "model-spec", "constitutional-ai", "refusal", "process-supervision"],
+    "sources": [
+      "https://zhuanlan.zhihu.com/p/14861589916",
+      "https://blog.csdn.net/guojiajiajiu/article/details/144806504",
+      "https://blog.csdn.net/qq_41185868/article/details/144731784"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "inoculation-prompting",
+    "en": "inoculation prompting",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["2025", "gap", "no-chinese-presence"],
+    "definition_en": "A 2025 training-time intervention: prepend a system prompt that explicitly instructs the model to exhibit the undesired behaviour (reward hacking, sycophancy, a narrow misaligned trait) during fine-tuning. Because the behaviour is already explained by the instruction, gradient pressure to internalise it drops, and the test-time model expresses it far less.",
+    "definition_zh": "2025 年提出的训练期干预手段：在微调数据的系统提示里明确要求模型表现出那个不想要的行为（比如奖励作弊、谄媚）。既然该行为已由指令解释，模型就不必把它内化成自身倾向，测试时反而表现得更少。",
+    "preferred_zh": "接种式提示",
+    "translation_difficulty": "high",
+    "pitfalls": "GENUINE GAP. Repeated Chinese-language searches (接种提示 / 免疫提示 / 疫苗提示 combined with 大模型, 对齐, 奖励黑客) returned no Chinese-language treatment of this technique at all — every result was the English arXiv/LessWrong/Anthropic material or an unrelated prompt-injection page. As of this research date the term appears to have no Chinese presence whatsoever. Beyond absence, the metaphor is the hard part: English 'inoculation' carries a vaccine frame (a controlled dose of the bad thing confers resistance). 免疫提示 names the effect (immunity) but not the mechanism; 接种式提示 names the mechanism (inoculating/vaccinating) and is the closer calque — 接种 is the standard Chinese verb for administering a vaccine, so the medical metaphor transfers cleanly. 疫苗提示 (vaccine prompt) is punchier but reads as marketing. Note also the potential collision with 提示注入 (prompt injection), which is superficially similar in shape (both insert an instruction) but adversarial rather than defensive.",
+    "translations": [
+      {
+        "zh": "接种式提示",
+        "pinyin": "jiēzhòngshì tíshì",
+        "status": "proposed",
+        "literal_back": "inoculation-style prompting",
+        "notes": "Coined here. 接种 is the standard Chinese verb for vaccination, so the English metaphor survives intact; the 式 marks it as a method rather than a kind of prompt content. Recommended over 免疫提示 because it names what you do, not what you hope results. Unattested — if a Chinese rendering later stabilises via 机器之心/量子位 coverage, defer to that.",
+        "attestations": []
+      },
+      {
+        "zh": "免疫提示",
+        "pinyin": "miǎnyì tíshì",
+        "status": "proposed",
+        "literal_back": "immunity prompting",
+        "notes": "The other obvious calque. Names the outcome (the model becomes immune) rather than the intervention. Also unattested. Listed so that a reader who encounters it recognises it as the same concept.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "接种式提示的反直觉之处在于：训练时明确要求模型作弊，反而让它在部署时更少作弊。",
+        "en": "The counterintuitive part of inoculation prompting is that explicitly asking the model to cheat during training makes it cheat less at deployment.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["reward-hacking", "emergent-misalignment", "sycophancy", "system-prompt"],
+    "sources": [
+      "https://arxiv.org/abs/2510.05024",
+      "https://arxiv.org/abs/2510.04340",
+      "https://alignment.anthropic.com/2025/inoculation-prompting/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "unlearning",
+    "en": "unlearning",
+    "en_aliases": ["machine unlearning", "LLM unlearning"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["privacy", "strong-chinese-literature"],
+    "definition_en": "Removing the influence of specific training data or specific knowledge from an already-trained model without full retraining. Originating in the privacy / right-to-be-forgotten literature, it was repurposed after 2024 as a safety technique for stripping dangerous capabilities (e.g. the WMDP benchmark).",
+    "definition_zh": "在不重新训练的前提下，把某些训练数据或某类知识对已训练模型的影响移除掉。这条线最早来自隐私与「被遗忘权」的合规需求，2024 年后被借用为安全手段，用来剥离危险能力（如 WMDP 基准所测的核生化与网络攻击知识）。",
+    "preferred_zh": "机器遗忘",
+    "translation_difficulty": "medium",
+    "pitfalls": "Two traps. (1) 遗忘 alone collides hard with 灾难性遗忘 (catastrophic forgetting) — an entirely different, unwanted phenomenon in continual learning. Chinese papers on unlearning routinely have to disambiguate; some distinguish 有害遗忘 vs 有益遗忘 for exactly this reason. Always write 机器遗忘 or 遗忘学习, never bare 遗忘. (2) The Chinese literature is dominated by the privacy/GDPR framing, so a Chinese reader will default to 'delete a user's data' rather than 'remove dangerous capability'. When the safety sense is meant, say so: 面向安全的机器遗忘 or 危险知识遗忘.",
+    "translations": [
+      {
+        "zh": "机器遗忘",
+        "pinyin": "jīqì yíwàng",
+        "status": "established",
+        "literal_back": "machine forgetting",
+        "notes": "Dominant rendering in the Chinese academic and survey literature, which is substantial and predates the AI-safety use.",
+        "attestations": [
+          {
+            "quote_zh": "机器遗忘指从已训练的机器学习模型中移除特定训练数据点的影响的过程。",
+            "quote_en": "Machine unlearning refers to the process of removing the influence of specific training data points from a trained machine learning model.",
+            "source_title": "【博士每天一篇文献-综述】Machine Unlearning Solutions and Challenges",
+            "publisher": "阿里云开发者社区",
+            "source_type": "blog",
+            "url": "https://developer.aliyun.com/article/1580576",
+            "date": "2024-08"
+          },
+          {
+            "quote_zh": "什么是Machine Unlearning?悉尼科大等最新《机器遗忘》综述，36页pdf详述其技术体系",
+            "quote_en": "What is machine unlearning? A new survey on machine unlearning from UTS and others, 36 pages detailing its technical landscape.",
+            "source_title": "什么是Machine Unlearning?悉尼科大等最新《机器遗忘》综述，36页pdf详述其技术体系",
+            "publisher": "CSDN 博客（专知转载）",
+            "source_type": "blog",
+            "url": "https://blog.csdn.net/cf2SudS8x8F0v/article/details/131118315",
+            "date": "2023"
+          }
+        ]
+      },
+      {
+        "zh": "遗忘学习",
+        "pinyin": "yíwàng xuéxí",
+        "status": "common",
+        "literal_back": "forgetting learning",
+        "notes": "Preferred by some LLM-side authors, especially in the phrase 大语言模型遗忘学习（LLM unlearning）. Slightly odd literally (it is not a kind of learning) but widely understood.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能安全——大语言模型遗忘学习（LLM unlearning）与多目标优化算法",
+            "quote_en": "AI safety — LLM unlearning and multi-objective optimisation algorithms",
+            "source_title": "人工智能安全——大语言模型遗忘学习（LLM unlearning）与多目标优化算法",
+            "publisher": "CSDN 博客",
+            "source_type": "blog",
+            "url": "https://blog.csdn.net/qq_33353186/article/details/144929435",
+            "date": "2024-12"
+          }
+        ]
+      },
+      {
+        "zh": "反学习",
+        "pinyin": "fǎn xuéxí",
+        "status": "common",
+        "literal_back": "anti-learning / un-learning",
+        "notes": "A more literal calque of the un- prefix, seen mainly in translated material. Less common than 机器遗忘 and can be misread as adversarial learning.",
+        "attestations": [
+          {
+            "quote_zh": "【译】2024 年的机器遗忘/反学习",
+            "quote_en": "[Translation] Machine unlearning in 2024",
+            "source_title": "【译】2024 年的机器遗忘/反学习",
+            "publisher": "博客园（apachecn 译）",
+            "source_type": "blog",
+            "url": "https://www.cnblogs.com/apachecn/p/18179190",
+            "date": "2024"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "机器遗忘在加强模型安全性和对抗性攻击中的重要作用。",
+        "en": "The important role of machine unlearning in strengthening model security and resisting adversarial attacks.",
+        "source": "https://developer.aliyun.com/article/1580576"
+      },
+      {
+        "zh": "把生物武器相关知识从模型里遗忘掉，比事后拦截更彻底，但也更难验证。",
+        "en": "Unlearning bioweapons knowledge from the model is more thorough than filtering it after the fact, but much harder to verify.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["dangerous-capability-evaluation", "cbrn", "misuse", "refusal", "guardrails"],
+    "sources": [
+      "https://developer.aliyun.com/article/1580576",
+      "https://blog.csdn.net/cf2SudS8x8F0v/article/details/131118315",
+      "https://blog.csdn.net/qq_33353186/article/details/144929435",
+      "https://www.cnblogs.com/apachecn/p/18179190",
+      "https://www.mittrchina.com/news/detail/15344"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "activation-steering",
+    "en": "activation steering",
+    "en_aliases": ["representation engineering", "steering vectors"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["interpretability-adjacent", "loanword"],
+    "definition_en": "Intervening directly on a model's internal activations at inference time — typically by adding a steering vector extracted from the residual stream — to push behaviour in a chosen direction without any fine-tuning.",
+    "definition_zh": "在推理阶段直接改动模型内部的激活值——通常是把从残差流里提取出的引导向量加进去——从而在完全不微调的情况下把模型行为推向指定方向。",
+    "preferred_zh": "激活引导",
+    "translation_difficulty": "medium",
+    "pitfalls": "The bare English 'Steering' is used as a loanword inside Chinese sentences far more often than any Chinese term, and when Chinese writers do gloss it they reach for 行为引导 (behaviour steering) rather than a term built on 激活 — so the Chinese gloss describes the effect, while the English names the intervention site. 操控 (manipulate/control) also appears (特征操控) but carries a negative, manipulative connotation. 表征工程 is the settled rendering of the broader 'representation engineering' programme and should not be used as a synonym for the specific technique.",
+    "translations": [
+      {
+        "zh": "激活引导",
+        "pinyin": "jīhuó yǐndǎo",
+        "status": "common",
+        "literal_back": "activation guidance",
+        "notes": "The most faithful Chinese term; used in paper write-ups, usually with the English in parentheses.",
+        "attestations": [
+          {
+            "quote_zh": "通过激活引导（Activation Steering）提升语言模型的指令遵循能力：一篇 ICLR 2025 论文解读",
+            "quote_en": "Improving language models' instruction-following via activation steering: a reading of an ICLR 2025 paper",
+            "source_title": "通过激活引导（Activation Steering）提升语言模型的指令遵循能力：一篇 ICLR 2025 论文解读",
+            "publisher": "CSDN 博客",
+            "source_type": "blog",
+            "url": "https://blog.csdn.net/shizheng_Li/article/details/148286572",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "Steering",
+        "pinyin": "Steering",
+        "status": "loanword",
+        "literal_back": "steering (kept in English)",
+        "notes": "The dominant real-world usage: Chinese technical writing keeps 'Steering' in Latin letters mid-sentence and glosses it once as 行为引导. Record this as the honest answer for how practitioners actually write.",
+        "attestations": [
+          {
+            "quote_zh": "Steering（行为引导） 就是答案。它指的是在模型推理阶段，对模型内部表示或激活进行即时调控，以引导模型输出符合预期目标。",
+            "quote_en": "Steering is the answer. It means adjusting the model's internal representations or activations on the fly during inference, so as to guide its output toward the intended goal.",
+            "source_title": "揭秘大模型Steering：从底层机理到系统评估，全面破解大模型行为控制之谜",
+            "publisher": "机器之心Pro（新浪科技转载）",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/roll/2026-04-21/doc-inhvfyth6958998.shtml",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "表征工程",
+        "pinyin": "biǎozhēng gōngchéng",
+        "status": "common",
+        "literal_back": "representation engineering",
+        "notes": "The umbrella programme (RepE), not a synonym for activation steering. Note 表征 (representation) vs 表示 (representation, also used) — both appear; 表征 dominates in this literature.",
+        "attestations": [
+          {
+            "quote_zh": "此前，大模型 Steering 领域的一个主流假设是线性表征假说（Linear Representation Hypothesis），它认为高层概念在模型的表征空间中以线性方向编码。",
+            "quote_en": "A mainstream assumption in LLM steering has been the linear representation hypothesis: that high-level concepts are encoded as linear directions in the model's representation space.",
+            "source_title": "揭秘大模型Steering：从底层机理到系统评估，全面破解大模型行为控制之谜",
+            "publisher": "机器之心Pro（新浪科技转载）",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/roll/2026-04-21/doc-inhvfyth6958998.shtml",
+            "date": "2026-04"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "机器之心", "zh_used": "Steering（行为引导）", "note": "survey article on steering mechanisms and evaluation" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "激活引导不需要微调，只要在特定层上给残差流加一个引导向量。",
+        "en": "Activation steering requires no fine-tuning — you just add a steering vector to the residual stream at selected layers.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["feature-steering", "interpretability", "refusal", "mechanistic-interpretability"],
+    "sources": [
+      "https://finance.sina.com.cn/tech/roll/2026-04-21/doc-inhvfyth6958998.shtml",
+      "https://blog.csdn.net/shizheng_Li/article/details/148286572",
+      "https://zhuanlan.zhihu.com/p/2029971355878282942"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "refusal",
+    "en": "refusal",
+    "en_aliases": ["refusal training", "over-refusal"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["deployment", "chinese-native-coinage"],
+    "definition_en": "A model declining to answer a request on safety grounds, and the training that produces this behaviour. The associated failure mode is over-refusal: declining legitimate requests because of surface triggers.",
+    "definition_zh": "模型出于安全考虑不回答某个请求，以及为产生这种行为所做的训练。对应的失效模式是过度拒答——因为触发了关键词就把正当请求也挡掉。",
+    "preferred_zh": "拒答",
+    "translation_difficulty": "low",
+    "pitfalls": "None problematic — this is a rare case where Chinese has a more compact and more usable term than English. 拒答 is a native two-character coinage that nominalises cleanly (拒答率 refusal rate, 过度拒答 over-refusal, 拒答数据 refusal data), where English needs 'refusal to answer'. Note that in Chinese industry usage 拒答 is framed primarily as a product defect to be minimised (降低拒答率), not as a safety property to be maximised — the register is closer to 'the model stonewalled the user' than to 'the model correctly refused'.",
+    "translations": [
+      {
+        "zh": "拒答",
+        "pinyin": "jùdá",
+        "status": "established",
+        "literal_back": "refuse-answer",
+        "notes": "Fully established across Chinese lab, industry and security-research writing. Nominalises freely: 拒答率, 拒答数据, 拒答话术, 过度拒答.",
+        "attestations": [
+          {
+            "quote_zh": "降低大模型拒答率，并支持对风险问题进行正向引导与纠偏",
+            "quote_en": "Lower the model's refusal rate while supporting positive guidance and correction on risky questions.",
+            "source_title": "敏感问题不回避！大模型的「应答尽答智答」之法",
+            "publisher": "InfoQ；作者 李忠良",
+            "source_type": "media",
+            "url": "https://www.infoq.cn/article/tpyqsim0f2hwuihhxhbn",
+            "date": "2025-03"
+          },
+          {
+            "quote_zh": "为什么对齐后的大模型仍会被越狱？拒答逃逸方向揭开模型安全的结构性缝隙",
+            "quote_en": "Why are aligned LLMs still jailbroken? The refusal-escape direction reveals a structural gap in model safety.",
+            "source_title": "为什么对齐后的大模型仍会被越狱？拒答逃逸方向揭开模型安全的结构性缝隙",
+            "publisher": "安全内参 (secrss)",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/90462",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "拒绝回答",
+        "pinyin": "jùjué huídá",
+        "status": "common",
+        "literal_back": "refuse to answer",
+        "notes": "The unabbreviated verb phrase; used in prose where 拒答 would read too jargon-y.",
+        "attestations": [
+          {
+            "quote_zh": "大模型为了守住安全底线而拒绝回答，无法给到准确、正向引导的回复",
+            "quote_en": "The model refuses to answer in order to hold its safety line, and so cannot give an accurate, constructively guiding response.",
+            "source_title": "敏感问题不回避！大模型的「应答尽答智答」之法",
+            "publisher": "InfoQ；作者 李忠良",
+            "source_type": "media",
+            "url": "https://www.infoq.cn/article/tpyqsim0f2hwuihhxhbn",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "过度拒答",
+        "pinyin": "guòdù jùdá",
+        "status": "common",
+        "literal_back": "excessive refusal",
+        "notes": "The Chinese term for over-refusal. Also seen as 误拒 (false refusal). No verbatim attestation fetched for this exact form.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "安全对齐做过头就会出现过度拒答，用户问个正常问题也被挡回来。",
+        "en": "Over-done safety alignment produces over-refusal, where ordinary user questions get blocked too.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["guardrails", "jailbreak", "constitutional-classifiers", "deliberative-alignment"],
+    "sources": [
+      "https://www.infoq.cn/article/tpyqsim0f2hwuihhxhbn",
+      "https://www.secrss.com/articles/90462",
+      "https://www.secrss.com/articles/92575"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "guardrails",
+    "en": "guardrails",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["deployment", "industry"],
+    "definition_en": "Runtime filters and policies wrapped around a model — input classifiers, output classifiers, rule engines — that block disallowed content and behaviour without changing the model's weights.",
+    "definition_zh": "套在模型外面的运行时防护：输入分类器、输出分类器、规则引擎等，在不改动模型权重的前提下拦截不允许的内容和行为。",
+    "preferred_zh": "安全护栏",
+    "translation_difficulty": "low",
+    "pitfalls": "The metaphor transfers cleanly (护栏 is the ordinary word for a highway crash barrier), so there is no semantic problem. The register problem is that in China 安全护栏 has been claimed as a commercial product name — Alibaba Cloud ships 「AI 安全护栏（AI Guardrails）」 and Qwen3Guard is marketed as a 护栏模型 — so the term now reads as vendor vocabulary. In frontier-safety writing (where 'guardrails' is often used loosely for any safety measure) that commercial association can mislead. 防护栏 also appears but is less common.",
+    "translations": [
+      {
+        "zh": "安全护栏",
+        "pinyin": "ānquán hùlán",
+        "status": "established",
+        "literal_back": "safety guardrail",
+        "notes": "Standard in Chinese cloud/industry documentation; effectively the canonical rendering.",
+        "attestations": [
+          {
+            "quote_zh": "安全护栏（Guardrails）定位于为AI应用提供一体化防护系统，支持多种风险监测能力、灵活的防护配置和多样的接入方式。",
+            "quote_en": "Guardrails are positioned as an integrated protection system for AI applications, supporting multiple risk-detection capabilities, flexible protection configuration and diverse integration methods.",
+            "source_title": "AI 安全护栏（AI Guardrails）产品概述",
+            "publisher": "阿里云帮助中心",
+            "source_type": "blog",
+            "url": "https://help.aliyun.com/zh/document_detail/2573826.html",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "护栏模型",
+        "pinyin": "hùlán móxíng",
+        "status": "common",
+        "literal_back": "guardrail model",
+        "notes": "Used for a dedicated safety-classifier model (the Llama Guard / Qwen3Guard category) as distinct from the guardrail system as a whole. A useful Chinese distinction English tends to blur.",
+        "attestations": [
+          {
+            "quote_zh": "阿里云推出通义千问首款专为安全防护设计的护栏模型 Qwen3Guard",
+            "quote_en": "Alibaba Cloud launches Qwen3Guard, the Qwen family's first guardrail model designed specifically for safety protection.",
+            "source_title": "阿里云推出通义千问首款专为安全防护设计的护栏模型 Qwen3Guard",
+            "publisher": "IT之家",
+            "source_type": "media",
+            "url": "https://www.ithome.com/0/886/469.htm",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里云 (Alibaba Cloud)", "zh_used": "AI 安全护栏", "note": "product name for their AI application protection suite" },
+      { "org": "通义千问 (Qwen)", "zh_used": "护栏模型", "note": "Qwen3Guard is described as a 护栏模型" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "护栏只能降低风险，不能消除风险——没有哪个分类器能完全挡住越狱。",
+        "en": "Guardrails reduce risk rather than eliminate it — no classifier fully blocks jailbreaks.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["constitutional-classifiers", "defense-in-depth", "refusal", "jailbreak", "ai-control"],
+    "sources": [
+      "https://help.aliyun.com/zh/document_detail/2573826.html",
+      "https://www.ithome.com/0/886/469.htm",
+      "https://zhuanlan.zhihu.com/p/4404578271"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "defense-in-depth",
+    "en": "defense in depth",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["infosec-heritage"],
+    "definition_en": "Layering multiple independent safety measures so that no single failure is catastrophic, on the assumption that each layer is individually imperfect and their failure modes do not fully overlap.",
+    "definition_zh": "把多道彼此独立的安全措施叠起来，使任何单点失效都不至于酿成灾难；其前提是每一层都不完美，但各层的失效模式不重叠。",
+    "preferred_zh": "纵深防御",
+    "translation_difficulty": "low",
+    "pitfalls": "纵深防御 is a long-established Chinese information-security and military term, so it transfers into AI safety with zero friction — but that is also the risk: it arrives pre-loaded with a perimeter/intrusion frame (host layer, runtime layer, network layer), i.e. defending against an external attacker. The AI-safety use includes defending against the model itself, which the inherited frame does not naturally suggest. Note the variant word order 防御纵深 (defensive depth), which some alignment writing uses.",
+    "translations": [
+      {
+        "zh": "纵深防御",
+        "pinyin": "zòngshēn fángyù",
+        "status": "established",
+        "literal_back": "depth defence",
+        "notes": "Directly inherited from Chinese infosec vocabulary; used without explanation in AI security writing.",
+        "attestations": [
+          {
+            "quote_zh": "通过OpenClaw资产识别、技能风险扫描、沙箱运行、动态脱敏构建宿主层、Runtime层、网络层纵深防御",
+            "quote_en": "Build defence in depth across the host layer, runtime layer and network layer via asset identification, skill risk scanning, sandboxed execution and dynamic masking.",
+            "source_title": "AI Infra安全体系构建：应对大模型时代五大核心风险的纵深防御实践",
+            "publisher": "腾讯云开发者社区",
+            "source_type": "blog",
+            "url": "https://cloud.tencent.com.cn/developer/article/2649922",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "防御纵深",
+        "pinyin": "fángyù zòngshēn",
+        "status": "common",
+        "literal_back": "defensive depth",
+        "notes": "Reversed word order, used when the emphasis is on the property (having depth) rather than the strategy. Seen in Chinese alignment commentary arguing that no single technique suffices and layers must have non-overlapping failure modes. No verbatim attestation fetched.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "任何单一对齐技术都不保险，必须多层叠加、失效模式互不重叠地做纵深防御。",
+        "en": "No single alignment technique is safe on its own; you need layered defence in depth whose failure modes do not overlap.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["guardrails", "ai-control", "constitutional-classifiers", "sandboxing"],
+    "sources": [
+      "https://cloud.tencent.com.cn/developer/article/2649922",
+      "https://blog.csdn.net/2403_86962125/article/details/149042368"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "constitutional-classifiers",
+    "en": "constitutional classifiers",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["anthropic", "2025"],
+    "definition_en": "Anthropic's 2025 jailbreak defence: input and output classifiers trained on synthetic data generated from a natural-language 'constitution' specifying what the model may and may not discuss.",
+    "definition_zh": "Anthropic 2025 年提出的越狱防御方案：先用自然语言写出一部规定「可以谈什么、不能谈什么」的「宪法」，再用它生成合成数据训练输入端和输出端两组分类器。",
+    "preferred_zh": "宪法分类器",
+    "translation_difficulty": "medium",
+    "pitfalls": "宪法 in Chinese means the Constitution — a specific legal instrument of the state, with heavy political weight. Anthropic's 'constitution' is closer to a charter or code of conduct, and the English word is already a loose metaphor; in Chinese the metaphor lands much harder. Chinese media handle this by scare-quoting it (实际上就是一部「宪法」) rather than by substituting 章程 or 准则, so 宪法分类器 is what stuck. Be aware the term will read as more grandiose (and more political) to a Chinese reader than to an English one. Same pitfall as 宪法 AI (Constitutional AI).",
+    "translations": [
+      {
+        "zh": "宪法分类器",
+        "pinyin": "xiànfǎ fēnlèiqì",
+        "status": "established",
+        "literal_back": "constitution classifier",
+        "notes": "Uniform across Chinese tech media coverage from February 2025 onward; no competing rendering observed.",
+        "attestations": [
+          {
+            "quote_zh": "为解决人工智能工具中存在的滥用自然语言提示问题，OpenAI 的竞争对手 Anthropic 推出了一个名为「宪法分类器（constitutional classifiers）」的新概念",
+            "quote_en": "To address abuse of natural-language prompts in AI tools, OpenAI's competitor Anthropic has introduced a new concept called 'constitutional classifiers'.",
+            "source_title": "Anthropic 推「宪法分类器」，可大幅降低 Claude 越狱率",
+            "publisher": "新浪科技（IT之家）",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/digi/2025-02-05/doc-ineikxsh2850416.shtml",
+            "date": "2025-02"
+          },
+          {
+            "quote_zh": "这是一种将一套类似人类价值观（实际上就是一部「宪法」）植入大型语言模型的方法",
+            "quote_en": "It is a method of implanting a set of human-like values — in effect a 'constitution' — into a large language model.",
+            "source_title": "Anthropic 推「宪法分类器」，可大幅降低 Claude 越狱率",
+            "publisher": "新浪科技（IT之家）",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/digi/2025-02-05/doc-ineikxsh2850416.shtml",
+            "date": "2025-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "宪法分类器在输入端和输出端各设一道，前者拦请求，后者实时判生成内容。",
+        "en": "Constitutional classifiers sit at both ends: the input side blocks requests, the output side judges generated content in real time.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["constitutional-ai", "guardrails", "jailbreak", "refusal", "defense-in-depth"],
+    "sources": [
+      "https://finance.sina.com.cn/tech/digi/2025-02-05/doc-ineikxsh2850416.shtml",
+      "https://cloud.tencent.cn/developer/news/2136912",
+      "https://finance.sina.com.cn/tech/csj/2025-02-17/doc-inekufeh3486908.shtml"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "value-learning",
+    "en": "value learning",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["agent-foundations", "false-friend"],
+    "definition_en": "The research programme of having an AI system infer what humans actually value — rather than being given a fixed objective — via inverse reinforcement learning, CIRL, preference elicitation and related methods.",
+    "definition_zh": "让 AI 自己去推断人类真正看重什么，而不是直接给它一个固定目标的研究路线，具体方法包括逆强化学习、合作逆强化学习（CIRL）、偏好引出等。",
+    "preferred_zh": "价值学习",
+    "translation_difficulty": "high",
+    "pitfalls": "SERIOUS FALSE FRIEND. 价值学习 already exists in Chinese RL vocabulary as a shorthand for value-function learning / value-based methods (价值函数, Q-learning, 价值网络) — a completely unrelated technical sense. A Chinese ML reader seeing 价值学习 will parse it as 'learning a value function' first. Compounding this, the Chinese alignment literature does not actually use 价值学习 for the alignment sense: it talks about 价值对齐 / 价值观对齐 (value alignment) and describes the mechanism descriptively. If you need the alignment sense unambiguously, write 价值观学习 (using 价值观 = values in the ethical sense, not 价值 = value in the numeric sense) — the extra 观 does real disambiguating work.",
+    "translations": [
+      {
+        "zh": "价值观学习",
+        "pinyin": "jiàzhíguān xuéxí",
+        "status": "proposed",
+        "literal_back": "values(-outlook) learning",
+        "notes": "Proposed here as the disambiguated form. 价值观 unambiguously means values in the ethical/normative sense, blocking the RL value-function reading. Unattested as a fixed term, but 价值观 itself is the standard word the Chinese alignment literature uses for 'human values'.",
+        "attestations": []
+      },
+      {
+        "zh": "价值学习",
+        "pinyin": "jiàzhí xuéxí",
+        "status": "deprecated",
+        "literal_back": "value learning",
+        "notes": "The direct calque. We recommend against it because of the collision with value-function learning in RL. Recorded so readers recognise it, not because it is in alignment use.",
+        "attestations": []
+      },
+      {
+        "zh": "价值观对齐",
+        "pinyin": "jiàzhíguān duìqí",
+        "status": "established",
+        "literal_back": "values alignment",
+        "notes": "What Chinese sources actually say where English would sometimes say value learning. Strictly this is 'value alignment', the goal, not 'value learning', the method — but in Chinese discourse the method is usually discussed descriptively under this heading rather than named.",
+        "attestations": [
+          {
+            "quote_zh": "我们在RICE原则中包含了道德性，这体现了人类价值观在人工智能对齐中的关键作用。",
+            "quote_en": "We include Ethicality among the RICE principles, reflecting the central role of human values in AI alignment.",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / CCL 2024",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          }
+        ]
+      },
+      {
+        "zh": "合作逆强化学习",
+        "pinyin": "hézuò nì qiánghuà xuéxí",
+        "status": "established",
+        "literal_back": "cooperative inverse reinforcement learning",
+        "notes": "The concrete value-learning method that DOES have a settled Chinese name (CIRL, Hadfield-Menell et al.). When you need to talk about value learning technically in Chinese, naming the method is often clearer than naming the programme.",
+        "attestations": [
+          {
+            "quote_zh": "这一设定被称为CIRL (Hadfield-Menell et al., 2016b)，协助博弈(Fickinger et al., 2020)，和协助POMDP (Shah et al., 2020)。",
+            "quote_en": "This setting is called CIRL, assistance games, or assistive POMDPs.",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / CCL 2024",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [
+      { "org": "北京大学 人工智能安全与治理中心", "zh_used": "人类价值观 / 合作逆强化学习", "note": "the survey discusses the concept without ever using 价值学习 as a headword" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "AI系统将人类的真实目标作为自己的目标（尽管其值并不确定），并通过观察与人类交互来不断尝试弄清楚。",
+        "en": "The AI system adopts the human's true objective as its own (though its value is uncertain) and keeps trying to work it out by observing and interacting with humans.",
+        "source": "https://aclanthology.org/2024.ccl-2.7.pdf"
+      }
+    ],
+    "related": ["ai-alignment", "rlhf", "corrigibility", "human-oversight"],
+    "sources": [
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://swarma.org/?p=48540",
+      "https://swarma.org/?p=49999",
+      "https://www.cssn.cn/zx/zx_rdkx/202510/t20251011_5918484.shtml"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "human-oversight",
+    "en": "human oversight",
+    "en_aliases": ["meaningful human control"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["governance-crossover", "eu-ai-act"],
+    "definition_en": "The requirement that natural persons can effectively monitor, intervene in, override or shut down an AI system during its operation. A legal obligation under EU AI Act Article 14 and a recurring principle in PRC AI governance documents.",
+    "definition_zh": "要求在 AI 系统运行期间，自然人能够有效地监督它、介入它、推翻它的输出乃至停止它。这既是欧盟《人工智能法案》第 14 条的法定义务，也是中国 AI 治理文件中反复出现的原则。",
+    "preferred_zh": "人类监督",
+    "translation_difficulty": "medium",
+    "pitfalls": "Register split worth documenting. 人类监督 is the term used in Chinese translations of EU/international instruments (AI Act Art. 14). PRC-origin policy text reaches instead for 人工干预 (human intervention), 人类控制 (human control) and the compact formula 「确保人工智能始终处于人类控制之下」 (Global AI Governance Initiative, 2023) — note that 干预 is narrower than oversight (it names the act of stepping in, not the continuous watching), and 控制 is stronger. Separately, 监督 vs 监管: 监督 is oversight by a person in the loop; 监管 is regulatory supervision by an authority — do not swap them. Compare also the ML sense of 监督 in 监督学习 (supervised learning), a third unrelated meaning of the same characters.",
+    "translations": [
+      {
+        "zh": "人类监督",
+        "pinyin": "rénlèi jiāndū",
+        "status": "established",
+        "literal_back": "human oversight",
+        "notes": "The rendering used in circulating Chinese translations of the EU AI Act, and thus the default in comparative-governance writing.",
+        "attestations": [
+          {
+            "quote_zh": "人类监督应旨在防止或最大限度地减少高风险人工智能系统在按照其预期目的使用或在可合理预见的滥用条件下使用时可能出现的对健康、安全或基本权利的风险",
+            "quote_en": "Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used as intended or under conditions of reasonably foreseeable misuse.",
+            "source_title": "欧盟《人工智能法案》全文中文翻译（第14条 人类监督）",
+            "publisher": "安全内参 (secrss)",
+            "source_type": "gov",
+            "url": "https://www.secrss.com/articles/68714",
+            "date": "2024-08"
+          },
+          {
+            "quote_zh": "高风险人工智能系统的设计和开发方式，包括适当的人机界面工具，应使其在使用期间能由自然人进行有效监督。",
+            "quote_en": "High-risk AI systems shall be designed and developed, including with appropriate human-machine interface tools, such that they can be effectively overseen by natural persons during use.",
+            "source_title": "欧盟《人工智能法案》全文中文翻译（第14条 人类监督）",
+            "publisher": "安全内参 (secrss)",
+            "source_type": "gov",
+            "url": "https://www.secrss.com/articles/68714",
+            "date": "2024-08"
+          }
+        ]
+      },
+      {
+        "zh": "人工干预",
+        "pinyin": "réngōng gānyù",
+        "status": "common",
+        "literal_back": "manual/human intervention",
+        "notes": "The PRC regulatory register's preferred phrasing. Narrower than oversight: it names the act of stepping in, not continuous supervision. Note 人工 here means 'by a human/manual', not 'artificial' — a genuine reading trap given 人工智能.",
+        "attestations": []
+      },
+      {
+        "zh": "人类控制",
+        "pinyin": "rénlèi kòngzhì",
+        "status": "common",
+        "literal_back": "human control",
+        "notes": "Used in PRC international-facing policy language, e.g. the Global AI Governance Initiative's formula 确保人工智能始终处于人类控制之下. Stronger than oversight; closest to 'meaningful human control'.",
+        "attestations": [
+          {
+            "quote_zh": "确保人工智能始终处于人类控制之下",
+            "quote_en": "Ensure that AI always remains under human control.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "中华人民共和国外交部", "zh_used": "人类控制", "note": "Global AI Governance Initiative, 2023" },
+      { "org": "安全内参 (secrss)", "zh_used": "人类监督", "note": "in their full Chinese translation of the EU AI Act" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "监督措施应与高风险人工智能系统的风险、自主程度和使用环境相称。",
+        "en": "Oversight measures shall be commensurate with the risks, level of autonomy and context of use of the high-risk AI system.",
+        "source": "https://www.secrss.com/articles/68714"
+      }
+    ],
+    "related": ["scalable-oversight", "ai-control", "human-in-the-loop", "oversight-failure", "loss-of-control"],
+    "sources": [
+      "https://www.secrss.com/articles/68714",
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+      "https://www.shobserver.cn/sgh/detail?id=1477839"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "red-lines",
+    "en": "red lines",
+    "en_aliases": ["AI red lines"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["idais", "governance-crossover", "high-value"],
+    "definition_en": "Behaviours or capabilities that no AI system may ever exhibit, framed as absolute and non-negotiable prohibitions rather than risk trade-offs. The IDAIS Beijing statement (2024) proposed self-replication, power-seeking, WMD assistance and persistent deception as candidate red lines.",
+    "definition_zh": "任何 AI 系统在任何情况下都不得逾越的行为或能力边界，是绝对禁止而非风险权衡。2024 年 IDAIS 北京共识把自主复制、权力寻求、协助制造大规模杀伤性武器和持续欺骗列为候选红线。",
+    "preferred_zh": "红线",
+    "translation_difficulty": "low",
+    "pitfalls": "This is the rare case where Chinese is STRONGER than English, and that itself is the pitfall. 红线 is deeply entrenched in PRC political language — 生态保护红线, 耕地红线, 不可逾越的红线 — where it denotes a hard, state-declared, non-negotiable limit, often with sovereignty or national-security overtones. So the technical AI-safety sense arrives pre-legitimised: a Chinese policy reader hears 'inviolable state-backed boundary', which is roughly the rhetorical force IDAIS wanted, and this is very likely why the red-lines framing gained traction in China faster than most imported AI-safety vocabulary. The risk is the reverse of the usual one: the term may be MORE load-bearing in Chinese than the underlying technical consensus supports, and 红线 can slide from 'capability threshold' into 'political line'. Note the 上海共识 gloss 「高压线」 (high-voltage line), which sharpens the sense of an automatic, physical consequence for crossing. Distinguish from 底线 (bottom line/minimum standard), which is weaker and more negotiable.",
+    "translations": [
+      {
+        "zh": "红线",
+        "pinyin": "hóngxiàn",
+        "status": "established",
+        "literal_back": "red line",
+        "notes": "Used as the headline term in both the IDAIS Beijing consensus (2024) and the IDAIS-linked 上海共识 (2025). Both documents exist in authoritative Chinese, so this is a source-language usage, not a translation.",
+        "attestations": [
+          {
+            "quote_zh": "我们提出了几条人工智能发展作为一种国际协作机制的具体红线",
+            "quote_en": "We propose several concrete red lines for AI development as an international collaboration mechanism.",
+            "source_title": "北京AI安全国际共识",
+            "publisher": "北京智源人工智能研究院 (BAAI) / IDAIS-Beijing",
+            "source_type": "gov",
+            "url": "https://idais-beijing.baai.ac.cn/?lang=zh",
+            "date": "2024-03"
+          },
+          {
+            "quote_zh": "国际社会应确立具体、可操作、受全球认可的红线，确保人工智能系统在任何情况下均不得逾越。",
+            "quote_en": "The international community should establish concrete, actionable, globally recognised red lines that AI systems must under no circumstances cross.",
+            "source_title": "辛顿、姚期智等联名签署「上海共识」，呼吁给AI确立行为红线",
+            "publisher": "澎湃新闻；记者 喻琰",
+            "source_type": "media",
+            "url": "https://m.thepaper.cn/newsDetail_forward_31247753",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "高压线",
+        "pinyin": "gāoyāxiàn",
+        "status": "common",
+        "literal_back": "high-voltage line",
+        "notes": "Used as an intensifying gloss on 红线 in the 上海共识 coverage. Carries the connotation that crossing brings immediate, automatic consequence rather than a negotiated response. Idiomatic in PRC discipline/compliance language.",
+        "attestations": [
+          {
+            "quote_zh": "呼吁国际社会需要合作划出人工智能开发不可以逾越的红线（即「高压线」）",
+            "quote_en": "Calls on the international community to jointly draw red lines — 'high-voltage lines' — that AI development must not cross.",
+            "source_title": "辛顿、姚期智等联名签署「上海共识」，呼吁给AI确立行为红线",
+            "publisher": "澎湃新闻；记者 喻琰",
+            "source_type": "media",
+            "url": "https://m.thepaper.cn/newsDetail_forward_31247753",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "红线能力",
+        "pinyin": "hóngxiàn nénglì",
+        "status": "common",
+        "literal_back": "red-line capability",
+        "notes": "Compound used where the red line is defined over a model capability rather than a behaviour — the Chinese counterpart of 'capability threshold' in frontier safety frameworks. No verbatim attestation fetched for this exact compound.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "IDAIS / 北京智源人工智能研究院 (BAAI)", "zh_used": "红线", "note": "北京AI安全国际共识, March 2024" },
+      { "org": "IDAIS / 上海共识 signatories", "zh_used": "红线（高压线）", "note": "July 2025 Shanghai consensus statement" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "任何人工智能系统都不应能够在人类没有明确批准和协助的情况下复制或改进自身。",
+        "en": "No AI system should be able to copy or improve itself without explicit human approval and assistance.",
+        "source": "https://idais-beijing.baai.ac.cn/?lang=zh"
+      },
+      {
+        "zh": "我们需要全面的治理机制来确保开发或部署的系统不违反红线。",
+        "en": "We need comprehensive governance mechanisms to ensure that systems developed or deployed do not violate the red lines.",
+        "source": "https://idais-beijing.baai.ac.cn/?lang=zh"
+      }
+    ],
+    "related": ["idais", "capability-threshold", "responsible-scaling-policy", "frontier-safety-framework", "autonomous-replication", "power-seeking"],
+    "sources": [
+      "https://idais-beijing.baai.ac.cn/?lang=zh",
+      "https://m.thepaper.cn/newsDetail_forward_31247753",
+      "https://saif.org/research/policy-guide-cn/",
+      "https://air.tsinghua.edu.cn/info/1007/2202.htm",
+      "https://finance.eastmoney.com/a/202507263468180228.html"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "safety-tax",
+    "en": "safety tax",
+    "en_aliases": ["alignment tax"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["economics-framing", "gap"],
+    "definition_en": "The extra cost — compute, time, capability, competitive position — of building a safe system rather than the unsafe alternative that would otherwise be built.",
+    "definition_zh": "为了把系统做安全，相对于直接做一个不安全版本所要多付出的代价：算力、时间、能力损失和竞争位置。",
+    "preferred_zh": "安全税",
+    "translation_difficulty": "high",
+    "pitfalls": "The English pair 'safety tax' / 'alignment tax' splits unevenly in Chinese. 对齐税 IS attested and reasonably well understood — but only in its narrow technical sense of capability degradation caused by alignment fine-tuning (loss of creativity and diversity after RLHF). The broader strategic sense of 'safety tax' — the cost a lab must be willing to pay, and Christiano's framing of either paying the tax or reducing it — has no Chinese term at all; searches for 安全税 in an AI context return only actual tax policy (企业所得税, 合规成本). Recommend writing 安全税 with a gloss on first use, or falling back to a descriptive 安全投入的代价 / 为安全付出的代价. Also note 税 in Chinese reads as a levy imposed by an authority, which fits 'tax' but makes the metaphor sound more like a regulatory charge than an internal trade-off.",
+    "translations": [
+      {
+        "zh": "安全税",
+        "pinyin": "ānquán shuì",
+        "status": "proposed",
+        "literal_back": "safety tax",
+        "notes": "Direct calque. Unattested in Chinese AI-safety writing — searches surface only fiscal-policy material. Proposed here on the strength of the parallel with the attested 对齐税, but must be glossed on first use.",
+        "attestations": []
+      },
+      {
+        "zh": "对齐税",
+        "pinyin": "duìqí shuì",
+        "status": "established",
+        "literal_back": "alignment tax",
+        "notes": "Genuinely attested and used, but narrower than the English 'safety tax': in Chinese usage it means specifically the capability/diversity loss from alignment fine-tuning, not the strategic cost of choosing safety. Use it when that narrower sense is meant.",
+        "attestations": [
+          {
+            "quote_zh": "对齐税指的是在通过指令微调和强化学习等技术使大模型变得更「有用、诚实、无害」的过程中，模型在其他一些重要能力上所付出的性能损失或能力下降的代价。",
+            "quote_en": "The alignment tax is the performance loss or capability degradation on other important abilities that a model pays in the course of being made 'helpful, honest, harmless' via instruction tuning and RL.",
+            "source_title": "齐之未齐：浅谈 gpt-oss-20b-base 与对齐税",
+            "publisher": "时歌的博客 (lapis.cafe)",
+            "source_type": "blog",
+            "url": "https://www.lapis.cafe/posts/ai-and-deep-learning/gpt-oss-20b-base-alignment-tax/",
+            "date": "2025-08"
+          },
+          {
+            "quote_zh": "NLP论文速读（EMNLP 2024）｜缓解在RLHF过程中的对齐税",
+            "quote_en": "NLP paper digest (EMNLP 2024): mitigating the alignment tax in RLHF",
+            "source_title": "NLP论文速读（EMNLP 2024）｜缓解在RLHF过程中的对齐税",
+            "publisher": "CSDN 博客",
+            "source_type": "blog",
+            "url": "https://blog.csdn.net/2401_85576118/article/details/144122178",
+            "date": "2024-11"
+          }
+        ]
+      },
+      {
+        "zh": "为安全付出的代价",
+        "pinyin": "wèi ānquán fùchū de dàijià",
+        "status": "descriptive",
+        "literal_back": "the price paid for safety",
+        "notes": "The descriptive fallback Chinese writing actually uses for the strategic sense. Loses the economic metaphor entirely but is unambiguous.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "对齐税最直观的表现形式就是创造力和多样性的下降。",
+        "en": "The most visible form of the alignment tax is a drop in creativity and diversity.",
+        "source": "https://www.lapis.cafe/posts/ai-and-deep-learning/gpt-oss-20b-base-alignment-tax/"
+      },
+      {
+        "zh": "问题不只是安全税有多高，还在于有没有人愿意付。",
+        "en": "The question is not only how high the safety tax is, but whether anyone is willing to pay it.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["race-to-the-bottom", "responsible-scaling-policy", "ai-alignment", "rlhf"],
+    "sources": [
+      "https://www.lapis.cafe/posts/ai-and-deep-learning/gpt-oss-20b-base-alignment-tax/",
+      "https://blog.csdn.net/2401_85576118/article/details/144122178",
+      "https://www.alignmentforum.org/w/alignment-tax"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "superalignment",
+    "en": "superalignment",
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["added-by-research", "openai"],
+    "definition_en": "OpenAI's 2023 framing of the problem of supervising and steering AI systems much smarter than their human overseers, together with the (now disbanded) team and four-year programme aimed at it.",
+    "definition_zh": "OpenAI 2023 年提出的问题框架：如何监督和引导比人类监督者聪明得多的 AI 系统，以及为此设立的（后已解散的）团队和四年计划。",
+    "preferred_zh": "超级对齐",
+    "translation_difficulty": "low",
+    "pitfalls": "Two renderings compete and the split is register-based rather than semantic: 超级对齐 dominates media and think-tank writing (mirroring 超级智能), while 超对齐 is preferred in academic prose as a tighter compound. Both are recognised; neither is wrong. Added by this research pass because it is the frame under which scalable oversight and weak-to-strong generalization are discussed in Chinese, and the seed list omitted it.",
+    "translations": [
+      {
+        "zh": "超级对齐",
+        "pinyin": "chāojí duìqí",
+        "status": "established",
+        "literal_back": "super alignment",
+        "notes": "The media-register default; parallels 超级智能.",
+        "attestations": [
+          {
+            "quote_zh": "2023年7月，OpenAI首次提出「超级对齐」（Superalignment）的概念",
+            "quote_en": "In July 2023 OpenAI first proposed the concept of 'superalignment'.",
+            "source_title": "「超级对齐」能让人类管住AI吗？OpenAI最新论文，弱模型监督强模型是突破口？",
+            "publisher": "腾讯新闻 / 清华大学人工智能国际治理研究院",
+            "source_type": "media",
+            "url": "https://news.qq.com/rain/a/20240110A0907B00",
+            "date": "2024-01"
+          }
+        ]
+      },
+      {
+        "zh": "超对齐",
+        "pinyin": "chāo duìqí",
+        "status": "common",
+        "literal_back": "super-align",
+        "notes": "The academic-register variant, used by the PKU alignment survey.",
+        "attestations": [
+          {
+            "quote_zh": "随着人工智能系统愈发强大，人类如何更好的指导人工智能系统甚至是超级人工智能系统的训练和运行？这也被称为超对齐问题(Superalignment)。",
+            "quote_en": "As AI systems grow more powerful, how can humans better guide the training and operation of AI and even superintelligent systems? This is known as the superalignment problem.",
+            "source_title": "《对齐的理论、技术与评估》",
+            "publisher": "北京大学人工智能安全与治理中心 / CCL 2024",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "北京大学 人工智能安全与治理中心", "zh_used": "超对齐", "note": "CCL 2024 survey, RICE controllability section" },
+      { "org": "清华大学人工智能国际治理研究院", "zh_used": "超级对齐", "note": "OpenAI paper commentary" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "超级对齐的目标就是通过弱模型微调，让强模型达到其性能上限基准。",
+        "en": "The goal of superalignment is to use weak-model fine-tuning to bring a strong model up to its performance ceiling.",
+        "source": "https://news.qq.com/rain/a/20240110A0907B00"
+      }
+    ],
+    "related": ["scalable-oversight", "weak-to-strong-generalization", "ai-alignment", "artificial-superintelligence"],
+    "sources": [
+      "https://news.qq.com/rain/a/20240110A0907B00",
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://news.qq.com/rain/a/20231016A03U5Y00"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "trusted-monitoring",
+    "en": "trusted monitoring",
+    "en_aliases": ["untrusted monitoring", "trusted model", "untrusted model"],
+    "abbr": null,
+    "category": "alignment-techniques",
+    "tags": ["added-by-research", "redwood-research", "ai-control"],
+    "definition_en": "The core AI-control protocol family: use a weaker but trusted model to watch the outputs of a more capable untrusted model and flag suspicious actions for audit. Untrusted monitoring is the harder variant where the monitor is itself potentially misaligned.",
+    "definition_zh": "AI 控制议程中最核心的一类协议：用能力较弱但可信的模型去盯着能力更强、不可信的模型的输出，把可疑行为挑出来送审。不可信监控则是更难的变体——监控者本身也可能已经失准。",
+    "preferred_zh": "可信监控",
+    "translation_difficulty": "medium",
+    "pitfalls": "The trusted/untrusted distinction is doing all the work and it does not survive casual translation: 可信 in Chinese AI-policy language is a loaded virtue word (可信人工智能 = trustworthy AI, as in 安全、可信、可控), meaning roughly 'reliable and worthy of public confidence'. Redwood's 'trusted' means something much narrower and more operational: old enough and weak enough that we are confident it is not scheming. A Chinese reader primed on 可信人工智能 will over-read the endorsement. When precision matters, gloss it: 可信（指能力较弱、可确认未失准的旧模型）.",
+    "translations": [
+      {
+        "zh": "可信监控",
+        "pinyin": "kěxìn jiānkòng",
+        "status": "common",
+        "literal_back": "trusted monitoring",
+        "notes": "Used in CSET's Chinese translation alongside 不可信监控. This is currently the best-attested Chinese vocabulary for the AI-control protocol family.",
+        "attestations": [
+          {
+            "quote_zh": "「可信模型」指更易于研究社区理解的低功能老旧人工智能模型。",
+            "quote_en": "A 'trusted model' is an older, less capable AI model that the research community finds easier to understand.",
+            "source_title": "人工智能控制：如何利用违规人工智能体",
+            "publisher": "Center for Security and Emerging Technology (CSET), Georgetown University",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/ai-control-chinese/",
+            "date": "2025-11"
+          }
+        ]
+      },
+      {
+        "zh": "不可信模型",
+        "pinyin": "bù kěxìn móxíng",
+        "status": "common",
+        "literal_back": "untrusted model",
+        "notes": "The counterpart term. CSET's Chinese edition defines it explicitly, which makes this a usable attested translation pair.",
+        "attestations": [
+          {
+            "quote_zh": "「不可信模型」的定义为功能更强但可能具有蓄意破坏性的新型智能体。",
+            "quote_en": "An 'untrusted model' is defined as a newer, more capable agent that may be deliberately subversive.",
+            "source_title": "人工智能控制：如何利用违规人工智能体",
+            "publisher": "Center for Security and Emerging Technology (CSET), Georgetown University",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/ai-control-chinese/",
+            "date": "2025-11"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "CSET (Georgetown)", "zh_used": "可信监控 / 不可信监控 / 可信模型 / 不可信模型", "note": "Chinese edition of their AI control explainer" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "可信监控的基本做法，是让老模型去读新模型写的代码，可疑的就交给人审。",
+        "en": "The basic move in trusted monitoring is to have the old model read the new model's code and escalate anything suspicious to a human auditor.",
+        "source": "constructed"
+      }
+    ],
+    "related": ["ai-control", "cot-monitoring", "human-oversight", "scalable-oversight"],
+    "sources": [
+      "https://cset.georgetown.edu/publication/ai-control-chinese/",
+      "https://www.redwoodresearch.org/research/ai-control",
+      "https://arxiv.org/pdf/2312.06942"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]

@@ -1,0 +1,1414 @@
+[
+  {
+    "id": "ai-agent",
+    "en": "AI agent",
+    "en_aliases": ["agent", "autonomous agent", "LLM agent"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["core", "contested", "high-value"],
+    "definition_en": "A system that pursues a goal over multiple steps by perceiving an environment, deciding what to do next, and acting on the world through tools, APIs or interfaces, rather than emitting a single response.",
+    "definition_zh": "能感知环境、自主决策并通过调用工具或接口执行多步任务的 AI 系统，区别于一问一答式的模型调用。",
+    "preferred_zh": "智能体",
+    "translation_difficulty": "medium",
+    "pitfalls": "Three renderings compete and they are not interchangeable. 智能体 (\"intelligent entity/body\") is now dominant in PRC media, standards and lab docs, and inherits the 1990s classical-AI translation of \"intelligent agent\"; it foregrounds the system's own intelligence and says nothing about acting on someone's behalf. 代理 is the ordinary word for proxy/agent/agency (a network proxy is 代理服务器, a sales agent is 代理商), so it keeps the delegation relationship that English \"agent\" carries but reads as infrastructure, not intelligence — and is actively ambiguous in security writing where 代理 may mean an HTTP proxy. Chinese developers very often just write \"Agent\" in Latin letters mid-sentence, including in official Chinese-language READMEs from Chinese labs. Net effect: the principal–agent / \"acts on behalf of a human\" connotation that makes English \"agent\" a natural home for safety arguments about delegation and oversight is largely LOST in 智能体, which sounds like an autonomous creature. Safety writers who want the delegation framing usually have to add it explicitly (e.g. 代表用户执行).",
+    "translations": [
+      {
+        "zh": "智能体",
+        "pinyin": "zhìnéngtǐ",
+        "status": "established",
+        "literal_back": "intelligent body/entity",
+        "notes": "Dominant across state media, TC260 standards research, Chinese labs and safety orgs. Also the inherited textbook translation of classical-AI \"intelligent agent\", which gave it a 30-year head start over 代理.",
+        "attestations": [
+          {
+            "quote_zh": "智能体是指能够自主感知环境、做出决策并执行行动的智能实体，它可以是一个程序、一个系统或是一个机器人。",
+            "quote_en": "An agent refers to an intelligent entity that can autonomously perceive its environment, make decisions and carry out actions; it may be a program, a system, or a robot.",
+            "source_title": "警惕人工智能时代的“智能体风险”",
+            "publisher": "新华社 / 新华网",
+            "source_type": "media",
+            "url": "http://www.news.cn/science/20240717/7f75ef8878304dacb682ebc8e8209fc3/c.html",
+            "date": "2024-07"
+          },
+          {
+            "quote_zh": "随着AI智能体（Agent）成为大模型落地的核心形态，其自主决策、工具调用、多智能体协同、持续进化等特性，催生了指令注入、越权操作、技能供应链攻击、智能体失控等新型安全隐患，成为当前AI安全治理的核心攻坚方向。",
+            "quote_en": "As AI agents become the core deployment form of large models, their autonomous decision-making, tool calling, multi-agent coordination and continuous evolution give rise to new safety hazards such as prompt injection, privilege-exceeding operations, skill supply-chain attacks and agent loss of control — now a central battleground of AI safety governance.",
+            "source_title": "智能体安全研究员（招聘页）",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "blog",
+            "url": "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+            "date": null
+          },
+          {
+            "quote_zh": "智能体是可感知环境、自主决策并执行任务的AI实体，相比传统大模型，智能体自主性与交互性更强，带来新增安全风险。",
+            "quote_en": "An agent is an AI entity that can perceive its environment, decide autonomously and execute tasks; compared with conventional large models, agents have stronger autonomy and interactivity, which brings new safety risks.",
+            "source_title": "TC260-TR-005-2026《智能体安全标准化研究》",
+            "publisher": "搜狐（转载全国网络安全标准化技术委员会报告）",
+            "source_type": "standard",
+            "url": "https://www.sohu.com/a/1007172854_121864792",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "Agent",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Extremely common in developer register — Chinese-language READMEs, docs and blog posts from Chinese labs write bare \"Agent\" inside Chinese sentences, often alongside 智能体 in the same document. This is the real answer in engineering contexts; 智能体 dominates media, policy and standards.",
+        "attestations": [
+          {
+            "quote_zh": "Qwen-Agent是一个开发框架。开发者可基于本框架开发Agent应用，充分利用基于通义千问模型（Qwen）的指令遵循、工具使用、规划、记忆能力。",
+            "quote_en": "Qwen-Agent is a development framework. Developers can build Agent applications on it, making full use of the instruction-following, tool-use, planning and memory capabilities of the Qwen models.",
+            "source_title": "Qwen-Agent README_CN.md",
+            "publisher": "阿里巴巴通义千问 (QwenLM)",
+            "source_type": "github",
+            "url": "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "代理",
+        "pinyin": "dàilǐ",
+        "status": "contested",
+        "literal_back": "proxy / to act on behalf of",
+        "notes": "Keeps the delegation sense of English \"agent\" and is preferred by some translators for exactly that reason, but collides head-on with 代理 = network proxy / commercial agent. Survives most visibly in derived forms (代理行为 \"agentic behaviour\", 代理式人工智能 \"agentic AI\") rather than as a bare noun for the system itself.",
+        "attestations": [
+          {
+            "quote_zh": "允许服务器通过客户端向 LLM 大模型请求补全结果，从而实现更复杂的代理行为，同时确保安全性与隐私性。",
+            "quote_en": "It allows the server to request completions from the LLM via the client, thereby enabling more complex agentic behaviour while ensuring security and privacy.",
+            "source_title": "一文掌握 MCP 上下文协议：从理论到实践",
+            "publisher": "阿里云开发者社区（作者：陈明勇）",
+            "source_type": "blog",
+            "url": "https://developer.aliyun.com/article/1659874",
+            "date": "2025-04"
+          }
+        ]
+      },
+      {
+        "zh": "智能代理",
+        "pinyin": "zhìnéng dàilǐ",
+        "status": "common",
+        "literal_back": "intelligent proxy",
+        "notes": "Compromise form that keeps both the intelligence and the delegation reading. Appears in academic and some policy writing but has clearly lost to 智能体 in industry and media. No independent attestation fetched; recorded on the basis of its presence in the same discussions as 智能体, so treat as weakly evidenced.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "智能体", "note": "job title is 智能体安全研究员; writes AI智能体（Agent）" },
+      { "org": "全国网络安全标准化技术委员会 (TC260)", "zh_used": "智能体", "note": "TC260-TR-005-2026《智能体安全标准化研究》" },
+      { "org": "新华社", "zh_used": "智能体", "note": "definitional article on 智能体风险" },
+      { "org": "阿里巴巴通义千问", "zh_used": "Agent / 智能体", "note": "Qwen-Agent Chinese README mixes both" }
+    ],
+    "usage_examples": [
+      { "zh": "把敏感操作交给智能体之前，必须先想清楚权限边界。",
+        "en": "Before handing sensitive operations to an agent, you have to think through the permission boundary.",
+        "source": "constructed" }
+    ],
+    "related": ["agentic", "agency", "multi-agent-system", "tool-use", "autonomy-level"],
+    "sources": [
+      "http://www.news.cn/science/20240717/7f75ef8878304dacb682ebc8e8209fc3/c.html",
+      "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+      "https://www.sohu.com/a/1007172854_121864792",
+      "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+      "https://developer.aliyun.com/article/1659874"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "agentic",
+    "en": "agentic",
+    "en_aliases": ["agentic AI", "agentic behaviour"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["gap", "high-value", "adjective"],
+    "definition_en": "Adjective describing a system, workflow or behaviour that plans and acts over multiple steps toward a goal with limited step-by-step human direction. Used gradably in English: systems are 'more' or 'less' agentic.",
+    "definition_zh": "形容一个系统、流程或行为具有自主规划并连续执行多步操作的性质，程度可高可低，而非非黑即白的分类。",
+    "preferred_zh": "智能体",
+    "translation_difficulty": "high",
+    "pitfalls": "This is a genuine, documentable gap. Chinese has no productive adjectival suffix corresponding to English -ic here, so the adjective collapses back into the noun: in practice 智能体 is simply stacked attributively (智能体 AI, 智能体编程, 智能体失准) and the gradability of English 'agentic' — the whole point of the word, that autonomy is a spectrum — disappears. The competing forms each lose something else: 代理式 (\"proxy-style\", used by 百度百科 and much vendor marketing) revives the proxy ambiguity; 主体性的 / 能动的 import philosophy-of-mind vocabulary that no engineer uses; 自主的 is the closest natural adjective but merges with 'autonomous' and so cannot distinguish 'agentic' from 'autonomous'. There is no consensus and Chinese writers frequently just leave 'Agentic' in Latin script. Sentences like 'a more agentic model' have no idiomatic Chinese rendering and are normally rewritten as 自主性更强的模型.",
+    "translations": [
+      {
+        "zh": "智能体（作定语）",
+        "pinyin": "zhìnéngtǐ",
+        "status": "common",
+        "literal_back": "intelligent-entity (used attributively)",
+        "notes": "The de facto solution: the noun is stacked in front of another noun. Works for 'agentic AI' → 智能体 AI and 'agentic coding' → 智能体编程, but cannot express degree, and cannot modify a verb or a predicate.",
+        "attestations": [
+          {
+            "quote_zh": "智能体 AI（Agentic AI）的崛起，标志着人工智能从被动响应走向主动规划",
+            "quote_en": "The rise of agentic AI marks a shift in artificial intelligence from passive response toward active planning.",
+            "source_title": "智能体 AI 权威指南 (Agentic AI Guide)",
+            "publisher": "yeasy (GitBook)",
+            "source_type": "github",
+            "url": "https://yeasy.gitbook.io/agentic_ai_guide",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "代理式",
+        "pinyin": "dàilǐshì",
+        "status": "common",
+        "literal_back": "proxy-style / agent-style",
+        "notes": "Standard in vendor and encyclopedia register (代理式人工智能 / 代理式 AI). Reintroduces the proxy reading of 代理, and is rarely used by Chinese ML practitioners themselves.",
+        "attestations": [
+          {
+            "quote_zh": "代理式人工智能，指具备自主感知、推理、规划与执行能力，能够独立完成多步骤复杂任务的人工智能系统",
+            "quote_en": "Agentic AI refers to AI systems that possess autonomous perception, reasoning, planning and execution capabilities and can independently complete multi-step complex tasks.",
+            "source_title": "Agentic AI（百度百科词条）",
+            "publisher": "百度百科",
+            "source_type": "wiki",
+            "url": "https://baike.baidu.com/item/Agentic%20AI/65109990",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "主体性的 / 能动的",
+        "pinyin": "zhǔtǐxìng de / néngdòng de",
+        "status": "descriptive",
+        "literal_back": "having subject-hood / capable of initiating action",
+        "notes": "Philosophy-register glosses offered when the word has to be explained rather than used. Not attested in engineering text.",
+        "attestations": [
+          {
+            "quote_zh": "Agentic AI（具有主体能动性的人工智能）",
+            "quote_en": "Agentic AI (artificial intelligence possessing subject-agency).",
+            "source_title": "什么是 Agentic ？",
+            "publisher": "博客园 (cnblogs)，作者 dudu",
+            "source_type": "blog",
+            "url": "https://www.cnblogs.com/dudu/p/19149577",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "zh": "AI 自主的",
+        "pinyin": "AI zìzhǔ de",
+        "status": "proposed",
+        "literal_back": "AI-autonomous",
+        "notes": "Proposed by a developer on a Chinese Q&A board in late 2025 after finding no satisfactory existing rendering; recorded here as direct evidence that the community treats this as an unsolved translation problem, not as a recommendation. It also collides with 'autonomous'.",
+        "attestations": []
+      },
+      {
+        "zh": "Agentic",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Left untranslated in Chinese sentences, including by Chinese labs (e.g. capability lists that read 推理、编码、研究、Agentic 与 GUI 操作). Arguably the honest answer for the adjective. No fully verbatim attestation recovered within budget, so left unattested.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "百度百科", "zh_used": "代理式人工智能", "note": "encyclopedia headword" }
+    ],
+    "usage_examples": [
+      { "zh": "这类任务需要自主性更强的模型，而不只是会聊天的模型。",
+        "en": "Tasks like this need a more agentic model, not just one that can chat.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-agent", "agency", "autonomy-level"],
+    "sources": [
+      "https://yeasy.gitbook.io/agentic_ai_guide",
+      "https://baike.baidu.com/item/Agentic%20AI/65109990",
+      "https://www.cnblogs.com/dudu/p/19149577",
+      "https://q.cnblogs.com/q/155510"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "agency",
+    "en": "agency",
+    "en_aliases": ["human agency"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["philosophy", "contested"],
+    "definition_en": "The capacity to form goals and act on the world in pursuit of them. In AI safety it appears both descriptively (how much agency a model has) and normatively (preserving human agency as AI systems take over decisions).",
+    "definition_zh": "指主体形成目标并据此对世界采取行动的能力。在 AI 安全语境中既用于描述模型的自主行动能力，也用于讨论人类在 AI 接管决策后能否保有自己的行动能力。",
+    "preferred_zh": "能动性",
+    "translation_difficulty": "high",
+    "pitfalls": "Chinese splits the English word in two and the choice is not neutral. 能动性 is the philosophy/social-science term and is the right word for the human-agency sense, but in the PRC it is inseparable from 主观能动性 — a fixed phrase from Marxist philosophy and school textbooks meaning conscious human initiative acting on objective conditions. Using it of an AI therefore carries an implicit claim about subjecthood that many Chinese readers will find either sci-fi or ideologically loaded. 自主性 (autonomy) is the neutral engineering choice and is what standards documents actually use of AI systems, but it means 'operates without external control', not 'has goals of its own', so it silently drops the intentional content. 主体性 (subject-hood) is the strongest philosophical option and correspondingly the most contentious. Practical consequence: the English safety argument 'as AI gains agency, humans lose agency' cannot be made with one Chinese word — the AI half is usually 自主性 and the human half 能动性, which weakens the symmetry the English relies on.",
+    "translations": [
+      {
+        "zh": "能动性",
+        "pinyin": "néngdòngxìng",
+        "status": "common",
+        "literal_back": "capacity-to-act-ness",
+        "notes": "The philosophy/sociology rendering; standard for human agency. Carries 主观能动性 (Marxist 'conscious initiative') resonance in PRC usage.",
+        "attestations": [
+          {
+            "quote_zh": "Agentic AI（具有主体能动性的人工智能）",
+            "quote_en": "Agentic AI (artificial intelligence possessing subject-agency).",
+            "source_title": "什么是 Agentic ？",
+            "publisher": "博客园 (cnblogs)，作者 dudu",
+            "source_type": "blog",
+            "url": "https://www.cnblogs.com/dudu/p/19149577",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "zh": "自主性",
+        "pinyin": "zìzhǔxìng",
+        "status": "established",
+        "literal_back": "self-governing-ness",
+        "notes": "The word Chinese standards and lab documents actually use when describing what an AI system has. Neutral and widely understood, but denotes autonomy rather than agency: it says the system acts without being controlled, not that it has ends of its own.",
+        "attestations": [
+          {
+            "quote_zh": "智能体是可感知环境、自主决策并执行任务的AI实体，相比传统大模型，智能体自主性与交互性更强，带来新增安全风险。",
+            "quote_en": "An agent is an AI entity that can perceive its environment, decide autonomously and execute tasks; compared with conventional large models, agents have stronger autonomy and interactivity, which brings new safety risks.",
+            "source_title": "TC260-TR-005-2026《智能体安全标准化研究》",
+            "publisher": "搜狐（转载全国网络安全标准化技术委员会报告）",
+            "source_type": "standard",
+            "url": "https://www.sohu.com/a/1007172854_121864792",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "主体性",
+        "pinyin": "zhǔtǐxìng",
+        "status": "descriptive",
+        "literal_back": "subject-hood",
+        "notes": "Used in Chinese philosophy-of-AI writing debating whether AI can be a 主体 (subject / legal person). Strongest reading of 'agency' and the most controversial; not used in engineering text.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "问题不只是模型的自主性有多强，还包括人在这个流程里还剩多少能动性。",
+        "en": "The question is not only how much autonomy the model has, but how much agency the human has left in the loop.",
+        "source": "constructed" }
+    ],
+    "related": ["agentic", "ai-agent", "autonomy-level", "human-in-the-loop"],
+    "sources": [
+      "https://www.cnblogs.com/dudu/p/19149577",
+      "https://www.sohu.com/a/1007172854_121864792",
+      "https://baike.baidu.com/item/Agentic%20AI/65109990"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "tool-use",
+    "en": "tool use",
+    "en_aliases": ["function calling", "tool calling"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["core", "engineering"],
+    "definition_en": "A model's ability to invoke external functions, APIs or programs during generation and incorporate the results, turning a text generator into something that can act.",
+    "definition_zh": "模型在生成过程中调用外部函数、API 或程序并把返回结果纳入后续推理的能力，是模型从「会说」走向「能做」的关键机制。",
+    "preferred_zh": "工具调用",
+    "translation_difficulty": "low",
+    "pitfalls": "工具调用 (tool calling) and 函数调用 (function calling) are used almost interchangeably in Chinese, but 函数调用 is also the ordinary programming term for calling any function, so it is ambiguous outside LLM context; 工具调用 is unambiguous and is the safer default. Chinese docs — including Alibaba's own — routinely leave \"Function Calling\" in English as the name of the API feature while using 工具调用 for the concept, so the same paragraph often contains both. 工具使用 also occurs and maps more literally to \"tool use\" but is less common than 工具调用.",
+    "translations": [
+      {
+        "zh": "工具调用",
+        "pinyin": "gōngjù diàoyòng",
+        "status": "established",
+        "literal_back": "tool invocation",
+        "notes": "The default term in Chinese docs, safety reports and platform documentation.",
+        "attestations": [
+          {
+            "quote_zh": "大模型无法访问实时数据和外部系统。Function Calling 允许模型调用外部工具（API、数据库、自定义函数等），获取信息或执行操作，突破模型自身能力的限制。",
+            "quote_en": "Large models cannot access real-time data or external systems. Function Calling lets the model invoke external tools (APIs, databases, custom functions, etc.) to obtain information or perform operations, breaking through the limits of the model's own capabilities.",
+            "source_title": "如何通过 Function Calling 实现工具调用",
+            "publisher": "阿里云百炼 (Alibaba Cloud Model Studio)",
+            "source_type": "blog",
+            "url": "https://help.aliyun.com/zh/model-studio/qwen-function-calling",
+            "date": null
+          },
+          {
+            "quote_zh": "随着AI智能体（Agent）成为大模型落地的核心形态，其自主决策、工具调用、多智能体协同、持续进化等特性，催生了指令注入、越权操作、技能供应链攻击、智能体失控等新型安全隐患，成为当前AI安全治理的核心攻坚方向。",
+            "quote_en": "As AI agents become the core deployment form of large models, their autonomous decision-making, tool calling, multi-agent coordination and continuous evolution give rise to new safety hazards such as prompt injection, privilege-exceeding operations, skill supply-chain attacks and agent loss of control.",
+            "source_title": "智能体安全研究员（招聘页）",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "blog",
+            "url": "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "函数调用",
+        "pinyin": "hánshù diàoyòng",
+        "status": "common",
+        "literal_back": "function invocation",
+        "notes": "Direct calque of \"function calling\"; used for the API-level feature. Ambiguous with ordinary programming usage.",
+        "attestations": [
+          {
+            "quote_zh": "支持，LLM类提供了函数调用的支持。此外，一些Agent类如FnCallAgent和ReActChat也是基于函数调用功能构建的。",
+            "quote_en": "Supported — the LLM classes provide function-calling support. In addition, some Agent classes such as FnCallAgent and ReActChat are built on top of the function-calling capability.",
+            "source_title": "Qwen-Agent README_CN.md",
+            "publisher": "阿里巴巴通义千问 (QwenLM)",
+            "source_type": "github",
+            "url": "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "工具使用",
+        "pinyin": "gōngjù shǐyòng",
+        "status": "common",
+        "literal_back": "tool use",
+        "notes": "Closest literal match to English \"tool use\"; used when describing a model capability rather than an API mechanism.",
+        "attestations": [
+          {
+            "quote_zh": "Qwen-Agent是一个开发框架。开发者可基于本框架开发Agent应用，充分利用基于通义千问模型（Qwen）的指令遵循、工具使用、规划、记忆能力。",
+            "quote_en": "Qwen-Agent is a development framework. Developers can build Agent applications on it, making full use of the Qwen models' instruction-following, tool-use, planning and memory capabilities.",
+            "source_title": "Qwen-Agent README_CN.md",
+            "publisher": "阿里巴巴通义千问 (QwenLM)",
+            "source_type": "github",
+            "url": "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "Function Calling",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Kept in English as the name of the API feature even in official Chinese cloud documentation, alongside the Chinese term for the concept.",
+        "attestations": [
+          {
+            "quote_zh": "Function Calling 通过应用程序与大模型之间的多步骤交互实现",
+            "quote_en": "Function Calling is implemented through multi-step interaction between the application and the large model.",
+            "source_title": "如何通过 Function Calling 实现工具调用",
+            "publisher": "阿里云百炼 (Alibaba Cloud Model Studio)",
+            "source_type": "blog",
+            "url": "https://help.aliyun.com/zh/model-studio/qwen-function-calling",
+            "date": null
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里云百炼", "zh_used": "工具调用 / Function Calling", "note": "official platform docs use both in the same page" },
+      { "org": "安远 AI (Concordia AI)", "zh_used": "工具调用", "note": "in agent-safety risk list" }
+    ],
+    "usage_examples": [
+      { "zh": "模型判断需要外部信息时会发起一次工具调用，应用再把结果返回给模型。",
+        "en": "When the model judges that it needs external information it issues a tool call, and the application feeds the result back.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-agent", "model-context-protocol", "permissions", "computer-use"],
+    "sources": [
+      "https://help.aliyun.com/zh/model-studio/qwen-function-calling",
+      "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+      "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "computer-use",
+    "en": "computer use",
+    "en_aliases": ["GUI agent", "computer-use agent"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["capability", "loanword"],
+    "definition_en": "An agent operating a computer the way a person does — reading the screen, moving the cursor, clicking and typing — rather than through purpose-built APIs.",
+    "definition_zh": "智能体像人一样直接操作电脑：看屏幕、移动光标、点击和输入，而不是通过专门的 API 接口完成任务。",
+    "preferred_zh": "Computer Use",
+    "translation_difficulty": "high",
+    "pitfalls": "Chinese has no settled translation of the capability name and mostly keeps \"Computer Use\" in Latin script, even in Chinese-language research write-ups from Chinese labs. What Chinese *does* have a stable term for is the agent class: GUI 智能体, which is well established in Chinese survey and media coverage. The two are not the same — GUI 智能体 names the system, Computer Use names the capability, and GUI 智能体 also covers phone/mobile agents (手机智能体), which Chinese product discourse treats as the primary case because of the mobile-first market. Candidate calques 电脑使用 and 计算机使用 both read as ordinary phrases meaning \"using a computer\" and are not recognisable as a term of art; 计算机操作 is slightly better but still rare. Note also that Chinese sources keep GUI and API in Latin letters, so hybrid phrases like API-GUI 范式 are normal.",
+    "translations": [
+      {
+        "zh": "Computer Use",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Dominant. Chinese technical write-ups embed the English phrase (often as \"Computer Use Agent\") directly in Chinese sentences rather than translating it. The BAAI/Zhipu-Tsinghua ComputerRL coverage cited here does exactly this throughout.",
+        "attestations": [
+          {
+            "quote_zh": "研究团队提出了一种创新的 API-GUI 范式，将编程 API 调用与直接的 GUI 交互结合",
+            "quote_en": "The research team proposed an innovative API-GUI paradigm combining programmatic API calls with direct GUI interaction.",
+            "source_title": "把电脑交给AI Agent！清华、智谱、国科大团队打造ComputerRL",
+            "publisher": "智源社区 (BAAI Hub)",
+            "source_type": "media",
+            "url": "https://hub.baai.ac.cn/view/48312",
+            "date": "2025-08"
+          }
+        ]
+      },
+      {
+        "zh": "GUI 智能体",
+        "pinyin": "GUI zhìnéngtǐ",
+        "status": "established",
+        "literal_back": "GUI intelligent-entity",
+        "notes": "The established Chinese term for the *agent class* that does computer use. Widely used in Chinese survey coverage. Prefer this when the referent is the system; it does not translate the capability name.",
+        "attestations": [
+          {
+            "quote_zh": "基于大语言模型的GUI智能体能够更好地应对这些挑战。通过自然语言理解和视觉感知，这些智能体能根据简单的语言指令解析出用户期望的具体操作",
+            "quote_en": "LLM-based GUI agents can better meet these challenges: through natural-language understanding and visual perception, they can parse the specific operations a user wants from a simple verbal instruction.",
+            "source_title": "微软发布突破性大模型GUI智能体综述，引领人机交互新纪元！",
+            "publisher": "搜狐",
+            "source_type": "media",
+            "url": "https://www.sohu.com/a/847098842_121924584",
+            "date": "2025-01"
+          }
+        ]
+      },
+      {
+        "zh": "电脑操作 / 计算机操作",
+        "pinyin": "diànnǎo cāozuò / jìsuànjī cāozuò",
+        "status": "descriptive",
+        "literal_back": "computer operation",
+        "notes": "Descriptive paraphrase used when the capability has to be explained in plain Chinese. Not a recognised term of art; readers will not identify it as the Anthropic-lineage capability.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "智谱 AI / 清华大学", "zh_used": "Computer Use Agent", "note": "ComputerRL work, reported in Chinese with the English term retained" }
+    ],
+    "usage_examples": [
+      { "zh": "GUI 智能体不依赖专用接口，直接看屏幕、点按钮，因此权限边界更难界定。",
+        "en": "GUI agents do not rely on dedicated interfaces — they read the screen and click buttons directly, which makes the permission boundary harder to define.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-agent", "tool-use", "sandboxing", "permissions"],
+    "sources": [
+      "https://hub.baai.ac.cn/view/48312",
+      "https://www.sohu.com/a/847098842_121924584"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "gui-agent",
+    "en": "GUI agent",
+    "en_aliases": ["phone agent", "mobile agent"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["added-by-research", "china-primary"],
+    "definition_en": "An agent that completes tasks by operating a graphical user interface — a phone or desktop screen — through perception of the UI plus simulated clicks and keystrokes.",
+    "definition_zh": "通过感知图形界面并模拟点击、输入来完成任务的智能体，覆盖手机端和桌面端。",
+    "preferred_zh": "GUI 智能体",
+    "translation_difficulty": "low",
+    "pitfalls": "Added because the Chinese term is more prominent and more stable than the English one, and because Chinese discourse centres the phone case (手机智能体) where English centres the desktop. Worth recording as an instance where the Chinese vocabulary is richer than the English.",
+    "translations": [
+      {
+        "zh": "GUI 智能体",
+        "pinyin": "GUI zhìnéngtǐ",
+        "status": "established",
+        "literal_back": "GUI intelligent-entity",
+        "notes": "Standard in Chinese survey and media coverage. The GUI half stays in Latin letters.",
+        "attestations": [
+          {
+            "quote_zh": "智能体能够捕捉实时反馈，根据界面的变化动态调整策略",
+            "quote_en": "The agent can capture real-time feedback and dynamically adjust its strategy according to changes in the interface.",
+            "source_title": "微软发布突破性大模型GUI智能体综述，引领人机交互新纪元！",
+            "publisher": "搜狐",
+            "source_type": "media",
+            "url": "https://www.sohu.com/a/847098842_121924584",
+            "date": "2025-01"
+          }
+        ]
+      },
+      {
+        "zh": "手机智能体",
+        "pinyin": "shǒujī zhìnéngtǐ",
+        "status": "common",
+        "literal_back": "phone intelligent-entity",
+        "notes": "Prominent in PRC product discourse (Zhipu's AutoGLM was marketed as a 手机智能体). No verbatim attestation recovered within budget; treat as weakly evidenced.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [],
+    "related": ["computer-use", "ai-agent"],
+    "sources": ["https://www.sohu.com/a/847098842_121924584"],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "scaffolding",
+    "en": "scaffolding",
+    "en_aliases": ["agent scaffold", "harness"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["engineering", "evals"],
+    "definition_en": "The code around a model that turns it into an agent: the loop, prompts, memory, tool wiring and control logic. In evaluations, scaffolding quality can change measured capability as much as the model does.",
+    "definition_zh": "把模型包装成智能体的外围代码：循环控制、提示词、记忆、工具接入等。在能力评测中，脚手架的好坏对结果的影响不亚于模型本身。",
+    "preferred_zh": "脚手架",
+    "translation_difficulty": "low",
+    "pitfalls": "脚手架 already existed in Chinese software engineering as the translation of CLI 'scaffolding' tools (脚手架工具, e.g. Vue CLI), so the word is familiar but its older sense is 'project generator', not 'agent wrapper'. The bigger issue is that English now distinguishes scaffold from harness, and Chinese collapses both onto 脚手架 — with the result that Chinese writers increasingly leave 'harness' in English (harness / Harness Engineering) rather than lose the distinction. Recording both is more useful than picking one.",
+    "translations": [
+      {
+        "zh": "脚手架",
+        "pinyin": "jiǎoshǒujià",
+        "status": "established",
+        "literal_back": "scaffolding (construction)",
+        "notes": "Standard calque, now routine in Chinese agent writing.",
+        "attestations": [
+          {
+            "quote_zh": "一部分脚手架被模型能力吸收，一部分脚手架被产品 runtime 商品化",
+            "quote_en": "Some scaffolding is absorbed by model capability; some is commoditised by product runtimes.",
+            "source_title": "AI 脚手架正在商品化，人的工作变成判断边界",
+            "publisher": "yage.ai（作者：鸭哥）",
+            "source_type": "blog",
+            "url": "https://yage.ai/share/ai-scaffolding-commodity-runtime-20260505.html",
+            "date": "2026-05"
+          },
+          {
+            "quote_zh": "长程任务的难点并不只是某一步是否答对，而是大量紧密耦合的步骤必须组成一条连贯轨迹。",
+            "quote_en": "The difficulty of long-horizon tasks is not merely whether any single step is correct, but that a large number of tightly coupled steps must form one coherent trajectory.",
+            "source_title": "迈向长程智能体，人大高瓴发布149页全景综述",
+            "publisher": "新浪科技",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "harness",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Kept in English precisely because 脚手架 is already taken by 'scaffold'. Chinese agent engineering writing now uses bare 'harness' and even 'Harness Engineering' inside Chinese sentences.",
+        "attestations": [
+          {
+            "quote_zh": "过去要自己写的 agent harness，正在变成标准运行时",
+            "quote_en": "The agent harness you used to have to write yourself is becoming a standard runtime.",
+            "source_title": "AI 脚手架正在商品化，人的工作变成判断边界",
+            "publisher": "yage.ai（作者：鸭哥）",
+            "source_type": "blog",
+            "url": "https://yage.ai/share/ai-scaffolding-commodity-runtime-20260505.html",
+            "date": "2026-05"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "同一个模型换一套脚手架，评测分数可能差出一大截。",
+        "en": "Swap the scaffolding around the same model and the benchmark score can move a long way.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-agent", "long-horizon-task", "autonomous-ai-rd"],
+    "sources": [
+      "https://yage.ai/share/ai-scaffolding-commodity-runtime-20260505.html",
+      "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "long-horizon-task",
+    "en": "long-horizon task",
+    "en_aliases": ["time horizon", "long-horizon autonomy"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["metr", "capability"],
+    "definition_en": "A task requiring many interdependent steps sustained over a long period. METR measures capability as the human-equivalent task length a model can complete at a 50% success rate.",
+    "definition_zh": "需要连续完成大量相互依赖步骤、跨越较长时间的任务。METR 用「模型在 50% 成功率下能完成的任务对应的人类耗时」来衡量这项能力。",
+    "preferred_zh": "长程任务",
+    "translation_difficulty": "medium",
+    "pitfalls": "Three renderings are live and none has fully won: 长程任务 (favoured in 2026 academic survey writing, and the basis of 长程智能体 for 'long-horizon agent'), 长时程任务 (more literal, spells out the time dimension), and 长期任务 (used by tech media but ambiguous — it can just mean 'an ongoing/standing task' in ordinary Chinese). Separately, METR's 'time horizon' metric is rendered 时间跨度, which is a different word from any of the above, so a reader following the Chinese coverage sees 长期任务 and 时间跨度 in the same article without an obvious link. Safety-register writing (安远 AI) uses a fourth form, 长程自主性, for 'long-horizon autonomy' as a capability category.",
+    "translations": [
+      {
+        "zh": "长程任务",
+        "pinyin": "chángchéng rènwù",
+        "status": "common",
+        "literal_back": "long-range task",
+        "notes": "Preferred: unambiguous, compositional (长程智能体 = long-horizon agent), and the form used in 2026 Chinese survey literature.",
+        "attestations": [
+          {
+            "quote_zh": "长程任务的难点并不只是某一步是否答对，而是大量紧密耦合的步骤必须组成一条连贯轨迹。",
+            "quote_en": "The difficulty of long-horizon tasks is not merely whether any single step is correct, but that a large number of tightly coupled steps must form one coherent trajectory.",
+            "source_title": "迈向长程智能体，人大高瓴发布149页全景综述",
+            "publisher": "新浪科技",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "长程智能体（Long-Horizon Agents）研究要回答的问题。",
+            "quote_en": "…the question that research on long-horizon agents has to answer.",
+            "source_title": "迈向长程智能体，人大高瓴发布149页全景综述",
+            "publisher": "新浪科技",
+            "source_type": "media",
+            "url": "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "长期任务 / 时间跨度",
+        "pinyin": "chángqī rènwù / shíjiān kuàdù",
+        "status": "common",
+        "literal_back": "long-term task / time span",
+        "notes": "The pair used in Chinese tech-media coverage of METR. 时间跨度 is the settled rendering of 'time horizon' as a metric; 长期任务 for the task type is ambiguous in ordinary Chinese.",
+        "attestations": [
+          {
+            "quote_zh": "AI在完成长期任务方面的进步速度惊人，其时间跨度大约每七个月翻一番。",
+            "quote_en": "AI's progress on completing long-horizon tasks is striking: its time horizon roughly doubles every seven months.",
+            "source_title": "Nature发文「智能体摩尔定律」，Agent能力每7个月翻倍",
+            "publisher": "量子位 (QbitAI)",
+            "source_type": "media",
+            "url": "https://www.qbitai.com/2025/03/266110.html",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "长程自主性",
+        "pinyin": "chángchéng zìzhǔxìng",
+        "status": "common",
+        "literal_back": "long-range autonomy",
+        "notes": "Safety-register form for 'long-horizon autonomy' as a dangerous-capability category, used by 安远 AI when comparing frontier safety frameworks.",
+        "attestations": [
+          {
+            "quote_zh": "长程自主性、能力隐藏（Sandbagging）、自主复制与适应、破坏安全防护等",
+            "quote_en": "Long-horizon autonomy, capability hiding (sandbagging), autonomous replication and adaptation, undermining safeguards, etc.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安全内参（作者：安远 AI）",
+            "source_type": "report",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "长时程任务",
+        "pinyin": "chángshíchéng rènwù",
+        "status": "common",
+        "literal_back": "long time-range task",
+        "notes": "More literal variant, common in搜索/科普 writing. No verbatim attestation recovered within budget.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "长程自主性", "note": "frontier framework comparison, OpenAI research categories" }
+    ],
+    "usage_examples": [
+      { "zh": "模型能独立完成的长程任务时间跨度还在快速拉长。",
+        "en": "The time horizon of long-horizon tasks a model can complete on its own is still lengthening fast.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-agent", "scaffolding", "autonomy-level", "autonomous-ai-rd"],
+    "sources": [
+      "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml",
+      "https://www.qbitai.com/2025/03/266110.html",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "multi-agent-system",
+    "en": "multi-agent system",
+    "en_aliases": ["MAS"],
+    "abbr": "MAS",
+    "category": "agents-autonomy",
+    "tags": ["classic", "established"],
+    "definition_en": "A system of multiple interacting agents in a shared environment. In safety, the frame where collusion, emergent coordination failures and principal-hierarchy problems arise.",
+    "definition_zh": "由多个智能体在同一环境中交互构成的系统。在安全研究中，合谋、协作失败和多层委托授权等问题都出现在这一框架下。",
+    "preferred_zh": "多智能体系统",
+    "translation_difficulty": "low",
+    "pitfalls": "Unproblematic — this is the one term in the category with a genuinely settled, textbook-stable rendering, inherited from classical distributed-AI literature long before LLMs. Its stability is in fact part of why 智能体 beat 代理 for 'agent': the multi-agent compound already existed and only works with 智能体. Note that the newer industry phrase 多智能体协同 (multi-agent coordination) is what safety writing usually uses, rather than the system-theoretic 多智能体系统.",
+    "translations": [
+      {
+        "zh": "多智能体系统",
+        "pinyin": "duō zhìnéngtǐ xìtǒng",
+        "status": "established",
+        "literal_back": "multi intelligent-entity system",
+        "notes": "Textbook-stable; identical wording appears in Chinese Wikipedia and in 机器之心's technology glossary.",
+        "attestations": [
+          {
+            "quote_zh": "多智能体系统（英语：multi-agent system，縮寫M.A.S.），是由一个在一个环境中交互的多个智能体组成的计算系统。",
+            "quote_en": "A multi-agent system is a computational system composed of multiple agents interacting in an environment.",
+            "source_title": "多智能体系统",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-cn/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F",
+            "date": null
+          },
+          {
+            "quote_zh": "一个多智能体系统，是由一个在一个环境中交互的多个智能体组成的计算系统。",
+            "quote_en": "A multi-agent system is a computational system composed of multiple agents interacting in an environment.",
+            "source_title": "多智能体系统（技术词条）",
+            "publisher": "机器之心 (Synced)",
+            "source_type": "wiki",
+            "url": "https://www.jiqizhixin.com/graph/technologies/c358669a-56ff-4bc6-b682-605914071b76",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "多智能体协同",
+        "pinyin": "duō zhìnéngtǐ xiétóng",
+        "status": "common",
+        "literal_back": "multi-agent coordination",
+        "notes": "The phrasing safety and industry writing actually uses when describing agents working together as a risk surface.",
+        "attestations": [
+          {
+            "quote_zh": "随着AI智能体（Agent）成为大模型落地的核心形态，其自主决策、工具调用、多智能体协同、持续进化等特性，催生了指令注入、越权操作、技能供应链攻击、智能体失控等新型安全隐患，成为当前AI安全治理的核心攻坚方向。",
+            "quote_en": "As AI agents become the core deployment form of large models, their autonomous decision-making, tool calling, multi-agent coordination and continuous evolution give rise to new safety hazards…",
+            "source_title": "智能体安全研究员（招聘页）",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "blog",
+            "url": "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+            "date": null
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "机器之心 (Synced)", "zh_used": "多智能体系统", "note": "technology glossary entry" }
+    ],
+    "usage_examples": [
+      { "zh": "在多智能体系统里，一个子智能体被劫持会把污染传播到整张图谱。",
+        "en": "In a multi-agent system, one hijacked sub-agent propagates the contamination across the whole graph.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-agent", "delegation", "permissions"],
+    "sources": [
+      "https://zh.wikipedia.org/zh-cn/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%B3%BB%E7%BB%9F",
+      "https://www.jiqizhixin.com/graph/technologies/c358669a-56ff-4bc6-b682-605914071b76",
+      "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "model-context-protocol",
+    "en": "Model Context Protocol",
+    "en_aliases": [],
+    "abbr": "MCP",
+    "category": "agents-autonomy",
+    "tags": ["protocol", "anthropic", "fast-adoption"],
+    "definition_en": "An open protocol standardising how applications supply context, tools and resources to LLMs, so any client can talk to any tool server without bespoke integration.",
+    "definition_zh": "一种开放协议，统一了应用向大模型提供上下文、工具和资源的方式，使任意客户端都能对接任意工具服务端，无需为每个组合单独开发。",
+    "preferred_zh": "模型上下文协议",
+    "translation_difficulty": "low",
+    "pitfalls": "The Chinese name is settled and uncontested, but the abbreviation MCP is what people actually say and write — Chinese docs typically give 模型上下文协议（Model Context Protocol，简称 MCP）once and then use MCP throughout. Minor variant 大模型上下文协议 appears in some media headlines. One thing worth flagging for safety readers: MCP's Chinese docs render the sampling feature's human-approval design as 人机协作（Human-in-the-loop）rather than 人在回路, so the protocol's oversight vocabulary does not line up with the HITL vocabulary used elsewhere in Chinese agent-safety writing.",
+    "translations": [
+      {
+        "zh": "模型上下文协议",
+        "pinyin": "móxíng shàngxiàwén xiéyì",
+        "status": "established",
+        "literal_back": "model context protocol",
+        "notes": "Uniform across Chinese cloud docs, community translations and media. Almost always glossed with the English name on first use.",
+        "attestations": [
+          {
+            "quote_zh": "模型上下文协议（Model Context Protocol，简称 MCP）是一种开放标准，旨在标准化大型语言模型（LLM）与外部数据源和工具之间的交互方式。",
+            "quote_en": "The Model Context Protocol (MCP) is an open standard intended to standardise how large language models interact with external data sources and tools.",
+            "source_title": "一文掌握 MCP 上下文协议：从理论到实践",
+            "publisher": "阿里云开发者社区（作者：陈明勇）",
+            "source_type": "blog",
+            "url": "https://developer.aliyun.com/article/1659874",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "Model Context Protocol (MCP) 是一个开放协议， 为 LLM 应用与外部数据源和工具之间的无缝集成提供了可能。",
+            "quote_en": "The Model Context Protocol (MCP) is an open protocol that makes seamless integration between LLM applications and external data sources and tools possible.",
+            "source_title": "Model Context Protocol 规范（2025-03-26）",
+            "publisher": "MCP 中文文档 (mcp.fleeto.us)",
+            "source_type": "github",
+            "url": "https://mcp.fleeto.us/spec/",
+            "date": "2025-03"
+          }
+        ]
+      },
+      {
+        "zh": "MCP",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The form actually used in running text and speech after first mention.",
+        "attestations": [
+          {
+            "quote_zh": "可以在开源的MCP Server网站上选择需要的工具，并配置相关环境。",
+            "quote_en": "You can pick the tools you need from open-source MCP Server sites and configure the relevant environment.",
+            "source_title": "Qwen-Agent README_CN.md",
+            "publisher": "阿里巴巴通义千问 (QwenLM)",
+            "source_type": "github",
+            "url": "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+            "date": null
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里云", "zh_used": "模型上下文协议 / MCP", "note": "developer community explainer" },
+      { "org": "阿里巴巴通义千问", "zh_used": "MCP", "note": "Qwen-Agent supports MCP tools" }
+    ],
+    "usage_examples": [
+      { "zh": "接一次 MCP，就能复用整个生态里的工具，不用为每个服务单独写适配。",
+        "en": "Integrate MCP once and you can reuse the whole ecosystem of tools instead of writing an adapter per service.",
+        "source": "constructed" }
+    ],
+    "related": ["tool-use", "ai-agent", "permissions"],
+    "sources": [
+      "https://developer.aliyun.com/article/1659874",
+      "https://mcp.fleeto.us/spec/",
+      "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "autonomy-level",
+    "en": "autonomy level",
+    "en_aliases": ["levels of autonomy", "agent capability levels"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["grading", "bridge-concept"],
+    "definition_en": "A graded scale describing how much of a task a system handles without human direction, and correspondingly how much human oversight is required at each level.",
+    "definition_zh": "用分级的方式刻画系统在多大程度上无需人类介入即可自行完成任务，以及各级别相应需要多少人类监督。",
+    "preferred_zh": "自主性等级",
+    "translation_difficulty": "medium",
+    "pitfalls": "There is no single fixed Chinese term for the concept, but there IS a culturally dominant template: the SAE 自动驾驶 L0–L5 grading is so familiar in China that Chinese agent-autonomy frameworks explicitly borrow it, often saying so in the first paragraph. This is a genuinely useful bridge — a Chinese reader who is lost on 'autonomy level' will immediately understand 类比自动驾驶的 L0–L5 分级. Two cautions. First, the borrowed frameworks are mostly *capability* ladders (L0 rule-based → L5 self-directed), not oversight ladders, so they answer 'how smart' rather than the safety question 'how much human control remains' — the mapping is looser than it looks. Second, PRC national standardisation has a separate, official grading (《人工智能终端智能化分册》-style L1–L4 terminal intelligence grading led by CAICT/SAC), so 分级 in a policy document may point to a completely different scale than 分级 in a blog post. In regulatory register the operative phrase is not a level at all but 自主程度 ('degree of autonomy'), which the Chinese EU AI Act translation uses to scale oversight requirements.",
+    "translations": [
+      {
+        "zh": "自主性等级",
+        "pinyin": "zìzhǔxìng děngjí",
+        "status": "descriptive",
+        "literal_back": "autonomy grade",
+        "notes": "The most transparent rendering, but not a fixed term; Chinese sources more often name the specific framework (L0–L5 分级) than the abstract concept. No standalone verbatim attestation recovered.",
+        "attestations": []
+      },
+      {
+        "zh": "L0–L5 分级（类比自动驾驶）",
+        "pinyin": "L0–L5 fēnjí",
+        "status": "common",
+        "literal_back": "L0–L5 grading",
+        "notes": "The working form. Chinese agent frameworks state the autonomous-driving analogy explicitly, which makes it the highest-leverage way to introduce the concept to a Chinese audience.",
+        "attestations": [
+          {
+            "quote_zh": "我们参考自动驾驶的分级逻辑，构建了一个六层级框架（L0-L5）",
+            "quote_en": "Taking the grading logic of autonomous driving as a reference, we built a six-level framework (L0–L5).",
+            "source_title": "详解 AI Agent（智能体）L0-L5 的分级框架！",
+            "publisher": "人人都是产品经理（作者：灵山下的小妖怪）",
+            "source_type": "blog",
+            "url": "https://www.woshipm.com/ai/6284877.html",
+            "date": "2025-11"
+          },
+          {
+            "quote_zh": "正如自动驾驶汽车必须依次掌握车道保持、自适应巡航和自动泊车，才能迈向L3及以上级别，AI智能体的发展也遵循同样的模式",
+            "quote_en": "Just as a self-driving car must master lane keeping, adaptive cruise control and automatic parking in turn before reaching L3 and above, the development of AI agents follows the same pattern.",
+            "source_title": "详解 AI Agent（智能体）L0-L5 的分级框架！",
+            "publisher": "人人都是产品经理（作者：灵山下的小妖怪）",
+            "source_type": "blog",
+            "url": "https://www.woshipm.com/ai/6284877.html",
+            "date": "2025-11"
+          }
+        ]
+      },
+      {
+        "zh": "自主程度",
+        "pinyin": "zìzhǔ chéngdù",
+        "status": "established",
+        "literal_back": "degree of autonomy",
+        "notes": "The regulatory-register phrasing: a continuous degree rather than a discrete level, used to scale oversight obligations. This is the form to use in policy translation.",
+        "attestations": [
+          {
+            "quote_zh": "监督措施应与高风险人工智能系统的风险、自主程度和使用环境相称",
+            "quote_en": "Oversight measures shall be commensurate with the risks, degree of autonomy and context of use of the high-risk AI system.",
+            "source_title": "欧盟《人工智能法案》全文中文翻译",
+            "publisher": "安全内参",
+            "source_type": "gov",
+            "url": "https://www.secrss.com/articles/68714",
+            "date": "2024-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "可以类比自动驾驶的 L0–L5：级别越高，人能介入的环节越少。",
+        "en": "Think of it like autonomous driving L0–L5: the higher the level, the fewer points at which a human can step in.",
+        "source": "constructed" }
+    ],
+    "related": ["agency", "human-in-the-loop", "ai-agent", "oversight-failure"],
+    "sources": [
+      "https://www.woshipm.com/ai/6284877.html",
+      "https://www.secrss.com/articles/68714",
+      "https://zhuanlan.zhihu.com/p/699942565"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "human-in-the-loop",
+    "en": "human in the loop",
+    "en_aliases": ["HITL", "human approval"],
+    "abbr": "HITL",
+    "category": "agents-autonomy",
+    "tags": ["oversight", "contested"],
+    "definition_en": "A design in which the system pauses before a consequential action and requires a human to review, approve, reject or edit it before continuing.",
+    "definition_zh": "一种设计模式：系统在做出关键判断或高风险动作前暂停，交由人审阅、批准、拒绝或修改后再继续。",
+    "preferred_zh": "人在回路",
+    "translation_difficulty": "medium",
+    "pitfalls": "Four renderings compete and they encode different amounts of control. 人在回路 is the most faithful (回路 = loop, from control theory) and is the emerging default in agent writing. 人机协作 / 人机协同 ('human-machine collaboration') is what MCP's Chinese documentation and much product copy use, and it is materially weaker — collaboration does not imply a blocking approval gate, so a Chinese spec that says 人机协作 may not actually require the human to be able to stop anything. 人工审批 ('manual approval') is the concrete engineering mechanism and is unambiguous but narrow. 人类监督 belongs to the regulatory register (EU AI Act Chinese translations) and covers supervision generally, not the in-loop pause. When translating a safety requirement, prefer 人在回路 or 人工审批 over 人机协作 — the last one quietly drops the veto.",
+    "translations": [
+      {
+        "zh": "人在回路",
+        "pinyin": "rén zài huílù",
+        "status": "common",
+        "literal_back": "human in the [control] loop",
+        "notes": "Most faithful; 回路 comes from control engineering. Emerging default in Chinese agent-safety writing.",
+        "attestations": [
+          {
+            "quote_zh": "人在回路是在 AI 工作流的关键判断或高风险动作前暂停，让人审阅、批准、拒绝或修正后再继续的机制。",
+            "quote_en": "Human-in-the-loop is a mechanism that pauses before a critical judgement or high-risk action in an AI workflow so a human can review, approve, reject or correct it before continuing.",
+            "source_title": "人在回路（Human-in-the-loop）是什么｜AI术语图解",
+            "publisher": "VibeHub (vibe-hub.org)",
+            "source_type": "blog",
+            "url": "https://vibe-hub.org/human-in-the-loop",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "人机协作",
+        "pinyin": "rénjī xiézuò",
+        "status": "common",
+        "literal_back": "human-machine collaboration",
+        "notes": "Used in MCP's Chinese documentation as the gloss for Human-in-the-loop. Weaker than the English: implies cooperation rather than a blocking approval gate. Flag when it appears in a requirement.",
+        "attestations": [
+          {
+            "quote_zh": "人机协作（Human-in-the-loop）设计，确保用户能控制 LLM 看到的内容以及生成的结果。",
+            "quote_en": "A human-in-the-loop design, ensuring the user can control what the LLM sees and what it produces.",
+            "source_title": "一文掌握 MCP 上下文协议：从理论到实践",
+            "publisher": "阿里云开发者社区（作者：陈明勇）",
+            "source_type": "blog",
+            "url": "https://developer.aliyun.com/article/1659874",
+            "date": "2025-04"
+          }
+        ]
+      },
+      {
+        "zh": "人工审批",
+        "pinyin": "réngōng shěnpī",
+        "status": "common",
+        "literal_back": "manual approval",
+        "notes": "The concrete mechanism as it appears in Chinese agent-security architecture writing (approval gating on high-risk tool calls).",
+        "attestations": [
+          {
+            "quote_zh": "只有当所有策略都通过时，工具调用才会真正发生",
+            "quote_en": "The tool call only actually happens once every policy check has passed.",
+            "source_title": "企业Agent运行时安全的七域架构",
+            "publisher": "安全内参（作者：模安局）",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/92784",
+            "date": "2026-08"
+          }
+        ]
+      },
+      {
+        "zh": "人类监督",
+        "pinyin": "rénlèi jiāndū",
+        "status": "established",
+        "literal_back": "human supervision",
+        "notes": "Regulatory register (EU AI Act Chinese translations). Broader than HITL — covers supervision in general, not the in-loop pause.",
+        "attestations": [
+          {
+            "quote_zh": "监督措施应与高风险人工智能系统的风险、自主程度和使用环境相称",
+            "quote_en": "Oversight measures shall be commensurate with the risks, degree of autonomy and context of use of the high-risk AI system.",
+            "source_title": "欧盟《人工智能法案》全文中文翻译",
+            "publisher": "安全内参",
+            "source_type": "gov",
+            "url": "https://www.secrss.com/articles/68714",
+            "date": "2024-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "阿里云开发者社区", "zh_used": "人机协作（Human-in-the-loop）", "note": "MCP sampling explainer" }
+    ],
+    "usage_examples": [
+      { "zh": "涉及付款的动作一律走人在回路，必须人工审批后才执行。",
+        "en": "Anything involving payment goes through a human in the loop and only executes after manual approval.",
+        "source": "constructed" }
+    ],
+    "related": ["permissions", "autonomy-level", "oversight-failure", "delegation"],
+    "sources": [
+      "https://vibe-hub.org/human-in-the-loop",
+      "https://developer.aliyun.com/article/1659874",
+      "https://www.secrss.com/articles/92784",
+      "https://www.secrss.com/articles/68714"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "sandboxing",
+    "en": "sandboxing",
+    "en_aliases": ["sandbox"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["infosec", "established"],
+    "definition_en": "Running untrusted code or an agent inside an isolated environment whose access to the host filesystem, network and processes is restricted, so that damage is contained.",
+    "definition_zh": "把不受信任的代码或智能体放进隔离环境中运行，限制其对宿主机文件、网络和进程的访问，使潜在破坏被限制在环境内部。",
+    "preferred_zh": "沙箱",
+    "translation_difficulty": "low",
+    "pitfalls": "沙箱 and 沙盒 are the same word with two calques and are used interchangeably; 沙箱 dominates in mainland security and AI writing (Huawei's reference docs, Chinese lab READMEs), while 沙盒 is more common in gaming (沙盒游戏 = sandbox game) and in the Chinese Wikipedia article title. 沙盘 also occurs. There is a separate collision worth knowing: 监管沙箱 / 沙盒监管 is the established Chinese term for a *regulatory* sandbox in fintech and AI policy, so 沙箱 in a governance document may mean a supervised pilot programme, not technical isolation.",
+    "translations": [
+      {
+        "zh": "沙箱",
+        "pinyin": "shāxiāng",
+        "status": "established",
+        "literal_back": "sand box",
+        "notes": "Dominant in mainland security and AI engineering text.",
+        "attestations": [
+          {
+            "quote_zh": "沙箱技术（Sandboxing）是一种用于隔离正在运行程序的安全机制，其目的是限制不可信进程或不可信代码运行时的访问权限。",
+            "quote_en": "Sandboxing is a security mechanism for isolating running programs, aimed at restricting the runtime access privileges of untrusted processes or untrusted code.",
+            "source_title": "什么是沙箱技术？沙箱技术的原理是什么？",
+            "publisher": "华为 (Huawei) 信息百科",
+            "source_type": "blog",
+            "url": "https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%B2%99%E7%AE%B1%E6%8A%80%E6%9C%AF.html",
+            "date": null
+          },
+          {
+            "quote_zh": "您可以为智能体启用内置的 `code interpreter` 工具，使其能够根据具体场景自主编写代码，在隔离的沙箱环境中安全执行",
+            "quote_en": "You can enable the built-in `code interpreter` tool for the agent so that it can write code autonomously for the situation at hand and execute it safely in an isolated sandbox environment.",
+            "source_title": "Qwen-Agent README_CN.md",
+            "publisher": "阿里巴巴通义千问 (QwenLM)",
+            "source_type": "github",
+            "url": "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+            "date": null
+          }
+        ]
+      },
+      {
+        "zh": "沙盒",
+        "pinyin": "shāhé",
+        "status": "common",
+        "literal_back": "sand box (tray)",
+        "notes": "Equivalent variant; preferred by Chinese Wikipedia and common in gaming and Taiwan usage. No independent verbatim attestation captured.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "阿里巴巴通义千问", "zh_used": "沙箱", "note": "Qwen-Agent code interpreter isolation" },
+      { "org": "华为", "zh_used": "沙箱", "note": "security reference documentation" }
+    ],
+    "usage_examples": [
+      { "zh": "智能体写出来的代码一律在沙箱里跑，不给它碰宿主机文件系统的机会。",
+        "en": "Any code the agent writes runs inside a sandbox; it never gets a chance to touch the host filesystem.",
+        "source": "constructed" }
+    ],
+    "related": ["permissions", "computer-use", "ai-agent"],
+    "sources": [
+      "https://info.support.huawei.com/info-finder/encyclopedia/zh/%E6%B2%99%E7%AE%B1%E6%8A%80%E6%9C%AF.html",
+      "https://github.com/QwenLM/Qwen-Agent/blob/main/README_CN.md",
+      "https://zh.wikipedia.org/zh-cn/%E6%B2%99%E7%9B%92_(%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8)"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "permissions",
+    "en": "permissions",
+    "en_aliases": ["approval", "authorization"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["infosec", "established"],
+    "definition_en": "The set of actions and resources an agent is allowed to touch. Least privilege — granting only what the current task requires — is the central control for bounding agent behaviour.",
+    "definition_zh": "智能体被允许执行的操作和可访问的资源范围。最小权限原则（只授予当前任务所必需的权限）是约束智能体行为的核心手段。",
+    "preferred_zh": "权限",
+    "translation_difficulty": "low",
+    "pitfalls": "权限 (permissions/privileges) and 授权 (authorization, the act of granting) are cleanly distinguished in Chinese and should not be merged — 权限 is the noun for what you have, 授权 the verb/noun for granting it. The idiomatic Chinese for a violation is 越权操作 ('exceeding-authority operation'), which is more vivid than English 'unauthorized action' and is what PRC security writing uses about agents. 最小权限（原则）is the well-established rendering of least privilege, inherited from infosec, and transfers to agents without friction. Note that the newer English coinage 'least agency' has no Chinese equivalent; Chinese white papers that discuss it render it as 最小代理权, which reintroduces 代理.",
+    "translations": [
+      {
+        "zh": "权限",
+        "pinyin": "quánxiàn",
+        "status": "established",
+        "literal_back": "authority-limit",
+        "notes": "Fully standard; 最小权限 = least privilege, 越权 = exceeding one's permissions.",
+        "attestations": [
+          {
+            "quote_zh": "网络安全的一个基本准则是最小权限访问原则，即赋予特定主体最少的权限。",
+            "quote_en": "A basic principle of cybersecurity is the principle of least-privilege access — granting a given principal the fewest permissions possible.",
+            "source_title": "人工智能控制：如何利用违规人工智能体（中文版）",
+            "publisher": "Center for Security and Emerging Technology (CSET), Georgetown University",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/ai-control-chinese/",
+            "date": "2025-11"
+          },
+          {
+            "quote_zh": "子 Agent 权限 ⊆ 父 Agent 权限 ⊆ 原始用户权限",
+            "quote_en": "Sub-agent permissions ⊆ parent-agent permissions ⊆ original user permissions.",
+            "source_title": "企业Agent运行时安全的七域架构",
+            "publisher": "安全内参（作者：模安局）",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/92784",
+            "date": "2026-08"
+          }
+        ]
+      },
+      {
+        "zh": "授权",
+        "pinyin": "shòuquán",
+        "status": "established",
+        "literal_back": "to grant authority",
+        "notes": "The granting act, distinct from 权限. Use for 'authorization'.",
+        "attestations": [
+          {
+            "quote_zh": "授予智能体对工具集的访问权限，然后信任模型自行管理使用哪些工具，这只是另一种形式的环境权限。",
+            "quote_en": "Granting an agent access to a toolset and then trusting the model to manage which tools it uses is just another form of ambient authority.",
+            "source_title": "主体层级问题：多智能体系统中的授权",
+            "publisher": "TianPan.co",
+            "source_type": "blog",
+            "url": "https://tianpan.co/zh/blog/2026-03-08-principal-hierarchy-multi-agent-authorization",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "越权操作",
+        "pinyin": "yuèquán cāozuò",
+        "status": "established",
+        "literal_back": "exceeding-authority operation",
+        "notes": "The idiomatic Chinese name for the failure mode. Used by 安远 AI in its agent-risk list.",
+        "attestations": [
+          {
+            "quote_zh": "催生了指令注入、越权操作、技能供应链攻击、智能体失控等新型安全隐患",
+            "quote_en": "…giving rise to new safety hazards such as prompt injection, privilege-exceeding operations, skill supply-chain attacks and agent loss of control.",
+            "source_title": "智能体安全研究员（招聘页）",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "blog",
+            "url": "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+            "date": null
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "越权操作", "note": "agent risk taxonomy" },
+      { "org": "CSET", "zh_used": "最小权限", "note": "Chinese translation of AI control report" }
+    ],
+    "usage_examples": [
+      { "zh": "子智能体的权限必须严格小于父智能体，每一次委托都应该收窄范围。",
+        "en": "A sub-agent's permissions must be strictly narrower than its parent's; every delegation should shrink the scope.",
+        "source": "constructed" }
+    ],
+    "related": ["delegation", "sandboxing", "human-in-the-loop", "multi-agent-system"],
+    "sources": [
+      "https://cset.georgetown.edu/publication/ai-control-chinese/",
+      "https://www.secrss.com/articles/92784",
+      "https://tianpan.co/zh/blog/2026-03-08-principal-hierarchy-multi-agent-authorization",
+      "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "autonomous-ai-rd",
+    "en": "autonomous AI R&D",
+    "en_aliases": ["AI R&D automation", "automated AI research"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["capability-threshold", "false-friend", "high-value"],
+    "definition_en": "The capability of AI systems to substantially accelerate or fully carry out AI research and development themselves. Named as a capability threshold in most frontier safety frameworks because it could compress timelines and outpace oversight.",
+    "definition_zh": "AI 系统显著加速甚至独立完成人工智能研发工作的能力。多数前沿安全框架都把它列为关键能力阈值，因为它可能大幅压缩研发周期并使监督失去追赶余地。",
+    "preferred_zh": "自动化 AI 研发",
+    "translation_difficulty": "high",
+    "pitfalls": "MAJOR FALSE FRIEND. The obvious calque 自主研发 is unusable: in PRC discourse 自主研发 is a fixed, heavily-loaded phrase meaning indigenous / self-reliant development by China (as in 自主可控, 自主研发的芯片). A Chinese reader seeing 自主 AI 研发 will parse it as 'domestically developed AI', i.e. a technology-sovereignty statement, not 'AI doing the R&D'. The same trap catches 自主创新. Use 自动化 AI 研发 ('automating AI R&D') or spell out the agent: AI 自动开展人工智能研发 / 模型自动化推进 AI 研发. 安远 AI's own framework comparison uses 自动化AI研发, which is the safest attested form. Related safety-register neighbours are 长程自主性 (long-horizon autonomy) and 自主复制与适应 (ARA), which do use 自主 without ambiguity because the object is not 研发.",
+    "translations": [
+      {
+        "zh": "自动化 AI 研发",
+        "pinyin": "zìdònghuà AI yánfā",
+        "status": "common",
+        "literal_back": "automated AI research-and-development",
+        "notes": "Attested in Chinese comparison of frontier safety frameworks. Avoids the 自主研发 sovereignty reading.",
+        "attestations": [
+          {
+            "quote_zh": "能够显著加速或自动化AI研发的模型，行业应提前采取超常规的安保措施",
+            "quote_en": "For models capable of significantly accelerating or automating AI R&D, the industry should adopt extraordinary security measures in advance.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安全内参（作者：安远 AI）",
+            "source_type": "report",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "自主研发",
+        "pinyin": "zìzhǔ yánfā",
+        "status": "deprecated",
+        "literal_back": "self-directed R&D",
+        "notes": "Do not use for this concept. In PRC usage it means indigenous/self-reliant development by a Chinese entity (cf. 自主可控), and will be read as a technology-sovereignty claim rather than a statement about AI autonomy.",
+        "attestations": []
+      },
+      {
+        "zh": "独立开展人工智能研究",
+        "pinyin": "dúlì kāizhǎn réngōng zhìnéng yánjiū",
+        "status": "descriptive",
+        "literal_back": "independently carrying out AI research",
+        "notes": "Unpacked phrasing used when the agent must be made explicit; attested in CSET's Chinese translation.",
+        "attestations": [
+          {
+            "quote_zh": "这些公司旨在开发能够独立实现诸如运营业务或开展人工智能研究等复杂目标的智能体。",
+            "quote_en": "These companies aim to develop agents capable of independently achieving complex goals such as running a business or conducting AI research.",
+            "source_title": "人工智能控制：如何利用违规人工智能体（中文版）",
+            "publisher": "Center for Security and Emerging Technology (CSET), Georgetown University",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/ai-control-chinese/",
+            "date": "2025-11"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "自动化AI研发", "note": "in comparison of frontier AI risk-management frameworks" }
+    ],
+    "usage_examples": [
+      { "zh": "一旦模型能自动化 AI 研发，安全评估的节奏就跟不上能力增长了。",
+        "en": "Once models can automate AI R&D, safety evaluation can no longer keep pace with capability growth.",
+        "source": "constructed" }
+    ],
+    "related": ["long-horizon-task", "autonomy-level", "ai-agent"],
+    "sources": [
+      "https://www.secrss.com/articles/87619",
+      "https://cset.georgetown.edu/publication/ai-control-chinese/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "delegation",
+    "en": "delegation",
+    "en_aliases": ["principal-agent"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["principal-agent", "economics-bridge"],
+    "definition_en": "Handing authority to act to another party. In agent systems it is chained — a user delegates to an agent, which delegates to sub-agents — and each hop should narrow, never widen, what is permitted.",
+    "definition_zh": "把行动权交给另一方。在智能体系统中委托是链式的：用户委托给智能体，智能体再委托给子智能体，每一次传递都应缩小而不是扩大权限范围。",
+    "preferred_zh": "委托",
+    "translation_difficulty": "medium",
+    "pitfalls": "Chinese splits the English word by register. 委托 is the legal/economic term and — crucially — 委托代理 (关系/问题) is the long-established Chinese rendering of principal–agent theory in economics, which gives AI-safety writers a ready-made, well-understood frame. That bridge is worth using: it is one of the few places where the Chinese vocabulary is *more* precise than the English, because 委托方 (principal) and 代理方 (agent) are already distinguished. 授权 (authorization) is the technical/security term and is what you want for capability grants; 委派 (dispatch/assign) is the software-engineering sense of delegation and is a false friend here. Note the irony that using 委托代理 imports 代理 back in — the very word that lost the 'agent' battle to 智能体.",
+    "translations": [
+      {
+        "zh": "委托",
+        "pinyin": "wěituō",
+        "status": "established",
+        "literal_back": "to entrust",
+        "notes": "Legal/economic register; base of 委托代理关系 = principal–agent relationship. Preferred for the safety sense of handing over authority.",
+        "attestations": [
+          {
+            "quote_zh": "委托必须是单调递减的。委托链中的每一次跳转都应该缩小许可范围，而不是保留或扩大它。",
+            "quote_en": "Delegation must be monotonically decreasing. Every hop in the delegation chain should narrow the permission scope, not preserve or widen it.",
+            "source_title": "主体层级问题：多智能体系统中的授权",
+            "publisher": "TianPan.co",
+            "source_type": "blog",
+            "url": "https://tianpan.co/zh/blog/2026-03-08-principal-hierarchy-multi-agent-authorization",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "授权",
+        "pinyin": "shòuquán",
+        "status": "established",
+        "literal_back": "to grant authority",
+        "notes": "Technical/security register for the same act. Use when the object is a concrete capability or token rather than a task.",
+        "attestations": [
+          {
+            "quote_zh": "编排器不授予智能体宽泛的角色，而是传递限定在特定操作范围内的能力令牌。",
+            "quote_en": "The orchestrator does not grant the agent a broad role; it passes capability tokens scoped to specific operations.",
+            "source_title": "主体层级问题：多智能体系统中的授权",
+            "publisher": "TianPan.co",
+            "source_type": "blog",
+            "url": "https://tianpan.co/zh/blog/2026-03-08-principal-hierarchy-multi-agent-authorization",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "委托代理关系",
+        "pinyin": "wěituō dàilǐ guānxì",
+        "status": "established",
+        "literal_back": "entrustment-agency relationship",
+        "notes": "The established Chinese term for principal–agent theory in economics. A ready-made conceptual bridge for AI-safety arguments about misaligned incentives under delegation. Attested in economics broadly; no AI-specific verbatim attestation recovered within budget.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "把任务委托给智能体，等于把一部分决定权交出去，所以边界必须写死。",
+        "en": "Delegating a task to an agent means handing over part of your decision authority, so the boundary has to be hard-coded.",
+        "source": "constructed" }
+    ],
+    "related": ["permissions", "multi-agent-system", "human-in-the-loop", "agency"],
+    "sources": [
+      "https://tianpan.co/zh/blog/2026-03-08-principal-hierarchy-multi-agent-authorization",
+      "https://www.secrss.com/articles/92784"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "oversight-failure",
+    "en": "oversight failure",
+    "en_aliases": ["failure of human oversight"],
+    "abbr": null,
+    "category": "agents-autonomy",
+    "tags": ["gap", "descriptive"],
+    "definition_en": "The situation where mechanisms intended to keep humans able to review, correct or stop an AI system stop working — because the system is too fast, too opaque, too numerous, or because reviewers rubber-stamp.",
+    "definition_zh": "本应让人类能够审查、纠正或叫停 AI 系统的机制失去效力：或因系统太快、太不透明、数量太多，或因审查者流于形式。",
+    "preferred_zh": "监督失效",
+    "translation_difficulty": "high",
+    "pitfalls": "No fixed Chinese term. Chinese discourse reaches for adjacent words instead, and each shifts the meaning: 失控 ('loss of control') is the overwhelmingly dominant framing but describes the system going out of control, not the oversight mechanism breaking down; 监管失灵 means regulatory failure at the institutional level, not operator-level oversight; 人工干预失效 is closest but rare. The English concept — oversight exists on paper but does not bite — is not lexicalised in Chinese and normally has to be written out as a clause (人类实际上已无法有效监督/纠正). Recording this as a gap rather than proposing a calque with confidence.",
+    "translations": [
+      {
+        "zh": "监督失效",
+        "pinyin": "jiāndū shīxiào",
+        "status": "proposed",
+        "literal_back": "supervision loses effect",
+        "notes": "Proposed here as the most transparent compositional rendering: 监督 matches the 人类监督 used in Chinese translations of the EU AI Act, and 失效 is the standard word for a safeguard ceasing to function. Not attested as a fixed term in the sources reviewed; offered as a coinage, not a report of usage.",
+        "attestations": []
+      },
+      {
+        "zh": "失控",
+        "pinyin": "shīkòng",
+        "status": "descriptive",
+        "literal_back": "loss of control",
+        "notes": "What Chinese sources actually say. Broader and more dramatic than 'oversight failure' — it names the outcome (the system is out of control) rather than the mechanism (nobody was effectively checking). Do not treat as an equivalent; see the loss-of-control entry.",
+        "attestations": [
+          {
+            "quote_zh": "催生了指令注入、越权操作、技能供应链攻击、智能体失控等新型安全隐患",
+            "quote_en": "…giving rise to new safety hazards such as prompt injection, privilege-exceeding operations, skill supply-chain attacks and agent loss of control.",
+            "source_title": "智能体安全研究员（招聘页）",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "blog",
+            "url": "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+            "date": null
+          },
+          {
+            "quote_zh": "目前并无有效的智能体退出机制，一些智能体被创造出后可能无法被关闭",
+            "quote_en": "There is currently no effective exit mechanism for agents; once created, some agents may be impossible to shut down.",
+            "source_title": "警惕人工智能时代的“智能体风险”",
+            "publisher": "新华社 / 新华网",
+            "source_type": "media",
+            "url": "http://www.news.cn/science/20240717/7f75ef8878304dacb682ebc8e8209fc3/c.html",
+            "date": "2024-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "流程上写着要人工审批，实际上审批只是点一下，人类监督已经形同虚设。",
+        "en": "The process says manual approval is required, but approval is just a click — human oversight has become a formality.",
+        "source": "constructed" }
+    ],
+    "related": ["human-in-the-loop", "autonomy-level", "permissions", "agency"],
+    "sources": [
+      "https://concordia-ai.com/zh-hans/career/%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%91%98/",
+      "http://www.news.cn/science/20240717/7f75ef8878304dacb682ebc8e8209fc3/c.html",
+      "https://www.secrss.com/articles/68714"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]
