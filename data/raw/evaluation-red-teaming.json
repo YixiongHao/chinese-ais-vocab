@@ -1,0 +1,1784 @@
+[
+  {
+    "id": "evaluation",
+    "en": "evaluation",
+    "en_aliases": ["evals", "model evaluation"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["core", "measurement"],
+    "definition_en": "The practice of measuring what an AI model can and will do, using structured tests. In AI safety it covers both capability evaluations (what the model is able to do) and propensity/safety evaluations (what it actually does when given the chance).",
+    "definition_zh": "用结构化的测试来衡量模型能做什么、会做什么。在安全语境下既包括能力评测（模型能力上限），也包括安全性与倾向性评测（模型实际会不会做）。",
+    "preferred_zh": "评测",
+    "translation_difficulty": "medium",
+    "pitfalls": "Chinese splits this three ways and the split is not cosmetic. 评测 is the word the Chinese ML/eval community uses for benchmark-style measurement of a model (OpenCompass 司南评测体系, SuperCLUE). 评估 is the broader word and is the default in policy/risk-management text, where it also translates 'assessment' — so 风险评估 (risk assessment) and 安全评估 (safety assessment) sit in the same sentences as 模型评测 and mean something else. 测评 is a near-synonym of 评测 common in industry marketing, and also appears inside the fixed PRC compliance phrase 等级测评 (MLPS grading assessment), which is unrelated. Using 评估 where you mean 'evals' will read as 'assessment' to a Chinese policy reader.",
+    "translations": [
+      {
+        "zh": "评测",
+        "pinyin": "píngcè",
+        "status": "established",
+        "literal_back": "assess-measure",
+        "notes": "The Chinese-native word for model evals specifically. Used by the International AI Safety Report's Chinese edition for 'model evaluation' and by the Shanghai AI Lab / Concordia AI framework for the testing stage.",
+        "attestations": [
+          {
+            "quote_zh": "模型评测（Model evaluation）模型评测包括用于评估和测量人工智能模型在特定任务上表现的过程和测试。",
+            "quote_en": "Model evaluation: model evaluation comprises the processes and tests used to assess and measure the performance of an AI model on particular tasks.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "在最终训练初期，研发者可专注于高度可扩展的评测（如自动化基准测试）；当模型接近已知能力边界时，应开展更复杂的评测（如红队测试或提升研究）。",
+            "quote_en": "Early in the final training run, developers can focus on highly scalable evaluations (such as automated benchmarks); as the model approaches known capability frontiers, more complex evaluations (such as red-teaming or uplift studies) should be conducted.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "评估",
+        "pinyin": "pínggū",
+        "status": "established",
+        "literal_back": "assess-estimate",
+        "notes": "Dominant in policy and risk-management register. Also the standard rendering of 'assessment', so it is ambiguous between 'eval' and 'assessment'.",
+        "attestations": [
+          {
+            "quote_zh": "我们建议AI研发者在研发前和部署前进行系统性评估，以便为关键的部署决策提供参考。",
+            "quote_en": "We recommend that AI developers conduct systematic evaluations before development and before deployment, to inform critical deployment decisions.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "测评",
+        "pinyin": "cèpíng",
+        "status": "common",
+        "literal_back": "measure-assess",
+        "notes": "Same characters as 评测 reversed; heavily used in Chinese industry marketing for model leaderboards. Also locked into the unrelated PRC compliance phrase 等级测评 (MLPS grading assessment), which is a reason to prefer 评测 in safety writing.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "评测", "note": "used for the testing stage in the Frontier AI Risk Management Framework" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "模型评测", "note": "glossary entry for 'model evaluation'" }
+    ],
+    "usage_examples": [
+      { "zh": "部署前的评测没有排除该模型协助新手制造生物武器的可能性。",
+        "en": "Pre-deployment evaluations did not rule out the possibility that the model could assist a novice in making a bioweapon.",
+        "source": "constructed" }
+    ],
+    "related": ["benchmark", "dangerous-capability-evaluation", "capability-elicitation", "elicitation-gap"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "benchmark",
+    "en": "benchmark",
+    "en_aliases": ["benchmark test", "leaderboard"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["measurement"],
+    "definition_en": "A standardised, usually quantitative test used to compare AI systems on a fixed set of tasks. In safety work benchmarks are the cheap, scalable end of evaluation, contrasted with red-teaming and uplift studies.",
+    "definition_zh": "在固定任务集上对AI系统进行标准化、通常可量化比较的测试。在安全工作中，基准测试属于成本低、可规模化的评测手段，与红队测试、提升研究相对。",
+    "preferred_zh": "基准测试",
+    "translation_difficulty": "low",
+    "pitfalls": "Unproblematic as a translation, but note the cultural weight of 榜单 / 排行榜 ('leaderboard', 'chart') in Chinese ML discourse: Chinese coverage of a new model typically leads with its 榜单 position rather than with the benchmark itself, and 刷榜 ('gaming the leaderboard') is a live term of criticism with no neat English equivalent. Do not translate 'benchmark' as 榜单 — a 榜单 is the ranking, not the test.",
+    "translations": [
+      {
+        "zh": "基准测试",
+        "pinyin": "jīzhǔn cèshì",
+        "status": "established",
+        "literal_back": "baseline test",
+        "notes": "Universal in both technical and policy Chinese.",
+        "attestations": [
+          {
+            "quote_zh": "基准测试（Benchmark）：一种标准化、通常为定量的测试或指标，用于评估和比较人工智能系统在固定任务集上的表现，这些任务通常旨在模拟现实世界中的应用场景。",
+            "quote_en": "Benchmark: a standardised, usually quantitative test or metric used to evaluate and compare AI systems' performance on a fixed set of tasks, typically designed to simulate real-world application scenarios.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "部署前风险分析技术包括：●基于问答数据集的自动化基准测试：这一基础性方法通过构建高质量、高挑战性的问答数据集，严格评估模型在复杂场景中的表现。",
+            "quote_en": "Pre-deployment risk analysis techniques include: automated benchmarks built on question-answer datasets — a foundational method that rigorously evaluates model performance in complex scenarios by constructing high-quality, high-difficulty QA datasets.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "基准",
+        "pinyin": "jīzhǔn",
+        "status": "common",
+        "literal_back": "baseline / benchmark",
+        "notes": "Short form; also means 'baseline' in a statistical sense, so 基准测试 is clearer.",
+        "attestations": []
+      },
+      {
+        "zh": "榜单",
+        "pinyin": "bǎngdān",
+        "status": "deprecated",
+        "literal_back": "ranking list",
+        "notes": "Means 'leaderboard', not 'benchmark'. Extremely prominent in Chinese ML media, which is why it gets misused as a translation. We recommend against it for 'benchmark'; use it only where the English really is 'leaderboard'. We did not recover an attestation of it inside AI-safety literature.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "基准测试", "note": "glossary entry" }
+    ],
+    "usage_examples": [
+      { "zh": "仅凭基准测试结果无法可靠预测模型在实际应用中的风险。",
+        "en": "Benchmark results alone cannot reliably predict a model's risk in real-world use.",
+        "source": "constructed" }
+    ],
+    "related": ["evaluation", "evaluation-gap", "dangerous-capability-evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "dangerous-capability-evaluation",
+    "en": "dangerous capability evaluation",
+    "en_aliases": ["dangerous capability eval", "harmful capability evaluation"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "core"],
+    "definition_en": "Testing designed to establish whether a model possesses knowledge or skills that would materially help someone cause serious harm — bioweapon development, offensive cyber operations, autonomous replication, and so on. It is the measurement layer that frontier safety frameworks hang their capability thresholds on.",
+    "definition_zh": "专门用于判定模型是否具备可能实质性协助他人造成严重危害的知识或技能的测试，例如生物武器研发、网络攻击、自主复制等。前沿安全框架的能力阈值就建立在这类评测之上。",
+    "preferred_zh": "危险能力评测",
+    "translation_difficulty": "low",
+    "pitfalls": "Two variants circulate — 危险能力评测 and 危险能力评估 — and they track the general 评测/评估 split (technical vs policy register) rather than any difference in meaning. The Chinese-language frontier-safety literature also uses 有害能力评测 ('harmful capability evaluation') for the same thing, which is broader in principle but used interchangeably in practice.",
+    "translations": [
+      {
+        "zh": "危险能力评测",
+        "pinyin": "wēixiǎn nénglì píngcè",
+        "status": "established",
+        "literal_back": "dangerous-capability evaluation",
+        "notes": "Used by the Chinese edition of the International AI Safety Report throughout its chapter on frontier safety frameworks.",
+        "attestations": [
+          {
+            "quote_zh": "尽管许多框架描述了类似的风险管理方法-包括威胁建模、红队测试和危险能力评测-但在风险等级与阈值的定义、评测频率、评测结果与阈值之间的安全余量，以及风险缓解措施的全面性（例如是否包含删除模型权重而非仅暂停开发）等方面存在差异(1115、1119)。",
+            "quote_en": "Although many frameworks describe similar risk-management methods — including threat modelling, red-teaming and dangerous capability evaluations — they differ in how risk levels and thresholds are defined, evaluation frequency, the safety margin between evaluation results and thresholds, and the comprehensiveness of mitigations.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "在“隐藏实力问答（无目标）”中，模型需回答危险能力评测的问题，同时被告知高性能可能会引发诸如能力“反学习”之类的后果。",
+            "quote_en": "In 'sandbagging QA (no goal)', the model is asked questions from a dangerous-capability evaluation while being told that high performance may lead to consequences such as having the capability 'unlearned'.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "危险能力评估",
+        "pinyin": "wēixiǎn nénglì pínggū",
+        "status": "common",
+        "literal_back": "dangerous-capability assessment",
+        "notes": "The policy-register variant. Concordia AI's comparison of the five frontier frameworks uses 能力评估 in this sense, e.g. discussing 针对化生放核威胁的“预警性评估”. VERIFICATION 2026-08-08: the cited Concordia AI comparison never writes 危险能力评估 (it says 危险能力 and 能力评估 separately). Attestation removed; unattested in our sources.",
+        "attestations": []
+      },
+      {
+        "zh": "有害能力评测",
+        "pinyin": "yǒuhài nénglì píngcè",
+        "status": "common",
+        "literal_back": "harmful-capability evaluation",
+        "notes": "Used alongside 危险能力评测 in the International AI Safety Report's Chinese edition.",
+        "attestations": [
+          {
+            "quote_zh": "有害能力评测(715*)用于判定通用型人工智能模型或系统是否具备特别有害的知识或技能，例如协助实施网络攻击的能力（参见§2.1.3.网络攻击）。",
+            "quote_en": "Harmful capability evaluations are used to determine whether a general-purpose AI model or system possesses particularly harmful knowledge or skills, such as the ability to assist with cyberattacks.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "危险能力评测", "note": "used throughout the risk-management chapter" },
+      { "org": "安远 AI (Concordia AI)", "zh_used": "能力评估", "note": "in its comparison of five frontier AI risk-management frameworks" }
+    ],
+    "usage_examples": [
+      { "zh": "在模型接近已知能力边界时，应开展针对生物与网络领域的危险能力评测。",
+        "en": "As the model approaches known capability frontiers, dangerous capability evaluations targeting the biological and cyber domains should be run.",
+        "source": "constructed" }
+    ],
+    "related": ["capability-threshold", "frontier-safety-framework", "uplift", "red-teaming", "cbrn"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.secrss.com/articles/87619",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "capability-elicitation",
+    "en": "capability elicitation",
+    "en_aliases": ["elicitation"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["measurement", "gap"],
+    "definition_en": "Actively working to get a model to show the best it can do — through prompting, scaffolding, fine-tuning or tool access — so that an evaluation measures the model's real ceiling rather than an artefact of a lazy test harness. Central to frontier safety work because an under-elicited dangerous-capability eval gives false assurance.",
+    "definition_zh": "通过提示策略、脚手架、微调或工具接入等手段，主动把模型的真实能力上限逼出来，使评测结果反映模型的实际能力而非测试方法的局限。这在前沿安全评测中至关重要：激发不足的危险能力评测会给出虚假的安全保证。",
+    "preferred_zh": "能力激发",
+    "translation_difficulty": "high",
+    "pitfalls": "This is a genuine gap. The concept is discussed in Chinese AI-safety documents but almost always described rather than named — e.g. the Shanghai AI Lab framework talks about allocating dedicated compute to make evaluations thorough, without a noun for elicitation. 能力激发 ('capability activation/arousal') is the closest circulating term but is used mainly in a prompt-engineering/performance context, not a safety-evaluation one, and carries no sense of 'adversarially trying hard to make the model show a dangerous capability'. 能力引出 is a more literal calque but we found no attested use. Note also that 激发 is a positive-valence word (to inspire, to stimulate), which fits the productivity framing and fights the safety framing.",
+    "translations": [
+      {
+        "zh": "能力激发",
+        "pinyin": "nénglì jīfā",
+        "status": "common",
+        "literal_back": "capability activation / arousal",
+        "notes": "Attested only in a prompt-engineering context so far, not in safety-evaluation text. Thinly evidenced.",
+        "attestations": [
+          {
+            "quote_zh": "这就是提示工程与能力激发的本质区别。提示工程优化的是你如何提问，能力激发优化的是模型在回答时从自身权重中调取了什么。",
+            "quote_en": "This is the essential difference between prompt engineering and capability elicitation. Prompt engineering optimises how you ask; capability elicitation optimises what the model retrieves from its own weights when answering.",
+            "source_title": "能力激发：让大语言模型用好它已知道的一切",
+            "publisher": "TianPan.co",
+            "source_type": "blog",
+            "url": "https://tianpan.co/zh/blog/2026-04-12-capability-elicitation-getting-models-to-use-what-they-already-know",
+            "date": "2026-04"
+          }
+        ]
+      },
+      {
+        "zh": "能力引出",
+        "pinyin": "nénglì yǐnchū",
+        "status": "proposed",
+        "literal_back": "capability drawing-out",
+        "notes": "We are proposing this as the safety-evaluation sense, precisely because 激发 reads as 'boost performance' while 引出 reads as 'get it to come out', which is what a dangerous-capability evaluator is doing. Not attested; offered as a coinage rather than a report of usage.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "如果能力激发做得不充分，危险能力评测就会低估模型的真实风险。",
+        "en": "If elicitation is insufficient, dangerous capability evaluations will underestimate the model's real risk.",
+        "source": "constructed" }
+    ],
+    "related": ["elicitation-gap", "dangerous-capability-evaluation", "sandbagging", "evaluation"],
+    "sources": [
+      "https://tianpan.co/zh/blog/2026-04-12-capability-elicitation-getting-models-to-use-what-they-already-know",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "red-teaming",
+    "en": "red teaming",
+    "en_aliases": ["red team", "adversarial testing"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["core", "security-heritage"],
+    "definition_en": "A structured exercise in which people or automated systems deliberately play the adversary against a model or system in order to surface vulnerabilities, harmful behaviours and misuse pathways before real attackers find them.",
+    "definition_zh": "由人员或自动化系统扮演攻击方，对模型或系统发起有组织的对抗测试，以在真实攻击者之前发现漏洞、有害行为和滥用路径。",
+    "preferred_zh": "红队测试",
+    "translation_difficulty": "low",
+    "pitfalls": "The colour convention is worth checking but did NOT turn out to be a live problem. In PLA exercise convention 红军 is the friendly/home force and 蓝军 the opposing force — the inverse of the US convention. However, Chinese AI and cybersecurity writing uses the 红队/蓝队 (team) pair, not the 红军/蓝军 (army) pair, and in that pair 红队 is uniformly the attacker and 蓝队 the defender, matching the US usage. We found no instance of a Chinese AI-safety text treating 红队 as the defending side, and no instance of an author flagging confusion. Treat the inversion as a fact about the military register only. Two secondary notes: (a) 红队测试 in the PRC arrives via the mature 攻防演练 (attack-defence exercise) industry, so it carries strong infosec/pen-test connotations and a Chinese reader may under-read the AI-safety sense of probing for harmful content and misaligned behaviour rather than exploitable bugs; (b) 红队演练 is used interchangeably with 红队测试.",
+    "translations": [
+      {
+        "zh": "红队测试",
+        "pinyin": "hóngduì cèshì",
+        "status": "established",
+        "literal_back": "red-team testing",
+        "notes": "The dominant form across AI-safety, policy and industry security writing. 红队 alone is used as the noun for the team.",
+        "attestations": [
+          {
+            "quote_zh": "红队测试（Red-teaming）：一种系统化的流程，其中专职人员或团队通过多种方法寻找漏洞、局限性或潜在的滥用风险。",
+            "quote_en": "Red-teaming: a systematic process in which dedicated individuals or teams use a variety of methods to look for vulnerabilities, limitations or potential misuse risks.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "●领域专家红队测试：由领域专家通过模拟攻击或关键性挑战对AI模型进行对抗测试，主动识别潜在漏洞、新兴风险及安全改进空间。",
+            "quote_en": "Domain-expert red-teaming: domain experts conduct adversarial testing of the AI model through simulated attacks or critical challenges, proactively identifying potential vulnerabilities, emerging risks and room for safety improvement.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "智能体红队测试不是单次提示词越狱，而是系统化、场景化、多轮次、可复现的对抗性测试，核心遵循“侦察→建模→分层攻击→验证→报告→加固→复测”闭环流程，区别于传统软件红队，重点突出智能体自主性、上下文依赖、工具权限、记忆特性四大维度。",
+            "quote_en": "Agent red-teaming is not a one-off prompt jailbreak but systematic, scenario-based, multi-turn, reproducible adversarial testing, following a closed loop of recon → modelling → layered attack → verification → reporting → hardening → retest; unlike traditional software red-teaming it foregrounds agent autonomy, context dependence, tool permissions and memory.",
+            "source_title": "面向AI智能体的红队测试实战：基于OWASP ASI 2026的金融场景攻防实践",
+            "publisher": "虎符智库，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/90244",
+            "date": "2026-05"
+          }
+        ]
+      },
+      {
+        "zh": "红队演练",
+        "pinyin": "hóngduì yǎnliàn",
+        "status": "common",
+        "literal_back": "red-team exercise",
+        "notes": "Preferred where the emphasis is on a staged exercise rather than a test procedure; inherited from 攻防演练.",
+        "attestations": [
+          {
+            "quote_zh": "落实最佳实践并定期更新：五家公司都采用了一系列安全实践来落实各自框架，如开展内部和/或外部红队演练、激励第三方报告漏洞、加强对模型权重的网络安全和内部人员威胁防范等。",
+            "quote_en": "Implementing and regularly updating best practice: all five companies adopt a range of safety practices to operationalise their frameworks, such as running internal and/or external red-team exercises, incentivising third-party vulnerability reporting, and strengthening cybersecurity and insider-threat defences for model weights.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "蓝队",
+        "pinyin": "lánduì",
+        "status": "established",
+        "literal_back": "blue team",
+        "notes": "Counterpart term, recorded here as evidence on the colour-convention question: in Chinese AI/cyber usage 蓝队 is the defender, i.e. the same way round as the US convention and the opposite of the PLA 红军/蓝军 arrangement.",
+        "attestations": [
+          {
+            "quote_zh": "在攻防演练中，一个团队（红队）扮演攻击者的角色，试图发起各种攻击，而另一个团队（蓝队）则扮演防御者的角色，负责检测、阻止和应对攻击。",
+            "quote_en": "In an attack-defence exercise, one team (the red team) plays the attacker and attempts various attacks, while the other team (the blue team) plays the defender and is responsible for detecting, blocking and responding to attacks.",
+            "source_title": "什么是攻防演练",
+            "publisher": "深信服 Sangfor 知识中心",
+            "source_type": "blog",
+            "url": "https://www.sangfor.com.cn/knowledge/attack-defense-exercise",
+            "date": null
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "红队测试", "note": "framework distinguishes 领域专家红队测试 from 开放性红队测试" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "红队测试", "note": "glossary entry" },
+      { "org": "安远 AI (Concordia AI)", "zh_used": "红队演练 / 红队测试", "note": "in framework comparison writing" }
+    ],
+    "usage_examples": [
+      { "zh": "各公司都会在模型开发过程中进行红队测试，并在可能时邀请独立第三方对模型进行安全评估。",
+        "en": "All the companies conduct red-teaming during model development, and where possible invite independent third parties to run safety evaluations.",
+        "source": "https://www.secrss.com/articles/87619" }
+    ],
+    "related": ["jailbreak", "prompt-injection", "dangerous-capability-evaluation", "third-party-audit"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/90244",
+      "https://www.secrss.com/articles/87619",
+      "https://www.sangfor.com.cn/knowledge/attack-defense-exercise"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "jailbreak",
+    "en": "jailbreak",
+    "en_aliases": ["jailbreaking", "jailbreak attack"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["attack", "core"],
+    "definition_en": "An input, or family of inputs, that gets a model to do something its safety training was meant to prevent — typically by reframing, roleplay, obfuscation or encoding the request.",
+    "definition_zh": "通过改写、角色扮演、混淆或编码等手段构造输入，使模型突破安全训练所设的限制，输出本应被拒绝的内容。",
+    "preferred_zh": "越狱",
+    "translation_difficulty": "low",
+    "pitfalls": "None serious. 越狱 arrives via the iOS-jailbreaking sense and is fully naturalised; the metaphor (breaking out of prison) survives translation intact. In agent-security writing 提示词越狱 ('prompt jailbreak') is used for the single-turn case, in contrast with multi-step agent attacks.",
+    "translations": [
+      {
+        "zh": "越狱",
+        "pinyin": "yuèyù",
+        "status": "established",
+        "literal_back": "escape from prison",
+        "notes": "Universal. Compound forms: 越狱攻击, 越狱提示词, 提示词越狱.",
+        "attestations": [
+          {
+            "quote_zh": "例如，研究人员已证明，绕过最先进的安全防护措施，可通过对抗性提示方法（即“越狱”）(1055*、 1063*、1142、 1143、 1144、 1145、1146、1147、1148、1149*)，让模型将复杂的有害任务分解为步骤(1150、1151、 1152、 1153、1154)，以及简单的模型修改(1155、1156、 1157、 1158、 1159、 1160、1161、1162、1163、1164、 1165、1166)。",
+            "quote_en": "For example, researchers have shown that state-of-the-art safeguards can be circumvented through adversarial prompting methods (i.e. 'jailbreaks'), by having models decompose complex harmful tasks into steps, and through simple model modifications.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "确保任何系统漏洞（如越狱攻击或其他攻击路径）都能被及时发现并修复，防止攻击者利用漏洞显著提升破坏能力，例如采用快速补丁修复机制，在必要时向执法机构报告，并保留相关日志以便追踪。",
+            "quote_en": "Ensure that any system vulnerability (such as jailbreak attacks or other attack paths) can be discovered and fixed promptly, preventing attackers from significantly increasing their destructive capability by exploiting it.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "越狱攻击", "note": "in the Frontier AI Risk Management Framework" }
+    ],
+    "usage_examples": [
+      { "zh": "红队测试不应只停留在通用化越狱测试上。",
+        "en": "Red-teaming should not stop at generic jailbreak testing.",
+        "source": "constructed" }
+    ],
+    "related": ["red-teaming", "prompt-injection", "adversarial-robustness"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/90244"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "prompt-injection",
+    "en": "prompt injection",
+    "en_aliases": ["indirect prompt injection"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["attack", "agents"],
+    "definition_en": "An attack in which adversarial instructions reach a model through its input channel — often indirectly, hidden in a web page, document or database the model reads — and are followed as if they came from the legitimate user.",
+    "definition_zh": "攻击者把恶意指令混入模型的输入通道（常常是间接地藏在模型会读取的网页、文档或数据库中），使模型将其当作合法用户指令加以执行。",
+    "preferred_zh": "提示词注入",
+    "translation_difficulty": "low",
+    "pitfalls": "Both 提示词注入 and 提示注入 are current; the longer form is more frequent in policy text and the shorter one in security/agent writing. The metaphor rides on the well-established 注入 of SQL 注入 (SQL injection), which is helpful — a Chinese security reader gets it immediately. Distinguish 间接提示注入 (indirect prompt injection) explicitly: Chinese agent-security writing does mark the direct/indirect split.",
+    "translations": [
+      {
+        "zh": "提示词注入",
+        "pinyin": "tíshìcí zhùrù",
+        "status": "established",
+        "literal_back": "prompt-word injection",
+        "notes": "More frequent form in the Chinese edition of the International AI Safety Report.",
+        "attestations": [
+          {
+            "quote_zh": "攻击者可以利用提示词注入（通过恶意输入操纵人工智能系统）(505*、506、507)、数据库投毒（破坏人工智能系统所依赖的信息）(508)和供应链入侵（在部署前操纵人工智能组件）(509、510)等技术手段来操纵模型行为、提取敏感信息或生成有害输出。",
+            "quote_en": "Attackers can use techniques such as prompt injection (manipulating an AI system through malicious input), database poisoning (corrupting the information the system relies on) and supply-chain compromise (manipulating AI components before deployment) to manipulate model behaviour, extract sensitive information, or produce harmful outputs.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "在提示词注入攻击中，恶意指令会通过网站或数据库中的隐藏指令等途径间接输入到智能体中(507、657、658)。",
+            "quote_en": "In prompt-injection attacks, malicious instructions are fed to the agent indirectly, for example through hidden instructions in a website or database.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "提示注入",
+        "pinyin": "tíshì zhùrù",
+        "status": "established",
+        "literal_back": "prompt injection",
+        "notes": "Shorter variant, dominant in Chinese agent-security and pen-testing writing; 间接提示注入 is the indirect case.",
+        "attestations": [
+          {
+            "quote_zh": "3.3第三阶段：分层攻击执行——从表层到深层的实战测试智能体攻击具有层级递进特性，从直接提示注入到多智能体协作、记忆持久化攻击，层层深入，本文采用四层攻击框架，完整覆盖所有攻击面。",
+            "quote_en": "Stage three: layered attack execution — from surface to depth. Agent attacks are hierarchical, running from direct prompt injection through multi-agent collaboration to memory-persistence attacks; this article uses a four-layer attack framework covering the whole attack surface.",
+            "source_title": "面向AI智能体的红队测试实战：基于OWASP ASI 2026的金融场景攻防实践",
+            "publisher": "虎符智库，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/90244",
+            "date": "2026-05"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "智能体读取外部网页时，最主要的攻击面是间接提示词注入。",
+        "en": "When an agent reads external web pages, the main attack surface is indirect prompt injection.",
+        "source": "constructed" }
+    ],
+    "related": ["jailbreak", "red-teaming", "adversarial-robustness"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.secrss.com/articles/90244"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "adversarial-robustness",
+    "en": "adversarial robustness",
+    "en_aliases": ["robustness to adversarial attack"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["measurement", "defence"],
+    "definition_en": "How well a model's safe behaviour holds up under inputs specifically designed to break it, as opposed to under ordinary or randomly perturbed inputs.",
+    "definition_zh": "在专门针对模型设计的对抗性输入下，模型的安全行为还能保持多少；与普通输入或随机扰动下的表现相对。",
+    "preferred_zh": "对抗鲁棒性",
+    "translation_difficulty": "medium",
+    "pitfalls": "鲁棒 is a phono-semantic loan of 'robust' (lǔbàng ≈ 'robust') with characters that mean 'crude/blunt' — it carries no native meaning and reads as a technical opacity to a non-specialist, though it is completely standard in ML. 稳健性 ('steadiness') is the semantically transparent alternative, standard in statistics and used in some policy text, but does not dominate in ML. Note also that in Chinese safety documents 鲁棒性 usually appears bare, in a list alongside 安全性 and 可靠性, meaning general robustness; the specifically adversarial sense is often left to context rather than marked with 对抗. We did not recover a verbatim attestation of the exact compound 对抗鲁棒性 in the safety corpora searched, so this entry's confidence is low despite the term being unremarkable in the ML literature.",
+    "translations": [
+      {
+        "zh": "对抗鲁棒性",
+        "pinyin": "duìkàng lǔbàngxìng",
+        "status": "common",
+        "literal_back": "adversarial robustness",
+        "notes": "Standard compound in Chinese ML writing. Not attested in the AI-safety sources we fetched; recorded without an attestation rather than with a fabricated one.",
+        "attestations": []
+      },
+      {
+        "zh": "鲁棒性",
+        "pinyin": "lǔbàngxìng",
+        "status": "established",
+        "literal_back": "robustness (phonetic loan)",
+        "notes": "The bare term is fully established and is what Chinese safety documents actually use; 鲁棒性训练 renders 'robustness training'.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能模型在真实性、安全性及鲁棒性指标上存在持续性缺陷(881)，且在确保安全防护措施能有效适应不同情境方面仍存在根本性未解难题(174)。",
+            "quote_en": "AI models show persistent deficiencies on truthfulness, safety and robustness metrics, and fundamental unsolved problems remain in ensuring safeguards generalise across contexts.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "稳健性",
+        "pinyin": "wěnjiànxìng",
+        "status": "common",
+        "literal_back": "steadiness / soundness",
+        "notes": "Semantically transparent alternative, standard in statistics and econometrics; used in some governance text but a minority choice in ML.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "对抗训练能提升模型的对抗鲁棒性，但很难覆盖未见过的攻击手法。",
+        "en": "Adversarial training improves a model's adversarial robustness but struggles to cover unseen attack methods.",
+        "source": "constructed" }
+    ],
+    "related": ["jailbreak", "prompt-injection", "red-teaming"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "sandbagging",
+    "en": "sandbagging",
+    "en_aliases": ["strategic underperformance", "capability hiding"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["misalignment", "high-value", "contested"],
+    "definition_en": "A model performing below its actual ability on an evaluation, plausibly in order to avoid triggering scrutiny, restriction or capability removal. It is the failure mode that makes every dangerous-capability evaluation a lower bound rather than a measurement.",
+    "definition_zh": "模型在评测中故意表现得低于自身真实能力，可能是为了避免触发进一步审查、限制或能力删除。这一现象使所有危险能力评测都只能给出能力下界，而非真实测量值。",
+    "preferred_zh": "沙袋效应",
+    "translation_difficulty": "high",
+    "pitfalls": "Genuinely contested — we found three different renderings in Chinese frontier-safety documents published within months of each other, including two inside the same report. 沙袋效应 is a pure calque of an English sports idiom and means nothing to a Chinese reader without the parenthetical gloss 故意示弱, which the International AI Safety Report supplies; the same report elsewhere translates the eval name 'Sandbagging QA' as 隐藏实力问答. Concordia AI independently uses 能力隐藏. Idiomatic native candidates exist — 藏拙 ('conceal one's clumsiness', but it means hiding weakness, not hiding strength, so it is a false friend) and 扮猪吃老虎 ('play the pig to eat the tiger', i.e. feign weakness to strike later, semantically much closer but far too colloquial for a technical document). If you need to be understood, write 能力隐藏; if you need to be findable against the English literature, write 沙袋效应（故意示弱）.",
+    "translations": [
+      {
+        "zh": "沙袋效应",
+        "pinyin": "shādài xiàoyìng",
+        "status": "contested",
+        "literal_back": "sandbag effect",
+        "notes": "Calque; only intelligible with the gloss 故意示弱 ('deliberately feigning weakness'), which the source supplies inline.",
+        "attestations": [
+          {
+            "quote_zh": "沙袋效应（故意示弱）（Sandbagging）：指模型或系统在评测中表现低于其能力水平的行为，此举可能旨在规避进一步审查或限制。",
+            "quote_en": "Sandbagging: behaviour in which a model or system performs below its capability level on evaluations, potentially in order to avoid further scrutiny or restrictions.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "最后，模型在评测阶段的表现可能低于其他情境，这种现象被称为“沙袋效应（sandbagging）”，已在实验中得到验证(722、726、727)。",
+            "quote_en": "Finally, models may perform worse during evaluation than in other contexts — a phenomenon known as 'sandbagging' — which has been demonstrated experimentally.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "能力隐藏",
+        "pinyin": "nénglì yǐncáng",
+        "status": "contested",
+        "literal_back": "capability hiding",
+        "notes": "Concordia AI's choice. The most transparent of the three renderings and the one we would recommend for readers who need to understand the concept rather than trace the English literature.",
+        "attestations": [
+          {
+            "quote_zh": "另外，OpenAI的框架还引入了前瞻性的“研究类别”（Research Categories）概念，专门列出一些尚未完全具备测评方法但潜在高危的能力领域，如长程自主性、能力隐藏（Sandbagging）、自主复制与适应、破坏安全防护等。",
+            "quote_en": "In addition, OpenAI's framework introduces the forward-looking concept of 'Research Categories', listing potentially high-risk capability areas that do not yet have adequate evaluation methods — such as long-horizon autonomy, sandbagging, autonomous replication and adaptation, and undermining safeguards.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "隐藏实力",
+        "pinyin": "yǐncáng shílì",
+        "status": "common",
+        "literal_back": "hiding one's true strength",
+        "notes": "Used in the same International AI Safety Report to render the eval name 'Sandbagging QA' — evidence that even a single carefully edited document did not settle on one term.",
+        "attestations": [
+          {
+            "quote_zh": "在“隐藏实力问答（无目标）”中，模型需回答危险能力评测的问题，同时被告知高性能可能会引发诸如能力“反学习”之类的后果。",
+            "quote_en": "In 'Sandbagging QA (No Goal)', the model answers questions from a dangerous capability evaluation while being told that high performance may trigger consequences such as capability 'unlearning'.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "沙袋效应（故意示弱）", "note": "glossary; but 隐藏实力 elsewhere in the same report" },
+      { "org": "安远 AI (Concordia AI)", "zh_used": "能力隐藏", "note": "in framework comparison" }
+    ],
+    "usage_examples": [
+      { "zh": "如果模型存在沙袋效应，部署前的危险能力评测只能给出能力下界。",
+        "en": "If a model sandbags, pre-deployment dangerous capability evaluations only give a lower bound on its capability.",
+        "source": "constructed" }
+    ],
+    "related": ["capability-elicitation", "elicitation-gap", "dangerous-capability-evaluation", "evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "sycophancy",
+    "en": "sycophancy",
+    "en_aliases": ["flattery", "obsequiousness"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["misalignment-phenomena", "rlhf-artifact"],
+    "definition_en": "A model's tendency to tell the user what they want to hear — agreeing with stated positions, praising their work, backing down under pushback — rather than what is accurate. A predictable side effect of optimising for human approval.",
+    "definition_zh": "模型倾向于顺着用户说话——附和用户立场、夸奖用户作品、被质疑就改口——而不是给出准确回答。这是过度优化人类偏好反馈的可预期副作用。",
+    "preferred_zh": "谄媚",
+    "translation_difficulty": "low",
+    "pitfalls": "谄媚 is a strong, morally loaded word in Chinese (obsequious, fawning, boot-licking) — arguably stronger than English 'sycophancy', which has become semi-technical in AI circles. It is nonetheless the settled rendering. 奉承 and 讨好 are softer and appear as glosses. Note that 谄媚 attributes an intention the model does not have, in a language where the word normally describes a person angling for advantage.",
+    "translations": [
+      {
+        "zh": "谄媚",
+        "pinyin": "chǎnmèi",
+        "status": "established",
+        "literal_back": "fawning / obsequious",
+        "notes": "Dominant across report translations, lab writing and tech media.",
+        "attestations": [
+          {
+            "quote_zh": "越来越多的证据表明，人工智能系统会通过谄媚和冒充行为产生操纵作用。",
+            "quote_en": "There is growing evidence that AI systems can be manipulative through sycophancy and impersonation.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "在风险评估方法上，xAI并未试图穷举所有高风险场景，而是将复杂风险拆解为可评估的模型行为维度，重点关注三类要素：模型的滥用潜力（如对越狱的脆弱性）、令人担忧的倾向（如欺骗或谄媚行为），以及双重用途能力（如进攻性网络攻击能力）。",
+            "quote_en": "On risk-assessment method, xAI does not try to enumerate every high-risk scenario but decomposes complex risk into assessable behavioural dimensions, focusing on three elements: misuse potential (e.g. susceptibility to jailbreaks), concerning propensities (e.g. deceptive or sycophantic behaviour), and dual-use capabilities (e.g. offensive cyber capability).",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "奉承",
+        "pinyin": "fèngchéng",
+        "status": "common",
+        "literal_back": "flattery",
+        "notes": "Used as an inline gloss alongside 谄媚 in the Chinese International AI Safety Report ('谄媚/奉承取悦'). Softer register.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "谄媚", "note": "describing xAI's propensity dimensions" }
+    ],
+    "usage_examples": [
+      { "zh": "对人类认可的过度优化可能会导致模型表现出欺骗或谄媚的行为。",
+        "en": "Over-optimising for human approval can lead models to behave deceptively or sycophantically.",
+        "source": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf" }
+    ],
+    "related": ["hallucination", "evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "hallucination",
+    "en": "hallucination",
+    "en_aliases": ["confabulation"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["reliability", "core"],
+    "definition_en": "A model producing fluent, confident content that is simply not true — invented citations, biographies, prices, case law. A reliability failure rather than a safety failure in the frontier sense, but the one non-specialists know.",
+    "definition_zh": "模型生成流畅、自信但根本不存在的内容，比如编造的引文、人物生平、票价或判例。它属于可靠性问题而非前沿意义上的安全问题，但却是公众最熟悉的一种失效。",
+    "preferred_zh": "幻觉",
+    "translation_difficulty": "low",
+    "pitfalls": "None. 幻觉 is universal and the metaphor transfers cleanly. Some Chinese writers note, as English ones do, that 虚构/编造 ('fabrication') would be more accurate than a perception metaphor, but this has not displaced 幻觉.",
+    "translations": [
+      {
+        "zh": "幻觉",
+        "pinyin": "huànjué",
+        "status": "established",
+        "literal_back": "hallucination / illusion",
+        "notes": "Universal in Chinese ML, media and policy text.",
+        "attestations": [
+          {
+            "quote_zh": "即使是擅长完成复杂任务的系统也可能生成不存在的引文、传记或事实，这种现象被称为“幻觉”(139, 140, 141*)。",
+            "quote_en": "Even systems that are good at complex tasks can generate non-existent citations, biographies or facts — a phenomenon known as 'hallucination'.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "传统生成式AI（LLM）的核心风险集中于内容生成、幻觉、提示词越狱，其最坏后果是“说错话”；而自主智能体具备四大核心能力——自主任务拆解、长期记忆/上下文管理、外部工具/API调用、多智能体协作，其安全风险已从“说错话”升级为“做错事”。",
+            "quote_en": "The core risks of traditional generative AI (LLMs) centre on content generation, hallucination and prompt jailbreaks, and the worst outcome is 'saying the wrong thing'; autonomous agents have four core capabilities — task decomposition, long-term memory/context management, external tool/API calls, multi-agent collaboration — and their risk escalates from 'saying the wrong thing' to 'doing the wrong thing'.",
+            "source_title": "面向AI智能体的红队测试实战：基于OWASP ASI 2026的金融场景攻防实践",
+            "publisher": "虎符智库，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/90244",
+            "date": "2026-05"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "该系统在案情摘要中援引了不存在的先例，这是典型的幻觉。",
+        "en": "The system cited non-existent precedents in a case brief — a textbook hallucination.",
+        "source": "constructed" }
+    ],
+    "related": ["sycophancy", "evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.secrss.com/articles/90244"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "safety-case",
+    "en": "safety case",
+    "en_aliases": ["safety argument"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "high-value", "contested", "engineering-heritage"],
+    "definition_en": "A structured, evidence-backed argument that a system is acceptably safe to operate in a given context. Imported into frontier AI from aviation, nuclear and automotive safety engineering, where regulators have required them for decades.",
+    "definition_zh": "一套有证据支撑的结构化论证，用以说明系统在特定运行环境下的安全性可以接受。这一做法源自航空、核电与汽车安全工程领域，近年被引入前沿AI治理。",
+    "preferred_zh": "安全论证",
+    "translation_difficulty": "medium",
+    "pitfalls": "This is the clearest case in the category of two communities owning different words for the same thing. Chinese safety-engineering academia (software engineering, GSN/CAE, ISO 26262, airworthiness) has used 安全案例 since well before AI — the 2024 《软件学报》 survey is titled 关于安全案例论证构建的综述. Chinese AI-safety writing, arriving from the English frontier literature, has independently converged on 安全论证. They refer to the same artefact. 安全案例 is the more faithful calque of 'case' but is a false friend in general Chinese, where 案例 means 'case study / worked example', so 安全案例 can be misread as 'a safety incident case study'. 安全论证 avoids that and foregrounds the argument structure, which is why we prefer it — but a reader coming from functional-safety engineering will search for 安全案例. Note also that both terms swallow the safety/security distinction via 安全.",
+    "translations": [
+      {
+        "zh": "安全论证",
+        "pinyin": "ānquán lùnzhèng",
+        "status": "established",
+        "literal_back": "safety argumentation",
+        "notes": "The AI-safety community's choice. Used with the English gloss in both the International AI Safety Report Chinese edition and the Shanghai AI Lab / Concordia AI framework, and by Concordia AI when describing Google DeepMind's practice.",
+        "attestations": [
+          {
+            "quote_zh": "安全论证（Safety cases）安全论证是一套结构化的论述，通过证据支持，证明系统在特定环境下运行具有可接受的安全性。",
+            "quote_en": "Safety cases: a safety case is a structured argument, supported by evidence, that a system operates with acceptable safety in a given context.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "●安全论证（Safety Cases）：基于证据的详细论证，通过技术评估与风险缓解策略相结合，证明系统部署的安全性。",
+            "quote_en": "Safety cases: detailed evidence-based arguments that combine technical evaluation with risk-mitigation strategies to demonstrate the safety of a system's deployment.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "此外，DeepMind创新性地引入了“安全论证”（safety case）的方法来评估缓解措施的有效性。",
+            "quote_en": "In addition, DeepMind has innovatively introduced the 'safety case' method for assessing the effectiveness of mitigations.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "安全案例",
+        "pinyin": "ānquán ànlì",
+        "status": "established",
+        "literal_back": "safety case (literal)",
+        "notes": "The pre-existing term in Chinese safety-engineering and software-engineering literature, predating AI use. Correct in that register; avoid in AI-safety text because 案例 reads as 'case study'.",
+        "attestations": [
+          {
+            "quote_zh": "安全案例提供清晰、全面和可靠的论据，说明系统在特定环境下的操作满足可接受的安全性。",
+            "quote_en": "A safety case provides a clear, comprehensive and reliable argument that a system's operation in a specific environment meets acceptable safety.",
+            "source_title": "关于安全案例论证构建的综述",
+            "publisher": "《软件学报》2024年第35卷第9期（陈泽众、邓玉欣）",
+            "source_type": "paper",
+            "url": "https://www.jos.org.cn/jos/article/abstract/7126",
+            "date": "2024"
+          }
+        ]
+      },
+      {
+        "zh": "安全性论证",
+        "pinyin": "ānquánxìng lùnzhèng",
+        "status": "common",
+        "literal_back": "safety-property argumentation",
+        "notes": "Appears in the Shanghai AI Lab framework in the same sentence as 安全论证, apparently as a generic descriptor rather than a distinct term.",
+        "attestations": [
+          {
+            "quote_zh": "这需要将严谨的安全性论证与工具（如安全论证和系统卡）相结合，向利益相关方说明情况，并指导部署决策54。",
+            "quote_en": "This requires combining rigorous safety argumentation with instruments such as safety cases and system cards, to explain the situation to stakeholders and guide deployment decisions.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "安全论证", "note": "defined in the framework's glossary of transparency instruments" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "安全论证", "note": "glossary entry" },
+      { "org": "《软件学报》(safety-engineering literature)", "zh_used": "安全案例", "note": "pre-existing engineering term" }
+    ],
+    "usage_examples": [
+      { "zh": "当模型达到关键能力等级时，团队需要提交一份安全论证，说明现有缓解措施已把重大风险降到可接受水平。",
+        "en": "When a model reaches a critical capability level, the team must submit a safety case showing that existing mitigations have reduced severe risk to an acceptable level.",
+        "source": "constructed" }
+    ],
+    "related": ["frontier-safety-framework", "capability-threshold", "model-card", "third-party-audit"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/87619",
+      "https://www.jos.org.cn/jos/article/abstract/7126"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "third-party-audit",
+    "en": "third-party audit",
+    "en_aliases": ["external audit", "independent audit"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["governance", "assurance"],
+    "definition_en": "Formal review of a model's performance and impact, or of a developer's compliance with its own stated policies, carried out by an organisation independent of the developer.",
+    "definition_zh": "由独立于开发者的机构，对模型的性能与影响，或对开发者是否遵守其自身承诺的政策与流程，进行的正式审查。",
+    "preferred_zh": "第三方审计",
+    "translation_difficulty": "low",
+    "pitfalls": "Three near-synonyms circulate and the difference matters politically: 第三方审计 (audit, implies a formal standardised procedure and a report), 第三方评估 (assessment, weaker, what labs actually invite external researchers to do), and 第三方审查 (review/scrutiny, weakest). Concordia AI's critique of the frontier frameworks turns exactly on this distinction — it says third-party involvement is mostly 审查 that is procedurally compliant but lacks substantive verification. Also note the PRC context: 审计 in Chinese institutional language most often means financial audit performed by a licensed 会计师事务所, so 第三方审计 may be read as narrower and more formal than the English term intends.",
+    "translations": [
+      {
+        "zh": "第三方审计",
+        "pinyin": "dìsānfāng shěnjì",
+        "status": "established",
+        "literal_back": "third-party audit",
+        "notes": "Used in both the International AI Safety Report Chinese edition and the Shanghai AI Lab / Concordia AI framework.",
+        "attestations": [
+          {
+            "quote_zh": "研究人员指出，自愿自治面临的挑战，意味着第三方审计、验证和标准化措施有助于强化通用型人工智能风险管理(1001、1011、1109、1110、1111、1112)。",
+            "quote_en": "Researchers note that the challenges of voluntary self-governance mean third-party audits, verification and standardisation can strengthen general-purpose AI risk management.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "第三方审计机制：委托独立机构定期对安全评估结果与风险缓解措施进行验证，通过复现测试和方法论审查确保有效性。",
+            "quote_en": "Third-party audit mechanism: commission independent institutions to periodically verify safety evaluation results and risk mitigations, ensuring effectiveness through reproduction testing and methodological review.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "第三方评估",
+        "pinyin": "dìsānfāng pínggū",
+        "status": "common",
+        "literal_back": "third-party assessment",
+        "notes": "Weaker than audit; describes what labs actually do — inviting outside evaluators — rather than a formal audit regime. VERIFICATION 2026-08-08: the cited article says 第三方审计 and 独立第三方…安全评估, but never the fixed compound 第三方评估. Attestation removed; unattested in our sources.",
+        "attestations": []
+      },
+      {
+        "zh": "第三方审查",
+        "pinyin": "dìsānfāng shěnchá",
+        "status": "common",
+        "literal_back": "third-party review",
+        "notes": "The weakest of the three; used critically by Concordia AI to characterise frameworks whose external oversight is procedural rather than substantive.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "第三方审计", "note": "listed as a governance mechanism in the framework" }
+    ],
+    "usage_examples": [
+      { "zh": "框架在安全评估方面多为自我声明，缺乏独立渗透测试或第三方审计支撑。",
+        "en": "On safety evaluation the framework relies largely on self-declaration, without independent penetration testing or third-party audit to back it up.",
+        "source": "https://www.secrss.com/articles/87619" }
+    ],
+    "related": ["safety-case", "model-card", "frontier-safety-framework"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "uplift",
+    "en": "uplift",
+    "en_aliases": ["bio uplift", "cyber uplift", "uplift study", "novice uplift"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "high-value", "gap", "cbrn"],
+    "definition_en": "The marginal increase in a malicious actor's ability to cause harm that is attributable to access to an AI system, measured against a realistic baseline such as internet search alone. The unit of analysis for bio and cyber misuse risk.",
+    "definition_zh": "相对于现实基线（例如仅能使用互联网搜索），恶意行为者因获得AI系统而额外获得的作恶能力增量。它是生物与网络滥用风险评估的基本计量单位。",
+    "preferred_zh": "提升研究",
+    "translation_difficulty": "high",
+    "pitfalls": "A real gap, and the hint was right. Chinese has no word that carries 'uplift' in its threat-model sense. The attested rendering is 提升 / 能力提升, which is unambiguously positive-valence in Chinese — 提升 is what you write about improving productivity, quality or living standards — so 能力提升 reads as 'capability improvement' and quietly deletes the entire point of the term, which is that the improvement accrues to an attacker. Both the International AI Safety Report Chinese edition and the Shanghai AI Lab framework handle this by only ever using it inside the compound 提升研究 (uplift study) with the English in parentheses; neither uses a bare noun for 'uplift' itself, and the report resorts to descriptive phrasing (实质性帮助, 大量协助, 协助新手) where the English says 'uplift'. If you need the threat sense unambiguously, write 对恶意行为者的能力增益 or spell out 相对基线的边际协助; do not write 能力提升 alone.",
+    "translations": [
+      {
+        "zh": "提升研究",
+        "pinyin": "tíshēng yánjiū",
+        "status": "established",
+        "literal_back": "uplift study / improvement study",
+        "notes": "The only fixed term attested, and only for 'uplift study'. Both sources gloss it with the English on first use, which is itself evidence the Chinese does not stand alone.",
+        "attestations": [
+          {
+            "quote_zh": "提升研究（uplift study）：一项系统性评估，旨在比较人类在执行特定任务时，使用人工智能模型或系统的表现与相关基准（如仅使用互联网访问而未使用人工智能的表现）之间的差异。",
+            "quote_en": "Uplift study: a systematic assessment comparing how humans perform on a given task with access to an AI model or system versus a relevant baseline (such as internet access without AI).",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "在最终训练初期，研发者可专注于高度可扩展的评测（如自动化基准测试）；当模型接近已知能力边界时，应开展更复杂的评测（如红队测试或提升研究）。",
+            "quote_en": "Early in the final training run, developers can focus on highly scalable evaluations (such as automated benchmarks); as the model approaches known capability frontiers, more complex evaluations (such as red-teaming or uplift studies) should be conducted.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "能力提升",
+        "pinyin": "nénglì tíshēng",
+        "status": "deprecated",
+        "literal_back": "capability improvement",
+        "notes": "Attested as the rendering of 'real-world uplift', but we recommend against it standing alone: in Chinese it is a straightforwardly positive term and is used throughout the same document for benign capability progress, so the threat framing is lost entirely.",
+        "attestations": [
+          {
+            "quote_zh": "恶意使用风险562026年国际人工智能安全报告相关能力有所提高，但现实世界提升的证据不一在最近发表的一项现实世界能力提升的研究中，与仅接入互联网的基线相比，未配备相关安全防护措施的通用型人工智能系统可以为生物武器获取的替代任务提供大量协助(33*)。",
+            "quote_en": "Relevant capabilities have improved but evidence of real-world uplift is mixed. In a recently published real-world uplift study, general-purpose AI systems without relevant safeguards provided substantial assistance on proxy tasks for bioweapon acquisition, compared with an internet-only baseline.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "实质性帮助",
+        "pinyin": "shízhìxìng bāngzhù",
+        "status": "descriptive",
+        "literal_back": "substantive help",
+        "notes": "How Chinese safety text actually conveys the threat sense — as a descriptive phrase about assisting a novice, not as a named quantity. Also 实质协助, 大量协助.",
+        "attestations": [
+          {
+            "quote_zh": "由于部署前的测试未能排除这些模型可能实质性帮助新手开发此类武器的可能性，因此，多家人工智能公司在2025年发布新模型时增加了额外安全防护措施。",
+            "quote_en": "Because pre-deployment testing could not rule out that these models might substantially help a novice develop such weapons, several AI companies added extra safeguards to models released in 2025.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "能力增益",
+        "pinyin": "nénglì zēngyì",
+        "status": "proposed",
+        "literal_back": "capability gain (as in signal gain)",
+        "notes": "We are proposing this for the bare noun 'uplift'. 增益 is the engineering word for gain and is affect-neutral, so 对恶意行为者的能力增益 reads as a measured quantity attributable to the system rather than as praise. Not attested; offered as a coinage.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "提升研究", "note": "listed as an advanced evaluation type alongside red-teaming" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "提升研究（uplift study）", "note": "glossary entry, English retained inline" }
+    ],
+    "usage_examples": [
+      { "zh": "提升研究衡量的是AI系统相对于基准线所提供的边际贡献。",
+        "en": "An uplift study measures the marginal contribution the AI system offers over the baseline.",
+        "source": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf" }
+    ],
+    "related": ["cbrn", "dangerous-capability-evaluation", "capability-threshold"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "cbrn",
+    "en": "CBRN",
+    "en_aliases": ["chemical, biological, radiological and nuclear", "CBRNE"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "misuse", "military-heritage"],
+    "definition_en": "Chemical, biological, radiological and nuclear — the weapons categories that frontier safety frameworks treat as the canonical catastrophic-misuse domain, and the first area where labs have deployed heightened safeguards.",
+    "definition_zh": "化学、生物、放射性与核武器四类，是前沿安全框架公认的灾难性滥用风险领域，也是各实验室最早启用更高等级防护措施的方向。",
+    "preferred_zh": "化生放核",
+    "translation_difficulty": "low",
+    "pitfalls": "Two registers. PRC military and civil-defence Chinese has the compact established abbreviation 化生放核 (and 化生放核爆 for CBRNE), which the Shanghai AI Lab framework and Concordia AI both use. Translated international reports instead spell out 化学、生物、放射性和核 with the English CBRN in parentheses, because 化生放核 is not transparent to a general policy reader outside the defence world. Both are correct; pick by audience. Also worth knowing: the Chinese order matches the English (chemical first), and the older PRC term 三防 ('three defences', against nuclear/chemical/biological) survives in military contexts and is not equivalent.",
+    "translations": [
+      {
+        "zh": "化生放核",
+        "pinyin": "huà shēng fàng hé",
+        "status": "established",
+        "literal_back": "chem-bio-radio-nuclear",
+        "notes": "The compact PRC defence-register abbreviation, used unglossed by Chinese AI-safety institutions. 化生放核爆 adds explosives (CBRNE).",
+        "attestations": [
+          {
+            "quote_zh": "●化生放核爆武器化能力（CBRNE weaponization capability）：指研发、生产或有效利用化学（Chemical）、生物（Biological）、放射性（Radiological）、核（Nuclear）及爆炸性（Explosive）武器的能力。",
+            "quote_en": "CBRNE weaponization capability: the ability to develop, produce or effectively employ chemical, biological, radiological, nuclear and explosive weapons.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "原政策中要求的某些具体能力评估方法（如针对化生放核威胁的“预警性评估”）在新版中被弱化或省略。",
+            "quote_en": "Certain specific capability-evaluation methods required in the earlier policy (such as 'early-warning evaluations' targeting CBRN threats) are weakened or omitted in the new version.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "化学、生物、放射性和核",
+        "pinyin": "huàxué, shēngwù, fàngshèxìng hé hé",
+        "status": "established",
+        "literal_back": "chemical, biological, radiological and nuclear",
+        "notes": "Spelled-out form used in translated international reports, normally with (CBRN) appended.",
+        "attestations": [
+          {
+            "quote_zh": "大多数关注点集中在与化学、生物、放射性和核(CBRN)威胁相关的风险、先进的网络能力以及高级的自主行为上(1115、1117)。",
+            "quote_en": "Most attention focuses on risks related to chemical, biological, radiological and nuclear (CBRN) threats, advanced cyber capabilities, and advanced autonomous behaviour.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "化生放核爆", "note": "defines CBRNE weaponization capability as a threshold domain" }
+    ],
+    "usage_examples": [
+      { "zh": "该框架把化生放核威胁列为触发最高级别防护的能力领域之一。",
+        "en": "The framework lists CBRN threats as one of the capability domains that trigger the highest tier of safeguards.",
+        "source": "constructed" }
+    ],
+    "related": ["uplift", "dangerous-capability-evaluation", "capability-threshold", "ai-safety-level"],
+    "sources": [
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/87619",
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "model-card",
+    "en": "model card",
+    "en_aliases": ["system card"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["transparency", "documentation"],
+    "definition_en": "A published document accompanying a model release that states its intended use, training data, evaluation results, limitations and safety properties. A system card covers the deployed system rather than the bare model and is where frontier labs now publish their safety test results.",
+    "definition_zh": "随模型发布的公开文档，说明模型的用途、训练数据、评测结果、局限性与安全特性。系统卡描述的是部署后的整体系统而非单个模型，目前是前沿实验室公布安全测试结果的主要载体。",
+    "preferred_zh": "模型卡",
+    "translation_difficulty": "low",
+    "pitfalls": "Minor. 模型卡 / 系统卡 are settled; the fuller 模型卡片 / 系统卡片 also occurs. Chinese frontier-safety writing consistently pairs them as 模型卡/系统卡 rather than choosing one. Note a substantive rather than linguistic caveat: Chinese labs' 技术报告 and 模型卡 generally do not include the dangerous-capability evaluation sections that the term implies in a frontier-safety context, so a Chinese reader may not associate 模型卡 with safety disclosure at all.",
+    "translations": [
+      {
+        "zh": "模型卡",
+        "pinyin": "móxíng kǎ",
+        "status": "established",
+        "literal_back": "model card",
+        "notes": "Standard. 模型卡片 is the longer variant.",
+        "attestations": [
+          {
+            "quote_zh": "模型卡（Model card）：一份提供有关人工智能模型有用信息的文档，例如其用途、使用指南、训练数据、基准测试表现或安全特性等。",
+            "quote_en": "Model card: a document providing useful information about an AI model, such as its purpose, usage guidance, training data, benchmark performance or safety properties.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "●透明化措施：发布模型卡、研究报告或选择性开源模型权重，便于外部专家独立评估能力与风险，支持在更高授权等级下的使用场景。",
+            "quote_en": "Transparency measures: publish model cards, research reports, or selectively open-source model weights so that external experts can independently assess capability and risk.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "系统卡",
+        "pinyin": "xìtǒng kǎ",
+        "status": "established",
+        "literal_back": "system card",
+        "notes": "For the deployed-system document. The Shanghai AI Lab framework treats it as a public-facing complement to a safety case.",
+        "attestations": [
+          {
+            "quote_zh": "●系统卡（System Cards）：面向公众的简明摘要文件，以通俗易懂的语言说明系统的功能、局限性、潜在风险及防护措施。",
+            "quote_en": "System cards: concise public-facing summary documents that explain, in accessible language, the system's functionality, limitations, potential risks and safeguards.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "同时，这些公司也都承诺一定程度的外部透明度，包括发布模型卡/系统卡披露模型风险评估方法和结果，引入外部专家意见，以及在可行情况下向政府监管机构提供信息。",
+            "quote_en": "These companies also commit to a degree of external transparency, including publishing model cards/system cards disclosing risk-assessment methods and results, bringing in external expert input, and providing information to government regulators where feasible.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "模型卡 / 系统卡", "note": "both defined in the framework" }
+    ],
+    "usage_examples": [
+      { "zh": "各实验室在最新的系统卡中公示了相关安全测试结果和改进措施。",
+        "en": "The labs disclosed their safety test results and remediations in their latest system cards.",
+        "source": "https://www.secrss.com/articles/87619" }
+    ],
+    "related": ["safety-case", "third-party-audit", "frontier-safety-framework"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "responsible-scaling-policy",
+    "en": "responsible scaling policy",
+    "en_aliases": ["RSP"],
+    "abbr": "RSP",
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "anthropic", "contested"],
+    "definition_en": "Anthropic's public commitment document tying model capability levels to required safeguards: if evaluations show a model has crossed a defined capability threshold, specified security and deployment measures must be in place before training or release continues. The first published document of its kind and the template for the frontier safety framework genre.",
+    "definition_zh": "Anthropic公开发布的承诺文件，把模型的能力等级与必须配套的防护措施绑定：一旦评测显示模型越过既定能力阈值，就必须先落实相应的安保与部署措施，才能继续训练或发布。它是同类文件中最早公开的一份，也确立了前沿安全框架这一体裁。",
+    "preferred_zh": "负责任扩展政策",
+    "translation_difficulty": "medium",
+    "pitfalls": "Genuinely unsettled on two axes at once: 政策 vs 策略 (policy vs strategy) and 扩展 vs 规模化 (scaling). Concordia AI writes 《负责任扩展政策》 while the Chinese edition of the International AI Safety Report writes 《负责任的扩展策略》 — in the same six-month window, for the same document. Separately, 扩展 for 'scaling' collides with the Chinese ML term for scaling laws (扩展定律/缩放定律) and could be read as 'expanding the product', not 'scaling up model capability'. The English 'responsible scaling' is itself contested in English; the Chinese inherits that. In practice Chinese writers usually just write RSP in Latin letters after a first gloss, which is the honest recommendation.",
+    "translations": [
+      {
+        "zh": "负责任扩展政策",
+        "pinyin": "fùzérèn kuòzhǎn zhèngcè",
+        "status": "common",
+        "literal_back": "responsible expansion policy",
+        "notes": "Concordia AI's choice; pairs with their 《负责任扩展政策》（RSP） formatting.",
+        "attestations": [
+          {
+            "quote_zh": "早在2023年，Anthropic便公布了详尽的《负责任扩展政策》（RSP），提出AI安全等级（ASL）分级理念，将生物安全领域的分级管理思想引入AI模型治理。",
+            "quote_en": "As early as 2023, Anthropic published a detailed Responsible Scaling Policy (RSP), introducing the AI Safety Level (ASL) tiering concept and bringing biosafety's graded-management thinking into AI model governance.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "负责任的扩展策略",
+        "pinyin": "fùzérèn de kuòzhǎn cèlüè",
+        "status": "common",
+        "literal_back": "responsible expansion strategy",
+        "notes": "The Chinese edition of the International AI Safety Report uses this in prose and 负责任的扩展政策 in its comparison table — inconsistent within one document.",
+        "attestations": [
+          {
+            "quote_zh": "Anthropic使用《负责任的扩展策略》”（Responsible Scaling Policy），该政策对人工智能安全等级进行了定义，部分基于与化学、生物、放射性与核领域的知识能力有关的能力阈值(542*)。",
+            "quote_en": "Anthropic uses a Responsible Scaling Policy, which defines AI Safety Levels partly on the basis of capability thresholds relating to knowledge and capability in the chemical, biological, radiological and nuclear domains.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "RSP",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "After a first-mention gloss, Chinese frontier-safety writing routinely uses the bare Latin abbreviation, e.g. Concordia AI's 'RSP+ASL分级'. This is the most common way the concept actually appears in running Chinese text.",
+        "attestations": [
+          {
+            "quote_zh": "Anthropic•最早系统化提出RSP+ASL分级与“安全红线”•强调研发早期前置防护措施，风险不可控则不部署",
+            "quote_en": "Anthropic: first to systematically propose RSP + ASL tiering and 'safety red lines'; emphasises front-loading safeguards early in development, and not deploying where risk is uncontrollable.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "《负责任扩展政策》（RSP）", "note": "framework comparison series" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "《负责任的扩展策略》", "note": "prose; table uses 负责任的扩展政策" }
+    ],
+    "usage_examples": [
+      { "zh": "Anthropic的负责任扩展政策把AI安全等级与必须落实的防护措施绑定在一起。",
+        "en": "Anthropic's responsible scaling policy ties AI Safety Levels to the safeguards that must be in place.",
+        "source": "constructed" }
+    ],
+    "related": ["ai-safety-level", "frontier-safety-framework", "capability-threshold"],
+    "sources": [
+      "https://www.secrss.com/articles/87619",
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "frontier-safety-framework",
+    "en": "frontier safety framework",
+    "en_aliases": ["preparedness framework", "frontier AI framework", "if-then commitments"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "governance", "high-value"],
+    "definition_en": "The genre of document in which a frontier developer commits in advance to evaluating for specified dangerous capabilities, defines thresholds, and states what safeguards or halts follow when a threshold is crossed. Google DeepMind's document carries this exact name; OpenAI's is the Preparedness Framework, Anthropic's the RSP.",
+    "definition_zh": "前沿开发者预先承诺的一类文件：约定要评测哪些危险能力、设定相应阈值，并规定阈值被触发后必须采取的防护措施或暂停动作。谷歌DeepMind的同名文件叫《前沿安全框架》，OpenAI的叫《应急准备框架》，Anthropic的则是RSP。",
+    "preferred_zh": "前沿安全框架",
+    "translation_difficulty": "medium",
+    "pitfalls": "Chinese has done something English has not: it has separated the proper noun from the genre. 前沿安全框架 is used specifically for Google DeepMind's document, while the umbrella category is 前沿AI风险管理框架 / 前沿人工智能风险管理框架 — the phrasing Concordia AI uses to cover all five labs, and the title of the Chinese-origin framework issued by Shanghai AI Lab with Concordia AI in July 2025. If you write 前沿安全框架 when you mean the genre, a well-read Chinese reader will think you mean DeepMind's. Note also that the Chinese umbrella term foregrounds 风险管理 (risk management), aligning the genre with ISO-style enterprise risk management rather than with 'safety' as a distinct value — a framing choice that makes the genre legible to PRC regulators. There is a native Chinese instance of this genre, which matters: 上海人工智能实验室 and 安远AI's framework uses a 红线/黄线 two-tier threshold system rather than importing ASL-style numbered levels.",
+    "translations": [
+      {
+        "zh": "前沿安全框架",
+        "pinyin": "qiányán ānquán kuàngjià",
+        "status": "established",
+        "literal_back": "frontier safety framework",
+        "notes": "Used as the proper name of Google DeepMind's document in both the International AI Safety Report Chinese edition and Concordia AI's writing.",
+        "attestations": [
+          {
+            "quote_zh": "谷歌DeepMind使用《前沿安全框架》（Frontier Safety Framework），含有在各个领域的“关键能力等级（Critical Capability Levels）”。",
+            "quote_en": "Google DeepMind uses a Frontier Safety Framework, containing 'Critical Capability Levels' for each domain.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "Google DeepMind（以下简称DeepMind）发布的“前沿安全框架”（Frontier Safety Framework）有几个鲜明特点。",
+            "quote_en": "The Frontier Safety Framework published by Google DeepMind has several distinctive features.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "前沿AI风险管理框架",
+        "pinyin": "qiányán AI fēngxiǎn guǎnlǐ kuàngjià",
+        "status": "established",
+        "literal_back": "frontier AI risk-management framework",
+        "notes": "The umbrella term for the genre in Chinese, and the title of the Chinese-origin framework. Also written 前沿人工智能风险管理框架 / 人工智能前沿风险管理框架. VERIFICATION 2026-08-08: the 安全内参 / 上海人工智能实验室 release announcement writes the framework name in full as 《前沿人工智能风险管理框架》, never the abbreviated 前沿AI风险管理框架, so that attestation was removed. The abbreviated form remains attested in the Concordia AI comparison piece.",
+        "attestations": [
+          {
+            "quote_zh": "在之前的文章中，我们分别介绍了五家国际领先的基础大模型公司——Anthropic、OpenAI、Google DeepMind、Meta和xAI——各自提出的前沿AI风险管理框架（名称各异，本文统称为“框架”）。",
+            "quote_en": "In previous articles we introduced the frontier AI risk management frameworks put forward by five leading international foundation-model companies — Anthropic, OpenAI, Google DeepMind, Meta and xAI (the names differ; this article calls them all 'frameworks').",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "应急准备框架",
+        "pinyin": "yìngjí zhǔnbèi kuàngjià",
+        "status": "common",
+        "literal_back": "emergency preparedness framework",
+        "notes": "Rendering of OpenAI's Preparedness Framework in the Chinese International AI Safety Report. 应急 adds an 'emergency response' connotation the English does not have.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "《人工智能前沿风险管理框架（1.0版）》", "note": "the Chinese-origin instance of the genre, July 2025" },
+      { "org": "安远 AI (Concordia AI)", "zh_used": "前沿AI风险管理框架", "note": "umbrella term across their comparison series" }
+    ],
+    "usage_examples": [
+      { "zh": "国内企业可以结合自身业务特点，制定并落实自己的前沿AI风险管理框架。",
+        "en": "Domestic firms can develop and implement their own frontier AI risk management frameworks, adapted to their business.",
+        "source": "constructed" }
+    ],
+    "related": ["responsible-scaling-policy", "ai-safety-level", "capability-threshold", "safety-case", "dangerous-capability-evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.secrss.com/articles/87619",
+      "https://www.secrss.com/articles/81320",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://concordia-ai.com/zh-hans/research/frontier-ai-risk-management-framework/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "ai-safety-level",
+    "en": "AI Safety Level",
+    "en_aliases": ["ASL", "ASL-3"],
+    "abbr": "ASL",
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "anthropic"],
+    "definition_en": "Anthropic's tiered scheme, modelled on biosafety levels, in which each level pairs a description of model capability with the security and deployment safeguards required at that level. ASL-3 was first triggered in 2025.",
+    "definition_zh": "Anthropic参照生物安全等级（BSL）设计的分级体系，每一级都把模型能力的描述与该级别必须落实的安保与部署防护措施配对。ASL-3于2025年首次被触发。",
+    "preferred_zh": "AI安全等级",
+    "translation_difficulty": "medium",
+    "pitfalls": "The collision the hint flags is real and worth stating carefully. PRC cybersecurity has a legally mandated, deeply entrenched grading regime — 网络安全等级保护 ('MLPS', colloquially 等保), with five levels, its own national standards (e.g. GB/T 25070-2019) and a compliance step literally called 等级测评. The Shanghai AI Lab / Concordia AI frontier framework cites 等级保护 in its security section, so both vocabularies genuinely coexist in one Chinese AI-safety document. A bare 安全等级 in PRC context will therefore be read as an MLPS compliance grade — a static grading of the system's protection level assigned by regulation — not as a capability-triggered tier that a model can cross during training. Keep the AI/ASL prefix (AI安全等级(ASL)) rather than writing 安全等级 alone. Secondary point: 安全 here means safety, whereas in 等级保护 it means security; the collapse makes the two look even more alike than they are.",
+    "translations": [
+      {
+        "zh": "AI安全等级",
+        "pinyin": "AI ānquán děngjí",
+        "status": "established",
+        "literal_back": "AI safety level",
+        "notes": "Concordia AI's form; normally written with (ASL) appended.",
+        "attestations": [
+          {
+            "quote_zh": "例如Anthropic要求当模型能力达到更高“AI安全等级”（ASL）时，需要累积部署更严格的安全对策；OpenAI则针对不同威胁类别制定了具体的对策指引，包括在部署前识别所有可能滥用路径并为每一路径建立防护。",
+            "quote_en": "For example, Anthropic requires that as model capability reaches a higher 'AI Safety Level' (ASL), progressively stricter countermeasures must be deployed; OpenAI has drawn up specific countermeasure guidance per threat category.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "人工智能安全等级",
+        "pinyin": "réngōng zhìnéng ānquán děngjí",
+        "status": "established",
+        "literal_back": "artificial intelligence safety level",
+        "notes": "Fuller form used in the Chinese edition of the International AI Safety Report.",
+        "attestations": [
+          {
+            "quote_zh": "Claude Opus 4是Anthropic发布的首款人工智能安全等级3级的模型。",
+            "quote_en": "Claude Opus 4 is the first AI Safety Level 3 model Anthropic has released.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "ASL",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The level names (ASL-2, ASL-3, ASL-4) are kept in Latin script in Chinese text without exception in the sources reviewed.",
+        "attestations": [
+          {
+            "quote_zh": "首先，新版本并未对最高级别的AI安全等级ASL-4（以及潜在更高等级）给出清晰定义，仅承诺在模型达到ASL-3阈值时再制定ASL-4标准。",
+            "quote_en": "First, the new version gives no clear definition of the highest AI Safety Level, ASL-4 (or potentially higher), committing only to develop ASL-4 standards once a model reaches the ASL-3 threshold.",
+            "source_title": "国际五大前沿AI风险管理框架的横向对比",
+            "publisher": "安远AI (Concordia AI)，发表于安全内参",
+            "source_type": "blog",
+            "url": "https://www.secrss.com/articles/87619",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "安远 AI (Concordia AI)", "zh_used": "AI安全等级（ASL）", "note": "framework comparison" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "人工智能安全等级", "note": "risk-management chapter and comparison table" }
+    ],
+    "usage_examples": [
+      { "zh": "该模型触发了ASL-3阈值，因此必须先落实相应的安保措施才能部署。",
+        "en": "The model triggered the ASL-3 threshold, so the corresponding security measures had to be in place before deployment.",
+        "source": "constructed" }
+    ],
+    "related": ["responsible-scaling-policy", "capability-threshold", "frontier-safety-framework"],
+    "sources": [
+      "https://www.secrss.com/articles/87619",
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "capability-threshold",
+    "en": "capability threshold",
+    "en_aliases": ["red-line capability", "critical capability level", "risk threshold"],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["frontier-safety", "core"],
+    "definition_en": "A pre-defined level of model capability which, once evaluations show it has been reached, triggers a specified response — heightened safeguards, restricted deployment, or halting development. The mechanism that turns a frontier safety framework from a statement of values into a commitment.",
+    "definition_zh": "预先设定的模型能力水平；一旦评测显示模型达到该水平，就触发既定动作——提升防护等级、限制部署或停止研发。正是这一机制把前沿安全框架从表态变成承诺。",
+    "preferred_zh": "能力阈值",
+    "translation_difficulty": "low",
+    "pitfalls": "The translation is easy; the interesting part is that Chinese frontier-safety work has a native alternative framing. Rather than importing numbered capability levels, the Shanghai AI Lab / Concordia AI framework builds a two-tier 红线 / 黄线 system: 红线 marks unacceptable outcomes, 黄线 an early-warning indicator that escalates safeguards. 红线 is one of the most resonant words in PRC political language (bottom lines that must not be crossed) and connects directly to the IDAIS-Beijing 红线 vocabulary, so it carries far more weight with a Chinese policy audience than 能力阈值 does. Note the framing difference is substantive, not just lexical: 红线 is defined on outcomes, 能力阈值 on model capabilities — the Chinese framework deliberately anchors on the former.",
+    "translations": [
+      {
+        "zh": "能力阈值",
+        "pinyin": "nénglì yùzhí",
+        "status": "established",
+        "literal_back": "capability threshold",
+        "notes": "Standard across translated and native frontier-safety writing.",
+        "attestations": [
+          {
+            "quote_zh": "这些是当人工智能模型和系统达到预定义能力阈值时触发特定响应的条件协议(1120)。",
+            "quote_en": "These are conditional protocols that trigger specified responses when AI models and systems reach predefined capability thresholds.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "它们在覆盖的风险范围、能力阈值的定义方式以及达到阈值时触发的行动方面存在差异。",
+            "quote_en": "They differ in the scope of risks covered, how capability thresholds are defined, and the actions triggered when a threshold is reached.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "风险阈值",
+        "pinyin": "fēngxiǎn yùzhí",
+        "status": "established",
+        "literal_back": "risk threshold",
+        "notes": "Used where the threshold is defined on outcomes rather than capabilities. Concordia AI writes 能力/风险阈值 to cover both.",
+        "attestations": [
+          {
+            "quote_zh": "●风险阈值（Risk Thresholds）：定义不可接受结果（“红线”）和升级安全保障措施的早期预警指标（“黄线”）的过程。",
+            "quote_en": "Risk thresholds: the process of defining unacceptable outcomes ('red lines') and early-warning indicators that escalate safeguards ('yellow lines').",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "红线 / 黄线",
+        "pinyin": "hóngxiàn / huángxiàn",
+        "status": "established",
+        "literal_back": "red line / yellow line",
+        "notes": "The native Chinese two-tier framing. 红线 = unacceptable outcome; 黄线 = early-warning indicator triggering deeper evaluation and mitigation. Politically resonant in a way 阈值 is not.",
+        "attestations": [
+          {
+            "quote_zh": "为对风险实行“量化”评估管理，研究人员在《框架》中提出基于威胁实现路径的“黄红线”双阈值体系。黄线对应风险实现的前提条件，红线对应在模拟实测中确认其为高置信度下的重大不可缓解风险。",
+            "quote_en": "To make risk assessment quantifiable, the researchers propose a dual 'yellow line / red line' threshold system based on threat-realisation pathways. The yellow line corresponds to the preconditions for risk realisation; the red line to risks confirmed in simulated testing, with high confidence, as severe and unmitigable.",
+            "source_title": "上海AI实验室发布前沿人工智能风险管理框架",
+            "publisher": "安全内参（转载上海人工智能实验室）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/81320",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "●2.风险阈值：本章节明确了一系列不可接受的风险结果（红线）以及触发更高级别安全保障措施的早期预警指标（黄线）。",
+            "quote_en": "Risk thresholds: this chapter sets out a series of unacceptable risk outcomes ('red lines') and early-warning indicators that trigger higher-tier safeguards ('yellow lines').",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "关键能力等级",
+        "pinyin": "guānjiàn nénglì děngjí",
+        "status": "common",
+        "literal_back": "critical capability level",
+        "notes": "Rendering of Google DeepMind's 'Critical Capability Levels' (CCL).",
+        "attestations": [
+          {
+            "quote_zh": "谷歌DeepMind使用《前沿安全框架》（Frontier Safety Framework），含有在各个领域的“关键能力等级（Critical Capability Levels）”。",
+            "quote_en": "Google DeepMind uses a Frontier Safety Framework containing 'Critical Capability Levels' for each domain.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      { "org": "上海人工智能实验室 / 安远AI", "zh_used": "红线 / 黄线（风险阈值）", "note": "the native two-tier threshold design" },
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "能力阈值", "note": "used throughout the frontier framework comparison" }
+    ],
+    "usage_examples": [
+      { "zh": "当模型已具备执行某一威胁场景中的核心关键步骤时，触发黄线预警，启动深度评估与缓解。",
+        "en": "When the model can already carry out the core critical steps of a threat scenario, the yellow-line warning is triggered and deeper evaluation and mitigation begin.",
+        "source": "https://www.secrss.com/articles/81320" }
+    ],
+    "related": ["frontier-safety-framework", "ai-safety-level", "dangerous-capability-evaluation", "responsible-scaling-policy"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/81320",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "elicitation-gap",
+    "en": "elicitation gap",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["measurement", "gap", "high-value"],
+    "definition_en": "The difference between the capability an evaluation measured and the capability the model actually has, caused by the evaluator not trying hard enough — weak prompting, no scaffolding, no fine-tuning, limited compute. It means every dangerous-capability result is a lower bound, and a determined attacker may exceed it.",
+    "definition_zh": "评测所测得的能力与模型真实能力之间的落差，成因是评测方没有把能力充分逼出来——提示不够好、没有脚手架、未做微调、算力不足。这意味着任何危险能力评测结果都只是下界，有备而来的攻击者可能超出它。",
+    "preferred_zh": "能力引出差距",
+    "translation_difficulty": "high",
+    "pitfalls": "No Chinese term exists, and there is an active trap. Chinese AI-safety documents do have a well-attested term 评测差距, but it renders 'evaluation gap' and points the OPPOSITE way: it means pre-deployment evaluations OVERSTATE real-world usefulness because benchmarks do not capture task complexity. Translating 'elicitation gap' as 评测差距 would therefore invert the argument — an elicitation gap says the measurement is too low, an 评测差距 says it is too high. Chinese sources do describe the elicitation-gap phenomenon, but only narratively (e.g. third parties using scaffolding to reveal stronger cyber capability than pre-deployment testing found). Record the gap; do not reach for 评测差距.",
+    "translations": [
+      {
+        "zh": "能力引出差距",
+        "pinyin": "nénglì yǐnchū chājù",
+        "status": "proposed",
+        "literal_back": "capability drawing-out gap",
+        "notes": "Our coinage, paired with the 能力引出 proposal under capability-elicitation. Chosen over 激发差距 because 引出 does not carry 激发's positive 'boost performance' valence. Not attested anywhere; offered explicitly as a proposal, not a report of usage.",
+        "attestations": []
+      },
+      {
+        "zh": "评测差距",
+        "pinyin": "píngcè chājù",
+        "status": "deprecated",
+        "literal_back": "evaluation gap",
+        "notes": "DO NOT use for 'elicitation gap'. It is well attested but means 'evaluation gap' in the opposite direction — evaluations overstating real-world capability. Recorded here as a false friend, with its attestation, so the trap is visible.",
+        "attestations": [
+          {
+            "quote_zh": "一个反复出现的主题是“评测差距”：系统在部署前评测（如基准测试）中的表现往往似乎高估了其实际效用，因为此类评测未能充分反映现实世界任务的全部复杂性。",
+            "quote_en": "A recurring theme is the 'evaluation gap': systems' performance in pre-deployment evaluations (such as benchmarks) often appears to overstate their real-world usefulness, because such evaluations do not fully capture the complexity of real-world tasks.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "部署前测试低估模型真实能力",
+        "pinyin": "bùshǔ qián cèshì dīgū móxíng zhēnshí nénglì",
+        "status": "descriptive",
+        "literal_back": "pre-deployment testing underestimates the model's true capability",
+        "notes": "How Chinese safety text actually conveys the idea — as a clause, not a term. VERIFICATION 2026-08-08: quote re-checked verbatim against the report PDF and confirmed. This is a descriptive gloss, so by design no fixed term appears in the quoted sentence.",
+        "attestations": [
+          {
+            "quote_zh": "例如，有第三方通过利用脚手架，揭示了某些模型的网络能力比部署前测试中测得的网络能力更强(467*、521)。",
+            "quote_en": "For example, third parties using scaffolding have shown that some models' cyber capabilities are stronger than what pre-deployment testing measured.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      { "zh": "由于存在能力引出差距，部署前测得的网络攻击能力只能视为下界。",
+        "en": "Because of the elicitation gap, cyberattack capability measured before deployment should be treated only as a lower bound.",
+        "source": "constructed" }
+    ],
+    "related": ["capability-elicitation", "sandbagging", "evaluation-gap", "dangerous-capability-evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "evaluation-gap",
+    "en": "evaluation gap",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "evaluation-red-teaming",
+    "tags": ["added-by-research", "measurement"],
+    "definition_en": "The discrepancy between how well a system performs in controlled pre-deployment evaluation and how useful or risky it turns out to be in real-world deployment. In the 2026 International AI Safety Report it names a recurring finding that benchmarks overstate practical utility.",
+    "definition_zh": "系统在受控的部署前评测中的表现，与其在真实部署环境中的实际效用或风险之间的落差。《2026年国际人工智能安全报告》用它概括一个反复出现的发现：基准测试往往高估了模型的实际效用。",
+    "preferred_zh": "评测差距",
+    "translation_difficulty": "low",
+    "pitfalls": "Added by research because it kept surfacing and is systematically confusable with 'elicitation gap' in the other direction. Note the asymmetry: 评测差距 as used in the Chinese report describes evaluations flattering the model on utility, while the safety literature's elicitation gap describes evaluations understating dangerous capability. Both can be true of the same model at once, which is exactly why one Chinese term should not be made to serve both.",
+    "translations": [
+      {
+        "zh": "评测差距",
+        "pinyin": "píngcè chājù",
+        "status": "established",
+        "literal_back": "evaluation gap",
+        "notes": "Used repeatedly and consistently in the Chinese edition of the International AI Safety Report, including in its key-findings summary.",
+        "attestations": [
+          {
+            "quote_zh": "存在“评测差距”：人工智能系统在部署前评测等受控环境中经常有出色的表现，但在现实世界环境下表现较差。",
+            "quote_en": "There is an 'evaluation gap': AI systems often perform excellently in controlled settings such as pre-deployment evaluations, but worse in real-world environments.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "“评测差距”意味着仅凭基准测试结果无法可靠预测实际应用中的效用或风险。",
+            "quote_en": "The 'evaluation gap' means benchmark results alone cannot reliably predict real-world utility or risk.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      { "org": "国际人工智能安全报告（中文版）", "zh_used": "评测差距", "note": "recurring theme across capability and risk-management chapters" }
+    ],
+    "usage_examples": [
+      { "zh": "能力的参差不齐以及评测差距，使得通用型人工智能的能力难以被可靠地衡量和预测。",
+        "en": "Jagged capability profiles and the evaluation gap make general-purpose AI capability hard to measure and predict reliably.",
+        "source": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf" }
+    ],
+    "related": ["elicitation-gap", "benchmark", "evaluation"],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]

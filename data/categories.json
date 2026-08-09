@@ -1,11 +1,15 @@
 [
-  { "id": "core-concepts",         "en": "Core concepts",              "zh": "核心概念",     "blurb": "Capability levels, the shape of the field, and the words for the field itself." },
-  { "id": "threat-models",         "en": "Threat models",              "zh": "威胁模型",     "blurb": "How things go wrong: loss of control, convergent drives, catastrophic and existential risk." },
-  { "id": "training-methods",      "en": "Training & methods",         "zh": "训练与方法",   "blurb": "How models are built and post-trained — the substrate everything else sits on." },
-  { "id": "alignment-techniques",  "en": "Alignment techniques",       "zh": "对齐技术",     "blurb": "Oversight, control, and the methods proposed to keep systems steerable." },
-  { "id": "evaluation-red-teaming","en": "Evaluation & red teaming",   "zh": "评估与红队",   "blurb": "Measuring capability and danger; adversarial testing; safety cases." },
-  { "id": "interpretability",      "en": "Interpretability",           "zh": "可解释性",     "blurb": "Looking inside the model — mech interp, SAEs, circuits, features." },
-  { "id": "misalignment-phenomena","en": "Misalignment phenomena",     "zh": "失准现象",     "blurb": "Named empirical findings: alignment faking, scheming, emergent misalignment." },
-  { "id": "governance-policy",     "en": "Governance & policy",        "zh": "治理与政策",   "blurb": "Regulation, standards, compute governance, international processes." },
-  { "id": "agents-autonomy",       "en": "Agents & autonomy",          "zh": "智能体与自主性","blurb": "Agentic systems, tool use, autonomy levels, and human oversight in the loop." }
+  { "id": "core-concepts",         "direction": "en-to-zh", "en": "Core concepts",            "zh": "核心概念",     "blurb": "Capability levels, the shape of the field, and the words for the field itself." },
+  { "id": "threat-models",         "direction": "en-to-zh", "en": "Threat models",            "zh": "威胁模型",     "blurb": "How things go wrong: loss of control, convergent drives, catastrophic and existential risk." },
+  { "id": "training-methods",      "direction": "en-to-zh", "en": "Training & methods",       "zh": "训练与方法",   "blurb": "How models are built and post-trained — the substrate everything else sits on." },
+  { "id": "alignment-techniques",  "direction": "en-to-zh", "en": "Alignment techniques",     "zh": "对齐技术",     "blurb": "Oversight, control, and the methods proposed to keep systems steerable." },
+  { "id": "evaluation-red-teaming","direction": "en-to-zh", "en": "Evaluation & red teaming", "zh": "评估与红队",   "blurb": "Measuring capability and danger; adversarial testing; safety cases." },
+  { "id": "interpretability",      "direction": "en-to-zh", "en": "Interpretability",         "zh": "可解释性",     "blurb": "Looking inside the model — mech interp, SAEs, circuits, features." },
+  { "id": "misalignment-phenomena","direction": "en-to-zh", "en": "Misalignment phenomena",   "zh": "失准现象",     "blurb": "Named empirical findings: alignment faking, scheming, emergent misalignment." },
+  { "id": "governance-policy",     "direction": "en-to-zh", "en": "Governance & policy",      "zh": "治理与政策",   "blurb": "Regulation, standards, compute governance, international processes." },
+  { "id": "agents-autonomy",       "direction": "en-to-zh", "en": "Agents & autonomy",        "zh": "智能体与自主性","blurb": "Agentic systems, tool use, autonomy levels, and human oversight in the loop." },
+
+  { "id": "zh-regulatory", "direction": "zh-to-en", "en": "PRC regulatory instruments", "zh": "监管工具", "blurb": "Chinese-origin. Filing regimes, security assessments, grading systems — procedures with real legal force and no English equivalent." },
+  { "id": "zh-strategic",  "direction": "zh-to-en", "en": "PRC strategic discourse",    "zh": "战略话语", "blurb": "Chinese-origin. The framing vocabulary of Chinese tech policy — self-reliance, chokepoints, coordinated development and security." },
+  { "id": "zh-technical",  "direction": "zh-to-en", "en": "Chinese technical register", "zh": "技术用语", "blurb": "Chinese-origin. Terms Chinese ML and safety writing uses natively, where the English is a lossy back-translation." }
 ]

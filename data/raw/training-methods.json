@@ -139,18 +139,8 @@
         "pinyin": "yǒu jiāndū wēitiáo",
         "status": "common",
         "literal_back": "having-supervision fine-tuning",
-        "notes": "Equally acceptable variant, slightly more common in academic Chinese writing than in framework docs. No semantic difference from 监督微调.",
-        "attestations": [
-          {
-            "quote_zh": "强化学习和有监督学习的学习目标其实是一致的，即在某个数据分布下优化一个分数值的期望。",
-            "quote_en": "The learning objectives of reinforcement learning and supervised learning are in fact the same: optimising the expectation of a scalar score under some data distribution.",
-            "source_title": "推理大模型的后训练增强技术-强化学习篇",
-            "publisher": "腾讯云开发者社区",
-            "source_type": "blog",
-            "url": "https://cloud.tencent.com/developer/article/2503293",
-            "date": "2025-03"
-          }
-        ]
+        "notes": "Equally acceptable variant, slightly more common in academic Chinese writing than in framework docs. No semantic difference from 监督微调. VERIFICATION 2026-08-08: the cited Tencent Cloud article says 监督微调, never 有监督微调 (the old quote was about 有监督学习, a different term). Attestation removed; unattested in our sources.",
+        "attestations": []
       },
       {
         "zh": "指令微调",
@@ -171,7 +161,7 @@
         ]
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "used_by": [
       { "org": "OpenRLHF", "zh_used": "监督微调 / SFT", "note": "Chinese README uses both, Chinese for headings, English for body" },
       { "org": "LLaMA-Factory", "zh_used": "指令监督微调", "note": "feature list" },
@@ -395,11 +385,11 @@
         "pinyin": "jīyú réngōng zhìnéng fǎnkuì de qiánghuà xuéxí",
         "status": "common",
         "literal_back": "reinforcement learning based on artificial-intelligence feedback",
-        "notes": "The formal gloss. 人工智能 rather than AI is the norm in written/academic Chinese; practitioner text shortens to 基于 AI 反馈的强化学习.",
+        "notes": "The formal gloss. 人工智能 rather than AI is the norm in written/academic Chinese; practitioner text shortens to 基于 AI 反馈的强化学习. VERIFICATION 2026-08-08: 基于人工智能反馈的强化学习 occurs only in this article's title; its body consistently says 来自人工智能反馈的强化学习 / 从人工智能反馈中获得的强化学习. The 基于… form is the one that later became standard, but this single source is weak evidence for it.",
         "attestations": [
           {
-            "quote_zh": "来自人工智能反馈的强化学习（RLAIF）",
-            "quote_en": "Reinforcement learning from artificial-intelligence feedback (RLAIF).",
+            "quote_zh": "【论文解读】RLAIF基于人工智能反馈的强化学习",
+            "quote_en": "[Paper walkthrough] RLAIF: reinforcement learning from AI feedback [article title]",
             "source_title": "【论文解读】RLAIF基于人工智能反馈的强化学习",
             "publisher": "腾讯云开发者社区",
             "source_type": "blog",
@@ -548,11 +538,11 @@
         "pinyin": "xiànfǎ shì AI",
         "status": "common",
         "literal_back": "constitution-style AI",
-        "notes": "The best of the Chinese options. The 式 suffix marks the word as an analogy rather than a claim that a real constitution is involved, which materially reduces the political-law misreading. Recommended when a Chinese rendering is required.",
+        "notes": "The best of the Chinese options. The 式 suffix marks the word as an analogy rather than a claim that a real constitution is involved, which materially reduces the political-law misreading. Recommended when a Chinese rendering is required. VERIFICATION 2026-08-08: in this source 宪法式 AI occurs ONLY as the author's section heading (11.1); the body of the section says Constitutional AI / CAI / 宪法 throughout. Heading-level attestation only.",
         "attestations": [
           {
-            "quote_zh": "这项技术不仅是 Claude 的核心差异化优势，更代表了 AI 对齐（Alignment）领域的一次重大范式转变。",
-            "quote_en": "This technique is not only Claude's core differentiator but also represents a major paradigm shift in the field of AI alignment.",
+            "quote_zh": "11.1 宪法式 AI",
+            "quote_en": "11.1 Constitutional AI [section heading]",
             "source_title": "11.1 宪法式 AI —《Claude 技术指南》",
             "publisher": "Claude Guide (yeasy)",
             "source_type": "blog",
@@ -784,8 +774,8 @@
             "date": "2025"
           },
           {
-            "quote_zh": "DPO 就像是直接告诉 LLM：响应 A 比响应 B 更好。",
-            "quote_en": "DPO is like telling the LLM directly: response A is better than response B.",
+            "quote_zh": "直截了当：DPO 就像是直接告诉 LLM：“响应 A 比响应 B 更好。多生成像 A 这样的响应，少生成像 B 这样的响应！”",
+            "quote_en": "Straight to the point: DPO is like telling the LLM directly, 'Response A is better than response B. Generate more responses like A and fewer like B!'",
             "source_title": "推理大模型的后训练增强技术-强化学习篇",
             "publisher": "腾讯云开发者社区",
             "source_type": "blog",
@@ -799,11 +789,11 @@
         "pinyin": "zhíjiē piānhào yōuhuà",
         "status": "established",
         "literal_back": "direct preference optimisation",
-        "notes": "Uncontested Chinese expansion; appears as the section label in Chinese explainers of post-training RL algorithms, but the acronym is what circulates.",
+        "notes": "Uncontested Chinese expansion; appears as the section label in Chinese explainers of post-training RL algorithms, but the acronym is what circulates. VERIFICATION 2026-08-08: in this source 直接偏好优化 appears only as the section heading glossing DPO; the body text uses the abbreviation DPO.",
         "attestations": [
           {
-            "quote_zh": "DPO 就像是直接告诉 LLM：响应 A 比响应 B 更好。",
-            "quote_en": "DPO is like telling the LLM directly: response A is better than response B.",
+            "quote_zh": "DPO (Direct Preference Optimization)：直接偏好优化",
+            "quote_en": "DPO (Direct Preference Optimization): direct preference optimization [section heading]",
             "source_title": "推理大模型的后训练增强技术-强化学习篇（DPO直接偏好优化 一节）",
             "publisher": "腾讯云开发者社区",
             "source_type": "blog",
@@ -885,8 +875,8 @@
             "date": "2025-02"
           },
           {
-            "quote_zh": "GRPO 就像是 PPO 的精简版表亲。它保留了 PPO 的核心思想，但去掉了独立的价值函数。",
-            "quote_en": "GRPO is like a slimmed-down cousin of PPO. It keeps PPO's core idea but drops the separate value function.",
+            "quote_zh": "GRPO（Group Relative Policy Optimization）：群体相对策略优化",
+            "quote_en": "GRPO (Group Relative Policy Optimization): group relative policy optimization [section heading]",
             "source_title": "推理大模型的后训练增强技术-强化学习篇（GRPO群体相对策略优化 一节）",
             "publisher": "腾讯云开发者社区",
             "source_type": "blog",
@@ -1069,11 +1059,11 @@
         "pinyin": "màn sīkǎo",
         "status": "common",
         "literal_back": "slow thinking",
-        "notes": "Not a translation of CoT but the framing Chinese sources use for the same phenomenon at model level, borrowed from Kahneman's System 1/System 2. 《大语言模型》pairs it with 复杂推理 in a chapter title. Useful to know because a Chinese reader may meet 慢思考 where English says 'reasoning' or 'extended CoT'.",
+        "notes": "Not a translation of CoT but the framing Chinese sources use for the same phenomenon at model level, borrowed from Kahneman's System 1/System 2. 《大语言模型》pairs it with 复杂推理 in a chapter title. Useful to know because a Chinese reader may meet 慢思考 where English says 'reasoning' or 'extended CoT'. VERIFICATION 2026-08-08: on this page 慢思考 occurs only in the lecture-slide title 复杂推理与慢思考 (RUC AI Box course materials for 《大语言模型》); quote corrected to the text that actually contains it.",
         "attestations": [
           {
-            "quote_zh": "第八课 复杂推理（对应本书第十一章）",
-            "quote_en": "Lecture 8: Complex reasoning (corresponding to Chapter 11 of this book).",
+            "quote_zh": "规划与智能体、复杂推理与慢思考",
+            "quote_en": "Planning and agents; complex reasoning and slow thinking [lecture-8 slide titles]",
             "source_title": "《大语言模型》课程资源（含课件「复杂推理与慢思考」）",
             "publisher": "中国人民大学 RUC AI Box（赵鑫等，高等教育出版社）",
             "source_type": "github",
@@ -1184,8 +1174,8 @@
         "notes": "Qwen's branding for the reasoning behaviour, and a genuinely useful escape from the 推理 ambiguity — 思考 unambiguously means deliberation. Increasingly common in Chinese product copy (思考模式/非思考模式, 深度思考).",
         "attestations": [
           {
-            "quote_zh": "在这种模式下，模型会逐步推理，经过深思熟虑后给出最终答案",
-            "quote_en": "In this mode the model reasons step by step and gives its final answer after careful deliberation.",
+            "quote_zh": "思考模式：在这种模式下，模型会逐步推理，经过深思熟虑后给出最终答案。",
+            "quote_en": "Thinking mode: in this mode the model reasons step by step and gives its final answer after deliberation.",
             "source_title": "Qwen3: 思深，行速",
             "publisher": "阿里巴巴通义千问 (Qwen)",
             "source_type": "blog",
@@ -1199,11 +1189,11 @@
         "pinyin": "dàxíng tuīlǐ móxíng",
         "status": "common",
         "literal_back": "large reasoning model",
-        "notes": "Renders LRM; used in translated surveys, often abbreviated back to LRMs in the Chinese text.",
+        "notes": "Renders LRM; used in translated surveys, often abbreviated back to LRMs in the Chinese text. VERIFICATION 2026-08-08: this source uses 大型推理模型 only in the title it gives the surveyed paper; its running prose says 大推理模型（LRMs）. Both forms circulate; the shorter one is what this author writes in body text.",
         "attestations": [
           {
-            "quote_zh": "一种新趋势正在兴起：面向大推理模型（LRMs）的强化学习，其目标不仅是对齐行为，更是激励推理本身。",
-            "quote_en": "A new trend is emerging: reinforcement learning for large reasoning models (LRMs), whose goal is not merely to align behaviour but to incentivise reasoning itself.",
+            "quote_zh": "A Survey of Reinforcement Learning for Large Reasoning Models 大型推理模型的强化学习综述",
+            "quote_en": "A Survey of Reinforcement Learning for Large Reasoning Models",
             "source_title": "大型推理模型的强化学习综述（1-4章）",
             "publisher": "腾讯云开发者社区",
             "source_type": "blog",
@@ -1397,11 +1387,11 @@
         "pinyin": "shàngxiàwén chuāngkǒu",
         "status": "established",
         "literal_back": "context window",
-        "notes": "Standard for the concept. Used in explainer titles and product documentation.",
+        "notes": "Standard for the concept. Used in explainer titles and product documentation. VERIFICATION 2026-08-08: on this page 上下文窗口 occurs only in the author's own title/heading; the (very short) body says only 支持 32k 上下文. Heading-level attestation only.",
         "attestations": [
           {
-            "quote_zh": "该模型可以处理并记住最多 32,000 个标记（tokens）的输入。",
-            "quote_en": "The model can process and remember an input of at most 32,000 tokens.",
+            "quote_zh": "什么是大语言模型的上下文窗口",
+            "quote_en": "What is a large language model's context window [article title]",
             "source_title": "什么是大语言模型的上下文窗口",
             "publisher": "腾讯云开发者社区",
             "source_type": "blog",
@@ -1438,7 +1428,7 @@
         ]
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "used_by": [
       { "org": "阿里巴巴通义千问 (Qwen)", "zh_used": "上下文长度", "note": "Qwen3 Chinese release blog" }
     ],

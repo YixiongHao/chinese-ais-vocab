@@ -153,6 +153,10 @@
     margin: 14px 0 2px; cursor: copy; display: inline-block; line-height: 1.3;
   }
   .headline-zh:hover { color: var(--accent); }
+  /* An English rendering is English — it should not be set in a CJK face. */
+  .headline-zh.headline-en { font-family: var(--serif); font-size: 24px; font-weight: 600; }
+  .tr-zh.tr-en { font-family: var(--serif); font-size: 17px; }
+  .term-head h2.zh { font-family: var(--cjk); font-size: 30px; }
   .headline-zh.none { font-family: var(--serif); font-size: 20px; color: var(--ink-3); font-style: italic; cursor: default; }
   .headline-zh.none:hover { color: var(--ink-3); }
   .pinyin { color: var(--ink-3); font-size: 13.5px; font-style: italic; }
@@ -278,12 +282,19 @@
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
 
   // ---------- searchable haystack, built once ----------
+  // Chinese-origin entries invert: the headword is Chinese, the renderings are English.
+  // Everything downstream reads `_rend` / `_headZh` / `_headEn` so it need not care which.
   for (const t of TERMS) {
-    const zh = t.translations.map(x => x.zh).join(' ')
-    const py = t.translations.map(x => x.pinyin || '').join(' ')
-    t._hay = [t.en, t.abbr || '', (t.en_aliases || []).join(' '), zh, py,
-              t.definition_en || '', t.definition_zh || '', (t.tags || []).join(' ')]
-             .join(' ').toLowerCase()
+    t._zhOrigin = t.direction === 'zh-to-en'
+    t._rend = (t._zhOrigin ? t.en_renderings : t.translations) || []
+    t._key = t._zhOrigin ? 'en' : 'zh'
+    t._headZh = t._zhOrigin ? t.zh_headword : t.preferred_zh
+    t._headEn = t._zhOrigin ? (t.preferred_en || t.en) : t.en
+    const zh = [t.zh_headword || '', ...(t.translations || []).map(x => x.zh)].join(' ')
+    const en = [(t.en_renderings || []).map(x => x.en).join(' '), (t.en_aliases || []).join(' ')].join(' ')
+    const py = [t.pinyin || '', ...(t.translations || []).map(x => x.pinyin || '')].join(' ')
+    t._hay = [t.en, t.abbr || '', en, zh, py, t.definition_en || '',
+              t.definition_zh || '', (t.tags || []).join(' ')].join(' ').toLowerCase()
     t._en = t.en.toLowerCase()
   }
 
@@ -292,20 +303,25 @@
 
   // ---------- filters ----------
   const FLAGS = [
+    ['zhorigin',  'Chinese-origin terms', t => t._zhOrigin],
     ['hard',      'Hard to translate', t => t.translation_difficulty === 'high'],
-    ['nozh',      'No settled Chinese term',
-                  t => !t.translations.length || t.translations.every(x => ['proposed','descriptive'].includes(x.status))],
-    ['contested', 'Contested', t => t.translations.some(x => x.status === 'contested') || t.translations.length > 2],
-    ['pitfall',   'Has a pitfall', t => !!t.pitfalls],
+    ['noterm',    'No settled term',
+                  t => !t._rend.length || t._rend.every(x => ['proposed','descriptive'].includes(x.status))],
+    ['contested', 'Contested', t => t._rend.some(x => x.status === 'contested') || t._rend.length > 2],
+    ['pitfall',   'Has a pitfall', t => !!(t.pitfalls || t.why_no_english)],
     ['unattested','Needs evidence', t => !t.attestation_count],
   ]
   const flagById = Object.fromEntries(FLAGS.map(f => [f[0], f[2]]))
 
   function renderFilters() {
     const f = $('#filters')
-    const catChips = CATS.map(c =>
-      `<button class="chip" data-cat="${c.id}" aria-pressed="false" title="${esc(c.blurb)}">${esc(c.en)}</button>`
-    ).join('')
+    // Categories are listed English-origin first, then a rule, then the Chinese-origin ones.
+    let prevDir = null
+    const catChips = CATS.map(c => {
+      const rule = prevDir && c.direction !== prevDir ? '<span class="chip sep">中文 →</span>' : ''
+      prevDir = c.direction
+      return rule + `<button class="chip" data-cat="${c.id}" aria-pressed="false" title="${esc(c.blurb)}">${esc(c.en)}</button>`
+    }).join('')
     const flagChips = FLAGS.map(([id, label]) =>
       `<button class="chip" data-flag="${id}" aria-pressed="false">${esc(label)}</button>`
     ).join('')
@@ -328,10 +344,12 @@
   function score(t, q) {
     if (!q) return 1
     if (t._en === q) return 1000
+    if (t.zh_headword === q) return 990
     if ((t.abbr || '').toLowerCase() === q) return 900
     if (t.translations.some(x => x.zh === q)) return 880
     if (t._en.startsWith(q)) return 700
     if ((t.en_aliases || []).some(a => a.toLowerCase().startsWith(q))) return 600
+    if ((t.zh_headword || '').includes(q)) return 570
     if (t.translations.some(x => x.zh.includes(q))) return 550
     if (new RegExp('\\b' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(t._en)) return 500
     if (t._en.includes(q)) return 400
@@ -373,16 +391,19 @@
     // Grouped by category when browsing; flat, relevance-ordered when searching.
     let html = ''
     const rowFor = t => {
-      const pref = t.preferred_zh
-      const zhCell = pref
-        ? `<span class="zh">${hl(pref, q)}</span>`
+      // Uniform shape in both directions: English headword on top so the list stays
+      // scannable for an English reader, Chinese below, with a marker on the entries
+      // where Chinese is the source language rather than the target.
+      const zhCell = t._headZh
+        ? `<span class="zh">${hl(t._headZh, q)}</span>`
         : `<span class="zh none">no settled term</span>`
-      const nTr = t.translations.length
+      const n = t._rend.length
       return `<button class="row" data-id="${t.id}" aria-selected="${t.id === state.sel}">
-        <div><span class="en">${hl(t.en, q)}</span>${t.abbr ? `<span class="abbr">${esc(t.abbr)}</span>` : ''}</div>
+        <div><span class="en">${hl(t._headEn, q)}</span>${t.abbr ? `<span class="abbr">${esc(t.abbr)}</span>` : ''}${
+          t._zhOrigin ? '<span class="abbr" title="Chinese-origin term">中→en</span>' : ''}</div>
         <div class="line2">
           <span class="dot d-${t.translation_difficulty}" title="translation difficulty: ${t.translation_difficulty}"></span>
-          ${zhCell}${nTr > 1 ? `<span class="abbr">+${nTr - 1}</span>` : ''}
+          ${zhCell}${n > 1 ? `<span class="abbr">+${n - 1}</span>` : ''}
         </div>
       </button>`
     }
@@ -406,22 +427,28 @@
     return `<blockquote class="q">
       <div class="qzh">${esc(a.quote_zh)}</div>
       ${a.quote_en ? `<div class="qen">${esc(a.quote_en)}</div>` : ''}
-      <cite>${cite}${a.url ? ` — <a href="${esc(a.url)}" target="_blank" rel="noopener">source ↗</a>` : ''}</cite>
+      <cite>${cite}${a.url ? ` — <a href="${esc(a.url)}" target="_blank" rel="noopener">source ↗</a>` : ''}${
+        a.unverified ? ' <span class="tag contested" title="Source could not be re-fetched during verification — not disproved, just unchecked">unverified</span>' : ''}</cite>
     </blockquote>`
   }
 
-  function trHtml(tr, isPref) {
+  // One renderer for both directions; `key` selects which side holds the rendering.
+  function trHtml(tr, isPref, key) {
+    const val = tr[key] ?? ''
+    const nAtt = (tr.attestations || []).length
+    const nUnver = (tr.attestations || []).filter(a => a.unverified).length
     return `<div class="tr">
       <div class="tr-head">
-        <span class="tr-zh" data-copy="${esc(tr.zh)}">${esc(tr.zh)}</span>
+        <span class="tr-zh${key === 'en' ? ' tr-en' : ''}" data-copy="${esc(val)}">${esc(val)}</span>
         ${tr.pinyin ? `<span class="pinyin">${esc(tr.pinyin)}</span>` : ''}
         <span class="tag ${esc(tr.status)}">${esc(tr.status)}</span>
         ${isPref ? '<span class="tag">recommended</span>' : ''}
       </div>
       ${tr.literal_back ? `<div class="lit">lit. “${esc(tr.literal_back)}”</div>` : ''}
       ${tr.notes ? `<div class="tr-notes">${esc(tr.notes)}</div>` : ''}
-      ${(tr.attestations || []).length
-        ? `<details class="att"><summary>${tr.attestations.length} attestation${tr.attestations.length > 1 ? 's' : ''}</summary>${tr.attestations.map(attHtml).join('')}</details>`
+      ${nAtt
+        ? `<details class="att"><summary>${nAtt} attestation${nAtt > 1 ? 's' : ''}${
+            nUnver ? ` · ${nUnver} unverified` : ''}</summary>${tr.attestations.map(attHtml).join('')}</details>`
         : (tr.status === 'proposed' ? '' : `<div class="lit" style="margin-top:6px">no attestation on file</div>`)}
     </div>`
   }
@@ -435,24 +462,36 @@
       r.setAttribute('aria-selected', String(r.dataset.id === id))
 
     const cat = catById[t.category] || { en: t.category, zh: '' }
-    const prefTr = t.translations.find(x => x.zh === t.preferred_zh)
-    const others = t.translations.filter(x => x.zh !== t.preferred_zh)
+    const zhOrigin = t._zhOrigin
+    const key = t._key
+    const preferred = zhOrigin ? t.preferred_en : t.preferred_zh
+    const prefTr = t._rend.find(x => x[key] === preferred)
+    const others = t._rend.filter(x => x[key] !== preferred)
 
+    // Chinese-origin entries lead with the Chinese headword — it is the source term, and
+    // the English below it is the approximation. The English-origin entries do the reverse.
     let h = `<div class="term-head">
-      <h2>${esc(t.en)}</h2>
+      <h2${zhOrigin ? ' class="zh"' : ''}>${esc(zhOrigin ? t.zh_headword : t.en)}</h2>
+      ${zhOrigin && t.pinyin ? `<div class="pinyin">${esc(t.pinyin)}</div>` : ''}
       ${(t.en_aliases || []).length ? `<div class="aliases">also: ${t.en_aliases.map(esc).join(' · ')}</div>` : ''}
       <div class="meta">
         <span>${esc(cat.en)}</span>
+        ${zhOrigin ? '<span title="Chinese is the source language here">中文 → English</span>' : ''}
         ${t.abbr ? `<span style="font-family:var(--mono)">${esc(t.abbr)}</span>` : ''}
         <span>difficulty: ${esc(t.translation_difficulty)}</span>
         <span>confidence: ${esc(t.confidence)}</span>
         <span>${t.attestation_count} citation${t.attestation_count === 1 ? '' : 's'}</span>
       </div>
-      ${t.preferred_zh
-        ? `<div class="headline-zh zh" data-copy="${esc(t.preferred_zh)}" title="click to copy">${esc(t.preferred_zh)}</div>
-           ${prefTr && prefTr.pinyin ? `<div class="pinyin">${esc(prefTr.pinyin)}</div>` : ''}`
-        : `<div class="headline-zh none">no settled Chinese rendering</div>`}
+      ${preferred
+        ? `<div class="headline-zh${zhOrigin ? ' headline-en' : ' zh'}" data-copy="${esc(preferred)}" title="click to copy">${esc(preferred)}</div>
+           ${!zhOrigin && prefTr && prefTr.pinyin ? `<div class="pinyin">${esc(prefTr.pinyin)}</div>` : ''}`
+        : `<div class="headline-zh none">no settled ${zhOrigin ? 'English' : 'Chinese'} rendering</div>`}
     </div>`
+
+    if (t.why_no_english) {
+      h += `<section class="blk"><h3>Why English has no word for this</h3>
+        <div class="callout">${esc(t.why_no_english)}</div></section>`
+    }
 
     if (t.definition_en || t.definition_zh) {
       h += `<section class="blk"><h3>Definition</h3>
@@ -466,10 +505,10 @@
         <div class="callout">${esc(t.pitfalls)}</div></section>`
     }
 
-    if (t.translations.length) {
-      h += `<section class="blk"><h3>Renderings</h3>
-        ${prefTr ? trHtml(prefTr, true) : ''}
-        ${others.map(x => trHtml(x, false)).join('')}
+    if (t._rend.length) {
+      h += `<section class="blk"><h3>${zhOrigin ? 'English renderings' : 'Renderings'}</h3>
+        ${prefTr ? trHtml(prefTr, true, key) : ''}
+        ${others.map(x => trHtml(x, false, key)).join('')}
       </section>`
     }
 
@@ -510,8 +549,11 @@
       typing <span class="zh">对齐</span> finds <em>alignment</em>.</p>
       <p>The filters above are the interesting part:</p>
       <ul>
-        <li><strong>No settled Chinese term</strong> — concepts the Chinese-language field
-            has not named yet. These are where a translation choice is still up for grabs.</li>
+        <li><strong>Chinese-origin terms</strong> — concepts PRC discourse has that English
+            has no clean word for. These run the other way: Chinese is the source, and the
+            English is the approximation.</li>
+        <li><strong>No settled term</strong> — concepts neither field has named yet.
+            These are where a translation choice is still up for grabs.</li>
         <li><strong>Has a pitfall</strong> — where the obvious rendering quietly changes the meaning.</li>
         <li><strong>Needs evidence</strong> — entries with no citation behind them yet.</li>
       </ul>
@@ -567,8 +609,9 @@
   })
 
   // ---------- boot ----------
-  const nHard = TERMS.filter(flagById.nozh).length
-  $('#stat').textContent = `${TERMS.length} terms · ${nHard} with no settled Chinese rendering · built ${DATA.generated}`
+  const nGap = TERMS.filter(flagById.noterm).length
+  const nZh = TERMS.filter(t => t._zhOrigin).length
+  $('#stat').textContent = `${TERMS.length} terms · ${nZh} Chinese-origin · ${nGap} with no settled rendering · built ${DATA.generated}`
   renderFilters()
   render()
   const hash = decodeURIComponent(location.hash.slice(1))

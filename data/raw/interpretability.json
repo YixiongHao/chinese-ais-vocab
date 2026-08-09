@@ -2,10 +2,15 @@
   {
     "id": "interpretability",
     "en": "interpretability",
-    "en_aliases": ["explainability"],
+    "en_aliases": [
+      "explainability"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["umbrella-term", "old-tradition"],
+    "tags": [
+      "umbrella-term",
+      "old-tradition"
+    ],
     "definition_en": "The general project of making a model's internal computation or its outputs intelligible to humans. In AI safety it is load-bearing: you cannot verify that a model is not deceiving you if you cannot inspect what it is doing.",
     "definition_zh": "让人类能够理解模型的内部计算过程或其输出依据的研究方向。在 AI 安全语境下，它是验证模型是否\"表里如一\"的前提——看不懂模型在做什么，就无法确认它没有欺骗你。",
     "preferred_zh": "可解释性",
@@ -50,15 +55,30 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "全国网络安全标准化技术委员会 (TC260)", "zh_used": "可解释性", "note": "《人工智能安全治理框架》 lists 模型算法可解释性差的风险 as a named risk category" },
-      { "org": "腾讯研究院", "zh_used": "可解释性", "note": "《从黑箱到显微镜：大模型可解释性的现状与未来》" }
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "可解释性",
+        "note": "《人工智能安全治理框架》 lists 模型算法可解释性差的风险 as a named risk category"
+      },
+      {
+        "org": "腾讯研究院",
+        "zh_used": "可解释性",
+        "note": "《从黑箱到显微镜：大模型可解释性的现状与未来》"
+      }
     ],
     "usage_examples": [
-      { "zh": "可解释性研究的目标是把模型从黑箱变成可以检查的对象。",
+      {
+        "zh": "可解释性研究的目标是把模型从黑箱变成可以检查的对象。",
         "en": "The goal of interpretability research is to turn the model from a black box into something you can inspect.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["mechanistic-interpretability", "explainable-ai", "transparency", "black-box"],
+    "related": [
+      "mechanistic-interpretability",
+      "explainable-ai",
+      "transparency",
+      "black-box"
+    ],
     "sources": [
       "https://crad.ict.ac.cn/fileJSJYJYFZ/journal/article/jsjyjyfz/HTML/2019-10-2071.shtml",
       "https://hub.baai.ac.cn/view/39801",
@@ -66,14 +86,20 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "mechanistic-interpretability",
     "en": "mechanistic interpretability",
-    "en_aliases": ["mech interp", "reverse-engineering neural networks"],
+    "en_aliases": [
+      "mech interp",
+      "reverse-engineering neural networks"
+    ],
     "abbr": "mech interp",
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "contested", "high-value"],
+    "tags": [
+      "anthropic-lineage",
+      "contested",
+      "high-value"
+    ],
     "definition_en": "Reverse-engineering the algorithms a neural network actually implements — identifying features, the circuits that connect them, and the causal role each plays — rather than explaining individual predictions after the fact.",
     "definition_zh": "把神经网络当作一段需要逆向工程的程序来研究：找出模型内部的特征、特征之间构成的回路，以及每一部分在计算中承担的因果作用，而不是事后为某个预测编一个解释。",
     "preferred_zh": "机制可解释性",
@@ -155,15 +181,31 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "机器之心", "zh_used": "机制可解释性", "note": "consistently, with English gloss" },
-      { "org": "腾讯研究院", "zh_used": "机制可解释性", "note": "in its 2025 interpretability landscape report" }
+      {
+        "org": "机器之心",
+        "zh_used": "机制可解释性",
+        "note": "consistently, with English gloss"
+      },
+      {
+        "org": "腾讯研究院",
+        "zh_used": "机制可解释性",
+        "note": "in its 2025 interpretability landscape report"
+      }
     ],
     "usage_examples": [
-      { "zh": "机制可解释性希望像逆向工程一段程序那样，把模型内部真正运行的算法读出来。",
+      {
+        "zh": "机制可解释性希望像逆向工程一段程序那样，把模型内部真正运行的算法读出来。",
         "en": "Mechanistic interpretability wants to read out the algorithm the model actually runs, the way you would reverse-engineer a program.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["interpretability", "circuit", "feature", "sparse-autoencoder", "circuit-tracing"],
+    "related": [
+      "interpretability",
+      "circuit",
+      "feature",
+      "sparse-autoencoder",
+      "circuit-tracing"
+    ],
     "sources": [
       "https://cloud.tencent.com/developer/article/2624862",
       "https://www.alphaxiv.org/zh/overview/2601.14004v4",
@@ -173,14 +215,19 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "explainable-ai",
     "en": "explainable AI",
-    "en_aliases": ["XAI", "explainable artificial intelligence"],
+    "en_aliases": [
+      "XAI",
+      "explainable artificial intelligence"
+    ],
     "abbr": "XAI",
     "category": "interpretability",
-    "tags": ["old-tradition", "pre-llm"],
+    "tags": [
+      "old-tradition",
+      "pre-llm"
+    ],
     "definition_en": "The pre-LLM research tradition of producing human-legible explanations for model decisions — saliency maps, LIME, SHAP, feature attribution, surrogate models — largely motivated by high-stakes deployment (medicine, credit, justice) rather than by misalignment risk.",
     "definition_zh": "大模型之前就存在的研究传统，目标是为模型的单次决策给出人能看懂的解释：显著图、LIME、SHAP、特征归因、代理模型等。它的动机主要是医疗、信贷、司法等高风险场景下的问责，而不是失控风险。",
     "preferred_zh": "可解释人工智能",
@@ -193,17 +240,7 @@
         "status": "established",
         "literal_back": "explainable artificial intelligence",
         "notes": "Standard in Chinese academic writing since roughly 2019. Often written 可解释人工智能（XAI）; the bare acronym XAI is then reused throughout.",
-        "attestations": [
-          {
-            "quote_zh": "对于普通用户而言机器学习模型尤其是深度神经网络模型如同黑盒一般",
-            "quote_en": "For ordinary users, machine learning models — especially deep neural network models — are like a black box.",
-            "source_title": "机器学习模型可解释性方法、应用与安全研究综述",
-            "publisher": "《计算机研究与发展》(纪守领、李进锋、杜天宇、李博)",
-            "source_type": "paper",
-            "url": "https://crad.ict.ac.cn/fileJSJYJYFZ/journal/article/jsjyjyfz/HTML/2019-10-2071.shtml",
-            "date": "2019"
-          }
-        ]
+        "attestations": []
       },
       {
         "zh": "XAI",
@@ -214,30 +251,41 @@
         "attestations": []
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "used_by": [
-      { "org": "《计算机研究与发展》(中科院计算所)", "zh_used": "可解释性 / 可解释人工智能", "note": "multiple survey articles 2019-2020" }
+      {
+        "org": "《计算机研究与发展》(中科院计算所)",
+        "zh_used": "可解释性 / 可解释人工智能",
+        "note": "multiple survey articles 2019-2020"
+      }
     ],
     "usage_examples": [
-      { "zh": "早期的可解释人工智能主要靠显著图和 SHAP 值，解释的是单次预测，而不是模型内部的算法。",
+      {
+        "zh": "早期的可解释人工智能主要靠显著图和 SHAP 值，解释的是单次预测，而不是模型内部的算法。",
         "en": "Early explainable AI relied mainly on saliency maps and SHAP values; it explained a single prediction, not the algorithm inside the model.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["interpretability", "mechanistic-interpretability", "transparency"],
+    "related": [
+      "interpretability",
+      "mechanistic-interpretability",
+      "transparency"
+    ],
     "sources": [
       "https://crad.ict.ac.cn/fileJSJYJYFZ/journal/article/jsjyjyfz/HTML/2019-10-2071.shtml",
       "https://crad.ict.ac.cn/cn/article/doi/10.7544/issn1000-1239.2020.20190456"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "black-box",
     "en": "black box",
     "en_aliases": [],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["metaphor"],
+    "tags": [
+      "metaphor"
+    ],
     "definition_en": "A system whose inputs and outputs are observable but whose internal decision process is not. The standard framing for why interpretability is needed.",
     "definition_zh": "只能看到输入和输出、看不到内部决策过程的系统。这是解释\"为什么需要可解释性\"时最常用的比喻。",
     "preferred_zh": "黑箱",
@@ -310,14 +358,24 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "全国网络安全标准化技术委员会 (TC260)", "zh_used": "黑灰盒", "note": "《人工智能安全治理框架》 model-and-algorithm risk section" }
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "黑灰盒",
+        "note": "《人工智能安全治理框架》 model-and-algorithm risk section"
+      }
     ],
     "usage_examples": [
-      { "zh": "把大模型当成黑箱来监管，和把它拆开来看，是两条不同的治理路径。",
+      {
+        "zh": "把大模型当成黑箱来监管，和把它拆开来看，是两条不同的治理路径。",
         "en": "Regulating a large model as a black box and opening it up to look inside are two different governance paths.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["interpretability", "transparency", "explainable-ai"],
+    "related": [
+      "interpretability",
+      "transparency",
+      "explainable-ai"
+    ],
     "sources": [
       "https://news.qq.com/rain/a/20250617A07B1L00",
       "https://www.36kr.com/p/2465483534538887",
@@ -326,14 +384,19 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "sparse-autoencoder",
     "en": "sparse autoencoder",
-    "en_aliases": ["SAE", "dictionary learning autoencoder"],
+    "en_aliases": [
+      "SAE",
+      "dictionary learning autoencoder"
+    ],
     "abbr": "SAE",
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "loanword-dominant"],
+    "tags": [
+      "anthropic-lineage",
+      "loanword-dominant"
+    ],
     "definition_en": "An autoencoder trained with a sparsity penalty on a model's activations, so that it learns an overcomplete dictionary of directions each of which fires rarely and tends to correspond to a single human-legible concept. The main practical tool for undoing superposition.",
     "definition_zh": "在模型激活上训练、并施加稀疏约束的自编码器：它学出一个维度远高于原激活的\"字典\"，其中每个方向只在少数输入上激活，往往对应一个人能看懂的概念。目前拆解叠加现象最主流的工具。",
     "preferred_zh": "稀疏自编码器（SAE）",
@@ -415,15 +478,31 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "机器之心", "zh_used": "稀疏自编码器 / SAE", "note": "coverage of the 2025 SAE survey" },
-      { "org": "腾讯研究院", "zh_used": "稀疏自编码器", "note": "2025 interpretability landscape report" }
+      {
+        "org": "机器之心",
+        "zh_used": "稀疏自编码器 / SAE",
+        "note": "coverage of the 2025 SAE survey"
+      },
+      {
+        "org": "腾讯研究院",
+        "zh_used": "稀疏自编码器",
+        "note": "2025 interpretability landscape report"
+      }
     ],
     "usage_examples": [
-      { "zh": "他们在中间层训练了一个 SAE，把稠密激活拆成几万个稀疏特征。",
+      {
+        "zh": "他们在中间层训练了一个 SAE，把稠密激活拆成几万个稀疏特征。",
         "en": "They trained an SAE on the middle layer, decomposing the dense activations into tens of thousands of sparse features.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["feature", "superposition", "polysemanticity", "dictionary-learning", "crosscoder"],
+    "related": [
+      "feature",
+      "superposition",
+      "polysemanticity",
+      "dictionary-learning",
+      "crosscoder"
+    ],
     "sources": [
       "https://www.alphaxiv.org/zh/overview/2503.05613",
       "https://news.qq.com/rain/a/20250617A07B1L00",
@@ -433,14 +512,21 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "crosscoder",
     "en": "crosscoder",
-    "en_aliases": ["sparse crosscoder", "model diffing crosscoder"],
+    "en_aliases": [
+      "sparse crosscoder",
+      "model diffing crosscoder"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "untranslated", "false-friend", "high-value"],
+    "tags": [
+      "anthropic-lineage",
+      "untranslated",
+      "false-friend",
+      "high-value"
+    ],
     "definition_en": "A variant of the sparse autoencoder that reads from and writes to several layers — or several models — at once, learning one shared dictionary across them. Used to resolve cross-layer superposition, to strip duplicate features out of circuits, and above all for model diffing (finding what a fine-tune changed).",
     "definition_zh": "稀疏自编码器的一种变体：同时从多个层（甚至多个模型）读取和写回激活，学习一部共享的特征字典。主要用于处理跨层叠加、剔除回路中的重复特征，以及\"模型对比\"——找出微调到底改变了什么。",
     "preferred_zh": "crosscoder",
@@ -471,8 +557,8 @@
         "notes": "Do not use for crosscoder. In Chinese this string already means the retrieval cross-encoder / reranker and nothing else; the attestation below is included precisely to show the collision.",
         "attestations": [
           {
-            "quote_zh": "第一阶段：双编码器在海量文档中进行 '粗筛'，快速锁定一个可能相关的候选集（如Top-50）。第二阶段：Cross-Encoder对候选集进行 '精排'",
-            "quote_en": "Stage one: the bi-encoder does a coarse filter over a huge document set, quickly narrowing to a candidate set (e.g. Top-50). Stage two: the cross-encoder does fine reranking of that candidate set.",
+            "quote_zh": "总的来说，Transformer编码器（双编码器）负责快速检索，而Cross-Encoder（交叉编码器）负责精准排序。",
+            "quote_en": "In short, the Transformer encoder (bi-encoder) handles fast retrieval while the Cross-Encoder (交叉编码器) handles precise ranking.",
             "source_title": "Transformer架构的 Bi-Encoder （双编码器模型）, Cross-Encoder（交叉编码器）重排序模型",
             "publisher": "博客园 (飘来荡去evo)",
             "source_type": "blog",
@@ -485,11 +571,19 @@
     "confidence": "low",
     "used_by": [],
     "usage_examples": [
-      { "zh": "他们用 crosscoder 对比 base 模型和 chat 模型，找出微调新增的特征。",
+      {
+        "zh": "他们用 crosscoder 对比 base 模型和 chat 模型，找出微调新增的特征。",
         "en": "They used a crosscoder to diff the base and chat models and find the features the fine-tune added.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["sparse-autoencoder", "feature", "superposition", "cross-layer-transcoder", "circuit-tracing"],
+    "related": [
+      "sparse-autoencoder",
+      "feature",
+      "superposition",
+      "cross-layer-transcoder",
+      "circuit-tracing"
+    ],
     "sources": [
       "https://www.cnblogs.com/itqinls/p/20009045",
       "https://transformer-circuits.pub/2024/crosscoders/index.html",
@@ -497,14 +591,20 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "feature",
     "en": "feature",
-    "en_aliases": ["latent", "SAE feature", "interpretable feature"],
+    "en_aliases": [
+      "latent",
+      "SAE feature",
+      "interpretable feature"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["semantic-drift", "anthropic-lineage"],
+    "tags": [
+      "semantic-drift",
+      "anthropic-lineage"
+    ],
     "definition_en": "In mechanistic interpretability, a direction in a model's activation space that corresponds to a human-legible concept and serves as the basic unit of computation — not an input variable and not a neuron.",
     "definition_zh": "在机制可解释性里，特征指激活空间中的一个方向，它对应一个人类能理解的概念，并作为模型计算的基本单元。它既不是输入变量，也不等于某个神经元。",
     "preferred_zh": "特征",
@@ -559,14 +659,26 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "集智俱乐部", "zh_used": "特征", "note": "in its 大模型可解释性读书会 materials" }
+      {
+        "org": "集智俱乐部",
+        "zh_used": "特征",
+        "note": "in its 大模型可解释性读书会 materials"
+      }
     ],
     "usage_examples": [
-      { "zh": "这里说的特征不是输入变量，而是激活空间中的一个方向。",
+      {
+        "zh": "这里说的特征不是输入变量，而是激活空间中的一个方向。",
         "en": "The features here are not input variables but directions in activation space.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["sparse-autoencoder", "superposition", "polysemanticity", "feature-steering", "circuit"],
+    "related": [
+      "sparse-autoencoder",
+      "superposition",
+      "polysemanticity",
+      "feature-steering",
+      "circuit"
+    ],
     "sources": [
       "https://swarma.org/?p=62523",
       "https://m.leiphone.com/category/ai/AuOBr2ga26JnTWly.html",
@@ -575,14 +687,18 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "superposition",
     "en": "superposition",
-    "en_aliases": ["superposition hypothesis"],
+    "en_aliases": [
+      "superposition hypothesis"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "physics-metaphor"],
+    "tags": [
+      "anthropic-lineage",
+      "physics-metaphor"
+    ],
     "definition_en": "The hypothesis that a network represents more features than it has dimensions by packing them into overlapping, non-orthogonal directions — which is why individual neurons end up polysemantic.",
     "definition_zh": "叠加假说认为：网络要表示的概念数量远多于它的维度，于是把这些概念压缩进彼此不正交、相互重叠的方向里。这正是单个神经元表现出多义性的原因。",
     "preferred_zh": "叠加",
@@ -636,14 +752,25 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "腾讯研究院", "zh_used": "叠加", "note": "2025 interpretability landscape report" }
+      {
+        "org": "腾讯研究院",
+        "zh_used": "叠加",
+        "note": "2025 interpretability landscape report"
+      }
     ],
     "usage_examples": [
-      { "zh": "由于叠加的存在，一个神经元的激活几乎不可能只对应一个概念。",
+      {
+        "zh": "由于叠加的存在，一个神经元的激活几乎不可能只对应一个概念。",
         "en": "Because of superposition, a single neuron's activation almost never corresponds to just one concept.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["polysemanticity", "feature", "sparse-autoencoder", "monosemanticity"],
+    "related": [
+      "polysemanticity",
+      "feature",
+      "sparse-autoencoder",
+      "monosemanticity"
+    ],
     "sources": [
       "https://news.qq.com/rain/a/20250617A07B1L00",
       "https://www.36kr.com/p/2465483534538887",
@@ -651,14 +778,18 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "polysemanticity",
     "en": "polysemanticity",
-    "en_aliases": ["polysemantic neuron"],
+    "en_aliases": [
+      "polysemantic neuron"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "contested"],
+    "tags": [
+      "anthropic-lineage",
+      "contested"
+    ],
     "definition_en": "The property of a single neuron responding to several unrelated concepts, so that reading off 'what a neuron means' is impossible. The empirical symptom that superposition explains.",
     "definition_zh": "同一个神经元会对多个毫不相关的概念做出反应，因此无法说清\"这个神经元代表什么\"。它是叠加现象在观测层面的表现。",
     "preferred_zh": "多义性",
@@ -680,15 +811,6 @@
             "source_type": "paper",
             "url": "https://www.alphaxiv.org/zh/overview/2503.05613",
             "date": "2025"
-          },
-          {
-            "quote_zh": "LLM 内部的许多神经元可能是'多义的'，意思是它们同时处理好几个不相关的信息",
-            "quote_en": "Many neurons inside an LLM may be 'polysemantic', meaning they handle several unrelated pieces of information at once.",
-            "source_title": "大模型到底是怎么「思考」的？第一篇系统性综述SAE的文章来了",
-            "publisher": "机器之心Pro (via 新浪科技)",
-            "source_type": "media",
-            "url": "https://finance.sina.com.cn/tech/roll/2025-06-22/doc-infaxnsp0690993.shtml",
-            "date": "2025-06"
           }
         ]
       },
@@ -698,17 +820,7 @@
         "status": "contested",
         "literal_back": "multi-semantic-ness",
         "notes": "The 2023-era rendering, still common. Its antonym 单语义性 was used to render Anthropic's 'Towards Monosemanticity'.",
-        "attestations": [
-          {
-            "quote_zh": "这是由于大多数神经元都是「多语义」的，单个神经元与网络行为没有对应一致的关系",
-            "quote_en": "This is because most neurons are 'polysemantic' — a single neuron has no consistent correspondence to network behaviour.",
-            "source_title": "打破大模型黑盒，彻底分解神经元，OpenAI对头Anthropic击破AI不可解释性障碍",
-            "publisher": "新智元 (via 36氪)",
-            "source_type": "media",
-            "url": "https://www.36kr.com/p/2465483534538887",
-            "date": "2023-10"
-          }
-        ]
+        "attestations": []
       },
       {
         "zh": "多重语义",
@@ -729,14 +841,21 @@
         ]
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "used_by": [],
     "usage_examples": [
-      { "zh": "神经元的多义性意味着你不能靠看单个神经元来理解模型。",
+      {
+        "zh": "神经元的多义性意味着你不能靠看单个神经元来理解模型。",
         "en": "Neuron polysemanticity means you cannot understand the model by looking at individual neurons.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["superposition", "feature", "sparse-autoencoder", "monosemanticity"],
+    "related": [
+      "superposition",
+      "feature",
+      "sparse-autoencoder",
+      "monosemanticity"
+    ],
     "sources": [
       "https://www.alphaxiv.org/zh/overview/2503.05613",
       "https://finance.sina.com.cn/tech/roll/2025-06-22/doc-infaxnsp0690993.shtml",
@@ -745,14 +864,20 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "circuit",
     "en": "circuit",
-    "en_aliases": ["computational circuit", "transformer circuit"],
+    "en_aliases": [
+      "computational circuit",
+      "transformer circuit"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "contested", "high-value"],
+    "tags": [
+      "anthropic-lineage",
+      "contested",
+      "high-value"
+    ],
     "definition_en": "A subgraph of a network — specific features, attention heads and MLP paths wired together — that implements an identifiable algorithm, such as copying a repeated token or resolving an indirect object.",
     "definition_zh": "网络中的一个子图：若干特征、注意力头和 MLP 路径连成一条通路，共同实现一个可辨认的算法，比如复制重复出现的 token，或判断间接宾语是谁。",
     "preferred_zh": "回路",
@@ -824,15 +949,31 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "集智俱乐部", "zh_used": "回路", "note": "大模型可解释性读书会 series title" },
-      { "org": "机器之心", "zh_used": "电路", "note": "跨层电路 in its 2026 interpretability survey coverage" }
+      {
+        "org": "集智俱乐部",
+        "zh_used": "回路",
+        "note": "大模型可解释性读书会 series title"
+      },
+      {
+        "org": "机器之心",
+        "zh_used": "电路",
+        "note": "跨层电路 in its 2026 interpretability survey coverage"
+      }
     ],
     "usage_examples": [
-      { "zh": "他们定位到一条负责复制重复 token 的回路，只涉及三个注意力头。",
+      {
+        "zh": "他们定位到一条负责复制重复 token 的回路，只涉及三个注意力头。",
         "en": "They localised a circuit responsible for copying repeated tokens that involves only three attention heads.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["circuit-tracing", "induction-head", "feature", "attribution-graph", "mechanistic-interpretability"],
+    "related": [
+      "circuit-tracing",
+      "induction-head",
+      "feature",
+      "attribution-graph",
+      "mechanistic-interpretability"
+    ],
     "sources": [
       "https://swarma.org/?p=60895",
       "https://hub.baai.ac.cn/view/46611",
@@ -842,14 +983,18 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "induction-head",
     "en": "induction head",
-    "en_aliases": ["induction circuit"],
+    "en_aliases": [
+      "induction circuit"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "false-friend"],
+    "tags": [
+      "anthropic-lineage",
+      "false-friend"
+    ],
     "definition_en": "An attention head (really a two-head composition) that implements the pattern [A][B] … [A] → [B]: it finds the earlier occurrence of the current token and copies whatever followed it. Widely argued to be the mechanistic basis of in-context learning.",
     "definition_zh": "一种（实际由两层注意力头组合而成的）注意力头，实现 [A][B] … [A] → [B] 的规则：找到当前 token 上一次出现的位置，把当时的后继 token 复制过来。学界普遍认为它是上下文学习的机制基础。",
     "preferred_zh": "induction head（归纳头）",
@@ -912,14 +1057,24 @@
     ],
     "confidence": "medium",
     "used_by": [
-      { "org": "集智俱乐部", "zh_used": "induction head / 感应头", "note": "same page uses the English in the heading and 感应头 in the body" }
+      {
+        "org": "集智俱乐部",
+        "zh_used": "induction head / 感应头",
+        "note": "same page uses the English in the heading and 感应头 in the body"
+      }
     ],
     "usage_examples": [
-      { "zh": "两层模型里才会出现 induction head，单层模型做不到。",
+      {
+        "zh": "两层模型里才会出现 induction head，单层模型做不到。",
         "en": "Induction heads only appear in two-layer models; a one-layer model cannot form them.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["circuit", "mechanistic-interpretability", "feature"],
+    "related": [
+      "circuit",
+      "mechanistic-interpretability",
+      "feature"
+    ],
     "sources": [
       "https://swarma.org/?p=60895",
       "https://hub.baai.ac.cn/view/46611",
@@ -927,14 +1082,19 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "probing",
     "en": "probing",
-    "en_aliases": ["linear probe", "probing classifier"],
+    "en_aliases": [
+      "linear probe",
+      "probing classifier"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["pre-llm", "established"],
+    "tags": [
+      "pre-llm",
+      "established"
+    ],
     "definition_en": "Training a small classifier on a model's frozen internal activations to test whether a given piece of information is linearly decodable from them.",
     "definition_zh": "在冻结的模型内部激活上训练一个小分类器，用来检验某种信息是否能从这些激活中线性地读出来。",
     "preferred_zh": "探针",
@@ -989,25 +1149,36 @@
     "confidence": "high",
     "used_by": [],
     "usage_examples": [
-      { "zh": "他们在每一层训练线性探针，看模型从哪一层开始知道答案。",
+      {
+        "zh": "他们在每一层训练线性探针，看模型从哪一层开始知道答案。",
         "en": "They trained a linear probe at every layer to see from which layer the model already knows the answer.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["activation-patching", "interpretability", "feature"],
+    "related": [
+      "activation-patching",
+      "interpretability",
+      "feature"
+    ],
     "sources": [
       "https://cloud.tencent.com/developer/article/2624862",
       "https://www.alphaxiv.org/zh/overview/2601.14004v4"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "activation-patching",
     "en": "activation patching",
-    "en_aliases": ["causal tracing", "interchange intervention"],
+    "en_aliases": [
+      "causal tracing",
+      "interchange intervention"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "causal"],
+    "tags": [
+      "anthropic-lineage",
+      "causal"
+    ],
     "definition_en": "Running a model on a corrupted input while splicing in activations from a clean run at a chosen location, to test whether that location is causally responsible for the correct output.",
     "definition_zh": "在\"损坏\"输入的前向过程中，把某个位置的激活换成\"干净\"输入那次运行的激活，看输出是否恢复正确，从而判断该位置是否对结果有因果作用。",
     "preferred_zh": "激活修补",
@@ -1052,25 +1223,36 @@
     "confidence": "medium",
     "used_by": [],
     "usage_examples": [
-      { "zh": "通过激活修补，他们确认第 8 层的这几个注意力头是关键。",
+      {
+        "zh": "通过激活修补，他们确认第 8 层的这几个注意力头是关键。",
         "en": "Through activation patching they confirmed that these few attention heads in layer 8 are the critical ones.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["probing", "circuit", "mechanistic-interpretability", "circuit-tracing"],
+    "related": [
+      "probing",
+      "circuit",
+      "mechanistic-interpretability",
+      "circuit-tracing"
+    ],
     "sources": [
       "https://www.alphaxiv.org/zh/overview/2601.14004v4",
       "https://cloud.tencent.com/developer/article/2624862"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "logit-lens",
     "en": "logit lens",
-    "en_aliases": ["tuned lens"],
+    "en_aliases": [
+      "tuned lens"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["untranslated", "loanword-dominant"],
+    "tags": [
+      "untranslated",
+      "loanword-dominant"
+    ],
     "definition_en": "Applying the model's output head (unembedding) to hidden states at intermediate layers, so that each layer's residual stream can be read as a distribution over the vocabulary — showing how the model's guess evolves layer by layer.",
     "definition_zh": "把模型最后的输出头（解嵌入矩阵）直接作用在中间层的隐藏状态上，于是每一层的残差流都能被读成一个词表上的概率分布，从而看到模型的\"猜测\"是如何逐层演变的。",
     "preferred_zh": "logit lens",
@@ -1116,24 +1298,32 @@
     "confidence": "medium",
     "used_by": [],
     "usage_examples": [
-      { "zh": "用 logit lens 看，模型在第 20 层左右就已经锁定了答案。",
+      {
+        "zh": "用 logit lens 看，模型在第 20 层左右就已经锁定了答案。",
         "en": "Viewed through the logit lens, the model has already locked in the answer by around layer 20.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["probing", "mechanistic-interpretability", "feature"],
+    "related": [
+      "probing",
+      "mechanistic-interpretability",
+      "feature"
+    ],
     "sources": [
       "https://blog.sciencenet.cn/blog-362400-1478923.html"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "attribution-graph",
     "en": "attribution graph",
     "en_aliases": [],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "2025"],
+    "tags": [
+      "anthropic-lineage",
+      "2025"
+    ],
     "definition_en": "A graph produced by Anthropic's circuit-tracing method showing, for one specific prompt, which features influenced which other features on the path from input to output.",
     "definition_zh": "Anthropic 回路追踪方法产出的图：针对某一条具体提示词，展示从输入到输出的路径上，哪些特征影响了哪些特征。",
     "preferred_zh": "归因图",
@@ -1170,29 +1360,49 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "集智俱乐部", "zh_used": "归因图", "note": "in its explainer on Anthropic's circuit tracing" },
-      { "org": "雷峰网", "zh_used": "归因图", "note": "in its coverage of the Anthropic papers" }
+      {
+        "org": "集智俱乐部",
+        "zh_used": "归因图",
+        "note": "in its explainer on Anthropic's circuit tracing"
+      },
+      {
+        "org": "雷峰网",
+        "zh_used": "归因图",
+        "note": "in its coverage of the Anthropic papers"
+      }
     ],
     "usage_examples": [
-      { "zh": "这张归因图显示，模型在写出韵脚之前就已经提前规划好了。",
+      {
+        "zh": "这张归因图显示，模型在写出韵脚之前就已经提前规划好了。",
         "en": "This attribution graph shows the model had already planned the rhyme before writing it.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["circuit-tracing", "circuit", "feature", "cross-layer-transcoder"],
+    "related": [
+      "circuit-tracing",
+      "circuit",
+      "feature",
+      "cross-layer-transcoder"
+    ],
     "sources": [
       "https://swarma.org/?p=62523",
       "https://m.leiphone.com/category/ai/AuOBr2ga26JnTWly.html"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "grokking",
     "en": "grokking",
-    "en_aliases": ["delayed generalization"],
+    "en_aliases": [
+      "delayed generalization"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["untranslatable", "contested", "high-value"],
+    "tags": [
+      "untranslatable",
+      "contested",
+      "high-value"
+    ],
     "definition_en": "The phenomenon where a network first memorises its training set, sits at chance test accuracy for a long time, and then abruptly generalises long after training loss has bottomed out. Named from Heinlein's coined verb 'to grok', meaning to understand something so thoroughly it becomes part of you.",
     "definition_zh": "网络先把训练集背了下来，测试集准确率长期停留在随机水平，直到训练损失早已收敛之后很久，泛化能力才突然出现。名字来自海因莱因小说里生造的动词 grok——彻底理解到与之融为一体。",
     "preferred_zh": "grokking（延迟泛化）",
@@ -1282,29 +1492,48 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "集智百科 (集智俱乐部)", "zh_used": "顿悟", "note": "uses 顿悟 as the encyclopedia headword, with grokking in parentheses" },
-      { "org": "机器之心", "zh_used": "grokking（延迟泛化）", "note": "keeps the English and glosses it" }
+      {
+        "org": "集智百科 (集智俱乐部)",
+        "zh_used": "顿悟",
+        "note": "uses 顿悟 as the encyclopedia headword, with grokking in parentheses"
+      },
+      {
+        "org": "机器之心",
+        "zh_used": "grokking（延迟泛化）",
+        "note": "keeps the English and glosses it"
+      }
     ],
     "usage_examples": [
-      { "zh": "在模加法这类小任务上很容易复现 grokking：训练准确率早就 100% 了，测试准确率再过几万步才起来。",
+      {
+        "zh": "在模加法这类小任务上很容易复现 grokking：训练准确率早就 100% 了，测试准确率再过几万步才起来。",
         "en": "Grokking is easy to reproduce on toy tasks like modular addition: training accuracy hits 100% long before test accuracy takes off tens of thousands of steps later.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["emergent-capabilities", "circuit", "mechanistic-interpretability"],
+    "related": [
+      "emergent-capabilities",
+      "circuit",
+      "mechanistic-interpretability"
+    ],
     "sources": [
       "https://hub.baai.ac.cn/view/52163",
       "https://finance.sina.com.cn/stock/t/2025-10-07/doc-infsztuu3203108.shtml"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "feature-steering",
     "en": "feature steering",
-    "en_aliases": ["feature clamping", "SAE steering"],
+    "en_aliases": [
+      "feature clamping",
+      "SAE steering"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "intervention"],
+    "tags": [
+      "anthropic-lineage",
+      "intervention"
+    ],
     "definition_en": "Intervening on an identified interpretable feature — clamping its activation up or down — to change model behaviour in a targeted way, as in Golden Gate Claude.",
     "definition_zh": "对已经识别出来的可解释特征直接干预——把它的激活值强行调高或压低——从而定向改变模型行为，Golden Gate Claude 就是典型例子。",
     "preferred_zh": "特征引导",
@@ -1317,17 +1546,7 @@
         "status": "common",
         "literal_back": "feature guiding",
         "notes": "Our recommendation. The 引导 stem matches the way Chinese surveys render the 'locate, steer, improve' pipeline (定位、引导与改进).",
-        "attestations": [
-          {
-            "quote_zh": "SAE被视为一个核心的可解释对象，其实现细粒度、特征级引导的能力对所讨论的许多应用至关重要。",
-            "quote_en": "The SAE is treated as a core interpretable object; its ability to enable fine-grained, feature-level steering is essential to many of the applications discussed.",
-            "source_title": "定位、引导与改进：大型语言模型中可操作的机制可解释性实用综述",
-            "publisher": "alphaXiv 中文导读 (arXiv 2601.14004)",
-            "source_type": "paper",
-            "url": "https://www.alphaxiv.org/zh/overview/2601.14004v4",
-            "date": "2026-04"
-          }
-        ]
+        "attestations": []
       },
       {
         "zh": "模型操控",
@@ -1338,28 +1557,36 @@
         "attestations": []
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "used_by": [],
     "usage_examples": [
-      { "zh": "把\"金门大桥\"这个特征的激活值调到很高，模型就会不停地提到金门大桥。",
+      {
+        "zh": "把\"金门大桥\"这个特征的激活值调到很高，模型就会不停地提到金门大桥。",
         "en": "Clamp the 'Golden Gate Bridge' feature's activation high and the model will not stop mentioning the bridge.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["feature", "sparse-autoencoder", "activation-steering"],
+    "related": [
+      "feature",
+      "sparse-autoencoder",
+      "activation-steering"
+    ],
     "sources": [
       "https://www.alphaxiv.org/zh/overview/2601.14004v4",
       "https://finance.sina.com.cn/tech/roll/2025-06-22/doc-infaxnsp0690993.shtml"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "dictionary-learning",
     "en": "dictionary learning",
     "en_aliases": [],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["pre-existing-term", "signal-processing"],
+    "tags": [
+      "pre-existing-term",
+      "signal-processing"
+    ],
     "definition_en": "Learning an overcomplete basis (a 'dictionary') such that each data point is a sparse combination of its elements. Borrowed from sparse coding in signal processing; the framing under which SAEs decompose activations.",
     "definition_zh": "学习一组过完备的基（\"字典\"），使得每个数据点都能表示为其中少数几个元素的稀疏组合。这个概念来自信号处理中的稀疏编码，也是用 SAE 分解激活的理论框架。",
     "preferred_zh": "字典学习",
@@ -1397,11 +1624,17 @@
     "confidence": "high",
     "used_by": [],
     "usage_examples": [
-      { "zh": "把 SAE 看成一种字典学习，就容易理解它为什么要过完备。",
+      {
+        "zh": "把 SAE 看成一种字典学习，就容易理解它为什么要过完备。",
         "en": "Once you see an SAE as a form of dictionary learning, it's easy to see why it has to be overcomplete.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["sparse-autoencoder", "feature", "superposition"],
+    "related": [
+      "sparse-autoencoder",
+      "feature",
+      "superposition"
+    ],
     "sources": [
       "https://www.36kr.com/p/2465483534538887",
       "https://hub.baai.ac.cn/view/31396",
@@ -1409,14 +1642,16 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "circuit-tracing",
     "en": "circuit tracing",
     "en_aliases": [],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["anthropic-lineage", "2025"],
+    "tags": [
+      "anthropic-lineage",
+      "2025"
+    ],
     "definition_en": "Anthropic's 2025 method for recovering the computational path behind a single model output: build a replacement model out of cross-layer transcoder features, then read off an attribution graph.",
     "definition_zh": "Anthropic 2025 年提出的方法：先用跨层转码器的稀疏特征搭出一个\"替换模型\"，再从中读出归因图，从而还原模型产生某一条输出时走过的计算路径。",
     "preferred_zh": "回路追踪",
@@ -1440,8 +1675,8 @@
             "date": "2025-07"
           },
           {
-            "quote_zh": "通过构建'替换模型'和'归因图'，将原本不可见的神经网络计算过程可视化为清晰的计算图。",
-            "quote_en": "By building a 'replacement model' and an 'attribution graph', it visualises the otherwise invisible computation of the neural network as a clear computational graph.",
+            "quote_zh": "他们开发了一种名为“Circuit Tracing”（工作回路追踪）的新方法，通过构建“替换模型”和“归因图”，将原本不可见的神经网络计算过程可视化为清晰的计算图。",
+            "quote_en": "They developed a new method called 'Circuit Tracing' (工作回路追踪), which by building a 'replacement model' and 'attribution graphs' visualises the otherwise invisible neural-network computation as a clear computational graph.",
             "source_title": "Anthropic提出工作回路追踪方法：用归因图解开大语言模型计算之谜",
             "publisher": "集智俱乐部",
             "source_type": "blog",
@@ -1469,28 +1704,41 @@
     ],
     "confidence": "medium",
     "used_by": [
-      { "org": "集智俱乐部", "zh_used": "工作回路追踪", "note": "in its explainer article title" }
+      {
+        "org": "集智俱乐部",
+        "zh_used": "工作回路追踪",
+        "note": "in its explainer article title"
+      }
     ],
     "usage_examples": [
-      { "zh": "回路追踪的第一步是把 MLP 神经元换成跨层转码器学到的稀疏特征。",
+      {
+        "zh": "回路追踪的第一步是把 MLP 神经元换成跨层转码器学到的稀疏特征。",
         "en": "The first step in circuit tracing is replacing the MLP neurons with sparse features learned by a cross-layer transcoder.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["circuit", "attribution-graph", "cross-layer-transcoder", "mechanistic-interpretability"],
+    "related": [
+      "circuit",
+      "attribution-graph",
+      "cross-layer-transcoder",
+      "mechanistic-interpretability"
+    ],
     "sources": [
       "https://swarma.org/?p=62523",
       "https://m.leiphone.com/category/ai/AuOBr2ga26JnTWly.html"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "transparency",
     "en": "transparency",
     "en_aliases": [],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["governance", "policy-register"],
+    "tags": [
+      "governance",
+      "policy-register"
+    ],
     "definition_en": "The property of an AI system whose capabilities, limitations, provenance and decision basis are disclosed to those affected. In governance usage it is a disclosure duty; in technical usage it shades into interpretability.",
     "definition_zh": "让受影响的人能够知道 AI 系统的能力边界、来源和决策依据。在治理语境下它是一项披露义务；在技术语境下它与可解释性几乎重叠。",
     "preferred_zh": "透明性",
@@ -1545,14 +1793,24 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "全国网络安全标准化技术委员会 (TC260)", "zh_used": "透明性 / 透明度", "note": "《人工智能安全治理框架》 governance measures" }
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "透明性 / 透明度",
+        "note": "《人工智能安全治理框架》 governance measures"
+      }
     ],
     "usage_examples": [
-      { "zh": "披露训练数据来源提高的是透明性，看懂模型内部靠的是可解释性。",
+      {
+        "zh": "披露训练数据来源提高的是透明性，看懂模型内部靠的是可解释性。",
         "en": "Disclosing the provenance of training data improves transparency; understanding the model's internals depends on interpretability.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["interpretability", "explainable-ai", "black-box"],
+    "related": [
+      "interpretability",
+      "explainable-ai",
+      "black-box"
+    ],
     "sources": [
       "https://hub.baai.ac.cn/view/39801",
       "https://crad.ict.ac.cn/fileJSJYJYFZ/journal/article/jsjyjyfz/HTML/2019-10-2071.shtml",
@@ -1560,14 +1818,19 @@
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "cross-layer-transcoder",
     "en": "cross-layer transcoder",
-    "en_aliases": ["CLT"],
+    "en_aliases": [
+      "CLT"
+    ],
     "abbr": "CLT",
     "category": "interpretability",
-    "tags": ["added-by-research", "anthropic-lineage", "2025"],
+    "tags": [
+      "added-by-research",
+      "anthropic-lineage",
+      "2025"
+    ],
     "definition_en": "The sparse feature architecture behind Anthropic's circuit tracing: features read from one layer and write to all later layers, so a 'replacement model' built from them approximates the original while being made of interpretable parts.",
     "definition_zh": "Anthropic 回路追踪背后的稀疏特征架构：特征从某一层读入、向之后所有层写出，用它搭出的\"替换模型\"既能逼近原模型，又完全由可解释的部件组成。",
     "preferred_zh": "跨层转码器",
@@ -1609,8 +1872,8 @@
         "notes": "The associated term for Anthropic's 'replacement model'. Also seen as 替代模型 in the same article — the two are used interchangeably.",
         "attestations": [
           {
-            "quote_zh": "替代模型是通过将原始模型中的神经元替换为跨层转码器中的稀疏激活特征所构建的。",
-            "quote_en": "The replacement model is built by replacing the neurons of the original model with the sparsely activating features of the cross-layer transcoder.",
+            "quote_zh": "他们开发了一种名为“Circuit Tracing”（工作回路追踪）的新方法，通过构建“替换模型”和“归因图”，将原本不可见的神经网络计算过程可视化为清晰的计算图。",
+            "quote_en": "They developed a new method called 'Circuit Tracing' (工作回路追踪), which by building a 'replacement model' and 'attribution graphs' visualises the otherwise invisible neural-network computation as a clear computational graph.",
             "source_title": "Anthropic提出工作回路追踪方法：用归因图解开大语言模型计算之谜",
             "publisher": "集智俱乐部",
             "source_type": "blog",
@@ -1622,29 +1885,49 @@
     ],
     "confidence": "high",
     "used_by": [
-      { "org": "集智俱乐部", "zh_used": "跨层转码器", "note": "in its circuit-tracing explainer" },
-      { "org": "雷峰网", "zh_used": "跨层转码器", "note": "in its Anthropic coverage" }
+      {
+        "org": "集智俱乐部",
+        "zh_used": "跨层转码器",
+        "note": "in its circuit-tracing explainer"
+      },
+      {
+        "org": "雷峰网",
+        "zh_used": "跨层转码器",
+        "note": "in its Anthropic coverage"
+      }
     ],
     "usage_examples": [
-      { "zh": "他们用跨层转码器把 MLP 换掉，得到一个可解释的替换模型。",
+      {
+        "zh": "他们用跨层转码器把 MLP 换掉，得到一个可解释的替换模型。",
         "en": "They swapped out the MLPs using a cross-layer transcoder to get an interpretable replacement model.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["circuit-tracing", "attribution-graph", "crosscoder", "sparse-autoencoder"],
+    "related": [
+      "circuit-tracing",
+      "attribution-graph",
+      "crosscoder",
+      "sparse-autoencoder"
+    ],
     "sources": [
       "https://swarma.org/?p=62523",
       "https://m.leiphone.com/category/ai/AuOBr2ga26JnTWly.html"
     ],
     "last_researched": "2026-08-08"
   },
-
   {
     "id": "monosemanticity",
     "en": "monosemanticity",
-    "en_aliases": ["monosemantic feature"],
+    "en_aliases": [
+      "monosemantic feature"
+    ],
     "abbr": null,
     "category": "interpretability",
-    "tags": ["added-by-research", "anthropic-lineage", "contested"],
+    "tags": [
+      "added-by-research",
+      "anthropic-lineage",
+      "contested"
+    ],
     "definition_en": "The target property of an interpretability decomposition: each recovered unit corresponds to exactly one human-legible concept. The goal SAEs pursue, and the title concept of Anthropic's 2023 Towards Monosemanticity.",
     "definition_zh": "可解释性分解所追求的性质：分解出来的每个单元只对应一个人类能理解的概念。它是训练 SAE 的目标，也是 Anthropic 2023 年 Towards Monosemanticity 一文的核心概念。",
     "preferred_zh": "单义性",
@@ -1659,8 +1942,8 @@
         "notes": "Our recommendation, pairing with 多义性.",
         "attestations": [
           {
-            "quote_zh": "字典学习（一种稀疏自编码器，SAE）的应用，旨在将大型语言模型的表征分解成更具可解释性、单义的特征。",
-            "quote_en": "The application of dictionary learning (a sparse autoencoder) aims to decompose an LLM's representations into more interpretable, monosemantic features.",
+            "quote_zh": "可解释性指标通过自动化方法、稀疏探测任务和特征吸收分析（测量特征是否纠缠多个概念）来评估单义性。",
+            "quote_en": "Interpretability metrics assess monosemanticity through automated methods, sparse probing tasks and feature-absorption analysis (measuring whether a feature entangles several concepts).",
             "source_title": "稀疏自编码器综述：解读大型语言模型的内部机制 (A Survey on Sparse Autoencoders)",
             "publisher": "alphaXiv 中文导读 (arXiv 2503.05613)",
             "source_type": "paper",
@@ -1668,8 +1951,8 @@
             "date": "2025"
           },
           {
-            "quote_zh": "SAE用于将这些密集表示分解为高维、稀疏且\"单语义\"的特征。",
-            "quote_en": "SAEs are used to decompose these dense representations into high-dimensional, sparse, 'monosemantic' features.",
+            "quote_zh": "迈向单义性：基于字典学习的语言模型分解",
+            "quote_en": "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning (rendered title in the survey's reference list).",
             "source_title": "定位、引导与改进：大型语言模型中可操作的机制可解释性实用综述",
             "publisher": "alphaXiv 中文导读 (arXiv 2601.14004)",
             "source_type": "paper",
@@ -1690,11 +1973,18 @@
     "confidence": "medium",
     "used_by": [],
     "usage_examples": [
-      { "zh": "SAE 训练的目标就是让每个特征尽量单义。",
+      {
+        "zh": "SAE 训练的目标就是让每个特征尽量单义。",
         "en": "The goal of training an SAE is to make each feature as monosemantic as possible.",
-        "source": "constructed" }
+        "source": "constructed"
+      }
     ],
-    "related": ["polysemanticity", "superposition", "sparse-autoencoder", "feature"],
+    "related": [
+      "polysemanticity",
+      "superposition",
+      "sparse-autoencoder",
+      "feature"
+    ],
     "sources": [
       "https://www.alphaxiv.org/zh/overview/2503.05613",
       "https://www.alphaxiv.org/zh/overview/2601.14004v4",

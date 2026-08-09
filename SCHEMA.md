@@ -94,6 +94,48 @@ has zero, the entry's `confidence` cannot be `high`.
 - `medium` — 1 attestation, or several weak ones (forum posts, single blog).
 - `low` — no attestation, or sources disagree and we've made a judgement call.
 
+## Direction: Chinese-origin terms
+
+Most entries are English concepts looking for a Chinese rendering. Some run the other way:
+concepts PRC discourse has developed that English has no clean word for — 算法备案, 等级保护,
+敏捷治理, 自主可控, 卡脖子. Translating these into English loses as much as translating
+*loss of control* into Chinese does, and an English speaker who doesn't have them cannot
+read a Chinese policy document accurately.
+
+These carry `"direction": "zh-to-en"` (the default, which may be omitted, is `"en-to-zh"`)
+and invert two fields:
+
+```jsonc
+{
+  "id": "algorithm-filing",
+  "direction": "zh-to-en",
+  "zh_headword": "算法备案",          // REQUIRED when direction is zh-to-en. The source term.
+  "pinyin": "suànfǎ bèi'àn",
+  "en": "algorithm filing",           // still required — the English headword we recommend,
+                                      // and what an English-speaking user will search for
+  "en_renderings": [                  // same shape as `translations`, but `en` not `zh`
+    {
+      "en": "algorithm filing",
+      "status": "common",             // same status vocabulary as translations
+      "literal_back": "algorithm put-on-record",
+      "notes": "Weaker than 'licensing' — filing is notification, not permission.",
+      "attestations": [ /* ...same shape; quote_zh is the Chinese source sentence... */ ]
+    }
+  ],
+  "why_no_english": "English regulatory vocabulary has 'registration' and 'licensing' but
+                     nothing for a mandatory notification regime that confers no approval.",
+  "translations": []                  // stays empty for zh-to-en entries
+}
+```
+
+For `zh-to-en` entries, `preferred_zh` is set to `zh_headword` by the build, and
+`translation_difficulty` / `confidence` describe the *English* side. Everything else —
+definitions, pitfalls, usage examples, related, sources — works identically.
+
+The English rendering that matters most is the one an English-language reader will actually
+meet in translated PRC documents, even when it is a poor rendering. Record that one, say so
+in `notes`, and put the better rendering alongside it rather than instead of it.
+
 ## Non-negotiables
 
 1. **Never invent an attestation.** No fabricated quotes, publishers, dates, or URLs. If a

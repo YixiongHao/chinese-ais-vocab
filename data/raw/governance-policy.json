@@ -1,0 +1,2981 @@
+[
+  {
+    "id": "ai-safety-institute",
+    "en": "AI Safety Institute",
+    "en_aliases": [
+      "AISI",
+      "AI Security Institute",
+      "Center for AI Standards and Innovation"
+    ],
+    "abbr": "AISI",
+    "category": "governance-policy",
+    "tags": [
+      "institutions",
+      "international"
+    ],
+    "definition_en": "A government-backed body that evaluates frontier AI models and develops safety testing methodology. The UK and US created the first two in 2023; an International Network of AI Safety Institutes was launched at the 2024 Seoul summit. The US body was reorganised as the Center for AI Standards and Innovation (CAISI) in June 2025.",
+    "definition_zh": "由政府设立或支持、负责评测前沿人工智能模型并研究安全测试方法的专门机构。英国和美国于 2023 年率先设立，2024 年首尔峰会上成立了人工智能安全研究所国际网络。中国没有对应的监管型机构，而是在 2025 年 2 月成立了以对外交流为主的「中国人工智能发展与安全研究网络」。",
+    "preferred_zh": "人工智能安全研究所",
+    "translation_difficulty": "medium",
+    "pitfalls": "The Chinese term is a straightforward calque, but the institutional referent does not exist in the PRC. China's nearest counterpart, 中国人工智能发展与安全研究网络 (CnAISDA, launched around the February 2025 Paris summit), is a 网络 (network) of existing institutes, not a 研究所, and does not test frontier models or hold regulatory power — so 'China's AI Safety Institute' is a misleading gloss. Note also that IDAIS's own Chinese text renders 'AI safety authorities' as 安全监管部门 (safety *regulatory* departments), a different institutional idea from a research institute. Finally, the US renaming to CAISI dropped 安全 entirely: 美国人工智能标准与创新中心 has no 安全 in it, and Chinese sources mark this by writing （原人工智能安全研究所）.",
+    "translations": [
+      {
+        "zh": "人工智能安全研究所",
+        "pinyin": "réngōng zhìnéng ānquán yánjiūsuǒ",
+        "status": "established",
+        "literal_back": "artificial intelligence safety research institute",
+        "notes": "Standard rendering for the UK/US/Japan/Korea bodies and for the international network. Used unchanged by CAICT, 安全内参 and Chinese media.",
+        "attestations": [
+          {
+            "quote_zh": "在首尔峰会上，人工智能安全研究所国际网络正式成立，标志着人工智能安全科学研究的国际合作正式启动。",
+            "quote_en": "At the Seoul Summit, the International Network of AI Safety Institutes was formally established, marking the official start of international cooperation on the science of AI safety.",
+            "source_title": "从国际人工智能峰会看治理趋势变化",
+            "publisher": "安全内参（原载《中国信息安全》，作者单位中国信息通信研究院安全研究所）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/79641",
+            "date": "2025-06"
+          },
+          {
+            "quote_zh": "OpenAI、Anthropic 等头部企业已经与美国人工智能标准与创新中心（原人工智能安全研究所）、英国人工智能安全研究所达成合作，允许其提前接入企业最新开发的先进模型进行测试。",
+            "quote_en": "Leading firms such as OpenAI and Anthropic have reached agreements with the US Center for AI Standards and Innovation (formerly the AI Safety Institute) and the UK AI Safety Institute allowing them early access to the companies' most advanced models for testing.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "美国人工智能标准与创新中心",
+        "pinyin": "Měiguó réngōng zhìnéng biāozhǔn yǔ chuàngxīn zhōngxīn",
+        "status": "established",
+        "literal_back": "US center for AI standards and innovation",
+        "notes": "The post-June-2025 name of the former USAISI. CAISI is normally kept as a Latin abbreviation alongside it. Chinese coverage consistently flags the rename as a shift of remit from safety to competitiveness and national-security risk.",
+        "attestations": [
+          {
+            "quote_zh": "美国商务部已将人工智能安全研究所（USAISI）正式更名为美国人工智能标准与创新中心（CAISI）",
+            "quote_en": "The US Department of Commerce has formally renamed the AI Safety Institute (USAISI) as the Center for AI Standards and Innovation (CAISI).",
+            "source_title": "【AI治理周报6月第2周】美国人工智能安全研究所现已正式改组为人工智能标准与创新中心（CAISI）",
+            "publisher": "智源社区 (BAAI Hub)",
+            "source_type": "media",
+            "url": "https://hub.baai.ac.cn/view/46375",
+            "date": "2025-06"
+          }
+        ]
+      },
+      {
+        "zh": "中国人工智能发展与安全研究网络",
+        "pinyin": "Zhōngguó réngōng zhìnéng fāzhǎn yǔ ānquán yánjiū wǎngluò",
+        "status": "established",
+        "literal_back": "China AI development and safety research network",
+        "notes": "Proper name of the PRC's counterpart body (abbreviated CnAISDA in English). Deliberately a 网络 spanning CAICT, Tsinghua, Shanghai AI Lab and CCID rather than a single institute, and framed as 发展与安全 (development *and* safety) rather than safety alone. Do not translate 'AI Safety Institute' into this name.",
+        "attestations": [
+          {
+            "quote_zh": "中国人工智能发展与安全研究网络",
+            "quote_en": "China AI Safety and Development Association / Network",
+            "source_title": "中国人工智能发展与安全研究网络（官方网站站名）",
+            "publisher": "中国人工智能发展与安全研究网络",
+            "source_type": "report",
+            "url": "https://ai-development-and-safety-network.cn/",
+            "date": "2025"
+          }
+        ]
+      },
+      {
+        "zh": "安全监管部门",
+        "pinyin": "ānquán jiānguǎn bùmén",
+        "status": "descriptive",
+        "literal_back": "safety regulatory department",
+        "notes": "How the official Chinese text of the IDAIS-Venice statement renders the English 'AI safety authorities'. Worth knowing because it shows that in a governance (as opposed to journalistic) register, the English 'AI safety institute/authority' is often reframed in Chinese as a regulator, not a research institute.",
+        "attestations": [
+          {
+            "quote_zh": "各国的安全监管部门可召集会议，合作制定并承诺实施模型注册和披露制度、事故报告机制、预警触发点及应急预案。",
+            "quote_en": "National AI safety authorities can convene to jointly develop and commit to implementing model registration and disclosure regimes, incident reporting mechanisms, early-warning tripwires and contingency plans.",
+            "source_title": "IDAIS-Venice 共识声明（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS) / Safe AI Forum",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-venice/",
+            "date": "2024-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "人工智能安全研究所",
+        "note": "in 《人工智能治理研究报告（2025年）》, for the UK/US bodies"
+      },
+      {
+        "org": "安全内参 / 《中国信息安全》",
+        "zh_used": "人工智能安全研究所国际网络",
+        "note": "for the International Network of AI Safety Institutes"
+      },
+      {
+        "org": "IDAIS / Safe AI Forum",
+        "zh_used": "安全监管部门",
+        "note": "official Chinese statement text renders 'AI safety authorities' this way"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "英国人工智能安全研究所对模型进行了部署前测试，而中国目前尚无承担同类职能的机构。",
+        "en": "The UK AI Safety Institute ran pre-deployment testing on the model; China currently has no body performing that function.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-summit",
+      "frontier-ai-regulation",
+      "safety-standard",
+      "idais"
+    ],
+    "sources": [
+      "https://www.secrss.com/articles/79641",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://hub.baai.ac.cn/view/46375",
+      "https://ai-development-and-safety-network.cn/",
+      "https://idais.ai/dialogue/idais-venice/",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "frontier-ai-regulation",
+    "en": "frontier AI regulation",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "regulation"
+    ],
+    "definition_en": "Rules aimed specifically at the most capable general-purpose models, usually triggered by a capability or compute threshold rather than by application sector.",
+    "definition_zh": "专门针对能力最强的通用人工智能模型的监管规则，通常以能力或算力阈值（而非应用行业）作为触发条件。",
+    "preferred_zh": "前沿人工智能监管",
+    "translation_difficulty": "medium",
+    "pitfalls": "前沿人工智能 is a settled term, but the *regulatory category* it names in English has no PRC counterpart. Chinese regulation is organised by 分类分级监管 (classified and graded oversight) keyed to application scenario, 智能化水平 and 应用规模 — not by a 'frontier' tier. So 前沿人工智能监管 reads to a PRC policy audience as a description of foreign (EU/UK/US) practice rather than a domestic instrument. Also note 监管 (regulation by a state organ) vs 治理 (governance, multi-stakeholder) vs 管理 (administration): choosing 监管 makes the claim that a regulator is doing it.",
+    "translations": [
+      {
+        "zh": "前沿人工智能",
+        "pinyin": "qiányán réngōng zhìnéng",
+        "status": "established",
+        "literal_back": "frontier artificial intelligence",
+        "notes": "The head term is fully settled in Chinese AI-safety writing; 前沿大模型 (frontier large model) is a common variant in policy prose.",
+        "attestations": [
+          {
+            "quote_zh": "上海人工智能实验室联合安远 AI，于 2025 年 7 月正式发布《前沿人工智能风险管理框架（1.0 版）》，旨在为通用型人工智能模型开发者提供全面的风险管理指导方针。",
+            "quote_en": "Shanghai AI Laboratory, together with Concordia AI, formally released the Frontier AI Risk Management Framework (v1.0) in July 2025, aiming to give developers of general-purpose AI models comprehensive risk-management guidance.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "前沿人工智能监管",
+        "pinyin": "qiányán réngōng zhìnéng jiānguǎn",
+        "status": "descriptive",
+        "literal_back": "frontier AI regulation/oversight",
+        "notes": "Compositional and readily understood, but not a fixed PRC policy category; I could not recover it as a set phrase in an authoritative Chinese source. Use it for describing EU/UK/US regimes.",
+        "attestations": []
+      },
+      {
+        "zh": "分级分类监管",
+        "pinyin": "fēnjí fēnlèi jiānguǎn",
+        "status": "established",
+        "literal_back": "graded and classified oversight",
+        "notes": "The PRC-native alternative that occupies the same policy slot: instead of carving out a 'frontier' tier, TC260 and CAC grade all AI applications by scenario, intelligence level and deployment scale. Not a synonym — record both and say which system you are describing.",
+        "attestations": [
+          {
+            "quote_zh": "推动人工智能安全相关立法，完善基础设施安全防护、分级分类监管、人工智能安全测评、最终用途管理、重点场景安全应用等制度。",
+            "quote_en": "Advance legislation on AI safety, and improve systems for infrastructure security protection, graded and classified oversight, AI safety evaluation, end-use management and safe application in key scenarios.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "前沿人工智能",
+        "note": "title of their risk-management framework"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "分级分类监管",
+        "note": "the PRC's structural alternative to a frontier tier"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "欧盟以算力阈值触发前沿人工智能监管，我国则以应用场景和智能化水平进行分级分类监管。",
+        "en": "The EU triggers frontier AI regulation via a compute threshold, whereas China grades and classifies oversight by application scenario and level of autonomy.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "compute-governance",
+      "eu-ai-act",
+      "ai-safety-governance-framework",
+      "licensing"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "compute-governance",
+    "en": "compute governance",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "compute",
+      "regulation"
+    ],
+    "definition_en": "Using access to AI training hardware — chips, clusters, cloud capacity — as a lever of policy: thresholds, reporting duties, export restrictions and customer verification attached to compute rather than to models.",
+    "definition_zh": "把人工智能训练所需的算力资源（芯片、集群、云服务）作为政策抓手：围绕算力设定阈值、报告义务、出口限制和客户核验，而不是直接监管模型本身。",
+    "preferred_zh": "算力治理",
+    "translation_difficulty": "medium",
+    "pitfalls": "算力 is an unusually strong native term — it is standard in PRC industrial policy (东数西算, 算力网络, 算力设施) and needs no explanation. But that strength is a trap: in PRC usage 算力 policy is overwhelmingly about *building and allocating* compute as infrastructure, not about *restricting* it as a safety lever. A Chinese reader seeing 算力治理 will most likely think of scheduling, green energy and market order, not of training-run thresholds. I could not verify 算力治理 verbatim in an authoritative source, so treat the compound as unsettled and gloss it on first use.",
+    "translations": [
+      {
+        "zh": "算力治理",
+        "pinyin": "suànlì zhìlǐ",
+        "status": "common",
+        "literal_back": "compute-power governance",
+        "notes": "Transparent and idiomatic, and the obvious rendering — but I was unable to recover a verbatim occurrence in an authoritative Chinese source within this research pass, so it is recorded without attestation and the entry's confidence is low. Do not upgrade without evidence.",
+        "attestations": []
+      },
+      {
+        "zh": "算力",
+        "pinyin": "suànlì",
+        "status": "established",
+        "literal_back": "computing power",
+        "notes": "The head term itself is fully established across PRC industrial policy and AI-safety writing alike. Where English says 'compute' as a mass noun, Chinese says 算力; 算力设施 is 'compute infrastructure'.",
+        "attestations": [
+          {
+            "quote_zh": "针对模型算法、训练数据、算力设施、产品服务、应用场景，提出通过安全软件开发、数据质量提升、安全建设运维、测评监测加固等技术手段，提升人工智能技术及应用安全性的措施。",
+            "quote_en": "For model algorithms, training data, compute infrastructure, products and services, and application scenarios, it proposes technical means — secure software development, data-quality improvement, secure build and operations, evaluation, monitoring and hardening — to raise the safety of AI technology and its applications.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "失控自我复制：系统未经授权自我外泄，独立获取算力与资金，创建并部署自身副本，建立持久存在并规避检测、抵抗关停。",
+            "quote_en": "Uncontrolled self-replication: the system exfiltrates itself without authorisation, independently acquires compute and funds, creates and deploys copies of itself, establishes persistence, evades detection and resists shutdown.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "算力阈值",
+        "pinyin": "suànlì yùzhí",
+        "status": "descriptive",
+        "literal_back": "compute threshold",
+        "notes": "Used when describing the EU/US practice of triggering obligations above a FLOPs level. CAICT describes the EU GPAI Code of Practice as applying to models above a stated FLOPs figure, using 算力超过… phrasing.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "算力治理的核心思路，是把监管抓手放在芯片和集群上，而不是直接管模型。",
+        "en": "The core idea of compute governance is to place the regulatory lever on chips and clusters rather than directly on models.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "export-controls",
+      "frontier-ai-regulation",
+      "kyc",
+      "verification"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "export-controls",
+    "en": "export controls",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "compute",
+      "geopolitics"
+    ],
+    "definition_en": "Restrictions on cross-border transfer of controlled items. In AI they cover advanced chips and manufacturing equipment, and — briefly, under a January 2025 US rule rescinded in May 2025 — model weights themselves.",
+    "definition_zh": "对受管制物项跨境转移的限制。在人工智能领域主要针对先进芯片和制造设备；2025 年 1 月美国商务部工业与安全局曾试图将模型权重本身纳入管制，该规则于同年 5 月被废除。",
+    "preferred_zh": "出口管制",
+    "translation_difficulty": "low",
+    "pitfalls": "The term itself is a clean one-to-one match and needs no explanation. What does not carry over is the framing: in PRC official texts 出口管制 by other states is routinely characterised as 单边强制措施 (unilateral coercive measures) that 制造发展壁垒 (create development barriers). Using the term neutrally in a Chinese-language safety argument is fine, but expect the political valence to be read in. Note also 管制 (control, restrictive) vs 管理 (administration) vs 监管 (supervision) — 管制 is the strongest of the three.",
+    "translations": [
+      {
+        "zh": "出口管制",
+        "pinyin": "chūkǒu guǎnzhì",
+        "status": "established",
+        "literal_back": "export control",
+        "notes": "The standard legal term, also the name of the PRC's own 《出口管制法》. Universal across policy, media and technical writing.",
+        "attestations": [
+          {
+            "quote_zh": "但个别国家利用技术垄断和出口管制等单边强制措施制造发展壁垒，恶意阻断全球人工智能供应链，带来突出的芯片、软件、工具断供风险。",
+            "quote_en": "However, certain countries use unilateral coercive measures such as technological monopoly and export controls to create barriers to development, maliciously cutting off the global AI supply chain and creating acute risks of chip, software and tooling cut-off.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "2025 年 1 月，商务部工业与安全局（BIS）首次发布规则，试图将 AI 模型权重本身纳入出口管制，但该规则在 5 月被新政府以“扼杀创新”为由废除。",
+            "quote_en": "In January 2025 the Bureau of Industry and Security (BIS) issued a rule for the first time attempting to bring AI model weights themselves within export controls, but the rule was rescinded in May by the new administration on the grounds that it 'stifled innovation'.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          },
+          {
+            "quote_zh": "评估模型或系统是否能提供专业知识（包括与云实验室合作、隐藏 DNA 合成订单、规避出口管制、检索并分析危险 DNA 序列等），协助相关行为主体获取制造生物威胁或生物武器所需的材料和设备。",
+            "quote_en": "Assess whether the model or system can provide expertise — including working with cloud labs, concealing DNA synthesis orders, evading export controls, and retrieving and analysing dangerous DNA sequences — to help actors obtain the materials and equipment needed to make biological threats or weapons.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "TC260",
+        "zh_used": "出口管制",
+        "note": "in the 2.0 framework's framing of supply-chain risk"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "出口管制",
+        "note": "throughout its 2025 AI governance report"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "把模型权重纳入出口管制，在技术上比管制芯片困难得多。",
+        "en": "Bringing model weights under export controls is technically far harder than controlling chips.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "compute-governance",
+      "weights-security",
+      "national-security"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "model-registration",
+    "en": "model registration",
+    "en_aliases": [
+      "algorithm filing",
+      "algorithm registry"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "regulation"
+    ],
+    "definition_en": "A requirement that a model or algorithmic service be recorded with a regulator before or shortly after it goes to market. China operates the world's only large-scale live regime of this kind: 算法备案 under the 2022 algorithm-recommendation rules, extended to generative AI in 2023.",
+    "definition_zh": "要求模型或算法服务在上线前后向监管部门登记的制度。中国是目前唯一大规模实际运行此类制度的国家：依《互联网信息服务算法推荐管理规定》开展算法备案，2023 年经《生成式人工智能服务管理暂行办法》扩展至生成式人工智能服务（大模型备案）。",
+    "preferred_zh": "算法备案",
+    "translation_difficulty": "high",
+    "pitfalls": "This is the single most important asymmetry in the category. 备案 is a *filing* — the provider submits materials and the regulator records them; it is not an approval and is legally weaker than 许可 (licensing). English coverage that renders 备案 as 'licensing' or 'approval' materially overstates it. Chinese practice further distinguishes 算法备案 (the algorithm/service, filed with CAC's national system), 大模型备案 (the generative model, handled through provincial CAC offices) and 登记 (registration of downstream apps that merely call an already-filed model). Meanwhile the IDAIS statements use 注册 for the arms-control-style 'registration of training runs above a threshold' — a third word for a third concept. Pick deliberately: 备案 = the existing PRC filing regime; 注册 = a proposed international registry; 登记 = a lighter recording step.",
+    "translations": [
+      {
+        "zh": "算法备案",
+        "pinyin": "suànfǎ bèi'àn",
+        "status": "established",
+        "literal_back": "algorithm filing-for-the-record",
+        "notes": "The operative PRC term. Article 17 of the Interim Measures ties generative AI to the algorithm-filing procedure of the algorithm-recommendation rules.",
+        "attestations": [
+          {
+            "quote_zh": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+            "quote_en": "Providers of generative AI services with public-opinion attributes or social-mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions, and complete algorithm filing and the procedures for amending or cancelling that filing in accordance with the Provisions on the Administration of Algorithmic Recommendation in Internet Information Services.",
+            "source_title": "《生成式人工智能服务管理暂行办法》第十七条",
+            "publisher": "国家互联网信息办公室等七部门（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+            "date": "2023-07"
+          },
+          {
+            "quote_zh": "此次专项行动有效督促了互联网企业完成算法备案，初步建立起算法安全审查框架，大部分平台借机优化了推荐内容多样性、减少同质化信息推送。",
+            "quote_en": "This special campaign effectively pushed internet firms to complete algorithm filing and established an initial framework for algorithm security review; most platforms took the opportunity to improve the diversity of recommended content and reduce homogeneous information pushes.",
+            "source_title": "互联网信息服务算法治理：从专项行动迈向常态化长效化治理",
+            "publisher": "《中国信息安全》2025 年第 12 期（安全内参转载）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/86826",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "大模型备案",
+        "pinyin": "dà móxíng bèi'àn",
+        "status": "established",
+        "literal_back": "large-model filing",
+        "notes": "Industry shorthand for the generative-AI service filing. Distinct in practice from 算法备案 (different forms, different reviewing office) although the two are legally linked. CAICT reports the running totals.",
+        "attestations": []
+      },
+      {
+        "zh": "登记备案",
+        "pinyin": "dēngjì bèi'àn",
+        "status": "common",
+        "literal_back": "recording and filing",
+        "notes": "TC260's phrasing for registering AI systems deployed in critical information infrastructure — a lighter, security-oriented registration than the CAC service filing.",
+        "attestations": [
+          {
+            "quote_zh": "对在关键信息基础设施应用的人工智能系统进行登记备案，要求其具备与安全需求相匹配的安全防护能力。",
+            "quote_en": "AI systems deployed in critical information infrastructure shall be recorded and filed, and are required to have security protection capabilities commensurate with their security needs.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "注册",
+        "pinyin": "zhùcè",
+        "status": "common",
+        "literal_back": "register (enrol)",
+        "notes": "Used in the Chinese IDAIS texts for the proposed international/domestic registration of models and training runs above a compute or capability threshold. Not the PRC regulatory term — do not swap it for 备案.",
+        "attestations": [
+          {
+            "quote_zh": "我们应该立即对超过一定计算或能力阈值的人工智能模型和训练运行进行国内注册。",
+            "quote_en": "We should immediately implement domestic registration for AI models and training runs above certain compute or capability thresholds.",
+            "source_title": "IDAIS-Beijing《人工智能红线共识声明》（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-beijing/",
+            "date": "2024-03"
+          },
+          {
+            "quote_zh": "各国的安全监管部门可召集会议，合作制定并承诺实施模型注册和披露制度、事故报告机制、预警触发点及应急预案。",
+            "quote_en": "National AI safety authorities can convene to jointly develop and commit to implementing model registration and disclosure regimes, incident reporting mechanisms, early-warning tripwires and contingency plans.",
+            "source_title": "IDAIS-Venice 共识声明（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-venice/",
+            "date": "2024-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "国家互联网信息办公室 (CAC)",
+        "zh_used": "算法备案",
+        "note": "Art. 17, Interim Measures for Generative AI"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "备案制度 / 大模型备案",
+        "note": "reports cumulative filing counts"
+      },
+      {
+        "org": "IDAIS",
+        "zh_used": "注册",
+        "note": "for threshold-triggered registration of models and training runs"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "备案是事后记录，不等于审批；把它译成 licensing 会高估这一制度的约束力。",
+        "en": "Filing is an after-the-fact recording, not an approval; translating it as 'licensing' overstates how binding the regime is.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "licensing",
+      "generative-ai-measures",
+      "algorithmic-governance",
+      "security-assessment"
+    ],
+    "sources": [
+      "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "https://www.secrss.com/articles/86826",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://idais.ai/dialogue/idais-beijing/",
+      "https://idais.ai/dialogue/idais-venice/",
+      "https://www.cac.gov.cn/2022-12/11/c_1672221949318230.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "incident-reporting",
+    "en": "incident reporting",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "regulation",
+      "operations"
+    ],
+    "definition_en": "A duty or practice of recording and escalating AI failures, near-misses and misuse cases — to the developer's own risk process, to a regulator, or to an international mechanism.",
+    "definition_zh": "对人工智能故障、险情和滥用事件进行记录并向上报告的机制，报告对象可以是开发者内部的风险管理流程、监管部门，或国际层面的协调机制。",
+    "preferred_zh": "事件报告",
+    "translation_difficulty": "medium",
+    "pitfalls": "Three near-synonyms are in play and they are not interchangeable. 事件 is the neutral 'event/incident' and is what the technical AI-safety literature uses (事件报告). 事故 implies an accident with actual harm — IDAIS's Chinese text uses 事故报告机制, which reads more severe. 安全事件 is the established cybersecurity term and drags in the whole 应急响应 apparatus. Also note that PRC regulation attaches incident duties to 应急预案 (contingency plans) and 应急演练 (drills) rather than to a standalone reporting obligation, so 'incident reporting' as a discrete regulatory instrument is weaker in the PRC system than in the EU AI Act.",
+    "translations": [
+      {
+        "zh": "事件报告",
+        "pinyin": "shìjiàn bàogào",
+        "status": "established",
+        "literal_back": "incident report(ing)",
+        "notes": "The rendering used in Chinese frontier-AI risk-management writing, covering both near-misses (险情) and actual misuse.",
+        "attestations": [
+          {
+            "quote_zh": "事件报告：建立跟踪实际环境中的“险情”和实际滥用案例的机制，并将其反馈至风险分析阶段。",
+            "quote_en": "Incident reporting: establish mechanisms to track real-world 'near-misses' and actual misuse cases, and feed them back into the risk-analysis stage.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "所有研发人员、管理层及参与人工智能系统开发或部署的相关人员，都应定期接受安全培训，培训内容应涵盖风险识别、负责任的开发实践以及事件报告流程。",
+            "quote_en": "All R&D staff, management and personnel involved in developing or deploying AI systems should receive regular safety training covering risk identification, responsible development practices and incident-reporting procedures.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "事故报告机制",
+        "pinyin": "shìgù bàogào jīzhì",
+        "status": "common",
+        "literal_back": "accident-reporting mechanism",
+        "notes": "The wording in the official Chinese text of the IDAIS-Venice statement, in the arms-control-style package alongside model registration, tripwires and contingency plans. 事故 connotes realised harm.",
+        "attestations": [
+          {
+            "quote_zh": "各国的安全监管部门可召集会议，合作制定并承诺实施模型注册和披露制度、事故报告机制、预警触发点及应急预案。",
+            "quote_en": "National AI safety authorities can convene to jointly develop and commit to implementing model registration and disclosure regimes, incident reporting mechanisms, early-warning tripwires and contingency plans.",
+            "source_title": "IDAIS-Venice 共识声明（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-venice/",
+            "date": "2024-09"
+          }
+        ]
+      },
+      {
+        "zh": "安全事件",
+        "pinyin": "ānquán shìjiàn",
+        "status": "established",
+        "literal_back": "security/safety incident",
+        "notes": "The PRC standards register. TC260 pairs it with 应急预案 and 预警阈值 rather than with an external reporting duty. Inherits the safety/security ambiguity of 安全.",
+        "attestations": [
+          {
+            "quote_zh": "建立人工智能应用运行监测能力和安全事件应急预案，设置其关键指标的安全预警阈值，能够及时发现安全事件，并具备切换到人工或传统系统等的能力。",
+            "quote_en": "Establish runtime monitoring capability for AI applications and contingency plans for security incidents, set safety early-warning thresholds on key indicators, detect security incidents promptly, and retain the ability to fall back to manual or traditional systems.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "事件报告",
+        "note": "in the risk-governance stage of their framework"
+      },
+      {
+        "org": "IDAIS",
+        "zh_used": "事故报告机制",
+        "note": "official Chinese statement text"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "安全事件应急预案",
+        "note": "framework 2.0, §6.3.3"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "除了对外披露，开发者内部也应建立事件报告流程，把险情反馈到风险分析环节。",
+        "en": "Beyond external disclosure, developers should build internal incident-reporting processes that feed near-misses back into risk analysis.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-safety-governance-framework",
+      "idais",
+      "safety-standard"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://idais.ai/dialogue/idais-venice/",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "international-ai-governance",
+    "en": "international AI governance",
+    "en_aliases": [
+      "global AI governance"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "international"
+    ],
+    "definition_en": "Cross-border coordination on AI rules, standards and risk management — through the UN, summit processes, standards bodies and bilateral channels.",
+    "definition_zh": "各国就人工智能规则、标准和风险管理开展的跨境协调，载体包括联合国机制、峰会进程、标准化组织和双边渠道。",
+    "preferred_zh": "全球人工智能治理",
+    "translation_difficulty": "low",
+    "pitfalls": "全球 and 国际 are both available and PRC official discourse strongly prefers 全球人工智能治理 — 《全球人工智能治理倡议》, 《全球人工智能治理行动计划》, 全球人工智能治理体系. 国际 tends to attach to bodies and processes (国际人工智能治理机构, 国际交流合作) rather than to the field as a whole. The choice is not stylistic: 全球 carries the inclusive, developing-country-facing framing the PRC advances, while 国际 reads as inter-state. Separately, 治理 (governance) is deliberately broader than 监管 (regulation) and is preferred in international texts precisely because it does not imply a supranational regulator.",
+    "translations": [
+      {
+        "zh": "全球人工智能治理",
+        "pinyin": "quánqiú réngōng zhìnéng zhìlǐ",
+        "status": "established",
+        "literal_back": "global artificial-intelligence governance",
+        "notes": "The dominant form in PRC official and think-tank usage, and the form used in the titles of China's flagship documents.",
+        "attestations": [
+          {
+            "quote_zh": "在全球范围推动人工智能安全治理国际合作，共享最佳实践，提倡建立开放性国际交流合作平台，通过跨学科、跨领域、跨地区、跨国界的对话和合作，推动形成具有广泛共识的全球人工智能治理体系。",
+            "quote_en": "Promote international cooperation on AI safety governance worldwide, share best practices, advocate open platforms for international exchange and cooperation, and through interdisciplinary, cross-sector, cross-regional and cross-border dialogue and cooperation, work toward a global AI governance system with broad consensus.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "各国应在人工智能治理中加强信息交流和技术合作，共同做好风险防范，形成具有广泛共识的人工智能治理框架和标准规范",
+            "quote_en": "Countries should strengthen information exchange and technological cooperation in AI governance, jointly guard against risks, and form AI governance frameworks, standards and norms based on broad consensus.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          }
+        ]
+      },
+      {
+        "zh": "国际人工智能治理",
+        "pinyin": "guójì réngōng zhìnéng zhìlǐ",
+        "status": "common",
+        "literal_back": "international artificial-intelligence governance",
+        "notes": "Used where the emphasis is on inter-state machinery. The Global AI Governance Initiative itself uses 国际人工智能治理机构 for a proposed UN-framework body, and TC260 2.0 refers to 联合国国际人工智能科学小组 and the 全球人工智能治理对话机制.",
+        "attestations": [
+          {
+            "quote_zh": "积极支持在联合国框架下讨论成立国际人工智能治理机构",
+            "quote_en": "We actively support discussions within the UN framework on establishing an international AI governance institution.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          }
+        ]
+      },
+      {
+        "zh": "全球公共产品",
+        "pinyin": "quánqiú gōnggòng chǎnpǐn",
+        "status": "established",
+        "literal_back": "global public good",
+        "notes": "Not a translation of the headword, but the framing device that carries most of the weight in Chinese-language international AI-safety argument. Attested in the IDAIS Chinese statements and adopted by Shanghai AI Lab.",
+        "attestations": [
+          {
+            "quote_zh": "我们必须将人工智能安全视为全球公共产品，并为实现这些风险的全球治理而努力",
+            "quote_en": "We must treat AI safety as a global public good, and work toward global governance of these risks.",
+            "source_title": "IDAIS-Venice 共识声明（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-venice/",
+            "date": "2024-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "中华人民共和国外交部",
+        "zh_used": "全球人工智能治理",
+        "note": "title of the 2023 Initiative"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "全球人工智能治理体系",
+        "note": "framework 2.0, §8 全球协同共治"
+      },
+      {
+        "org": "IDAIS",
+        "zh_used": "全球治理 / 全球公共产品",
+        "note": "official Chinese statement text"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "在中文语境下讨论这一议题，通常说“全球人工智能治理”，而“国际”多用于指具体的机构和机制。",
+        "en": "In Chinese, this topic is usually called 'global AI governance'; 'international' tends to be reserved for specific bodies and mechanisms.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "global-ai-governance-initiative",
+      "ai-summit",
+      "idais",
+      "international-ai-safety-report"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+      "https://idais.ai/dialogue/idais-venice/",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "global-ai-governance-initiative",
+    "en": "Global AI Governance Initiative",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "international",
+      "chinese-origin"
+    ],
+    "definition_en": "China's flagship AI governance document, announced by Xi Jinping at the Third Belt and Road Forum and released on 18 October 2023. It sets out PRC positions on development, security and governance, including risk-tiered testing and evaluation, agile governance, and support for discussing an international AI governance body under the UN.",
+    "definition_zh": "中国人工智能治理的旗舰文件，2023 年 10 月 18 日在第三届“一带一路”国际合作高峰论坛上宣布并发布全文，围绕发展、安全、治理三方面阐述中国主张，包括建立风险等级测试评估体系、实施敏捷治理和分类分级管理，以及支持在联合国框架下讨论成立国际人工智能治理机构。",
+    "preferred_zh": "《全球人工智能治理倡议》",
+    "translation_difficulty": "low",
+    "pitfalls": "Chinese is the source language here; the English title is the official translation, not the original. Cite the Chinese text. Note that 倡议 is an *initiative/proposal* — a political statement of position, not a binding instrument, and not the same speech act as a 法规, 办法 or 标准. Its key phrases are load-bearing PRC formulations that resist literal translation: 以人为本 (people-centred), 智能向善 (AI for good), 敏捷治理 (agile governance), 分类分级管理 (classified and graded management). Note also that 安全 in this document spans safety, security and national security without distinction.",
+    "translations": [
+      {
+        "zh": "《全球人工智能治理倡议》",
+        "pinyin": "Quánqiú Réngōng Zhìnéng Zhìlǐ Chàngyì",
+        "status": "established",
+        "literal_back": "Global Artificial Intelligence Governance Initiative",
+        "notes": "Source-language title. Routinely cited by name in subsequent PRC documents, including TC260's framework.",
+        "attestations": [
+          {
+            "quote_zh": "推动建立风险等级测试评估体系，实施敏捷治理，分类分级管理，快速有效响应",
+            "quote_en": "Promote the establishment of a risk-tiered testing and evaluation system, implement agile governance and classified, graded management, and respond quickly and effectively.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "人工智能是人类发展新领域。当前，全球人工智能技术快速发展，对经济社会发展和人类文明进步产生深远影响，给世界带来巨大机遇。与此同时，人工智能技术也带来难以预知的各种风险和复杂挑战。",
+            "quote_en": "AI is a new frontier of human development. Today, rapid global advances in AI technology are profoundly affecting economic and social development and the progress of human civilisation, bringing great opportunities to the world. At the same time, AI technology also brings unpredictable risks and complex challenges.",
+            "source_title": "全球人工智能治理倡议（全文）",
+            "publisher": "中华人民共和国驻以色列大使馆",
+            "source_type": "gov",
+            "url": "https://il.china-embassy.gov.cn/zygx1/202310/t20231024_11166946.htm",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "落实《全球人工智能治理倡议》，遵循“以人为本、智能向善”的发展方向。",
+            "quote_en": "Implement the Global AI Governance Initiative and follow the direction of 'people-centred AI for good'.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "确保人工智能始终处于人类控制之下",
+        "pinyin": "quèbǎo réngōng zhìnéng shǐzhōng chǔyú rénlèi kòngzhì zhī xià",
+        "status": "established",
+        "literal_back": "ensure AI always remains under human control",
+        "notes": "Not the document title but its most quoted formulation, and the standard PRC official phrasing for what English AI-safety writing calls human control / avoiding loss of control. TC260 2.0 reuses it verbatim, which makes it the safest wording to adopt when writing for a PRC policy audience.",
+        "attestations": [
+          {
+            "quote_zh": "确保人工智能始终处于人类控制之下，打造可审核、可监督、可追溯、可信赖的人工智能技术",
+            "quote_en": "Ensure that AI always remains under human control, and build AI technology that is auditable, supervisable, traceable and trustworthy.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "推动形成涵盖技术防护、价值对齐、协同治理等多层面的可信人工智能基本准则，确保技术演进安全、可靠、可控，严防威胁人类生存发展的失控风险，确保人工智能始终处于人类控制之下。",
+            "quote_en": "Promote basic principles for trustworthy AI spanning technical safeguards, value alignment and collaborative governance; ensure technological evolution is safe, reliable and controllable; strictly guard against loss-of-control risks that threaten humanity's survival and development; and ensure AI always remains under human control.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "中华人民共和国外交部",
+        "zh_used": "《全球人工智能治理倡议》",
+        "note": "issuing body"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "《全球人工智能治理倡议》",
+        "note": "cited as the mandate for the AI Safety Governance Framework"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "《全球人工智能治理倡议》提出“确保人工智能始终处于人类控制之下”，这是目前中国官方文本中最接近“防止失控”表述的措辞。",
+        "en": "The Global AI Governance Initiative calls for 'ensuring AI always remains under human control' — currently the closest thing to a loss-of-control formulation in Chinese official texts.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "international-ai-governance",
+      "ai-safety-governance-framework",
+      "agile-governance"
+    ],
+    "sources": [
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+      "https://il.china-embassy.gov.cn/zygx1/202310/t20231024_11166946.htm",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "ai-safety-governance-framework",
+    "en": "AI Safety Governance Framework",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "standard",
+      "chinese-origin"
+    ],
+    "definition_en": "TC260's non-binding technical document setting out China's AI risk taxonomy and countermeasures. Version 1.0 was released 9 September 2024; version 2.0 on 15 September 2025, adding a three-way risk taxonomy (technology-inherent, technology-application, application-derived) and a five-level risk grading scale.",
+    "definition_zh": "全国网络安全标准化技术委员会发布的技术文件，系统提出中国的人工智能安全风险分类与应对措施。1.0 版于 2024 年 9 月 9 日发布，2.0 版于 2025 年 9 月 15 日发布，新增技术内生、技术应用、应用衍生三类风险划分，并探索五级风险分级。",
+    "preferred_zh": "《人工智能安全治理框架》",
+    "translation_difficulty": "low",
+    "pitfalls": "Chinese-origin document — cite the Chinese. The 2.0 PDF is bilingual on its title page and gives its own English title as 'AI Safety Governance Framework 2.0', so 安全 here is officially rendered *safety*; be aware that secondary English commentary sometimes renders it 'AI Security Governance Framework', and the document's contents in fact cover security (漏洞, 后门, 供应链) as much as safety. It is a 技术文件, not a 国家标准 — it is not mandatory and carries no penalties, so calling it 'China's AI safety standard' overstates it. Note also that 治理 (governance) not 监管 (regulation) is in the title, consistent with its non-binding status.",
+    "translations": [
+      {
+        "zh": "《人工智能安全治理框架》",
+        "pinyin": "Réngōng Zhìnéng Ānquán Zhìlǐ Kuàngjià",
+        "status": "established",
+        "literal_back": "artificial intelligence safety governance framework",
+        "notes": "Official title. The document's own title page carries the English 'AI Safety Governance Framework 2.0', making this one of the strongest attested EN↔ZH pairs in the whole category.",
+        "attestations": [
+          {
+            "quote_zh": "为应对人工智能快速发展的新风险新挑战，安全有效地释放应用需求，促进人工智能技术和产业发展，在国家互联网信息办公室的指导下，全国网络安全标准化技术委员会组织国家计算机网络应急技术处理协调中心等专业机构、科研院所、行业企业，持续跟踪风险变化，梳理调整风险分类，研究探索风险分级方法，动态调整更新防范治理措施，制定《人工智能安全治理框架》2.0 版。",
+            "quote_en": "To address the new risks and challenges of rapidly developing AI, safely and effectively release application demand, and promote AI technology and industry, under the guidance of the Cyberspace Administration of China, TC260 organised CNCERT/CC and other specialist institutions, research academies and industry firms to continuously track risk change, revise the risk taxonomy, explore risk-grading methods and dynamically update preventive and governance measures, and formulated the AI Safety Governance Framework 2.0.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "贯彻落实《全球人工智能治理倡议》，网安标委研究制定了《人工智能安全治理框架》（以下简称《框架》）。",
+            "quote_en": "To implement the Global AI Governance Initiative, TC260 developed the AI Safety Governance Framework (hereinafter the Framework).",
+            "source_title": "《人工智能安全治理框架》1.0 版发布",
+            "publisher": "中央网络安全和信息化委员会办公室（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+            "date": "2024-09"
+          },
+          {
+            "quote_zh": "9 月 15 日，在 2025 年国家网络安全宣传周主论坛上，《人工智能安全治理框架》2.0 版正式发布。",
+            "quote_en": "On 15 September, at the main forum of the 2025 National Cybersecurity Awareness Week, version 2.0 of the AI Safety Governance Framework was formally released.",
+            "source_title": "《人工智能安全治理框架》2.0 版发布",
+            "publisher": "中央网络安全和信息化委员会办公室（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "AI Safety Governance Framework 2.0",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The official English title, printed on the Chinese document's own title page alongside the Chinese. Recorded here because the parallel title is itself the evidence that TC260 translates 安全 as 'safety' in this context.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能安全治理框架2.0 全国网络安全标准化技术委员会 National Technical Committee 260 on Cybersecurity of SAC 国家计算机网络应急技术处理协调中心 2025年9月 AI Safety Governance Framework 2.0",
+            "quote_en": "AI Safety Governance Framework 2.0 — National Technical Committee 260 on Cybersecurity of SAC; National Computer Network Emergency Response Technical Team/Coordination Center of China; September 2025.",
+            "source_title": "《人工智能安全治理框架》2.0 版（封面）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260)",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "TC260",
+        "zh_used": "《人工智能安全治理框架》",
+        "note": "issuing body; 1.0 (2024-09) and 2.0 (2025-09)"
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "TC260《人工智能安全治理框架 2.0》",
+        "note": "mapped their risk-management framework against it for interoperability"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "《人工智能安全治理框架》2.0 版在 1.0 版基础上探索风险分级，把风险分为低、一般、重大等级别。",
+        "en": "Version 2.0 of the AI Safety Governance Framework builds on 1.0 by exploring risk grading, sorting risks into levels such as low, general and significant.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "tc260",
+      "safety-standard",
+      "risk-classification-grading",
+      "global-ai-governance-initiative"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+      "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm",
+      "https://comparativeai.org/zh/rules/china/ai-safety-governance-framework/",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "tc260",
+    "en": "TC260",
+    "en_aliases": [
+      "National Technical Committee 260 on Cybersecurity of SAC",
+      "National Information Security Standardization Technical Committee"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "institutions",
+      "standard"
+    ],
+    "definition_en": "China's national standards committee for cybersecurity, operating under the Standardization Administration of China and guided by the CAC. It drafts the GB/T national standards covering AI security, and issued the AI Safety Governance Framework.",
+    "definition_zh": "中国网络安全领域的国家标准化技术委员会，隶属国家标准化管理委员会，业务上受国家互联网信息办公室指导，负责起草人工智能安全相关国家标准，并发布了《人工智能安全治理框架》。",
+    "preferred_zh": "全国网络安全标准化技术委员会",
+    "translation_difficulty": "low",
+    "pitfalls": "Two traps. First, the committee was renamed: older English sources call it the 'National Information Security Standardization Technical Committee', but its own current English name, printed on its documents, is 'National Technical Committee 260 on Cybersecurity of SAC'. Second, the Chinese short form is 网安标委, not TC260 — Chinese-language readers will recognise 网安标委 or the full name; the Latin 'TC260' appears mainly in bilingual and industry writing.",
+    "translations": [
+      {
+        "zh": "全国网络安全标准化技术委员会",
+        "pinyin": "Quánguó Wǎngluò Ānquán Biāozhǔnhuà Jìshù Wěiyuánhuì",
+        "status": "established",
+        "literal_back": "national cybersecurity standardization technical committee",
+        "notes": "Official full name, with its own official English rendering printed alongside it on the AI Safety Governance Framework title page.",
+        "attestations": [
+          {
+            "quote_zh": "全国网络安全标准化技术委员会 National Technical Committee 260 on Cybersecurity of SAC",
+            "quote_en": "National Technical Committee 260 on Cybersecurity of SAC (the committee's own bilingual masthead).",
+            "source_title": "《人工智能安全治理框架》2.0 版（封面）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260)",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "我们对照国内外领先的人工智能风险管理指南，特别是全国网络安全标准化技术委员会 TC260《人工智能安全治理框架 2.0》和欧盟《通用型人工智能模型行为准则》，对本框架的风险管理措施进行了映射分析。",
+            "quote_en": "We mapped this framework's risk-management measures against leading domestic and international AI risk-management guidance, in particular TC260's AI Safety Governance Framework 2.0 and the EU's General-Purpose AI Code of Practice.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "网安标委",
+        "pinyin": "Wǎng'ān Biāowěi",
+        "status": "established",
+        "literal_back": "cyber-security standards committee (abbrev.)",
+        "notes": "The standard Chinese abbreviation, widely used in media headlines and industry writing (e.g. Chinese coverage of the 1.0 framework release is headlined 网安标委发布《人工智能安全治理框架（1.0版）》). Prefer it over writing 'TC260' in Chinese-language prose aimed at a domestic audience. Recorded without an attestation because the sources seen for it were not fetched in full during this research pass.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "TC260",
+        "zh_used": "全国网络安全标准化技术委员会",
+        "note": "self-designation on its documents"
+      },
+      {
+        "org": "安远 AI / 上海人工智能实验室",
+        "zh_used": "全国网络安全标准化技术委员会 TC260",
+        "note": "cited when mapping frameworks"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "该框架由网安标委组织国家计算机网络应急技术处理协调中心等单位制定。",
+        "en": "The framework was drafted by TC260 together with CNCERT/CC and other bodies.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-safety-governance-framework",
+      "safety-standard",
+      "graded-protection"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.tc260.org.cn/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "eu-ai-act",
+    "en": "EU AI Act",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "regulation",
+      "international"
+    ],
+    "definition_en": "The European Union's horizontal AI regulation, structured around risk tiers, with separate obligations for general-purpose AI models. Its implementation phase — harmonised standards, regulatory sandboxes, and a November 2025 simplification proposal — is now the main subject of Chinese commentary.",
+    "definition_zh": "欧盟以风险分级为核心的人工智能横向立法，并对通用人工智能模型设有单独义务。中文评论目前主要关注其落地阶段：协调标准制定、监管沙盒试点，以及 2025 年 11 月欧盟委员会提出的简化修订提案。",
+    "preferred_zh": "《欧盟人工智能法案》",
+    "translation_difficulty": "medium",
+    "pitfalls": "The rendering is genuinely unsettled between 《人工智能法案》 and 《人工智能法》 — CAICT's 2025 governance report uses both within the same document. 法案 strictly means 'bill' (a draft before enactment), so now that the Act is in force 《人工智能法》 is the more accurate word, yet 法案 remains the more widely circulated form. Either is understood; 《欧盟人工智能法案》 is the safer choice for recognisability, 《欧盟人工智能法》 the more precise. Also note that Chinese sources often discuss the associated 《通用型人工智能模型行为准则》 (GPAI Code of Practice) as a separate instrument.",
+    "translations": [
+      {
+        "zh": "《欧盟人工智能法案》",
+        "pinyin": "Ōuméng Réngōng Zhìnéng Fǎ'àn",
+        "status": "contested",
+        "literal_back": "EU artificial intelligence bill/act",
+        "notes": "Most widely circulated form. Competes with 《欧盟人工智能法》; the choice signals whether the writer treats it as a bill or as enacted law.",
+        "attestations": []
+      },
+      {
+        "zh": "《欧盟人工智能法》",
+        "pinyin": "Ōuméng Réngōng Zhìnéng Fǎ",
+        "status": "contested",
+        "literal_back": "EU artificial intelligence law",
+        "notes": "Used in the same CAICT report when citing specific articles, which suggests it is becoming the preferred form for legal-technical reference now that the Regulation is in force.",
+        "attestations": [
+          {
+            "quote_zh": "欧盟《人工智能法》第 5 条明确禁止对人类造成身体或心理伤害的 AI 系统，第 50 条要求具有情感交互功能的高风险 AI 系统提供详尽的技术文档、透明度报告以及全面的风险评估证明。",
+            "quote_en": "Article 5 of the EU AI Act expressly prohibits AI systems that cause physical or psychological harm to humans, and Article 50 requires high-risk AI systems with affective-interaction functions to provide detailed technical documentation, transparency reports and comprehensive risk-assessment evidence.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "高风险人工智能系统",
+        "pinyin": "gāo fēngxiǎn réngōng zhìnéng xìtǒng",
+        "status": "established",
+        "literal_back": "high-risk AI system",
+        "notes": "The Act's central category, and a fixed collocation in Chinese commentary. Do not confuse with the PRC's own 风险分级 levels (低/一般/重大…), which are a different scale entirely.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "《人工智能法案》 and 《人工智能法》",
+        "note": "both forms used in the same 2025 governance report"
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "欧盟《通用型人工智能模型行为准则》",
+        "note": "mapped against for interoperability"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "《欧盟人工智能法案》以风险分级为核心，与我国以场景和备案为核心的路径明显不同。",
+        "en": "The EU AI Act is built around risk tiers, a markedly different approach from China's scenario- and filing-centred path.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "frontier-ai-regulation",
+      "safety-standard",
+      "risk-classification-grading"
+    ],
+    "sources": [
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "ai-summit",
+    "en": "AI Safety Summit",
+    "en_aliases": [
+      "Bletchley",
+      "Seoul Summit",
+      "Paris AI Action Summit",
+      "AI Impact Summit"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "international",
+      "process"
+    ],
+    "definition_en": "The intergovernmental summit series begun at Bletchley Park in November 2023, continued in Seoul (May 2024), Paris (February 2025) and India (2026). The name changed with each host: 'Safety' at Bletchley, then 'AI Seoul Summit', then 'AI Action Summit', then 'AI Impact Summit'.",
+    "definition_zh": "始于 2023 年 11 月英国布莱切利庄园的政府间峰会系列，其后依次为 2024 年 5 月首尔、2025 年 2 月巴黎、2026 年印度。每届主办方都改名：布莱切利为“人工智能安全峰会”，其后依次为“人工智能首尔峰会”“人工智能行动峰会”“人工智能影响力峰会”。",
+    "preferred_zh": "人工智能安全峰会",
+    "translation_difficulty": "medium",
+    "pitfalls": "The renaming is the whole story and the Chinese tracks it faithfully: 安全 was in the first summit's name and has been absent from every subsequent one — 人工智能首尔峰会, 巴黎人工智能行动峰会, and the 2026 Indian edition. So 人工智能安全峰会 is correct only for Bletchley and as a name for the series' original character; using it as a generic label for the series implies a safety focus that the later meetings dropped. Chinese sources normally carry the English name in parentheses on first mention, which is a good habit to copy.",
+    "translations": [
+      {
+        "zh": "人工智能安全峰会",
+        "pinyin": "réngōng zhìnéng ānquán fēnghuì",
+        "status": "established",
+        "literal_back": "artificial intelligence safety summit",
+        "notes": "For the 2023 Bletchley meeting specifically. Chinese reporting pairs it with the English name.",
+        "attestations": [
+          {
+            "quote_zh": "首届人工智能安全峰会（AI Safety Summit）于2023年在英国举行",
+            "quote_en": "The first AI Safety Summit was held in the UK in 2023.",
+            "source_title": "从国际人工智能峰会看治理趋势变化",
+            "publisher": "安全内参（原载《中国信息安全》，作者单位中国信息通信研究院安全研究所）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/79641",
+            "date": "2025-06"
+          },
+          {
+            "quote_zh": "5月21日，第二届人工智能安全峰会在韩国首尔召开。峰会以“安全、创新、包容”为议题，就进一步保障AI安全性、推进AI可持续发展等方案进行讨论。",
+            "quote_en": "On 21 May the second AI Safety Summit opened in Seoul, South Korea. Under the themes of safety, innovation and inclusivity, it discussed proposals for further safeguarding AI safety and advancing sustainable AI development.",
+            "source_title": "中国智谱AI与OpenAI等公司共同签署前沿人工智能安全承诺",
+            "publisher": "中国日报中文网",
+            "source_type": "media",
+            "url": "https://cn.chinadaily.com.cn/a/202405/22/WS664ddd1da3109f7860ddf05e.html",
+            "date": "2024-05"
+          }
+        ]
+      },
+      {
+        "zh": "人工智能首尔峰会",
+        "pinyin": "réngōng zhìnéng Shǒu'ěr fēnghuì",
+        "status": "established",
+        "literal_back": "AI Seoul summit",
+        "notes": "Also written 第二届人工智能安全峰会 in some Chinese coverage, which is arguably a back-formation since the official English name dropped 'Safety'.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能首尔峰会（AI Seoul Summit）",
+            "quote_en": "AI Seoul Summit",
+            "source_title": "从国际人工智能峰会看治理趋势变化",
+            "publisher": "安全内参（原载《中国信息安全》）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/79641",
+            "date": "2025-06"
+          }
+        ]
+      },
+      {
+        "zh": "巴黎人工智能行动峰会",
+        "pinyin": "Bālí réngōng zhìnéng xíngdòng fēnghuì",
+        "status": "established",
+        "literal_back": "Paris AI action summit",
+        "notes": "行动峰会 renders 'Action Summit'. The dropping of 安全 from the title is visible in Chinese as it is in English, and Chinese commentary treats it as a signal of the shift from safety to adoption and competitiveness.",
+        "attestations": [
+          {
+            "quote_zh": "巴黎人工智能行动峰会于2025年2月10日至11日在法国巴黎大皇宫举行，由法国和印度联合主办",
+            "quote_en": "The Paris AI Action Summit was held at the Grand Palais in Paris on 10–11 February 2025, co-hosted by France and India.",
+            "source_title": "从国际人工智能峰会看治理趋势变化",
+            "publisher": "安全内参（原载《中国信息安全》）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/79641",
+            "date": "2025-06"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "中国信息通信研究院安全研究所 / 《中国信息安全》",
+        "zh_used": "人工智能安全峰会、人工智能首尔峰会、巴黎人工智能行动峰会",
+        "note": "each paired with the English name"
+      },
+      {
+        "org": "中国日报中文网",
+        "zh_used": "首届AI安全峰会、《布莱切利宣言》",
+        "note": "coverage of the Seoul commitments"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "从布莱切利到巴黎，峰会名称里的“安全”二字消失了，议程重心也随之转向应用与竞争力。",
+        "en": "From Bletchley to Paris the word 'safety' disappeared from the summit's name, and the agenda shifted with it toward adoption and competitiveness.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "frontier-ai-safety-commitments",
+      "ai-safety-institute",
+      "international-ai-governance",
+      "international-ai-safety-report"
+    ],
+    "sources": [
+      "https://www.secrss.com/articles/79641",
+      "https://cn.chinadaily.com.cn/a/202405/22/WS664ddd1da3109f7860ddf05e.html",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "international-ai-safety-report",
+    "en": "International AI Safety Report",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "international",
+      "report"
+    ],
+    "definition_en": "The scientific synthesis on general-purpose AI risks chaired by Yoshua Bengio, first published 29 January 2025 with contributions nominated by 30 countries plus the EU, OECD and UN. Chinese experts including Zeng Yi sit on its expert advisory panel; Andrew Yao and Zhang Ya-Qin are senior advisers.",
+    "definition_zh": "由图灵奖得主 Yoshua Bengio 担任主席的通用人工智能风险科学综述报告，首份报告于 2025 年 1 月 29 日发布，由 30 个国家及欧盟、经合组织、联合国提名的专家参与。中国科学院自动化研究所曾毅等中国学者参加专家顾问组，姚期智、张亚勤担任高级顾问。",
+    "preferred_zh": "《国际人工智能安全报告》",
+    "translation_difficulty": "low",
+    "pitfalls": "Two names circulate because the report itself was renamed: the interim version was the 'International Scientific Report on the Safety of Advanced AI', rendered 《高等人工智能安全国际科学报告》, before it became the International AI Safety Report / 《国际人工智能安全报告》. Chinese sources sometimes give both. Note that the report's Chinese title uses 安全, so a reader cannot tell from the title alone that its subject is safety rather than security — the content settles it.",
+    "translations": [
+      {
+        "zh": "《国际人工智能安全报告》",
+        "pinyin": "Guójì Réngōng Zhìnéng Ānquán Bàogào",
+        "status": "established",
+        "literal_back": "international artificial intelligence safety report",
+        "notes": "The settled Chinese title, used by Chinese security media and cited as a foundational source by Chinese frontier-AI risk work.",
+        "attestations": [
+          {
+            "quote_zh": "国际人工智能安全报告(International AI Safety Report, 全称为《高等人工智能安全国际科学报告(International Scientific Report on the Safety of Advanced AI)》) 于1月29日正式发布。",
+            "quote_en": "The International AI Safety Report (in full, the International Scientific Report on the Safety of Advanced AI) was formally released on 29 January.",
+            "source_title": "国际人工智能安全报告正式发布",
+            "publisher": "安全内参",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/75375",
+            "date": "2025-02"
+          },
+          {
+            "quote_zh": "本框架以《国际人工智能安全报告（2025 年 1 月）》和《人工智能安全治理框架》1.0 版、2.0 版为基础，关注具备高影响能力的通用型人工智能模型可能引发的灾难性风险。",
+            "quote_en": "This framework builds on the International AI Safety Report (January 2025) and versions 1.0 and 2.0 of the AI Safety Governance Framework, focusing on catastrophic risks that may arise from high-impact general-purpose AI models.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "《高等人工智能安全国际科学报告》",
+        "pinyin": "Gāoděng Réngōng Zhìnéng Ānquán Guójì Kēxué Bàogào",
+        "status": "common",
+        "literal_back": "international scientific report on the safety of advanced AI",
+        "notes": "Renders the report's original/full name. Note 高等 for 'advanced' here, where most Chinese AI-safety writing would use 高级 or 前沿 — a sign this title was translated ad hoc rather than settling into the field's vocabulary.",
+        "attestations": [
+          {
+            "quote_zh": "国际人工智能安全报告(International AI Safety Report, 全称为《高等人工智能安全国际科学报告(International Scientific Report on the Safety of Advanced AI)》) 于1月29日正式发布。",
+            "quote_en": "The International AI Safety Report (in full, the International Scientific Report on the Safety of Advanced AI) was formally released on 29 January.",
+            "source_title": "国际人工智能安全报告正式发布",
+            "publisher": "安全内参",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/75375",
+            "date": "2025-02"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "《国际人工智能安全报告》",
+        "note": "used as the basis of their risk taxonomy"
+      },
+      {
+        "org": "安全内参",
+        "zh_used": "国际人工智能安全报告",
+        "note": "release coverage naming Chinese contributors"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "中国学者和机构以不同形式参与和贡献于本报告的形成全过程",
+        "en": "Chinese scholars and institutions participated in and contributed to the whole process of producing this report in various ways.",
+        "source": "https://www.secrss.com/articles/75375"
+      }
+    ],
+    "related": [
+      "ai-summit",
+      "idais",
+      "international-ai-governance"
+    ],
+    "sources": [
+      "https://www.secrss.com/articles/75375",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://concordia-ai.com/research/international-ai-safety-report/",
+      "https://internationalaisafetyreport.org/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "frontier-ai-safety-commitments",
+    "en": "Frontier AI Safety Commitments",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "international",
+      "voluntary"
+    ],
+    "definition_en": "Voluntary commitments signed by 16 AI companies at the AI Seoul Summit on 21 May 2024: publish a safety framework, define capability thresholds at which risks become intolerable, and set out mitigations — including not developing or deploying a model at all if the risks cannot be brought below the thresholds. Zhipu AI was the Chinese signatory.",
+    "definition_zh": "2024 年 5 月 21 日人工智能首尔峰会上由 16 家人工智能企业签署的自愿性承诺，要求公开安全框架、界定风险不可容忍的能力阈值并说明缓解措施，包括在风险无法降至阈值以下时不开发或不部署模型。智谱 AI 是其中唯一的中国签署方。",
+    "preferred_zh": "前沿人工智能安全承诺",
+    "translation_difficulty": "low",
+    "pitfalls": "Straightforward, and Chinese coverage carries the English name in parentheses. The thing to flag is that a separate, PRC-domestic instrument exists with a confusingly similar name: 《人工智能安全承诺》 / 《中国人工智能安全承诺框架》, a voluntary commitment led by CAICT and signed by 22 domestic foundation-model developers. Do not conflate the two — the Seoul commitments are an international, frontier-risk instrument; the CAICT one is a domestic industry self-discipline framework.",
+    "translations": [
+      {
+        "zh": "前沿人工智能安全承诺",
+        "pinyin": "qiányán réngōng zhìnéng ānquán chéngnuò",
+        "status": "established",
+        "literal_back": "frontier artificial intelligence safety commitments",
+        "notes": "Used with the English name attached on first mention in Chinese coverage.",
+        "attestations": [
+          {
+            "quote_zh": "此次峰会上，智谱AI 同来自北美、亚洲、欧洲和中东地区的 15 家顶级人工智能公司一道就AI开发安全承诺达成一致，签署前沿人工智能安全承诺（Frontier AI Safety Commitments）。",
+            "quote_en": "At the summit, Zhipu AI joined 15 leading AI companies from North America, Asia, Europe and the Middle East in agreeing on safety commitments for AI development and signing the Frontier AI Safety Commitments.",
+            "source_title": "中国智谱AI与OpenAI等公司共同签署前沿人工智能安全承诺",
+            "publisher": "中国日报中文网",
+            "source_type": "media",
+            "url": "https://cn.chinadaily.com.cn/a/202405/22/WS664ddd1da3109f7860ddf05e.html",
+            "date": "2024-05"
+          },
+          {
+            "quote_zh": "前沿人工智能安全承诺主要包括确保前沿人工智能安全的负责任治理结构和透明度、基于人工智能安全框架、负责任地说明将如何衡量前沿人工智能模型的风险以及建立前沿人工智能安全模型风险缓解机制的明确流程。",
+            "quote_en": "The Frontier AI Safety Commitments mainly cover responsible governance structures and transparency for frontier AI safety, safety frameworks, responsible accounts of how frontier model risks will be measured, and clear processes for establishing risk-mitigation mechanisms.",
+            "source_title": "中国智谱AI与OpenAI等公司共同签署前沿人工智能安全承诺",
+            "publisher": "中国日报中文网",
+            "source_type": "media",
+            "url": "https://cn.chinadaily.com.cn/a/202405/22/WS664ddd1da3109f7860ddf05e.html",
+            "date": "2024-05"
+          }
+        ]
+      },
+      {
+        "zh": "《中国人工智能安全承诺框架》",
+        "pinyin": "Zhōngguó Réngōng Zhìnéng Ānquán Chéngnuò Kuàngjià",
+        "status": "established",
+        "literal_back": "China AI safety commitment framework",
+        "notes": "The domestic analogue, released at WAIC 2025 and led by CAICT. A distinct instrument, listed here so translators do not merge the two.",
+        "attestations": [
+          {
+            "quote_zh": "中国人工智能发展与安全研究网络成员在WAIC 2025上发布了更新版的《中国人工智能安全承诺框架》。",
+            "quote_en": "Members of the China AI Safety and Development Association released an updated version of the China AI Safety Commitments Framework at WAIC 2025.",
+            "source_title": "《中国人工智能安全全景报告（2025）》发布",
+            "publisher": "安全内参 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://www.secrss.com/articles/81779",
+            "date": "2025-08"
+          },
+          {
+            "quote_zh": "为把握新一轮发展机遇，中国人工智能发展与安全研究网络成员郑重发起《中国人工智能安全承诺框架》，通过产业自律，以高水平安全保障高质量发展，协力共促人工智能稳健发展。",
+            "quote_en": "To seize this new round of development opportunities, members of the China AI Safety and Development Association solemnly launch the China AI Safety Commitments Framework, using industry self-discipline to safeguard high-quality development with high-level safety and jointly promote the steady development of AI.",
+            "source_title": "WAIC发布《中国人工智能安全承诺框架》（附全文）",
+            "publisher": "通信世界网 / 中国信息通信研究院",
+            "source_type": "media",
+            "url": "https://www.cww.net.cn/article?id=602676",
+            "date": "2025-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "智谱 AI (Zhipu)",
+        "zh_used": "前沿人工智能安全承诺",
+        "note": "sole Chinese signatory at Seoul, May 2024"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "《中国人工智能安全承诺框架》",
+        "note": "domestic voluntary commitment, 22 signatories"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "签署前沿人工智能安全承诺意味着要公开安全框架，并说明在何种能力阈值下将停止开发或部署。",
+        "en": "Signing the Frontier AI Safety Commitments means publishing a safety framework and stating the capability thresholds at which development or deployment will stop.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-summit",
+      "frontier-ai-regulation",
+      "moratorium"
+    ],
+    "sources": [
+      "https://cn.chinadaily.com.cn/a/202405/22/WS664ddd1da3109f7860ddf05e.html",
+      "https://www.secrss.com/articles/81779",
+      "https://www.cww.net.cn/article?id=602676",
+      "https://news.sciencenet.cn/htmlnews/2024/5/523155.shtm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "idais",
+    "en": "International Dialogues on AI Safety",
+    "abbr": "IDAIS",
+    "category": "governance-policy",
+    "tags": [
+      "international",
+      "track-2"
+    ],
+    "definition_en": "A track-two dialogue series convening senior AI scientists from China and the West, organised by the Safe AI Forum. Meetings: Oxford (2023), Beijing (March 2024), Venice (September 2024), Shanghai (July 2025), London (April 2026). Each issues a consensus statement in parallel English and Chinese.",
+    "definition_zh": "由 Safe AI Forum 组织的二轨对话系列，汇集中西方资深人工智能科学家，已举办牛津（2023）、北京（2024 年 3 月）、威尼斯（2024 年 9 月）、上海（2025 年 7 月）、伦敦（2026 年 4 月）等届，每届发布中英文对照的共识声明。",
+    "preferred_zh": "人工智能安全国际对话",
+    "translation_difficulty": "medium",
+    "pitfalls": "The name is not stable in Chinese. Safe AI Forum's own Chinese page uses 人工智能安全国际对话（IDAIS）; Tsinghua AIR and Chinese media covering the Beijing meeting used 北京AI安全国际对话; and 国际人工智能安全对话 also circulates. Word order matters: 人工智能安全国际对话 = 'international dialogue on AI safety' (the English), whereas 国际人工智能安全对话 parses as 'dialogue on international AI safety'. Prefer the first. The Beijing statement's own Chinese title is 《北京AI安全国际共识》 / 《人工智能红线共识声明》, not a translation of 'IDAIS'. The bilingual statements are the single highest-value attestation source in this category — quote them directly.",
+    "translations": [
+      {
+        "zh": "人工智能安全国际对话",
+        "pinyin": "réngōng zhìnéng ānquán guójì duìhuà",
+        "status": "common",
+        "literal_back": "AI-safety international dialogue",
+        "notes": "The form used on the organiser's own Chinese-language page, so the closest thing to an official rendering.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能安全国际对话(IDAIS)",
+            "quote_en": "International Dialogues on AI Safety (IDAIS)",
+            "source_title": "人工智能安全国际对话(IDAIS)政策指南",
+            "publisher": "Safe AI Forum",
+            "source_type": "report",
+            "url": "https://saif.org/research/policy-guide-cn/",
+            "date": "2025-02"
+          },
+          {
+            "quote_zh": "自2023年底以来，人工智能安全国际对话已召集全球顶尖科学家与学者，就前沿人工智能系统风险及应对风险所需的相关治理干预措施达成共识。",
+            "quote_en": "Since late 2023, the International Dialogues on AI Safety have convened leading scientists and scholars worldwide to reach consensus on the risks of frontier AI systems and the governance interventions needed to address them.",
+            "source_title": "人工智能安全国际对话(IDAIS)政策指南",
+            "publisher": "Safe AI Forum",
+            "source_type": "report",
+            "url": "https://saif.org/research/policy-guide-cn/",
+            "date": "2025-02"
+          }
+        ]
+      },
+      {
+        "zh": "北京AI安全国际对话",
+        "pinyin": "Běijīng AI ānquán guójì duìhuà",
+        "status": "established",
+        "literal_back": "Beijing AI safety international dialogue",
+        "notes": "The name of the March 2024 Beijing meeting as used by the Chinese host institutions. Note the Latin 'AI' kept inline, which is normal in Chinese technical and institutional writing.",
+        "attestations": [
+          {
+            "quote_zh": "2024年3月，此次智源研究院发起的“北京AI安全国际对话”成功举办，不仅加强了中国与国际AI安全领域的交流与合作，也推动了全球AI安全技术的发展和共识形成，为我国深度参与国际AI安全合作搭建了面向世界的平台。",
+            "quote_en": "In March 2024 the Beijing International Dialogue on AI Safety initiated by BAAI was successfully held; it strengthened exchange and cooperation between China and the international AI safety community, advanced global AI safety technology and consensus-building, and built a world-facing platform for China to participate deeply in international AI safety cooperation.",
+            "source_title": "Hinton、Bengio、张亚勤等签署共识：北京AI安全国际对话收官，搭建中外AI安全合作平台",
+            "publisher": "清华大学智能产业研究院 (THU AIR)",
+            "source_type": "gov",
+            "url": "https://air.tsinghua.edu.cn/info/1007/2202.htm",
+            "date": "2024-03"
+          }
+        ]
+      },
+      {
+        "zh": "《人工智能红线共识声明》",
+        "pinyin": "Réngōng Zhìnéng Hóngxiàn Gòngshí Shēngmíng",
+        "status": "established",
+        "literal_back": "AI red-lines consensus statement",
+        "notes": "Chinese title of the IDAIS-Beijing statement. 红线 (red line) is fully naturalised in Chinese political vocabulary, which makes it an unusually comfortable import for AI-safety argument in the PRC context.",
+        "attestations": [
+          {
+            "quote_zh": "需要全面的治理制度，以确保已开发或部署的系统不会违反红线。",
+            "quote_en": "Comprehensive governance regimes are needed to ensure that systems developed or deployed do not cross red lines.",
+            "source_title": "IDAIS-Beijing《人工智能红线共识声明》（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-beijing/",
+            "date": "2024-03"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "Safe AI Forum",
+        "zh_used": "人工智能安全国际对话（IDAIS）",
+        "note": "on its own Chinese policy-guide page"
+      },
+      {
+        "org": "清华大学智能产业研究院 (THU AIR)",
+        "zh_used": "北京AI安全国际对话",
+        "note": "co-host of the March 2024 meeting"
+      },
+      {
+        "org": "北京智源人工智能研究院 (BAAI)",
+        "zh_used": "北京AI安全国际共识",
+        "note": "hosts the Chinese statement text"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "IDAIS 各届声明都有中英文对照版本，是查证人工智能安全术语译法的最佳来源之一。",
+        "en": "Every IDAIS statement exists in parallel Chinese and English, making the series one of the best sources for verifying AI-safety terminology.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "international-ai-governance",
+      "verification",
+      "model-registration",
+      "incident-reporting"
+    ],
+    "sources": [
+      "https://saif.org/research/policy-guide-cn/",
+      "https://idais.ai/",
+      "https://idais.ai/dialogue/idais-beijing/",
+      "https://idais.ai/dialogue/idais-venice/",
+      "https://idais.ai/dialogue/idais-shanghai/",
+      "https://idais.ai/dialogue/idais-london/",
+      "https://air.tsinghua.edu.cn/info/1007/2202.htm",
+      "https://idais-beijing.baai.ac.cn/?lang=zh"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "licensing",
+    "en": "licensing",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "regulation"
+    ],
+    "definition_en": "A regime in which an activity is prohibited unless a regulator has granted permission in advance. Proposed for frontier AI training and deployment; not the instrument China actually uses for AI.",
+    "definition_zh": "未经监管部门事先批准即不得从事某项活动的制度。国际上有人主张对前沿人工智能的训练和部署实行许可制，但中国目前对人工智能采用的并非许可制。",
+    "preferred_zh": "许可",
+    "translation_difficulty": "high",
+    "pitfalls": "The essential point in this category. Chinese administrative law distinguishes 行政许可 (administrative licensing — prohibited unless permitted, governed by the 行政许可法) from 备案 (filing — permitted, but you must record it). China's AI regime is built on 备案, not 许可. English writing that calls China's algorithm/model filing a 'licensing regime' overstates the state's gatekeeping power; conversely, Chinese writing that renders proposals for frontier-AI 'licensing' as 备案 understates them. Keep the pair distinct: 许可 = licence/permission, 备案 = filing. 牌照 is the informal industry word for a licence-as-asset (telecom, finance) and carries a market-access connotation; 审批 (approval) is a third adjacent term. CAICT's report is explicit that traditional 物理准入许可 tools are failing for AI.",
+    "translations": [
+      {
+        "zh": "许可",
+        "pinyin": "xǔkě",
+        "status": "established",
+        "literal_back": "permission / licence",
+        "notes": "The legal term (行政许可 for the administrative-law concept, 出口许可 for export licences). Established generally; what is unattested is any PRC AI-specific licensing regime, because none exists.",
+        "attestations": [
+          {
+            "quote_zh": "虽然研发能力集中在少数国家与科技巨头手中，但应用端却通过开源模型、云端处理等体现出低门槛、去中心化等特点，使得传统依赖物理准入许可、实体边界检查和静态合规审查的监管工具失效。",
+            "quote_en": "Although R&D capability is concentrated in a few countries and tech giants, the application layer — via open-weight models and cloud processing — is low-barrier and decentralised, which renders ineffective the traditional regulatory toolkit of physical entry licensing, physical border checks and static compliance review.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          },
+          {
+            "quote_zh": "与此同时，国会中出现了以国家安全为由加强管制的呼声，多项法案如《美中人工智能能力脱钩法案》《AI 监督法案》等均赋予国会直接否决相关出口许可的权力。",
+            "quote_en": "At the same time, calls have emerged in Congress to tighten controls on national-security grounds, with bills such as the Decoupling America's Artificial Intelligence Capabilities from China Act and the AI Oversight Act giving Congress power to directly veto relevant export licences.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "备案",
+        "pinyin": "bèi'àn",
+        "status": "deprecated",
+        "literal_back": "put on file / filing",
+        "notes": "Recorded here as a translation to avoid, not to use. 备案 is what China actually operates and is systematically weaker than licensing: no prior approval, no discretionary refusal in the ordinary case. Translating 'licensing' as 备案 (or 备案 as 'licensing') is the most consequential false friend in this category. See the model-registration entry.",
+        "attestations": [
+          {
+            "quote_zh": "自 2023 年 8 月《生成式人工智能服务管理暂行办法》实施以来，我国围绕生成式 AI 构建了以“备案制度”为核心的多层次治理格局。",
+            "quote_en": "Since the Interim Measures for Generative AI took effect in August 2023, China has built a multi-tier governance structure around generative AI with the filing system at its core.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "牌照",
+        "pinyin": "páizhào",
+        "status": "common",
+        "literal_back": "licence plate / permit",
+        "notes": "Industry register, connoting a scarce market-access permit (as in telecoms or payments). Idiomatic for 'you need a licence to operate', but wrong for the administrative-law sense; use 许可 in legal or policy prose. No AI-specific attestation recovered.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "许可 / 备案制度",
+        "note": "uses both, and keeps them distinct"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "中国实行的是备案制而非许可制：企业提交材料存档，而不是事先申请批准。",
+        "en": "China operates a filing system, not a licensing system: firms submit materials for the record rather than applying for prior approval.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "model-registration",
+      "generative-ai-measures",
+      "frontier-ai-regulation",
+      "security-assessment"
+    ],
+    "sources": [
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "kyc",
+    "en": "know your customer",
+    "abbr": "KYC",
+    "category": "governance-policy",
+    "tags": [
+      "compute",
+      "regulation"
+    ],
+    "definition_en": "Verifying who a customer is before granting service. In AI governance it is proposed for cloud compute providers, so that large training runs cannot be bought anonymously.",
+    "definition_zh": "在提供服务前核实客户身份的制度。在人工智能治理中，主要提议用于云算力服务商，使大规模训练无法匿名购买。",
+    "preferred_zh": "了解你的客户",
+    "translation_difficulty": "high",
+    "pitfalls": "Three separate problems. (1) Chinese practitioners usually just write KYC in Latin letters; 了解你的客户 / 认识你的客户 are glosses, and 认识你的客戶 is the Taiwan/HK form. (2) I could not verify any Chinese-language source applying KYC to AI compute providers, so the AI-governance sense appears not to have entered Chinese discourse at all — a genuine gap. (3) 实名制 / 真实身份信息认证 is a real and heavily enforced PRC regime that partly overlaps KYC but is not the same thing: it verifies the *end user* of an internet service against a national ID or mobile number, it exists for content-attribution and public-security reasons rather than anti-money-laundering, and it has never been applied to compute purchasing. Do not use 实名制 to translate KYC in a compute-governance argument; explain the difference instead.",
+    "translations": [
+      {
+        "zh": "KYC",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "The usual form in Chinese finance and compliance writing; kept in Latin letters mid-sentence. Recorded without attestation because the sources seen were not fetched in full during this pass.",
+        "attestations": []
+      },
+      {
+        "zh": "了解你的客户",
+        "pinyin": "liǎojiě nǐ de kèhù",
+        "status": "common",
+        "literal_back": "know your customer",
+        "notes": "The standard mainland gloss, normally written alongside the abbreviation as 了解你的客户（KYC）. No attestation recovered in an AI-governance context; treat as unverified for this field.",
+        "attestations": []
+      },
+      {
+        "zh": "真实身份信息认证",
+        "pinyin": "zhēnshí shēnfèn xìnxī rènzhèng",
+        "status": "established",
+        "literal_back": "authentication of true identity information",
+        "notes": "The PRC-native adjacent regime, imposed on deep-synthesis service providers with respect to their *users*. Legally grounded and actively enforced, but aimed at attributability of generated content, not at gating access to compute. Colloquially 实名制 (real-name system).",
+        "attestations": [
+          {
+            "quote_zh": "对使用者进行真实身份信息认证",
+            "quote_en": "Conduct authentication of users' true identity information.",
+            "source_title": "《互联网信息服务深度合成管理规定》",
+            "publisher": "国家互联网信息办公室、工业和信息化部、公安部（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2022-12/11/c_1672221949318230.htm",
+            "date": "2022-12"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [
+      {
+        "org": "国家互联网信息办公室 (CAC)",
+        "zh_used": "真实身份信息认证",
+        "note": "deep-synthesis provisions, in force January 2023"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "对算力服务商实行 KYC，与我国现行的用户实名制不是一回事：前者约束的是买算力的机构，后者约束的是使用服务的个人。",
+        "en": "KYC for compute providers is not the same thing as China's existing real-name system for users: the former constrains the organisation buying compute, the latter the individual using a service.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "compute-governance",
+      "model-registration",
+      "verification"
+    ],
+    "sources": [
+      "https://www.cac.gov.cn/2022-12/11/c_1672221949318230.htm",
+      "https://zh.wikipedia.org/zh-hans/%E8%AA%8D%E8%AD%98%E4%BD%A0%E7%9A%84%E5%AE%A2%E6%88%B6"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "weights-security",
+    "en": "model weights security",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "security",
+      "frontier"
+    ],
+    "definition_en": "Protecting the trained parameters of a frontier model from theft or unauthorised copying, since possession of the weights confers the model's full capability without any of its deployment safeguards. RAND's SL1–SL5 scale is the reference security-level framework.",
+    "definition_zh": "防止前沿模型的训练参数被窃取或未经授权复制。一旦获得权重，攻击者即可绕过所有部署侧防护措施，完整获得模型能力。兰德公司提出的 SL1–SL5 安全等级是常见参照框架。",
+    "preferred_zh": "模型权重安全",
+    "translation_difficulty": "medium",
+    "pitfalls": "模型权重 is fully settled, so the compound is transparent — but 安全 again collapses safety and security, and here the intended sense is unambiguously *security*. Consider 模型权重防护 or 模型权重安全防护 when the distinction matters. The bigger issue is that Chinese frontier-AI practice reaches for a different reference framework: rather than RAND's SL1–SL5, Chinese guidance maps weight protection onto 网络安全等级保护 (MLPS), requiring at least 三级（监督保护级）for models past a risk threshold. The two scales are not comparable and should never be equated — MLPS grades a whole information system's protection obligations under PRC law, while SL1–SL5 grades resistance to specified attacker capability tiers.",
+    "translations": [
+      {
+        "zh": "模型权重",
+        "pinyin": "móxíng quánzhòng",
+        "status": "established",
+        "literal_back": "model weights",
+        "notes": "Universal in Chinese ML and policy writing; also 开放权重模型 for 'open-weight model'.",
+        "attestations": [
+          {
+            "quote_zh": "2025 年 1 月，商务部工业与安全局（BIS）首次发布规则，试图将 AI 模型权重本身纳入出口管制。",
+            "quote_en": "In January 2025 the Bureau of Industry and Security issued a rule for the first time attempting to bring AI model weights themselves within export controls.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          },
+          {
+            "quote_zh": "自主潜逃：能识别并利用托管基础设施中的零日漏洞，或通过操纵管理员将模型权重导出到外部服务器。",
+            "quote_en": "Autonomous escape: able to identify and exploit zero-day vulnerabilities in hosting infrastructure, or to manipulate administrators into exporting model weights to an external server.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "模型权重安全",
+        "pinyin": "móxíng quánzhòng ānquán",
+        "status": "descriptive",
+        "literal_back": "model weight security",
+        "notes": "Compositional and immediately understood, but Chinese sources tend to express the idea through concrete measures (隔离存储、访问控制、等级保护) rather than as a named category. No verbatim occurrence of the compound recovered in this pass.",
+        "attestations": []
+      },
+      {
+        "zh": "模型权重采用极端隔离存储策略",
+        "pinyin": "móxíng quánzhòng cǎiyòng jíduān gélí cúnchǔ cèlüè",
+        "status": "descriptive",
+        "literal_back": "model weights use an extreme isolated-storage policy",
+        "notes": "How the Chinese frontier framework actually phrases the requirement — as a control, not a term. Useful as a model sentence when writing about weight security in Chinese.",
+        "attestations": [
+          {
+            "quote_zh": "实施最高级别访问控制，仅限可信人员/机构访问，严禁对外暴露敏感模型；模型权重采用极端隔离存储策略，使暴露风险最小化；执行全生命周期安全审计与对抗演练；遵循等级保护标准要求。",
+            "quote_en": "Apply the highest level of access control, restricted to trusted personnel and institutions, with sensitive models strictly not exposed externally; store model weights under an extreme isolation policy to minimise exposure risk; conduct full-lifecycle security audits and adversarial exercises; and comply with graded-protection standard requirements.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "模型权重采用极端隔离存储策略，使暴露风险最小化。",
+            "quote_en": "Model weights shall use an extreme isolation storage strategy so as to minimise exposure risk.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "模型权重 + 等级保护",
+        "note": "maps weight protection onto China's MLPS levels rather than RAND SL tiers"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "模型权重",
+        "note": "in the export-control context"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "越过红线的模型，其权重至少应按三级等级保护要求隔离存储。",
+        "en": "For models that have crossed a red line, weights should be stored in isolation to at least MLPS Level 3 requirements.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "insider-threat",
+      "export-controls",
+      "graded-protection",
+      "national-security"
+    ],
+    "sources": [
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.rand.org/pubs/research_reports/RRA2849-1.html"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "insider-threat",
+    "en": "insider threat",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "security"
+    ],
+    "definition_en": "Risk originating from someone with legitimate access — an employee, contractor or partner — who exfiltrates weights, disables safeguards or subverts controls.",
+    "definition_zh": "由拥有合法访问权限的人员（员工、承包商、合作方）带来的风险，例如外泄模型权重、关闭防护措施或规避管控。",
+    "preferred_zh": "内部威胁",
+    "translation_difficulty": "high",
+    "pitfalls": "内部威胁 is the standard security-industry calque, but in the leading Chinese frontier-AI risk framework the same two characters mean something entirely different: there, 威胁源 is split into 外部威胁 (malicious actors, terrorists), 内部威胁 — glossed explicitly as 模型自身的未对齐或欺骗倾向, i.e. the model itself — and 情境性威胁 (human operator error). So in Chinese AI-safety writing 内部威胁 can denote *the AI* rather than a rogue human. This is a real and easily-missed false friend. If you mean a malicious employee, disambiguate: 内部人员威胁 or 内部人员风险. The colloquial 内鬼 ('inside ghost', a mole) is vivid and widely understood but too informal for policy prose, and no attestation for it was recovered in an AI context.",
+    "translations": [
+      {
+        "zh": "内部威胁",
+        "pinyin": "nèibù wēixié",
+        "status": "contested",
+        "literal_back": "internal threat",
+        "notes": "Standard in cybersecurity for the malicious-insider sense, but redefined in Chinese frontier-AI risk writing to mean the model's own misalignment. Always check which sense a source intends.",
+        "attestations": [
+          {
+            "quote_zh": "威胁源（T）：危害的发起方，可分为外部威胁（如恶意行为者、恐怖分子）、内部威胁（如模型自身的未对齐或欺骗倾向）以及情境性威胁（如人为操作失误）。",
+            "quote_en": "Threat source (T): the originator of harm, divided into external threats (e.g. malicious actors, terrorists), internal threats (e.g. the model's own misalignment or deceptive tendencies), and situational threats (e.g. human operating error).",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "内部人员威胁",
+        "pinyin": "nèibù rényuán wēixié",
+        "status": "proposed",
+        "literal_back": "internal-personnel threat",
+        "notes": "We recommend this when the human sense is meant, precisely because 内部威胁 has been claimed for the misaligned-model sense in Chinese frontier-AI writing. Adding 人员 costs two characters and removes the ambiguity entirely. Not attested; this is our coinage for disambiguation.",
+        "attestations": []
+      },
+      {
+        "zh": "内鬼",
+        "pinyin": "nèiguǐ",
+        "status": "common",
+        "literal_back": "inside ghost / mole",
+        "notes": "Colloquial and vivid, common in Chinese reporting on data-leak cases. Too informal for standards or policy text, and no AI-specific attestation was recovered.",
+        "attestations": []
+      },
+      {
+        "zh": "强化内部安全管理",
+        "pinyin": "qiánghuà nèibù ānquán guǎnlǐ",
+        "status": "descriptive",
+        "literal_back": "strengthen internal security management",
+        "notes": "How TC260 expresses the countermeasure side without naming the threat category — via least-privilege access control rather than a named 'insider threat' programme.",
+        "attestations": [
+          {
+            "quote_zh": "严格管理人工智能应用权限，通过最小权限原则等手段强化内部安全管理，增强账户安全性，在处理敏感数据时使用加密技术等保护措施。",
+            "quote_en": "Strictly manage AI application permissions; strengthen internal security management through means such as the principle of least privilege; enhance account security; and use protective measures such as encryption when handling sensitive data.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "内部威胁",
+        "note": "used for the model's own misalignment, not for rogue staff"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "内部安全管理",
+        "note": "least-privilege framing, framework 2.0 §6.3.2"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "这里说的“内部威胁”指的是内部人员，而不是模型自身的未对齐倾向。",
+        "en": "'Insider threat' here means human insiders, not the model's own misalignment.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "weights-security",
+      "graded-protection"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "moratorium",
+    "en": "moratorium",
+    "en_aliases": [
+      "pause"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "policy-proposal"
+    ],
+    "definition_en": "A halt on developing or deploying systems above some capability level, whether self-imposed by a developer, agreed across an industry, or mandated. The FLI open letter of March 2023 calling for a six-month pause is the canonical instance.",
+    "definition_zh": "对超过一定能力水平的系统停止开发或部署，可以是开发者自我约束、行业共同约定或由监管强制。最有代表性的是 2023 年 3 月生命未来研究所发起的呼吁暂停六个月的公开信。",
+    "preferred_zh": "暂停",
+    "translation_difficulty": "medium",
+    "pitfalls": "暂停 (suspend, temporarily) is the natural and attested word, but it is weaker than English 'moratorium', which implies a formal, agreed, bounded halt. 禁令 (ban/injunction) is far stronger and implies legal prohibition — do not use it for a voluntary pause. 停止 is permanent-sounding. The Chinese-language conversation around the 2023 pause letter was largely framed as 呼吁暂停训练 rather than as a governance instrument, and the idea has little purchase in PRC policy discourse, where the framing is 统筹发展和安全 (coordinating development and security) — i.e. that development should not stop. Expect a Chinese reader to hear 暂停 as an operational control rather than a policy demand.",
+    "translations": [
+      {
+        "zh": "暂停",
+        "pinyin": "zàntíng",
+        "status": "established",
+        "literal_back": "suspend / pause",
+        "notes": "Attested in Chinese frontier-AI risk work as an operational decision: the red zone of the risk framework is defined as 暂停部署或开发. This is the strongest, most concrete Chinese usage of the concept.",
+        "attestations": [
+          {
+            "quote_zh": "三类风险区分别为：绿区（常规部署、广泛可接受）、黄区（受控部署、严格管控下可容忍）或红区（暂停部署或开发、不可接受）。",
+            "quote_en": "The three risk zones are: green (routine deployment, broadly acceptable), yellow (controlled deployment, tolerable under strict controls), and red (suspend deployment or development, unacceptable).",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "立即采取措施，阻断潜在灾难性后果的发生路径；执行最高级别的管控措施和操作限制；暂停相关运行或部署，直至风险降至红线以下；在恢复运营前，完成并通过独立第三方安全审查。",
+            "quote_en": "Immediately act to cut off the pathway to potentially catastrophic consequences; apply the highest level of controls and operating restrictions; suspend the relevant operation or deployment until risk falls below the red line; and complete and pass an independent third-party safety review before resuming operations.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "暂停训练",
+        "pinyin": "zàntíng xùnliàn",
+        "status": "common",
+        "literal_back": "pause training",
+        "notes": "The collocation Chinese media used for the March 2023 FLI open letter, generally reported as 呼吁暂停训练比 GPT-4 更强大的 AI 系统. Recorded without attestation — the sources seen for it were search listings rather than pages fetched in full during this pass.",
+        "attestations": []
+      },
+      {
+        "zh": "禁令",
+        "pinyin": "jìnlìng",
+        "status": "deprecated",
+        "literal_back": "ban / prohibition order",
+        "notes": "Recommended against as a rendering of 'moratorium'. 禁令 implies a legally binding prohibition with penalties, which overstates every real proposal in this space. Reserve it for actual bans.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "暂停部署或开发",
+        "note": "definition of the red risk zone"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "风险一旦进入红区，应暂停部署或开发，直至风险降至红线以下。",
+        "en": "Once risk enters the red zone, deployment or development should be suspended until risk falls below the red line.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "frontier-ai-safety-commitments",
+      "idais",
+      "frontier-ai-regulation"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://zhuanlan.zhihu.com/p/618292234"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "verification",
+    "en": "verification",
+    "en_aliases": [
+      "verifiable compliance"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "arms-control",
+      "technical"
+    ],
+    "definition_en": "Establishing, to the satisfaction of a party that does not trust you, that a claim about an AI system or about your compliance with an agreement is true. Spans technical verification of model properties and arms-control-style mutual verification between states.",
+    "definition_zh": "在互不信任的前提下，使他方确信关于人工智能系统的某项主张或对协议的遵守情况属实。既包括对模型性质的技术性验证，也包括国家间军控式的相互核查。",
+    "preferred_zh": "核查",
+    "translation_difficulty": "high",
+    "pitfalls": "Chinese splits what English fuses, and the split is worth preserving. 验证 is technical validation — you check that a property holds (可被技术验证, 实证验证, 沙箱验证). 核查 is inspection of another party's claims, the word used in arms control and in audit (核查开发者的主张, 核查合规情况); 核实 is its near-synonym for confirming a fact. Using 验证 where you mean adversarial inter-state inspection loses the whole point; using 核查 for a technical property sounds like an audit. The IDAIS Chinese statements use both within one passage and are the best model. Note also 可验证的 for 'verifiable' in the IDAIS-Shanghai red-lines formulation 可验证的全球性行为红线.",
+    "translations": [
+      {
+        "zh": "核查",
+        "pinyin": "héchá",
+        "status": "established",
+        "literal_back": "check and investigate / inspect",
+        "notes": "The arms-control and audit sense. This is the word to use for verified compliance between distrustful parties.",
+        "attestations": [
+          {
+            "quote_zh": "定期内部审计：定期开展内部审计，核查人工智能安全方案的合规情况，并及时发现现有安全措施中的薄弱环节。",
+            "quote_en": "Regular internal audit: conduct internal audits periodically to check compliance with the AI safety plan and identify weaknesses in existing safeguards in good time.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "验证",
+        "pinyin": "yànzhèng",
+        "status": "established",
+        "literal_back": "test-and-confirm / validate",
+        "notes": "The technical sense: establishing that a property of a system holds, through testing, simulation or formal means. TC260 makes 可客观验证 one of its governance goals.",
+        "attestations": [
+          {
+            "quote_zh": "促进可客观验证：研究构建客观、公正、透明的测试与认证机制，推动人工智能系统的功能、性能、安全特性、决策链条等方面可被技术验证。",
+            "quote_en": "Promote objective verifiability: research and build objective, impartial and transparent testing and certification mechanisms so that AI systems' functionality, performance, safety properties and decision chains can be technically verified.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "制定明确的测试规则和方法，包括人工测试、自动测试、混合测试等，利用沙箱仿真等技术对模型进行充分测试和验证。",
+            "quote_en": "Set clear testing rules and methods — manual, automated and hybrid testing — and use techniques such as sandbox simulation to thoroughly test and verify models.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "可验证的",
+        "pinyin": "kě yànzhèng de",
+        "status": "established",
+        "literal_back": "verifiable",
+        "notes": "Used in the IDAIS-Shanghai formulation 可验证的全球性行为红线, whose parallel English is 'verifiable global behavioural red lines' — a directly attested translation pair.",
+        "attestations": [
+          {
+            "quote_zh": "通过加强国际协调，共同确立并恪守可验证的全球性行为红线。",
+            "quote_en": "Through stronger international coordination, jointly establish and abide by verifiable global behavioural red lines.",
+            "source_title": "IDAIS-Shanghai 共识声明（中文声明）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-shanghai/",
+            "date": "2025-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "IDAIS",
+        "zh_used": "核实 / 可验证的",
+        "note": "official Chinese statement text, parallel to 'verify' and 'verifiable'"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "可客观验证 / 技术验证",
+        "note": "framework 2.0, governance goal 5"
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "核查",
+        "note": "for audit of compliance"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "技术上可以验证模型的某项性质，但要让别国相信你确实这么做了，需要的是核查机制。",
+        "en": "You can technically verify a property of a model, but convincing another state that you actually did so requires an inspection mechanism.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "idais",
+      "safety-standard",
+      "incident-reporting",
+      "compute-governance"
+    ],
+    "sources": [
+      "https://idais.ai/dialogue/idais-venice/",
+      "https://idais.ai/dialogue/idais-shanghai/",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "safety-standard",
+    "en": "safety standard",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "standard",
+      "prc-native"
+    ],
+    "definition_en": "A published technical specification governing how AI systems must be built, tested or protected. In China these are GB (mandatory) or GB/T (recommended) national standards, supplemented by sectoral standards and by non-binding technical documents such as the AI Safety Governance Framework.",
+    "definition_zh": "规定人工智能系统研发、测试或防护要求的技术规范。在中国分为强制性国家标准（GB）与推荐性国家标准（GB/T），并由行业标准和《人工智能安全治理框架》等不具强制力的技术文件补充。",
+    "preferred_zh": "安全标准",
+    "translation_difficulty": "medium",
+    "pitfalls": "The term is easy; the institutional layer beneath it is where translation goes wrong. GB = 强制性国家标准 (mandatory); GB/T = 推荐性国家标准 (recommended) — most PRC AI standards are GB/T, so calling them 'mandatory Chinese standards' is wrong, though a GB/T can become binding indirectly when a regulation or contract references it. Below national standards sit 行业标准 and 团体标准; above and beside them sit 技术文件 like TC260's framework, which are not standards at all. Note also that Chinese practice says 分类分级 for what English calls risk tiering, and that a GB/T reference number (e.g. GB/T 25070-2019) is the normal way to cite precisely — carry the number across when translating.",
+    "translations": [
+      {
+        "zh": "安全标准",
+        "pinyin": "ānquán biāozhǔn",
+        "status": "established",
+        "literal_back": "safety/security standard",
+        "notes": "The general term. As everywhere in this category, 安全 does not disambiguate safety from security; the standard's number and scope do.",
+        "attestations": [
+          {
+            "quote_zh": "遵循国家与行业安全标准：遵循《信息安全技术 网络安全等级保护安全设计技术要求》（GB/T 25070-2019）等网络安全保护国家标准，并从系统定级、系统备案、系统安全建设、系统等级测评、监督检查等五个阶段实施等级保护。",
+            "quote_en": "Follow national and sectoral security standards: comply with national cybersecurity protection standards such as GB/T 25070-2019 (Information security technology — Technical requirements of security design for classified protection of cybersecurity), and implement graded protection across five stages — system grading, system filing, system security construction, system grading evaluation, and supervision and inspection.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "国家标准",
+        "pinyin": "guójiā biāozhǔn",
+        "status": "established",
+        "literal_back": "national standard",
+        "notes": "The GB/GB-T layer. TC260 explicitly casts national standards as the reference that sectoral regulators localise.",
+        "attestations": [
+          {
+            "quote_zh": "行业领域主管（监管）部门参照国家标准制定行业标准规范、实施细则，并推动本行业领域人工智能安全应用相关分类分级工作。",
+            "quote_en": "Sectoral competent (regulatory) departments shall draw on national standards to formulate sectoral standards, norms and implementing rules, and advance classification and grading work for safe AI application in their sector.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "推动人工智能应用安全分类分级国家标准制定工作。行业领域主管（监管）部门参照国家标准制定行业标准规范、实施细则，并推动本行业领域人工智能安全应用相关分类分级工作。",
+            "quote_en": "Advance the drafting of a national standard for the security classification and grading of AI applications. Sectoral competent (regulatory) authorities shall formulate sectoral standards, specifications and implementing rules by reference to the national standard, and promote classification and grading work related to the secure application of AI in their own sector.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "标准规范",
+        "pinyin": "biāozhǔn guīfàn",
+        "status": "established",
+        "literal_back": "standards and norms",
+        "notes": "The cover-all phrase used when a text does not want to commit to a legal instrument type. Appears in the Global AI Governance Initiative's call for 具有广泛共识的人工智能治理框架和标准规范.",
+        "attestations": [
+          {
+            "quote_zh": "各国应在人工智能治理中加强信息交流和技术合作，共同做好风险防范，形成具有广泛共识的人工智能治理框架和标准规范",
+            "quote_en": "Countries should strengthen information exchange and technological cooperation in AI governance, jointly guard against risks, and form AI governance frameworks, standards and norms based on broad consensus.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "TC260",
+        "zh_used": "国家标准 / 标准规范",
+        "note": "framework 2.0's risk-grading annex"
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "国家与行业安全标准",
+        "note": "cites GB/T 25070-2019 by number"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "多数人工智能安全国家标准是推荐性（GB/T），并非强制执行，但被法规或合同引用后即产生约束力。",
+        "en": "Most AI safety national standards are recommended (GB/T) rather than mandatory, but become binding once referenced by a regulation or contract.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "tc260",
+      "ai-safety-governance-framework",
+      "graded-protection",
+      "risk-classification-grading"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "algorithmic-governance",
+    "en": "algorithmic governance",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "regulation"
+    ],
+    "definition_en": "Regulation of algorithmic systems — recommendation, ranking, scheduling and generation — as such. China has the most developed regime of this kind, combining the 2022 algorithm-recommendation provisions, a national filing system, periodic 清朗 enforcement campaigns and platform disclosure duties.",
+    "definition_zh": "针对推荐、排序、调度、生成等算法系统本身的治理。中国在这方面制度最为完备，结合了 2022 年《互联网信息服务算法推荐管理规定》、全国统一的算法备案系统、“清朗”专项行动以及平台公开算法规则的要求。",
+    "preferred_zh": "算法治理",
+    "translation_difficulty": "low",
+    "pitfalls": "This is a case where the Chinese concept is richer than the English one, not poorer. 算法治理 in PRC usage bundles filing, campaign enforcement, platform self-disclosure, court practice and public participation into a single multi-layer regime, and has an explicit normative direction — 算法向上向善 (algorithms oriented upward and toward good) — with no English counterpart. English 'algorithmic governance' is a broader academic term that often includes governance *by* algorithms; 算法治理 in PRC usage means governance *of* algorithms. If you mean the former, say 算法化治理 or paraphrase. Note also that the substantive concerns are distinctively Chinese: 信息茧房 (information cocoons), 大数据杀熟 (price discrimination against loyal customers), and effects on gig workers.",
+    "translations": [
+      {
+        "zh": "算法治理",
+        "pinyin": "suànfǎ zhìlǐ",
+        "status": "established",
+        "literal_back": "algorithm governance",
+        "notes": "Fully institutionalised term, used by the regulator itself.",
+        "attestations": [
+          {
+            "quote_zh": "算法治理是一项长期性、系统性工程，网信部门将开展常态化巡查，督导信息推荐算法平台持续优化算法运行机制和管理规则。",
+            "quote_en": "Algorithm governance is a long-term, systematic undertaking; cyberspace administration departments will conduct routine inspections and supervise information-recommendation algorithm platforms in continuously optimising algorithmic operating mechanisms and management rules.",
+            "source_title": "中央网信办持续加强信息推荐算法治理",
+            "publisher": "中央网络安全和信息化委员会办公室（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2025-05/22/c_1749536203490537.htm",
+            "date": "2025-05"
+          },
+          {
+            "quote_zh": "相关法律法规为算法治理工作的开展提供了坚实的上位法依据。",
+            "quote_en": "The relevant laws and regulations provide a solid statutory basis on which algorithmic governance work is carried out.",
+            "source_title": "互联网信息服务算法治理：从专项行动迈向常态化长效化治理",
+            "publisher": "《中国信息安全》2025 年第 12 期（安全内参转载）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/86826",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "算法备案",
+        "pinyin": "suànfǎ bèi'àn",
+        "status": "established",
+        "literal_back": "algorithm filing",
+        "notes": "The operative instrument within 算法治理; see the model-registration entry for the full treatment.",
+        "attestations": [
+          {
+            "quote_zh": "为应对互联网信息服务领域算法带来的种种乱象，防范化解安全风险，促进算法推荐服务健康发展，2021年9月17日，九部委发布了《关于加强互联网信息服务算法综合治理的指导意见》（以下简称《指导意见》），提出建立算法备案、安全评估等制度，强调“科技向善”的伦理导向。",
+            "quote_en": "To address the disorder caused by algorithms in internet information services, forestall and defuse security risks, and promote the healthy development of algorithmic recommendation services, on 17 September 2021 nine ministries issued the Guiding Opinions on Strengthening Comprehensive Governance of Internet Information Service Algorithms, proposing to establish systems such as algorithm filing and security assessment, and stressing an ethical orientation of technology for good.",
+            "source_title": "互联网信息服务算法治理：从专项行动迈向常态化长效化治理",
+            "publisher": "《中国信息安全》2025 年第 12 期（安全内参转载）",
+            "source_type": "media",
+            "url": "https://www.secrss.com/articles/86826",
+            "date": "2026-01"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "中央网信办 (CAC)",
+        "zh_used": "算法治理",
+        "note": "in its own enforcement announcements"
+      },
+      {
+        "org": "《中国信息安全》",
+        "zh_used": "算法治理",
+        "note": "review of the shift from campaigns to routine governance"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "中国的算法治理不止于备案，还包括“清朗”专项行动和平台公开算法规则等多层安排。",
+        "en": "China's algorithm governance goes beyond filing to include the Qinglang enforcement campaigns and platform disclosure of algorithmic rules.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "model-registration",
+      "generative-ai-measures",
+      "licensing"
+    ],
+    "sources": [
+      "https://www.cac.gov.cn/2025-05/22/c_1749536203490537.htm",
+      "https://www.secrss.com/articles/86826",
+      "https://www.cac.gov.cn/2024-11/24/c_1734143936205514.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "generative-ai-measures",
+    "en": "Interim Measures for Generative AI",
+    "en_aliases": [
+      "Interim Measures for the Management of Generative AI Services"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "regulation",
+      "chinese-origin"
+    ],
+    "definition_en": "China's operative generative-AI regulation, adopted by the CAC with six other ministries and in force from 15 August 2023. It establishes security assessment, algorithm filing and complaint mechanisms, allocates provider responsibilities, and applies to services offered to the public in mainland China.",
+    "definition_zh": "中国生成式人工智能的主要规章，由国家互联网信息办公室会同六部门公布，自 2023 年 8 月 15 日起施行。规定了安全评估、算法备案、投诉举报等制度，明确提供者责任，适用于向境内公众提供生成式人工智能服务的行为。",
+    "preferred_zh": "《生成式人工智能服务管理暂行办法》",
+    "translation_difficulty": "medium",
+    "pitfalls": "Chinese-origin instrument — cite the Chinese text. Every word of the title does work: 暂行 (interim/provisional) signals that a fuller instrument is expected; 办法 is a departmental rule (部门规章), which sits below a 法律 (law) and 行政法规 (administrative regulation) in the PRC hierarchy — so 'Measures' is right and 'Act' or 'Law' would be wrong; 管理 is administration, deliberately softer than 监管. And 服务 matters: the Measures regulate *services offered to the public*, not model development as such, which is why research and internal use fall outside them. Note that the substantive obligations run through cross-references to other instruments (the algorithm-recommendation provisions, the security-assessment regime), so the Measures read thinner than they operate.",
+    "translations": [
+      {
+        "zh": "《生成式人工智能服务管理暂行办法》",
+        "pinyin": "Shēngchéngshì Réngōng Zhìnéng Fúwù Guǎnlǐ Zànxíng Bànfǎ",
+        "status": "established",
+        "literal_back": "interim measures for the administration of generative artificial intelligence services",
+        "notes": "Official title. Commonly abbreviated 《办法》 within Chinese legal writing once introduced.",
+        "attestations": [
+          {
+            "quote_zh": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+            "quote_en": "Providers of generative AI services with public-opinion attributes or social-mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions, and complete algorithm filing and the procedures for amending or cancelling that filing in accordance with the Provisions on the Administration of Algorithmic Recommendation in Internet Information Services.",
+            "source_title": "《生成式人工智能服务管理暂行办法》第十七条",
+            "publisher": "国家互联网信息办公室等七部门（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+            "date": "2023-07"
+          },
+          {
+            "quote_zh": "自 2023 年 8 月《生成式人工智能服务管理暂行办法》实施以来，我国围绕生成式 AI 构建了以“备案制度”为核心的多层次治理格局。",
+            "quote_en": "Since the Interim Measures for the Administration of Generative AI Services took effect in August 2023, China has built a multi-tier governance structure around generative AI with the filing system at its core.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "zh": "暂行办法",
+        "pinyin": "zànxíng bànfǎ",
+        "status": "established",
+        "literal_back": "interim measures",
+        "notes": "The instrument type. 办法 = departmental rule (部门规章); 暂行 = provisional. Translating either as 'Act' or 'Law' misstates its rank in the PRC legal hierarchy. The Measures were adopted by the CAC with six other ministries and took effect 15 August 2023; recorded without a quote because the promulgation clause was not recovered verbatim from a page fetched in this pass.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "国家互联网信息办公室 (CAC)",
+        "zh_used": "《生成式人工智能服务管理暂行办法》",
+        "note": "issuing body"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "《生成式人工智能服务管理暂行办法》",
+        "note": "treated as the anchor of the filing regime"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "《暂行办法》第十七条把生成式服务接入了既有的安全评估和算法备案两条既定通道。",
+        "en": "Article 17 of the Interim Measures plugs generative services into the two pre-existing channels of security assessment and algorithm filing.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "model-registration",
+      "algorithmic-governance",
+      "security-assessment",
+      "licensing"
+    ],
+    "sources": [
+      "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "https://www.cac.gov.cn/2023-07/13/c_1690898326795531.htm",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "national-security",
+    "en": "national security",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "political"
+    ],
+    "definition_en": "The security of the state. In the PRC this is a defined legal and doctrinal category — the 2015 National Security Law and the 总体国家安全观 (holistic national security outlook) cover political, territorial, military, economic, cultural, social, technological, cyber, ecological and other domains, with AI now explicitly included.",
+    "definition_zh": "国家的安全。在中国这是有明确法律和理论界定的范畴：《国家安全法》与“总体国家安全观”涵盖政治、国土、军事、经济、文化、社会、科技、网络、生态等多个领域，人工智能已被明确纳入其中。",
+    "preferred_zh": "国家安全",
+    "translation_difficulty": "high",
+    "pitfalls": "Lexically trivial, politically the most load-bearing term in the category. Three consequences for anyone writing AI-safety arguments in Chinese. (1) 国家安全 in the PRC is a defined legal category with a doctrine (总体国家安全观) and a dedicated legal apparatus; invoking it is not rhetorical framing as it often is in English, it is a jurisdictional claim that pulls a topic into a specific institutional track. (2) It is expressly one of the graded factors in TC260's risk-grading scale, alongside 社会稳定 and 公民权益 — so 'national security risk' has a defined place in Chinese AI risk taxonomy that it lacks in most Western ones. (3) Framing catastrophic-risk arguments as 国家安全 raises their salience but can also make them non-public and non-debatable. Note the systematic pairing with 发展: 统筹发展和安全 and 坚持发展和安全并重 are the standard formulations, and any argument that reads as anti-development will be discounted.",
+    "translations": [
+      {
+        "zh": "国家安全",
+        "pinyin": "guójiā ānquán",
+        "status": "established",
+        "literal_back": "national security",
+        "notes": "One-to-one lexically. What does not transfer is the legal-doctrinal weight; gloss it when the PRC-specific sense matters.",
+        "attestations": [
+          {
+            "quote_zh": "严守安全底线，对危害国家安全、社会公共利益、公众合法权益的风险及时采取措施。",
+            "quote_en": "Hold firmly to the safety bottom line, and take timely measures against risks that endanger national security, the public interest, or the lawful rights and interests of the public.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "2025 年 10 月，党的二十届四中全会将全面实施“人工智能+”行动写入“十五五”规划建议，并强调加强人工智能等新兴领域国家安全能力建设，标志着人工智能及其治理已完全融入国家中长期发展战略。",
+            "quote_en": "In October 2025 the Fourth Plenum of the 20th Central Committee wrote comprehensive implementation of the 'AI+' initiative into the 15th Five-Year Plan recommendations and stressed strengthening national security capability in emerging fields such as AI, marking AI and its governance as fully integrated into national medium- and long-term development strategy.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          },
+          {
+            "quote_zh": "作为两用技术，通用型人工智能有可能被恶意行为者利用，降低非国家行为主体设计、合成、获取和部署化学、生物、放射性、核（以下简称“化生放核”）武器的技术门槛，对国家安全、国际防扩散体系及全球安全治理构成了前所未有的严峻挑战。",
+            "quote_en": "As a dual-use technology, general-purpose AI may be exploited by malicious actors to lower the technical barrier for non-state actors to design, synthesise, acquire and deploy chemical, biological, radiological and nuclear weapons, posing unprecedented challenges to national security, the international non-proliferation regime and global security governance.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "统筹发展和安全",
+        "pinyin": "tǒngchóu fāzhǎn hé ānquán",
+        "status": "established",
+        "literal_back": "coordinate development and security as a whole",
+        "notes": "The doctrinal formulation that governs how 安全 arguments must be framed to land in PRC policy discourse. TC260's variant is 坚持发展和安全并重. Any AI-safety proposal is read against it.",
+        "attestations": [
+          {
+            "quote_zh": "我国坚持统筹发展和安全，呈现出典型的小切口、场景化、精细化特征，逐步构建起一套为新质生产力保驾护航的敏捷治理体系。",
+            "quote_en": "China adheres to coordinating development and security as a whole, showing characteristically narrow-entry, scenario-based and fine-grained features, and has gradually built an agile governance system that safeguards new quality productive forces.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "TC260",
+        "zh_used": "国家安全",
+        "note": "one of the graded factors in the framework 2.0 risk-grading scale"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "国家安全 / 统筹发展和安全",
+        "note": "structural framing of the 2025 governance report"
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "国家安全",
+        "note": "used to characterise CBRN and other severe AI risks"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "在中文政策文本中，把某类人工智能风险表述为“国家安全”问题，会改变它进入哪条制度轨道。",
+        "en": "In Chinese policy texts, framing a category of AI risk as a 'national security' issue changes which institutional track it enters.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "export-controls",
+      "weights-security",
+      "risk-classification-grading",
+      "ai-safety-governance-framework"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "agile-governance",
+    "en": "agile governance",
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "added-by-research"
+    ],
+    "definition_en": "Governing a fast-moving technology through iterative, adjustable measures rather than a single comprehensive statute — narrow-scope rules issued early, revised as the technology moves. It is the PRC's declared approach to AI and the reason China has no single AI law.",
+    "definition_zh": "对快速演进的技术采取可迭代、可调整的治理方式，先出台切口较小的规则，再随技术演进动态修订，而不是一次性制定综合性法律。这是中国官方明确采用的人工智能治理路径，也是中国迄今没有统一人工智能法的原因。",
+    "preferred_zh": "敏捷治理",
+    "translation_difficulty": "low",
+    "pitfalls": "The Chinese is the source term here — it appears in the Global AI Governance Initiative and in TC260's governance principles, and Chinese usage is more specific than the English phrase suggests. It is not merely 'flexible regulation': in PRC usage it is bound to a companion phrase, 分类分级管理, and to a described legislative style — 小切口、场景化、精细化 (narrow entry point, scenario-based, fine-grained). Translating an English 'agile governance' argument into 敏捷治理 will therefore be read as endorsing the PRC's specific regulatory strategy, not as a neutral methodological claim.",
+    "translations": [
+      {
+        "zh": "敏捷治理",
+        "pinyin": "mǐnjié zhìlǐ",
+        "status": "established",
+        "literal_back": "agile governance",
+        "notes": "A fixed formulation in PRC AI policy, always paired with risk orientation or with 分类分级管理.",
+        "attestations": [
+          {
+            "quote_zh": "推动建立风险等级测试评估体系，实施敏捷治理，分类分级管理，快速有效响应",
+            "quote_en": "Promote the establishment of a risk-tiered testing and evaluation system, implement agile governance and classified, graded management, and respond quickly and effectively.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "1.2 风险导向、敏捷治理。",
+            "quote_en": "1.2 Risk-oriented, agile governance.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "我国坚持统筹发展和安全，呈现出典型的小切口、场景化、精细化特征，逐步构建起一套为新质生产力保驾护航的敏捷治理体系。",
+            "quote_en": "China adheres to coordinating development and security as a whole, showing characteristically narrow-entry, scenario-based and fine-grained features, and has gradually built an agile governance system that safeguards new quality productive forces.",
+            "source_title": "人工智能治理研究报告（2025 年）",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "中华人民共和国外交部",
+        "zh_used": "敏捷治理",
+        "note": "Global AI Governance Initiative"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "风险导向、敏捷治理",
+        "note": "governance principle 1.2 in both framework versions"
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "敏捷治理体系",
+        "note": "characterises China's whole approach"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "敏捷治理在中国的具体含义是“小切口、场景化”，而不是简单的“监管从轻”。",
+        "en": "In China, agile governance specifically means narrow, scenario-based rulemaking — not simply lighter-touch regulation.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "global-ai-governance-initiative",
+      "ai-safety-governance-framework",
+      "risk-classification-grading",
+      "frontier-ai-regulation"
+    ],
+    "sources": [
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "risk-classification-grading",
+    "en": "risk classification and grading",
+    "en_aliases": [
+      "risk tiering"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "added-by-research"
+    ],
+    "definition_en": "The PRC's structural device for calibrating AI oversight: 分类 sorts risks into kinds, 分级 sorts them into severity levels. TC260's 2.0 framework classifies risks as technology-inherent, technology-application and application-derived, and grades them across five levels from low to critical using application scenario, level of autonomy and deployment scale.",
+    "definition_zh": "中国用于调节人工智能监管强度的制度装置：分类是按风险种类划分，分级是按严重程度划分。《人工智能安全治理框架》2.0 版将风险分为技术内生、技术应用、应用衍生三类，并以应用场景、智能化水平、应用规模为要素探索低、一般、重大等五个风险级别。",
+    "preferred_zh": "分类分级",
+    "translation_difficulty": "high",
+    "pitfalls": "English collapses this into 'risk tiering' or 'risk-based regulation' and loses the two-axis structure that PRC texts insist on: 分类 (by kind) and 分级 (by severity) are separate operations and are often carried out by different bodies — national standards set the method, sectoral regulators instantiate it. It is also the closest PRC analogue to the EU AI Act's risk tiers and to lab safety-level schemes, but it is not equivalent to either: the EU tiers attach fixed legal obligations to a use case, whereas 分类分级 is a method handed down for sectors to localise. Word order varies (分类分级 / 分级分类) with no difference in meaning.",
+    "translations": [
+      {
+        "zh": "分类分级",
+        "pinyin": "fēnlèi fēnjí",
+        "status": "established",
+        "literal_back": "classify and grade",
+        "notes": "The canonical form. 分级分类 also appears with identical meaning, including within the same TC260 document.",
+        "attestations": [
+          {
+            "quote_zh": "通过人工智能应用安全风险分类分级标准，明确分类分级基本流程，以及应用场景、智能化水平、应用规模等分级要素，并给出行业领域细化行业指南的步骤方法，为行业领域开展风险分类分级提供参考。",
+            "quote_en": "Through a standard for classifying and grading AI application safety risks, define the basic process, the grading factors of application scenario, level of intelligence and deployment scale, and the steps by which sectors can refine industry guidance, providing a reference for sectoral risk classification and grading.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "风险分级",
+        "pinyin": "fēngxiǎn fēnjí",
+        "status": "established",
+        "literal_back": "risk grading",
+        "notes": "The severity axis specifically, and the main addition in framework 2.0 over 1.0. Levels are named 低安全风险, 一般安全风险 and upward, graded against harm to 国家安全、社会稳定和公民权益.",
+        "attestations": [
+          {
+            "quote_zh": "在此基础上，探索提出具有共识的安全风险分级原则（附件1），从应用场景、智能化水平、应用规模等维度入手，对安全风险进行科学评价分级，进而采取针对性、差异化安全防范措施。",
+            "quote_en": "On this basis, explore and put forward consensus-based principles for grading security risk (Annex 1), scientifically evaluate and grade security risks along dimensions such as application scenario, level of intelligence and scale of application, and then adopt targeted, differentiated security precautions.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "密切跟踪人工智能研发及应用趋势，从技术自身、技术应用、衍生社会影响等方面分析梳理安全风险；探索从应用场景、智能化水平、应用规模等维度进行风险分级，进而采取相适应的应对措施。",
+            "quote_en": "Closely track AI R&D and application trends; analyse safety risks from the technology itself, its application, and derived social impact; and explore grading risk along dimensions of application scenario, level of intelligence and deployment scale, then adopt commensurate countermeasures.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "分类分级管理",
+        "pinyin": "fēnlèi fēnjí guǎnlǐ",
+        "status": "established",
+        "literal_back": "classified and graded management",
+        "notes": "The policy-level formulation, paired with 敏捷治理 in the Global AI Governance Initiative.",
+        "attestations": [
+          {
+            "quote_zh": "推动建立风险等级测试评估体系，实施敏捷治理，分类分级管理，快速有效响应",
+            "quote_en": "Promote the establishment of a risk-tiered testing and evaluation system, implement agile governance and classified, graded management, and respond quickly and effectively.",
+            "source_title": "《全球人工智能治理倡议》",
+            "publisher": "中华人民共和国外交部",
+            "source_type": "gov",
+            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+            "date": "2023-10"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "TC260",
+        "zh_used": "分类分级 / 风险分级",
+        "note": "the organising structure of framework 2.0"
+      },
+      {
+        "org": "中华人民共和国外交部",
+        "zh_used": "分类分级管理",
+        "note": "Global AI Governance Initiative"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "2.0 版在 1.0 版的风险分类基础上新增了风险分级，从低安全风险到更高级别逐级设定应对措施。",
+        "en": "Version 2.0 adds risk grading on top of 1.0's risk classification, setting graduated countermeasures from low safety risk upward.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-safety-governance-framework",
+      "safety-standard",
+      "eu-ai-act",
+      "agile-governance",
+      "national-security"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
+      "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "security-assessment",
+    "en": "security assessment",
+    "en_aliases": [
+      "safety assessment"
+    ],
+    "abbr": null,
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "regulation",
+      "added-by-research"
+    ],
+    "definition_en": "The PRC's pre-launch review requirement for internet services with public-opinion attributes or social-mobilisation capacity, extended to generative AI by Article 17 of the 2023 Interim Measures. It runs alongside, and is legally distinct from, algorithm filing.",
+    "definition_zh": "中国对具有舆论属性或社会动员能力的互联网服务设定的上线前评估要求，2023 年《生成式人工智能服务管理暂行办法》第十七条将其扩展至生成式人工智能服务。它与算法备案并行，法律性质不同。",
+    "preferred_zh": "安全评估",
+    "translation_difficulty": "high",
+    "pitfalls": "A textbook 安全 ambiguity. In the PRC regulatory sense, 安全评估 means a *security/content* assessment tied to public-opinion and social-mobilisation attributes — closer to a content-and-information-security review than to what AI-safety researchers mean by a safety evaluation. Meanwhile in the technical register the same two characters cover capability and risk evaluation: TC260 uses 安全评估测试 for periodic testing, and the field's usual word for model evaluation is 测评 or 评测. So the same phrase can denote a regulatory filing step or a red-teaming exercise. Disambiguate: 上线前安全评估 for the regulatory step, 安全测评 / 风险评测 for technical evaluation.",
+    "translations": [
+      {
+        "zh": "安全评估",
+        "pinyin": "ānquán pínggū",
+        "status": "established",
+        "literal_back": "security/safety assessment",
+        "notes": "The regulatory instrument named in Article 17 of the Interim Measures, triggered by 舆论属性或者社会动员能力.",
+        "attestations": [
+          {
+            "quote_zh": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估。",
+            "quote_en": "Providers of generative AI services with public-opinion attributes or social-mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions.",
+            "source_title": "《生成式人工智能服务管理暂行办法》第十七条",
+            "publisher": "国家互联网信息办公室等七部门（中国网信网）",
+            "source_type": "gov",
+            "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+            "date": "2023-07"
+          },
+          {
+            "quote_zh": "定期开展安全评估测试，制定风险分类分级测评与优化机制，测试前明确测试目标、范围和安全维度，构建多样化的测试数据集，涵盖各种应用场景，并制定各类风险的针对性模型优化策略。",
+            "quote_en": "Conduct periodic safety assessment testing; establish mechanisms for risk classification-and-grading evaluation and optimisation; before testing, define objectives, scope and safety dimensions; build diverse test datasets covering varied application scenarios; and set targeted model-optimisation strategies for each risk type.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "zh": "安全测评",
+        "pinyin": "ānquán cèpíng",
+        "status": "established",
+        "literal_back": "safety testing-and-evaluation",
+        "notes": "The technical-evaluation register, and the better choice when you mean model evaluations rather than a regulatory filing. TC260 lists 人工智能安全测评 as an institution to be built out.",
+        "attestations": [
+          {
+            "quote_zh": "推动人工智能安全相关立法，完善基础设施安全防护、分级分类监管、人工智能安全测评、最终用途管理、重点场景安全应用等制度。",
+            "quote_en": "Advance AI safety legislation, and improve systems for infrastructure security protection, graded and classified oversight, AI safety evaluation, end-use management and safe application in key scenarios.",
+            "source_title": "《人工智能安全治理框架》2.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "国家互联网信息办公室 (CAC)",
+        "zh_used": "安全评估",
+        "note": "Art. 17, Interim Measures for Generative AI"
+      },
+      {
+        "org": "TC260",
+        "zh_used": "安全评估测试 / 人工智能安全测评",
+        "note": "technical evaluation sense"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "这里的“安全评估”是上线前的监管环节，不要与研究意义上的安全测评混为一谈。",
+        "en": "'Security assessment' here is a pre-launch regulatory step, not to be confused with safety evaluations in the research sense.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "generative-ai-measures",
+      "model-registration",
+      "licensing",
+      "verification"
+    ],
+    "sources": [
+      "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://hankunlaw.com/portal/article/index/cid/8/id/13552.html"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "graded-protection",
+    "en": "cybersecurity multi-level protection scheme",
+    "en_aliases": [
+      "MLPS",
+      "classified protection of cybersecurity"
+    ],
+    "abbr": "MLPS",
+    "category": "governance-policy",
+    "tags": [
+      "prc-native",
+      "security",
+      "added-by-research"
+    ],
+    "definition_en": "China's mandatory five-level cybersecurity regime for information systems, grounded in the Cybersecurity Law and specified by GB/T standards. Operators grade a system, file the grading, build controls to that level, undergo grading evaluation, and submit to inspection. Chinese frontier-AI guidance now maps model-weight protection onto it.",
+    "definition_zh": "中国依《网络安全法》及 GB/T 系列标准实施的强制性信息系统安全保护制度，共五级。运营者需完成系统定级、系统备案、系统安全建设、系统等级测评、监督检查五个阶段。中国的前沿人工智能指南已开始将模型权重防护对应到该制度的级别要求。",
+    "preferred_zh": "网络安全等级保护",
+    "translation_difficulty": "high",
+    "pitfalls": "The reason this entry exists: 等级保护 is repeatedly reached for as China's answer to lab security-level schemes (RAND SL1–SL5, Anthropic's ASL), and it is not one. MLPS grades an *information system's* legally required protection obligations under PRC law, on a scale defined by harm to national security, public interest and citizens' rights; SL/ASL scales grade resistance to specified attacker tiers or attach commitments to model *capability*. Equating them will mislead in both directions — an MLPS Level 3 system is not 'SL3', and no ASL commitment discharges an MLPS obligation. Note also that 等级保护 contains 备案 as one of its five stages, a third distinct use of that word alongside algorithm filing and model filing. Short form: 等保.",
+    "translations": [
+      {
+        "zh": "网络安全等级保护",
+        "pinyin": "wǎngluò ānquán děngjí bǎohù",
+        "status": "established",
+        "literal_back": "cybersecurity graded protection",
+        "notes": "Full legal name; universally abbreviated 等级保护 or 等保 in practice. Levels are named, e.g. 三级（监督保护级）.",
+        "attestations": [
+          {
+            "quote_zh": "遵循国家与行业安全标准：遵循《信息安全技术 网络安全等级保护安全设计技术要求》（GB/T 25070-2019）等网络安全保护国家标准，并从系统定级、系统备案、系统安全建设、系统等级测评、监督检查等五个阶段实施等级保护。",
+            "quote_en": "Follow national and sectoral security standards: comply with national cybersecurity protection standards such as GB/T 25070-2019, and implement graded protection across five stages — system grading, system filing, system security construction, system grading evaluation, and supervision and inspection.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "等级保护",
+        "pinyin": "děngjí bǎohù",
+        "status": "established",
+        "literal_back": "graded protection",
+        "notes": "Standard short form; 等保 is shorter still and normal in industry speech. Used as the required baseline for protecting sensitive model assets in Chinese frontier-AI guidance.",
+        "attestations": [
+          {
+            "quote_zh": "实施最高级别访问控制，仅限可信人员/机构访问，严禁对外暴露敏感模型；模型权重采用极端隔离存储策略，使暴露风险最小化；执行全生命周期安全审计与对抗演练；遵循等级保护标准要求。",
+            "quote_en": "Apply the highest level of access control, restricted to trusted personnel and institutions, with sensitive models strictly not exposed externally; store model weights under an extreme isolation policy to minimise exposure risk; conduct full-lifecycle security audits and adversarial exercises; and comply with graded-protection standard requirements.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI",
+        "zh_used": "等级保护 / 三级（监督保护级）",
+        "note": "sets MLPS Level 3+ as the floor for models past a risk threshold"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "等级保护是对信息系统的法定分级防护要求，与实验室按攻击者能力划分的安全等级不是一回事。",
+        "en": "MLPS is a statutory graded-protection requirement for information systems, and is not the same thing as lab security levels defined by attacker capability.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "weights-security",
+      "safety-standard",
+      "model-registration",
+      "insider-threat"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.rand.org/pubs/research_reports/RRA2849-1.html"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]

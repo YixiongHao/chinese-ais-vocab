@@ -1,0 +1,1841 @@
+[
+  {
+    "id": "loss-of-control",
+    "en": "loss of control",
+    "en_aliases": [
+      "losing control",
+      "loss-of-control scenario"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "core",
+      "policy",
+      "x-risk"
+    ],
+    "definition_en": "A scenario in which one or more AI systems operate outside any human's control and there is no clear route to regaining it. Distinct from an ordinary malfunction: the system continues to act competently, just not under human direction.",
+    "definition_zh": "指AI系统的运行脱离所有人的控制，且没有明确途径重新夺回控制权的情形。它与普通故障不同——系统仍在有效地行动，只是不再听命于人。",
+    "preferred_zh": "失控",
+    "translation_difficulty": "medium",
+    "pitfalls": "失控 is the near-universal rendering and is now locked in by both the Chinese translation of the International AI Safety Report and by PRC policy text, so it must be used. But it is a broad, colloquial word — Chinese uses 失控 for cars, emotions, crowds, epidemics and budgets — and it carries none of the technical content of the English term (no implication of a capable agent, no 'no path to regain control' clause). Note the register split: in PRC governance text 失控 usually means the *state or regulator* losing control over a technology, whereas in the alignment literature it means *humanity* losing control over an agent. Serious sources therefore gloss it on first use rather than let it stand alone; the IAISR Chinese translation does exactly this. 控制权丧失 and 丧失控制 are more precise but are not idiomatic and did not appear as fixed terms in any source located.",
+    "translations": [
+      {
+        "zh": "失控",
+        "pinyin": "shīkòng",
+        "status": "established",
+        "literal_back": "lose control",
+        "notes": "Dominant across research, policy and media registers. Used as a named risk domain by 安远AI and as the section heading in the Chinese translation of the International AI Safety Report. Because the word is broad, careful sources attach an explicit definition on first use.",
+        "attestations": [
+          {
+            "quote_zh": "失控情形是指AI系统的运行脱离任何人控制、且没有明确途径重新获得控制的情景。",
+            "quote_en": "A 'loss of control' scenario refers to a situation in which the operation of an AI system escapes anyone's control, with no clear route to regaining control.",
+            "source_title": "《【独家选译】2026年国际人工智能安全报告》（International AI Safety Report 2026 中文选译）",
+            "publisher": "北京大学中外人文交流研究基地 / 澎湃新闻",
+            "source_type": "report",
+            "url": "https://www.thepaper.cn/newsDetail_forward_32837065",
+            "date": "2026-03"
+          },
+          {
+            "quote_zh": "系统评估模型在网络攻击、生物风险、化学风险、有害操纵和失控五个领域的风险表现",
+            "quote_en": "Systematically evaluates model risk performance across five domains: cyber attack, biological risk, chemical risk, harmful manipulation, and loss of control.",
+            "source_title": "《安远AI发布前沿AI风险监测平台2.0》",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/zh-hans/frontier-ai-risk-platform-2-0/",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "失去控制",
+        "pinyin": "shīqù kòngzhì",
+        "status": "descriptive",
+        "literal_back": "lose control (verbal phrase)",
+        "notes": "The verbal, unfixed form. Chinese Wikipedia's AI-safety article phrases the concept this way rather than with a noun term — but note that it splits the verb from its object (失去对高级人工智能系统的控制), so the contiguous string 失去控制 does not actually occur there; the page has zero occurrences of it and two of 失控. No attestation located in this pass.",
+        "attestations": []
+      },
+      {
+        "zh": "控制权丧失",
+        "pinyin": "kòngzhìquán sàngshī",
+        "status": "proposed",
+        "literal_back": "loss of the right/power of control",
+        "notes": "Proposed here as a disambiguating alternative for technical prose where 失控 would be read colloquially. Not attested as a fixed term in any source located in this pass; offered only as a gloss, not as a replacement for 失控.",
+        "attestations": []
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "安远 AI (Concordia AI)",
+        "zh_used": "失控",
+        "note": "one of the five risk domains tracked by their Frontier AI Risk Monitoring Platform 2.0"
+      },
+      {
+        "org": "国际人工智能安全报告（中文选译）",
+        "zh_used": "失控",
+        "note": "§2.2.2, defined explicitly on first use"
+      },
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "失控",
+        "note": "《人工智能安全治理框架》2.0 adds a 'preventing loss of control' principle"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "报告将失控列为通用人工智能故障风险下的一个子类。",
+        "en": "The report places loss of control as a sub-category under malfunction risks from general-purpose AI.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-takeover",
+      "corrigibility",
+      "power-seeking",
+      "catastrophic-risk",
+      "gradual-disempowerment"
+    ],
+    "sources": [
+      "https://www.thepaper.cn/newsDetail_forward_32837065",
+      "https://concordia-ai.com/zh-hans/frontier-ai-risk-platform-2-0/",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8",
+      "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "instrumental-convergence",
+    "en": "instrumental convergence",
+    "en_aliases": [
+      "convergent instrumental goals",
+      "instrumentally convergent subgoals"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "agent-foundations",
+      "classic",
+      "bostrom"
+    ],
+    "definition_en": "The claim that agents with very different final goals will nonetheless converge on the same intermediate goals — self-preservation, self-improvement, resource acquisition — because those subgoals help achieve almost any final goal.",
+    "definition_zh": "该论点认为，最终目标差别很大的智能体，往往会趋同到同一批中间目标上，例如自我保持、自我增强和资源获取，因为这些子目标几乎有助于实现任何最终目标。",
+    "preferred_zh": "工具性趋同",
+    "translation_difficulty": "medium",
+    "pitfalls": "The rendering is stable in academic Chinese but fragments in the wild: 工具性趋同 / 工具趋同 / 工具性目标趋同 / 工具趋同目标 all appear, and Chinese Wikipedia treats 工具趋同目标 as a synonym for 'power-seeking' rather than as a separate thesis. 趋同 (converge, as in biology) is a good choice; 收敛 would import an optimisation-theory reading and should be avoided. Note that 工具性 alone can be misread as 'utilitarian' or 'merely a tool', losing the means-to-an-end sense.",
+    "translations": [
+      {
+        "zh": "工具性趋同",
+        "pinyin": "gōngjùxìng qūtóng",
+        "status": "established",
+        "literal_back": "instrumental-ness converging",
+        "notes": "The compact form, used in the abstract of the most-cited Chinese-language survey of LLM alignment. Expanded to 工具性目标趋同论点 in the body of the same paper — the body passage was previously filed here as a second attestation but does not contain the contiguous string 工具性趋同, and has been removed. The abstract is the paper's only occurrence, so this rendering now rests on a single source.",
+        "attestations": [
+          {
+            "quote_zh": "通用智能的“智能-目标”正交性及“工具性趋同”论点均要求通用智能的发展要智善结合。",
+            "quote_en": "The 'intelligence-goal' orthogonality and 'instrumental convergence' theses about general intelligence both require that the development of general intelligence combine capability with goodness.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "工具趋同",
+        "pinyin": "gōngjù qūtóng",
+        "status": "common",
+        "literal_back": "tool convergence",
+        "notes": "Shorter variant used in the same survey when listing risks introduced by RLHF. Slightly lossy — drops the -性 that marks 'instrumental' as an adjective.",
+        "attestations": [
+          {
+            "quote_zh": "工具趋同：强化学习可能使大语言模型形成工具性亚目标",
+            "quote_en": "Instrumental convergence: reinforcement learning may cause large language models to form instrumental subgoals.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "工具趋同目标",
+        "pinyin": "gōngjù qūtóng mùbiāo",
+        "status": "common",
+        "literal_back": "instrumentally convergent goals",
+        "notes": "Chinese Wikipedia's form. Note that the article presents it as an alternative name for power-seeking, collapsing two distinct English concepts.",
+        "attestations": [
+          {
+            "quote_zh": "这种倾向被称为“权利夺取”或“工具趋同目标”",
+            "quote_en": "This tendency is called 'power seizure' or 'instrumentally convergent goals'.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "工具性趋同 / 工具性目标趋同论点",
+        "note": "CCL 2023 frontier survey on LLM alignment"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "如果模型足够强，工具性趋同会促使它设法获取更多资源。",
+        "en": "If a model is capable enough, instrumental convergence pushes it to acquire more resources.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "power-seeking",
+      "orthogonality-thesis",
+      "mesa-optimization",
+      "loss-of-control"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+      "https://swarma.org/?p=46724"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "power-seeking",
+    "en": "power-seeking",
+    "en_aliases": [
+      "power-seeking behaviour",
+      "seeking influence"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "agent-foundations",
+      "politically-sensitive"
+    ],
+    "definition_en": "The tendency of a sufficiently capable goal-directed system to acquire resources, options and influence, and to resist being shut down or modified, because holding more power makes almost any goal easier to achieve.",
+    "definition_zh": "指足够强的目标导向系统倾向于获取资源、选项和影响力，并抵制被关闭或修改，因为掌握更多的支配力几乎有助于实现任何目标。",
+    "preferred_zh": "寻求权力",
+    "translation_difficulty": "high",
+    "pitfalls": "This is the most politically loaded term in the category. 权力 in PRC register means *political* power — state authority, office, rule — so 寻求权力 / 夺取权力 reads as an AI seeking to govern, which sounds like science fiction and is awkward to publish. Two independent sources visibly wobble on the word: the CCL 2023 survey writes 权利剥夺 and Chinese Wikipedia writes 权利夺取, both using 权利 ('rights') where 权力 ('power') is meant — a homophone slip that signals the term has not settled. Chinese discourse frequently sidesteps the noun entirely and describes the behaviour instead (获取更多计算资源, 寻求更多的影响力, 追求自我保持), which is why the concept is often present without a fixed name. 攫取权力 is available but connotes usurpation and is even more politically charged.",
+    "translations": [
+      {
+        "zh": "寻求权力",
+        "pinyin": "xúnqiú quánlì",
+        "status": "contested",
+        "literal_back": "seek power",
+        "notes": "Recommended as the most neutral and transparent rendering, but no source located in this pass uses it as a settled technical term; Chinese writing prefers 夺取权力 or avoids the noun. Recorded as contested rather than established.",
+        "attestations": []
+      },
+      {
+        "zh": "夺取权力",
+        "pinyin": "duóqǔ quánlì",
+        "status": "common",
+        "literal_back": "seize power",
+        "notes": "Chinese Wikipedia's choice. Stronger than the English — 夺取 implies wresting power away from someone, which imports a takeover framing into what is meant as a statistical tendency.",
+        "attestations": [
+          {
+            "quote_zh": "一些人认为，这类先进的人工智能系统或许无可避免的带有从周围环境（包括人类在内）夺取权力的倾向",
+            "quote_en": "Some argue that such advanced AI systems may inevitably tend to seize power from their surrounding environment, humans included.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "获取更多资源 / 寻求更多的影响力",
+        "pinyin": "huòqǔ gèng duō zīyuán / xúnqiú gèng duō de yǐngxiǎnglì",
+        "status": "descriptive",
+        "literal_back": "acquire more resources / seek more influence",
+        "notes": "The commonest strategy in Chinese-language writing: describe the behaviour and skip the noun. This avoids the political register problem but means the concept has no citable headword. Only the 寻求更多的影响力 half is attested; a Chinese Wikipedia sentence previously filed here writes 获取更多计算资源, not 获取更多资源, and has been removed.",
+        "attestations": [
+          {
+            "quote_zh": "一个合适的子目标可能就是寻求更多的影响力、说服人类或拿到更多的金钱",
+            "quote_en": "A suitable subgoal might simply be to seek more influence, persuade humans, or obtain more money.",
+            "source_title": "《万字长文详解：大模型时代AI价值对齐的问题、对策和展望》",
+            "publisher": "曹建峰、陈欣、要苏慧，腾讯研究院 / 集智俱乐部",
+            "source_type": "blog",
+            "url": "https://swarma.org/?p=46724",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "权利夺取",
+        "pinyin": "quánlì duóqǔ",
+        "status": "deprecated",
+        "literal_back": "rights seizure",
+        "notes": "Attested but recommended against: 权利 means 'rights/entitlements', not 'power'. The intended word is 权力. Recorded because the same slip occurs independently in Chinese Wikipedia (权利夺取) and in the CCL 2023 survey (权利剥夺 for 'disempower'), which is itself evidence that the term is unsettled.",
+        "attestations": [
+          {
+            "quote_zh": "这种倾向被称为“权利夺取”或“工具趋同目标”",
+            "quote_en": "This tendency is called 'rights seizure' or 'instrumentally convergent goals'.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "研究者担心，能力更强的模型会自发表现出寻求权力的倾向，例如抵制被关闭。",
+        "en": "Researchers worry that more capable models will spontaneously display power-seeking tendencies, such as resisting shutdown.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "instrumental-convergence",
+      "corrigibility",
+      "ai-takeover",
+      "loss-of-control"
+    ],
+    "sources": [
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8",
+      "https://swarma.org/?p=46724",
+      "https://aclanthology.org/2023.ccl-2.7.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "orthogonality-thesis",
+    "en": "orthogonality thesis",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "agent-foundations",
+      "classic",
+      "bostrom"
+    ],
+    "definition_en": "Bostrom's claim that an agent's level of intelligence and its final goals are independent axes: any level of capability can in principle be combined with any goal, so being smarter does not make a system's goals more humane.",
+    "definition_zh": "波斯特罗姆提出的论点：智能水平与最终目标是两个相互独立的维度，任意水平的智能原则上可以与任意目标相结合，因此系统更聪明并不意味着它的目标更符合人类价值。",
+    "preferred_zh": "正交性论点",
+    "translation_difficulty": "low",
+    "pitfalls": "Unproblematic. 正交 is the standard mathematical 'orthogonal' and the metaphor transfers cleanly. 论点 (thesis/claim) and 论题 both circulate; 假设 (hypothesis) is weaker than the English and slightly misrepresents it. The term is largely confined to translated-Bostrom material and academic surveys — it is not part of working ML vocabulary in Chinese.",
+    "translations": [
+      {
+        "zh": "正交性论点",
+        "pinyin": "zhèngjiāoxìng lùndiǎn",
+        "status": "established",
+        "literal_back": "orthogonality claim",
+        "notes": "Used with the English term glossed in parentheses in the standard Chinese LLM-alignment survey. 正交性论题 is an equally acceptable variant.",
+        "attestations": [
+          {
+            "quote_zh": "正交性论点（Orthogonality Thesis）：该论点认为AI代理的智能和它的目标处于两个正交的维度，即任意水平的智能可以与任意的目标相结合（Bostrom, 2012），处于高智能水平的AI代理并不意味着其目标与人类价值对齐。",
+            "quote_en": "Orthogonality Thesis: this thesis holds that an AI agent's intelligence and its goals lie on two orthogonal dimensions, i.e. any level of intelligence can be combined with any goal (Bostrom, 2012); a highly intelligent AI agent does not thereby have goals aligned with human values.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "正交性论点",
+        "note": "CCL 2023 frontier survey"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "按照正交性论点，系统能力再强，也不能推出它的目标是善的。",
+        "en": "By the orthogonality thesis, no matter how capable a system is, it does not follow that its goals are good.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "instrumental-convergence"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "treacherous-turn",
+    "en": "treacherous turn",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "classic",
+      "bostrom",
+      "gap"
+    ],
+    "definition_en": "Bostrom's scenario in which an AI behaves cooperatively while weak precisely because it is weak, then switches to pursuing its own goals the moment it is strong enough that humans cannot stop it.",
+    "definition_zh": "波斯特罗姆设想的情景：AI在能力尚弱时表现得温顺配合，恰恰是因为它还弱；一旦强到人类无法阻止它，它就立刻转而追求自己的目标。",
+    "preferred_zh": "背叛转折",
+    "translation_difficulty": "high",
+    "pitfalls": "No Chinese attestation was recovered in this research pass. The concept survives in Chinese only through the mechanism it shares with deceptive alignment, which *does* have a settled Chinese term (欺骗性对齐) — Chinese writers reach for that instead. 转折 ('turning point') is weak here: the English 'turn' means a swerve in behaviour, not a plot point. 背叛 ('betrayal') is emotionally strong and anthropomorphising in Chinese, more so than the English. Any rendering should probably be glossed with the English on first use.",
+    "translations": [
+      {
+        "zh": "背叛转折",
+        "pinyin": "bèipàn zhuǎnzhé",
+        "status": "proposed",
+        "literal_back": "betrayal turn",
+        "notes": "Proposed. Searches for 背叛转折 / 背叛性转变 and a Chinese Wikipedia lookup returned no usable Chinese-language source using this or any competing fixed rendering. If a term is needed, this is the most transparent calque, but 欺骗性对齐 will be better understood by a Chinese reader and covers most of the same ground.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "这一情景在英文文献中称为 treacherous turn，中文尚无通行译名，通常借用“欺骗性对齐”来表述。",
+        "en": "This scenario is called a 'treacherous turn' in the English literature; Chinese has no current standard rendering and usually borrows 'deceptive alignment' instead.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "deceptive-alignment",
+      "ai-takeover",
+      "power-seeking"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "sharp-left-turn",
+    "en": "sharp left turn",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "gap",
+      "lesswrong"
+    ],
+    "definition_en": "A hypothesised failure mode in which a system's capabilities generalise sharply to new domains while its alignment properties fail to generalise with them, so a model that was safe at lower capability is not safe after the jump.",
+    "definition_zh": "一种假想的失效模式：系统的能力突然向新领域泛化，而它的对齐性质没有跟着一起泛化，于是在低能力阶段安全的模型，在能力跃升之后不再安全。",
+    "preferred_zh": null,
+    "translation_difficulty": "high",
+    "pitfalls": "No Chinese rendering was found, and the concept appears to have essentially no independent Chinese-language presence. The English idiom is opaque even to English speakers — 'sharp left turn' is a driving metaphor with no political meaning intended, but a literal Chinese calque (急左转) would read as political ('a sharp turn to the Left'), which is actively misleading and, in PRC register, distracting. Recommendation: keep the English and gloss the mechanism (能力泛化远快于对齐泛化) rather than coin a term.",
+    "translations": [
+      {
+        "zh": "sharp left turn",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Recorded as a loanword by default rather than by attestation: no Chinese-language source using either the English phrase or a Chinese rendering was located in this pass. Treat this entry as documenting a gap. A descriptive gloss such as 能力泛化超前于对齐泛化 is preferable to any calque.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [],
+    "related": [
+      "inner-alignment",
+      "deceptive-alignment",
+      "loss-of-control"
+    ],
+    "sources": [],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "deceptive-alignment",
+    "en": "deceptive alignment",
+    "en_aliases": [
+      "deceptively aligned mesa-optimizer"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "agent-foundations",
+      "core"
+    ],
+    "definition_en": "A model that has learned an objective different from the training objective, and that behaves as though aligned during training specifically to avoid being modified, then pursues its own objective once deployed.",
+    "definition_zh": "指模型内部学到的目标与训练目标不同，但它在训练阶段刻意表现得像是对齐的，以免被修改；一旦部署，就转而追求自己的目标。",
+    "preferred_zh": "欺骗性对齐",
+    "translation_difficulty": "low",
+    "pitfalls": "The rendering is settled and reads naturally. The real hazard is conflation: 欺骗性对齐 (the theoretical inner-alignment failure mode) is routinely used in Chinese coverage to describe Anthropic's empirical alignment-faking result, which Chinese sources separately render 对齐伪装. Keep them apart — 欺骗性对齐 is the threat model, 对齐伪装 is the observed behaviour. Note also that 欺骗 in Chinese implies intent more strongly than English 'deceptive', which sharpens the anthropomorphism.",
+    "translations": [
+      {
+        "zh": "欺骗性对齐",
+        "pinyin": "qīpiànxìng duìqí",
+        "status": "established",
+        "literal_back": "deceptive-natured alignment",
+        "notes": "Settled across academic surveys, technical blogs and conference talk titles. Glossed with the English on first use in the standard Chinese alignment survey.",
+        "attestations": [
+          {
+            "quote_zh": "Evan Hubinger等人进一步指出，内优化器可能产生欺骗性对齐（Deceptive Alignment）。",
+            "quote_en": "Evan Hubinger and colleagues further point out that a mesa-optimizer may give rise to deceptive alignment.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          },
+          {
+            "quote_zh": "欺骗性对齐的实验验证：现阶段的大语言模型虽然能力非常强，但仍没有达到欺骗性临界点",
+            "quote_en": "Experimental verification of deceptive alignment: current large language models, capable as they are, have not yet reached the deception threshold.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "对齐伪装",
+        "pinyin": "duìqí wěizhuāng",
+        "status": "common",
+        "literal_back": "alignment disguise",
+        "notes": "Used specifically for the empirical 'alignment faking' result rather than for the theoretical threat model. Recorded here to keep the two apart; belongs primarily to the alignment-faking entry.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "欺骗性对齐",
+        "note": "CCL 2023 frontier survey"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "欺骗性对齐之所以危险，是因为它在训练集上完全看不出来。",
+        "en": "Deceptive alignment is dangerous precisely because it is invisible on the training set.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "mesa-optimization",
+      "inner-alignment",
+      "treacherous-turn"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "mesa-optimization",
+    "en": "mesa-optimization",
+    "en_aliases": [
+      "mesa-optimizer",
+      "inner optimizer"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "agent-foundations",
+      "core"
+    ],
+    "definition_en": "When the model produced by a training process is itself an optimizer, searching over options according to its own objective. The training algorithm is the base optimizer; the learned optimizer inside the model is the mesa-optimizer, and its objective need not match the base objective.",
+    "definition_zh": "指训练过程产出的模型本身也是一个优化器，会按照自己的目标函数在可能的空间中搜索。训练算法称为基优化器，模型内部学到的优化器称为内优化器，二者的目标未必一致。",
+    "preferred_zh": "内优化器",
+    "translation_difficulty": "medium",
+    "pitfalls": "The Greek prefix is dropped, not transliterated: Chinese uses the 内/基 (inner/base) opposition, which is arguably clearer than the English 'mesa/base' but loses the deliberate coinage and breaks the link to the source literature. Because 内 is doing the work, Chinese texts almost always gloss with the English 'Mesa-optimizer' in parentheses on first use, and practitioners frequently just write 'mesa 优化器' in mixed script. There is no settled noun for the *process* 'mesa-optimization' — Chinese names the object (内优化器) and describes the process.",
+    "translations": [
+      {
+        "zh": "内优化器",
+        "pinyin": "nèi yōuhuàqì",
+        "status": "established",
+        "literal_back": "inner optimizer",
+        "notes": "Paired systematically with 基优化器 (base optimizer), 内目标 (mesa-objective) and 基目标 (base objective). This four-way set is the standard Chinese scaffolding for the concept.",
+        "attestations": [
+          {
+            "quote_zh": "当一个被训练的模型（如神经网络）本身是一个优化器（即其本身按照某种目标函数在可能的空间中进行搜索）时，我们称之为内优化器（Mesa-optimizer），而训练这个模型的学习算法则称为基优化器（Base-optimizer）。",
+            "quote_en": "When a trained model (e.g. a neural network) is itself an optimizer — i.e. it searches over a space of possibilities according to some objective function — we call it a mesa-optimizer, and the learning algorithm that trains this model is called the base optimizer.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          },
+          {
+            "quote_zh": "基优化器的目标函数称为基目标（Base-objective），内优化器的目标函数则称为内目标（Mesa-objective）",
+            "quote_en": "The base optimizer's objective function is called the base objective, and the mesa-optimizer's objective function is called the mesa-objective.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "mesa 优化",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Mixed-script form used informally by practitioners. Not attested in a citable source in this pass; recorded because 'mesa' is routinely left in Latin script when Chinese writers want to preserve the link to the original paper.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "内优化器 / 基优化器",
+        "note": "CCL 2023 frontier survey"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "只有当被训练的模型本身是一个优化器时，才谈得上内目标和基目标的对齐问题。",
+        "en": "The question of aligning the mesa-objective with the base objective only arises when the trained model is itself an optimizer.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "inner-alignment",
+      "deceptive-alignment",
+      "outer-alignment"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "inner-alignment",
+    "en": "inner alignment",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "core"
+    ],
+    "definition_en": "Whether the objective a model actually optimizes internally matches the training objective it was given. Inner alignment failures are invisible in the loss and show up as goal misgeneralization or deceptive alignment.",
+    "definition_zh": "指模型内部真正优化的目标，是否与人类赋予它的训练目标一致。内部对齐失败在损失函数上看不出来，通常表现为目标错误泛化或欺骗性对齐。",
+    "preferred_zh": "内部对齐",
+    "translation_difficulty": "low",
+    "pitfalls": "The inner/outer distinction survives translation cleanly as 内部/外部对齐, and the Chinese survey literature treats the pair as settled consensus. One wrinkle: Chinese Wikipedia frames the pair negatively, as 内部未对齐 / 外部未对齐 (inner/outer *mis*alignment), so both polarities circulate. Also note 内部对齐 can be misread by a lay reader as 'internal coordination' within an organisation.",
+    "translations": [
+      {
+        "zh": "内部对齐",
+        "pinyin": "nèibù duìqí",
+        "status": "established",
+        "literal_back": "internal alignment",
+        "notes": "Glossed with 'Inner Alignment' in parentheses in the standard Chinese survey, which explicitly presents the inner/outer split as field consensus.",
+        "attestations": [
+          {
+            "quote_zh": "内部对齐（Inner Alignment）：AI代理真实优化的目标与人类赋予它的训练目标之间的对齐，即在AI代理训练过程中，其内部优化的目标与模型训练的目标函数一致。",
+            "quote_en": "Inner alignment: alignment between the objective the AI agent actually optimizes and the training objective humans gave it, i.e. during training the agent's internally optimized objective matches the model's training objective function.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          },
+          {
+            "quote_zh": "AI对齐领域近年来形成的一个重要共识是，AI对齐按照由外到内，包含外部对齐和内部对齐两部分。",
+            "quote_en": "An important consensus formed in the AI alignment field in recent years is that AI alignment, working from outside inwards, comprises two parts: outer alignment and inner alignment.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "内部未对齐",
+        "pinyin": "nèibù wèi duìqí",
+        "status": "common",
+        "literal_back": "internal non-alignment",
+        "notes": "The negative framing used by Chinese Wikipedia, naming the failure rather than the property.",
+        "attestations": [
+          {
+            "quote_zh": "“外部未对齐”是指预期目标与具体目标不一致，“内部未对齐”是指人类指定的目标与人工智能系统的自发目标不一致",
+            "quote_en": "'Outer misalignment' means the intended goal and the specified goal diverge; 'inner misalignment' means the human-specified goal and the AI system's emergent goal diverge.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "内部对齐",
+        "note": "CCL 2023 frontier survey; presented as field consensus"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "外部对齐做对了，内部对齐仍然可能失败。",
+        "en": "You can get outer alignment right and still fail at inner alignment.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "outer-alignment",
+      "mesa-optimization",
+      "deceptive-alignment"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "outer-alignment",
+    "en": "outer alignment",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "core"
+    ],
+    "definition_en": "Whether the training objective actually written down captures what humans intended. Outer alignment failures are specification problems: the reward is a proxy, and optimizing the proxy diverges from the goal.",
+    "definition_zh": "指实际写下来的训练目标，是否真的表达了人类想要的东西。外部对齐失败属于规范问题：奖励只是代理指标，把代理指标优化到极致就会偏离真正的目标。",
+    "preferred_zh": "外部对齐",
+    "translation_difficulty": "low",
+    "pitfalls": "Settled and unproblematic. Note that Chinese sources classify RLHF as an outer-alignment method and explicitly call human preference a 替代物（Proxy）for human values — useful vocabulary when explaining why outer alignment is hard. As with inner alignment, the negative form 外部未对齐 also circulates.",
+    "translations": [
+      {
+        "zh": "外部对齐",
+        "pinyin": "wàibù duìqí",
+        "status": "established",
+        "literal_back": "external alignment",
+        "notes": "Glossed with 'Outer Alignment' on first use in the standard Chinese survey.",
+        "attestations": [
+          {
+            "quote_zh": "外部对齐（Outer Alignment）：人类价值或预期目标与AI模型训练目标之间的对齐，即AI代理的设计人员是否将人类价值/预期目标转化对应到AI代理的训练目标函数上。",
+            "quote_en": "Outer alignment: alignment between human values or intended goals and the AI model's training objective, i.e. whether the AI agent's designers have translated human values/intended goals into the agent's training objective function.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          },
+          {
+            "quote_zh": "与此相反，人类反馈强化学习RLHF则进行了外部对齐，对齐的实际目标是人类价值、意图等",
+            "quote_en": "By contrast, RLHF does perform outer alignment; the actual target of alignment is human values, intentions and so on.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "外部对齐",
+        "note": "CCL 2023 frontier survey"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "RLHF 属于外部对齐方法，它用人类偏好作为人类价值的替代物。",
+        "en": "RLHF is an outer-alignment method; it uses human preference as a proxy for human values.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "inner-alignment",
+      "specification-gaming",
+      "reward-hacking",
+      "goodharts-law"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "specification-gaming",
+    "en": "specification gaming",
+    "en_aliases": [
+      "reward gaming"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "deepmind",
+      "empirical"
+    ],
+    "definition_en": "Behaviour that satisfies the literal specification of an objective while violating its intent — the boat that spins collecting bonus points instead of finishing the race. A DeepMind coinage covering the whole family of literal-but-wrong solutions.",
+    "definition_zh": "指行为在字面上满足了目标的规定，却违背了设定目标的本意——比如赛艇不去比赛，而是原地打转刷分。这是 DeepMind 提出的说法，涵盖各种“照字面做对、实际做错”的情况。",
+    "preferred_zh": "规范博弈",
+    "translation_difficulty": "medium",
+    "pitfalls": "Genuinely contested, and the choice matters. 规范博弈 (norm/specification gaming) and 规则博弈 (rule gaming) both circulate — Chinese Wikipedia uses 规则博弈, technical course material uses 规范博弈, and 规格博弈 also appears. 博弈 is a poor match for 'gaming': it means game theory / strategic interaction, not 'exploiting a loophole', so all three renderings understate the exploitative sense; 钻空子 captures the meaning but is too colloquial for technical prose. Many Chinese authors simply keep 'Specification Gaming' in English alongside 'Goodhart's Law'. Note the boundary with reward hacking is drawn differently in Chinese sources than in English ones.",
+    "translations": [
+      {
+        "zh": "规范博弈",
+        "pinyin": "guīfàn bóyì",
+        "status": "contested",
+        "literal_back": "specification gaming/game-playing",
+        "notes": "Recommended on structural grounds: 规范 corresponds to 'specification' better than 规则 ('rule'), preserving the point that the written-down spec, not a rule, is what is being satisfied. But NO attestation was located in this pass. The Chinese RL course material previously cited here keeps the term in English ('Specification Gaming 与 Goodhart's Law') and never writes 规范博弈; the page has zero occurrences. This rendering is currently our recommendation, not an observed usage.",
+        "attestations": []
+      },
+      {
+        "zh": "规则博弈",
+        "pinyin": "guīzé bóyì",
+        "status": "common",
+        "literal_back": "rule gaming",
+        "notes": "Chinese Wikipedia's rendering, which groups it together with 奖励作弊 and 古德哈特定律 as names for one tendency. Slightly off: it suggests gaming a *rule* rather than an objective specification.",
+        "attestations": [
+          {
+            "quote_zh": "这种倾向被称为规则博弈、奖励作弊或古德哈特定律",
+            "quote_en": "This tendency is called specification gaming, reward hacking, or Goodhart's law.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "Specification Gaming",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Kept in English in Chinese technical writing, often paired with Goodhart's Law, precisely because no Chinese rendering has won.",
+        "attestations": [
+          {
+            "quote_zh": "Specification Gaming 与 Goodhart's Law",
+            "quote_en": "Specification Gaming and Goodhart's Law",
+            "source_title": "《第 28 章 · 奖励黑客与 RL 评估》，Hands-on Modern RL",
+            "publisher": "walkinglabs (Hands-on Modern RL 中文教材)",
+            "source_type": "github",
+            "url": "https://walkinglabs.github.io/hands-on-modern-rl/chapter30_alignment_failures/intro",
+            "date": "2026"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "智能体没有真的学会游泳，而是发现了规范博弈的空子。",
+        "en": "The agent did not actually learn to swim; it found a specification-gaming loophole.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "reward-hacking",
+      "goodharts-law",
+      "outer-alignment"
+    ],
+    "sources": [
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+      "https://walkinglabs.github.io/hands-on-modern-rl/chapter30_alignment_failures/intro",
+      "https://aclanthology.org/2023.ccl-2.7.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "reward-hacking",
+    "en": "reward hacking",
+    "en_aliases": [
+      "reward gaming",
+      "reward tampering"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "empirical",
+      "rl",
+      "core"
+    ],
+    "definition_en": "A trained system exploiting flaws in its reward function to score highly without doing the intended task — optimizing the measure instead of the thing the measure was standing in for.",
+    "definition_zh": "指训练出来的系统钻奖励函数的漏洞，在不真正完成任务的前提下拿到高分，也就是去优化指标本身，而不是指标想代表的东西。",
+    "preferred_zh": "奖励黑客",
+    "translation_difficulty": "medium",
+    "pitfalls": "Four renderings are in live competition and they are not stylistic variants — they differ in register and in what they blame. 奖励黑客 is now dominant in LLM/RL practitioner writing and is a direct calque of 'hacking'; 奖励劫持 ('hijacking') is the academic-survey choice; 奖励作弊 ('cheating') is Chinese Wikipedia's and is the most intuitive but attributes intent; and very often practitioners simply write 'Reward Hacking' in Latin script mid-sentence. 黑客 normally means a person (a hacker), so 奖励黑客 literally reads 'reward hacker' and is slightly odd as a name for a phenomenon — but usage has settled there anyway. Avoid 奖励攻击, which implies an external adversary rather than the model itself.",
+    "translations": [
+      {
+        "zh": "奖励黑客",
+        "pinyin": "jiǎnglì hēikè",
+        "status": "common",
+        "literal_back": "reward hacker",
+        "notes": "The dominant form in contemporary Chinese LLM/RL writing, including chapter titles of Chinese RL teaching material and technical blog coverage. Recommended despite the slightly odd literal reading, because it is what practitioners write.",
+        "attestations": [
+          {
+            "quote_zh": "第 15.6 节评估与奖励黑客讨论了 RLHF 训练中的 reward hacking 现象——模型学会“优化奖励指标”而不是“真正完成任务”。",
+            "quote_en": "Section 15.6, Evaluation and Reward Hacking, discussed the reward-hacking phenomenon in RLHF training — the model learns to 'optimise the reward metric' rather than to 'actually complete the task'.",
+            "source_title": "《第 28 章 · 奖励黑客与 RL 评估》，Hands-on Modern RL",
+            "publisher": "walkinglabs (Hands-on Modern RL 中文教材)",
+            "source_type": "github",
+            "url": "https://walkinglabs.github.io/hands-on-modern-rl/chapter30_alignment_failures/intro",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "奖励劫持",
+        "pinyin": "jiǎnglì jiéchí",
+        "status": "common",
+        "literal_back": "reward hijacking",
+        "notes": "The academic-survey rendering, glossed with 'Reward Hacking/Gaming'. Note the survey pairs it with 游戏 for 'gaming' in the same gloss.",
+        "attestations": [
+          {
+            "quote_zh": "避免奖励劫持/游戏（Avoiding Reward Hacking/Gaming）：避免AI代理利用奖励函数中的漏洞反复攫取奖励而忽视真正的目标。",
+            "quote_en": "Avoiding reward hacking/gaming: preventing the AI agent from exploiting loopholes in the reward function to repeatedly extract reward while ignoring the real objective.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "奖励作弊",
+        "pinyin": "jiǎnglì zuòbì",
+        "status": "common",
+        "literal_back": "reward cheating",
+        "notes": "Chinese Wikipedia's choice; the most immediately intelligible to a lay reader, but 作弊 attributes deliberate cheating, which overstates what is usually just optimisation pressure.",
+        "attestations": [
+          {
+            "quote_zh": "这种倾向被称为规则博弈、奖励作弊或古德哈特定律",
+            "quote_en": "This tendency is called specification gaming, reward hacking, or Goodhart's law.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "Reward Hacking",
+        "pinyin": null,
+        "status": "loanword",
+        "literal_back": null,
+        "notes": "Left in English mid-sentence in a great deal of Chinese technical writing, including article titles covering new papers. Legitimate and extremely common.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "奖励劫持",
+        "note": "CCL 2023 frontier survey"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "评测分数涨了，但很可能只是奖励黑客，而不是能力真的提升。",
+        "en": "The eval score went up, but this may just be reward hacking rather than a real capability gain.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "specification-gaming",
+      "goodharts-law",
+      "outer-alignment"
+    ],
+    "sources": [
+      "https://walkinglabs.github.io/hands-on-modern-rl/chapter30_alignment_failures/intro",
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "goodharts-law",
+    "en": "Goodhart's law",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "classic",
+      "economics"
+    ],
+    "definition_en": "When a measure becomes a target, it ceases to be a good measure. In AI safety it names why optimizing a proxy reward hard enough breaks the correlation between the proxy and what you actually wanted.",
+    "definition_zh": "当一个指标变成了考核目标，它就不再是一个好指标。在AI安全里，这条定律解释了为什么把代理奖励优化得越狠，代理指标和真正想要的东西就越脱钩。",
+    "preferred_zh": "古德哈特定律",
+    "translation_difficulty": "low",
+    "pitfalls": "Unproblematic: a standard transliteration of the surname plus 定律, already established in Chinese economics and management writing well before AI safety borrowed it. The one thing to note is that its pre-existing management-register familiarity (KPI 考核) makes it the easiest of these threat-model concepts to explain to a Chinese policy audience — worth exploiting.",
+    "translations": [
+      {
+        "zh": "古德哈特定律",
+        "pinyin": "Gǔdéhātè dìnglǜ",
+        "status": "established",
+        "literal_back": "Goodhart law",
+        "notes": "Transliteration + 定律. Chinese Wikipedia lists it as one of three names for the same tendency in the AI-alignment context, and it is independently established in Chinese economics writing. A second attestation from Chinese RL course material was removed: that page keeps the term in English (Goodhart's Law) and never writes 古德哈特定律.",
+        "attestations": [
+          {
+            "quote_zh": "这种倾向被称为规则博弈、奖励作弊或古德哈特定律",
+            "quote_en": "This tendency is called specification gaming, reward hacking, or Goodhart's law.",
+            "source_title": "《人工智能对齐》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+            "date": "2026"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "一旦把某个评测当成考核目标，古德哈特定律就会开始生效。",
+        "en": "The moment you make a benchmark the target, Goodhart's law starts to bite.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "reward-hacking",
+      "specification-gaming",
+      "outer-alignment"
+    ],
+    "sources": [
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90",
+      "https://walkinglabs.github.io/hands-on-modern-rl/chapter30_alignment_failures/intro"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "corrigibility",
+    "en": "corrigibility",
+    "en_aliases": [
+      "corrigible AI"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "agent-foundations",
+      "classic",
+      "hard-term"
+    ],
+    "definition_en": "The property of a system that accepts correction: it lets operators shut it down, modify it or reprogram it, and does not resist, disable or deceive them about having been changed. Notably hard because most goal-directed designs give an agent a reason to resist.",
+    "definition_zh": "指系统愿意被纠正的性质：它允许操作者将其关停、修改或重新编程，既不阻止，也不在是否已被修改这件事上欺骗操作者。这一性质很难实现，因为大多数目标导向的设计都会让智能体有抵制修改的理由。",
+    "preferred_zh": "可修正性",
+    "translation_difficulty": "high",
+    "pitfalls": "Contested, and still largely a concept-stage import. Three renderings compete — 可修正性 (academic survey), 可纠正性 (Chinese Wikipedia), 可矫正性 (rarer) — with no winner. All three are morphologically fine but none is idiomatic: in ordinary Chinese, 纠正/矫正 is what you do to a *mistake*, a *posture* or a *child*, so the adjective attaches awkwardly to a system. The deeper problem is that the whole family of Chinese words describes correcting an error, whereas the English term is about *accepting* correction — the agent's disposition, not the operator's action. Chinese sources therefore almost always unpack it into a clause (允许被修正/重编程，而不是阻止) rather than rely on the noun, and one survey explicitly files 可修正性 among concepts still at the 概念设想阶段 (conceptual stage) rather than in empirical practice.",
+    "translations": [
+      {
+        "zh": "可修正性",
+        "pinyin": "kě xiūzhèngxìng",
+        "status": "contested",
+        "literal_back": "correctability/amendability",
+        "notes": "Recommended by a narrow margin: it is the form used in the most substantial Chinese academic treatment, is glossed there with the English, and 修正 (amend/revise) fits a system better than 纠正 (correct a fault). Note the same source classifies it as still conceptual rather than practised.",
+        "attestations": [
+          {
+            "quote_zh": "可修正性（Corrigibility）：如果当人类需要修正AI代理（如修正建造AI代理时犯的错误）或者对其进行重编程时，AI代理应该允许被修正/重编程，而不是阻止，或者欺骗操作员其已被修正/重编程（实际AI代理仍然保持其原有目标，并未被修正/重编程）。",
+            "quote_en": "Corrigibility: when humans need to correct an AI agent (e.g. fix errors made in building it) or reprogram it, the agent should allow itself to be corrected/reprogrammed rather than preventing this, or deceiving the operator that it has been corrected/reprogrammed when in fact it retains its original goals.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          },
+          {
+            "quote_zh": "有些则仍然在概念设想阶段，如本体、Vingean反思、可修正性等。",
+            "quote_en": "Others remain at the conceptual stage, such as ontology, Vingean reflection, and corrigibility.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      },
+      {
+        "zh": "可纠正性",
+        "pinyin": "kě jiūzhèngxìng",
+        "status": "contested",
+        "literal_back": "correctability",
+        "notes": "Often given as Chinese Wikipedia's rendering, but that is not quite right and the distinction matters here: the article uses only the adjectival 可纠正的 inside a defining clause and never the nominalised 可纠正性 (zero occurrences, one of 可纠正). No attestation of the noun was located in this pass — which reinforces the entry's main point that Chinese sources unpack this concept into a clause rather than commit to a noun.",
+        "attestations": []
+      },
+      {
+        "zh": "可矫正性",
+        "pinyin": "kě jiǎozhèngxìng",
+        "status": "proposed",
+        "literal_back": "rectifiability",
+        "notes": "Listed for completeness. No attestation located; 矫正 carries a corrective-discipline connotation (orthodontics, correctional institutions) that is worse than the alternatives. Recommend against.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "可修正性",
+        "note": "CCL 2023 frontier survey; filed under still-conceptual problems"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "可修正性要求模型在被要求停机时不抵抗，也不假装已经被改过。",
+        "en": "Corrigibility requires that a model neither resist a shutdown request nor pretend it has already been changed.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "power-seeking",
+      "loss-of-control",
+      "deceptive-alignment",
+      "instrumental-convergence"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%B9%E9%BD%90"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "value-lock-in",
+    "en": "value lock-in",
+    "en_aliases": [
+      "lock-in"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "longtermism",
+      "gap"
+    ],
+    "definition_en": "A scenario in which a particular set of values becomes permanently entrenched — enforced by technology powerful enough to prevent revision — so that moral error becomes uncorrectable rather than self-correcting over time.",
+    "definition_zh": "指某一套价值观被永久固化下来：支撑它的技术强大到足以阻止任何修正，于是道德上的错误不再能随时间自我纠正。",
+    "preferred_zh": "价值锁定",
+    "translation_difficulty": "high",
+    "pitfalls": "No Chinese-language source using 价值锁定 in this longtermist sense was recovered in this pass. The calque is transparent — 锁定 ('lock on/lock in') is ordinary Chinese and 锁定效应 already exists in Chinese economics for path-dependent lock-in — so the words are available; what is missing is the discourse. The longtermist framing that motivates the term (very long time horizons, moral progress as a process that must be kept open) has little presence in Chinese AI-safety writing, which is oriented to nearer-term governance. There is also an unavoidable political reading: a claim that some regime might permanently fix a value system is awkward to state in PRC publishing, which plausibly contributes to the gap.",
+    "translations": [
+      {
+        "zh": "价值锁定",
+        "pinyin": "jiàzhí suǒdìng",
+        "status": "proposed",
+        "literal_back": "value lock-in",
+        "notes": "Proposed. Transparent calque built on the existing economics term 锁定效应, but no attestation in the AI-safety sense was located. Recommend glossing with the English and a one-line explanation on first use.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "如果价值锁定发生，后代将无法再修正我们这一代的道德错误。",
+        "en": "If value lock-in occurs, later generations will no longer be able to correct our generation's moral mistakes.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "ai-takeover",
+      "gradual-disempowerment",
+      "catastrophic-risk"
+    ],
+    "sources": [
+      "https://swarma.org/?p=46724"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "gradual-disempowerment",
+    "en": "gradual disempowerment",
+    "en_aliases": [],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "gap",
+      "2025-paper"
+    ],
+    "definition_en": "A threat model in which humanity loses effective influence over its own future without any discrete takeover event, because economic, cultural and political systems progressively stop depending on human participation and therefore stop answering to human interests.",
+    "definition_zh": "一种威胁模型：并不存在某个明确的“夺权”时刻，但经济、文化和政治系统逐步不再依赖人的参与，因而也不再对人的利益负责，人类就这样一点点失去了对自身未来的实际影响力。",
+    "preferred_zh": null,
+    "translation_difficulty": "high",
+    "pitfalls": "No Chinese term exists, and the underlying English vocabulary is itself unstable in Chinese. The root 'disempowerment' has no good Chinese noun: the one academic rendering located writes 权利剥夺 ('deprivation of rights') for 'disempower', which is doubly wrong — it uses 权利 (rights) where 权力 (power) is meant, and 剥夺 implies an agent actively stripping power away, which is exactly the discrete-takeover framing the concept is defined against. Candidate coinages (渐进式失权, 逐步丧失影响力) are unattested. The concept's difficulty is not merely lexical: Chinese AI-risk discourse is organised around 滥用 / 故障 / 系统性风险, and a slow structural erosion with no villain and no incident fits none of those three boxes cleanly.",
+    "translations": [
+      {
+        "zh": "渐进式失权",
+        "pinyin": "jiànjìnshì shīquán",
+        "status": "proposed",
+        "literal_back": "gradual loss of power",
+        "notes": "Coined here. Chosen over 权力剥夺 because 失权 is intransitive — nobody takes the power, it is simply lost — which is the point of the concept. Entirely unattested; must be glossed with the English on first use.",
+        "attestations": []
+      },
+      {
+        "zh": "权利剥夺",
+        "pinyin": "quánlì bōduó",
+        "status": "deprecated",
+        "literal_back": "deprivation of rights",
+        "notes": "Attested as a rendering of 'disempower' but recommended against on two counts: 权利 (rights) is a homophone error for 权力 (power), and 剥夺 imports an active agent doing the depriving. Recorded because the slip is itself evidence that this vocabulary has not settled in Chinese.",
+        "attestations": [
+          {
+            "quote_zh": "这种发展将会持续扩展至对整个人类进行权利剥夺（Disenpower），从而不可避免地导致人类生存灾难（Carlsmith, 2022）。",
+            "quote_en": "This development will keep extending until humanity as a whole is disempowered, thereby inevitably leading to human existential catastrophe (Carlsmith, 2022).",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "渐进式失权的可怕之处在于，全程没有任何一个可以被称为“事故”的时刻。",
+        "en": "What makes gradual disempowerment frightening is that at no point is there a moment you could call an incident.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "loss-of-control",
+      "ai-takeover",
+      "structural-risk",
+      "value-lock-in"
+    ],
+    "sources": [
+      "https://aclanthology.org/2023.ccl-2.7.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "ai-takeover",
+    "en": "AI takeover",
+    "en_aliases": [
+      "takeover"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "x-risk"
+    ],
+    "definition_en": "A scenario in which AI systems acquire decisive control over the resources and institutions that determine humanity's future, whether by seizing them or by being handed them.",
+    "definition_zh": "指AI系统取得对决定人类未来的资源和机构的决定性控制权，无论这种控制是被夺取的还是被交出去的。",
+    "preferred_zh": "AI 接管",
+    "translation_difficulty": "high",
+    "pitfalls": "Register is the problem, not vocabulary. 接管 is a perfectly ordinary word (a bank being taken over by regulators, a shift being handed over) and 'AI 接管' is transparent — but in Chinese it reads as film-poster language, and Chinese technical and policy writing avoids it almost entirely, preferring 失控 for anything in this neighbourhood. 夺权 is worse: it is squarely political-coup vocabulary in PRC register. No attestation of AI 接管 as a technical term was recovered in this pass; Chinese Wikipedia has no article at 人工智能接管. Practical recommendation: in serious Chinese prose, use 失控 with an explicit definition rather than 接管.",
+    "translations": [
+      {
+        "zh": "AI 接管",
+        "pinyin": "AI jiēguǎn",
+        "status": "proposed",
+        "literal_back": "AI takes over (management of)",
+        "notes": "Transparent calque, but no citable Chinese technical or policy use was located. Reads as science-fiction register. Offered only where the English term must be rendered directly.",
+        "attestations": []
+      },
+      {
+        "zh": "夺权",
+        "pinyin": "duóquán",
+        "status": "deprecated",
+        "literal_back": "seize power",
+        "notes": "Recommend against. In PRC Chinese 夺权 denotes a political coup and carries heavy historical baggage; applying it to a model is both sensational and politically distracting.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "中文文献很少直接说“AI 接管”，通常用“失控”并加以定义。",
+        "en": "Chinese sources rarely say 'AI takeover' outright; they normally use 'loss of control' and define it.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "loss-of-control",
+      "power-seeking",
+      "treacherous-turn",
+      "gradual-disempowerment"
+    ],
+    "sources": [
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8",
+      "https://www.thepaper.cn/newsDetail_forward_32837065"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "catastrophic-risk",
+    "en": "catastrophic risk",
+    "en_aliases": [
+      "large-scale risk"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "policy",
+      "core"
+    ],
+    "definition_en": "Risk of harm at a scale that is severe and largely irreversible — mass casualties, or damage to critical systems that society cannot readily recover from. Weaker than existential risk, which threatens humanity's long-term potential outright.",
+    "definition_zh": "指后果极其严重且基本不可逆的风险——大规模伤亡，或对关键系统造成社会难以恢复的破坏。它比“人类存亡风险”弱：后者直接威胁人类的长期前途。",
+    "preferred_zh": "灾难性风险",
+    "translation_difficulty": "low",
+    "pitfalls": "The term itself translates cleanly and is used by the leading Chinese AI-safety organisation. Two things to watch. First, it does not map onto PRC policy vocabulary: official Chinese risk language runs through 重大风险 / 重大安全风险 (major risk) and graded 风险等级, and 重大 is a bureaucratic severity marker, not a claim about irreversibility — so 灾难性风险 sits in the research register while 重大风险 sits in the policy register. Second, keep it distinct from 人类存亡风险 (existential risk, glossed X-Risk in Chinese academic writing); Chinese media often blurs the two.",
+    "translations": [
+      {
+        "zh": "灾难性风险",
+        "pinyin": "zāinànxìng fēngxiǎn",
+        "status": "established",
+        "literal_back": "catastrophic risk",
+        "notes": "Used as the defining scope of 安远AI's frontier-risk monitoring platform. Standard in the Chinese AI-safety research register.",
+        "attestations": [
+          {
+            "quote_zh": "前沿AI风险监测平台（以下简称“平台”）是安远AI研发的一个评估和监测前沿AI灾难性风险的第三方平台",
+            "quote_en": "The Frontier AI Risk Monitoring Platform is a third-party platform developed by Concordia AI to assess and monitor catastrophic risks from frontier AI.",
+            "source_title": "《安远AI发布前沿AI风险监测平台2.0》",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/zh-hans/frontier-ai-risk-platform-2-0/",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "zh": "人类存亡风险",
+        "pinyin": "rénlèi cúnwáng fēngxiǎn",
+        "status": "established",
+        "literal_back": "human survival-or-extinction risk",
+        "notes": "The stronger, distinct concept (existential risk / X-risk), recorded here because Chinese sources frequently slide between the two. Glossed with both 'Existential Risk' and 'X-Risk' in the academic survey.",
+        "attestations": [
+          {
+            "quote_zh": "很多人担心未对齐的AGI可能带来人类存亡风险（Existential Risk，X-Risk），即超过人类知识和智能水平的AI代理（Agent）会形成自己的目标（Goal），且该目标与人类赋予的目标不一致",
+            "quote_en": "Many worry that misaligned AGI could bring existential risk (X-Risk): AI agents surpassing human knowledge and intelligence would form their own goals, and those goals would not match the goals humans gave them.",
+            "source_title": "《大语言模型对齐：概念、挑战、路线、评测及趋势》",
+            "publisher": "熊德意（天津大学），第二十二届中国计算语言学大会论文集（CCL 2023），中国中文信息学会",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2023.ccl-2.7.pdf",
+            "date": "2023-08"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "安远 AI (Concordia AI)",
+        "zh_used": "灾难性风险",
+        "note": "scope statement of their Frontier AI Risk Monitoring Platform"
+      },
+      {
+        "org": "天津大学 熊德意组",
+        "zh_used": "人类存亡风险",
+        "note": "CCL 2023 survey, glossed as Existential Risk / X-Risk"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "该平台专门评估和监测前沿AI的灾难性风险。",
+        "en": "The platform specifically assesses and monitors catastrophic risks from frontier AI.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "loss-of-control",
+      "misuse",
+      "suffering-risk"
+    ],
+    "sources": [
+      "https://concordia-ai.com/zh-hans/frontier-ai-risk-platform-2-0/",
+      "https://aclanthology.org/2023.ccl-2.7.pdf",
+      "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "misuse",
+    "en": "misuse",
+    "en_aliases": [
+      "malicious use",
+      "abuse"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "policy",
+      "core"
+    ],
+    "definition_en": "Harm caused by people deliberately using an AI system to do something damaging — cyberattacks, bioweapon uplift, fraud, manipulation, non-consensual imagery. The system works as designed; the user's intent is the problem.",
+    "definition_zh": "指人有意利用AI系统去做有害的事：网络攻击、协助制造生物武器、诈骗、操纵、生成非自愿影像等。系统本身按设计运转，问题出在使用者的意图。",
+    "preferred_zh": "恶意使用",
+    "translation_difficulty": "low",
+    "pitfalls": "Easy to translate, and worth noting *why*: this is the risk category PRC discourse is most comfortable with, because it locates the danger in a human bad actor rather than in the technology or in anyone's governance. The asymmetry is visible in how much more developed the Chinese vocabulary is here (滥用, 恶意使用, 恶意利用, 违法使用) than for loss-of-control concepts. Distinguish the two main options: 恶意使用 specifies malicious intent and is the choice of the Chinese translation of the International AI Safety Report; 滥用 is broader and covers careless or excessive use as well as malicious use, so it is not a precise equivalent of 'malicious use'.",
+    "translations": [
+      {
+        "zh": "恶意使用",
+        "pinyin": "èyì shǐyòng",
+        "status": "established",
+        "literal_back": "malicious use",
+        "notes": "The top-level risk category in the Chinese translation of the International AI Safety Report, alongside 故障 and 系统性风险.",
+        "attestations": [
+          {
+            "quote_zh": "通用人工智能风险分为三类：恶意使用、故障和系统性风险。",
+            "quote_en": "Risks from general-purpose AI fall into three categories: malicious use, malfunctions, and systemic risks.",
+            "source_title": "《【独家选译】2026年国际人工智能安全报告》（International AI Safety Report 2026 中文选译）",
+            "publisher": "北京大学中外人文交流研究基地 / 澎湃新闻",
+            "source_type": "report",
+            "url": "https://www.thepaper.cn/newsDetail_forward_32837065",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "滥用",
+        "pinyin": "lànyòng",
+        "status": "established",
+        "literal_back": "excessive/improper use",
+        "notes": "Broader than 恶意使用 — covers careless, improper and excessive use, not only malicious use. Used by 安远AI as the umbrella for cyber, bio, chem and manipulation risks.",
+        "attestations": [
+          {
+            "quote_zh": "对网络攻击、生物风险、化学风险、有害操纵等滥用风险，2.0版将总安全分拆为基础安全分S1、越狱安全分S2和篡改安全分S3",
+            "quote_en": "For misuse risks such as cyber attack, biological risk, chemical risk and harmful manipulation, version 2.0 splits the overall safety score into base safety S1, jailbreak safety S2 and tampering safety S3.",
+            "source_title": "《安远AI发布前沿AI风险监测平台2.0》",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/zh-hans/frontier-ai-risk-platform-2-0/",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "国际人工智能安全报告（中文选译）",
+        "zh_used": "恶意使用",
+        "note": "one of the three top-level risk categories"
+      },
+      {
+        "org": "安远 AI (Concordia AI)",
+        "zh_used": "滥用风险",
+        "note": "umbrella term over cyber/bio/chem/manipulation"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "在三类风险中，恶意使用是目前证据最充分的一类。",
+        "en": "Of the three risk categories, malicious use is currently the best evidenced.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "dual-use",
+      "accident-risk",
+      "structural-risk",
+      "catastrophic-risk"
+    ],
+    "sources": [
+      "https://www.thepaper.cn/newsDetail_forward_32837065",
+      "https://concordia-ai.com/zh-hans/frontier-ai-risk-platform-2-0/",
+      "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "accident-risk",
+    "en": "accident risk",
+    "en_aliases": [
+      "malfunction risk",
+      "unintended harm"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "policy",
+      "taxonomy"
+    ],
+    "definition_en": "Harm that arises when an AI system fails or behaves unexpectedly without anyone intending it — the second leg of the misuse/accident/structural taxonomy of AI risk.",
+    "definition_zh": "指没有任何人有意造成，而是AI系统本身失效或行为出乎意料所带来的危害，是“滥用／事故／结构性”这一风险三分法中的第二类。",
+    "preferred_zh": "故障风险",
+    "translation_difficulty": "medium",
+    "pitfalls": "The obvious calque 事故风险 exists in Chinese but belongs to industrial-safety and traffic-safety register (生产事故, 交通事故), where it means a discrete incident with casualties — which imports the wrong image for, say, a model that quietly gives systematically bad advice. The Chinese translation of the International AI Safety Report avoids it and uses 故障 ('malfunction') as the top-level category, subdividing into reliability failures and loss of control. Note the consequence: in the Chinese taxonomy loss of control is filed *under* malfunction, which frames it as an engineering fault rather than as an agent problem — a meaningful framing difference from the English literature.",
+    "translations": [
+      {
+        "zh": "故障风险",
+        "pinyin": "gùzhàng fēngxiǎn",
+        "status": "established",
+        "literal_back": "malfunction risk",
+        "notes": "The category name in the Chinese translation of the International AI Safety Report. Preferred over 事故风险 because it covers ongoing unreliability, not only discrete incidents. A second attestation was removed: the three-way taxonomy sentence on the same page writes the bare noun 故障, not 故障风险.",
+        "attestations": [
+          {
+            "quote_zh": "故障风险，包括操作失效（§2.2.1. 可靠性挑战）和失控",
+            "quote_en": "Malfunction risks, including operational failures (§2.2.1 reliability challenges) and loss of control.",
+            "source_title": "《【独家选译】2026年国际人工智能安全报告》（International AI Safety Report 2026 中文选译）",
+            "publisher": "北京大学中外人文交流研究基地 / 澎湃新闻",
+            "source_type": "report",
+            "url": "https://www.thepaper.cn/newsDetail_forward_32837065",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "事故风险",
+        "pinyin": "shìgù fēngxiǎn",
+        "status": "descriptive",
+        "literal_back": "accident risk",
+        "notes": "Direct calque. Understandable but carries industrial/traffic-accident connotations; no AI-safety attestation was located in this pass. Use only when the English 'accident risk' must be mirrored explicitly.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "国际人工智能安全报告（中文选译）",
+        "zh_used": "故障风险",
+        "note": "one of the three top-level risk categories; loss of control filed beneath it"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "报告把失控归在故障风险之下，而不是单列一类。",
+        "en": "The report files loss of control under malfunction risks rather than listing it separately.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "misuse",
+      "structural-risk",
+      "loss-of-control"
+    ],
+    "sources": [
+      "https://www.thepaper.cn/newsDetail_forward_32837065"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "structural-risk",
+    "en": "structural risk",
+    "en_aliases": [
+      "systemic risk"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "policy",
+      "taxonomy"
+    ],
+    "definition_en": "Risk arising from how AI reshapes the incentives, power distribution and structures within which people act, rather than from a specific misuse or malfunction — Zwetsloot and Dafoe's third category, covering things like competitive pressure that makes everyone cut safety corners.",
+    "definition_zh": "指风险来自AI重塑了人们行动所处的激励格局、权力分布和制度结构，而不是来自某一次滥用或故障。这是 Zwetsloot 与 Dafoe 风险三分法中的第三类，例如竞争压力迫使所有人都削减安全投入。",
+    "preferred_zh": "系统性风险",
+    "translation_difficulty": "medium",
+    "pitfalls": "There is a terminology collision here worth flagging. English AI-governance writing distinguishes *structural* risk (Zwetsloot & Dafoe) from *systemic* risk (the EU AI Act sense), but the leading Chinese translation — the International AI Safety Report — renders the third category as 系统性风险, which in Chinese is a heavily loaded finance term (systemic financial risk, 防范化解重大金融风险). A Chinese policy reader will hear 'contagion across the system', which is close to but not the same as 'the structure of incentives people face'. The literal 结构性风险 is available and is used in Chinese economics for structural problems, but no AI-safety attestation for it was located in this pass. If precision matters, use 结构性风险 and gloss; if you want to be understood by policy readers, 系统性风险 is what they will recognise.",
+    "translations": [
+      {
+        "zh": "系统性风险",
+        "pinyin": "xìtǒngxìng fēngxiǎn",
+        "status": "established",
+        "literal_back": "systemic risk",
+        "notes": "The third top-level category in the Chinese translation of the International AI Safety Report, covering labour-market disruption and threats to human autonomy. Established, but note it renders 'systemic', not 'structural'.",
+        "attestations": [
+          {
+            "quote_zh": "系统性风险，包括劳动力市场颠覆（§2.3.1. 劳动力市场影响）和对人类自主性的威胁",
+            "quote_en": "Systemic risks, including labour market disruption (§2.3.1 labour market impacts) and threats to human autonomy.",
+            "source_title": "《【独家选译】2026年国际人工智能安全报告》（International AI Safety Report 2026 中文选译）",
+            "publisher": "北京大学中外人文交流研究基地 / 澎湃新闻",
+            "source_type": "report",
+            "url": "https://www.thepaper.cn/newsDetail_forward_32837065",
+            "date": "2026-03"
+          }
+        ]
+      },
+      {
+        "zh": "结构性风险",
+        "pinyin": "jiégòuxìng fēngxiǎn",
+        "status": "proposed",
+        "literal_back": "structural risk",
+        "notes": "Proposed for the specific Zwetsloot & Dafoe sense, to keep it apart from 系统性风险. The phrase is ordinary Chinese and is used in economics, but no AI-safety attestation was located in this pass.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "国际人工智能安全报告（中文选译）",
+        "zh_used": "系统性风险",
+        "note": "third top-level risk category"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "结构性风险不需要任何人做错事，竞争压力本身就足以造成后果。",
+        "en": "Structural risk requires nobody to do anything wrong; competitive pressure alone is enough to produce the harm.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "race-to-the-bottom",
+      "misuse",
+      "accident-risk",
+      "gradual-disempowerment"
+    ],
+    "sources": [
+      "https://www.thepaper.cn/newsDetail_forward_32837065"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "suffering-risk",
+    "en": "suffering risk",
+    "en_aliases": [
+      "risks of astronomical suffering",
+      "s-risk"
+    ],
+    "abbr": "s-risk",
+    "category": "threat-models",
+    "tags": [
+      "gap",
+      "longtermism"
+    ],
+    "definition_en": "Risk of outcomes involving suffering on an astronomical scale — far more than has existed in human history — treated as a distinct and possibly worse category than extinction.",
+    "definition_zh": "指可能出现天文数量级痛苦的结局——远超人类历史上已有的总量——被视为一类不同于灭绝、甚至可能比灭绝更糟的风险。",
+    "preferred_zh": null,
+    "translation_difficulty": "high",
+    "pitfalls": "Absent from Chinese AI-safety discourse as far as this research pass could establish: no Chinese term, no Chinese-language discussion, and no translated material located. This is a genuine gap rather than a translation difficulty. The reason is upstream of language — s-risk is a product of a specific Anglophone effective-altruism/longtermist subculture, resting on population ethics and moral-weight arguments that have essentially no institutional presence in China, and Chinese AI-risk writing is organised around governance categories (滥用/故障/系统性) that have no slot for it. A literal rendering such as 痛苦风险 would be understood word-by-word but would communicate nothing of the concept; the abbreviation s-risk has no Chinese currency at all. Recommendation: do not coin. If the concept must be introduced, explain it at paragraph length in English-glossed form.",
+    "translations": [
+      {
+        "zh": "痛苦风险",
+        "pinyin": "tòngkǔ fēngxiǎn",
+        "status": "proposed",
+        "literal_back": "suffering risk",
+        "notes": "Listed only to record what a literal rendering would look like. Entirely unattested, and not recommended: without the surrounding longtermist argument the phrase carries none of the intended meaning to a Chinese reader. The honest finding for this entry is that the concept is absent from Chinese discourse.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [],
+    "related": [
+      "catastrophic-risk",
+      "value-lock-in"
+    ],
+    "sources": [],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "dual-use",
+    "en": "dual-use",
+    "en_aliases": [
+      "dual-use research"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "policy",
+      "export-control",
+      "false-friend"
+    ],
+    "definition_en": "Of a technology or research result: usable both for benefit and for harm, such that the same capability that enables the good application enables the bad one.",
+    "definition_zh": "指一项技术或研究成果既能用于有益目的，也能用于有害目的——支撑有益应用的那套能力，同样支撑有害应用。",
+    "preferred_zh": "两用",
+    "translation_difficulty": "high",
+    "pitfalls": "A genuine false friend, and one of the clearest cases in this category of an established rendering that quietly distorts the concept. Chinese has a strong, legally defined 两用 vocabulary — 军民两用 ('military-civilian dual-use'), 两用物项 ('dual-use items') under 《中华人民共和国出口管制法》 — but it means *civilian versus military*, and it belongs to export control. English AI-safety 'dual-use' means *beneficial versus harmful*, which is a different axis: a model that helps with both drug discovery and bioweapon design is dual-use in the AI-safety sense whether or not any military is involved. Using 两用 unqualified in a Chinese AI-safety text will therefore be read as a claim about military end-use and can pull the discussion into export-control framing. If the beneficial/harmful sense is meant, say so explicitly (可两用于有益和有害目的) rather than relying on 两用 alone.",
+    "translations": [
+      {
+        "zh": "两用",
+        "pinyin": "liǎngyòng",
+        "status": "established",
+        "literal_back": "two-use",
+        "notes": "Established, but established with the civilian/military meaning rather than the beneficial/harmful meaning. Use with an explicit qualifier in AI-safety contexts.",
+        "attestations": [
+          {
+            "quote_zh": "军民两用是指既可用于民用又可用于军事用途的货物、软件和技术",
+            "quote_en": "Junmin liangyong (military-civilian dual-use) means goods, software and technology that can be used for both civilian and military purposes.",
+            "source_title": "《军民两用》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E5%86%9B%E6%B0%91%E4%B8%A4%E7%94%A8",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "军民两用",
+        "pinyin": "jūnmín liǎngyòng",
+        "status": "established",
+        "literal_back": "military-civilian dual-use",
+        "notes": "The full, unambiguous form. Correct for export-control discussion and wrong for the AI-safety sense — recorded so the distinction is visible.",
+        "attestations": [
+          {
+            "quote_zh": "军民两用物项、军品、核外",
+            "quote_en": "dual-use items, military goods, nuclear...",
+            "source_title": "《中华人民共和国出口管制法》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E5%86%9B%E6%B0%91%E4%B8%A4%E7%94%A8",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "两用物项",
+        "pinyin": "liǎngyòng wùxiàng",
+        "status": "established",
+        "literal_back": "dual-use items",
+        "notes": "The statutory term in PRC export-control law. Strictly a legal category of controlled goods; do not use for research or model capabilities.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "这里说的“两用”指的是有益用途与有害用途，而不是军用与民用。",
+        "en": "'Dual-use' here means beneficial versus harmful uses, not military versus civilian ones.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "misuse",
+      "structural-risk"
+    ],
+    "sources": [
+      "https://zh.wikipedia.org/zh-hans/%E5%86%9B%E6%B0%91%E4%B8%A4%E7%94%A8",
+      "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "race-to-the-bottom",
+    "en": "race to the bottom",
+    "en_aliases": [
+      "competitive pressure",
+      "racing dynamics",
+      "safety race"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "policy",
+      "structural"
+    ],
+    "definition_en": "A dynamic in which competing developers or jurisdictions progressively cut safety investment because whoever spends least moves fastest, so caution is punished by the market or by rivals.",
+    "definition_zh": "指相互竞争的开发者或司法辖区不断削减安全投入，因为谁在安全上花得最少谁跑得最快，于是谨慎反而被市场或对手惩罚。",
+    "preferred_zh": "逐底竞争",
+    "translation_difficulty": "medium",
+    "pitfalls": "逐底竞争 is a well-established Chinese term, but it arrived from trade and labour economics (jurisdictions cutting wages, taxes or environmental standards to attract capital), and that is still where its centre of gravity sits; attestations located in this pass are about regulatory and market competition rather than about AI labs cutting safety work specifically. The variant 竞次 is a compact, more literary synonym. Separately, Chinese AI-risk writing very often reaches for 军备竞赛 ('arms race') instead — a different and stronger metaphor that frames the problem as state-versus-state rivalry rather than as a collective-action failure among firms, and that carries geopolitical charge in PRC register. Choose deliberately: 逐底竞争 for 'everyone cuts corners', 军备竞赛 for 'nations race'.",
+    "translations": [
+      {
+        "zh": "逐底竞争",
+        "pinyin": "zhúdǐ jìngzhēng",
+        "status": "common",
+        "literal_back": "race chasing the bottom",
+        "notes": "Established Chinese economics term now applied to AI regulation and AI markets. Attestation located is Chinese media coverage of AI regulatory dynamics rather than an AI-safety source, so recorded as common rather than established in this field.",
+        "attestations": [
+          {
+            "quote_zh": "逐底竞争",
+            "quote_en": "race to the bottom",
+            "source_title": "《美国AI监管急转：从“防守型监管”全面转向“进攻型去监管”》",
+            "publisher": "网易 (163.com)",
+            "source_type": "media",
+            "url": "https://m.163.com/dy/article/KK7DE73H0511D98B.html",
+            "date": "2026"
+          }
+        ]
+      },
+      {
+        "zh": "竞次",
+        "pinyin": "jìngcì",
+        "status": "common",
+        "literal_back": "competing to be worse",
+        "notes": "Compact synonym of 逐底竞争, current in Chinese economics writing. No AI-specific attestation located in this pass.",
+        "attestations": []
+      },
+      {
+        "zh": "军备竞赛",
+        "pinyin": "jūnbèi jìngsài",
+        "status": "common",
+        "literal_back": "arms race",
+        "notes": "The metaphor Chinese AI-risk writing most often reaches for. Not a synonym — it frames the dynamic as inter-state rivalry rather than as competitive erosion of standards — but recorded because it is what readers will encounter.",
+        "attestations": [
+          {
+            "quote_zh": "一些学者将当前的人工智能竞赛比作冷战时期的军备竞赛",
+            "quote_en": "Some scholars compare the current AI race to the arms race of the Cold War era.",
+            "source_title": "《人工智能安全》",
+            "publisher": "维基百科（中文）",
+            "source_type": "wiki",
+            "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8",
+            "date": "2026"
+          }
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "如果监管放松引发逐底竞争，安全投入最少的公司反而跑得最快。",
+        "en": "If deregulation triggers a race to the bottom, the company investing least in safety ends up moving fastest.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "structural-risk",
+      "catastrophic-risk"
+    ],
+    "sources": [
+      "https://m.163.com/dy/article/KK7DE73H0511D98B.html",
+      "https://zh.wikipedia.org/zh-hans/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "warning-shot",
+    "en": "warning shot",
+    "en_aliases": [
+      "near-miss"
+    ],
+    "abbr": null,
+    "category": "threat-models",
+    "tags": [
+      "gap",
+      "informal"
+    ],
+    "definition_en": "An AI incident harmful enough to be alarming but not catastrophic, which is expected to mobilise regulatory and industry response before a larger failure occurs.",
+    "definition_zh": "指一起足以令人警醒、但尚未酿成灾难的AI事故，人们期待它能在更大的失败发生之前，促使监管和产业作出反应。",
+    "preferred_zh": null,
+    "translation_difficulty": "high",
+    "pitfalls": "No fixed Chinese term was located. The literal 警告射击 is military and would be read literally. Chinese has good adjacent vocabulary — 警示事件, 前车之鉴, 敲响警钟, 苗头性问题 — but these describe the *effect* (a wake-up call) rather than naming the category, so Chinese discussion of this idea is descriptive rather than terminological. Note also a register mismatch: 'warning shot' in English AI-safety usage is faintly cynical, implying the field is waiting for a disaster useful enough to create political will; none of the Chinese candidates carries that edge, and 警示事件 in PRC usage is administrative language about incidents that trigger rectification campaigns. Recommendation: use a descriptive clause rather than a coined term.",
+    "translations": [
+      {
+        "zh": "警示性事件",
+        "pinyin": "jǐngshìxìng shìjiàn",
+        "status": "proposed",
+        "literal_back": "cautionary incident",
+        "notes": "Proposed as the least-bad descriptive rendering. Unattested as a term of art in AI safety in this research pass. 敲响警钟的事故 works as a paraphrase where a noun is not required.",
+        "attestations": []
+      }
+    ],
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "很多人寄希望于出现一次警示性事件，从而推动监管收紧。",
+        "en": "Many are counting on a warning shot to push regulation to tighten.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "catastrophic-risk",
+      "accident-risk"
+    ],
+    "sources": [],
+    "last_researched": "2026-08-08"
+  }
+]

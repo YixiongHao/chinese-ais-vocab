@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 // Merges data/raw/*.json into the canonical data/terms.json, validates it against the
 // rules in SCHEMA.md, and emits the artifacts the site and reviewers consume.
 //
@@ -13,6 +13,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs'
 import { join, dirname, basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { attests, bareZh, zhKey } from './normalize.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const p = (...xs) => join(ROOT, ...xs)
@@ -35,7 +36,10 @@ const VALID_CONFIDENCE = new Set(['high', 'medium', 'low'])
 
 const categories = readJson(p('data', 'categories.json'))
 const categoryIds = new Set(categories.map((c) => c.id))
-const seed = readJson(p('data', 'seed-terms.json'))
+const seed = [
+  ...readJson(p('data', 'seed-terms.json')),
+  ...(existsSync(p('data', 'seed-terms-zh.json')) ? readJson(p('data', 'seed-terms-zh.json')) : []),
+]
 
 const rawDir = p('data', 'raw')
 if (!existsSync(rawDir)) {
@@ -104,21 +108,36 @@ for (const t of terms) {
   t.translation_difficulty ??= 'medium'
   t.confidence ??= 'low'
 
+  // Chinese-origin entries invert: the headword is Chinese and the renderings are English.
+  // Validate whichever array this entry actually uses, under whichever key it uses.
+  t.direction ??= 'en-to-zh'
+  t.en_renderings ??= []
+  t.why_no_english ??= null
+  const ZH_ORIGIN = t.direction === 'zh-to-en'
+  if (ZH_ORIGIN) {
+    if (!t.zh_headword) err(t.id, 'direction is zh-to-en but no "zh_headword"')
+    if (t.translations.length) warn(t.id, 'zh-to-en entry also has translations[] — ignored')
+    t.preferred_zh = t.zh_headword
+    if (!t.en_renderings.length) warn(t.id, 'zh-to-en entry has no en_renderings')
+  }
+  const RKEY = ZH_ORIGIN ? 'en' : 'zh'
+  const renderings = ZH_ORIGIN ? t.en_renderings : t.translations
+
   let attCount = 0
-  for (const tr of t.translations) {
+  for (const tr of renderings) {
     tr.attestations ??= []
     tr.notes ??= null
-    if (!tr.zh) err(t.id, 'translation with no "zh"')
-    if (!VALID_STATUS.has(tr.status)) err(t.id, `bad translation status "${tr.status}" on ${tr.zh}`)
+    if (!tr[RKEY]) err(t.id, `rendering with no "${RKEY}"`)
+    if (!VALID_STATUS.has(tr.status)) err(t.id, `bad status "${tr.status}" on ${tr[RKEY]}`)
 
     // Normalise the rendering. Research passes sometimes cram a slash-list of variants
     // or a parenthetical gloss into `zh`; the schema wants one bare rendering per entry.
     // Where variants exist, keep the one the attestations actually quote — that is the
     // one we have evidence for — and preserve the original in `notes` so nothing is lost.
     const rawZh = tr.zh
-    const stripped = rawZh.replace(/[（(][^）)]*[）)]\s*$/, '').trim()
-    const variants = stripped.split(/\s*[/／、]\s*/).map((s) => s.trim()).filter(Boolean)
-    if (variants.length > 1 || stripped !== rawZh) {
+    const stripped = ZH_ORIGIN ? rawZh : String(rawZh).replace(/[（(][^）)]*[）)]\s*$/, '').trim()
+    const variants = ZH_ORIGIN ? [] : stripped.split(/\s*[/／、]\s*/).map((s) => s.trim()).filter(Boolean)
+    if (!ZH_ORIGIN && (variants.length > 1 || stripped !== rawZh)) {
       const quoted = variants.find((v) => tr.attestations.some((a) => (a.quote_zh || '').includes(v)))
       tr.zh = quoted ?? variants[0] ?? rawZh
       tr.zh_variants = variants.length > 1 ? variants : undefined
@@ -130,39 +149,72 @@ for (const t of terms) {
     // SCHEMA.md: a proposed rendering is ours, so it cannot carry attestations,
     // and it must justify itself.
     if (tr.status === 'proposed') {
-      if (tr.attestations.length) err(t.id, `"${tr.zh}" is status:proposed but has attestations`)
-      if (!tr.notes) err(t.id, `"${tr.zh}" is status:proposed but has no notes explaining why`)
+      if (tr.attestations.length) err(t.id, `"${tr[RKEY]}" is status:proposed but has attestations`)
+      if (!tr.notes) err(t.id, `"${tr[RKEY]}" is status:proposed but has no notes explaining why`)
     } else if (!tr.attestations.length) {
-      warn(t.id, `"${tr.zh}" (${tr.status}) has no attestation`)
+      warn(t.id, `"${tr[RKEY]}" (${tr.status}) has no attestation`)
     }
 
     for (const a of tr.attestations) {
-      if (!a.quote_zh) err(t.id, `attestation for "${tr.zh}" has no quote_zh`)
-      if (!a.url) warn(t.id, `attestation for "${tr.zh}" has no url`)
-      // Cheap fabrication tripwire: a real attestation quotes text that contains the
-      // rendering it is evidence for. Latin-script renderings are exempt.
-      if (a.quote_zh && /[一-鿿]/.test(tr.zh) && !a.quote_zh.includes(tr.zh))
+      if (!a.quote_zh) err(t.id, `attestation for "${tr[RKEY]}" has no quote_zh`)
+      if (!a.url) warn(t.id, `attestation for "${tr[RKEY]}" has no url`)
+      // Cheap fabrication tripwire: a real attestation quotes text containing the rendering
+      // it is evidence for, ignoring meaning-free typography. Only meaningful for Chinese
+      // renderings — a `descriptive` gloss is a paraphrase, not a string to find, and on a
+      // zh-to-en entry the rendering is English while the quote is Chinese.
+      if (a.quote_zh && !ZH_ORIGIN && tr.status !== 'descriptive' && !attests(tr.zh, a.quote_zh))
         warn(t.id, `attestation quote for "${tr.zh}" does not contain that string`)
       attCount++
     }
   }
   t.attestation_count = attCount
 
-  if (!t.preferred_zh && t.translations.length) {
-    // fall back to the first non-deprecated, non-proposed rendering
-    const best = t.translations.find((x) => !['proposed', 'deprecated'].includes(x.status))
-      ?? t.translations[0]
-    t.preferred_zh = best.zh
-    warn(t.id, `no preferred_zh, defaulted to "${t.preferred_zh}"`)
-  }
-  if (!t.translations.length) warn(t.id, 'no translations at all')
+  const pickBest = (arr) =>
+    arr.find((x) => !['proposed', 'deprecated'].includes(x.status)) ?? arr[0]
 
-  // SCHEMA.md: high confidence requires >=2 independent attestations on the preferred rendering
-  const pref = t.translations.find((x) => x.zh === t.preferred_zh)
-  if (t.confidence === 'high' && (pref?.attestations?.length ?? 0) < 2) {
-    warn(t.id, 'confidence:high but preferred rendering has <2 attestations — downgraded to medium')
-    t.confidence = 'medium'
+  if (ZH_ORIGIN) {
+    // The English headword doubles as the recommended rendering unless one is marked better.
+    if (!t.preferred_en && renderings.length) t.preferred_en = pickBest(renderings).en
+  } else {
+    if (!t.preferred_zh && renderings.length) {
+      t.preferred_zh = pickBest(renderings).zh
+      warn(t.id, `no preferred_zh, defaulted to "${t.preferred_zh}"`)
+    }
+    // preferred_zh is often recorded with a gloss ("RLHF（人类反馈强化学习）") while the
+    // rendering itself got normalised to the bare term. Re-point it, or the site has no
+    // recommended rendering to highlight.
+    if (t.preferred_zh && !renderings.some((x) => x.zh === t.preferred_zh)) {
+      const want = bareZh(t.preferred_zh)
+      const hit = renderings.find((x) => x.zh === want)
+        ?? renderings.find((x) => zhKey(x.zh) === zhKey(want))
+        ?? renderings.find((x) => zhKey(t.preferred_zh).includes(zhKey(x.zh)))
+      const was = t.preferred_zh
+      t.preferred_zh = hit ? hit.zh : (renderings.length ? pickBest(renderings).zh : null)
+      warn(t.id, `preferred_zh "${was}" matched no rendering — re-pointed to "${t.preferred_zh}"`)
+    }
+    if (!renderings.length) warn(t.id, 'no translations at all')
   }
+
+  // SCHEMA.md: high confidence requires >=2 independent attestations on the preferred
+  // rendering; an unattested rendering cannot be better than low. Enforced here rather
+  // than trusted, because a research pass grades its own work optimistically.
+  const pref = ZH_ORIGIN
+    ? renderings.find((x) => x.en === t.preferred_en)
+    : renderings.find((x) => x.zh === t.preferred_zh)
+  const nPref = pref?.attestations?.filter((a) => !a.unverified).length ?? 0
+  // Two citations from one publisher are one piece of evidence, not two.
+  const nIndependent = new Set(
+    (pref?.attestations ?? []).filter((a) => !a.unverified).map((a) => a.publisher || a.url),
+  ).size
+  if (t.confidence === 'high' && nIndependent < 2) {
+    warn(t.id, `confidence:high but preferred rendering has ${nIndependent} independent verified attestation(s) — downgraded`)
+    t.confidence = nPref > 0 ? 'medium' : 'low'
+  } else if (t.confidence === 'medium' && nPref === 0 && pref && pref.status !== 'proposed') {
+    warn(t.id, 'confidence:medium but preferred rendering is unattested — downgraded to low')
+    t.confidence = 'low'
+  }
+  t.unverified_count = renderings.reduce(
+    (n, tr) => n + (tr.attestations ?? []).filter((a) => a.unverified).length, 0)
 }
 
 // reciprocal related links — an agent only ever sees its own category, so cross-category
@@ -213,13 +265,20 @@ const csvCell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`
 const csvRows = [
   ['id', 'en', 'preferred_zh', 'alt_zh', 'status', 'difficulty', 'confidence', 'attestations',
    'definition_en', 'definition_zh', 'pitfalls', 'REVIEWER_VERDICT', 'REVIEWER_SUGGESTED_ZH', 'REVIEWER_NOTES'],
-  ...terms.map((t) => [
-    t.id, t.en, t.preferred_zh ?? '',
-    t.translations.filter((x) => x.zh !== t.preferred_zh).map((x) => x.zh).join(' / '),
-    t.translations.find((x) => x.zh === t.preferred_zh)?.status ?? '',
-    t.translation_difficulty, t.confidence, t.attestation_count,
-    t.definition_en ?? '', t.definition_zh ?? '', t.pitfalls ?? '', '', '', '',
-  ]),
+  ...terms.map((t) => {
+    const zhOrigin = t.direction === 'zh-to-en'
+    const rs = zhOrigin ? t.en_renderings : t.translations
+    const preferred = zhOrigin ? t.preferred_en : t.preferred_zh
+    const k = zhOrigin ? 'en' : 'zh'
+    return [
+      t.id, t.en, zhOrigin ? t.zh_headword : (t.preferred_zh ?? ''),
+      rs.filter((x) => x[k] !== preferred).map((x) => x[k]).join(' / '),
+      rs.find((x) => x[k] === preferred)?.status ?? '',
+      t.translation_difficulty, t.confidence, t.attestation_count,
+      t.definition_en ?? '', t.definition_zh ?? '',
+      t.pitfalls ?? t.why_no_english ?? '', '', '', '',
+    ]
+  }),
 ]
 writeFileSync(
   p('exports', 'terms.csv'),
@@ -239,7 +298,10 @@ if (added.length) console.log(`added      ${added.length}: ${added.map((t) => t.
 console.log(`confidence ${fmt(tally((t) => t.confidence))}`)
 console.log(`difficulty ${fmt(tally((t) => t.translation_difficulty))}`)
 console.log(`attested   ${terms.filter((t) => t.attestation_count > 0).length}/${terms.length} terms have >=1 attestation (${terms.reduce((n, t) => n + t.attestation_count, 0)} total)`)
-console.log(`no ZH term ${terms.filter((t) => t.translations.every((x) => x.status === 'proposed') && t.translations.length).map((t) => t.en).join(', ') || '(none)'}`)
+console.log(`direction  ${fmt(tally((t) => t.direction))}`)
+const unnamed = (arr) => arr.length && arr.every((x) => x.status === 'proposed')
+console.log(`no ZH term ${terms.filter((t) => t.direction !== 'zh-to-en' && unnamed(t.translations)).map((t) => t.en).join(', ') || '(none)'}`)
+console.log(`no EN term ${terms.filter((t) => t.direction === 'zh-to-en' && unnamed(t.en_renderings)).map((t) => t.zh_headword).join(', ') || '(none)'}`)
 
 if (warnings.length) {
   console.log(`\n${warnings.length} warning(s):`)
