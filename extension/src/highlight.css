@@ -1,0 +1,38 @@
+/* Highlight styling. This lands in the host page's DOM, so it is written to be quiet:
+   an underline rather than a fill, no layout shift, and no inherited-property changes
+   that could disturb the page around it. */
+
+mark.caisv-hl {
+  background: transparent !important;
+  color: inherit !important;
+  /* A dotted underline reads as "there is a note here" without shouting like a fill. */
+  border-bottom: 1px dotted rgba(160, 62, 47, .75) !important;
+  box-shadow: inset 0 -0.35em 0 rgba(160, 62, 47, .09) !important;
+  border-radius: 2px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font: inherit !important;
+  cursor: help !important;
+  transition: box-shadow .12s ease, border-color .12s ease !important;
+}
+
+mark.caisv-hl:hover {
+  border-bottom-color: rgba(160, 62, 47, 1) !important;
+  box-shadow: inset 0 -0.9em 0 rgba(160, 62, 47, .16) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  mark.caisv-hl {
+    border-bottom-color: rgba(224, 139, 120, .75) !important;
+    box-shadow: inset 0 -0.35em 0 rgba(224, 139, 120, .12) !important;
+  }
+  mark.caisv-hl:hover {
+    border-bottom-color: rgba(224, 139, 120, 1) !important;
+    box-shadow: inset 0 -0.9em 0 rgba(224, 139, 120, .2) !important;
+  }
+}
+
+/* Printing a page should not carry our annotations into the paper copy. */
+@media print {
+  mark.caisv-hl { border-bottom: none !important; box-shadow: none !important; }
+}

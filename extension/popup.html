@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #fbfaf8; --ink: #17181c; --ink-2: #55596a; --ink-3: #8b8fa3;
+    --line: #e4e2dd; --accent: #a03e2f; --accent-soft: #f6ece9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #191a1e; --ink: #eceaea; --ink-2: #a5a8b6; --ink-3: #6e7284;
+            --line: #2f313a; --accent: #e08b78; --accent-soft: #2a1f1c; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; width: 300px; background: var(--bg); color: var(--ink);
+    font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  header { padding: 12px 14px 10px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-size: 13.5px; font-weight: 650; letter-spacing: -0.01em; }
+  .status { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
+  section { padding: 11px 14px; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .07em;
+         color: var(--ink-3); font-weight: 650; margin-bottom: 7px; }
+  label.opt {
+    display: flex; gap: 9px; align-items: flex-start; padding: 6px 8px; margin: 0 -8px;
+    border-radius: 6px; cursor: pointer;
+  }
+  label.opt:hover { background: var(--accent-soft); }
+  label.opt input { margin: 2px 0 0; accent-color: var(--accent); flex: none; }
+  .opt .t { font-weight: 550; }
+  .opt .d { font-size: 11.5px; color: var(--ink-3); line-height: 1.35; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .sw { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .note { font-size: 11px; color: var(--ink-3); margin-top: 8px; line-height: 1.4; }
+  footer { padding: 10px 14px 12px; }
+  a { color: var(--accent); text-decoration: none; font-size: 11.5px; }
+  a:hover { text-decoration: underline; }
+  .pdf { background: var(--accent-soft); border-radius: 6px; padding: 8px 10px;
+         font-size: 11.5px; color: var(--ink-2); margin-top: 8px; display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <h1>AI Safety Terminology</h1>
+    <label class="sw"><input type="checkbox" id="enabled"></label>
+  </div>
+  <div class="status" id="status">…</div>
+</header>
+
+<section>
+  <div class="lbl">What to highlight</div>
+  <label class="opt">
+    <input type="radio" name="mode" value="auto">
+    <span><span class="t">Automatic</span><br><span class="d">Detect the page language and pick the direction.</span></span>
+  </label>
+  <label class="opt">
+    <input type="radio" name="mode" value="zh">
+    <span><span class="t">Chinese pages</span><br><span class="d">Highlight Chinese terms, answer in English.</span></span>
+  </label>
+  <label class="opt">
+    <input type="radio" name="mode" value="en">
+    <span><span class="t">English pages</span><br><span class="d">Highlight English terms, answer in Chinese.</span></span>
+  </label>
+  <div class="pdf" id="pdf">This looks like Chrome's built-in PDF viewer. Extensions can't
+    reach text inside it, so nothing will be highlighted here. See the README for why.</div>
+</section>
+
+<section>
+  <div class="lbl">Coverage</div>
+  <label class="opt">
+    <input type="checkbox" id="includeShort">
+    <span><span class="t">Include two-character terms</span><br>
+    <span class="d">安全, 对齐, 算力, 评估 and 59 others. Important entries, but they appear
+    constantly in ordinary Chinese — expect a busier page.</span></span>
+  </label>
+  <div class="note">Any single term is highlighted at most 3 times per page, and a page
+    stops at 400 highlights.</div>
+</section>
+
+<footer>
+  <a href="https://github.com/YixiongHao/chinese-ais-vocab" target="_blank" rel="noopener">Database & source ↗</a>
+</footer>
+
+<script src="popup.js"></script>
+</body>
+</html>

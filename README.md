@@ -1,22 +1,20 @@
 # AI Safety Terminology · English ↔ 中文
 
 A vocabulary database for people doing AI safety work across the English/Chinese language
-boundary. The premise: much of the language English-language AI safety uses — especially
-around existential risk, loss of control, and misalignment — either has no settled Chinese
-rendering, has several competing ones, or has an established one that quietly distorts the
-concept. This project records which of those three situations each term is in, **with
-evidence**.
+boundary.  Terms run in both directions: English concepts looking for a Chinese rendering, and
+Chinese-origin concepts that English has no clean word
 
-Terms run in both directions: English concepts looking for a Chinese rendering, and
-Chinese-origin concepts — 算法备案, 自主可控, 大模型, 算力 — that English has no clean word
-for. A Chinese-facing view and a browser extension that highlights terms in place are the
-intended next steps; the data format is built for both.
+# Contributors
+
+[Yixiong Hao](https://yixiong.dev)
+
+Once the website/chrome extension is up, the highest leverage way to contribute is by adding, correcting, and rating translations!  If you want to improve the UI/Chroms extension, email yixiong_hao@outlook.com
 
 ## Status: early. Read this before citing anything.
 
-This is a working MVP, not a finished reference. Specifically:
+This is a MVP, not a finished reference. Specifically:
 
-- **No native speaker has reviewed it yet.** Every Chinese judgement here was made by an
+- **No native speaker review by default** Every Chinese judgement here was made by an
   LLM research pass and checked against primary sources, which is not the same thing.
 - **Confidence is graded and uneven.** Roughly a quarter of entries are `low` confidence
   and some carry no citation at all. The site's "Needs evidence" filter shows you which.
@@ -43,12 +41,31 @@ data/
 site/
   index.html          the site: search, filter, term detail. Open it directly.
   terms-data.js       GENERATED — data/terms.json wrapped for file:// loading
+extension/          Chrome extension — highlights terms as you browse. See extension/README.md
 exports/
   terms.csv           GENERATED — flat sheet for native-speaker review passes
 scripts/
   build.mjs           merge + validate + emit
 SCHEMA.md             the term schema. Binding — read before editing data.
 RESEARCH-BRIEF.md     methodology and source list handed to research agents.
+```
+
+## Browser extension
+
+`extension/` is a Chrome (MV3) extension that underlines database terms on any page and
+shows a card on hover: the translation, who has used that rendering, how certain it is,
+and a real example sentence. On a Chinese page it highlights Chinese and answers in
+English; on an English page, the reverse.
+
+It is not on the Chrome Web Store. Load it unpacked via `chrome://extensions` →
+Developer mode → Load unpacked → pick `extension/`. Full notes, including why Chrome's
+built-in PDF viewer cannot be highlighted by any extension, are in
+[extension/README.md](extension/README.md).
+
+```bash
+node scripts/build-extension.mjs     # regenerate the bundled database
+node scripts/test-extension.mjs      # matcher + bundle integrity checks
+node scripts/package-extension.mjs   # dist/*.zip, ready for the Web Store
 ```
 
 ## Use it
