@@ -91,7 +91,10 @@ for (const t of TERMS) {
   const head = t.direction === 'zh-to-en' ? t.zh_headword : t.en
   if (head && !out.includes(head.replace(/&/g, '&amp;').replace(/</g, '&lt;')))
     fails.push(`${t.id}: headword "${head}" missing from rendered pane`)
-  if (out.includes('undefined')) fails.push(`${t.id}: rendered pane contains the string "undefined"`)
+  // Look for template leakage specifically, not the word — entry prose legitimately
+  // discusses undefined terms ("'important data' remains the load-bearing undefined term").
+  if (/>undefined<|>\s*undefined\s*<|="undefined"|>undefined<\//.test(out))
+    fails.push(`${t.id}: rendered pane leaks "undefined" into the markup`)
   rendered++
 }
 

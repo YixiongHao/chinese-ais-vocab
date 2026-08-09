@@ -439,9 +439,11 @@
   // ---------- detail ----------
   function attHtml(a) {
     const cite = [a.publisher, a.source_title, a.date].filter(Boolean).map(esc).join(' · ')
+    // An English rendering may be evidenced by an official English translation, in which
+    // case there is no Chinese sentence — show whichever side exists.
     return `<blockquote class="q">
-      <div class="qzh">${esc(a.quote_zh)}</div>
-      ${a.quote_en ? `<div class="qen">${esc(a.quote_en)}</div>` : ''}
+      ${a.quote_zh ? `<div class="qzh">${esc(a.quote_zh)}</div>` : ''}
+      ${a.quote_en ? `<div class="${a.quote_zh ? 'qen' : 'qzh'}">${esc(a.quote_en)}</div>` : ''}
       <cite>${cite}${a.url ? ` — <a href="${esc(a.url)}" target="_blank" rel="noopener">source ↗</a>` : ''}${
         a.unverified ? ' <span class="tag contested" title="Source could not be re-fetched during verification — not disproved, just unchecked">unverified</span>' : ''}</cite>
     </blockquote>`

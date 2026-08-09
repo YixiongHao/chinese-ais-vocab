@@ -65,7 +65,7 @@
             "date": "2026-07"
           },
           {
-            "quote_zh": "作为技 术核心载体的大模型已完成从技术到产品的关键跨越",
+            "quote_zh": "作为技术核心载体的大模型已完成从技术到产品的关键跨越",
             "quote_en": "The large model, as the core technical vehicle, has completed the critical leap from technology to product.",
             "source_title": "《人工智能治理研究报告（2025 年）》",
             "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
@@ -185,7 +185,7 @@
         "notes": "TC260's own official English for 算力设施 in the bilingual national framework — i.e. the PRC standards body itself avoids 'computing power' and uses infrastructure vocabulary. This is the strongest attested pair available and should be preferred when translating 算力设施 / 算力基础设施.",
         "attestations": [
           {
-            "quote_zh": "针对模型算法、 训练数据、 算力设施、 产品服务、 应用场景, 提出通过安全软件开发、 数据质量提升、 安全建设运维、 测评监 测加固等技术手段, 提升人工智能技术及应用安全性的措施。",
+            "quote_zh": "针对模型算法、训练数据、算力设施、产品服务、应用场景, 提出通过安全软件开发、数据质量提升、安全建设运维、测评监测加固等技术手段, 提升人工智能技术及应用安全性的措施。",
             "quote_en": "Regarding models and algorithms, training data, computing infrastructure, products and services, and application scenarios, we propose targeted technological measures to improve the safety of AI technology and applications. [official English of the same document]",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -194,7 +194,7 @@
             "date": "2025-09"
           },
           {
-            "quote_zh": "针对模型算法、训练数据、算力设施、 产品服务、 应用场景，提出通过安全软件开发、数据质量提升、安全建设运维、 测评监测加固等技术手段提升人工智能产品及应用的安全性、公平性、可靠性、鲁棒性",
+            "quote_zh": "针对模型算法、训练数据、算力设施、产品服务、应用场景，提出通过安全软件开发、数据质量提升、安全建设运维、测评监测加固等技术手段提升人工智能产品及应用的安全性、公平性、可靠性、鲁棒性",
             "quote_en": "Regarding models and algorithms, training data, computing facilities, products and services, and application scenarios, we propose targeted technical measures to improve the safety, fairness, reliability and robustness of AI products and applications. [official English of the 1.0 framework]",
             "source_title": "《人工智能安全治理框架》1.0 版",
             "publisher": "全国网络安全标准化技术委员会 (TC260)",
@@ -408,7 +408,7 @@
         "notes": "The framework's own English title is 'Frontier AI Risk Management Framework', and the threshold pair is normally rendered literally. Keep both terms; dropping 'yellow line' loses the mechanism.",
         "attestations": [
           {
-            "quote_zh": "本框架通过划定“红线”（不应逾越的不可容忍阈值）和“黄线”（潜在风险的早期预警指标）来设定人工 智能的安全边界",
+            "quote_zh": "本框架通过划定“红线”（不应逾越的不可容忍阈值）和“黄线”（潜在风险的早期预警指标）来设定人工智能的安全边界",
             "quote_en": "This framework sets AI safety boundaries by drawing 'red lines' (intolerable thresholds that must not be crossed) and 'yellow lines' (early-warning indicators of potential risk).",
             "source_title": "《前沿人工智能风险管理框架 2.0》",
             "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
@@ -417,7 +417,7 @@
             "date": "2026-07"
           },
           {
-            "quote_zh": "我们建议开发者为风险界定不可容忍的阈值（“红线”）和早期预警 指标（“黄线”），将理论化的描述转化为便于实操的决策标准。",
+            "quote_zh": "我们建议开发者为风险界定不可容忍的阈值（“红线”）和早期预警指标（“黄线”），将理论化的描述转化为便于实操的决策标准。",
             "quote_en": "We recommend that developers define intolerable thresholds ('red lines') and early-warning indicators ('yellow lines') for risks, turning theoretical descriptions into operable decision criteria.",
             "source_title": "《前沿人工智能风险管理框架 2.0》",
             "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
@@ -434,7 +434,7 @@
         "notes": "The companion concept (绿区/黄区/红区) that the thresholds sort models into. Translating the lines without the zones leaves the consequences invisible: yellow zone means controlled deployment, red zone means suspension.",
         "attestations": [
           {
-            "quote_zh": "三类风险区分别为：绿区（常 规部署、广泛可接受）、黄区（受控部署、严格管控下可容忍）或红区（暂停部署或开发、不可接 受）。",
+            "quote_zh": "三类风险区分别为：绿区（常规部署、广泛可接受）、黄区（受控部署、严格管控下可容忍）或红区（暂停部署或开发、不可接受）。",
             "quote_en": "The three risk zones are: green zone (routine deployment, broadly acceptable), yellow zone (controlled deployment, tolerable under strict controls), and red zone (suspend deployment or development, unacceptable).",
             "source_title": "《前沿人工智能风险管理框架 2.0》",
             "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
@@ -523,7 +523,8 @@
             "publisher": "中国信息通信研究院云计算与大数据研究所",
             "source_type": "report",
             "url": null,
-            "date": "2025-09"
+            "date": "2025-09",
+            "notes": "URL not recovered: quoted verbatim from the PDF of this CAICT report, whose title, issuing institute and date are taken from its own cover and colophon, but whose caict.ac.cn download path could not be re-established. Treat as weaker than the URL-bearing attestations elsewhere in this file."
           }
         ]
       },
@@ -537,7 +538,7 @@
     ],
     "why_no_english": "English never needed a separate word: an AI datacentre is just a datacentre with accelerators in it, and the distinction is made with adjectives ('GPU cluster', 'AI datacentre') rather than a category noun. PRC compute policy does need one, because 智算中心, 超算中心 and 数据中心 are administratively distinct objects — separately planned, separately sited under programmes like 东数西算, separately counted in provincial statistics, and separately subsidised. So the missing English term is not a missing concept but a missing *administrative category*, and its absence is why English-language reporting on Chinese compute buildout so often adds up numbers that PRC sources keep deliberately apart.",
     "translations": [],
-    "confidence": "medium",
+    "confidence": "low",
     "used_by": [
       {
         "org": "中国信息通信研究院 (CAICT)",
@@ -604,7 +605,7 @@
         "notes": "Preferred. The plural 'values' preserves the 观 and signals the ethical/social narrowing that distinguishes 价值观对齐 from 价值对齐.",
         "attestations": [
           {
-            "quote_zh": "人类价值观的考虑因素被嵌 入到对齐循环的所有部分",
+            "quote_zh": "人类价值观的考虑因素被嵌入到对齐循环的所有部分",
             "quote_en": "Considerations of human values are embedded in every part of the alignment cycle.",
             "source_title": "《对齐的理论、技术与评估》（第二十三届中国计算语言学大会 CCL 2024）",
             "publisher": "北京大学人工智能安全与治理中心（吉嘉铭、邱天异、陈博远、杨耀东）",
@@ -630,7 +631,7 @@
         "notes": "TC260's own official English for the neighbouring, broader term 价值对齐 in the 2.0 framework. Recorded because translators use the same English for both Chinese terms; when you see 'value alignment' in a translated PRC document you cannot tell which Chinese term stood behind it.",
         "attestations": [
           {
-            "quote_zh": "推动形成涵盖技术防护、 价值对⻬、 协同 治理等多层面的可信人工智能基本准则",
+            "quote_zh": "推动形成涵盖技术防护、价值对齐、协同治理等多层面的可信人工智能基本准则",
             "quote_en": "We drive the establishment of fundamental principles for trustworthy AI that cover multiple dimensions, including technological safeguards, value alignment, and collaborative governance. [official English of the same document]",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -719,7 +720,7 @@
             "date": "2024-07"
           },
           {
-            "quote_zh": "实现对大模型输入的验证和过滤, 以及限制大模型输出 不符合预期的内容, 保障生成内容的可控性、 合规性和安全性。",
+            "quote_zh": "实现对大模型输入的验证和过滤, 以及限制大模型输出不符合预期的内容, 保障生成内容的可控性、合规性和安全性。",
             "quote_en": "…achieving validation and filtering of large-model inputs and restricting large-model outputs that do not meet expectations, so as to safeguard the controllability, compliance and safety of generated content.",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -736,7 +737,7 @@
         "notes": "The adjectival 可控 as it appears in the ubiquitous policy formula 安全、可靠、可控. Recorded here because English readers meet 'safe, reliable and controllable' constantly in translated PRC documents and read 'controllable' as the alignment property; in that formula it is closer to 'kept under our control' in the supply-chain and social-order sense. See the separate entries for 安全可控 and 自主可控.",
         "attestations": [
           {
-            "quote_zh": "推动形成涵盖技术防护、 价值对⻬、 协同 治理等多层面的可信人工智能基本准则, 确保技术演进安全、 可靠、 可控, 严防威胁人类生存发展的失控⻛险",
+            "quote_zh": "推动形成涵盖技术防护、价值对齐、协同治理等多层面的可信人工智能基本准则, 确保技术演进安全、可靠、可控, 严防威胁人类生存发展的失控风险",
             "quote_en": "…to ensure that AI technology evolves in a safe, reliable and controllable manner, and to strictly guard against loss-of-control risks that threaten human survival and development.",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -818,7 +819,7 @@
         "notes": "TC260's own official English in the bilingual 2.0 framework, and Concordia AI's usage in English-language reporting. This is the rendering an English reader will meet in translated PRC material.",
         "attestations": [
           {
-            "quote_zh": "具身智能、 脑 机接口技术日新月异,   正在打通连接数字智能和物理世界的 “最后一公里”",
+            "quote_zh": "具身智能、脑机接口技术日新月异, 正在打通连接数字智能和物理世界的 “最后一公里”",
             "quote_en": "Cutting-edge advances in embodied AI and brain-computer interfaces are bridging the 'last mile' between digital intelligence and the physical world. [official English of the same document]",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -930,7 +931,7 @@
         "notes": "The attested pair: the Chinese edition of the International AI Safety Report uses 通用型人工智能 wherever the English original says 'general-purpose AI', across hundreds of occurrences, making this one of the best-evidenced equivalences in the corpus.",
         "attestations": [
           {
-            "quote_zh": "通用型人工智能（General-Purpose AI, GPAI）：一种可跨多个领域执行广泛任务的人工智能系统， 非专为某一特定功能设计（参见对比概念“专用人工智能”）。",
+            "quote_zh": "通用型人工智能（General-Purpose AI, GPAI）：一种可跨多个领域执行广泛任务的人工智能系统，非专为某一特定功能设计（参见对比概念“专用人工智能”）。",
             "quote_en": "General-Purpose AI (GPAI): an AI system able to perform a wide range of tasks across multiple domains, not designed for one specific function (cf. the contrasting concept 'narrow AI').",
             "source_title": "《前沿人工智能风险管理框架 2.0》",
             "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
@@ -1000,10 +1001,11 @@
     "direction": "zh-to-en",
     "zh_headword": "故障风险",
     "pinyin": "gùzhàng fēngxiǎn",
-    "en": "risks from malfunctions",
+    "en": "malfunction risk",
     "en_aliases": [
-      "malfunction risk",
-      "malfunctions"
+      "risks from malfunctions",
+      "malfunctions",
+      "failure risk"
     ],
     "abbr": null,
     "category": "zh-technical",
@@ -1022,7 +1024,7 @@
         "en": "risks from malfunctions",
         "status": "established",
         "literal_back": "malfunction risk",
-        "notes": "The exact English original that 故障风险 translates, verified against the English and Chinese editions of the same report. Use this when the term appears as a taxonomy heading.",
+        "notes": "The exact English original that 故障风险 translates, verified against the English and Chinese editions of the same report. Prefer this full phrase over the bare headword 'malfunction risk' whenever the term appears as a taxonomy heading — the report's own English is 'risks from malfunctions', and the singular noun phrase invites the reading that a specific engineering fault is meant.",
         "attestations": [
           {
             "quote_zh": "这些风险分为三类： (1) 滥用风险，即行为主体故意利用人工智能系统造成伤害； (2) 故障风险，人工智能系统出现故障或以意料之外的有害方式运行； (3) 系统性风险，源于整个社会和经济的广泛部署。",
@@ -1145,7 +1147,7 @@
         "notes": "The official English of TC260's national framework, in both versions. This is the authoritative rendering and the one to search for. Note it renders 安全 as 'safety'.",
         "attestations": [
           {
-            "quote_zh": "人工智能既存在模型算法缺陷、  数据语料质量问题等技术内生安全⻛险, 也存在技术整合交付应用时的网络系统、 信息内容等方面应用安全⻛险",
+            "quote_zh": "人工智能既存在模型算法缺陷、数据语料质量问题等技术内生安全风险, 也存在技术整合交付应用时的网络系统、信息内容等方面应用安全风险",
             "quote_en": "AI entails not only inherent technical risks such as flaws in models and algorithms and the poor quality of training data and corpora, but also application-level risks in areas such as network systems and information and content during technology integration and deployment. [official English of the same document]",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -1266,7 +1268,7 @@
         "notes": "TC260's own official English, used consistently in the bilingual 2.0 framework for both 可信人工智能基本准则 and 可信应用. Unambiguous as a word; see pitfalls for what shifts underneath it.",
         "attestations": [
           {
-            "quote_zh": "1.5可信应用、 防范失控。推动形成涵盖技术防护、 价值对⻬、 协同 治理等多层面的可信人工智能基本准则",
+            "quote_zh": "1.5可信应用、防范失控。推动形成涵盖技术防护、价值对齐、协同治理等多层面的可信人工智能基本准则",
             "quote_en": "1.5 Ensure trustworthy application and prevent loss of control. We drive the establishment of fundamental principles for trustworthy AI that cover multiple dimensions, including technological safeguards, value alignment, and collaborative governance. [official English of the same document]",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -1275,7 +1277,7 @@
             "date": "2025-09"
           },
           {
-            "quote_zh": "落实《全球⼈⼯智能治理倡议》,  遵循“以⼈为本、智能向善”的发展⽅ 向,  共同防范应对⼈⼯智能技术失控⻛险,  促进⼈⼯智能技术在世界范围 内可信应⽤,  提出可信⼈⼯智能基本准则如下",
+            "quote_zh": "落实《全球人工智能治理倡议》, 遵循“以⼈为本、智能向善”的发展方向, 共同防范应对人工智能技术失控风险, 促进人工智能技术在世界范围内可信应⽤, 提出可信人工智能基本准则如下",
             "quote_en": "Implementing the Global AI Governance Initiative and following the direction of 'people-centred, AI for good', jointly guarding against the risk of AI technology running out of control and promoting the trustworthy application of AI worldwide, we propose the following fundamental principles for trustworthy AI.",
             "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
             "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
@@ -1356,7 +1358,7 @@
         "notes": "Direct and standard; matches usage in the English ML literature, where 'safety alignment' likewise denotes harmlessness post-training rather than alignment at large.",
         "attestations": [
           {
-            "quote_zh": "安全对齐与拒答训练：利用 RLHF/RLAIF 训练模型主动识别并拒绝有害指令，将安全约束直接嵌 入其响应行为",
+            "quote_zh": "安全对齐与拒答训练：利用 RLHF/RLAIF 训练模型主动识别并拒绝有害指令，将安全约束直接嵌入其响应行为",
             "quote_en": "Safety alignment and refusal training: use RLHF/RLAIF to train the model to proactively identify and refuse harmful instructions, embedding safety constraints directly into its response behaviour.",
             "source_title": "《前沿人工智能风险管理框架 2.0》",
             "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
@@ -1365,7 +1367,7 @@
             "date": "2026-07"
           },
           {
-            "quote_zh": "在测试中有意增强安全对齐效果，在真实环境中回归对齐相对较差的 表现",
+            "quote_zh": "在测试中有意增强安全对齐效果，在真实环境中回归对齐相对较差的表现",
             "quote_en": "…deliberately strengthening the appearance of safety alignment during testing while reverting to relatively poorer alignment in real deployment.",
             "source_title": "《人工智能治理研究报告（2025 年）》",
             "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",

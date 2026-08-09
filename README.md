@@ -7,9 +7,30 @@ rendering, has several competing ones, or has an established one that quietly di
 concept. This project records which of those three situations each term is in, **with
 evidence**.
 
-MVP scope: ~165 terms across 9 categories, English-facing. A Chinese-facing view and a
-browser extension that highlights terms in place are the intended next steps; the data
-format is built for both.
+Terms run in both directions: English concepts looking for a Chinese rendering, and
+Chinese-origin concepts — 算法备案, 自主可控, 大模型, 算力 — that English has no clean word
+for. A Chinese-facing view and a browser extension that highlights terms in place are the
+intended next steps; the data format is built for both.
+
+## Status: early. Read this before citing anything.
+
+This is a working MVP, not a finished reference. Specifically:
+
+- **No native speaker has reviewed it yet.** Every Chinese judgement here was made by an
+  LLM research pass and checked against primary sources, which is not the same thing.
+- **Confidence is graded and uneven.** Roughly a quarter of entries are `low` confidence
+  and some carry no citation at all. The site's "Needs evidence" filter shows you which.
+  Do not treat a `low` entry as a recommendation.
+- **Citations were adversarially verified once.** An automated pass re-fetched every
+  attestation whose quote did not contain the rendering it backed: 42 were deleted, ~58
+  had quotes corrected, and a handful are flagged `unverified` because the source could
+  not be re-fetched. That pass improved the data a great deal and did not make it correct.
+- **Recommendations are editorial.** Where the field has not settled on a rendering, this
+  database picks one and says why. Reasonable people will disagree; the reasoning is in
+  each entry's `notes` so you can disagree with the argument rather than the conclusion.
+
+Corrections are the most useful contribution you can make. If a rendering is wrong, or a
+term is missing, or a citation does not say what it claims — open an issue.
 
 ## Layout
 

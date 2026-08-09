@@ -138,6 +138,9 @@ in `notes`, and put the better rendering alongside it rather than instead of it.
 
 ## Non-negotiables
 
+0. **Every attestation needs a quote.** `quote_zh` for a Chinese rendering, always. For an
+   English rendering on a `zh-to-en` entry, `quote_en` alone is valid — the evidence there
+   is frequently an official English translation, which has no Chinese sentence to cite.
 1. **Never invent an attestation.** No fabricated quotes, publishers, dates, or URLs. If a
    quote can't be recovered verbatim, drop the attestation and lower `confidence`.
 2. **A blank is better than a guess.** `null` / `[]` are valid answers everywhere.

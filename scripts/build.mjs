@@ -156,7 +156,13 @@ for (const t of terms) {
     }
 
     for (const a of tr.attestations) {
-      if (!a.quote_zh) err(t.id, `attestation for "${tr[RKEY]}" has no quote_zh`)
+      // Evidence for an English rendering is often an official English translation, which
+      // has no Chinese sentence to quote. Require one side or the other, not specifically
+      // the Chinese one.
+      if (!a.quote_zh && !a.quote_en)
+        err(t.id, `attestation for "${tr[RKEY]}" has neither quote_zh nor quote_en`)
+      if (!ZH_ORIGIN && !a.quote_zh)
+        err(t.id, `attestation for "${tr.zh}" has no quote_zh (required for a Chinese rendering)`)
       if (!a.url) warn(t.id, `attestation for "${tr[RKEY]}" has no url`)
       // Cheap fabrication tripwire: a real attestation quotes text containing the rendering
       // it is evidence for, ignoring meaning-free typography. Only meaningful for Chinese
