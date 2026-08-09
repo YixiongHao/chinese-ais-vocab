@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Safety Terminology · English → Chinese</title>
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --panel: #ffffff;
+    --ink: #17181c;
+    --ink-2: #55596a;
+    --ink-3: #8b8fa3;
+    --line: #e4e2dd;
+    --line-2: #efedE8;
+    --accent: #a03e2f;
+    --accent-soft: #f6ece9;
+    --hi: #fdf3d6;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --cjk: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+           "Hiragino Sans GB", sans-serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131316; --panel: #191a1e; --ink: #eceaea; --ink-2: #a5a8b6; --ink-3: #6e7284;
+      --line: #2b2d34; --line-2: #232529; --accent: #e08b78; --accent-soft: #2a1f1c;
+      --hi: #3a3218;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131316; --panel: #191a1e; --ink: #eceaea; --ink-2: #a5a8b6; --ink-3: #6e7284;
+    --line: #2b2d34; --line-2: #232529; --accent: #e08b78; --accent-soft: #2a1f1c;
+    --hi: #3a3218;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 15px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .zh { font-family: var(--cjk); }
+
+  /* ---------- shell ---------- */
+  header {
+    border-bottom: 1px solid var(--line); background: var(--panel);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .head-inner {
+    max-width: 1240px; margin: 0 auto; padding: 14px 20px 0;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .brand h1 {
+    font-family: var(--serif); font-size: 19px; font-weight: 600;
+    margin: 0; letter-spacing: -0.01em;
+  }
+  .brand .sub { color: var(--ink-3); font-size: 12.5px; }
+  .brand .spacer { flex: 1; }
+  .brand button.ghost {
+    background: none; border: 1px solid var(--line); color: var(--ink-2);
+    border-radius: 6px; padding: 3px 9px; font-size: 12px; cursor: pointer;
+  }
+  .brand button.ghost:hover { color: var(--ink); border-color: var(--ink-3); }
+
+  .searchrow { display: flex; gap: 10px; align-items: center; }
+  #q {
+    flex: 1; font: inherit; font-size: 16px; padding: 9px 12px;
+    border: 1px solid var(--line); border-radius: 8px;
+    background: var(--bg); color: var(--ink); font-family: var(--sans);
+  }
+  #q:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  #q::placeholder { color: var(--ink-3); }
+  .count { color: var(--ink-3); font-size: 12.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; padding-bottom: 12px; }
+  .chip {
+    font-size: 12px; padding: 3px 10px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+    font-family: inherit; white-space: nowrap;
+  }
+  .chip:hover { border-color: var(--ink-3); color: var(--ink); }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .chip[aria-pressed="true"],
+  .chip[aria-pressed="true"] { color: #fff; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .chip[aria-pressed="true"] { color: #1a1210; }
+  }
+  :root[data-theme="dark"] .chip[aria-pressed="true"] { color: #1a1210; }
+  .chip.sep { border: none; pointer-events: none; color: var(--ink-3); padding-left: 8px; }
+
+  main {
+    max-width: 1240px; margin: 0 auto; padding: 0 20px 60px;
+    display: grid; grid-template-columns: minmax(300px, 400px) 1fr; gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } #detail { display: none; } }
+
+  /* ---------- results ---------- */
+  #results { padding-top: 14px; }
+  .cat-head {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 18px 0 6px; font-weight: 600;
+  }
+  .cat-head:first-child { margin-top: 4px; }
+  .row {
+    display: block; width: 100%; text-align: left; cursor: pointer;
+    border: none; border-bottom: 1px solid var(--line-2); background: none;
+    padding: 8px 10px; border-radius: 6px; font: inherit; color: inherit;
+  }
+  .row:hover { background: var(--panel); }
+  .row[aria-selected="true"] { background: var(--accent-soft); }
+  .row .en { font-weight: 500; }
+  .row .abbr { color: var(--ink-3); font-family: var(--mono); font-size: 12px; margin-left: 6px; }
+  .row .zh { font-family: var(--cjk); color: var(--ink-2); font-size: 14px; }
+  .row .zh.none { color: var(--ink-3); font-style: italic; font-family: var(--sans); }
+  .row .line2 { display: flex; gap: 8px; align-items: baseline; margin-top: 1px; }
+  mark { background: var(--hi); color: inherit; border-radius: 2px; padding: 0 1px; }
+
+  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex: none; }
+  .d-high { background: #c9762f; }
+  .d-medium { background: #b9a54a; }
+  .d-low { background: transparent; border: 1px solid var(--line); }
+
+  .empty { color: var(--ink-3); padding: 40px 10px; text-align: center; font-size: 14px; }
+
+  /* ---------- detail ---------- */
+  #detail { padding-top: 18px; position: sticky; top: 128px; max-height: calc(100vh - 150px); overflow-y: auto; }
+  #detail::-webkit-scrollbar { width: 8px; }
+  #detail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+  .placeholder { color: var(--ink-3); font-size: 14px; max-width: 46ch; }
+  .placeholder kbd {
+    font-family: var(--mono); font-size: 11px; border: 1px solid var(--line);
+    border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; color: var(--ink-2);
+  }
+  .placeholder ul { padding-left: 18px; margin: 10px 0; }
+  .placeholder li { margin: 4px 0; }
+
+  .term-head { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 18px; }
+  .term-head h2 {
+    font-family: var(--serif); font-size: 27px; margin: 0 0 2px;
+    font-weight: 600; letter-spacing: -0.015em;
+  }
+  .term-head .meta { color: var(--ink-3); font-size: 12.5px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .term-head .aliases { color: var(--ink-3); font-size: 13px; font-style: italic; margin-top: 3px; }
+
+  .headline-zh {
+    font-family: var(--cjk); font-size: 30px; font-weight: 600;
+    margin: 14px 0 2px; cursor: copy; display: inline-block; line-height: 1.3;
+  }
+  .headline-zh:hover { color: var(--accent); }
+  .headline-zh.none { font-family: var(--serif); font-size: 20px; color: var(--ink-3); font-style: italic; cursor: default; }
+  .headline-zh.none:hover { color: var(--ink-3); }
+  .pinyin { color: var(--ink-3); font-size: 13.5px; font-style: italic; }
+
+  section.blk { margin: 22px 0; }
+  section.blk > h3 {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 8px; font-weight: 600;
+  }
+  .def { max-width: 68ch; }
+  .def.zh { font-family: var(--cjk); color: var(--ink-2); margin-top: 8px; }
+
+  .callout {
+    background: var(--accent-soft); border-left: 3px solid var(--accent);
+    padding: 11px 14px; border-radius: 0 6px 6px 0; max-width: 68ch; font-size: 14.5px;
+  }
+
+  .tr {
+    border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px;
+    margin-bottom: 10px; background: var(--panel);
+  }
+  .tr-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .tr-zh { font-family: var(--cjk); font-size: 19px; font-weight: 600; cursor: copy; }
+  .tr-zh:hover { color: var(--accent); }
+  .tr-notes { color: var(--ink-2); font-size: 13.5px; margin-top: 6px; max-width: 66ch; }
+  .lit { color: var(--ink-3); font-size: 13px; font-style: italic; }
+
+  .tag {
+    font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;
+    padding: 2px 7px; border-radius: 4px; border: 1px solid var(--line); color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .tag.established { border-color: #4f8a55; color: #4f8a55; }
+  .tag.common      { border-color: #5a7fa8; color: #5a7fa8; }
+  .tag.contested   { border-color: #c9762f; color: #c9762f; }
+  .tag.proposed    { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+  .tag.loanword    { border-color: #7d6aa8; color: #7d6aa8; }
+  .tag.deprecated  { border-color: var(--ink-3); color: var(--ink-3); text-decoration: line-through; }
+  .tag.descriptive, .tag.transliteration { border-color: var(--ink-3); color: var(--ink-3); }
+
+  details.att { margin-top: 9px; }
+  details.att > summary {
+    cursor: pointer; font-size: 12px; color: var(--ink-3); list-style: none;
+    user-select: none; padding: 2px 0;
+  }
+  details.att > summary::-webkit-details-marker { display: none; }
+  details.att > summary::before { content: "▸ "; }
+  details.att[open] > summary::before { content: "▾ "; }
+  details.att > summary:hover { color: var(--accent); }
+  blockquote.q {
+    margin: 8px 0 0; padding: 8px 0 8px 12px; border-left: 2px solid var(--line);
+    font-size: 13.5px;
+  }
+  blockquote.q .qzh { font-family: var(--cjk); }
+  blockquote.q .qen { color: var(--ink-3); font-size: 12.5px; margin-top: 3px; }
+  blockquote.q cite { display: block; font-style: normal; font-size: 12px; color: var(--ink-3); margin-top: 5px; }
+  blockquote.q cite a { color: var(--accent); text-decoration: none; }
+  blockquote.q cite a:hover { text-decoration: underline; }
+
+  .ex { border-left: 2px solid var(--line); padding-left: 12px; margin-bottom: 12px; }
+  .ex .exzh { font-family: var(--cjk); }
+  .ex .exen { color: var(--ink-3); font-size: 13.5px; margin-top: 2px; }
+
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill {
+    font-size: 12.5px; padding: 3px 10px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: none; color: var(--ink-2); font-family: inherit;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .usedby { font-size: 13.5px; color: var(--ink-2); }
+  .usedby li { margin-bottom: 3px; }
+  .usedby .zh { font-family: var(--cjk); color: var(--ink); }
+
+  .srclist { font-size: 12.5px; padding-left: 18px; color: var(--ink-3); }
+  .srclist a { color: var(--ink-2); }
+  .srclist li { margin-bottom: 2px; word-break: break-all; }
+
+  #toast {
+    position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--bg); padding: 7px 16px; border-radius: 999px;
+    font-size: 13px; opacity: 0; pointer-events: none; transition: all .18s ease; z-index: 50;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <div class="brand">
+      <h1>AI Safety Terminology</h1>
+      <span class="sub">English → 中文 · <span id="stat"></span></span>
+      <span class="spacer"></span>
+      <button class="ghost" id="theme" title="Toggle theme">◐</button>
+    </div>
+    <div class="searchrow">
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="Search a term — English, 中文, or pinyin…">
+      <span class="count" id="count"></span>
+    </div>
+    <div class="filters" id="filters"></div>
+  </div>
+</header>
+
+<main>
+  <div id="results"></div>
+  <div id="detail"></div>
+</main>
+
+<div id="toast"></div>
+
+<script src="terms-data.js"></script>
+<script>
+(function () {
+  'use strict'
+  const DATA = window.VOCAB || { terms: [], categories: [], generated: '' }
+  const TERMS = DATA.terms
+  const CATS = DATA.categories
+  const catById = Object.fromEntries(CATS.map(c => [c.id, c]))
+  const byId = Object.fromEntries(TERMS.map(t => [t.id, t]))
+
+  const $ = s => document.querySelector(s)
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
+
+  // ---------- searchable haystack, built once ----------
+  for (const t of TERMS) {
+    const zh = t.translations.map(x => x.zh).join(' ')
+    const py = t.translations.map(x => x.pinyin || '').join(' ')
+    t._hay = [t.en, t.abbr || '', (t.en_aliases || []).join(' '), zh, py,
+              t.definition_en || '', t.definition_zh || '', (t.tags || []).join(' ')]
+             .join(' ').toLowerCase()
+    t._en = t.en.toLowerCase()
+  }
+
+  // ---------- state ----------
+  const state = { q: '', cat: null, flag: null, sel: null }
+
+  // ---------- filters ----------
+  const FLAGS = [
+    ['hard',      'Hard to translate', t => t.translation_difficulty === 'high'],
+    ['nozh',      'No settled Chinese term',
+                  t => !t.translations.length || t.translations.every(x => ['proposed','descriptive'].includes(x.status))],
+    ['contested', 'Contested', t => t.translations.some(x => x.status === 'contested') || t.translations.length > 2],
+    ['pitfall',   'Has a pitfall', t => !!t.pitfalls],
+    ['unattested','Needs evidence', t => !t.attestation_count],
+  ]
+  const flagById = Object.fromEntries(FLAGS.map(f => [f[0], f[2]]))
+
+  function renderFilters() {
+    const f = $('#filters')
+    const catChips = CATS.map(c =>
+      `<button class="chip" data-cat="${c.id}" aria-pressed="false" title="${esc(c.blurb)}">${esc(c.en)}</button>`
+    ).join('')
+    const flagChips = FLAGS.map(([id, label]) =>
+      `<button class="chip" data-flag="${id}" aria-pressed="false">${esc(label)}</button>`
+    ).join('')
+    f.innerHTML = catChips + '<span class="chip sep">·</span>' + flagChips
+    f.addEventListener('click', e => {
+      const b = e.target.closest('.chip'); if (!b) return
+      if (b.dataset.cat) state.cat = state.cat === b.dataset.cat ? null : b.dataset.cat
+      if (b.dataset.flag) state.flag = state.flag === b.dataset.flag ? null : b.dataset.flag
+      syncChips(); render()
+    })
+  }
+  function syncChips() {
+    for (const b of document.querySelectorAll('.chip[data-cat]'))
+      b.setAttribute('aria-pressed', String(b.dataset.cat === state.cat))
+    for (const b of document.querySelectorAll('.chip[data-flag]'))
+      b.setAttribute('aria-pressed', String(b.dataset.flag === state.flag))
+  }
+
+  // ---------- search ----------
+  function score(t, q) {
+    if (!q) return 1
+    if (t._en === q) return 1000
+    if ((t.abbr || '').toLowerCase() === q) return 900
+    if (t.translations.some(x => x.zh === q)) return 880
+    if (t._en.startsWith(q)) return 700
+    if ((t.en_aliases || []).some(a => a.toLowerCase().startsWith(q))) return 600
+    if (t.translations.some(x => x.zh.includes(q))) return 550
+    if (new RegExp('\\b' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(t._en)) return 500
+    if (t._en.includes(q)) return 400
+    if (t._hay.includes(q)) return 200
+    return 0
+  }
+
+  function filtered() {
+    const q = state.q.trim().toLowerCase()
+    let out = TERMS
+    if (state.cat) out = out.filter(t => t.category === state.cat)
+    if (state.flag) out = out.filter(flagById[state.flag])
+    if (q) {
+      out = out.map(t => [score(t, q), t]).filter(x => x[0] > 0)
+             .sort((a, b) => b[0] - a[0] || a[1]._en.localeCompare(b[1]._en)).map(x => x[1])
+    }
+    return out
+  }
+
+  function hl(text, q) {
+    if (!q) return esc(text)
+    const i = String(text).toLowerCase().indexOf(q)
+    if (i < 0) return esc(text)
+    return esc(text.slice(0, i)) + '<mark>' + esc(text.slice(i, i + q.length)) + '</mark>' + esc(text.slice(i + q.length))
+  }
+
+  // ---------- results list ----------
+  function render() {
+    const list = filtered()
+    const q = state.q.trim().toLowerCase()
+    $('#count').textContent = list.length === TERMS.length
+      ? `${TERMS.length} terms` : `${list.length} of ${TERMS.length}`
+
+    if (!list.length) {
+      $('#results').innerHTML = `<div class="empty">Nothing matches. Try a shorter query, or clear the filters.</div>`
+      return
+    }
+
+    // Grouped by category when browsing; flat, relevance-ordered when searching.
+    let html = ''
+    const rowFor = t => {
+      const pref = t.preferred_zh
+      const zhCell = pref
+        ? `<span class="zh">${hl(pref, q)}</span>`
+        : `<span class="zh none">no settled term</span>`
+      const nTr = t.translations.length
+      return `<button class="row" data-id="${t.id}" aria-selected="${t.id === state.sel}">
+        <div><span class="en">${hl(t.en, q)}</span>${t.abbr ? `<span class="abbr">${esc(t.abbr)}</span>` : ''}</div>
+        <div class="line2">
+          <span class="dot d-${t.translation_difficulty}" title="translation difficulty: ${t.translation_difficulty}"></span>
+          ${zhCell}${nTr > 1 ? `<span class="abbr">+${nTr - 1}</span>` : ''}
+        </div>
+      </button>`
+    }
+
+    if (q) {
+      html = list.map(rowFor).join('')
+    } else {
+      for (const c of CATS) {
+        const inCat = list.filter(t => t.category === c.id)
+        if (!inCat.length) continue
+        html += `<div class="cat-head">${esc(c.en)} <span class="zh">${esc(c.zh)}</span></div>`
+        html += inCat.map(rowFor).join('')
+      }
+    }
+    $('#results').innerHTML = html
+  }
+
+  // ---------- detail ----------
+  function attHtml(a) {
+    const cite = [a.publisher, a.source_title, a.date].filter(Boolean).map(esc).join(' · ')
+    return `<blockquote class="q">
+      <div class="qzh">${esc(a.quote_zh)}</div>
+      ${a.quote_en ? `<div class="qen">${esc(a.quote_en)}</div>` : ''}
+      <cite>${cite}${a.url ? ` — <a href="${esc(a.url)}" target="_blank" rel="noopener">source ↗</a>` : ''}</cite>
+    </blockquote>`
+  }
+
+  function trHtml(tr, isPref) {
+    return `<div class="tr">
+      <div class="tr-head">
+        <span class="tr-zh" data-copy="${esc(tr.zh)}">${esc(tr.zh)}</span>
+        ${tr.pinyin ? `<span class="pinyin">${esc(tr.pinyin)}</span>` : ''}
+        <span class="tag ${esc(tr.status)}">${esc(tr.status)}</span>
+        ${isPref ? '<span class="tag">recommended</span>' : ''}
+      </div>
+      ${tr.literal_back ? `<div class="lit">lit. “${esc(tr.literal_back)}”</div>` : ''}
+      ${tr.notes ? `<div class="tr-notes">${esc(tr.notes)}</div>` : ''}
+      ${(tr.attestations || []).length
+        ? `<details class="att"><summary>${tr.attestations.length} attestation${tr.attestations.length > 1 ? 's' : ''}</summary>${tr.attestations.map(attHtml).join('')}</details>`
+        : (tr.status === 'proposed' ? '' : `<div class="lit" style="margin-top:6px">no attestation on file</div>`)}
+    </div>`
+  }
+
+  function showTerm(id) {
+    const t = byId[id]
+    if (!t) return
+    state.sel = id
+    history.replaceState(null, '', '#' + id)
+    for (const r of document.querySelectorAll('.row'))
+      r.setAttribute('aria-selected', String(r.dataset.id === id))
+
+    const cat = catById[t.category] || { en: t.category, zh: '' }
+    const prefTr = t.translations.find(x => x.zh === t.preferred_zh)
+    const others = t.translations.filter(x => x.zh !== t.preferred_zh)
+
+    let h = `<div class="term-head">
+      <h2>${esc(t.en)}</h2>
+      ${(t.en_aliases || []).length ? `<div class="aliases">also: ${t.en_aliases.map(esc).join(' · ')}</div>` : ''}
+      <div class="meta">
+        <span>${esc(cat.en)}</span>
+        ${t.abbr ? `<span style="font-family:var(--mono)">${esc(t.abbr)}</span>` : ''}
+        <span>difficulty: ${esc(t.translation_difficulty)}</span>
+        <span>confidence: ${esc(t.confidence)}</span>
+        <span>${t.attestation_count} citation${t.attestation_count === 1 ? '' : 's'}</span>
+      </div>
+      ${t.preferred_zh
+        ? `<div class="headline-zh zh" data-copy="${esc(t.preferred_zh)}" title="click to copy">${esc(t.preferred_zh)}</div>
+           ${prefTr && prefTr.pinyin ? `<div class="pinyin">${esc(prefTr.pinyin)}</div>` : ''}`
+        : `<div class="headline-zh none">no settled Chinese rendering</div>`}
+    </div>`
+
+    if (t.definition_en || t.definition_zh) {
+      h += `<section class="blk"><h3>Definition</h3>
+        ${t.definition_en ? `<div class="def">${esc(t.definition_en)}</div>` : ''}
+        ${t.definition_zh ? `<div class="def zh">${esc(t.definition_zh)}</div>` : ''}
+      </section>`
+    }
+
+    if (t.pitfalls) {
+      h += `<section class="blk"><h3>Translation pitfall</h3>
+        <div class="callout">${esc(t.pitfalls)}</div></section>`
+    }
+
+    if (t.translations.length) {
+      h += `<section class="blk"><h3>Renderings</h3>
+        ${prefTr ? trHtml(prefTr, true) : ''}
+        ${others.map(x => trHtml(x, false)).join('')}
+      </section>`
+    }
+
+    if ((t.usage_examples || []).length) {
+      h += `<section class="blk"><h3>In use</h3>` + t.usage_examples.map(e => `<div class="ex">
+        <div class="exzh">${esc(e.zh)}</div>
+        ${e.en ? `<div class="exen">${esc(e.en)}</div>` : ''}
+      </div>`).join('') + `</section>`
+    }
+
+    if ((t.used_by || []).length) {
+      h += `<section class="blk"><h3>Used by</h3><ul class="usedby">` + t.used_by.map(u =>
+        `<li><strong>${esc(u.org)}</strong>${u.zh_used ? ` — <span class="zh">${esc(u.zh_used)}</span>` : ''}${u.note ? ` <span style="color:var(--ink-3)">(${esc(u.note)})</span>` : ''}</li>`
+      ).join('') + `</ul></section>`
+    }
+
+    if ((t.related || []).length) {
+      h += `<section class="blk"><h3>Related</h3><div class="pills">` + t.related
+        .filter(r => byId[r])
+        .map(r => `<button class="pill" data-goto="${r}">${esc(byId[r].en)}</button>`).join('') + `</div></section>`
+    }
+
+    if ((t.sources || []).length) {
+      h += `<section class="blk"><h3>Sources consulted</h3><ul class="srclist">` + t.sources.map(s =>
+        `<li>${/^https?:/.test(s) ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s)}</a>` : esc(s)}</li>`
+      ).join('') + `</ul></section>`
+    }
+
+    h += `<div class="lit" style="margin-top:26px">last researched ${esc(t.last_researched || '—')}</div>`
+
+    $('#detail').innerHTML = h
+    $('#detail').scrollTop = 0
+  }
+
+  function placeholder() {
+    $('#detail').innerHTML = `<div class="placeholder">
+      <p>Pick a term, or start typing. Search accepts English, Chinese, or pinyin —
+      typing <span class="zh">对齐</span> finds <em>alignment</em>.</p>
+      <p>The filters above are the interesting part:</p>
+      <ul>
+        <li><strong>No settled Chinese term</strong> — concepts the Chinese-language field
+            has not named yet. These are where a translation choice is still up for grabs.</li>
+        <li><strong>Has a pitfall</strong> — where the obvious rendering quietly changes the meaning.</li>
+        <li><strong>Needs evidence</strong> — entries with no citation behind them yet.</li>
+      </ul>
+      <p style="color:var(--ink-3);font-size:13px">
+        <kbd>/</kbd> search · <kbd>↑</kbd><kbd>↓</kbd> move · <kbd>↵</kbd> open · <kbd>esc</kbd> clear
+      </p>
+    </div>`
+  }
+
+  // ---------- interactions ----------
+  let toastTimer
+  function toast(msg) {
+    const el = $('#toast'); el.textContent = msg; el.classList.add('show')
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 1300)
+  }
+
+  document.addEventListener('click', e => {
+    const copy = e.target.closest('[data-copy]')
+    if (copy) {
+      navigator.clipboard?.writeText(copy.dataset.copy)
+        .then(() => toast('Copied ' + copy.dataset.copy))
+        .catch(() => {})
+      return
+    }
+    const goto = e.target.closest('[data-goto]')
+    if (goto) { showTerm(goto.dataset.goto); return }
+    const row = e.target.closest('.row')
+    if (row) showTerm(row.dataset.id)
+  })
+
+  $('#q').addEventListener('input', e => { state.q = e.target.value; render() })
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== $('#q')) { e.preventDefault(); $('#q').focus(); return }
+    if (e.key === 'Escape') { state.q = ''; $('#q').value = ''; render(); $('#q').blur(); return }
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Enter') return
+    const rows = [...document.querySelectorAll('.row')]
+    if (!rows.length) return
+    const i = rows.findIndex(r => r.dataset.id === state.sel)
+    if (e.key === 'Enter') { if (i >= 0) { e.preventDefault(); showTerm(rows[i].dataset.id) } return }
+    e.preventDefault()
+    const next = e.key === 'ArrowDown'
+      ? rows[Math.min(i + 1, rows.length - 1)] ?? rows[0]
+      : rows[Math.max(i - 1, 0)] ?? rows[0]
+    showTerm(next.dataset.id)
+    next.scrollIntoView({ block: 'nearest' })
+  })
+
+  $('#theme').addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme')
+    const isDark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark')
+  })
+
+  // ---------- boot ----------
+  const nHard = TERMS.filter(flagById.nozh).length
+  $('#stat').textContent = `${TERMS.length} terms · ${nHard} with no settled Chinese rendering · built ${DATA.generated}`
+  renderFilters()
+  render()
+  const hash = decodeURIComponent(location.hash.slice(1))
+  if (hash && byId[hash]) showTerm(hash); else placeholder()
+})()
+</script>
+</body>
+</html>
