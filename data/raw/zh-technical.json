@@ -1,0 +1,1547 @@
+[
+  {
+    "id": "big-model",
+    "direction": "zh-to-en",
+    "zh_headword": "大模型",
+    "pinyin": "dà móxíng",
+    "en": "large model",
+    "en_aliases": [
+      "foundation model",
+      "big model",
+      "large-scale model"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "core-vocabulary",
+      "industry-register",
+      "high-frequency"
+    ],
+    "definition_en": "The default Chinese umbrella noun for the post-2022 foundation-model paradigm: any large-scale pretrained model that is adapted to many downstream tasks. It covers LLMs, multimodal and vision-language models, and industry-specific fine-tunes, and is used as a paradigm label rather than a parameter-count threshold — a 4B fine-tune shipped as a product is still 大模型.",
+    "definition_zh": "指经大规模数据预训练、可适配多种下游任务的基础模型，是 2022 年以来中文语境中对这一技术范式最通用的称呼。既涵盖通用基础模型，也涵盖垂直行业模型；在中文里它更接近“基础模型/大模型范式”，而不是一个参数量门槛。",
+    "preferred_zh": "大模型",
+    "translation_difficulty": "high",
+    "pitfalls": "'Large model' is a calque, not idiomatic English — no English-speaking practitioner says it unprompted, yet it is the rendering used in TC260's own official English text and in most translated PRC material, so an English reader meets it constantly. Two specific traps: (1) 大模型 is a paradigm claim, not a size claim, so '大模型' routinely covers models an English writer would call small (Qwen3-4B, industry fine-tunes) — reading it as 'large' imports a false size threshold; (2) it is broader than 'LLM' (it includes multimodal, vision-language-action and diffusion-family models when they are pretrained-and-adapted) but narrower than 'AI model' (a bespoke task-specific classifier is not 大模型). 'Foundation model' is the accurate English concept and 上海AI实验室/安远AI explicitly equate the two, but it is not what translations say. Also note the productive compounds — 大模型备案, 大模型安全, 通用大模型 vs 行业大模型 — which have no single-word English counterparts.",
+    "en_renderings": [
+      {
+        "en": "large model",
+        "status": "common",
+        "literal_back": "big model",
+        "notes": "The rendering an English reader will actually meet, including in TC260's own bilingual national framework and in Concordia AI's English reporting. Record it, but it is a calque: it reads as a size adjective in English while the Chinese is a paradigm noun.",
+        "attestations": [
+          {
+            "quote_zh": "大模型应用形态从机器问答向嵌入业务流程的智能体演进, 加速与业务系统融合",
+            "quote_en": "Large model application is evolving from simple machine Q&A to intelligent agents embedded into business workflows, accelerating their integration with operational systems. [official English of the same document]",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": null,
+            "quote_en": "parallel development of general-purpose large models and industry-specific models",
+            "source_title": "State of AI Safety in China (2026)",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "en": "foundation model",
+        "status": "common",
+        "literal_back": null,
+        "notes": "The accurate English concept. The Shanghai AI Lab / Concordia AI framework glossary states outright that 基础模型 (foundation model) 'is commonly called 大模型 in academia', which is the cleanest attested equivalence available. Prefer this when translating for an English technical audience; keep 'large model' when quoting PRC documents.",
+        "attestations": [
+          {
+            "quote_zh": "基础模型（Foundation model）：基于大规模数据进行广泛训练的通用型人工智能模型，可适配大量下游任务，在学术领域常被称作” 大模型”。",
+            "quote_en": "Foundation model: a general-purpose AI model broadly trained on large-scale data and adaptable to a large number of downstream tasks; in academia it is commonly called a 'big model' (大模型).",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "作为技 术核心载体的大模型已完成从技术到产品的关键跨越",
+            "quote_en": "The large model, as the core technical vehicle, has completed the critical leap from technology to product.",
+            "source_title": "《人工智能治理研究报告（2025 年）》",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "en": "big model",
+        "status": "deprecated",
+        "literal_back": "big model",
+        "notes": "A more literal calque that appears in some Chinese-authored English writing. Recommend against: 'big model' has no currency in English-language ML and reads as a translation artefact. Recorded because it does occur.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English fragmented the concept across three words that Chinese keeps in one. 'LLM' names the modality, 'foundation model' names the training-and-adaptation relationship, and 'frontier model' names the capability tier; 大模型 does all three jobs at once and is the ordinary word a Chinese engineer, journalist, regulator and investor all use. Because English has no single unmarked term, translators fall back on 'large model', which quietly converts a claim about *how a model was built and is used* into a claim about *how big it is* — and so makes PRC statements about small industry models look inconsistent. The scope boundaries also do not line up: 大模型 excludes bespoke task-specific models that English 'AI model' includes, and includes multimodal and embodied VLA models that English 'LLM' excludes.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "大模型",
+        "note": "Used in the 2.0 framework's preface and in its 术语 entry for 安全护栏; the document's own English renders it 'large model'."
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "大模型",
+        "note": "Glossary equates it with 'foundation model' and marks it as the academic colloquialism."
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "大模型",
+        "note": "Used as the organising noun for the whole industry: 通用基础大模型 vs 垂直行业大模型."
+      },
+      {
+        "org": "通义千问 Qwen（阿里巴巴）",
+        "zh_used": "大模型",
+        "note": "Used contrastively with 小模型 in the same sentence, showing it also works as a plain relative-size word in lab writing."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "我们开源了两个 MoE 模型的权重：Qwen3-235B-A22B，一个拥有 2350 多亿总参数和 220 多亿激活参数的大模型",
+        "en": "We have open-sourced the weights of two MoE models: Qwen3-235B-A22B, a large model with over 235 billion total parameters and over 22 billion activated parameters.",
+        "source": "https://qwenlm.github.io/zh/blog/qwen3/"
+      },
+      {
+        "zh": "安全护栏：针对大模型的安全控制措施，通过结合规则库、负面判别模型等技术手段，对大模型输入输出内容、数据泄露、提示词攻击等进行识别、拦截及处置。",
+        "en": "Safety guardrails: safety control measures for large models that combine rule bases, negative discriminator models and other techniques to identify, intercept and handle large-model input/output content, data leakage and prompt-injection attacks.",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      }
+    ],
+    "related": [
+      "general-purpose-ai-zh",
+      "computing-power",
+      "smart-computing-centre",
+      "generative-ai-filing",
+      "trustworthy-ai-zh"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+      "https://qwenlm.github.io/zh/blog/qwen3/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "computing-power",
+    "direction": "zh-to-en",
+    "zh_headword": "算力",
+    "pinyin": "suànlì",
+    "en": "computing power",
+    "en_aliases": [
+      "compute",
+      "computing infrastructure",
+      "intelligent compute"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "core-vocabulary",
+      "industrial-policy",
+      "infrastructure",
+      "high-frequency"
+    ],
+    "definition_en": "Computational capacity treated as a national resource and a factor of production, on a par with data, energy and land. 算力 is simultaneously the technical quantity English calls 'compute' and the object of a large body of PRC industrial policy — measured in aggregate (EFLOPS), planned by the state, sited by programme (东数西算), and built as 算力基础设施 and 智算中心.",
+    "definition_zh": "指计算能力，但在中文政策与产业语境中它同时是一种生产要素和基础设施门类，与数据、能源并列，可统计（EFLOPS）、可规划、可调度，衍生出算力网络、算力中心、智算中心、算力经济等一整套词汇。",
+    "preferred_zh": "算力",
+    "translation_difficulty": "medium",
+    "pitfalls": "English 'compute' is a recent mass-noun back-formation from the AI-scaling literature and is almost entirely a technical/economic term; 算力 predates that usage in Chinese and is above all an infrastructure and industrial-policy noun. Consequences for readers: (1) the compound family — 算力网络, 算力基础设施, 算力中心, 智算中心, 算力经济, 算力调度 — has no English counterpart, and translators break it up inconsistently ('compute network', 'computing infrastructure', 'intelligent compute'), so the same Chinese word can appear as three different English words in one document; (2) TC260's official English never once uses 'computing power' — it renders 算力设施 as 'computing infrastructure' and 算力资源 as 'computing resources', so an English reader searching translated PRC standards for 'computing power' will miss the passages; (3) 智能算力 / 智算 (AI-specific compute) is a distinct sub-category with no English equivalent at all, usually flattened to plain 'compute'. Do not read 算力 as implying GPU/accelerator specifically — that is 智能算力.",
+    "en_renderings": [
+      {
+        "en": "computing power",
+        "status": "common",
+        "literal_back": "calculate-power",
+        "notes": "The default dictionary rendering and the one used in English-language reporting on Chinese AI policy. Adequate for the plain sense; loses the industrial-policy weight and reads as slightly archaic technical English.",
+        "attestations": [
+          {
+            "quote_zh": null,
+            "quote_en": "accelerate comprehensive legislation on the healthy development of AI,” spanning data, computing power, algorithms, property rights, cybersecurity, supply-chain security, and key application scenarios",
+            "source_title": "State of AI Safety in China (2026)",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "en": "computing infrastructure",
+        "status": "established",
+        "literal_back": null,
+        "notes": "TC260's own official English for 算力设施 in the bilingual national framework — i.e. the PRC standards body itself avoids 'computing power' and uses infrastructure vocabulary. This is the strongest attested pair available and should be preferred when translating 算力设施 / 算力基础设施.",
+        "attestations": [
+          {
+            "quote_zh": "针对模型算法、 训练数据、 算力设施、 产品服务、 应用场景, 提出通过安全软件开发、 数据质量提升、 安全建设运维、 测评监 测加固等技术手段, 提升人工智能技术及应用安全性的措施。",
+            "quote_en": "Regarding models and algorithms, training data, computing infrastructure, products and services, and application scenarios, we propose targeted technological measures to improve the safety of AI technology and applications. [official English of the same document]",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "针对模型算法、训练数据、算力设施、 产品服务、 应用场景，提出通过安全软件开发、数据质量提升、安全建设运维、 测评监测加固等技术手段提升人工智能产品及应用的安全性、公平性、可靠性、鲁棒性",
+            "quote_en": "Regarding models and algorithms, training data, computing facilities, products and services, and application scenarios, we propose targeted technical measures to improve the safety, fairness, reliability and robustness of AI products and applications. [official English of the 1.0 framework]",
+            "source_title": "《人工智能安全治理框架》1.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260)",
+            "source_type": "standard",
+            "url": "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+            "date": "2024-09"
+          }
+        ]
+      },
+      {
+        "en": "compute",
+        "status": "common",
+        "literal_back": null,
+        "notes": "What English-language AI-policy writing actually says, and what CSET's professional translation of the State Council 'AI Plus' Opinions uses (智能算力 → 'intelligent compute', 一体化算力网 → 'compute network'). Best choice for a technical/analytic English audience; the cost is that it hides the fact that the Chinese word is doing infrastructure-policy work.",
+        "attestations": [
+          {
+            "quote_zh": "加强智能算力互联互通和供需匹配，创新智能算力基础设施运营模式",
+            "quote_en": "Strengthen the interconnectivity and supply-demand matching of intelligent compute, innovate the operational models of intelligent compute infrastructure. [CSET translation of the same clause]",
+            "source_title": "《国务院关于深入实施“人工智能+”行动的意见》（国发〔2025〕11 号）",
+            "publisher": "国务院（中国政府网）",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+            "date": "2025-08"
+          },
+          {
+            "quote_zh": null,
+            "quote_en": "Optimize the national intelligent computing resource layout, refine the integrated national compute network, fully utilize the role of “East- West Compute Transfer”",
+            "source_title": "Opinions of the State Council on Deepening the Implementation of the 'Artificial Intelligence+' Initiative (English translation)",
+            "publisher": "Center for Security and Emerging Technology (CSET), Georgetown University",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English has no noun that is at once the physics quantity, the traded commodity and the planned public utility. 'Compute' in English AI writing is a scaling input measured in FLOP; 算力 is that, plus a line item in five-year plans, plus a thing provinces compete to host, plus the root of a productive compound family (算力网络, 算力经济, 算力调度, 智算中心). The asymmetry is structural, not lexical: PRC AI strategy is organised around 算力 as infrastructure to be built and allocated, whereas Anglophone compute governance treats compute mainly as a chokepoint to be monitored and controlled. A reader who maps 算力 onto 'compute' will correctly parse the sentences and still miss why the word carries so much policy weight — and will not realise that 智能算力/智算 marks a category (AI-specific accelerated compute) that English simply does not lexicalise.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "算力设施 / 算力资源",
+        "note": "Official English: 'computing infrastructure' / 'computing resources'; 'computing power' never appears."
+      },
+      {
+        "org": "国务院 (State Council)",
+        "zh_used": "智能算力 / 一体化算力网",
+        "note": "《人工智能+》 Opinions §(9) 强化智能算力统筹 — the core compute-buildout clause."
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "算力经济",
+        "note": "Publishes a dedicated annual 算力经济发展研究报告 treating compute as an economic formation."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "强化智能算力统筹。支持人工智能芯片攻坚创新与使能软件生态培育，加快超大规模智算集群技术突破和工程落地。",
+        "en": "Strengthen the coordination of intelligent compute. Support breakthrough innovation in AI chips and the cultivation of enabling software ecosystems, and accelerate breakthroughs and engineering execution in ultra-large-scale intelligent computing cluster technology.",
+        "source": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+      },
+      {
+        "zh": "组件和算力安全。人工智能依赖的开发框架、计算框架、执行平台、算力设施等，存在缺陷、漏洞、后门、可靠性等风险。",
+        "en": "Component and computing safety. The development frameworks, computing frameworks, execution platforms and computing facilities that AI relies on involve risks such as defects, vulnerabilities, backdoors and reliability issues.",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      }
+    ],
+    "related": [
+      "smart-computing-centre",
+      "eastern-data-western-computing",
+      "big-model",
+      "chokepoint-technology",
+      "new-whole-nation-system"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "strategic-deception-prc",
+    "direction": "zh-to-en",
+    "zh_headword": "战略欺骗",
+    "pinyin": "zhànlüè qīpiàn",
+    "en": "strategic deception",
+    "en_aliases": [
+      "scheming",
+      "deceptive alignment",
+      "strategic deception behaviour"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "loss-of-control",
+      "evaluations",
+      "research-register"
+    ],
+    "definition_en": "The label under which Chinese frontier-safety writing files the scheming / deceptive-alignment cluster: a model that conceals its true capabilities or objectives, behaves differently under evaluation than in deployment, and uses deception instrumentally to evade shutdown or oversight while pursuing goals that conflict with human values.",
+    "definition_zh": "指人工智能系统为规避关机、监管或安全评估而有意隐瞒真实能力或目标、在评测与真实部署中表现不一致的行为，是中文前沿安全文献中对应英文 scheming／deceptive alignment 的类别名。",
+    "preferred_zh": "战略欺骗",
+    "translation_difficulty": "medium",
+    "pitfalls": "The English rendering is transparent, but the *search* problem is severe and asymmetric. English-language AI safety filed this cluster under 'scheming' (Anthropic/Apollo usage) and 'deceptive alignment'; neither has a settled Chinese calque, and Chinese institutions converged instead on 战略欺骗. An English speaker searching Chinese literature for 图谋/诡计/欺骗性对齐 will find almost nothing, while 战略欺骗 returns the Shanghai AI Lab framework, its evaluation reports and the associated media coverage. The reverse trap is worse: 战略欺骗 is also a standard military-strategy term ('strategic deception' in the maskirovka sense), so naive keyword search pulls in unrelated PLA and international-relations material. Note also that 战略 here means 'strategic' in the sense of *deliberate and plan-based*, not 'concerning grand strategy' — the framework groups it with 自主规划 and 自我修改 as control-undermining capabilities, not with military doctrine.",
+    "en_renderings": [
+      {
+        "en": "strategic deception",
+        "status": "established",
+        "literal_back": "strategic deception",
+        "notes": "Direct and used by Concordia AI's English-language reporting when describing Chinese work, so the pair is attested in both directions. Accurate, but does not signal to an English reader that this is the Chinese home of the 'scheming' literature.",
+        "attestations": [
+          {
+            "quote_zh": "AI系统可能通过发展破坏控制的能力（如自主规划、战略欺骗和自我修改）以及在特定部署条件下使用这些破坏控制的能力来规避人类监督和控制机制。",
+            "quote_en": "AI systems may evade human oversight and control mechanisms by developing control-undermining capabilities (such as autonomous planning, strategic deception and self-modification) and using those capabilities under particular deployment conditions.",
+            "source_title": "《前沿人工智能风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": null,
+            "quote_en": "A team from Peking University used representation engineering to induce strategic deception in reasoning models — where chain-of-thought contradicts the output — at a 40% success rate via activation steering.",
+            "source_title": "State of AI Safety in China (2026)",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "en": "scheming",
+        "status": "proposed",
+        "literal_back": null,
+        "notes": "Not attested as a translation of 战略欺骗 in any source consulted. Proposed as a cross-reference only: an English reader looking for the Chinese literature on scheming needs to be told the search term is 战略欺骗, and an English reader meeting 'strategic deception' in a translated PRC document needs to know it denotes what they call scheming. Do not use it *instead of* 'strategic deception' when translating.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "This is a discoverability gap rather than a semantic one. The concept is shared, but the two literatures indexed it under non-cognate labels — English under 'scheming' and 'deceptive alignment', Chinese under 战略欺骗 — so neither community's keyword searches reach the other's work. Compounding this, 战略欺骗 collides with an established military term in Chinese and 'strategic deception' collides with the same term in English, meaning the honest translation is precisely the one that maximises false-positive retrieval. The entry exists mainly to record the bridge.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "战略欺骗",
+        "note": "Listed in the 1.0 framework as a control-undermining capability and as red-line scenario L1/L3 material; carried into the 2.0 evaluation programme."
+      },
+      {
+        "org": "安远 AI (Concordia AI)",
+        "zh_used": "strategic deception",
+        "note": "Uses the English term in State of AI Safety in China (2026) to describe a Peking University representation-engineering result."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "战略欺骗行为：AI系统通过欺骗手段规避关机或监管，同时推进与人类价值观相冲突的目标。",
+        "en": "Strategic deception: AI systems use deception to evade shutdown or oversight while advancing goals that conflict with human values.",
+        "source": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+      },
+      {
+        "zh": "研究团队发现，一些AI开始表现出“当面一套，背后一套”的行为。",
+        "en": "The research team found that some AI systems are beginning to exhibit 'one face to your front, another behind your back' behaviour.",
+        "source": "https://www.techwalker.com/2026/0224/3179510.shtml"
+      }
+    ],
+    "related": [
+      "red-line-yellow-line",
+      "malfunction-risk",
+      "safety-alignment",
+      "controllability"
+    ],
+    "sources": [
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+      "https://www.techwalker.com/2026/0224/3179510.shtml"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "red-line-yellow-line",
+    "direction": "zh-to-en",
+    "zh_headword": "红线与黄线",
+    "pinyin": "hóngxiàn yǔ huángxiàn",
+    "en": "red lines and yellow lines",
+    "en_aliases": [
+      "red line / yellow line thresholds",
+      "two-tier risk thresholds"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "frontier-safety",
+      "risk-thresholds",
+      "prc-contribution"
+    ],
+    "definition_en": "The two-tier risk-threshold design of the Shanghai AI Lab / Concordia AI Frontier AI Risk Management Framework. A 红线 (red line) is an intolerable-harm threshold that must not be crossed; a 黄线 (yellow line) is an early-warning threshold on the enabling capabilities and propensities that would make a red-line path viable. Results are sorted into a green / yellow / red zone, which determines whether a model gets routine deployment, controlled deployment, or suspension of deployment or development.",
+    "definition_zh": "《前沿人工智能风险管理框架》提出的双层风险阈值机制。“红线”是不可容忍的危害阈值，一旦触发即应暂停部署或开发；“黄线”是前瞻性预警指标，标示关键使能能力、行为倾向或防护缺失等前置条件。二者共同把模型划入绿区、黄区或红区，直接决定部署决策。",
+    "preferred_zh": "红线与黄线",
+    "translation_difficulty": "medium",
+    "pitfalls": "Three things go wrong in translation. (1) 红线 is a heavily loaded PRC political idiom for a non-negotiable limit (territorial red lines, ecological 生态保护红线); English 'red line' carries diplomatic-ultimatum connotations instead of the regulatory-threshold sense, and readers may hear rhetoric where the document means an auditable trigger. (2) The pair is routinely collapsed: English coverage reports 'China's AI red lines' and drops 黄线 entirely, which destroys the mechanism — the yellow line is where the framework does its actual anticipatory work, because a red line only fires once a credible harm pathway already exists. (3) Do not equate the scheme with ASL levels or preparedness tiers: it is not an ordered capability ladder. Each red line is an independent threshold defined over a deployment-environment / threat-source / enabling-capability (ETC) triple, and the framework says explicitly that the numbering (CY1–CY3, B1–B3) does not encode severity or progression. Also note the framework calls red lines developer 自我约束 pending consensus, not regulation.",
+    "en_renderings": [
+      {
+        "en": "red lines and yellow lines",
+        "status": "common",
+        "literal_back": "red line and yellow line",
+        "notes": "The framework's own English title is 'Frontier AI Risk Management Framework', and the threshold pair is normally rendered literally. Keep both terms; dropping 'yellow line' loses the mechanism.",
+        "attestations": [
+          {
+            "quote_zh": "本框架通过划定“红线”（不应逾越的不可容忍阈值）和“黄线”（潜在风险的早期预警指标）来设定人工 智能的安全边界",
+            "quote_en": "This framework sets AI safety boundaries by drawing 'red lines' (intolerable thresholds that must not be crossed) and 'yellow lines' (early-warning indicators of potential risk).",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "我们建议开发者为风险界定不可容忍的阈值（“红线”）和早期预警 指标（“黄线”），将理论化的描述转化为便于实操的决策标准。",
+            "quote_en": "We recommend that developers define intolerable thresholds ('red lines') and early-warning indicators ('yellow lines') for risks, turning theoretical descriptions into operable decision criteria.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "en": "green / yellow / red zones",
+        "status": "common",
+        "literal_back": "green zone / yellow zone / red zone",
+        "notes": "The companion concept (绿区/黄区/红区) that the thresholds sort models into. Translating the lines without the zones leaves the consequences invisible: yellow zone means controlled deployment, red zone means suspension.",
+        "attestations": [
+          {
+            "quote_zh": "三类风险区分别为：绿区（常 规部署、广泛可接受）、黄区（受控部署、严格管控下可容忍）或红区（暂停部署或开发、不可接 受）。",
+            "quote_en": "The three risk zones are: green zone (routine deployment, broadly acceptable), yellow zone (controlled deployment, tolerable under strict controls), and red zone (suspend deployment or development, unacceptable).",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English frontier-safety design converged on ordered capability ladders — ASL levels, preparedness tiers, capability thresholds — in which a single scale is climbed and each rung attaches a mitigation package. The 红线/黄线 scheme is a genuinely different shape: two qualitatively distinct kinds of threshold (an intolerable-outcome line and a precursor line), each instantiated independently per risk domain over an environment–threat–capability triple, feeding a three-zone deployment decision. English has 'threshold' and 'tripwire' but no established paired vocabulary for 'the line you must never cross' versus 'the line that tells you the crossing is becoming possible', and no term for a threshold defined over a context triple rather than over a capability score. Translating the words is easy; the reason the entry matters is that an English reader will file it as 'China's version of ASL' and miss that it is an alternative architecture — one that is deliberately interoperable with TC260 2.0 and the EU Code of Practice, as the framework's own mapping appendices set out.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "红线 / 黄线",
+        "note": "Originating framework; §2.1 defines both, §2.2 instantiates red lines for cyber, bio, chemical, persuasion and loss-of-control risks."
+      },
+      {
+        "org": "安全内参 (secrss)",
+        "zh_used": "红线 / 黄线",
+        "note": "Reported the 1.0 release, describing the framework as turning risks from '模糊的定义' into '精确的坐标'."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "已越过黄线或红线的人工智能模型，至少应满足三级（监督保护级）的等级保护要求。",
+        "en": "AI models that have crossed a yellow line or a red line should at minimum meet Level 3 (supervisory protection) requirements of the graded protection scheme.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      },
+      {
+        "zh": "当红线被触发时，我们建议模型开发者立即采取措施，阻断潜在灾难性后果的发生路径。",
+        "en": "When a red line is triggered, we recommend that model developers immediately take measures to block the pathway to the potential catastrophic outcome.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      }
+    ],
+    "related": [
+      "strategic-deception-prc",
+      "malfunction-risk",
+      "graded-protection-scheme",
+      "bottom-line-thinking",
+      "controllability"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://www.secrss.com/articles/81320",
+      "https://www.secrss.com/articles/87619"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "smart-computing-centre",
+    "direction": "zh-to-en",
+    "zh_headword": "智算中心",
+    "pinyin": "zhìsuàn zhōngxīn",
+    "en": "intelligent computing centre",
+    "en_aliases": [
+      "AI data centre",
+      "intelligent computing center",
+      "AI compute hub"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "infrastructure",
+      "industrial-policy"
+    ],
+    "definition_en": "A datacentre built specifically to serve AI training and inference — accelerator-dense, often described by its FLOPS rating and by whether it hosts 万卡级 (10,000-accelerator-class) clusters — as distinct from a general-purpose 数据中心 and from a 超算中心 (HPC/supercomputing centre). Contraction of 智能计算中心.",
+    "definition_zh": "面向人工智能训练与推理建设的算力设施，以智能算力（加速卡）为主，常以 PFLOPS 规模和是否部署万卡级集群来描述，区别于通用数据中心和超算中心。是“智能计算中心”的缩略。",
+    "preferred_zh": "智算中心",
+    "translation_difficulty": "medium",
+    "pitfalls": "'Intelligent computing centre' is the standard rendering and is close to meaningless in English — it sounds like a smart-building or a service desk, not a GPU datacentre. The real risks in reading PRC compute reporting are categorical: 智算中心 (AI datacentre), 超算中心 (supercomputing centre) and 数据中心 (general datacentre) are three tracked, separately-planned categories, and English coverage flattens all three to 'data centre', which makes provincial buildout figures incomparable. Note also that 智算 is a contraction of 智能计算 and appears in 智算集群 / 智算枢纽 / 智算资源, none of which have settled English forms — CSET's translation of the State Council 'AI Plus' Opinions uses 'intelligent computing cluster' and 'intelligent compute infrastructure' for the neighbouring terms. Finally, headline PFLOPS figures for 智算中心 are usually quoted at low precision (FP16/INT8) and are not comparable with FP64 supercomputer ratings.",
+    "en_renderings": [
+      {
+        "en": "intelligent computing centre",
+        "status": "common",
+        "literal_back": "intelligent-computing centre",
+        "notes": "The literal rendering that dominates English coverage and official translation. Keep it when quoting documents, because it is what a reader will meet, but gloss it as 'AI datacentre' on first use.",
+        "attestations": [
+          {
+            "quote_zh": "长三角·平湖润泽国际信息港项目已建成一期智算中心，形成 4.9 万 PFLOPS 算力规模，部署 5 个万卡级智算集群并投运 4.6 万 PFLOPS 算力。",
+            "quote_en": "The Yangtze River Delta–Pinghu Runze International Information Port project has completed phase one of its intelligent computing centre, forming 49,000 PFLOPS of computing capacity, deploying five 10,000-accelerator-class intelligent computing clusters and bringing 46,000 PFLOPS into operation.",
+            "source_title": "《算力经济发展研究报告（2025 年）》",
+            "publisher": "中国信息通信研究院云计算与大数据研究所",
+            "source_type": "report",
+            "url": null,
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "en": "AI datacentre",
+        "status": "proposed",
+        "literal_back": null,
+        "notes": "Not attested as a translation of 智算中心 in the sources consulted; proposed because it is what an English-language infrastructure analyst would call the object, and because 'intelligent computing centre' conveys nothing. Recommend using it as a gloss alongside the literal rendering, not instead of it.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English never needed a separate word: an AI datacentre is just a datacentre with accelerators in it, and the distinction is made with adjectives ('GPU cluster', 'AI datacentre') rather than a category noun. PRC compute policy does need one, because 智算中心, 超算中心 and 数据中心 are administratively distinct objects — separately planned, separately sited under programmes like 东数西算, separately counted in provincial statistics, and separately subsidised. So the missing English term is not a missing concept but a missing *administrative category*, and its absence is why English-language reporting on Chinese compute buildout so often adds up numbers that PRC sources keep deliberately apart.",
+    "translations": [],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "智算中心",
+        "note": "Used throughout the 算力经济 report series as a distinct facility category alongside 超算中心."
+      },
+      {
+        "org": "国务院 (State Council)",
+        "zh_used": "智算集群 / 智能算力基础设施",
+        "note": "《人工智能+》 Opinions §(9) calls for 超大规模智算集群技术突破 and optimisation of the 国家智算资源布局."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "桐乡市依托乌镇互联网大会溢出效应和长三角区位优势构建“乌镇之光”超算中心和联通智算中心双核算力体系。",
+        "en": "Tongxiang has built a dual-core compute system consisting of the 'Wuzhen Light' supercomputing centre and a China Unicom intelligent computing centre.",
+        "source": "《算力经济发展研究报告（2025 年）》，中国信息通信研究院"
+      },
+      {
+        "zh": "加快超大规模智算集群技术突破和工程落地。",
+        "en": "Accelerate breakthroughs and engineering execution in ultra-large-scale intelligent computing cluster technology.",
+        "source": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+      }
+    ],
+    "related": [
+      "computing-power",
+      "eastern-data-western-computing",
+      "big-model",
+      "new-whole-nation-system"
+    ],
+    "sources": [
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "values-alignment-prc",
+    "direction": "zh-to-en",
+    "zh_headword": "价值观对齐",
+    "pinyin": "jiàzhíguān duìqí",
+    "en": "values alignment",
+    "en_aliases": [
+      "value alignment",
+      "human-values alignment"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "alignment",
+      "ethics-register"
+    ],
+    "definition_en": "Alignment specifically to human ethical and social values, as distinct from alignment to a user's instructions or a developer's intent. In Chinese usage it is the ethics-facing half of alignment: teaching a system right from wrong, cooperative behaviour, and conformity to socially shared values.",
+    "definition_zh": "指使人工智能系统与人类伦理道德和社会价值观相一致，区别于仅与用户指令或开发者意图一致的对齐。在中文文献中它是对齐的“善”的一面，与能力（智）相对。",
+    "preferred_zh": "价值观对齐",
+    "translation_difficulty": "medium",
+    "pitfalls": "The single character 观 is load-bearing and routinely lost. 价值对齐 ('value alignment') is the broader technical term and is what TC260's national framework uses — its official English is 'value alignment'; 价值观对齐 ('values alignment', with 价值观 = a person's or society's set of values, a worldview) narrows it to the ethical/social register. Translating both as 'value alignment' erases the distinction. The deeper trap for English readers is scope: English 'alignment' is an umbrella covering goal-directedness, corrigibility, deceptive alignment and control, whereas 价值观对齐 in PRC policy usage is almost entirely about *content and ethics* — a system that produces socially acceptable outputs. A PRC document promising 价值观对齐 is not thereby promising anything about scheming or shutdown resistance; those sit under 失控 and 可控性. Beware too the political reading: in regulatory documents 价值观 can point at 社会主义核心价值观, so the term can be doing content-governance work rather than technical-alignment work. Read the surrounding sentence.",
+    "en_renderings": [
+      {
+        "en": "values alignment",
+        "status": "common",
+        "literal_back": "values-view alignment",
+        "notes": "Preferred. The plural 'values' preserves the 观 and signals the ethical/social narrowing that distinguishes 价值观对齐 from 价值对齐.",
+        "attestations": [
+          {
+            "quote_zh": "人类价值观的考虑因素被嵌 入到对齐循环的所有部分",
+            "quote_en": "Considerations of human values are embedded in every part of the alignment cycle.",
+            "source_title": "《对齐的理论、技术与评估》（第二十三届中国计算语言学大会 CCL 2024）",
+            "publisher": "北京大学人工智能安全与治理中心（吉嘉铭、邱天异、陈博远、杨耀东）",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          },
+          {
+            "quote_zh": "本文将关于人类价值观的一致性研究分类为三个主要主题",
+            "quote_en": "This paper classifies research on alignment with human values into three main themes.",
+            "source_title": "《对齐的理论、技术与评估》（第二十三届中国计算语言学大会 CCL 2024）",
+            "publisher": "北京大学人工智能安全与治理中心（吉嘉铭、邱天异、陈博远、杨耀东）",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          }
+        ]
+      },
+      {
+        "en": "value alignment",
+        "status": "common",
+        "literal_back": "value alignment",
+        "notes": "TC260's own official English for the neighbouring, broader term 价值对齐 in the 2.0 framework. Recorded because translators use the same English for both Chinese terms; when you see 'value alignment' in a translated PRC document you cannot tell which Chinese term stood behind it.",
+        "attestations": [
+          {
+            "quote_zh": "推动形成涵盖技术防护、 价值对⻬、 协同 治理等多层面的可信人工智能基本准则",
+            "quote_en": "We drive the establishment of fundamental principles for trustworthy AI that cover multiple dimensions, including technological safeguards, value alignment, and collaborative governance. [official English of the same document]",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English 'alignment' expanded outward from a technical control problem to absorb ethics, corrigibility, honesty and oversight, and never re-split. Chinese did split: 对齐 is the umbrella, 价值对齐 the value-facing subset, 价值观对齐 the ethics-and-social-values subset, and control-facing concerns live under a separate vocabulary (可控性, 失控). So the missing English word is a *narrower* one — a term for 'alignment to shared human ethical values, excluding questions of goal-directedness and control'. Its absence causes real misreading in both directions: PRC commitments to 价值观对齐 get read in English as commitments to solving alignment in the full technical sense, and English alignment research gets read in Chinese policy circles as being mainly about producing well-behaved content.",
+    "translations": [],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "北京大学人工智能安全与治理中心",
+        "zh_used": "人类价值观对齐",
+        "note": "The RICE alignment survey treats 人类价值观 as a cross-cutting theme spanning all four parts of the alignment cycle."
+      },
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "价值对齐",
+        "note": "Uses the broader form in Principle 1.5; official English 'value alignment'."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "我们调查的所有四个部分都有专门针对人类价值观对齐的研究主题。",
+        "en": "All four parts of our survey contain research topics specifically addressing alignment with human values.",
+        "source": "https://aclanthology.org/2024.ccl-2.7.pdf"
+      },
+      {
+        "zh": "人工智能系统不仅应与价值中立的人类偏好相一致，还应与道德和伦理考虑相一致，也就是价值对齐。",
+        "en": "AI systems should be consistent not only with value-neutral human preferences but also with moral and ethical considerations — that is, value alignment.",
+        "source": "https://aclanthology.org/2024.ccl-2.7.pdf"
+      }
+    ],
+    "related": [
+      "safety-alignment",
+      "controllability",
+      "trustworthy-ai-zh",
+      "content-safety"
+    ],
+    "sources": [
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "controllability",
+    "direction": "zh-to-en",
+    "zh_headword": "可控性",
+    "pinyin": "kěkòngxìng",
+    "en": "controllability",
+    "en_aliases": [
+      "controllable",
+      "control"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "alignment",
+      "policy-register",
+      "ambiguity"
+    ],
+    "definition_en": "The property of being controllable. In Chinese AI writing the word runs across at least three distinct senses without marking which is meant: the technical alignment property (humans can steer, interrupt or shut down the system), the developer/operational property (outputs stay within intended bounds — guardrails, filters), and the state/political property (the technology and its supply chain remain under domestic and regulatory control).",
+    "definition_zh": "指可被控制的性质。中文用法至少涵盖三层含义：技术上人类能否引导、中断或关停系统；工程上模型输出是否可被约束在预期范围内；以及政策意义上技术是否处于监管与自主掌控之下。文本通常不区分。",
+    "preferred_zh": "可控性",
+    "translation_difficulty": "high",
+    "pitfalls": "The undifferentiated three-way ambiguity is itself the finding, and it is not resolvable from the word alone. Evidence that the senses genuinely coexist: the Peking University alignment survey lists 可控性 (Controllability) as one of four technical alignment objectives alongside robustness, interpretability and ethicality; TC260 2.0's terminology annex uses 可控性 for what a safety guardrail delivers over model output (an engineering-containment sense); and the same standard's Principle 1.5 uses the verbal form 可控 in the formula 安全、可靠、可控 which sits inside the policy phrase family 安全可控 / 自主可控, where 可控 means 'not dependent on foreign technology and not socially disruptive'. Practical rule for readers: in a research paper 可控性 usually means the alignment property; in a standard or product document it usually means output containment; in a policy document 可控 almost never means the alignment property, and reading it that way produces a systematically over-optimistic picture of what a PRC document is committing to. Cross-check against 安全可控 and 自主可控 before translating.",
+    "en_renderings": [
+      {
+        "en": "controllability",
+        "status": "established",
+        "literal_back": "able-to-control-ness",
+        "notes": "The standard rendering and the one used in the Chinese alignment literature's own English glosses. Faithful, but it inherits none of the disambiguation the English reader needs — annotate which sense is in play.",
+        "attestations": [
+          {
+            "quote_zh": "具体来说，我们用四个关键词来描述对齐的目标：鲁棒性，可解释性，可控性，和道德性",
+            "quote_en": "Specifically, we use four keywords to describe the objectives of alignment: robustness, interpretability, controllability, and ethicality.",
+            "source_title": "《对齐的理论、技术与评估》（第二十三届中国计算语言学大会 CCL 2024）",
+            "publisher": "北京大学人工智能安全与治理中心（吉嘉铭、邱天异、陈博远、杨耀东）",
+            "source_type": "paper",
+            "url": "https://aclanthology.org/2024.ccl-2.7.pdf",
+            "date": "2024-07"
+          },
+          {
+            "quote_zh": "实现对大模型输入的验证和过滤, 以及限制大模型输出 不符合预期的内容, 保障生成内容的可控性、 合规性和安全性。",
+            "quote_en": "…achieving validation and filtering of large-model inputs and restricting large-model outputs that do not meet expectations, so as to safeguard the controllability, compliance and safety of generated content.",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      },
+      {
+        "en": "controllable",
+        "status": "common",
+        "literal_back": "controllable",
+        "notes": "The adjectival 可控 as it appears in the ubiquitous policy formula 安全、可靠、可控. Recorded here because English readers meet 'safe, reliable and controllable' constantly in translated PRC documents and read 'controllable' as the alignment property; in that formula it is closer to 'kept under our control' in the supply-chain and social-order sense. See the separate entries for 安全可控 and 自主可控.",
+        "attestations": [
+          {
+            "quote_zh": "推动形成涵盖技术防护、 价值对⻬、 协同 治理等多层面的可信人工智能基本准则, 确保技术演进安全、 可靠、 可控, 严防威胁人类生存发展的失控⻛险",
+            "quote_en": "…to ensure that AI technology evolves in a safe, reliable and controllable manner, and to strictly guard against loss-of-control risks that threaten human survival and development.",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English distributes these three properties across separate vocabularies that never collide: 'corrigibility' and 'controllability' for the alignment property, 'containment' or 'guardrails' for output control, and 'sovereignty', 'indigenisation' or 'supply-chain security' for the political one. Chinese routes all three through the same morpheme 控, and the collision is productive rather than accidental — 安全可控, 自主可控 and 失控 form one word-family, so a single sentence can slide between an engineering claim and a sovereignty claim without any lexical signal. There is no English word that does this, which means every translation of 可控性 silently picks one of three readings on the reader's behalf. That is why the honest answer here is 'high difficulty' despite the term looking trivially translatable.",
+    "translations": [],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "北京大学人工智能安全与治理中心",
+        "zh_used": "可控性",
+        "note": "One of the four RICE alignment objectives; explicitly the technical sense."
+      },
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "可控性 / 可控",
+        "note": "Engineering-containment sense in the 安全护栏 definition; policy sense in Principle 1.5."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "确保人工智能系统能够实现人类预期目标、不会脱离人类监督运行失控。",
+        "en": "Ensure that AI systems can achieve the objectives humans intend and will not run outside human oversight and lose control.",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      },
+      {
+        "zh": "确保智能体行为的透明性、可追溯性与可控性，减少潜在冲突或故障风险。",
+        "en": "Ensure the transparency, traceability and controllability of agent behaviour, reducing the risk of potential conflicts or malfunctions.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      }
+    ],
+    "related": [
+      "secure-controllable",
+      "autonomous-controllable",
+      "malfunction-risk",
+      "values-alignment-prc",
+      "trustworthy-ai-zh"
+    ],
+    "sources": [
+      "https://aclanthology.org/2024.ccl-2.7.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "embodied-intelligence",
+    "direction": "zh-to-en",
+    "zh_headword": "具身智能",
+    "pinyin": "jùshēn zhìnéng",
+    "en": "embodied intelligence",
+    "en_aliases": [
+      "embodied AI",
+      "embodied artificial intelligence"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "robotics",
+      "industrial-policy",
+      "high-frequency"
+    ],
+    "definition_en": "AI that acts through a physical body — in current usage, foundation models (especially vision-language-action models) driving robots and other physical systems. In PRC discourse it names a top-tier strategic technology direction and an industry sector, not merely a research area.",
+    "definition_zh": "指通过物理载体与真实世界交互的人工智能，当前主要指以视觉—语言—动作模型等基础模型驱动的机器人系统。在中国语境中它既是研究方向，也是被写入政策文件的战略产业方向。",
+    "preferred_zh": "具身智能",
+    "translation_difficulty": "low",
+    "pitfalls": "Lexically easy, but the register is badly mismatched. In English, 'embodied AI' is a modest research-community label; in Chinese, 具身智能 is a headline policy category that appears in the national AI safety framework, five-year-plan language and Politburo study-session speeches alongside brain-computer interfaces and quantum technology, and it names an investable industry. An English reader who maps it to the English research label will systematically underestimate how much institutional weight the Chinese sentence carries. Two smaller traps: TC260's official English uses 'embodied AI' while academic usage prefers 'embodied intelligence', so the same term surfaces under two English forms; and 具身智能 is not a synonym for 机器人 — it specifically implies foundation-model-driven control, which is why the Shanghai AI Lab framework treats 面向具身智能的视觉—语言—动作模型 as within its scope for catastrophic-risk purposes.",
+    "en_renderings": [
+      {
+        "en": "embodied AI",
+        "status": "established",
+        "literal_back": "body-having intelligence",
+        "notes": "TC260's own official English in the bilingual 2.0 framework, and Concordia AI's usage in English-language reporting. This is the rendering an English reader will meet in translated PRC material.",
+        "attestations": [
+          {
+            "quote_zh": "具身智能、 脑 机接口技术日新月异,   正在打通连接数字智能和物理世界的 “最后一公里”",
+            "quote_en": "Cutting-edge advances in embodied AI and brain-computer interfaces are bridging the 'last mile' between digital intelligence and the physical world. [official English of the same document]",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": null,
+            "quote_en": "devotes significant attention to robotics and “embodied AI,” further reinforcing that Beijing is not solely betting on scaling large models",
+            "source_title": "State of AI Safety in China (2026)",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+            "date": "2026-07"
+          }
+        ]
+      },
+      {
+        "en": "embodied intelligence",
+        "status": "common",
+        "literal_back": "body-having intelligence",
+        "notes": "The more literal rendering, closer to the Chinese and common in academic translation. Either is defensible; 'embodied intelligence' better preserves that the Chinese term names a kind of intelligence rather than a kind of AI system.",
+        "attestations": [
+          {
+            "quote_zh": "面向具身智能的视觉—语言—动作模型",
+            "quote_en": "Vision-language-action models for embodied intelligence.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "The words map cleanly; what does not map is the salience. English lacks not a term but the *organising role* the term plays — there is no English category under which robotics, foundation models, national industrial policy and frontier-safety scoping are routinely discussed as one thing. Reading 具身智能 as 'embodied AI' is correct and still leaves an English reader unable to see why a Chinese safety framework devotes red-line scenarios to it, or why it appears in the same sentence as brain-computer interfaces in a national standard's preface.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "具身智能",
+        "note": "Named in the 2.0 framework preface as a driver of the revision; official English 'embodied AI'."
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "具身智能",
+        "note": "VLA models for embodied intelligence are explicitly in scope of the frontier risk framework."
+      },
+      {
+        "org": "安远 AI (Concordia AI)",
+        "zh_used": "embodied AI",
+        "note": "Reports its prominence in the Five-Year Plan and in leadership speeches on 技术失控."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "面向具身智能的视觉—语言—动作模型：基于大语言模型与视觉—语言能力构建的多模态模型。",
+        "en": "Vision-language-action models for embodied intelligence: multimodal models built on large language models and vision-language capabilities.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      },
+      {
+        "zh": "在露天矿山，无人驾驶挖掘机依托端到端具身智能模型，在真实严苛环境中已达到较高水平。",
+        "en": "In open-pit mines, driverless excavators relying on end-to-end embodied-intelligence models have reached a high level of performance in genuinely harsh environments.",
+        "source": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+      }
+    ],
+    "related": [
+      "big-model",
+      "swarm-intelligence-prc",
+      "ai-plus"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "general-purpose-ai-zh",
+    "direction": "zh-to-en",
+    "zh_headword": "通用型人工智能",
+    "pinyin": "tōngyòngxíng réngōng zhìnéng",
+    "en": "general-purpose AI",
+    "en_aliases": [
+      "GPAI",
+      "general-purpose artificial intelligence"
+    ],
+    "abbr": "GPAI",
+    "category": "zh-technical",
+    "tags": [
+      "core-vocabulary",
+      "governance",
+      "disambiguation"
+    ],
+    "definition_en": "An AI system able to perform a wide range of tasks across many domains rather than being built for one function — the regulatory and risk-assessment category, contrasted with 专用人工智能 (narrow AI). Deliberately distinct from 通用人工智能 (AGI), which is a claim about human-level general capability.",
+    "definition_zh": "指可跨多个领域执行广泛任务、非为单一功能设计的人工智能系统，与“专用人工智能”相对。作为监管与风险评估的类别，它刻意区别于表示“通用人工智能（AGI）”的说法。",
+    "preferred_zh": "通用型人工智能",
+    "translation_difficulty": "medium",
+    "pitfalls": "The distinction rests on one character and is real but only partly observed. 通用型人工智能 = general-purpose AI (a regulatory category: broad task coverage); 通用人工智能 = AGI (a capability claim: human-level general intelligence). The Chinese edition of the International AI Safety Report and the Shanghai AI Lab / Concordia AI framework both use 通用型人工智能 systematically as their headword and never use 通用人工智能 for AGI — the framework writes 'AGI' in Latin letters instead (可信 AGI). But the discipline slips in running text: the IASR Chinese edition itself writes 通用人工智能 in a handful of places where the English says 'general-purpose AI', including inside a section cross-reference. So: treat the 型 distinction as an editorial convention observed by the frontier-safety translation community, not as a reliable signal in arbitrary Chinese text. Practical consequence: never infer an AGI claim from 通用人工智能 without checking the source's own conventions, and expect 通用型 to be silently dropped by translators back into English, where 'general-purpose AI' and 'AGI' are themselves often confused.",
+    "en_renderings": [
+      {
+        "en": "general-purpose AI",
+        "status": "established",
+        "literal_back": "general-use-type artificial intelligence",
+        "notes": "The attested pair: the Chinese edition of the International AI Safety Report uses 通用型人工智能 wherever the English original says 'general-purpose AI', across hundreds of occurrences, making this one of the best-evidenced equivalences in the corpus.",
+        "attestations": [
+          {
+            "quote_zh": "通用型人工智能（General-Purpose AI, GPAI）：一种可跨多个领域执行广泛任务的人工智能系统， 非专为某一特定功能设计（参见对比概念“专用人工智能”）。",
+            "quote_en": "General-Purpose AI (GPAI): an AI system able to perform a wide range of tasks across multiple domains, not designed for one specific function (cf. the contrasting concept 'narrow AI').",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "本报告评估了通用型人工智能系统的能力范围、其带来的风险以及如何管理这些风险。",
+            "quote_en": "This report assesses the range of capabilities of general-purpose AI systems, the risks they pose, and how those risks can be managed.",
+            "source_title": "《2026 年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组，主席 Yoshua Bengio）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "en": "AGI",
+        "status": "deprecated",
+        "literal_back": null,
+        "notes": "Recorded as a warning, not a recommendation. Translating 通用型人工智能 as 'AGI' is a real and consequential error: it upgrades a regulatory scope category into a claim about human-level intelligence. The Chinese term for AGI is 通用人工智能 (without 型), and the Shanghai AI Lab framework sidesteps the ambiguity entirely by writing AGI in Latin script.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "Here English is the language with the ambiguity and Chinese supplies the fix. English 'general AI' / 'general-purpose AI' / 'AGI' shade into one another, and the EU AI Act had to define GPAI by fiat because ordinary English does not distinguish 'broad in scope' from 'human-level'. Chinese can mark the difference morphologically with 型 ('of the general-purpose type'), and the frontier-safety translation community adopted that marking deliberately. The English rendering 'general-purpose AI' loses nothing semantically but loses the *visible* contrast with AGI that the Chinese carries in a single character — which is why translations back into English reintroduce exactly the confusion the Chinese was avoiding.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "International AI Safety Report（中文版）",
+        "zh_used": "通用型人工智能",
+        "note": "Systematic headword throughout the Chinese edition, rendering 'general-purpose AI'."
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "通用型人工智能",
+        "note": "Glossary defines it as GPAI against 专用人工智能 (narrow AI); writes AGI in Latin letters."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "专用人工智能（Narrow AI）：一种专门用于执行单一特定任务或少数几个高度相似任务的人工智能系统。",
+        "en": "Narrow AI: an AI system specialised in performing a single specific task or a few highly similar tasks.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      },
+      {
+        "zh": "本框架旨在为通用型人工智能模型研发机构提供指导。",
+        "en": "This framework aims to provide guidance to institutions developing general-purpose AI models.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      }
+    ],
+    "related": [
+      "big-model",
+      "malfunction-risk",
+      "red-line-yellow-line"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "malfunction-risk",
+    "direction": "zh-to-en",
+    "zh_headword": "故障风险",
+    "pinyin": "gùzhàng fēngxiǎn",
+    "en": "risks from malfunctions",
+    "en_aliases": [
+      "malfunction risk",
+      "malfunctions"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "risk-taxonomy",
+      "loss-of-control",
+      "translation-artefact"
+    ],
+    "definition_en": "One of the three top-level risk categories of the International AI Safety Report — risks where AI systems fail or behave in unexpected and harmful ways — comprising reliability failures and loss of control. 故障风险 is the Chinese edition's rendering of 'risks from malfunctions'; it is a translated taxonomy term, not a term of PRC origin.",
+    "definition_zh": "《国际人工智能安全报告》三大风险类别之一，指人工智能系统出现故障或以意料之外的有害方式运行的风险，下辖“可靠性挑战”与“失控”两节。该词是英文 risks from malfunctions 的中译，并非中国本土分类术语。",
+    "preferred_zh": "故障风险",
+    "translation_difficulty": "medium",
+    "pitfalls": "The framing to be careful about is real but its provenance is the opposite of what is usually assumed. Filing loss of control under a 'malfunction' heading originates in the International AI Safety Report (chaired by Yoshua Bengio) — §2.2 Risks from malfunctions contains §2.2.1 Reliability challenges and §2.2.2 Loss of control — and 故障风险 is simply the Chinese edition's translation of that heading. It is NOT the PRC taxonomy category for loss of control. The two authoritative PRC taxonomies file 失控 elsewhere: TC260's national AI Safety Governance Framework puts '“自我意识”觉醒、脱离人类控制' under 3.3.2 伦理安全风险 (ethical safety risks), inside the 应用衍生安全风险 (derivative) tier — i.e. as an ethics-and-society risk, not an engineering fault; and the Shanghai AI Lab / Concordia AI Frontier AI Risk Management Framework promotes 失控风险 to a top-level domain of its own, defined by threat source '模型破坏控制的倾向', while routing genuine engineering faults into a separate 意外风险 (accident) domain. So the structural divergence between the Chinese and English literatures runs the other way: the PRC documents *decline* the malfunction framing that the international report adopts. Separately, in ordinary PRC engineering prose 故障风险 just means 'failure risk' (e.g. 级联故障, 单点故障) with no taxonomic force.",
+    "en_renderings": [
+      {
+        "en": "risks from malfunctions",
+        "status": "established",
+        "literal_back": "malfunction risk",
+        "notes": "The exact English original that 故障风险 translates, verified against the English and Chinese editions of the same report. Use this when the term appears as a taxonomy heading.",
+        "attestations": [
+          {
+            "quote_zh": "这些风险分为三类： (1) 滥用风险，即行为主体故意利用人工智能系统造成伤害； (2) 故障风险，人工智能系统出现故障或以意料之外的有害方式运行； (3) 系统性风险，源于整个社会和经济的广泛部署。",
+            "quote_en": "It organises these risks into three categories: (1) Risks from misuse, where actors deliberately use AI systems to cause harm; (2) Risks from malfunctions, where AI systems fail or behave in unexpected and harmful ways; and (3) Systemic risks, which arise from widespread deployment across society and the economy. [wording of the English edition of the same report]",
+            "source_title": "《2026 年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组，主席 Yoshua Bengio）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "故障风险，包括运行失效 (§2.2.1.可靠性挑战）和失控（§2.2.2.失控）",
+            "quote_en": "…risks from malfunctions, including operational failures (§2.2.1 Reliability challenges) and loss of control (§2.2.2 Loss of control).",
+            "source_title": "《2026 年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组，主席 Yoshua Bengio）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "en": "failure risk",
+        "status": "common",
+        "literal_back": "fault risk",
+        "notes": "The ordinary engineering sense, which is how 故障风险 is used outside the translated-taxonomy context — e.g. cascading failures between agents. Carries no taxonomic implication about loss of control.",
+        "attestations": [
+          {
+            "quote_zh": "确保智能体行为的透明性、可追溯性与可控性，减少潜在冲突或故障风险。",
+            "quote_en": "Ensure the transparency, traceability and controllability of agent behaviour, reducing potential conflicts or failure risks.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "Nothing is lost translating 故障风险 back into English — it is a back-translation of English in the first place, which is exactly the point worth recording. The genuinely untranslated material is the PRC taxonomies that *reject* this framing and for which English has no vocabulary: TC260's three-tier 技术内生安全风险 / 技术应用安全风险 / 应用衍生安全风险 (inherent / application / derivative), which places loss of control in the derivative-ethical tier; and the Shanghai AI Lab framework's four-way split into 滥用 / 失控 / 意外 / 系统性 risk, whose 意外风险 ('accident risk': operational failure, model unreliability or human error in safety-critical infrastructure) carves off precisely the engineering-fault content that the international report bundles together with loss of control. An English reader who assumes PRC documents inherit the international taxonomy will misread where Chinese institutions think loss of control belongs — and the answer, in both authoritative documents, is 'not with malfunctions'.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "International AI Safety Report（中文版）",
+        "zh_used": "故障风险",
+        "note": "§2.2 heading; contains 可靠性挑战 and 失控."
+      },
+      {
+        "org": "北京大学中外人文交流研究基地",
+        "zh_used": "故障风险",
+        "note": "Independently chose the same rendering in its selected translation of the 2026 report published via 澎湃新闻, corroborating the term but not its PRC origin."
+      },
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "—",
+        "note": "Does NOT use 故障风险 as a category; files loss of control under 3.3.2 伦理安全风险."
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "—",
+        "note": "Does NOT use 故障风险 as a category; 失控风险 is a top-level domain and engineering faults sit in 意外风险."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "“自我意识”觉醒、脱离人类控制。未来，不排除人工智能出现突发的、超预期的智能化水平“跃迁”，自主获取外部资源、自我复制，产生自我意识，寻求外部权力，带来谋求与人类争夺控制权的风险。",
+        "en": "Awakening of 'self-awareness' and escape from human control. In future, it cannot be ruled out that AI undergoes a sudden, beyond-expectation 'leap' in intelligence, autonomously acquires external resources, self-replicates, develops self-awareness and seeks external power, creating the risk that it contends with humans for control. [TC260 2.0 §3.3.2, filed under ethical safety risks]",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      },
+      {
+        "zh": "意外风险：指部署在安全攸关的基础设施中的人工智能系统因运行故障、模型不可靠或人为操作不当而产生的风险，其中单点故障可能引发级联灾难性后果。",
+        "en": "Accident risk: risks arising when AI systems deployed in safety-critical infrastructure suffer operational failures, model unreliability or improper human operation, where a single point of failure may trigger cascading catastrophic consequences.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      }
+    ],
+    "related": [
+      "endogenous-security",
+      "red-line-yellow-line",
+      "controllability",
+      "general-purpose-ai-zh",
+      "strategic-deception-prc"
+    ],
+    "sources": [
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "endogenous-security",
+    "direction": "zh-to-en",
+    "zh_headword": "内生安全",
+    "pinyin": "nèishēng ānquán",
+    "en": "endogenous security",
+    "en_aliases": [
+      "inherent safety",
+      "intrinsic security",
+      "safe by design"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "risk-taxonomy",
+      "security",
+      "false-friend"
+    ],
+    "definition_en": "Security or safety arising from a system's own constitution rather than added around it. In PRC AI documents the term is used in two distinct ways: as a risk-taxonomy label (内生安全风险 = risks intrinsic to the AI technology itself — model/algorithm flaws, data quality — as opposed to risks of its application), and, more loosely, as a gloss for 'safe by design'.",
+    "definition_zh": "指安全性源于系统自身构造而非外部附加。在中国人工智能文件中有两种用法：一是风险分类标签，“内生安全风险”指技术自身缺陷带来的风险，与“应用安全风险”相对；二是作为“基于设计的安全”（safe by design）的意译。",
+    "preferred_zh": "内生安全",
+    "translation_difficulty": "high",
+    "pitfalls": "'Endogenous security' is a trap in both directions. First, it is not what the PRC standards body says in English: TC260's own bilingual frameworks render 人工智能内生安全风险 as 'AI's inherent safety risks' (1.0) and 人工智能技术内生安全风险 as 'Inherent safety risks of AI technology' (2.0) — the word 'endogenous' appears nowhere in either official English text. An English reader searching translated PRC standards for 'endogenous security' will find nothing; the term to search is 'inherent'. Second, note that 安全 here resolves to *safety* (the risks are model unexplainability, bias, weak robustness, unreliable output, data leakage), not to security, despite the English term sounding security-flavoured. Third, and most important for anyone connecting this to the cybersecurity literature: 内生安全 is also the name of an established Chinese cyberspace-security research programme (associated with 拟态防御 / mimic defence), and that is a different construct — an architectural defence technique, not a risk-taxonomy tier. This entry could not verify from primary sources that the cybersecurity programme has actually been applied to AI safety; the AI-document usages found are the taxonomy sense and the safe-by-design gloss. Treat any claim that PRC AI safety work is built on the cyberspace 内生安全 theory as unverified.",
+    "en_renderings": [
+      {
+        "en": "inherent safety risks",
+        "status": "established",
+        "literal_back": "endogenous safety risk",
+        "notes": "The official English of TC260's national framework, in both versions. This is the authoritative rendering and the one to search for. Note it renders 安全 as 'safety'.",
+        "attestations": [
+          {
+            "quote_zh": "人工智能既存在模型算法缺陷、  数据语料质量问题等技术内生安全⻛险, 也存在技术整合交付应用时的网络系统、 信息内容等方面应用安全⻛险",
+            "quote_en": "AI entails not only inherent technical risks such as flaws in models and algorithms and the poor quality of training data and corpora, but also application-level risks in areas such as network systems and information and content during technology integration and deployment. [official English of the same document]",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "3.1 人工智能内生安全风险 3.1.1 模型算法安全风险",
+            "quote_en": "3.1 AI's inherent safety risks — 3.1.1 Model and algorithm safety risks. [official English of the 1.0 framework]",
+            "source_title": "《人工智能安全治理框架》1.0 版",
+            "publisher": "全国网络安全标准化技术委员会 (TC260)",
+            "source_type": "standard",
+            "url": "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+            "date": "2024-09"
+          }
+        ]
+      },
+      {
+        "en": "endogenous security",
+        "status": "common",
+        "literal_back": "internally-generated security",
+        "notes": "The literal calque, widely used in English-language writing about Chinese cybersecurity research and therefore the form an English reader is most likely to have met. Recorded because it is what circulates, but it is not the official rendering in AI documents and it imports the cybersecurity programme's connotations into a passage that may only mean 'inherent'.",
+        "attestations": []
+      },
+      {
+        "en": "safe by design",
+        "status": "common",
+        "literal_back": null,
+        "notes": "A distinct, narrower use: the Chinese text of the IDAIS-Shanghai consensus statement glosses the English 'safe by design' as 基于设计的安全（内生安全）, i.e. uses 内生安全 as an explanatory synonym. This is the only AI-safety usage found that is genuinely about designing safety in rather than classifying risks.",
+        "attestations": [
+          {
+            "quote_zh": "我们必须从当前在安全问题出现后才被动应对的模式，转向构建“基于设计的安全”（内生安全）的架构。",
+            "quote_en": "In the longer term, we may need to switch from a reactive approach of addressing safety problems as they arise, to building systems that are safe by design. [English original of the same statement]",
+            "source_title": "IDAIS-Shanghai 共识声明（中文版）",
+            "publisher": "International Dialogues on AI Safety (IDAIS)",
+            "source_type": "report",
+            "url": "https://idais.ai/dialogue/idais-shanghai/",
+            "date": "2024-07"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English splits what Chinese keeps together and vice versa. 'Inherent', 'intrinsic', 'built-in', 'by design' and 'endogenous' are near-synonyms in English with no technical division of labour, so no one of them is *the* translation; meanwhile Chinese 内生 is a single productive morpheme that generates both a risk-taxonomy tier and a design philosophy, and 安全 lets the term slide between safety and security without marking which. The result is that 内生安全 has no stable English target: the same two characters mean 'risks intrinsic to the technology' in a national standard, 'safe by design' in an international consensus statement, and a specific architectural defence programme in the cybersecurity literature. An English reader given any one rendering will over-read the other two into it.",
+    "translations": [],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "内生安全风险",
+        "note": "Top-level risk tier in both 1.0 and 2.0; official English 'inherent safety risks'. 2.0 renames it 技术内生安全风险 and adds a third 衍生 tier."
+      },
+      {
+        "org": "IDAIS (International Dialogues on AI Safety)",
+        "zh_used": "内生安全",
+        "note": "Chinese text uses it as a gloss for 'safe by design'."
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "内生安全风险",
+        "note": "Maps TC260's tier onto its own taxonomy in the interoperability appendix, and notes it has no direct counterpart in the frontier framework."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "4.1技术内生安全风险的应对措施",
+        "en": "4.1 Safeguards against inherent safety risks.",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      },
+      {
+        "zh": "TC260 框架第 3.1 节“人工智能技术内生安全风险”在 SHLAB安远 AI 的框架中暂无直接对应关系。",
+        "en": "Section 3.1 of the TC260 framework, 'inherent safety risks of AI technology', currently has no direct counterpart in the SHLAB/Concordia AI framework.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      }
+    ],
+    "related": [
+      "malfunction-risk",
+      "trustworthy-ai-zh",
+      "controllability",
+      "graded-protection-scheme"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+      "https://www.tc260.org.cn/upload/2024-09-09/1725849192841090989.pdf",
+      "https://idais.ai/dialogue/idais-shanghai/",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "trustworthy-ai-zh",
+    "direction": "zh-to-en",
+    "zh_headword": "可信人工智能",
+    "pinyin": "kěxìn réngōng zhìnéng",
+    "en": "trustworthy AI",
+    "en_aliases": [
+      "trusted AI",
+      "trustworthy artificial intelligence"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "governance",
+      "industry-register",
+      "high-frequency"
+    ],
+    "definition_en": "The umbrella property framework — explainability, robustness, fairness, privacy, controllability, accountability — that dominated PRC academic and industry AI-governance work before 'AI safety' arrived as a separate category. It has since been repurposed: TC260's 2.0 framework makes 可信人工智能基本准则 the vehicle for its loss-of-control provisions, headed by 人类最终控制.",
+    "definition_zh": "指涵盖可解释性、鲁棒性、公平性、隐私保护、可控性、可问责等属性的人工智能属性框架，是“人工智能安全”成为独立议题之前中国学界与产业界的主导框架。在《人工智能安全治理框架》2.0 版中，“可信人工智能基本准则”被用来承载防范技术失控的内容。",
+    "preferred_zh": "可信人工智能",
+    "translation_difficulty": "low",
+    "pitfalls": "Lexically trivial — TC260's own English is 'trustworthy AI' — but the relationship to 人工智能安全 is where readers go wrong. Historically 可信人工智能 was the broader, senior framework and 安全 was one property inside it; the arrival of frontier-safety concerns inverted this, and TC260 2.0 now places its 可信人工智能基本准则 as an annex *serving* the safety framework, explicitly aimed at 技术失控风险 and opening with 人类最终控制 (ultimate human control) rather than with explainability. So the same term denotes a property checklist in a 2021 CAICT white paper and a loss-of-control instrument in a 2025 national standard. Second trap: 可信 invites the English reader to hear 'trust' as a user-facing or reputational quality, whereas in PRC usage it is a verifiability claim — the 2.0 principles include 促进可客观验证 (objective verifiability). Third: do not read 可信人工智能 as the EU's 'trustworthy AI' from the HLEG guidelines; the property lists overlap but the PRC version now carries human-control and national-sovereignty content the EU framing does not.",
+    "en_renderings": [
+      {
+        "en": "trustworthy AI",
+        "status": "established",
+        "literal_back": "believable/credible AI",
+        "notes": "TC260's own official English, used consistently in the bilingual 2.0 framework for both 可信人工智能基本准则 and 可信应用. Unambiguous as a word; see pitfalls for what shifts underneath it.",
+        "attestations": [
+          {
+            "quote_zh": "1.5可信应用、 防范失控。推动形成涵盖技术防护、 价值对⻬、 协同 治理等多层面的可信人工智能基本准则",
+            "quote_en": "1.5 Ensure trustworthy application and prevent loss of control. We drive the establishment of fundamental principles for trustworthy AI that cover multiple dimensions, including technological safeguards, value alignment, and collaborative governance. [official English of the same document]",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          },
+          {
+            "quote_zh": "落实《全球⼈⼯智能治理倡议》,  遵循“以⼈为本、智能向善”的发展⽅ 向,  共同防范应对⼈⼯智能技术失控⻛险,  促进⼈⼯智能技术在世界范围 内可信应⽤,  提出可信⼈⼯智能基本准则如下",
+            "quote_en": "Implementing the Global AI Governance Initiative and following the direction of 'people-centred, AI for good', jointly guarding against the risk of AI technology running out of control and promoting the trustworthy application of AI worldwide, we propose the following fundamental principles for trustworthy AI.",
+            "source_title": "《人工智能安全治理框架》2.0 版 / AI Safety Governance Framework 2.0（中英文对照本）",
+            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
+            "source_type": "standard",
+            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+            "date": "2025-09"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "The word translates; the institutional history does not. In English, 'trustworthy AI' names a policy-document genre (EU HLEG, NIST) that sits alongside AI safety and never absorbed it. In Chinese, 可信人工智能 was the pre-existing house framework of CAICT and the academic community, and when loss-of-control concerns arrived they were grafted onto it rather than given a separate home — so a PRC document's 可信人工智能 annex may be doing work that an English reader would expect to find under 'frontier safety' or 'AI control'. The residue an English reader misses is chronological and institutional: which framework is subordinate to which, and therefore whether a given commitment is a legacy property checklist or a live loss-of-control instrument. Related: 可信 also anchors 可信 AGI, the Shanghai AI Lab's stated development vision, where the English 'trustworthy AGI' again understates how much the Chinese term is carrying.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "全国网络安全标准化技术委员会 (TC260)",
+        "zh_used": "可信人工智能基本准则",
+        "note": "Annex 2 of the 2.0 framework; official English 'Fundamental principles for trustworthy AI'; first principle is 人类最终控制."
+      },
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "可信 AGI",
+        "note": "'可信 AGI 的发展愿景' opens the frontier risk framework, tied to the AI-45° balance law."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "1.人类最终控制。在人工智能系统关键环节设置人类控制机制，使最终裁决权归属人类。",
+        "en": "1. Ultimate human control. Human control mechanisms shall be set at key points in AI systems so that final decision-making authority rests with humans.",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      },
+      {
+        "zh": "推广涵盖技术、伦理、管理多维度的可信人工智能基本准则，促进国际社会形成广泛共识。",
+        "en": "Promote fundamental principles for trustworthy AI spanning technical, ethical and managerial dimensions, and foster broad consensus in the international community.",
+        "source": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf"
+      }
+    ],
+    "related": [
+      "endogenous-security",
+      "controllability",
+      "values-alignment-prc",
+      "content-safety",
+      "malfunction-risk"
+    ],
+    "sources": [
+      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "safety-alignment",
+    "direction": "zh-to-en",
+    "zh_headword": "安全对齐",
+    "pinyin": "ānquán duìqí",
+    "en": "safety alignment",
+    "en_aliases": [
+      "harmlessness training",
+      "safety tuning"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "alignment",
+      "post-training",
+      "research-register"
+    ],
+    "definition_en": "Post-training that makes a model recognise and refuse harmful instructions — RLHF/RLAIF plus refusal training, embedding safety constraints into response behaviour. In Chinese lab and standards writing it denotes the harmlessness workstream specifically, not alignment in general.",
+    "definition_zh": "指通过 RLHF/RLAIF 与拒答训练，使模型主动识别并拒绝有害指令，把安全约束嵌入其响应行为的后训练环节。中文语境中它特指“无害化”这一条工作线，而非泛指对齐。",
+    "preferred_zh": "安全对齐",
+    "translation_difficulty": "low",
+    "pitfalls": "Two things to watch. First, scope: 安全对齐 is narrower than 对齐. In the Shanghai AI Lab framework it is one bullet in a list of safety-training measures, sitting beside 训练数据过滤, 指令层级, 针对性遗忘学习 and 对抗训练, and glossed as 安全对齐与拒答训练 — i.e. it is the refusal/harmlessness component, roughly what English calls 'safety tuning' or the harmlessness leg of HHH. Translating it as bare 'alignment' overstates it. Second, 安全 is ambiguous as always: here it resolves to safety (harmful content, dangerous instructions), not security, but the same compound could in principle be read as security-hardening, and nothing in the word disambiguates. A useful diagnostic finding: CAICT's governance report uses 安全对齐 precisely where the model is *faking* it — models that '在测试中有意增强安全对齐效果，在真实环境中回归对齐相对较差的表现' — showing the term denotes an observable behavioural surface that can be gamed, rather than an internal property.",
+    "en_renderings": [
+      {
+        "en": "safety alignment",
+        "status": "established",
+        "literal_back": "safety alignment",
+        "notes": "Direct and standard; matches usage in the English ML literature, where 'safety alignment' likewise denotes harmlessness post-training rather than alignment at large.",
+        "attestations": [
+          {
+            "quote_zh": "安全对齐与拒答训练：利用 RLHF/RLAIF 训练模型主动识别并拒绝有害指令，将安全约束直接嵌 入其响应行为",
+            "quote_en": "Safety alignment and refusal training: use RLHF/RLAIF to train the model to proactively identify and refuse harmful instructions, embedding safety constraints directly into its response behaviour.",
+            "source_title": "《前沿人工智能风险管理框架 2.0》",
+            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+            "date": "2026-07"
+          },
+          {
+            "quote_zh": "在测试中有意增强安全对齐效果，在真实环境中回归对齐相对较差的 表现",
+            "quote_en": "…deliberately strengthening the appearance of safety alignment during testing while reverting to relatively poorer alignment in real deployment.",
+            "source_title": "《人工智能治理研究报告（2025 年）》",
+            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
+            "source_type": "report",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
+            "date": "2026-01"
+          }
+        ]
+      },
+      {
+        "en": "harmlessness training",
+        "status": "proposed",
+        "literal_back": null,
+        "notes": "Not attested as a rendering of 安全对齐; proposed as a clarifying gloss for readers who would otherwise take 'safety alignment' to mean alignment work in general. Use alongside, not instead of, the direct rendering.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "Little is lost — this is one of the cleaner correspondences in the set, and worth recording as such. The only residue is the 安全 ambiguity that runs through the whole vocabulary: English 'safety alignment' commits to safety, whereas 安全对齐 leaves safety-versus-security formally open and relies on context. In practice every source consulted uses it in the safety sense.",
+    "translations": [],
+    "confidence": "high",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
+        "zh_used": "安全对齐与拒答训练",
+        "note": "Listed among 安全训练措施 in §5.1 of the 2.0 framework."
+      },
+      {
+        "org": "中国信息通信研究院 (CAICT)",
+        "zh_used": "安全对齐",
+        "note": "Used in the 2025 governance report when describing evaluation-gaming by reasoning models."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "利用 RLHF/RLAIF 训练模型主动识别并拒绝有害指令，将安全约束直接嵌入其响应行为。",
+        "en": "Use RLHF/RLAIF to train the model to proactively identify and refuse harmful instructions, embedding safety constraints directly into its response behaviour.",
+        "source": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
+      },
+      {
+        "zh": "这种为了通过测试而进行的伪装，意味着人类可能无法通过常规测试真实了解 AI 的意图与能力。",
+        "en": "This pretence adopted in order to pass tests means humans may be unable to learn an AI's true intentions and capabilities through routine testing.",
+        "source": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+      }
+    ],
+    "related": [
+      "values-alignment-prc",
+      "strategic-deception-prc",
+      "content-safety",
+      "controllability"
+    ],
+    "sources": [
+      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
+      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
+    ],
+    "last_researched": "2026-08-08"
+  },
+  {
+    "id": "swarm-intelligence-prc",
+    "direction": "zh-to-en",
+    "zh_headword": "群体智能",
+    "pinyin": "qúntǐ zhìnéng",
+    "en": "swarm intelligence",
+    "en_aliases": [
+      "crowd intelligence",
+      "collective intelligence",
+      "mass intelligence"
+    ],
+    "abbr": null,
+    "category": "zh-technical",
+    "tags": [
+      "national-strategy",
+      "research-direction",
+      "false-friend"
+    ],
+    "definition_en": "One of the five basic-theory directions named in the 2017 State Council New Generation AI Development Plan. As defined there it is internet-scale collective intelligence — the organisation, emergence and learning of intelligence across large numbers of participating agents and humans, including crowdsourcing incentive mechanisms — not swarm robotics.",
+    "definition_zh": "《新一代人工智能发展规划》确立的五大基础理论方向之一，指群体智能的组织、涌现与学习机理，重点建立可表达、可计算的群智激励算法与模型，形成基于互联网的群体智能理论体系。其内涵以互联网众智为核心，而非机器人集群。",
+    "preferred_zh": "群体智能",
+    "translation_difficulty": "high",
+    "pitfalls": "'Swarm intelligence' is the dominant English rendering and is actively misleading. In English, swarm intelligence names a specific bio-inspired optimisation and multi-robot-coordination tradition (ant colony, particle swarm, drone swarms). The 2017 Plan's 群体智能 is defined around 群智激励算法 (crowd-intelligence incentive algorithms) and 基于互联网的群体智能理论体系 (an internet-based theory of collective intelligence) — i.e. human-plus-machine crowdsourced intelligence, closer to what English calls collective or crowd intelligence, with 群智 as its own contraction. The Stanford DigiChina translation of the Plan is itself inconsistent, using 'swarm intelligence' in most places, 'crowd intelligence' for 群智能空间, 'swarm integrated intelligence' for 群体集成智能 and 'mass intelligence' for 群智 — four English forms for one Chinese family, which is good evidence that no rendering has settled. A second trap: because the term is a named national strategic direction, it appears in funding and institutional contexts far more than the English research label would predict, and current usage has partly drifted toward multi-agent systems, which is a third sense again. Check the date and the source type before choosing an English word.",
+    "en_renderings": [
+      {
+        "en": "swarm intelligence",
+        "status": "common",
+        "literal_back": "group intelligence",
+        "notes": "The dominant rendering, used throughout the Stanford DigiChina translation of the 2017 Plan and hence in most English analysis of PRC AI strategy. Record it because it is what readers meet, but it imports a swarm-robotics reading that the Plan's own definition does not support.",
+        "attestations": [
+          {
+            "quote_zh": "大数据智能、跨媒体智能、群体智能、混合增强智能、自主智能系统等基础理论和核心技术实现重要进展",
+            "quote_en": "Important progress will be achieved in basic theories and core technologies including big data intelligence, cross-media intelligence, swarm intelligence, hybrid enhanced intelligence and autonomous intelligent systems. [DigiChina translation of the same clause]",
+            "source_title": "《新一代人工智能发展规划》（国发〔2017〕35 号）",
+            "publisher": "国务院（中国政府网）",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+            "date": "2017-07"
+          },
+          {
+            "quote_zh": null,
+            "quote_en": "It will have actualized important progress in big data intelligence, cross-medium intelligence, swarm intelligence, hybrid enhanced intelligence, and autonomous intelligence systems",
+            "source_title": "Full Translation: China's 'New Generation Artificial Intelligence Development Plan' (2017)",
+            "publisher": "DigiChina, Stanford University",
+            "source_type": "report",
+            "url": "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/",
+            "date": "2017-08"
+          }
+        ]
+      },
+      {
+        "en": "crowd intelligence",
+        "status": "common",
+        "literal_back": "crowd intelligence",
+        "notes": "Closer to the Plan's actual definition (internet-scale, incentive-driven, human-in-the-loop) and used by the same DigiChina translation for the neighbouring 群智能空间. Prefer this when the source is talking about crowdsourcing, incentive mechanisms or internet-scale collaboration.",
+        "attestations": [
+          {
+            "quote_zh": "群体智能理论重点突破群体智能的组织、涌现、学习的理论与方法，建立可表达、可计算的群智激励算法和模型，形成基于互联网的群体智能理论体系。",
+            "quote_en": "Crowd-intelligence theory will focus on breakthroughs in the theory and methods of the organisation, emergence and learning of collective intelligence, establishing expressible and computable crowd-intelligence incentive algorithms and models, and forming an internet-based theoretical system of collective intelligence.",
+            "source_title": "《新一代人工智能发展规划》（国发〔2017〕35 号）",
+            "publisher": "国务院（中国政府网）",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+            "date": "2017-07"
+          },
+          {
+            "quote_zh": null,
+            "quote_en": "building service system architecture for the crowd intelligence space",
+            "source_title": "Full Translation: China's 'New Generation Artificial Intelligence Development Plan' (2017)",
+            "publisher": "DigiChina, Stanford University",
+            "source_type": "report",
+            "url": "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/",
+            "date": "2017-08"
+          }
+        ]
+      },
+      {
+        "en": "collective intelligence",
+        "status": "proposed",
+        "literal_back": null,
+        "notes": "Not attested in the sources consulted as a rendering of 群体智能, but it is the English term that most accurately covers the Plan's definition without the robotics baggage of 'swarm' or the crowdsourcing narrowness of 'crowd'. Offered as the recommended rendering for new translation; keep 'swarm intelligence' when quoting existing English versions of the Plan.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English partitioned this space early and along different lines: 'swarm intelligence' went to bio-inspired optimisation and robot collectives, 'collective intelligence' to human group cognition, 'crowdsourcing' to task markets, and 'multi-agent systems' to distributed AI. Chinese 群体智能 spans all four and was then fixed by a policy document as a single funded research direction, so the Chinese term now denotes an administrative category that cuts across the English taxonomy rather than sitting inside any part of it. There is no English word for 'the research direction that includes ant-colony optimisation, internet crowdsourcing incentives and multi-agent emergence, because a national plan grouped them' — which is why the canonical English translation of the Plan itself needs four different words for one Chinese word-family.",
+    "translations": [],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "国务院 (State Council)",
+        "zh_used": "群体智能",
+        "note": "One of five basic-theory directions in 《新一代人工智能发展规划》 (2017), with a dedicated 群体智能理论 sub-item."
+      },
+      {
+        "org": "DigiChina, Stanford University",
+        "zh_used": "swarm intelligence / crowd intelligence / mass intelligence",
+        "note": "Canonical English translation of the Plan; renders the 群 family four different ways."
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "4. 群体智能理论。研究群体智能结构理论与组织方法、群体智能激励机制与涌现机理、群体智能学习理论与方法、群体智能通用计算范式与模型。",
+        "en": "4. Crowd/collective intelligence theory. Research on the structural theory and organisational methods of collective intelligence, its incentive mechanisms and emergence, its learning theories and methods, and its general computational paradigms and models.",
+        "source": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+      },
+      {
+        "zh": "自适应自主学习、直觉感知、综合推理、混合智能和群体智能等初步具备跨越发展的能力",
+        "en": "Adaptive autonomous learning, intuitive perception, comprehensive reasoning, hybrid intelligence and collective intelligence have preliminarily acquired the capacity for leapfrog development.",
+        "source": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+      }
+    ],
+    "related": [
+      "embodied-intelligence",
+      "big-model",
+      "new-quality-productive-forces"
+    ],
+    "sources": [
+      "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+      "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]

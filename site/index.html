@@ -120,10 +120,19 @@
   .row .line2 { display: flex; gap: 8px; align-items: baseline; margin-top: 1px; }
   mark { background: var(--hi); color: inherit; border-radius: 2px; padding: 0 1px; }
 
+  /* Difficulty dot. Deliberately a different hue family from the status tags below, so
+     "this term is hard" never reads as "this rendering is contested". */
   .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex: none; }
-  .d-high { background: #c9762f; }
-  .d-medium { background: #b9a54a; }
+  .d-high { background: #c0483c; }
+  .d-medium { background: #d59a3c; }
   .d-low { background: transparent; border: 1px solid var(--line); }
+
+  .legend {
+    display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+    font-size: 11.5px; color: var(--ink-3); padding: 0 0 12px 2px;
+  }
+  .legend span { display: inline-flex; gap: 5px; align-items: center; }
+  .legend .lbl { font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
 
   .empty { color: var(--ink-3); padding: 40px 10px; text-align: center; font-size: 14px; }
 
@@ -258,6 +267,12 @@
       <span class="count" id="count"></span>
     </div>
     <div class="filters" id="filters"></div>
+    <div class="legend">
+      <span class="lbl">Translation difficulty</span>
+      <span><i class="dot d-high"></i> high — no settled rendering, or the usual one distorts it</span>
+      <span><i class="dot d-medium"></i> medium — competing renderings</span>
+      <span><i class="dot d-low"></i> low — settled</span>
+    </div>
   </div>
 </header>
 
@@ -432,6 +447,19 @@
     </blockquote>`
   }
 
+  // What each status badge claims, spelled out on hover — the words alone are ambiguous
+  // ("common" vs "established" reads as a judgement rather than an evidence claim).
+  const STATUS_HELP = {
+    established: 'Widely used in Chinese sources; someone in the field will recognise it.',
+    common: 'Appears repeatedly, but competes with other renderings.',
+    contested: 'Several renderings in active use with no winner — and the choice carries meaning.',
+    descriptive: 'Chinese sources explain the concept in a phrase rather than with a fixed term.',
+    proposed: 'Not attested anywhere. This is our coinage, and the notes say why.',
+    loanword: 'The English is kept as-is inside Chinese text. Often the honest answer.',
+    transliteration: 'Phonetic rendering of the English.',
+    deprecated: 'Attested, but we recommend against it — the notes say why.',
+  }
+
   // One renderer for both directions; `key` selects which side holds the rendering.
   function trHtml(tr, isPref, key) {
     const val = tr[key] ?? ''
@@ -441,8 +469,8 @@
       <div class="tr-head">
         <span class="tr-zh${key === 'en' ? ' tr-en' : ''}" data-copy="${esc(val)}">${esc(val)}</span>
         ${tr.pinyin ? `<span class="pinyin">${esc(tr.pinyin)}</span>` : ''}
-        <span class="tag ${esc(tr.status)}">${esc(tr.status)}</span>
-        ${isPref ? '<span class="tag">recommended</span>' : ''}
+        <span class="tag ${esc(tr.status)}" title="${esc(STATUS_HELP[tr.status] || '')}">${esc(tr.status)}</span>
+        ${isPref ? '<span class="tag" title="The rendering this database recommends using.">recommended</span>' : ''}
       </div>
       ${tr.literal_back ? `<div class="lit">lit. “${esc(tr.literal_back)}”</div>` : ''}
       ${tr.notes ? `<div class="tr-notes">${esc(tr.notes)}</div>` : ''}
