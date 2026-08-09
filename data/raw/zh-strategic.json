@@ -1,0 +1,1439 @@
+[
+  {
+    "id": "autonomous-controllable",
+    "direction": "zh-to-en",
+    "zh_headword": "自主可控",
+    "pinyin": "zìzhǔ kěkòng",
+    "en": "autonomous and controllable",
+    "en_aliases": ["autonomously controllable", "independent and controllable", "independent controllability", "self-controllable"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["false-friend", "high-value", "industrial-policy", "supply-chain"],
+    "preferred_zh": "自主可控",
+    "definition_en": "A property demanded of a technology stack, industrial chain or piece of infrastructure: it is built and owned domestically (自主) and therefore cannot be cut off, sanctioned, back-doored or otherwise leveraged by a foreign party (可控). It is a supply-chain and national-sovereignty property, not a property of a system's behaviour. The standard objects of 自主可控 are chips, operating systems, basic software, industrial chains and payment systems.",
+    "definition_zh": "指关键技术、产业链或基础设施由本国掌握核心技术、拥有自主知识产权，不受制于人、不存在断供和被利用的风险。它描述的是供应链与国家主权层面的属性，通常修饰芯片、基础软硬件、产业链、支付体系等，而不是描述人工智能系统的行为是否受控。",
+    "translation_difficulty": "high",
+    "pitfalls": "This is the single most dangerous false friend in translated PRC AI policy. 自主 here means 'self-determined / under our own ownership' in the sense of national self-reliance; it does NOT mean 'autonomous' in the AI sense of a system acting on its own. 可控 means 'within our own control rather than a foreign party's', not 'controllable by its operator' and certainly not the alignment property. When Xi Jinping's April 2025 Politburo readout calls for constructing a 自主可控 AI basic software-and-hardware system, an English reader meeting CSET's literal 'autonomously controllable AI' will hear a claim about AI autonomy and control; the sentence is actually about high-end chips and foundational software, and appears immediately after 集中力量攻克高端芯片、基础软件等核心技术. Note the further trap: the very same readout separately says 确保人工智能安全、可靠、可控 — that second 可控 IS the risk/alignment sense. The same character does both jobs in one document, distinguished only by what it modifies. Rule of thumb for readers: if 可控 modifies a stack, chain, system-of-systems or infrastructure, it is the sovereignty sense; if it modifies 人工智能 alongside 安全 and 可靠, it is the risk sense.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "autonomously controllable",
+        "status": "common",
+        "literal_back": "self-determined and controllable",
+        "notes": "The literal rendering an English reader is most likely to meet, and the one that creates the false friend. CSET uses it for the April 2025 Politburo AI session, glossing 自主可控 applied to an AI software-and-hardware system.",
+        "attestations": [
+          {
+            "quote_zh": "要持续加强基础研究，集中力量攻克高端芯片、基础软件等核心技术，构建自主可控、协同运行的人工智能基础软硬件系统。",
+            "quote_en": "We must keep strengthening basic research, concentrate our forces on breaking through core technologies such as high-end chips and basic software, and build an indigenously controlled, collaboratively operating basic software and hardware system for artificial intelligence.",
+            "source_title": "习近平在中共中央政治局第二十次集体学习时强调 坚持自立自强 突出应用导向 推动人工智能健康有序发展",
+            "publisher": "新华社 (Xinhua News Agency)",
+            "source_type": "gov",
+            "url": "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html",
+            "date": "2025-04"
+          },
+          {
+            "quote_zh": "构建自主可控、协同运行的人工智能基础软硬件系统",
+            "quote_en": "We must continue to strengthen basic research, concentrate our efforts on mastering core technologies such as high-end microchips and foundational software (基础软件) and construct an autonomously controllable (自主可控) AI …",
+            "source_title": "At the 20th Collective Study Session of the CCP Central Committee Politburo, Xi Jinping Stresses: Persist in Being Self-Reliant, Be Strongly Oriented Toward Applications, and Push the Orderly Development of Artificial Intelligence",
+            "publisher": "CSET, Georgetown University (translator: Ben Murphy)",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/xi-politburo-collective-study-ai-2025/",
+            "date": "2025-04"
+          }
+        ]
+      },
+      {
+        "en": "independent controllability",
+        "status": "common",
+        "literal_back": "self-determined controllability",
+        "notes": "CSET's standing rendering in its five-year-plan translations. Less misleading than 'autonomously controllable' because 'independent' points at the self-reliance sense, but 'controllability' still invites the wrong reading. Note the objects it attaches to: production chains, manufacturing, a cross-border payment system.",
+        "attestations": [
+          {
+            "quote_zh": "坚持自主可控、安全高效，推进产业基础高级化、产业链现代化，保持制造业比重基本稳定，增强制造业竞争优势，推动制造业高质量发展。",
+            "quote_en": "We will adhere to independent controllability (自主可控), safety, and efficiency, promote the advancement of the industrial foundation and modernization of industrial chains …",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要 / Outline of the People's Republic of China 14th Five-Year Plan",
+            "publisher": "新华社 / 中国政府网; English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          },
+          {
+            "quote_zh": "提升产业链自主可控水平，强化产业基础再造和重大技术装备攻关，滚动实施制造业重点产业链高质量发展行动，发展先进制造业集群。",
+            "quote_en": "Increase the independent controllability (自主可控) of production chains, strengthen industrial-base reengineering and tackle major technical equipment …",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          },
+          {
+            "quote_zh": "推进人民币国际化，提升资本项目开放水平，建设自主可控的人民币跨境支付体系。",
+            "quote_en": "Advance renminbi internationalization, raise the level of capital-account opening, and build an indigenously controlled RMB cross-border payment system. (CSET: 'build the independently controllable Cross-border Interbank Payment System (CIPS)')",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "en": "indigenously controlled",
+        "status": "proposed",
+        "literal_back": null,
+        "notes": "We advocate this, or a paraphrase such as 'domestically owned and free from foreign leverage', wherever the reader is not a China specialist. It keeps the sovereignty sense and removes the AI-autonomy reading entirely. Where fidelity to the source register matters, keep the literal rendering but gloss it on first use.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English has 'supply-chain security', 'technological sovereignty', 'indigenization' and 'import substitution', but no single adjectival pair meaning 'we built it ourselves, therefore no foreign party can cut us off from it or reach into it'. 自主可控 compresses ownership, non-dependence and immunity-from-leverage into four characters that attach directly to a noun. Every English rendering has to pick one of those aspects and drop the others — and the two characters chosen happen to be the two English words ('autonomous', 'controllable') that mean something entirely different to an AI-safety audience.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央政治局 / Xinhua", "zh_used": "自主可控", "note": "Xi's April 2025 Politburo collective study session on AI, applied to the AI hardware/software stack" },
+      { "org": "CSET, Georgetown University", "zh_used": "自主可控", "note": "renders it 'independent controllability' in plan translations and 'autonomously controllable' in the 2025 AI readout" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "构建自主可控、协同运行的人工智能基础软硬件系统。",
+        "en": "Build an indigenously controlled, collaboratively operating basic software and hardware system for AI.",
+        "source": "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html"
+      },
+      {
+        "zh": "提升产业链自主可控水平。",
+        "en": "Raise the level of indigenous control over industrial chains.",
+        "source": "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+      }
+    ],
+    "related": ["secure-controllable", "self-reliance-sci-tech", "chokepoint-technology", "it-application-innovation", "controllability", "new-whole-nation-system"],
+    "sources": [
+      "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html",
+      "https://cset.georgetown.edu/publication/xi-politburo-collective-study-ai-2025/",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://cset.georgetown.edu/publication/china-14th-five-year-plan/",
+      "https://cset.georgetown.edu/publication/china-fourth-plenum-proposal-2026/",
+      "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "secure-controllable",
+    "direction": "zh-to-en",
+    "zh_headword": "安全可控",
+    "pinyin": "ānquán kěkòng",
+    "en": "secure and controllable",
+    "en_aliases": ["safe and controllable", "security and controllability", "safe, reliable and controllable"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["false-friend", "high-value", "governance", "ambiguous-anquan"],
+    "preferred_zh": "安全可控",
+    "definition_en": "The standard PRC formulation for the condition a technology must be kept in. In practice it bundles three distinct requirements that Chinese does not separate: that the technology not be dependent on, or reachable by, foreign suppliers; that it not produce social, economic or political disruption the state cannot manage; and — in AI-specific documents — that the system behave predictably and remain under human control. Which of the three is meant is determined by context, not by the words.",
+    "definition_zh": "中国政策文本中对技术状态的标准表述。实际包含三层含义：不受制于外部供应方；不产生国家难以管控的社会影响；在人工智能语境下也包括系统行为可预期、始终处于人类控制之下。三者在中文里并不区分，需依上下文判断。",
+    "translation_difficulty": "high",
+    "pitfalls": "Two separate collapses happen at once. First, 安全 is both 'safety' and 'security' — including national security — so 'secure and controllable' and 'safe and controllable' are both defensible and neither is right. Second, 可控 is undifferentiated between (a) controllable by us rather than by a foreign party, (b) socially manageable / not destabilising, and (c) technically controllable, i.e. the alignment property. An English reader who meets 'controllable AI' in a translated PRC document will default to (c); across the corpus, (a) and (b) are at least as common. Compare the 14th Five-Year Plan's 推进金融业信息化核心技术安全可控 — unambiguously sense (a), about not depending on foreign financial IT — with the 2017 AI Plan's 确保把人工智能发展规制在安全可控范围内, which sits in a passage about employment effects and social ethics and is therefore sense (b). The 2025 AI+ Opinions place 安全可控 in a list of governing principles beside 开放共享 (openness and sharing), where it functions as the counterweight to openness rather than as a technical property at all. TC260's AI Safety Governance Framework 2.0 (2025) uses 安全可控环境 for a regulatory sandbox — sense (b) again — while elsewhere in the same document 安全、可靠、可控 carries sense (c). Do not assume the alignment reading without checking what the phrase modifies.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "secure and controllable",
+        "status": "established",
+        "literal_back": "safe/secure and controllable",
+        "notes": "The dominant rendering in translated PRC documents and the one an English reader will actually meet. DigiChina uses it throughout the authoritative English version of the 2017 New Generation AI Development Plan.",
+        "attestations": [
+          {
+            "quote_zh": "增强风险意识，重视风险评估和防控，强化前瞻预防和约束引导，近期重点关注对就业的影响，远期重点考虑对社会伦理的影响，确保把人工智能发展规制在安全可控范围内。",
+            "quote_en": "Enhance the awareness of risk, pay attention to risk assessment and prevention and control, and strengthen prospective prevention and restraint guidance. In the near term focus on the impact on employment, with a long-term focus on the impact on social ethics, to ensure that the development of AI falls with the sphere of secure and controllable.",
+            "source_title": "《新一代人工智能发展规划》 / A Next Generation Artificial Intelligence Development Plan",
+            "publisher": "国务院 (State Council); English translation by DigiChina, Stanford University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+            "date": "2017-07"
+          },
+          {
+            "quote_zh": "在当前大规模推动技术应用和产业发展的同时，加强面向中长期的研发布局和攻关，实现滚动发展和持续提升，确保理论上走在前面、技术上占领制高点、应用上安全可控。",
+            "quote_en": "At the same time as greatly promoting technology applications and industrial development, strengthen long-term R&D layout and research. Achieve rolling development and continuous improvement. Ensure that theory is in the front, the technological commanding heights are occupied, and applications are secure and controllable.",
+            "source_title": "《新一代人工智能发展规划》 / A Next Generation Artificial Intelligence Development Plan",
+            "publisher": "国务院 (State Council); English translation by DigiChina, Stanford University",
+            "source_type": "gov",
+            "url": "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/",
+            "date": "2017-07"
+          }
+        ]
+      },
+      {
+        "en": "security and controllability",
+        "status": "common",
+        "literal_back": null,
+        "notes": "CSET's rendering where 安全可控 heads a list of guiding principles. Note the company it keeps in the 2025 AI+ Opinions — it is listed beside 开放共享 (openness and sharing) as one of five planning postures, which is a policy stance, not a technical property.",
+        "attestations": [
+          {
+            "quote_zh": "以习近平新时代中国特色社会主义思想为指导，完整准确全面贯彻新发展理念，坚持以人民为中心的发展思想，充分发挥我国数据资源丰富、产业体系完备、应用场景广阔等优势，强化前瞻谋划、系统布局、分业施策、开放共享、安全可控，以科技、产业、消费、民生、治理、全球合作等领域为重点，深入实施“人工智能+”行动，涌现一批新基础设施、新技术体系、新产业生态、新就业岗位等，加快培育发展新质生产力，使全体人民共享人工智能发展成果，更好服务中国式现代化建设。",
+            "quote_en": "… we will strengthen forward-looking planning, systematic deployment, sector-specific policy implementation, openness and sharing, and security and controllability. Focusing on the key fields of science and technology (S&T), industry, consumption, people's livelihoods (民生), governance, and global cooperation, we will thoroughly implement the 'AI+' initiative.",
+            "source_title": "国务院关于深入实施“人工智能+”行动的意见 / Opinions of the State Council on Deepening the Implementation of the \"Artificial Intelligence+\" Initiative",
+            "publisher": "国务院 (State Council); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+            "date": "2025-08"
+          },
+          {
+            "quote_zh": "加强人民币跨境支付系统建设，推进金融业信息化核心技术安全可控，维护金融基础设施安全。",
+            "quote_en": "Strengthen construction of the RMB cross-border payment system, advance the security and indigenous control of core informatization technologies in the financial industry, and safeguard the security of financial infrastructure.",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          }
+        ]
+      },
+      {
+        "en": "safe, reliable and controllable",
+        "status": "common",
+        "literal_back": "safe, reliable, controllable",
+        "notes": "The three-adjective AI-specific variant 安全、可靠、可控. This is the one place where 可控 does reliably carry something close to the English control/alignment sense, and the official English of the Global AI Governance Initiative confirms it by pairing it with 确保人工智能始终处于人类控制之下 ('ensure that AI always remains under human control').",
+        "attestations": [
+          {
+            "quote_zh": "我们重申，各国应在人工智能治理中加强信息交流和技术合作，共同做好风险防范，形成具有广泛共识的人工智能治理框架和标准规范，不断提升人工智能技术的安全性、可靠性、可控性、公平性。",
+            "quote_en": "We call on all countries to enhance information exchange and technological cooperation on the governance of AI. We should work together to prevent risks, and develop AI governance frameworks，norms and standards based on broad consensus, so as to make AI technologies more secure, reliable, controllable, and equitable.",
+            "source_title": "《全球人工智能治理倡议》 / Global AI Governance Initiative",
+            "publisher": "国家互联网信息办公室 (CAC); official English via Embassy of the PRC in the USA",
+            "source_type": "gov",
+            "url": "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "要把握人工智能发展趋势和规律，加紧制定完善相关法律法规、政策制度、应用规范、伦理准则，构建技术监测、风险预警、应急响应体系，确保人工智能安全、可靠、可控。",
+            "quote_en": "We must grasp the trends and laws of AI development, speed up the formulation and improvement of the relevant laws and regulations, policy system, application specifications, and ethical criteria, construct systems for technology monitoring, early warning for risks, and emergency response, and ensure the safety, reliability, and controllability of AI.",
+            "source_title": "习近平在中共中央政治局第二十次集体学习时强调（新华社通稿）/ CSET translation",
+            "publisher": "新华社 (Xinhua); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html",
+            "date": "2025-04"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English separates 'safe' from 'secure', and separates 'under our control rather than a rival's' from 'behaves as its operator intends'. Chinese policy register does none of that: one four-character phrase covers a sovereignty claim, a social-stability requirement and a technical property, and its authors have no incentive to disambiguate because the three are treated as facets of one goal. There is no English phrase that is simultaneously about supply-chain independence and about the machine doing what you want, so every translation silently picks a side.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "国务院 (State Council)", "zh_used": "安全可控", "note": "guiding-principle position in the 2025 AI+ Opinions and the 2017 AI Development Plan" },
+      { "org": "DigiChina, Stanford University", "zh_used": "安全可控", "note": "renders 'secure and controllable' throughout the 2017 AI plan translation" },
+      { "org": "全国网络安全标准化技术委员会 (TC260)", "zh_used": "安全可控", "note": "AI Safety Governance Framework 2.0 (September 2025) uses 安全可控环境 for pilot/sandbox conditions; its official English gives 'a secure and controllable environment'" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "确保把人工智能发展规制在安全可控范围内。",
+        "en": "Ensure that AI development is kept within a safe and manageable range.",
+        "source": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+      },
+      {
+        "zh": "推进金融业信息化核心技术安全可控。",
+        "en": "Advance the security and indigenous control of core informatization technologies in the financial sector.",
+        "source": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm"
+      }
+    ],
+    "related": ["autonomous-controllable", "controllability", "values-alignment-prc", "coordinating-development-security", "trustworthy-ai-zh", "malfunction-risk"],
+    "sources": [
+      "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+      "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+      "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm",
+      "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "coordinating-development-security",
+    "direction": "zh-to-en",
+    "zh_headword": "统筹发展和安全",
+    "pinyin": "tǒngchóu fāzhǎn hé ānquán",
+    "en": "coordinating development and security",
+    "en_aliases": ["overall planning of development and security", "coordinate development and security", "balancing development and security"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["master-frame", "high-value", "national-security", "governance"],
+    "preferred_zh": "统筹发展和安全",
+    "definition_en": "The doctrinal instruction that development and security are to be planned as one problem by one planner, rather than traded off against each other. It is a named component of the holistic national security concept, has its own part in the 14th Five-Year Plan, and is the frame under which every PRC AI policy positions itself. Its canonical gloss is 在发展中固安全，在安全中谋发展 — consolidate security through development, pursue development through security.",
+    "definition_zh": "把发展和安全作为一个整体统一谋划、统一部署的方法论要求，是总体国家安全观的组成部分。典型表述为“在发展中固安全，在安全中谋发展”，强调二者不是此消彼长，而是相互条件、一体推进。人工智能政策几乎都在这一框架下定位自身。",
+    "translation_difficulty": "high",
+    "pitfalls": "The usual English gloss 'balancing innovation and safety' gets both halves wrong. 统筹 is not balancing: it means unified planning across a whole, exercised from a single vantage point — it presupposes one planner holding both objectives, not two interests negotiating a settlement. The doctrine explicitly rejects the trade-off reading: 在发展中固安全，在安全中谋发展 asserts each is the condition of the other. And 安全 here is national security in the broad Chinese sense, not product safety; the 14th Five-Year Plan places this part next to 平安中国 (a Peaceful and Secure China), i.e. social order, not model behaviour. An English AI-policy reader who translates it as 'balancing innovation and safety' will conclude that PRC policy is performing the same innovation-versus-risk arbitration Western AI policy performs, and will misread both the actor and the stakes.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "coordinating development and security",
+        "status": "established",
+        "literal_back": "unified-planning of development and security",
+        "notes": "The rendering most used in English-language China analysis, including by AI-safety analysts. Concordia AI's State of AI Safety in China (2026) uses exactly this wording when citing a talk by Shanghai AI Laboratory director Zhou Bowen titled 统筹发展和安全 加快构建人工智能安全标准体系 — evidence that the frame has been carried into AI-safety discourse rather than remaining a general-policy formula. (We read that report as a PDF and could not verify a stable URL for it, so it is recorded here as a note rather than as an attestation.)",
+        "attestations": [
+          {
+            "quote_zh": "全面加强国家安全教育，提高各级领导干部统筹发展和安全能力，增强全民国家安全意识和素养，筑牢国家安全人民防线。",
+            "quote_en": "Comprehensively strengthen national security education, raise the capacity of leading cadres at every level to plan development and security as a single whole, and strengthen national security awareness and literacy across the whole population.",
+            "source_title": "在中国共产党第二十次全国代表大会上的报告",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+            "date": "2022-10"
+          },
+          {
+            "quote_zh": "习近平强调，全面贯彻落实总体国家安全观，必须坚持统筹发展和安全两件大事，既要善于运用发展成果夯实国家安全的实力基础，又要善于塑造有利于经济社会发展的安全环境；",
+            "quote_en": "Xi Jinping stressed that fully implementing the holistic national security concept requires coordinating the two great matters of development and security — being adept both at using the fruits of development to consolidate the material foundation of national security, and at shaping a security environment favourable to economic and social development.",
+            "source_title": "习近平主持召开十九届中央国家安全委员会第一次会议并发表重要讲话",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2018-04/17/content_5283445.htm",
+            "date": "2018-04"
+          }
+        ]
+      },
+      {
+        "en": "overall planning of development and security",
+        "status": "common",
+        "literal_back": "overall-planning of development and security",
+        "notes": "CSET's rendering of the 15th Five-Year Plan Recommendations. 'Overall planning' captures 统筹 better than 'coordinating' and is the more accurate of the two, but it reads as bureaucratic English and has not caught on.",
+        "attestations": [
+          {
+            "quote_zh": "——坚持统筹发展和安全。在发展中固安全，在安全中谋发展，强化底线思维，有效防范化解各类风险，增强经济和社会韧性，以新安全格局保障新发展格局。",
+            "quote_en": "− Persist in overall planning of development and security. Consolidate security within development and pursue development within security, strengthen the bottom-line mindset (底线思维), effectively prevent and defuse risks, enhance economic and social resilience, and use the new security [pattern to safeguard the new development pattern].",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "en": "put equal emphasis on development and security",
+        "status": "common",
+        "literal_back": "attach equal weight to development and security",
+        "notes": "The official English of the sibling formulation 发展和安全并重 in the Global AI Governance Initiative. Useful because it is the PRC's own English for the frame when addressing an international audience — and notice that it too avoids any language of trade-off.",
+        "attestations": [
+          {
+            "quote_zh": "在世界和平与发展面临多元挑战的背景下，各国应秉持共同、综合、合作、可持续的安全观，坚持发展和安全并重的原则，通过对话与合作凝聚共识，构建开放、公正、有效的治理机制，促进人工智能技术造福于人类，推动构建人类命运共同体。",
+            "quote_en": "As global peace and development faces various challenges, all countries should commit to a vision of common, comprehensive, cooperative, and sustainable security, and put equal emphasis on development and security. Countries should build consensus through dialogue and cooperation, and develop open, fair, and efficient governing mechanisms, in a bid to promote AI technologies to benefit humanity and contribute to building a community with a shared future for mankind.",
+            "source_title": "《全球人工智能治理倡议》 / Global AI Governance Initiative",
+            "publisher": "国家互联网信息办公室 (CAC); official English via Embassy of the PRC in the USA",
+            "source_type": "gov",
+            "url": "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+            "date": "2023-10"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English has no verb for 统筹. 'Coordinate' implies separate agents being brought into alignment; 'balance' implies a dial between two poles; 'integrate' implies merging things that were distinct. 统筹 means planning a whole from above such that the parts were never separate to begin with — the same word governs 统筹城乡 (urban-rural), 统筹推进 (advancing as one). Because English AI-policy vocabulary is built on the assumption that safety and capability are in tension, there is simply no idiom available for a doctrine whose first premise is that they are not.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "统筹发展和安全", "note": "a named 坚持 principle in the 15th Five-Year Plan Recommendations; appears three times in the 20th Party Congress report" },
+      { "org": "上海人工智能实验室 (Shanghai AI Laboratory)", "zh_used": "统筹发展和安全", "note": "director Zhou Bowen frames the AI safety standards system under it, per Concordia AI (2026)" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "全面加强国家安全教育，提高各级领导干部统筹发展和安全能力，增强全民国家安全意识和素养，筑牢国家安全人民防线。",
+        "en": "Comprehensively strengthen national security education, raise the capacity of leading cadres at every level to plan development and security as one, and strengthen the whole population's national security awareness.",
+        "source": "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm"
+      },
+      {
+        "zh": "第十五篇 统筹发展和安全 建设更高水平的平安中国",
+        "en": "Part Fifteen: Coordinate development and security to construct a more peaceful and secure China.",
+        "source": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm"
+      }
+    ],
+    "related": ["holistic-national-security", "bottom-line-thinking", "secure-controllable", "agile-governance-prc", "new-quality-productive-forces"],
+    "sources": [
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2018-04/17/content_5283445.htm",
+      "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+      "https://cset.georgetown.edu/publication/china-fourth-plenum-proposal-2026/",
+      "https://cset.georgetown.edu/publication/china-14th-five-year-plan/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "holistic-national-security",
+    "direction": "zh-to-en",
+    "zh_headword": "总体国家安全观",
+    "pinyin": "zǒngtǐ guójiā ānquán guān",
+    "en": "holistic national security concept",
+    "en_aliases": ["holistic approach to national security", "overall national security outlook", "comprehensive national security concept"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["doctrine", "national-security", "high-value"],
+    "preferred_zh": "总体国家安全观",
+    "definition_en": "The doctrinal framework, articulated by Xi Jinping in 2014, under which national security is defined to span a long enumerated list of domains — political, territorial, military, economic, cultural, social, S&T, cyber, ecological, resource, nuclear, biosecurity, and more, with AI, data, space, deep sea and polar security added in later formulations. It is the reason AI risk in PRC discourse is filed under national security rather than placed beside it.",
+    "definition_zh": "2014年提出的国家安全指导思想，把国家安全界定为涵盖政治、国土、军事、经济、文化、社会、科技、网络、生态、资源、核、生物等众多领域的整体，近年进一步纳入数据、人工智能、太空、深海、极地等新兴领域。它决定了人工智能安全在中国话语中被置于国家安全体系之内，而非与之并列。",
+    "translation_difficulty": "medium",
+    "pitfalls": "观 is an outlook or doctrinal worldview, not a 'concept' in the ordinary English sense — it belongs to the same grammatical family as 科学发展观 and marks canonical Party doctrine, which 'concept' badly understates. 总体 means 'taken as a whole / integral', not 'general'. The practical consequence for an English reader is the important one: because AI safety sits inside this frame, PRC documents treat content risk, ideological risk, supply-chain risk and technical loss-of-control risk as members of one category. Priorities that look arbitrary from outside — heavy attention to generated content, comparatively less to autonomous capability — are legible once this doctrine is in view.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "holistic approach to national security",
+        "status": "established",
+        "literal_back": "overall national-security outlook",
+        "notes": "The standard rendering in official and analytic English alike; CSET uses it in the 15th Five-Year Plan Recommendations translation. Preferred over 'holistic national security concept' because 'approach' at least suggests doctrine rather than a definition.",
+        "attestations": [
+          {
+            "quote_zh": "坚定不移贯彻总体国家安全观，走中国特色社会主义社会治理之路，确保社会生机勃勃又井然有序。",
+            "quote_en": "Unswervingly implement the holistic approach to national security (总体国家安全观), and follow the path of social governance with Chinese characteristics, ensuring that society is both full of life [and well ordered].",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          },
+          {
+            "quote_zh": "习近平强调，要加强党对国家安全工作的集中统一领导，正确把握当前国家安全形势，全面贯彻落实总体国家安全观，努力开创新时代国家安全工作新局面，为实现“两个一百年”奋斗目标、实现中华民族伟大复兴的中国梦提供牢靠安全保障。",
+            "quote_en": "Xi Jinping stressed the need to strengthen the Party's centralized and unified leadership over national security work, correctly grasp the current national security situation, and comprehensively implement the holistic national security outlook.",
+            "source_title": "习近平主持召开十九届中央国家安全委员会第一次会议并发表重要讲话",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2018-04/17/content_5283445.htm",
+            "date": "2018-04"
+          }
+        ]
+      },
+      {
+        "en": "holistic national security concept",
+        "status": "common",
+        "literal_back": "overall national-security view",
+        "notes": "Widely used, including as the seed headword here. Weaker than 'approach' because 'concept' suggests a definition rather than a body of doctrine with an enumerated domain list and an institutional apparatus behind it.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "There is no English category for 观 — a named, canonical, leader-attributed doctrinal outlook that subordinate policy must declare itself to be implementing. English 'doctrine' comes closest but is military-flavoured; 'concept' and 'outlook' both make it sound like an opinion. Beyond the word, the content has no English counterpart either: no Western state has a single security doctrine that explicitly enumerates ideology, culture and technology self-sufficiency alongside territorial defence, so translating the phrase does not transfer the taxonomy that makes PRC AI regulation coherent.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "总体国家安全观", "note": "appears twice in the 20th Party Congress report and once in the 15th Five-Year Plan Recommendations" },
+      { "org": "CSET, Georgetown University", "zh_used": "总体国家安全观", "note": "renders 'holistic approach to national security'" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "加强网络、数据、人工智能、生物、生态、核、太空、深海、极地、低空等新兴领域国家安全能力建设。",
+        "en": "Strengthen national security capability building in emerging domains including cyber, data, artificial intelligence, biology, ecology, nuclear, space, deep sea, polar and low-altitude.",
+        "source": "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+      }
+    ],
+    "related": ["coordinating-development-security", "ideological-security", "bottom-line-thinking", "secure-controllable", "content-safety"],
+    "sources": [
+      "https://www.gov.cn/xinwen/2018-04/17/content_5283445.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+      "https://cset.georgetown.edu/publication/china-fourth-plenum-proposal-2026/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "chokepoint-technology",
+    "direction": "zh-to-en",
+    "zh_headword": "卡脖子",
+    "pinyin": "qiǎ bózi",
+    "en": "chokepoint technology",
+    "en_aliases": ["stranglehold technology", "neck-throttling technology", "bottleneck technology"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["idiom", "supply-chain", "informal-register"],
+    "preferred_zh": "卡脖子",
+    "definition_en": "Literally 'to grip [someone] by the neck'. Names a technology where foreign dependence gives another party the ability to throttle you — the canonical case being advanced semiconductors, but the term is applied equally to crop seed stock, industrial software, high-end instruments and basic materials. In policy text it usually appears in quotation marks as 「卡脖子」问题 or 「卡脖子」技术攻关.",
+    "definition_zh": "字面意思是掐住脖子，指关键核心技术受制于人、可能被外方断供的领域。芯片是最典型的例子，但同样用于种源、工业软件、高端仪器、基础材料等。在政策文件中通常加引号出现，如“卡脖子”问题、“卡脖子”技术攻关。",
+    "translation_difficulty": "high",
+    "pitfalls": "The standard English renderings all drop the agent. 'Bottleneck' is a structural constraint that nobody imposes; 'chokepoint' is a place on a map, borrowed from maritime strategy. 卡脖子 is a transitive act with a hand and a throat: someone is doing this to you, deliberately, and could tighten their grip. That is why the phrase carries the political charge it does and why it licenses emergency-mode resource allocation. Also note the register: it is vivid, bodily, colloquial idiom appearing inside the most formal Party and State Council documents, invariably in quotation marks — English policy prose has no equivalent move, and every translation either sounds absurdly informal or flattens it into technocratic vocabulary. Finally, do not read it as chip-specific: the 14th Five-Year Plan's most prominent use is about seed stock.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "chokepoint technology",
+        "status": "common",
+        "literal_back": null,
+        "notes": "The dominant rendering in English-language China-technology analysis and the term an English reader will search for. Loses the agency and the violence of the image.",
+        "attestations": [
+          {
+            "quote_zh": "围绕涉及长远发展和国家安全的“卡脖子”问题，加强基础研究前瞻布局，加大对空间、海洋、网络、核、材料、能源、信息、生命等领域重大基础研究和战略高技术攻关力度，实现关键核心技术安全、自主、可控。",
+            "quote_en": "Focusing on the 'chokepoint' problems that bear on long-term development and national security, strengthen forward-looking arrangements for basic research … so as to achieve security, self-determination and control over key core technologies.",
+            "source_title": "《国家创新驱动发展战略纲要》",
+            "publisher": "中共中央、国务院 (CCP Central Committee and State Council), via 中国政府网",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm",
+            "date": "2016-05"
+          }
+        ]
+      },
+      {
+        "en": "stranglehold technology",
+        "status": "common",
+        "literal_back": "grip-the-neck",
+        "notes": "CSET's choice in the 14th Five-Year Plan translation, always with the Chinese in parentheses. Closer to the image than 'chokepoint' and retains the sense of a grip being applied, though it still names a state rather than an act.",
+        "attestations": [
+          {
+            "quote_zh": "毫不放松抓好粮食生产，深入实施藏粮于地、藏粮于技战略，开展种源“卡脖子”技术攻关，提高良种自主可控能力。",
+            "quote_en": "We will implement the strategy of preserving farmland and improving agricultural technology (藏粮于地、藏粮于技战略) in an in-depth manner, carry out research on seed source \"stranglehold\" (\"卡脖子\") technologies, and improve the independent controllability of improved varieties.",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要 / Outline of the PRC 14th Five-Year Plan",
+            "publisher": "新华社 / 中国政府网; English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          }
+        ]
+      },
+      {
+        "en": "bottleneck technology",
+        "status": "deprecated",
+        "literal_back": null,
+        "notes": "Recommend against. 'Bottleneck' removes the second party entirely and reframes an act of coercion as a technical limitation, which inverts the political meaning of the term.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English technology-policy vocabulary describes dependence structurally — bottleneck, single point of failure, chokepoint, critical dependency — and has no idiom for dependence experienced as somebody's hand on your throat. The metaphor is what does the work: it makes foreign technological advantage into an ongoing hostile act rather than a market fact, and it justifies treating remediation as an emergency. A translation that keeps the meaning loses the register; one that keeps the register sounds unserious in English.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央、国务院", "zh_used": "卡脖子", "note": "2016 National Innovation-Driven Development Strategy Outline, in quotation marks" },
+      { "org": "CSET, Georgetown University", "zh_used": "卡脖子", "note": "translates as 'stranglehold', always glossed with the Chinese" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "开展种源“卡脖子”技术攻关，提高良种自主可控能力。",
+        "en": "Mount a research offensive on seed-stock chokepoint technologies and raise indigenous control over improved varieties.",
+        "source": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm"
+      }
+    ],
+    "related": ["autonomous-controllable", "self-reliance-sci-tech", "new-whole-nation-system", "it-application-innovation"],
+    "sources": [
+      "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://cset.georgetown.edu/publication/china-14th-five-year-plan/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "new-whole-nation-system",
+    "direction": "zh-to-en",
+    "zh_headword": "新型举国体制",
+    "pinyin": "xīnxíng jǔguó tǐzhì",
+    "en": "new whole-of-nation system",
+    "en_aliases": ["new nationwide system for mobilizing resources", "new structure for leveraging national capabilities", "new-type whole-nation system"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["mobilisation", "industrial-policy", "compute"],
+    "preferred_zh": "新型举国体制",
+    "definition_en": "The concentration of national resources — state funding, national labs, leading enterprises, universities — on a small number of designated strategic technology targets. 举国体制 is the older term, associated with Olympic sport and with megaprojects such as the atomic-bomb programme; 新型 marks the version meant to operate 'under the conditions of the socialist market economy', i.e. using firms and markets rather than administrative allocation alone. Directly relevant to compute buildout and to any estimate of how fast PRC AI capacity can be scaled.",
+    "definition_zh": "把国家资源集中投向少数战略性技术目标的组织方式，包括国家财政、国家实验室、科技领军企业和高校。“举国体制”原用于体育和“两弹一星”等重大工程；“新型”指在社会主义市场经济条件下运行的版本，即借助企业和市场机制而非单纯行政配置。",
+    "translation_difficulty": "high",
+    "pitfalls": "'Whole-of-nation' reads to English ears as an extension of 'whole-of-government', i.e. cross-agency coordination. That is not what 举国 means. 举国 is 'to raise the entire country', to throw everything at one target — the operative gloss in PRC text is 集中力量办大事, 'concentrate strength to accomplish great things', which the 2017 AI Plan explicitly invokes. The system selects targets and starves alternatives; it is about concentration, not coordination. Note also that 新型 is load-bearing and usually dropped in English: the whole point of the qualifier is that this version is supposed to work through market actors, which is what makes it applicable to a commercial AI industry at all.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "new whole-of-nation system",
+        "status": "common",
+        "literal_back": "new-type raise-the-whole-country system",
+        "notes": "The most common rendering in English-language analysis and the term an English reader will search for. Its weakness is that 'whole-of-nation' suggests breadth of participation where the Chinese means concentration of resources.",
+        "attestations": [
+          {
+            "quote_zh": "完善新型举国体制，采取超常规措施，全链条推动集成电路、工业母机、高端仪器、基础软件、先进材料、生物制造等重点领域关键核心技术攻关取得决定性突破。",
+            "quote_en": "Perfect the new whole-of-nation system, adopt extraordinary measures, and drive decisive breakthroughs in key core technologies across the whole chain in priority areas including integrated circuits, machine tools, high-end instruments, basic software, advanced materials and biomanufacturing.",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          },
+          {
+            "quote_zh": "中共中央总书记习近平在主持学习时强调，面对新一代人工智能技术快速演进的新形势，要充分发挥新型举国体制优势，坚持自立自强，突出应用导向，推动我国人工智能朝着有益、安全、公平方向健康有序发展。",
+            "quote_en": "… we must give full play to the advantages of the new structure for leveraging national capabilities (新型举国体制), persist in being self-reliant (自立自强), be strongly oriented toward applications, and push the healthy and orderly development of China's AI in a beneficial, safe, and fair direction.",
+            "source_title": "习近平在中共中央政治局第二十次集体学习时强调（新华社通稿）/ CSET translation",
+            "publisher": "新华社 (Xinhua); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://cset.georgetown.edu/publication/xi-politburo-collective-study-ai-2025/",
+            "date": "2025-04"
+          }
+        ]
+      },
+      {
+        "en": "new structure for leveraging national capabilities",
+        "status": "common",
+        "literal_back": null,
+        "notes": "CSET's standing rendering. More accurate about what the system does and free of the 'whole-of-government' echo, but long and not established outside CSET's translations.",
+        "attestations": [
+          {
+            "quote_zh": "制定科技强国行动纲要，健全社会主义市场经济条件下新型举国体制，打好关键核心技术攻坚战，提高创新链整体效能。",
+            "quote_en": "We will formulate an action agenda for becoming an S&T powerhouse, improve the new structure for leveraging national capabilities (新型举国体制) under the conditions of the socialist market economy, successfully fight tough battles [for key core technologies] …",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要 / Outline of the PRC 14th Five-Year Plan",
+            "publisher": "新华社 / 中国政府网; English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "Democratic-market states have wartime mobilisation, moonshot programmes and industrial strategy, but no standing institutional term for a permanent capability to concentrate the nation's resources on designated technology targets. English therefore reaches for either war metaphors (which overstate) or governance jargon (which understates). The additional problem is 新型: English has no compact way to say 'the market-compatible successor version of the planned-economy mobilisation apparatus', so the qualifier that carries the actual analytical content is routinely lost.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "新型举国体制", "note": "20th Party Congress report, 14th and 15th Five-Year Plan documents" },
+      { "org": "习近平 / 新华社", "zh_used": "新型举国体制", "note": "invoked as the organising advantage for AI in the April 2025 Politburo study session" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "要充分发挥新型举国体制优势，坚持自立自强，突出应用导向。",
+        "en": "We must give full play to the advantages of the new whole-of-nation system, persist in self-reliance, and put the emphasis on applications.",
+        "source": "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html"
+      },
+      {
+        "zh": "充分发挥社会主义制度集中力量办大事的优势，推进项目、基地、人才统筹布局。",
+        "en": "Give full play to the socialist system's advantage of concentrating strength to accomplish great things, and plan projects, bases and talent as a whole.",
+        "source": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+      }
+    ],
+    "related": ["self-reliance-sci-tech", "open-competition-mechanism", "autonomous-controllable", "eastern-data-western-computing", "computing-power"],
+    "sources": [
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+      "https://cset.georgetown.edu/publication/xi-politburo-collective-study-ai-2025/",
+      "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "new-quality-productive-forces",
+    "direction": "zh-to-en",
+    "zh_headword": "新质生产力",
+    "pinyin": "xīnzhì shēngchǎnlì",
+    "en": "new quality productive forces",
+    "en_aliases": ["new-quality productive forces", "new productive forces", "new quality productivity"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["political-economy", "marxist-register", "growth-policy"],
+    "preferred_zh": "新质生产力",
+    "definition_en": "The economic framing, current from late 2023, that places AI, advanced computing and other frontier technologies at the centre of growth policy. It asserts a qualitative — not incremental — change in the productive forces, and is explicitly paired with a corresponding change in the relations of production. It is the slot into which AI is fitted in PRC economic doctrine.",
+    "definition_zh": "2023年以来的经济政策提法，把人工智能、先进算力等前沿技术置于增长政策的中心。强调生产力发生的是质的跃迁而非量的积累，并与生产关系的深层次变革相配套，是人工智能在中国经济话语中的定位。",
+    "translation_difficulty": "high",
+    "pitfalls": "生产力 is a term of art in historical materialism — the productive forces, paired with 生产关系, the relations of production. English 'productivity' is an output-per-input ratio and is simply a different concept; 'productive forces' is correct but most English readers do not hold the Marxist framework that makes it meaningful. 新质 is 'of a new quality/kind', asserting a categorical break; 'new quality' in English reads as an adjective-noun compound about being high-quality, which is not the claim. The doctrinal pairing is visible in the 2025 AI+ Opinions, which put AI's purpose as 促进生产力革命性跃迁和生产关系深层次变革 — that second clause is a claim about social relations, and it is the part English coverage usually omits.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "new quality productive forces",
+        "status": "established",
+        "literal_back": "new-quality productive-forces",
+        "notes": "The settled official and analytic rendering, used both by PRC English-language media and by CSET. Uniformly awkward in English, but stable, and it does at least preserve the Marxist term of art rather than substituting 'productivity'.",
+        "attestations": [
+          {
+            "quote_zh": "为深入实施“人工智能+”行动，推动人工智能与经济社会各行业各领域广泛深度融合，重塑人类生产生活范式，促进生产力革命性跃迁和生产关系深层次变革，加快形成人机协同、跨界融合、共创分享的智能经济和智能社会新形态，现提出如下意见。",
+            "quote_en": "The following opinions are hereby put forward in order to deeply implement the 'Artificial intelligence+' (AI+) initiative, promote the broad and deep integration of AI across all industries and areas of the economy and society, reshape the paradigms of human production and life, promote a revolutionary leap in the productive forces and profound change in the relations of production …",
+            "source_title": "国务院关于深入实施“人工智能+”行动的意见 / Opinions of the State Council on Deepening the Implementation of the \"Artificial Intelligence+\" Initiative",
+            "publisher": "国务院 (State Council); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+            "date": "2025-08"
+          },
+          {
+            "quote_zh": "抓住新一轮科技革命和产业变革历史机遇，统筹教育强国、科技强国、人才强国建设，提升国家创新体系整体效能，全面增强自主创新能力，抢占科技发展制高点，不断催生新质生产力。",
+            "quote_en": "Seize the historic opportunity of the new round of technological revolution and industrial transformation … and continually give rise to new quality productive forces (新质生产力).",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "en": "new quality productivity",
+        "status": "deprecated",
+        "literal_back": null,
+        "notes": "Appears in some English coverage. Recommend against: it swaps a category of historical materialism for an economic ratio and makes the phrase sound like a management slogan.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "The phrase is only interpretable inside a Marxist theory of history that English economic-policy vocabulary abandoned. There is no English word for 'the productive forces' as a historical-stage category, no idiom for asserting that a technology has changed their quality rather than their quantity, and no way to carry the implied second clause about the relations of production. Translations are therefore either literal and opaque, or fluent and wrong about what kind of claim is being made.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "新质生产力", "note": "appears six times in the 15th Five-Year Plan Recommendations and heads its Part Four; absent from the 14th Five-Year Plan outline, which dates the term precisely" },
+      { "org": "国务院 (State Council)", "zh_used": "新质生产力", "note": "the stated purpose of the 2025 AI+ initiative" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "四、加快高水平科技自立自强，引领发展新质生产力",
+        "en": "IV. Accelerate high-level sci-tech self-reliance and self-strengthening, and lead the development of new quality productive forces.",
+        "source": "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+      },
+      {
+        "zh": "加快培育发展新质生产力，使全体人民共享人工智能发展成果。",
+        "en": "Accelerate the cultivation of new quality productive forces so that all the people share in the fruits of AI development.",
+        "source": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+      }
+    ],
+    "related": ["ai-plus", "computing-power", "self-reliance-sci-tech", "coordinating-development-security"],
+    "sources": [
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "https://cset.georgetown.edu/publication/china-fourth-plenum-proposal-2026/",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "ai-plus",
+    "direction": "zh-to-en",
+    "zh_headword": "人工智能+",
+    "pinyin": "réngōng zhìnéng jiā",
+    "en": "AI Plus",
+    "en_aliases": ["AI+", "\"Artificial Intelligence+\" initiative", "AI+ action"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["diffusion", "state-initiative", "high-value"],
+    "preferred_zh": "人工智能+",
+    "definition_en": "The State Council initiative, formalised in the August 2025 Opinions, for driving AI into every sector of the economy and society — S&T, industry, consumption, livelihoods, governance and global cooperation. Modelled on 互联网+ (Internet Plus, 2015). Its existence signals a diffusion-first rather than frontier-first national strategy: the document is about adoption across 千行百业, not about building the most capable model.",
+    "definition_zh": "2025年8月国务院《关于深入实施“人工智能+”行动的意见》确立的国家行动，推动人工智能与科技、产业、消费、民生、治理、全球合作等各领域深度融合，仿照2015年的“互联网+”。其重心是全行业扩散应用，而非前沿模型能力竞赛。",
+    "translation_difficulty": "medium",
+    "pitfalls": "The '+' is a productive policy morpheme in Chinese, inherited from 互联网+, meaning roughly 'apply X across every sector as a national campaign'. English has no such suffix, so renderings either keep the plus sign (opaque) or paraphrase it as 'AI adoption' / 'AI diffusion' (loses the campaign character, the sectoral checklist and the implied central mobilisation). Note also that 人工智能+ is older than the 2025 initiative in a different sense: the 2017 AI Development Plan already used 「人工智能+X」 for interdisciplinary university degree programmes. Do not read every occurrence as a reference to the State Council initiative.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "AI Plus",
+        "status": "common",
+        "literal_back": "artificial intelligence plus",
+        "notes": "The rendering an English reader will meet in coverage; parallels the established 'Internet Plus'. Keeps the morpheme at the cost of explaining nothing.",
+        "attestations": [
+          {
+            "quote_zh": "全面实施“人工智能+”行动，以人工智能引领科研范式变革，加强人工智能同产业发展、文化建设、民生保障、社会治理相结合，抢占人工智能产业应用制高点，全方位赋能千行百业。",
+            "quote_en": "Comprehensively implement the 'AI+' action, use AI to lead a transformation of research paradigms, strengthen the integration of AI with industrial development, cultural construction, livelihood protection and social governance, seize the commanding heights of AI industrial application, and empower every industry across the board.",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "en": "\"Artificial Intelligence+\" (AI+) initiative",
+        "status": "common",
+        "literal_back": null,
+        "notes": "CSET's rendering of the State Council Opinions title and body. Verbose but unambiguous about it being a named state programme rather than a trend.",
+        "attestations": [
+          {
+            "quote_zh": "为深入实施“人工智能+”行动，推动人工智能与经济社会各行业各领域广泛深度融合，重塑人类生产生活范式，促进生产力革命性跃迁和生产关系深层次变革，加快形成人机协同、跨界融合、共创分享的智能经济和智能社会新形态，现提出如下意见。",
+            "quote_en": "The following opinions are hereby put forward in order to deeply implement the 'Artificial intelligence+' (AI+) initiative, promote the broad and deep integration of AI across all industries and areas of the economy and society …",
+            "source_title": "国务院关于深入实施“人工智能+”行动的意见 / Opinions of the State Council on Deepening the Implementation of the \"Artificial Intelligence+\" Initiative",
+            "publisher": "国务院 (State Council); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+            "date": "2025-08"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English policy has no compositional suffix that turns a technology name into the name of a national diffusion campaign. 'X+' does exactly that in PRC usage and is immediately legible to a Chinese reader as 'the Internet Plus treatment, applied to X': a State Council opinion, a sectoral enumeration, provincial implementation plans and a target date. Rendering it as 'AI adoption' describes the outcome and deletes the apparatus.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "国务院 (State Council)", "zh_used": "人工智能+", "note": "the August 2025 Opinions use the phrase 17 times, including for its six sectoral chapters" },
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "人工智能+", "note": "carried into the 15th Five-Year Plan Recommendations as 全面实施“人工智能+”行动" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "（一）“人工智能+”科学技术",
+        "en": "(1) 'AI+' science and technology.",
+        "source": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+      },
+      {
+        "zh": "鼓励高校在原有基础上拓宽人工智能专业教育内容，形成“人工智能+X”复合专业培养新模式。",
+        "en": "Encourage universities to broaden AI curricula and form a new 'AI+X' model of interdisciplinary degree training.",
+        "source": "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+      }
+    ],
+    "related": ["new-quality-productive-forces", "computing-power", "eastern-data-western-computing", "smart-computing-centre"],
+    "sources": [
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "eastern-data-western-computing",
+    "direction": "zh-to-en",
+    "zh_headword": "东数西算",
+    "pinyin": "dōng shù xī suàn",
+    "en": "Eastern Data, Western Computing",
+    "en_aliases": ["East-West Compute Transfer", "East Data West Compute", "Eastern Data Western Computing project"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["compute-governance", "infrastructure", "megaproject"],
+    "preferred_zh": "东数西算",
+    "definition_en": "The national programme that sites data-centre and compute capacity in western China — where land, power and cooling are cheap — to serve demand generated in the eastern seaboard economy. It is organised around designated national hub nodes and is now framed as part of a 全国一体化算力网, a nationally integrated compute network. Load-bearing for any analysis of PRC compute buildout.",
+    "definition_zh": "把东部产生的数据传输到西部进行存储和计算的国家工程，依托西部低成本的土地、电力和冷却条件，通过国家枢纽节点布局实施，现已纳入“全国一体化算力网”框架。是理解中国算力基础设施建设的关键概念。",
+    "translation_difficulty": "medium",
+    "pitfalls": "The name is a four-character parallel construction in the tradition of 南水北调 (South-North Water Diversion) and 西气东输 (West-East Gas Pipeline) — a class of national resource-transfer megaprojects named by their direction pair. A reader who does not recognise the pattern will read it as a slogan rather than as the name of a specific capital-works programme with designated hub nodes and a budget. English renderings split between the literal ('Eastern Data, Western Computing'), which is memorable but opaque, and the explanatory ('East-West Compute Transfer'), which is clearer but breaks the naming convention. Note also that 算 here is 'compute', not 'calculate' in any narrow sense.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "Eastern Data, Western Computing",
+        "status": "common",
+        "literal_back": "east data, west compute",
+        "notes": "The literal rendering, and the one an English reader will most often meet in coverage of PRC datacentre policy.",
+        "attestations": [
+          {
+            "quote_zh": "优化国家智算资源布局，完善全国一体化算力网，充分发挥“东数西算”国家枢纽作用，加大数、算、电、网等资源协同。",
+            "quote_en": "Optimize the national intelligent computing resource layout, refine the integrated national compute network, fully utilize the role of 'East-West Compute Transfer' national hubs, and increase the coordination of resources such as data, compute, electricity and networks.",
+            "source_title": "国务院关于深入实施“人工智能+”行动的意见 / Opinions of the State Council on Deepening the Implementation of the \"Artificial Intelligence+\" Initiative",
+            "publisher": "国务院 (State Council); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+            "date": "2025-08"
+          }
+        ]
+      },
+      {
+        "en": "East-West Compute Transfer",
+        "status": "common",
+        "literal_back": null,
+        "notes": "CSET's rendering, supplied with an explanatory translator's note. Clearer about what the programme does; loses the megaproject naming convention.",
+        "attestations": [
+          {
+            "quote_zh": "“东数西算”",
+            "quote_en": "Translator's note: 'East-West Compute Transfer' ('东数西算'; literally, 'eastern data, western compute') refers to an initiative to build computing power in western China, where land and electricity [are cheaper] …",
+            "source_title": "Opinions of the State Council on Deepening the Implementation of the \"Artificial Intelligence+\" Initiative, translator's note 4",
+            "publisher": "CSET, Georgetown University",
+            "source_type": "report",
+            "url": "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+            "date": "2025-08"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English has no naming convention for national resource-transfer megaprojects, so it has no way to signal that a phrase is such a name. In Chinese, the four-character direction-pair form does that work instantly and situates the programme alongside the water and gas transfers. Rendered into English the phrase either becomes a slogan of uncertain status or an explanatory description that no longer functions as a proper noun — and the connotation of state capital works at national scale, which is the whole point, is carried by neither.",
+    "confidence": "medium",
+    "used_by": [
+      { "org": "国务院 (State Council)", "zh_used": "东数西算", "note": "invoked in the 2025 AI+ Opinions as the hub structure underpinning national intelligent-compute layout" },
+      { "org": "CSET, Georgetown University", "zh_used": "东数西算", "note": "renders 'East-West Compute Transfer' with an explanatory note" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "充分发挥“东数西算”国家枢纽作用，加大数、算、电、网等资源协同。",
+        "en": "Give full play to the role of the Eastern Data Western Computing national hubs, and strengthen coordination of data, compute, power and network resources.",
+        "source": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+      }
+    ],
+    "related": ["computing-power", "smart-computing-centre", "ai-plus", "new-whole-nation-system"],
+    "sources": [
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "bottom-line-thinking",
+    "direction": "zh-to-en",
+    "zh_headword": "底线思维",
+    "pinyin": "dǐxiàn sīwéi",
+    "en": "bottom-line thinking",
+    "en_aliases": ["bottom-line mindset", "worst-case-scenario thinking", "red-line thinking"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["risk-framing", "bridge-term", "doctrine"],
+    "preferred_zh": "底线思维",
+    "definition_en": "The doctrinal instruction to plan from the worst case: identify the floor below which outcomes must not be allowed to fall, prepare for it, and work upward from there. It is listed in the 20th Party Congress report as one of seven 'thinking capabilities' cadres are to develop, and it is the licence under which precautionary measures are justified.",
+    "definition_zh": "从最坏处着眼、争取最好结果的方法论要求：先确定不能突破的底线，做好应对准备，再谋求更好结果。二十大报告将其列为领导干部应提升的七种思维能力之一，是各类风险防范措施的方法论依据。",
+    "translation_difficulty": "medium",
+    "pitfalls": "Two things to hold apart. 底线 is a floor that must not be breached — a minimum acceptable state — not a tail of a probability distribution. And 思维 is a mode of thought expected of officials, listed alongside 战略思维, 辩证思维, 法治思维; it is a doctrine of official mentality, not a methodology with procedures. So 'bottom-line thinking' is a fair literal rendering, but an English reader who maps it onto 'risk management' will import quantification, expected-value reasoning and explicit risk tolerances that the Chinese term does not contain. Conversely, 'worst-case-scenario thinking' captures the posture but loses the floor: 底线 is defined by what must be preserved, not by how bad things could get.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "bottom-line thinking",
+        "status": "common",
+        "literal_back": "bottom-line thinking",
+        "notes": "The most common rendering in English-language analysis and the term an English reader will search for. Literal and serviceable.",
+        "attestations": [
+          {
+            "quote_zh": "我们必须增强忧患意识，坚持底线思维，做到居安思危、未雨绸缪，准备经受风高浪急甚至惊涛骇浪的重大考验。",
+            "quote_en": "We must be more mindful of potential dangers, hold to bottom-line thinking, be prepared in times of safety and take precautions in advance, and be ready to withstand major tests of high winds and rough seas, even raging storms.",
+            "source_title": "高举中国特色社会主义伟大旗帜 为全面建设社会主义现代化国家而团结奋斗——在中国共产党第二十次全国代表大会上的报告",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+            "date": "2022-10"
+          }
+        ]
+      },
+      {
+        "en": "bottom-line mindset",
+        "status": "common",
+        "literal_back": null,
+        "notes": "CSET's standing rendering across the 14th Five-Year Plan and the 15th Five-Year Plan Recommendations. 'Mindset' is more faithful to 思维 as a cadre capability than 'thinking' is.",
+        "attestations": [
+          {
+            "quote_zh": "在发展中固安全，在安全中谋发展，强化底线思维，有效防范化解各类风险，增强经济和社会韧性，以新安全格局保障新发展格局。",
+            "quote_en": "Consolidate security within development and pursue development within security, strengthen the bottom-line mindset (底线思维), effectively prevent and defuse risks, enhance economic and social resilience, and use the new security [pattern to safeguard the new development pattern].",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          },
+          {
+            "quote_zh": "保持战略定力，办好自己的事，认识和把握发展规律，发扬斗争精神，增强斗争本领，树立底线思维，准确识变、科学应变、主动求变，善于在危机中育先机、于变局中开新局，抓住机遇，应对挑战，趋利避害，奋勇前进。",
+            "quote_en": "… maintain strategic determination, handle our own affairs well, recognize and grasp the laws of development, carry forward the spirit of struggle, hone our combat skills, firmly establish a bottom-line mindset (底线思维), accurately recognize changes, respond to them scientifically, and seek them out actively.",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要 / Outline of the PRC 14th Five-Year Plan",
+            "publisher": "新华社 / 中国政府网; English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "English risk vocabulary is either technical (tail risk, precautionary principle, defence in depth) or colloquial (worst-case planning), and none of it names a required habit of mind for officeholders. 底线思维 is closer to a virtue than a method: a disposition cadres are instructed to cultivate, sitting in an enumerated list of such dispositions. English has no register in which a government tells its own officials what mode of thought to have and expects the instruction to be cited back in policy documents.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "底线思维", "note": "listed among seven thinking capabilities in the 20th Party Congress report; appears in both the 14th and 15th Five-Year Plan documents" },
+      { "org": "全国网络安全标准化技术委员会 (TC260)", "zh_used": "安全底线", "note": "AI Safety Governance Framework 2.0 (2025) makes 严守安全底线 an operative principle alongside inclusive-and-prudent development" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "强化底线思维，有效防范化解各类风险。",
+        "en": "Strengthen bottom-line thinking and effectively prevent and defuse risks of all kinds.",
+        "source": "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+      },
+      {
+        "zh": "不断提高战略思维、历史思维、辩证思维、系统思维、创新思维、法治思维、底线思维能力。",
+        "en": "Continually improve capacities for strategic, historical, dialectical, systems, innovative, rule-of-law and bottom-line thinking.",
+        "source": "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm"
+      }
+    ],
+    "related": ["coordinating-development-security", "holistic-national-security", "red-line-yellow-line", "secure-controllable", "malfunction-risk"],
+    "sources": [
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://cset.georgetown.edu/publication/china-fourth-plenum-proposal-2026/",
+      "https://cset.georgetown.edu/publication/china-14th-five-year-plan/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "intelligence-for-good",
+    "direction": "zh-to-en",
+    "zh_headword": "智能向善",
+    "pinyin": "zhìnéng xiàngshàn",
+    "en": "AI for good",
+    "en_aliases": ["intelligence for good", "AI oriented toward the good", "developing AI for good"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["ethics", "international-governance", "global-ai-governance-initiative"],
+    "preferred_zh": "智能向善",
+    "definition_en": "A principle from the 2023 Global AI Governance Initiative: AI development should be oriented toward the good, conform to international law, and accord with the common values of humanity. The 2025 AI+ Opinions go further and call for building a 理论体系 — a theoretical system — of 智能向善, which treats it as a research programme rather than a slogan.",
+    "definition_zh": "《全球人工智能治理倡议》（2023）提出的宗旨：发展人工智能应坚持“智能向善”，遵守适用的国际法，符合全人类共同价值。2025年《关于深入实施“人工智能+”行动的意见》进一步要求“探索形成智能向善理论体系”，将其作为研究课题而非口号。",
+    "translation_difficulty": "medium",
+    "pitfalls": "向善 is a moral-cultivation phrase — 'to turn toward the good' — with roots in the Mencian vocabulary of a subject's inner orientation. It attributes a moral direction to the development of the technology itself. English 'AI for good' is instrumental: AI deployed in service of good ends, a usage associated with humanitarian applications and UN-branded programmes. The Chinese is a stronger and more moralised claim, and it is stated as a 宗旨, a founding purpose, not an application area. The gap matters when reading PRC positions in international fora: an English reader sees a familiar and rather thin slogan where the Chinese text is asserting a normative orientation for the whole enterprise.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "AI for good",
+        "status": "established",
+        "literal_back": "intelligence turning toward the good",
+        "notes": "This IS the official English — the PRC's own translation of the Global AI Governance Initiative renders 坚持“智能向善”的宗旨 as 'adhere to the principle of developing AI for good'. It is therefore the attested rendering even though it is weaker than the Chinese. CSET independently uses the same phrase for the 2025 AI+ Opinions.",
+        "attestations": [
+          {
+            "quote_zh": "——发展人工智能应坚持“智能向善”的宗旨，遵守适用的国际法，符合和平、发展、公平、正义、民主、自由的全人类共同价值，共同防范和打击恐怖主义、极端势力和跨国有组织犯罪集团对人工智能技术的恶用滥用。",
+            "quote_en": "We must adhere to the principle of developing AI for good, respect the relevant international laws, and align AI development with humanity's common values of peace, development, equity, justice, democracy, and freedom. We should work together to prevent and fight against the misuse and malicious use of AI technologies by terrorists, extreme forces, and transnational organized criminal groups.",
+            "source_title": "《全球人工智能治理倡议》 / Global AI Governance Initiative",
+            "publisher": "国家互联网信息办公室 (CAC); official English via Embassy of the PRC in the USA",
+            "source_type": "gov",
+            "url": "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "深入研究人工智能对人类认知判断、伦理规范等方面的深层次影响和作用机理，探索形成智能向善理论体系，促进人工智能更好造福人类。",
+            "quote_en": "Conduct in-depth research on AI's profound impacts and mechanisms of action on human cognitive judgments and ethical norms, and explore development of a theoretical system of 'AI for good' (智能向善), to encourage technology that better benefits humanity.",
+            "source_title": "国务院关于深入实施“人工智能+”行动的意见 / Opinions of the State Council on Deepening the Implementation of the \"Artificial Intelligence+\" Initiative",
+            "publisher": "国务院 (State Council); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+            "date": "2025-08"
+          }
+        ]
+      },
+      {
+        "en": "intelligence oriented toward the good",
+        "status": "proposed",
+        "literal_back": "intelligence toward-good",
+        "notes": "We advocate this, or 'AI turned toward the good', where the reader needs to see that the Chinese makes a claim about the moral direction of the technology rather than about beneficial applications. Not attested; the official English is 'AI for good' and should be cited as such.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English has 'AI for good' as a fixed collocation with a settled, instrumental meaning, so the strong reading is unavailable — the phrase is already occupied. And English has no equivalent of 向善 as a compact verb of moral orientation applied to a non-person: 'tending toward the good' is philosophical and archaic, 'beneficial' is an outcome, 'ethical' is a constraint. The Chinese term does something English can only do at sentence length.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "国家互联网信息办公室 (CAC)", "zh_used": "智能向善", "note": "a named 宗旨 in the Global AI Governance Initiative; official English 'developing AI for good'" },
+      { "org": "国务院 (State Council)", "zh_used": "智能向善", "note": "2025 AI+ Opinions call for a theoretical system of it" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "发展人工智能应坚持“智能向善”的宗旨。",
+        "en": "The development of AI should uphold the purpose of AI for good.",
+        "source": "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm"
+      },
+      {
+        "zh": "探索形成智能向善理论体系，促进人工智能更好造福人类。",
+        "en": "Explore the formation of a theoretical system of AI-for-good, so that AI better benefits humanity.",
+        "source": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+      }
+    ],
+    "related": ["people-centred", "values-alignment-prc", "community-shared-future", "trustworthy-ai-zh"],
+    "sources": [
+      "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm",
+      "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+      "https://cset.georgetown.edu/publication/china-ai-plus-opinions-2025/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "people-centred",
+    "direction": "zh-to-en",
+    "zh_headword": "以人为本",
+    "pinyin": "yǐ rén wéi běn",
+    "en": "people-centred",
+    "en_aliases": ["people-centered", "people-oriented", "putting people first", "human-centred"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["formulaic", "ethics", "opening-formula"],
+    "preferred_zh": "以人为本",
+    "definition_en": "A general Party formulation — 'take people as the root' — that opens most PRC AI ethics and governance documents. In the Global AI Governance Initiative it is given operative content: AI development is to aim at the common wellbeing of humanity, on the premise of safeguarding social security and respecting human rights and interests. Outside AI, the identical four characters govern urbanisation policy and talent policy.",
+    "definition_zh": "党的一般性提法，字面意为“以人为根本”，是中国人工智能伦理与治理文件的标准开篇表述。《全球人工智能治理倡议》赋予其具体内容：以增进人类共同福祉为目标，以保障社会安全、尊重人类权益为前提。同样四字也用于新型城镇化、人才政策等领域。",
+    "translation_difficulty": "medium",
+    "pitfalls": "Assess this one carefully before treating it as the PRC counterpart of 'human-centred AI'. It is a general-purpose Party formula, not an AI design principle: the 15th Five-Year Plan Recommendations use it for 以人为本的新型城镇化 (people-centred new urbanisation) and the 2016 innovation strategy uses it for talent policy. So its appearance at the head of an AI document is at least partly formulaic. That said, it is not empty — the Global AI Governance Initiative attaches specific conditions to it. Two further traps: 人 is collective (the people, humanity), not the individual user, so 'human-centred' in the HCI sense is a false friend in the reverse direction; and 以人为本 should be distinguished from the adjacent official formula 以人民为中心, which is more explicitly political.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "people-centered",
+        "status": "established",
+        "literal_back": "take-people-as-the-root",
+        "notes": "This is the official English. The PRC's own translation of the Global AI Governance Initiative gives 'uphold a people-centered approach in developing AI'. CSET uses the same word for the non-AI uses. Use it, and reserve 'human-centred' for the English-origin HCI concept to avoid collapsing the two.",
+        "attestations": [
+          {
+            "quote_zh": "——发展人工智能应坚持“以人为本”理念，以增进人类共同福祉为目标，以保障社会安全、尊重人类权益为前提，确保人工智能始终朝着有利于人类文明进步的方向发展。",
+            "quote_en": "We should uphold a people-centered approach in developing AI, with the goal of increasing the wellbeing of humanity and on the premise of ensuring social security and respecting the rights and interests of humanity, so that AI always develops in a way that is beneficial to human civilization.",
+            "source_title": "《全球人工智能治理倡议》 / Global AI Governance Initiative",
+            "publisher": "国家互联网信息办公室 (CAC); official English via Embassy of the PRC in the USA",
+            "source_type": "gov",
+            "url": "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "（31）深入推进以人为本的新型城镇化。",
+            "quote_en": "(31) Deeply advance people-centered (以人为本) new urbanization.",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "en": "human-centred",
+        "status": "deprecated",
+        "literal_back": null,
+        "notes": "Recommend against for PRC documents. It imports the human-centred-AI / human-centred-design tradition, which is about individual users and interaction, whereas 人 here is collective and the referent is the wellbeing of humanity and social order. Using it makes a Party formula look like a design methodology.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "The difficulty is not lexical but pragmatic. 以人为本 is a doctrinal opening move: a document establishes its legitimacy by declaring the canonical formula before saying anything specific. English policy documents have no slot for that gesture, so the phrase arrives in translation looking like a substantive commitment when a Chinese reader parses it partly as a signature. Judging which occurrences are load-bearing requires reading what follows the formula, not the formula itself.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "国家互联网信息办公室 (CAC)", "zh_used": "以人为本", "note": "first substantive principle of the Global AI Governance Initiative" },
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "以人为本", "note": "also used for new urbanisation in the 15th Five-Year Plan Recommendations and for talent policy in the 2016 innovation strategy" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "发展人工智能应坚持“以人为本”理念，以增进人类共同福祉为目标。",
+        "en": "The development of AI should uphold the people-centred concept, with the goal of advancing the common wellbeing of humanity.",
+        "source": "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm"
+      },
+      {
+        "zh": "坚持创新驱动实质是人才驱动，落实以人为本，尊重创新创造的价值。",
+        "en": "Innovation-driven development is in essence talent-driven; implement the people-centred principle and respect the value of innovation and creation.",
+        "source": "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm"
+      }
+    ],
+    "related": ["intelligence-for-good", "values-alignment-prc", "community-shared-future", "trustworthy-ai-zh"],
+    "sources": [
+      "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm",
+      "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "overtaking-on-the-curve",
+    "direction": "zh-to-en",
+    "zh_headword": "弯道超车",
+    "pinyin": "wāndào chāochē",
+    "en": "overtaking on the curve",
+    "en_aliases": ["overtaking around a bend", "cornering to overtake", "leapfrogging"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["idiom", "commentary-register", "declining-usage"],
+    "preferred_zh": "弯道超车",
+    "definition_en": "A motor-racing metaphor: you cannot pass a faster car on the straight, so you gain on the corner. In technology policy it means seizing a moment of technological discontinuity — a disruptive technology that zeroes out the incumbent's accumulated advantage in investment, talent, industry and rules — to move ahead of a leader you could not out-run on the existing track.",
+    "definition_zh": "赛车比喻：直道上追不上，就在弯道超越。用于科技政策，指抓住颠覆性技术带来的不连续窗口，使现有投资、人才、技术、产业、规则的积累优势“归零”，从而实现对领先者的赶超。",
+    "translation_difficulty": "medium",
+    "pitfalls": "'Leapfrogging' is the nearest English term but means something different: skipping a technology generation, typically in a development-economics sense (going straight to mobile without landlines). 弯道超车 is not about skipping a stage; it is about exploiting a discontinuity in which the leader's advantage is temporarily neutralised. The literal 'overtaking on the curve' preserves the image but is opaque without the racing frame. Register is the other issue: this is commentary and speech vocabulary, common in Chinese AI discussion, but it is markedly less present in top-level policy text — see the usage note below before treating an instance as an official position.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "overtaking on the curve",
+        "status": "common",
+        "literal_back": "curve overtake-vehicle",
+        "notes": "The literal rendering and the one an English reader will meet. The 2016 National Innovation-Driven Development Strategy Outline uses it in quotation marks, tied explicitly to disruptive technologies that zero out incumbent advantage.",
+        "attestations": [
+          {
+            "quote_zh": "高度关注可能引起现有投资、人才、技术、产业、规则“归零”的颠覆性技术，前瞻布局新兴产业前沿技术研发，力争实现“弯道超车”。",
+            "quote_en": "Pay close attention to disruptive technologies that could 'zero out' existing investment, talent, technology, industry and rules; lay out forward-looking R&D in frontier technologies for emerging industries, and strive to achieve 'overtaking on the curve'.",
+            "source_title": "《国家创新驱动发展战略纲要》",
+            "publisher": "中共中央、国务院 (CCP Central Committee and State Council), via 中国政府网",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm",
+            "date": "2016-05"
+          }
+        ]
+      },
+      {
+        "en": "leapfrogging",
+        "status": "deprecated",
+        "literal_back": null,
+        "notes": "Recommend against as a straight substitute. It names a different mechanism (skipping a generation) and carries development-economics connotations the Chinese does not have.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English technology-strategy vocabulary has 'first-mover advantage', 'fast follower', 'leapfrogging' and 'disruption', but nothing for the specific move of waiting for a discontinuity because you cannot win on the current track. The racing metaphor also supplies a competitor and a track — an explicitly relative, two-party framing — where English disruption vocabulary is about markets rather than rivals.",
+    "confidence": "medium",
+    "used_by": [
+      { "org": "中共中央、国务院", "zh_used": "弯道超车", "note": "2016 National Innovation-Driven Development Strategy Outline, in quotation marks" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "前瞻布局新兴产业前沿技术研发，力争实现“弯道超车”。",
+        "en": "Lay out forward-looking R&D in frontier technologies for emerging industries and strive to overtake on the curve.",
+        "source": "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm"
+      }
+    ],
+    "related": ["self-reliance-sci-tech", "chokepoint-technology", "new-whole-nation-system"],
+    "sources": [
+      "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm",
+      "https://www.gov.cn/zhengce/content/2017-07/20/content_5211996.htm",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "open-competition-mechanism",
+    "direction": "zh-to-en",
+    "zh_headword": "揭榜挂帅",
+    "pinyin": "jiēbǎng guàshuài",
+    "en": "open competition to select the best",
+    "en_aliases": ["announcing rankings", "open competition mechanism to select the best candidates", "unveiling the list and taking command"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["r-and-d-funding", "idiom", "institutional-design"],
+    "preferred_zh": "揭榜挂帅",
+    "definition_en": "A mechanism for allocating state R&D tasks: the government posts a hard technical problem publicly, any qualified team may claim it, and whoever does is appointed to lead the effort with corresponding authority and accountability. Paired in the 14th Five-Year Plan with 赛马 ('horse races', funding several competing teams) as part of a package granting research units more autonomy.",
+    "definition_zh": "国家科技任务的组织方式：将攻关任务张榜公布，有能力者揭榜承接，承接者即“挂帅”负责，并被赋予相应的自主权和责任。《十四五规划纲要》将其与“赛马”制并列，作为给予科研单位和科研人员更多自主权的改革措施。",
+    "translation_difficulty": "high",
+    "pitfalls": "The imagery is imperial-military and does real work: 榜 is a public notice board on which the court posts a task; 揭榜 is tearing that notice down, which is the act of volunteering; 挂帅 is 'to hang out the commander's banner', i.e. to take command. Whoever claims the task becomes its commander. English renderings of the 'open competition' family capture the tendering aspect and lose the command aspect entirely — which is the aspect that distinguishes it from an ordinary grant call. Note also that the seed headword and the CSET rendering are unrelated phrasings for the same term, so an English reader searching one will not find the other.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "announcing rankings",
+        "status": "common",
+        "literal_back": "unveil-the-notice, hang-the-commander's-banner",
+        "notes": "CSET's rendering in the 14th Five-Year Plan translation, always glossed with the Chinese. It reads 榜 as a ranked list rather than a task notice, which is a defensible but not obvious reading; the merit is that it is attested and consistently glossed.",
+        "attestations": [
+          {
+            "quote_zh": "改革重大科技项目立项和组织管理方式，给予科研单位和科研人员更多自主权，推行技术总师负责制，实行“揭榜挂帅”、“赛马”等制度，健全奖补结合的资金支持机制。",
+            "quote_en": "We will reform the management methods of major S&T project initiation and organization, grant more autonomy to scientific research units and scientific research personnel, implement a responsibility system for chief technical officers, implement systems such as \"announcing rankings\" (\"揭榜挂帅\") and \"horse races\" (\"赛马\"), and improve the financial support mechanisms that combine rewards and supplements.",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要 / Outline of the PRC 14th Five-Year Plan",
+            "publisher": "新华社 / 中国政府网; English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          }
+        ]
+      },
+      {
+        "en": "open competition to select the best",
+        "status": "common",
+        "literal_back": null,
+        "notes": "The rendering most used in English coverage of PRC work reports and the seed headword here. NOT ATTESTED in this research pass — we did not recover a primary official English source for it, so it is recorded on the strength of usage rather than citation, and the entry's confidence is set accordingly.",
+        "attestations": []
+      },
+      {
+        "en": "unveil the list and take command",
+        "status": "proposed",
+        "literal_back": "tear down the notice, hang the commander's banner",
+        "notes": "We advocate this where the reader needs to see the mechanism. It preserves the two-step structure — claiming the task and thereby assuming command — which the 'open competition' renderings drop. Not attested.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English research-funding vocabulary — open call, competitive tender, grand challenge, prize competition — describes how money is awarded. 揭榜挂帅 describes how command is transferred: the winner does not merely receive a grant, they are installed as the responsible commander of a national task, with the authority and the exposure that implies. English has no funding term that carries an appointment to lead, because in English-speaking systems the two are administratively separate.",
+    "confidence": "medium",
+    "used_by": [
+      { "org": "中共中央、国务院", "zh_used": "揭榜挂帅", "note": "14th Five-Year Plan outline, paired with 赛马" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "实行“揭榜挂帅”、“赛马”等制度，健全奖补结合的资金支持机制。",
+        "en": "Implement systems such as open-call-and-take-command and horse-racing, and improve funding support mechanisms combining prizes and subsidies.",
+        "source": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm"
+      }
+    ],
+    "related": ["new-whole-nation-system", "self-reliance-sci-tech", "chokepoint-technology"],
+    "sources": [
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://cset.georgetown.edu/publication/china-14th-five-year-plan/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "it-application-innovation",
+    "direction": "zh-to-en",
+    "zh_headword": "信创",
+    "pinyin": "xìnchuàng",
+    "en": "IT application innovation",
+    "en_aliases": ["xinchuang", "information technology application innovation", "domestic IT substitution"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["industry-term", "domestic-substitution", "gap"],
+    "preferred_zh": "信创",
+    "definition_en": "A contraction of 信息技术应用创新, naming the programme and the industry built around replacing foreign components of the IT stack — CPUs, operating systems, databases, middleware, office software — with domestic equivalents, and the certified-compatible product ecosystem that results. It is the operational, procurement-level expression of the self-reliance goals stated at policy level as 自主可控 and 科技自立自强.",
+    "definition_zh": "“信息技术应用创新”的缩略语，指以国产芯片、操作系统、数据库、中间件、办公软件等替代国外产品的产业与工程，以及围绕适配认证形成的产品生态。它是政策层面“自主可控”“科技自立自强”在采购和落地层面的具体形态。",
+    "translation_difficulty": "high",
+    "pitfalls": "The name is actively unhelpful. 'IT application innovation' says nothing about substitution, which is the entire content of the concept — a reader who meets the English rendering cold will assume it means innovation in applying IT. The obscurity appears to be a feature of the term's origin rather than an accident of translation. Note also the register finding below: this is a procurement, vendor and equity-research word, not a central policy word, so its absence from a State Council document is not evidence that the policy is absent — it will be expressed there as 自主可控.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "IT application innovation",
+        "status": "common",
+        "literal_back": "information-technology application innovation",
+        "notes": "The literal expansion, used in most English coverage that bothers to render it. NOT ATTESTED here: we did not recover a primary source pairing it with the Chinese. Recorded as the rendering an English reader will meet, with confidence lowered accordingly.",
+        "attestations": []
+      },
+      {
+        "en": "xinchuang",
+        "status": "transliteration",
+        "literal_back": null,
+        "notes": "Increasingly used untranslated in specialist English writing, on the reasonable grounds that the literal rendering misinforms. Not attested in this pass.",
+        "attestations": []
+      },
+      {
+        "en": "domestic IT substitution",
+        "status": "proposed",
+        "literal_back": null,
+        "notes": "We advocate this as the gloss on first use, with 信创/xinchuang retained thereafter. It names what the sector actually does. Not attested.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English has 'import substitution' for the trade-policy idea and 'technology stack' for the object, but no term for a designated national sector whose reason for existing is to replace another country's stack, complete with compatibility-certification regimes, procurement catalogues and an equity-research coverage universe. Because no English-speaking economy has organised such a sector, the vocabulary was never needed.",
+    "confidence": "low",
+    "used_by": [],
+    "usage_examples": [
+      {
+        "zh": "提升产业链自主可控水平。",
+        "en": "Raise the level of indigenous control over industrial chains. (The central-policy formulation of what 信创 does at the procurement level.)",
+        "source": "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+      }
+    ],
+    "related": ["autonomous-controllable", "self-reliance-sci-tech", "chokepoint-technology"],
+    "sources": [
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/zhengce/2016-05/19/content_5074812.htm",
+      "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "self-reliance-sci-tech",
+    "direction": "zh-to-en",
+    "zh_headword": "科技自立自强",
+    "pinyin": "kējì zìlì zìqiáng",
+    "en": "sci-tech self-reliance and self-strengthening",
+    "en_aliases": ["S&T self-reliance and self-improvement", "self-reliance and strength in science and technology", "science and technology self-reliance"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["innovation-policy", "programme", "historical-resonance"],
+    "preferred_zh": "科技自立自强",
+    "definition_en": "The overarching goal of PRC innovation policy since the 14th Five-Year Plan: to stand on one's own (自立) and make oneself strong (自强) in science and technology, treated as the strategic support for national development. It names the programme; 自主可控 names the property that individual systems and supply chains must have in order to deliver it.",
+    "definition_zh": "“十四五”以来中国创新政策的总目标：把科技自立自强作为国家发展的战略支撑。它指的是国家层面的纲领和目标；而“自主可控”指的是具体系统、产业链应当具备的属性。二者是纲领与属性的关系。",
+    "translation_difficulty": "medium",
+    "pitfalls": "自强 is not a neutral word. It is the name of the nineteenth-century Self-Strengthening Movement, China's response to foreign technological superiority after the Opium Wars, and using it frames current policy as the continuation of a long project. English 'self-reliance' carries none of that. The second trap is the opposite error: 'self-reliance' can read as autarky, which the doctrine explicitly is not — it appears alongside 深化人工智能领域高水平开放 and calls for international cooperation. Keep it distinct from 自主可控: that is the property a system has, this is the national programme.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "S&T self-reliance and self-improvement",
+        "status": "common",
+        "literal_back": "sci-tech self-standing self-strengthening",
+        "notes": "CSET's standing rendering. 'Self-improvement' is a weak choice for 自强 — it sounds personal-development — but the pairing is preserved, and the rendering is consistent across CSET's plan translations.",
+        "attestations": [
+          {
+            "quote_zh": "坚持创新在我国现代化建设全局中的核心地位，把科技自立自强作为国家发展的战略支撑，面向世界科技前沿、面向经济主战场、面向国家重大需求、面向人民生命健康，深入实施科教兴国战略、人才强国战略、创新驱动发展战略，完善国家创新体系，加快建设科技强国。",
+            "quote_en": "We will adhere to the core position of innovation in China's overall modernization, have S&T self-reliance and self-improvement (科技自立自强) act as strategic support for national development, and be oriented toward the world's [S&T frontiers] …",
+            "source_title": "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要 / Outline of the PRC 14th Five-Year Plan",
+            "publisher": "新华社 / 中国政府网; English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+            "date": "2021-03"
+          },
+          {
+            "quote_zh": "——科技自立自强水平大幅提高。",
+            "quote_en": "− The level of self-reliance (自立自强) in S&T will be significantly increased.",
+            "source_title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+            "publisher": "中国政府网 (gov.cn); English translation by CSET, Georgetown University",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+            "date": "2025-10"
+          }
+        ]
+      },
+      {
+        "en": "self-reliance and self-strengthening in science and technology",
+        "status": "common",
+        "literal_back": null,
+        "notes": "The fuller rendering and the seed headword. 'Self-strengthening' is the better choice for 自强 because it carries the historical resonance; the cost is length. Preferred where the reader is not already a China specialist.",
+        "attestations": [
+          {
+            "quote_zh": "坚持面向世界科技前沿、面向经济主战场、面向国家重大需求、面向人民生命健康，加快实现高水平科技自立自强。",
+            "quote_en": "Persist in orienting toward the world's S&T frontiers, the main economic battlefield, major national needs and the people's life and health, and accelerate the achievement of high-level self-reliance and self-strengthening in science and technology.",
+            "source_title": "在中国共产党第二十次全国代表大会上的报告",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+            "date": "2022-10"
+          }
+        ]
+      }
+    ],
+    "why_no_english": "The pair 自立/自强 is a fixed idiom with a historical referent — the Self-Strengthening Movement — that no English word carries. English 'self-reliance' is a single value term that additionally suggests withdrawal from exchange, which is the opposite of the policy's stated posture. And English innovation-policy vocabulary has no way to distinguish a national programme of technological independence from the property of any given system being independent, which Chinese does cleanly by keeping 科技自立自强 and 自主可控 apart.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "科技自立自强", "note": "appears five times in the 20th Party Congress report; heads Part Four of the 15th Five-Year Plan Recommendations" },
+      { "org": "习近平 / 新华社", "zh_used": "自立自强", "note": "the headline instruction of the April 2025 Politburo study session on AI — 坚持自立自强" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "四、加快高水平科技自立自强，引领发展新质生产力",
+        "en": "IV. Accelerate high-level sci-tech self-reliance and self-strengthening, and lead the development of new quality productive forces.",
+        "source": "https://www.gov.cn/zhengce/202510/content_7046050.htm"
+      },
+      {
+        "zh": "坚持自立自强 突出应用导向 推动人工智能健康有序发展",
+        "en": "Persist in self-reliance and self-strengthening, emphasise application orientation, and promote the healthy and orderly development of AI.",
+        "source": "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html"
+      }
+    ],
+    "related": ["autonomous-controllable", "chokepoint-technology", "new-whole-nation-system", "it-application-innovation", "new-quality-productive-forces"],
+    "sources": [
+      "https://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+      "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+      "http://www.news.cn/politics/leaders/20250426/63f5cde8f4b54e22ba35aa7ec7884b3a/c.html",
+      "https://cset.georgetown.edu/publication/xi-politburo-collective-study-ai-2025/"
+    ],
+    "last_researched": "2026-08-08"
+  },
+
+  {
+    "id": "community-shared-future",
+    "direction": "zh-to-en",
+    "zh_headword": "人类命运共同体",
+    "pinyin": "rénlèi mìngyùn gòngtóngtǐ",
+    "en": "community with a shared future for mankind",
+    "en_aliases": ["community of common destiny for mankind", "community of shared future for humanity"],
+    "abbr": null,
+    "category": "zh-strategic",
+    "tags": ["added-by-research", "international-governance", "doctrine"],
+    "preferred_zh": "人类命运共同体",
+    "definition_en": "The PRC's master frame for international order, and the stated destination of its AI governance proposals. The Global AI Governance Initiative closes its framing paragraph by putting AI governance in service of 推动构建人类命运共同体, and the 20th Party Congress report states that building it is 'where the future of the people of all countries lies'.",
+    "definition_zh": "中国对外关系的总体理念，也是其人工智能全球治理主张的落脚点。《全球人工智能治理倡议》以“推动构建人类命运共同体”作为治理目标；二十大报告称“构建人类命运共同体是世界各国人民前途所在”。",
+    "translation_difficulty": "medium",
+    "pitfalls": "命运 is fate or destiny, and the phrase asserts that states' fates are already objectively bound together — it is a description of a condition, not a proposal to cooperate. English 'community' connotes voluntary association, which reverses that. Two official renderings circulate: the older 'community of common destiny' and the current 'community with a shared future', the latter noticeably softer about the determinism. For an AI-policy reader the practical point is placement: when a PRC AI governance document ends on this phrase, it is subordinating AI governance to a general theory of international order, not making an AI-specific claim.",
+    "translations": [],
+    "en_renderings": [
+      {
+        "en": "community with a shared future for mankind",
+        "status": "established",
+        "literal_back": "humanity destiny-community",
+        "notes": "The current official English, used in the PRC's own translation of the Global AI Governance Initiative. Use it; it is what the reader will meet and what the PRC itself publishes.",
+        "attestations": [
+          {
+            "quote_zh": "在世界和平与发展面临多元挑战的背景下，各国应秉持共同、综合、合作、可持续的安全观，坚持发展和安全并重的原则，通过对话与合作凝聚共识，构建开放、公正、有效的治理机制，促进人工智能技术造福于人类，推动构建人类命运共同体。",
+            "quote_en": "… Countries should build consensus through dialogue and cooperation, and develop open, fair, and efficient governing mechanisms, in a bid to promote AI technologies to benefit humanity and contribute to building a community with a shared future for mankind.",
+            "source_title": "《全球人工智能治理倡议》 / Global AI Governance Initiative",
+            "publisher": "国家互联网信息办公室 (CAC); official English via Embassy of the PRC in the USA",
+            "source_type": "gov",
+            "url": "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+            "date": "2023-10"
+          },
+          {
+            "quote_zh": "构建人类命运共同体是世界各国人民前途所在。",
+            "quote_en": "Building a community with a shared future for mankind is where the future of the people of all countries lies.",
+            "source_title": "在中国共产党第二十次全国代表大会上的报告",
+            "publisher": "新华社 / 中国政府网 (gov.cn)",
+            "source_type": "gov",
+            "url": "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm",
+            "date": "2022-10"
+          }
+        ]
+      },
+      {
+        "en": "community of common destiny for mankind",
+        "status": "common",
+        "literal_back": "humanity common-destiny community",
+        "notes": "The older official rendering, still encountered in earlier documents and in secondary literature. Closer to 命运 but harsher in English. Not separately attested in this research pass.",
+        "attestations": []
+      }
+    ],
+    "why_no_english": "English has 'international community', which names a set of actors, and 'common fate', which is fatalistic and has no institutional sense. 命运共同体 fuses the two: a community constituted by a shared destiny rather than by agreement. Because English political vocabulary derives community from consent, there is no available word for a collectivity whose membership is a fact about the world rather than a decision.",
+    "confidence": "high",
+    "used_by": [
+      { "org": "国家互联网信息办公室 (CAC)", "zh_used": "人类命运共同体", "note": "the stated destination of the Global AI Governance Initiative" },
+      { "org": "中共中央 (CCP Central Committee)", "zh_used": "人类命运共同体", "note": "appears repeatedly in the 20th Party Congress report, including as part of the essential requirements of Chinese-style modernisation" }
+    ],
+    "usage_examples": [
+      {
+        "zh": "促进人工智能技术造福于人类，推动构建人类命运共同体。",
+        "en": "Promote AI technology to benefit humanity and advance the building of a community with a shared future for mankind.",
+        "source": "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm"
+      }
+    ],
+    "related": ["intelligence-for-good", "people-centred", "coordinating-development-security", "holistic-national-security"],
+    "sources": [
+      "http://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm",
+      "http://us.china-embassy.gov.cn/eng/zgyw/202310/t20231020_11164834.htm",
+      "https://www.gov.cn/xinwen/2022-10/25/content_5721685.htm"
+    ],
+    "last_researched": "2026-08-08"
+  }
+]
