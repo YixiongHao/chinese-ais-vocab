@@ -17,11 +17,16 @@
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELECT',
                         'OPTION', 'SVG', 'CANVAS', 'IFRAME', 'OBJECT', 'EMBED'])
 
-  let settings = { enabled: true, mode: 'auto', includeShort: false }
-  // Both directions can be live at once. A matched string already tells you its own
-  // script, so each highlight carries its own direction and there is nothing to guess
-  // about the page as a whole.
-  let matchers = { zh: null, en: null }
+  // `mode` is the language the reader wants ANSWERS in, and it is a property of the
+  // reader, not of the page. Answering in English means hunting for Chinese on the page;
+  // answering in Chinese means hunting for English. Nothing about the page is inspected
+  // or guessed — a page holding both scripts still gets exactly one of them highlighted,
+  // because highlighting the language you already read is noise, not help.
+  const FIND_FOR = { en: 'zh', zh: 'en' }
+
+  let settings = { enabled: true, mode: 'en', includeShort: false }
+  let answerIn = 'en'
+  let matcher = null
   const perTerm = new Map()
   let total = 0
   let observer = null
@@ -55,29 +60,10 @@
     return out
   }
 
-  // Run whichever directions are live and merge the results. A text node can legitimately
-  // contain both — "我们用 RLHF 做后训练" has a Chinese term and an English one — so the
-  // two hit lists are merged and overlaps resolved longest-first rather than one winning
-  // wholesale.
-  function collectHits(text) {
-    const all = []
-    for (const dir of ['zh', 'en']) {
-      const m = matchers[dir]
-      if (!m) continue
-      for (const h of CAISVMatcher.find(m, text)) { h.dir = dir; all.push(h) }
-    }
-    if (all.length < 2) return all
-    all.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start))
-    const kept = []
-    let end = -1
-    for (const h of all) if (h.start >= end) { kept.push(h); end = h.end }
-    return kept
-  }
-
   function highlightNode(node) {
     if (total >= MAX_TOTAL) return false
     const text = node.nodeValue
-    const hits = collectHits(text)
+    const hits = CAISVMatcher.find(matcher, text)
     if (!hits.length) return false
     if (skippable(node)) return false
 
@@ -95,7 +81,6 @@
       const mark = document.createElement('mark')
       mark.className = HL
       mark.dataset.caisv = String(h.ord)
-      mark.dataset.caisvDir = h.dir          // this match's own direction, not the page's
       mark.textContent = h.text
       frag.appendChild(mark)
 
@@ -163,18 +148,18 @@
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 
-  function renderCard(t, direction) {
-    // Direction decides which side is the answer, and it comes from the matched string
-    // itself: if you hovered Chinese, you can already read the Chinese, so the useful
-    // half is the English — and the reverse.
+  function renderCard(t) {
+    // `answerIn` is the reader's language. The headline is always the half they do not
+    // already have; what they hovered goes underneath as confirmation of what matched.
     const zhOrigin = t.g === 1
-    const answer = direction === 'zh'
-      ? (zhOrigin ? (t.n || t.e) : t.e)          // reading Chinese -> answer in English
-      : (t.z || null)                            // reading English -> answer in Chinese
-    const answerIsZh = direction === 'en'
-    const sub = direction === 'zh'
-      ? (t.z && t.z !== answer ? t.z : null)
-      : (t.p || null)
+    const answerIsZh = answerIn === 'zh'
+    const answer = answerIsZh
+      ? (t.z || null)                            // hovered English -> answer in Chinese
+      : (zhOrigin ? (t.n || t.e) : t.e)          // hovered Chinese -> answer in English
+    // Pinyin helps an English reader who was given a Chinese answer; a Chinese reader
+    // given an English answer wants the Chinese term they hovered, if it differs.
+    const sub = answerIsZh ? (t.p || null) : (t.z && t.z !== answer ? t.z : null)
+    const hovered = answerIsZh ? t.e : (t.z || t.e)
 
     const badges = [
       t.s ? `<span class="b s-${esc(t.s)}">${esc(t.s)}</span>` : '',
@@ -200,8 +185,8 @@
     card.innerHTML = `
       <div class="hd">
         <div class="ans ${answerIsZh ? 'cjk' : ''}">${answer ? esc(answer) : '<em class="none">no settled rendering</em>'}</div>
-        ${sub ? `<div class="sub ${direction === 'zh' ? 'cjk' : ''}">${esc(sub)}</div>` : ''}
-        <div class="from">${esc(direction === 'zh' ? (t.z || t.e) : t.e)}${t.a ? ` · ${esc(t.a)}` : ''}</div>
+        ${sub ? `<div class="sub ${answerIsZh ? '' : 'cjk'}">${esc(sub)}</div>` : ''}
+        <div class="from ${answerIsZh ? '' : 'cjk'}">${esc(hovered)}${t.a ? ` · ${esc(t.a)}` : ''}</div>
       </div>
       <div class="badges">${badges}</div>
       ${t.def ? `<div class="def">${esc(t.def)}</div>` : ''}
@@ -238,10 +223,9 @@
   async function showFor(el) {
     const ord = Number(el.dataset.caisv)
     if (!Number.isFinite(ord)) return
-    const dir = el.dataset.caisvDir === 'zh' ? 'zh' : 'en'
     ensureCard()
     clearTimeout(hideTimer)
-    const key = ord + ':' + dir
+    const key = ord + ':' + answerIn
     if (key === currentOrd && !card.hidden) { positionCard(el.getBoundingClientRect()); return }
     let t
     try {
@@ -249,7 +233,7 @@
     } catch (e) { return }            // worker asleep or extension reloaded
     if (!t) return
     currentOrd = key
-    renderCard(t, dir)
+    renderCard(t)
     positionCard(el.getBoundingClientRect())
   }
 
@@ -282,7 +266,7 @@
     // sendMessage returns a promise in MV3; a sleeping or reloaded worker rejects it,
     // and an uncaught rejection here would surface as a page error on every navigation.
     try {
-      const p = chrome.runtime.sendMessage({ type: 'caisv-count', count: n, mode: settings.mode })
+      const p = chrome.runtime.sendMessage({ type: 'caisv-count', count: n, answerIn })
       if (p && p.catch) p.catch(() => {})
     } catch (e) {}
   }
@@ -313,23 +297,18 @@
   function run() {
     if (!document.body) return
     clearHighlights()
-    if (!settings.enabled || settings.mode === 'off') { teardown(); return }
+    if (!settings.enabled) { teardown(); return }
 
-    // "Automatic" means both directions at once. There is no page-level language to
-    // guess: a mixed page gets its Chinese terms answered in English and its English
-    // terms answered in Chinese, which is what a bilingual reader actually wants.
-    const dirs = settings.mode === 'auto' ? ['zh', 'en'] : [settings.mode]
-    matchers = { zh: null, en: null }
-    for (const d of dirs) {
-      matchers[d] = CAISVMatcher.compile(self.CAISV_INDEX, d, { includeShort: settings.includeShort })
-    }
-    if (!matchers.zh && !matchers.en) return
+    answerIn = settings.mode === 'zh' ? 'zh' : 'en'
+    matcher = CAISVMatcher.compile(self.CAISV_INDEX, FIND_FOR[answerIn],
+                                   { includeShort: settings.includeShort })
+    if (!matcher) return
 
     processNodes(collectTextNodes(document.body), () => { report(total); watch() })
   }
 
   function load() {
-    chrome.storage.sync.get({ enabled: true, mode: 'auto', includeShort: false }, (s) => {
+    chrome.storage.sync.get({ enabled: true, mode: 'en', includeShort: false }, (s) => {
       settings = s
       run()
     })
@@ -343,12 +322,7 @@
 
   chrome.runtime.onMessage.addListener((msg, _s, respond) => {
     if (msg && msg.type === 'caisv-status') {
-      const byDir = { zh: 0, en: 0 }
-      for (const el of document.querySelectorAll('mark.' + HL)) {
-        byDir[el.dataset.caisvDir === 'zh' ? 'zh' : 'en']++
-      }
-      respond({ count: total, byDir, mode: settings.mode,
-                enabled: settings.enabled && settings.mode !== 'off' })
+      respond({ count: total, answerIn, enabled: settings.enabled })
       return true
     }
     if (msg && msg.type === 'caisv-rescan') { run(); respond({ ok: true }); return true }

@@ -20,31 +20,25 @@ The extension is not on the Chrome Web Store. To run it now:
 To highlight local files (`file:///…`), also open the extension's details page and enable
 **Allow access to file URLs**. Chrome keeps that off by default.
 
-## The two directions
+## The two modes
 
-Every highlight answers in the language you don't already have: hover a Chinese term and
-the card is in English, hover an English term and it is in Chinese.
+The mode is **the language you read**, not the language of the page. It is a property of
+you, and you set it once.
 
-| Mode | Highlights | Card shows |
+| Mode | Finds on the page | Card answers in |
 |---|---|---|
-| **Both** (default) | Chinese *and* English terms | the opposite language, per match |
-| **Chinese terms only** | Chinese terms | English |
-| **English terms only** | English terms | Chinese |
+| **English** (default) | Chinese terms | English |
+| **中文** | English terms | Chinese |
 
-There is no page-language detection, deliberately. An earlier version guessed one
-direction per page from the ratio of Han characters to Latin letters, and got it wrong
-both ways: a short Chinese sentence fell under a character-count floor and was treated as
-English, while an English essay quoting a few Chinese terms cleared the ratio and was
-treated as Chinese — silently dropping every English term on the page.
+Reading English, you want 自主可控 underlined and explained. Underlining *scalable
+oversight* as well would only mark words you can already read.
 
-The guess was never needed. A matched string already tells you its own script, so
-direction belongs to each match rather than to the document. Both matchers run, overlaps
-resolve longest-first, and each highlight is labelled. Mixed pages — a Chinese post
-writing `RLHF` inline, an English analysis quoting 自主可控 — are the normal case in this
-field, and they now work without anything having to be decided about the page.
-
-The single-direction modes remain for when you want a quieter page.
-
+The page's own language is never inspected. A page mixing both scripts still gets exactly
+one script highlighted — whichever one you don't read. An earlier version tried to detect
+the page language and pick a direction from it; that was wrong twice over. It was
+unreliable (a short Chinese sentence read as English; an English essay quoting Chinese read
+as Chinese), and more importantly it was answering the wrong question. Which script to
+highlight depends on who is reading, and the page cannot tell you that.
 ## Settings
 
 - **Include two-character terms** — 对齐, 算力, 红线, 黑箱 and 59 others. These are among

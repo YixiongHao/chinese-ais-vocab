@@ -1,7 +1,7 @@
-'use strict'
+﻿'use strict'
 
 const $ = (s) => document.querySelector(s)
-const DEFAULTS = { enabled: true, mode: 'auto', includeShort: false }
+const DEFAULTS = { enabled: true, mode: 'en', includeShort: false }
 
 function paintStatus(text) { $('#status').textContent = text }
 
@@ -26,12 +26,8 @@ async function refreshStatus() {
     const res = await chrome.tabs.sendMessage(tab.id, { type: 'caisv-status' })
     if (!res) throw new Error('no response')
     if (!res.enabled) return paintStatus('Off for this page.')
-    if (!res.count) return paintStatus('No terms found on this page.')
-    const b = res.byDir || { zh: 0, en: 0 }
-    const parts = []
-    if (b.zh) parts.push(`${b.zh} 中文→EN`)
-    if (b.en) parts.push(`${b.en} EN→中文`)
-    paintStatus(parts.join(' · ') || `${res.count} highlighted`)
+    const arrow = res.answerIn === 'zh' ? 'English → 中文' : '中文 → English'
+    paintStatus(res.count ? `${res.count} highlighted · ${arrow}` : `No terms found · ${arrow}`)
   } catch (e) {
     paintStatus(isPdf ? 'Not available in the PDF viewer.' : 'Reload the page to start highlighting.')
   }

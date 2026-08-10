@@ -110,41 +110,40 @@ expect(zh, '算法备案制度自2022年起实施。', ['algorithm-filing'], 'zh
   ok(Object.keys(INDEX.zh).indexOf('安全') === -1, 'bare 安全 should not be a match key')
 }
 
-// Mixed-script pages. There is no page-level language guess any more; both directions run
-// and each match carries its own. These cases are exactly the ones the old heuristic got
-// wrong, so they are pinned as the reason it was removed.
-ok(!M.detectDirection, 'detectDirection should be gone — direction is per match, not per page')
+// The mode is the reader's language, and it selects which script to hunt for. Nothing
+// about the page is inspected — the old per-page heuristic is gone, and these cases pin
+// down that a mixed page still yields exactly one script's worth of highlights.
+ok(!M.detectDirection, 'detectDirection should be gone — the mode is the reader\'s, not the page\'s')
 
-function bothDirs(text) {
-  const all = []
-  for (const [dir, m] of [['zh', zhShort], ['en', en]]) {
-    for (const h of M.find(m, text)) all.push({ ...h, dir })
+const FIND_FOR = { en: 'zh', zh: 'en' }        // must mirror content.js
+ok(FIND_FOR.en === 'zh' && FIND_FOR.zh === 'en', 'reading English means hunting Chinese, and vice versa')
+
+const MIXED = 'The Politburo readout says 自主可控, and researchers study scalable oversight and 可扩展监督.'
+{
+  // Reader reads English -> only the Chinese gets underlined.
+  const hits = M.find(M.compile(INDEX, FIND_FOR.en, {}), MIXED)
+  ok(hits.length > 0, 'English reader: expected Chinese matches in the mixed sentence')
+  for (const h of hits) {
+    ok(/[一-鿿]/.test(h.text), `English reader: underlined non-Chinese text "${h.text}"`)
   }
-  all.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start))
-  const kept = []
-  let end = -1
-  for (const h of all) if (h.start >= end) { kept.push(h); end = h.end }
-  return kept
-}
-
-{
-  // Chinese prose quoting English terms: both sides should be found.
-  const hits = bothDirs('我们使用 RLHF 对模型进行后训练，并研究其可解释性。')
-  const dirs = new Set(hits.map((h) => h.dir))
-  ok(dirs.has('zh'), `mixed zh-dominant: expected a Chinese match, got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
-  ok(dirs.has('en'), `mixed zh-dominant: expected an English match (RLHF), got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
 }
 {
-  // English analysis quoting Chinese: the old heuristic called this page Chinese and
-  // dropped every English term on it.
-  const hits = bothDirs('The Politburo readout says 自主可控, which is about supply chains, not scalable oversight.')
-  const dirs = new Set(hits.map((h) => h.dir))
-  ok(dirs.has('en'), `mixed en-dominant: expected an English match, got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
-  ok(dirs.has('zh'), `mixed en-dominant: expected a Chinese match, got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
+  // Reader reads Chinese -> only the English gets underlined.
+  const hits = M.find(M.compile(INDEX, FIND_FOR.zh, {}), MIXED)
+  ok(hits.length > 0, 'Chinese reader: expected English matches in the mixed sentence')
+  for (const h of hits) {
+    ok(!/[一-鿿]/.test(h.text), `Chinese reader: underlined Chinese text "${h.text}"`)
+  }
 }
 {
-  // Overlap resolution: a match must never be emitted inside another match.
-  const hits = bothDirs('我们讨论可扩展监督与人工智能安全治理框架的关系。')
+  // The two modes must not both claim the same span of a mixed page.
+  const a = M.find(M.compile(INDEX, 'zh', {}), MIXED).map((h) => h.text)
+  const b = M.find(M.compile(INDEX, 'en', {}), MIXED).map((h) => h.text)
+  ok(!a.some((x) => b.includes(x)), `the two modes overlap on: ${JSON.stringify(a.filter((x) => b.includes(x)))}`)
+}
+{
+  // Matches within one mode must never nest or overlap.
+  const hits = M.find(zh, '我们讨论可扩展监督与人工智能安全治理框架的关系。')
   for (let i = 1; i < hits.length; i++) {
     ok(hits[i].start >= hits[i - 1].end, `overlapping matches emitted: ${JSON.stringify(hits.map((h) => h.text))}`)
   }

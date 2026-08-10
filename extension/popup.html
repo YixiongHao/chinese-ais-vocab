@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -37,6 +37,7 @@
   footer { padding: 10px 14px 12px; }
   a { color: var(--accent); text-decoration: none; font-size: 11.5px; }
   a:hover { text-decoration: underline; }
+  .cjk { font-family: "Source Han Sans SC","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif; }
   .pdf { background: var(--accent-soft); border-radius: 6px; padding: 8px 10px;
          font-size: 11.5px; color: var(--ink-2); margin-top: 8px; display: none; }
 </style>
@@ -52,20 +53,20 @@
 </header>
 
 <section>
-  <div class="lbl">What to highlight</div>
+  <div class="lbl">I read</div>
   <label class="opt">
-    <input type="radio" name="mode" value="auto">
-    <span><span class="t">Both</span><br><span class="d">Chinese terms answer in English, English terms answer in Chinese.
-    Each highlight knows its own language, so mixed pages just work.</span></span>
+    <input type="radio" name="mode" value="en">
+    <span><span class="t">English</span><br><span class="d">Finds <span class="cjk">中文</span> terms
+    on the page and tells you what they mean in English.</span></span>
   </label>
   <label class="opt">
     <input type="radio" name="mode" value="zh">
-    <span><span class="t">Chinese terms only</span><br><span class="d">Answers in English. A quieter page when you only read Chinese sources.</span></span>
+    <span><span class="t">中文</span><br><span class="d">Finds English terms on the page and
+    gives you the Chinese rendering.</span></span>
   </label>
-  <label class="opt">
-    <input type="radio" name="mode" value="en">
-    <span><span class="t">English terms only</span><br><span class="d">Answers in Chinese.</span></span>
-  </label>
+  <div class="note">The page's own language is never inspected. A page mixing both scripts
+    still gets only the language you don't read highlighted — underlining what you can
+    already read is noise.</div>
   <div class="pdf" id="pdf">This looks like Chrome's built-in PDF viewer. Extensions can't
     reach text inside it, so nothing will be highlighted here. See the README for why.</div>
 </section>

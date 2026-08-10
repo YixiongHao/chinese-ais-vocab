@@ -1,4 +1,4 @@
-// Service worker. Owns the card payload so the 327 KB of definitions, citations and
+﻿// Service worker. Owns the card payload so the 327 KB of definitions, citations and
 // examples is parsed once per worker lifetime rather than once per page.
 
 const CARDS_URL = chrome.runtime.getURL('data/cards.json')
@@ -28,11 +28,11 @@ chrome.runtime.onMessage.addListener((msg, sender, respond) => {
     const n = msg.count | 0
     chrome.action.setBadgeText({ tabId: sender.tab.id, text: n ? String(n) : '' })
     chrome.action.setBadgeBackgroundColor({ tabId: sender.tab.id, color: '#a03e2f' })
-    const MODE = { auto: 'both directions', zh: 'Chinese terms only', en: 'English terms only' }
+    const ARROW = msg.answerIn === 'zh' ? 'English → 中文' : '中文 → English'
     chrome.action.setTitle({
       tabId: sender.tab.id,
       title: n
-        ? `${n} term${n === 1 ? '' : 's'} highlighted — ${MODE[msg.mode] || 'both directions'}`
+        ? `${n} term${n === 1 ? '' : 's'} highlighted — ${ARROW}`
         : 'AI Safety Terminology — no terms found on this page',
     })
     return false
