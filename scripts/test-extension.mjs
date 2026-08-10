@@ -110,11 +110,25 @@ expect(zh, '算法备案制度自2022年起实施。', ['algorithm-filing'], 'zh
   ok(Object.keys(INDEX.zh).indexOf('安全') === -1, 'bare 安全 should not be a match key')
 }
 
-// Direction detection
-ok(M.detectDirection('近年来关于人工智能安全治理的讨论显著增加，相关标准也在不断完善之中。') === 'zh', 'detect: Chinese page')
-ok(M.detectDirection('This is an ordinary English page about machine learning research and evaluation methods for models.') === 'en', 'detect: English page')
-ok(M.detectDirection('') === 'en', 'detect: empty defaults to en')
-ok(M.detectDirection('Mixed page 关于人工智能安全的中文内容占比很高，因此应当判定为中文页面。') === 'zh', 'detect: mixed leans zh')
+// Direction detection. The unit is estimated words, not characters — a Han character is
+// about a word, a Latin letter is about a fifth of one, and conflating them got this
+// wrong in both directions before.
+const DETECT = [
+  ['zh', '近年来关于人工智能安全治理的讨论显著增加，相关标准也在不断完善之中。', 'a single Chinese sentence'],
+  ['zh', '大模型安全对齐研究进展', 'a bare Chinese headline'],
+  ['zh', '我们使用 SFT 和 RLHF 对模型进行后训练，并通过 scaling law 预测性能。实验表明该方法有效。',
+         'Chinese technical prose that quotes English terms inline'],
+  ['en', 'This is an ordinary English page about machine learning research and evaluation methods.', 'plain English'],
+  ['en', 'The Chinese term is 自主可控, which CSET renders as autonomously controllable. The Politburo readout says 构建自主可控的人工智能基础软硬件系统, a claim about chips rather than agency.',
+         'English analysis quoting Chinese — the case that matters for bilingual readers'],
+  ['en', 'Researchers often translate alignment as 对齐 in Chinese papers.', 'English with one Chinese term'],
+  ['en', '', 'empty'],
+  ['en', '中文', 'too little text to judge'],
+]
+for (const [want, text, label] of DETECT) {
+  const got = M.detectDirection(text)
+  ok(got === want, `detect (${label}): expected ${want}, got ${got}`)
+}
 
 // Card payload sanity: every ordinal a match can produce must resolve to a usable card.
 const sampled = new Set()

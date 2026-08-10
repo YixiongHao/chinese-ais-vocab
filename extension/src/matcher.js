@@ -64,10 +64,16 @@
     return out
   }
 
+  // An English word averages a shade under five letters; a Han character is roughly a
+  // whole word on its own. Comparing raw character counts therefore compares two
+  // different units, which is what made earlier versions of this function wrong in both
+  // directions. Everything below is in estimated *words*.
+  const LETTERS_PER_EN_WORD = 4.7
+  const MIN_WORDS = 5
+
   /**
    * Guess which direction suits a page from its text.
-   * A page with a meaningful share of Han characters is a Chinese page, even when it is
-   * mostly English chrome around Chinese content.
+   * Returns "zh" when the page carries more meaning in Chinese than in English.
    */
   function detectDirection(sample) {
     if (!sample) return 'en'
@@ -78,12 +84,11 @@
       if (c >= 0x4e00 && c <= 0x9fff) cjk++
       else if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) letters++
     }
-    // A Han character carries roughly a whole word, so counts that look tiny next to a
-    // letter count are already a paragraph of Chinese. Two dozen is a sentence or more.
-    if (cjk >= 24) return 'zh'
-    const total = cjk + letters
-    if (total < 20) return 'en'
-    return cjk / total > 0.08 ? 'zh' : 'en'
+    const zhWords = cjk
+    const enWords = letters / LETTERS_PER_EN_WORD
+    // Too little text to judge — an empty shell, or a page that has not hydrated yet.
+    if (zhWords + enWords < MIN_WORDS) return 'en'
+    return zhWords > enWords ? 'zh' : 'en'
   }
 
   root.CAISVMatcher = { compile, find, detectDirection, HAS_CJK, SHORT_ZH_LEN }
