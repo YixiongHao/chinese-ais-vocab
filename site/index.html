@@ -3,36 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Safety Terminology · English → Chinese</title>
+<title>AI Safety Terminology · English ⇄ 中文</title>
+<meta name="description" content="A bilingual English–Chinese terminology database for AI safety: recommended renderings, who uses them, and what each one gets wrong.">
 <style>
+  /* Light only, on purpose. There is no theme toggle and no colour-scheme detection —
+     one set of colours, always the same, so a screenshot or a printout matches the screen. */
   :root {
-    --bg: #fbfaf8;
-    --panel: #ffffff;
-    --ink: #17181c;
-    --ink-2: #55596a;
-    --ink-3: #8b8fa3;
-    --line: #e4e2dd;
-    --line-2: #efedE8;
-    --accent: #a03e2f;
-    --accent-soft: #f6ece9;
-    --hi: #fdf3d6;
+    --bg: #ffffff;
+    --bg-2: #fafaf8;
+    --ink: #16181d;
+    --ink-2: #474c58;
+    --ink-3: #6a7080;
+    --line: #e3e2de;
+    --line-2: #efeeea;
+    --accent: #9c3b2c;
+    --accent-soft: #fbf0ed;
+    --hi: #fff2b8;
     --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
     --cjk: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
            "Hiragino Sans GB", sans-serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #131316; --panel: #191a1e; --ink: #eceaea; --ink-2: #a5a8b6; --ink-3: #6e7284;
-      --line: #2b2d34; --line-2: #232529; --accent: #e08b78; --accent-soft: #2a1f1c;
-      --hi: #3a3218;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #131316; --panel: #191a1e; --ink: #eceaea; --ink-2: #a5a8b6; --ink-3: #6e7284;
-    --line: #2b2d34; --line-2: #232529; --accent: #e08b78; --accent-soft: #2a1f1c;
-    --hi: #3a3218;
   }
 
   * { box-sizing: border-box; }
@@ -41,79 +32,79 @@
     margin: 0; background: var(--bg); color: var(--ink);
     font-family: var(--sans); font-size: 15px; line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    /* App shell: the header is fixed height and the two columns scroll independently.
+       Done in CSS alone — no measuring the header in JS, so nothing to get out of sync. */
+    display: flex; flex-direction: column; overflow: hidden;
   }
   .zh { font-family: var(--cjk); }
+  a { color: var(--accent); }
 
-  /* ---------- shell ---------- */
-  header {
-    border-bottom: 1px solid var(--line); background: var(--panel);
-    position: sticky; top: 0; z-index: 20;
-  }
-  .head-inner {
-    max-width: 1240px; margin: 0 auto; padding: 14px 20px 0;
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-  .brand h1 {
-    font-family: var(--serif); font-size: 19px; font-weight: 600;
-    margin: 0; letter-spacing: -0.01em;
-  }
+  /* ---------- header ---------- */
+  header { flex: none; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .head-inner { max-width: 1500px; margin: 0 auto; padding: 12px 22px 0; }
+
+  .brand { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .brand h1 { font-family: var(--serif); font-size: 19px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
   .brand .sub { color: var(--ink-3); font-size: 12.5px; }
   .brand .spacer { flex: 1; }
-  .brand button.ghost {
-    background: none; border: 1px solid var(--line); color: var(--ink-2);
-    border-radius: 6px; padding: 3px 9px; font-size: 12px; cursor: pointer;
-  }
-  .brand button.ghost:hover { color: var(--ink); border-color: var(--ink-3); }
+  .brand a.repo { color: var(--ink-3); font-size: 12.5px; text-decoration: none; }
+  .brand a.repo:hover { color: var(--accent); text-decoration: underline; }
 
-  .searchrow { display: flex; gap: 10px; align-items: center; }
+  .searchrow { display: flex; gap: 10px; align-items: center; margin-top: 10px; }
   #q {
     flex: 1; font: inherit; font-size: 16px; padding: 9px 12px;
     border: 1px solid var(--line); border-radius: 8px;
-    background: var(--bg); color: var(--ink); font-family: var(--sans);
+    background: var(--bg); color: var(--ink); font-family: var(--sans); min-width: 0;
   }
   #q:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
   #q::placeholder { color: var(--ink-3); }
   .count { color: var(--ink-3); font-size: 12.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-  .filters { display: flex; gap: 6px; flex-wrap: wrap; padding-bottom: 12px; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 0 0; }
   .chip {
     font-size: 12px; padding: 3px 10px; border-radius: 999px; cursor: pointer;
-    border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink-2);
     font-family: inherit; white-space: nowrap;
   }
   .chip:hover { border-color: var(--ink-3); color: var(--ink); }
   .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-  :root[data-theme="dark"] .chip[aria-pressed="true"],
-  .chip[aria-pressed="true"] { color: #fff; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .chip[aria-pressed="true"] { color: #1a1210; }
-  }
-  :root[data-theme="dark"] .chip[aria-pressed="true"] { color: #1a1210; }
-  .chip.sep { border: none; pointer-events: none; color: var(--ink-3); padding-left: 8px; }
+  .chip.sep { border: none; background: none; pointer-events: none; color: var(--ink-3); padding-left: 6px; }
+  .chip.clear { border-color: var(--accent); color: var(--accent); display: none; }
+  .chip.clear.on { display: inline-block; }
 
-  main {
-    max-width: 1240px; margin: 0 auto; padding: 0 20px 60px;
-    display: grid; grid-template-columns: minmax(300px, 400px) 1fr; gap: 28px;
-    align-items: start;
+  .legend {
+    display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+    font-size: 11.5px; color: var(--ink-3); padding: 9px 0 11px;
   }
-  @media (max-width: 900px) { main { grid-template-columns: 1fr; } #detail { display: none; } }
+  .legend span { display: inline-flex; gap: 5px; align-items: center; }
+  .legend .lbl { font-weight: 650; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ---------- shell ---------- */
+  main {
+    flex: 1; min-height: 0;
+    max-width: 1500px; width: 100%; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(320px, 420px) 1fr;
+  }
+  #results { overflow-y: auto; padding: 12px 18px 48px 22px; border-right: 1px solid var(--line); }
+  #detail  { overflow-y: auto; padding: 22px 26px 72px; }
+  #results::-webkit-scrollbar, #detail::-webkit-scrollbar { width: 9px; }
+  #results::-webkit-scrollbar-thumb, #detail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 5px; }
 
   /* ---------- results ---------- */
-  #results { padding-top: 14px; }
   .cat-head {
     font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-3); margin: 18px 0 6px; font-weight: 600;
+    color: var(--ink-3); margin: 16px 0 5px; font-weight: 650;
   }
-  .cat-head:first-child { margin-top: 4px; }
+  .cat-head:first-child { margin-top: 2px; }
   .row {
     display: block; width: 100%; text-align: left; cursor: pointer;
     border: none; border-bottom: 1px solid var(--line-2); background: none;
     padding: 8px 10px; border-radius: 6px; font: inherit; color: inherit;
   }
-  .row:hover { background: var(--panel); }
+  .row:hover { background: var(--bg-2); }
   .row[aria-selected="true"] { background: var(--accent-soft); }
-  .row .en { font-weight: 500; }
+  .row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .row .en { font-weight: 550; }
   .row .abbr { color: var(--ink-3); font-family: var(--mono); font-size: 12px; margin-left: 6px; }
   .row .zh { font-family: var(--cjk); color: var(--ink-2); font-size: 14px; }
   .row .zh.none { color: var(--ink-3); font-style: italic; font-family: var(--sans); }
@@ -123,31 +114,22 @@
   /* Difficulty dot. Deliberately a different hue family from the status tags below, so
      "this term is hard" never reads as "this rendering is contested". */
   .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex: none; }
-  .d-high { background: #c0483c; }
-  .d-medium { background: #d59a3c; }
-  .d-low { background: transparent; border: 1px solid var(--line); }
-
-  .legend {
-    display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
-    font-size: 11.5px; color: var(--ink-3); padding: 0 0 12px 2px;
-  }
-  .legend span { display: inline-flex; gap: 5px; align-items: center; }
-  .legend .lbl { font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .d-high { background: #b8402f; }
+  .d-medium { background: #c98a24; }
+  .d-low { background: transparent; border: 1px solid #c9c8c3; }
 
   .empty { color: var(--ink-3); padding: 40px 10px; text-align: center; font-size: 14px; }
 
   /* ---------- detail ---------- */
-  #detail { padding-top: 18px; position: sticky; top: 128px; max-height: calc(100vh - 150px); overflow-y: auto; }
-  #detail::-webkit-scrollbar { width: 8px; }
-  #detail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+  .back { display: none; }
 
-  .placeholder { color: var(--ink-3); font-size: 14px; max-width: 46ch; }
+  .placeholder { color: var(--ink-2); font-size: 14px; max-width: 56ch; }
   .placeholder kbd {
     font-family: var(--mono); font-size: 11px; border: 1px solid var(--line);
     border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; color: var(--ink-2);
   }
   .placeholder ul { padding-left: 18px; margin: 10px 0; }
-  .placeholder li { margin: 4px 0; }
+  .placeholder li { margin: 5px 0; }
 
   .term-head { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 18px; }
   .term-head h2 {
@@ -173,7 +155,7 @@
   section.blk { margin: 22px 0; }
   section.blk > h3 {
     font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--ink-3); margin: 0 0 8px; font-weight: 600;
+    color: var(--ink-3); margin: 0 0 8px; font-weight: 650;
   }
   section.blk > h3.cmt-lbl { color: var(--accent); }
   .def { max-width: 68ch; }
@@ -186,8 +168,9 @@
 
   .tr {
     border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px;
-    margin-bottom: 10px; background: var(--panel);
+    margin-bottom: 10px; background: var(--bg);
   }
+  .tr.pref { border-color: #cfcdc6; background: var(--bg-2); }
   .tr-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
   .tr-zh { font-family: var(--cjk); font-size: 19px; font-weight: 600; cursor: copy; }
   .tr-zh:hover { color: var(--accent); }
@@ -195,15 +178,15 @@
   .lit { color: var(--ink-3); font-size: 13px; font-style: italic; }
 
   .tag {
-    font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;
+    font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 650;
     padding: 2px 7px; border-radius: 4px; border: 1px solid var(--line); color: var(--ink-2);
     white-space: nowrap;
   }
-  .tag.established { border-color: #4f8a55; color: #4f8a55; }
-  .tag.common      { border-color: #5a7fa8; color: #5a7fa8; }
-  .tag.contested   { border-color: #c9762f; color: #c9762f; }
+  .tag.established { border-color: #2f7a41; color: #2f7a41; }
+  .tag.common      { border-color: #2f6296; color: #2f6296; }
+  .tag.contested   { border-color: #b45f14; color: #b45f14; }
   .tag.proposed    { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
-  .tag.loanword    { border-color: #7d6aa8; color: #7d6aa8; }
+  .tag.loanword    { border-color: #6a4fa3; color: #6a4fa3; }
   .tag.deprecated  { border-color: var(--ink-3); color: var(--ink-3); text-decoration: line-through; }
   .tag.descriptive, .tag.transliteration { border-color: var(--ink-3); color: var(--ink-3); }
 
@@ -233,10 +216,10 @@
   .pills { display: flex; gap: 6px; flex-wrap: wrap; }
   .pill {
     font-size: 12.5px; padding: 3px 10px; border-radius: 999px; cursor: pointer;
-    border: 1px solid var(--line); background: none; color: var(--ink-2); font-family: inherit;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); font-family: inherit;
   }
   .pill:hover { border-color: var(--accent); color: var(--accent); }
-  .usedby { font-size: 13.5px; color: var(--ink-2); }
+  .usedby { font-size: 13.5px; color: var(--ink-2); margin: 0; padding-left: 18px; }
   .usedby li { margin-bottom: 3px; }
   .usedby .zh { font-family: var(--cjk); color: var(--ink); }
 
@@ -246,10 +229,30 @@
 
   #toast {
     position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px);
-    background: var(--ink); color: var(--bg); padding: 7px 16px; border-radius: 999px;
+    background: var(--ink); color: #fff; padding: 7px 16px; border-radius: 999px;
     font-size: 13px; opacity: 0; pointer-events: none; transition: all .18s ease; z-index: 50;
   }
   #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ---------- narrow screens ----------
+     One column, and the two panes take turns. The previous layout hid the detail pane
+     outright below 900px, which meant every term on a phone was a dead end. */
+  @media (max-width: 880px) {
+    body { height: auto; overflow: visible; }
+    main { grid-template-columns: 1fr; }
+    #results { border-right: none; padding: 12px 16px 48px; }
+    #detail { padding: 16px 16px 64px; }
+    #results, #detail { overflow-y: visible; }
+    html[data-view="detail"] #results { display: none; }
+    html:not([data-view="detail"]) #detail { display: none; }
+    .back {
+      display: inline-block; font: inherit; font-size: 13px; cursor: pointer;
+      background: none; border: 1px solid var(--line); border-radius: 6px;
+      padding: 4px 10px; color: var(--ink-2); margin-bottom: 14px;
+    }
+    .legend { display: none; }
+    .head-inner { padding: 10px 16px 0; }
+  }
 </style>
 </head>
 <body>
@@ -258,14 +261,15 @@
   <div class="head-inner">
     <div class="brand">
       <h1>AI Safety Terminology</h1>
-      <span class="sub">English → 中文 · <span id="stat"></span></span>
+      <span class="sub">English ⇄ 中文</span>
       <span class="spacer"></span>
-      <button class="ghost" id="theme" title="Toggle theme">◐</button>
+      <a class="repo" href="https://github.com/YixiongHao/ais-vocab-cn" target="_blank" rel="noopener">source &amp; data on GitHub ↗</a>
     </div>
     <div class="searchrow">
+      <label for="q" class="sr-only" hidden>Search terms</label>
       <input id="q" type="search" autocomplete="off" spellcheck="false"
-             placeholder="Search a term — English, 中文, or pinyin…">
-      <span class="count" id="count"></span>
+             placeholder="Search — English, 中文, or pinyin (tones optional)…">
+      <span class="count" id="count" aria-live="polite"></span>
     </div>
     <div class="filters" id="filters"></div>
     <div class="legend">
@@ -273,6 +277,8 @@
       <span><i class="dot d-high"></i> high — no settled rendering, or the usual one distorts it</span>
       <span><i class="dot d-medium"></i> medium — competing renderings</span>
       <span><i class="dot d-low"></i> low — settled</span>
+      <span class="spacer"></span>
+      <span id="stat"></span>
     </div>
   </div>
 </header>
@@ -297,6 +303,12 @@
   const $ = s => document.querySelector(s)
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
 
+  // Pinyin is stored with tone marks (gōngjùxìng). Nobody types those. Decompose to
+  // base letter + combining mark and drop the marks, so "gongjuxing" finds it — and
+  // keep a space-free copy too, since it is a coin flip whether a reader writes
+  // "gongju xing" or "gongjuxing".
+  const detone = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
   // ---------- searchable haystack, built once ----------
   // Chinese-origin entries invert: the headword is Chinese, the renderings are English.
   // Everything downstream reads `_rend` / `_headZh` / `_headEn` so it need not care which.
@@ -309,8 +321,10 @@
     const zh = [t.zh_headword || '', ...(t.translations || []).map(x => x.zh)].join(' ')
     const en = [(t.en_renderings || []).map(x => x.en).join(' '), (t.en_aliases || []).join(' ')].join(' ')
     const py = [t.pinyin || '', ...(t.translations || []).map(x => x.pinyin || '')].join(' ')
-    t._hay = [t.en, t.abbr || '', en, zh, py, t.definition_en || '',
-              t.definition_zh || '', (t.tags || []).join(' ')].join(' ').toLowerCase()
+    const pyPlain = detone(py)
+    t._hay = [t.en, t.abbr || '', en, zh, py, pyPlain, pyPlain.replace(/\s+/g, ''),
+              t.definition_en || '', t.definition_zh || '', (t.tags || []).join(' ')]
+             .join(' ').toLowerCase()
     t._en = t.en.toLowerCase()
   }
 
@@ -341,9 +355,11 @@
     const flagChips = FLAGS.map(([id, label]) =>
       `<button class="chip" data-flag="${id}" aria-pressed="false">${esc(label)}</button>`
     ).join('')
-    f.innerHTML = catChips + '<span class="chip sep">·</span>' + flagChips
+    f.innerHTML = catChips + '<span class="chip sep">·</span>' + flagChips +
+      '<button class="chip clear" id="clearBtn" data-clear="1">Clear filters ✕</button>'
     f.addEventListener('click', e => {
       const b = e.target.closest('.chip'); if (!b) return
+      if (b.dataset.clear) { state.cat = null; state.flag = null }
       if (b.dataset.cat) state.cat = state.cat === b.dataset.cat ? null : b.dataset.cat
       if (b.dataset.flag) state.flag = state.flag === b.dataset.flag ? null : b.dataset.flag
       syncChips(); render()
@@ -354,6 +370,10 @@
       b.setAttribute('aria-pressed', String(b.dataset.cat === state.cat))
     for (const b of document.querySelectorAll('.chip[data-flag]'))
       b.setAttribute('aria-pressed', String(b.dataset.flag === state.flag))
+    const clear = $('#clearBtn')
+    if (clear && clear.classList) {
+      if (state.cat || state.flag) clear.classList.add('on'); else clear.classList.remove('on')
+    }
   }
 
   // ---------- search ----------
@@ -468,7 +488,7 @@
     const val = tr[key] ?? ''
     const nAtt = (tr.attestations || []).length
     const nUnver = (tr.attestations || []).filter(a => a.unverified).length
-    return `<div class="tr">
+    return `<div class="tr${isPref ? ' pref' : ''}">
       <div class="tr-head">
         <span class="tr-zh${key === 'en' ? ' tr-en' : ''}" data-copy="${esc(val)}">${esc(val)}</span>
         ${tr.pinyin ? `<span class="pinyin">${esc(tr.pinyin)}</span>` : ''}
@@ -501,7 +521,8 @@
 
     // Chinese-origin entries lead with the Chinese headword — it is the source term, and
     // the English below it is the approximation. The English-origin entries do the reverse.
-    let h = `<div class="term-head">
+    let h = `<button class="back" data-back="1">← All terms</button>
+    <div class="term-head">
       <h2${zhOrigin ? ' class="zh"' : ''}>${esc(zhOrigin ? t.zh_headword : t.en)}</h2>
       ${zhOrigin && t.pinyin ? `<div class="pinyin">${esc(t.pinyin)}</div>` : ''}
       ${(t.en_aliases || []).length ? `<div class="aliases">also: ${t.en_aliases.map(esc).join(' · ')}</div>` : ''}
@@ -581,7 +602,8 @@
   function placeholder() {
     $('#detail').innerHTML = `<div class="placeholder">
       <p>Pick a term, or start typing. Search accepts English, Chinese, or pinyin —
-      typing <span class="zh">对齐</span> finds <em>alignment</em>.</p>
+      typing <span class="zh">对齐</span> finds <em>alignment</em>, and
+      <em>duiqi</em> finds it too.</p>
       <p>The filters above are the interesting part:</p>
       <ul>
         <li><strong>Chinese-origin terms</strong> — concepts PRC discourse has that English
@@ -605,6 +627,11 @@
     clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 1300)
   }
 
+  // On a narrow screen the two panes take turns; on a wide one both are always visible and
+  // this attribute does nothing. Set on documentElement rather than body so it is one
+  // attribute on the element the CSS already keys off.
+  const view = v => { document.documentElement.dataset.view = v }
+
   document.addEventListener('click', e => {
     const copy = e.target.closest('[data-copy]')
     if (copy) {
@@ -613,10 +640,11 @@
         .catch(() => {})
       return
     }
+    if (e.target.closest('[data-back]')) { view(''); return }
     const goto = e.target.closest('[data-goto]')
-    if (goto) { showTerm(goto.dataset.goto); return }
+    if (goto) { showTerm(goto.dataset.goto); view('detail'); return }
     const row = e.target.closest('.row')
-    if (row) showTerm(row.dataset.id)
+    if (row) { showTerm(row.dataset.id); view('detail') }
   })
 
   $('#q').addEventListener('input', e => { state.q = e.target.value; render() })
@@ -628,19 +656,15 @@
     const rows = [...document.querySelectorAll('.row')]
     if (!rows.length) return
     const i = rows.findIndex(r => r.dataset.id === state.sel)
-    if (e.key === 'Enter') { if (i >= 0) { e.preventDefault(); showTerm(rows[i].dataset.id) } return }
+    // Enter commits: on a narrow screen that is what swaps to the detail pane. Arrow keys
+    // only move the selection, so holding one down does not bounce the view back and forth.
+    if (e.key === 'Enter') { if (i >= 0) { e.preventDefault(); showTerm(rows[i].dataset.id); view('detail') } return }
     e.preventDefault()
     const next = e.key === 'ArrowDown'
       ? rows[Math.min(i + 1, rows.length - 1)] ?? rows[0]
       : rows[Math.max(i - 1, 0)] ?? rows[0]
     showTerm(next.dataset.id)
     next.scrollIntoView({ block: 'nearest' })
-  })
-
-  $('#theme').addEventListener('click', () => {
-    const cur = document.documentElement.getAttribute('data-theme')
-    const isDark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
-    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark')
   })
 
   // ---------- boot ----------
@@ -656,7 +680,8 @@
 
   const hash = decodeURIComponent(location.hash.slice(1))
   const target = byId[hash] ? hash : retired[hash]
-  if (target) showTerm(target); else placeholder()
+  // A shared link opens straight onto the term, including on a phone.
+  if (target) { showTerm(target); view('detail') } else placeholder()
 })()
 </script>
 </body>

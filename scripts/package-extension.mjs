@@ -101,7 +101,7 @@ end.writeUInt32LE(offset, 16)
 
 const zip = Buffer.concat([...locals, centralBuf, end])
 mkdirSync(join(ROOT, 'dist'), { recursive: true })
-const outName = `chinese-ais-vocab-${manifest.version}.zip`
+const outName = `ais-vocab-cn-${manifest.version}.zip`
 writeFileSync(join(ROOT, 'dist', outName), zip)
 
 console.log(`${files.length} files`)

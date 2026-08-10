@@ -122,7 +122,7 @@ extension cannot request it without a click from you.
 This has to be done by a human with the developer account — see the parent README.
 
 ```bash
-node scripts/package-extension.mjs     # produces dist/chinese-ais-vocab-<version>.zip
+node scripts/package-extension.mjs     # produces dist/ais-vocab-cn-<version>.zip
 ```
 
 Then at [chrome.google.com/webstore/devconsole](https://chrome.google.com/webstore/devconsole):

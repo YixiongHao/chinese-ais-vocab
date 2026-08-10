@@ -3,7 +3,7 @@
   "name": "AI Safety Terminology — English ⇄ 中文",
   "version": "0.1.0",
   "description": "Highlights AI safety terms as you browse and shows the translation, who uses it, how certain it is, and a real example sentence.",
-  "homepage_url": "https://github.com/YixiongHao/chinese-ais-vocab",
+  "homepage_url": "https://github.com/YixiongHao/ais-vocab-cn",
   "minimum_chrome_version": "111",
   "permissions": ["storage", "activeTab", "scripting"],
   "optional_host_permissions": ["http://*/*", "https://*/*", "file:///*"],
