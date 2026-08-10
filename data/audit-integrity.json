@@ -85,9 +85,9 @@
     "detail": "\"智能体\" claimed by 2 entries"
   },
   {
-    "id": "agile-governance + agile-governance-prc + ai-governance",
+    "id": "agile-governance-prc + ai-governance",
     "kind": "collision-zh",
-    "detail": "\"敏捷治理\" claimed by 3 entries"
+    "detail": "\"敏捷治理\" claimed by 2 entries"
   },
   {
     "id": "ai-alignment + value-learning + values-alignment-prc",
@@ -145,11 +145,6 @@
     "detail": "\"统筹发展和安全\" claimed by 2 entries"
   },
   {
-    "id": "graded-protection + graded-protection-scheme",
-    "kind": "collision-zh",
-    "detail": "\"网络安全等级保护\" claimed by 2 entries"
-  },
-  {
     "id": "data-contamination + evaluation-gaming",
     "kind": "collision-zh",
     "detail": "\"刷榜\" claimed by 2 entries"
@@ -195,19 +190,9 @@
     "detail": "\"失控\" claimed by 2 entries"
   },
   {
-    "id": "scheming + strategic-deception + strategic-deception-prc",
+    "id": "scheming + strategic-deception-prc",
     "kind": "collision-zh",
-    "detail": "\"战略欺骗\" claimed by 3 entries"
-  },
-  {
-    "id": "security-assessment + security-assessment-procedure",
-    "kind": "collision-zh",
-    "detail": "\"安全评估\" claimed by 2 entries"
-  },
-  {
-    "id": "agile-governance + agile-governance-prc",
-    "kind": "collision-en",
-    "detail": "\"agile governance\" claimed by 2 entries"
+    "detail": "\"战略欺骗\" claimed by 2 entries"
   },
   {
     "id": "artificial-general-intelligence + general-purpose-ai-zh",
@@ -235,21 +220,6 @@
     "detail": "\"scheming\" claimed by 2 entries"
   },
   {
-    "id": "security-assessment + security-assessment-procedure",
-    "kind": "collision-en",
-    "detail": "\"security assessment\" claimed by 2 entries"
-  },
-  {
-    "id": "strategic-deception + strategic-deception-prc",
-    "kind": "collision-en",
-    "detail": "\"strategic deception\" claimed by 2 entries"
-  },
-  {
-    "id": "agile-governance-prc + agile-governance",
-    "kind": "probable-duplicate",
-    "detail": "\"agile governance\" is an alias of agile-governance-prc and the headword of agile-governance — same concept entered twice?"
-  },
-  {
     "id": "compute + computing-power",
     "kind": "probable-duplicate",
     "detail": "\"computing power\" is an alias of compute and the headword of computing-power — same concept entered twice?"
@@ -275,33 +245,8 @@
     "detail": "\"foundation model\" is an alias of big-model and the headword of foundation-model — same concept entered twice?"
   },
   {
-    "id": "security-assessment-procedure + security-assessment",
-    "kind": "probable-duplicate",
-    "detail": "\"security assessment\" is an alias of security-assessment-procedure and the headword of security-assessment — same concept entered twice?"
-  },
-  {
-    "id": "strategic-deception-prc + strategic-deception",
-    "kind": "probable-duplicate",
-    "detail": "\"strategic deception\" is an alias of strategic-deception-prc and the headword of strategic-deception — same concept entered twice?"
-  },
-  {
     "id": "strategic-deception-prc + scheming",
     "kind": "probable-duplicate",
     "detail": "\"scheming\" is an alias of strategic-deception-prc and the headword of scheming — same concept entered twice?"
-  },
-  {
-    "id": "agile-governance + agile-governance-prc",
-    "kind": "probable-duplicate",
-    "detail": "both use the headword \"agile governance\""
-  },
-  {
-    "id": "security-assessment + security-assessment-procedure",
-    "kind": "probable-duplicate",
-    "detail": "both use the headword \"security assessment\""
-  },
-  {
-    "id": "strategic-deception + strategic-deception-prc",
-    "kind": "probable-duplicate",
-    "detail": "both use the headword \"strategic deception\""
   }
 ]

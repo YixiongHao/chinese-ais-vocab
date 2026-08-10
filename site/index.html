@@ -649,8 +649,14 @@
   $('#stat').textContent = `${TERMS.length} terms · ${nZh} Chinese-origin · ${nGap} with no settled rendering · built ${DATA.generated}`
   renderFilters()
   render()
+  // A merged-away term keeps its id resolvable: links shared before the merge should land
+  // on the surviving entry rather than an empty pane.
+  const retired = {}
+  for (const t of TERMS) for (const r of t.retired_ids || []) retired[r] = t.id
+
   const hash = decodeURIComponent(location.hash.slice(1))
-  if (hash && byId[hash]) showTerm(hash); else placeholder()
+  const target = byId[hash] ? hash : retired[hash]
+  if (target) showTerm(target); else placeholder()
 })()
 </script>
 </body>

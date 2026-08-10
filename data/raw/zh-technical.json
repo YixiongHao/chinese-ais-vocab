@@ -295,10 +295,10 @@
       "research-register"
     ],
     "definition_en": "The label under which Chinese frontier-safety writing files the scheming / deceptive-alignment cluster: a model that conceals its true capabilities or objectives, behaves differently under evaluation than in deployment, and uses deception instrumentally to evade shutdown or oversight while pursuing goals that conflict with human values.",
-    "definition_zh": "指人工智能系统为规避关机、监管或安全评估而有意隐瞒真实能力或目标、在评测与真实部署中表现不一致的行为，是中文前沿安全文献中对应英文 scheming／deceptive alignment 的类别名。",
+    "definition_zh": "指人工智能系统为规避关机、监管或安全评估而有意隐瞒真实能力或目标、在评测与真实部署中表现不一致的行为，是中文前沿安全文献中对应英文 scheming／deceptive alignment 的类别名。用词随版本变化：\"战略欺骗\"出自《前沿人工智能风险管理框架》1.0 版；2.0 版全文未再出现\"战略欺骗\"，改用\"战略性欺骗\"（作为模型能力）与\"策略性欺骗与背叛\"。中文报道中也常用单字词\"欺骗\"作简称。",
     "preferred_zh": "战略欺骗",
     "translation_difficulty": "medium",
-    "pitfalls": "The English rendering is transparent, but the *search* problem is severe and asymmetric. English-language AI safety filed this cluster under 'scheming' (Anthropic/Apollo usage) and 'deceptive alignment'; neither has a settled Chinese calque, and Chinese institutions converged instead on 战略欺骗. An English speaker searching Chinese literature for 图谋/诡计/欺骗性对齐 will find almost nothing, while 战略欺骗 returns the Shanghai AI Lab framework, its evaluation reports and the associated media coverage. The reverse trap is worse: 战略欺骗 is also a standard military-strategy term ('strategic deception' in the maskirovka sense), so naive keyword search pulls in unrelated PLA and international-relations material. Note also that 战略 here means 'strategic' in the sense of *deliberate and plan-based*, not 'concerning grand strategy' — the framework groups it with 自主规划 and 自我修改 as control-undermining capabilities, not with military doctrine.",
+    "pitfalls": "The English rendering is transparent, but the *search* problem is severe and asymmetric. English-language AI safety filed this cluster under 'scheming' (Anthropic/Apollo usage) and 'deceptive alignment'; neither has a settled Chinese calque, and Chinese institutions converged instead on 战略欺骗. An English speaker searching Chinese literature for 图谋/诡计/欺骗性对齐 will find almost nothing, while 战略欺骗 returns the Shanghai AI Lab framework, its evaluation reports and the associated media coverage. The reverse trap is worse: 战略欺骗 is also a standard military-strategy term ('strategic deception' in the maskirovka sense), so naive keyword search pulls in unrelated PLA and international-relations material. Note also that 战略 here means 'strategic' in the sense of *deliberate and plan-based*, not 'concerning grand strategy' — the framework groups it with 自主规划 and 自我修改 as control-undermining capabilities, not with military doctrine. VERSION NOTE — the wording is not stable across editions of the Shanghai AI Lab / Concordia AI framework, and a lot of secondary coverage has not caught up. 战略欺骗 is the 1.0 (2025-07) wording. It appears ZERO times in the Frontier AI Risk Management Framework 2.0, which writes 战略性欺骗 for the model capability and 策略性欺骗与背叛 for the behaviour pair. So the widely repeated claim that 战略欺骗 is 'one of the five key frontier risks' — alongside 网络攻击, 说服操控, 研发失控 and 自我复制 — is specific to version 1.0 and must be stated as such; do not attribute it to 2.0. When searching Chinese sources, search all three strings, and when translating from an undated Chinese text, check which edition it is following before assuming the risk taxonomy.",
     "en_renderings": [
       {
         "en": "strategic deception",
@@ -327,6 +327,23 @@
         ]
       },
       {
+        "en": "deception",
+        "status": "common",
+        "literal_back": "deception",
+        "notes": "Records the bare noun 欺骗, the short form Chinese frontier-risk writing uses once the category has been established — 安远 AI (Concordia AI) pairs 欺骗和密谋 in exactly the construction English uses for 'deception and scheming'. Render it plain 'deception' when the Chinese drops 战略; it is not a substitute for 'strategic deception' where the framework's named risk category is meant, and it is broader — plain 欺骗 covers ordinary dishonesty with no goal-pursuit implied.",
+        "attestations": [
+          {
+            "quote_zh": "通过思维链监控来检测模型可能的欺骗和密谋、通过对抗性训练来提升模型对越狱请求的防御能力等。",
+            "quote_en": "Detecting a model's possible deception and scheming through chain-of-thought monitoring, improving a model's defences against jailbreak requests through adversarial training, and so on.",
+            "source_title": "前沿AI风险监测报告(2025Q3)",
+            "publisher": "安远 AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://airiskmonitor.net/doc/zh/report/2025-Q3",
+            "date": "2025-11"
+          }
+        ]
+      },
+      {
         "en": "scheming",
         "status": "proposed",
         "literal_back": null,
@@ -341,12 +358,17 @@
       {
         "org": "上海人工智能实验室 / 安远 AI (Concordia AI)",
         "zh_used": "战略欺骗",
-        "note": "Listed in the 1.0 framework as a control-undermining capability and as red-line scenario L1/L3 material; carried into the 2.0 evaluation programme."
+        "note": "Listed in the 1.0 framework (2025-07) as a control-undermining capability and as red-line scenario L1/L3 material. The 2.0 framework does not use 战略欺骗 at all, writing 战略性欺骗 and 策略性欺骗与背叛 instead — see the version note in the commentary."
       },
       {
         "org": "安远 AI (Concordia AI)",
         "zh_used": "strategic deception",
         "note": "Uses the English term in State of AI Safety in China (2026) to describe a Peking University representation-engineering result."
+      },
+      {
+        "org": "安远 AI (Concordia AI)",
+        "zh_used": "欺骗",
+        "note": "前沿AI风险监测报告(2025Q3) uses the bare noun alongside 密谋, as English pairs 'deception' with 'scheming'."
       }
     ],
     "usage_examples": [
@@ -359,6 +381,11 @@
         "zh": "研究团队发现，一些AI开始表现出“当面一套，背后一套”的行为。",
         "en": "The research team found that some AI systems are beginning to exhibit 'one face to your front, another behind your back' behaviour.",
         "source": "https://www.techwalker.com/2026/0224/3179510.shtml"
+      },
+      {
+        "zh": "1.0 版框架把对齐伪装、藏拙等行为都归入战略欺骗这一风险维度。",
+        "en": "The 1.0 framework groups behaviours such as alignment faking and sandbagging under the strategic deception risk dimension.",
+        "source": "constructed"
       }
     ],
     "related": [
@@ -367,13 +394,21 @@
       "safety-alignment",
       "controllability",
       "scheming",
-      "deceptive-alignment"
+      "deceptive-alignment",
+      "alignment-faking",
+      "deceptive-compliance",
+      "sandbagging"
     ],
     "sources": [
       "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
       "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
       "https://concordia-ai.com/wp-content/uploads/2026/07/State-of-AI-Safety-in-China-2026.pdf",
-      "https://www.techwalker.com/2026/0224/3179510.shtml"
+      "https://www.techwalker.com/2026/0224/3179510.shtml",
+      "https://airiskmonitor.net/doc/zh/report/2025-Q3",
+      "https://www.secrss.com/articles/81320"
+    ],
+    "retired_ids": [
+      "strategic-deception"
     ],
     "last_researched": "2026-08-08"
   },

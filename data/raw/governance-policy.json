@@ -525,7 +525,7 @@
       "licensing",
       "generative-ai-measures",
       "algorithmic-governance",
-      "security-assessment"
+      "security-assessment-procedure"
     ],
     "sources": [
       "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
@@ -877,7 +877,7 @@
     "related": [
       "international-ai-governance",
       "ai-safety-governance-framework",
-      "agile-governance"
+      "agile-governance-prc"
     ],
     "sources": [
       "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
@@ -1071,7 +1071,7 @@
     "related": [
       "ai-safety-governance-framework",
       "safety-standard",
-      "graded-protection"
+      "graded-protection-scheme"
     ],
     "sources": [
       "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
@@ -1685,7 +1685,7 @@
       "model-registration",
       "generative-ai-measures",
       "frontier-ai-regulation",
-      "security-assessment"
+      "security-assessment-procedure"
     ],
     "sources": [
       "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
@@ -1870,7 +1870,7 @@
     "related": [
       "insider-threat",
       "export-controls",
-      "graded-protection",
+      "graded-protection-scheme",
       "national-security"
     ],
     "sources": [
@@ -1969,7 +1969,7 @@
     ],
     "related": [
       "weights-security",
-      "graded-protection"
+      "graded-protection-scheme"
     ],
     "sources": [
       "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
@@ -2287,7 +2287,7 @@
     "related": [
       "tc260",
       "ai-safety-governance-framework",
-      "graded-protection",
+      "graded-protection-scheme",
       "risk-classification-grading"
     ],
     "sources": [
@@ -2460,7 +2460,7 @@
     "related": [
       "model-registration",
       "algorithmic-governance",
-      "security-assessment",
+      "security-assessment-procedure",
       "licensing"
     ],
     "sources": [
@@ -2580,96 +2580,6 @@
     "last_researched": "2026-08-08"
   },
   {
-    "id": "agile-governance",
-    "en": "agile governance",
-    "abbr": null,
-    "category": "governance-policy",
-    "tags": [
-      "prc-native",
-      "added-by-research"
-    ],
-    "definition_en": "Governing a fast-moving technology through iterative, adjustable measures rather than a single comprehensive statute — narrow-scope rules issued early, revised as the technology moves. It is the PRC's declared approach to AI and the reason China has no single AI law.",
-    "definition_zh": "对快速演进的技术采取可迭代、可调整的治理方式，先出台切口较小的规则，再随技术演进动态修订，而不是一次性制定综合性法律。这是中国官方明确采用的人工智能治理路径，也是中国迄今没有统一人工智能法的原因。",
-    "preferred_zh": "敏捷治理",
-    "translation_difficulty": "low",
-    "pitfalls": "The Chinese is the source term here — it appears in the Global AI Governance Initiative and in TC260's governance principles, and Chinese usage is more specific than the English phrase suggests. It is not merely 'flexible regulation': in PRC usage it is bound to a companion phrase, 分类分级管理, and to a described legislative style — 小切口、场景化、精细化 (narrow entry point, scenario-based, fine-grained). Translating an English 'agile governance' argument into 敏捷治理 will therefore be read as endorsing the PRC's specific regulatory strategy, not as a neutral methodological claim.",
-    "translations": [
-      {
-        "zh": "敏捷治理",
-        "pinyin": "mǐnjié zhìlǐ",
-        "status": "established",
-        "literal_back": "agile governance",
-        "notes": "A fixed formulation in PRC AI policy, always paired with risk orientation or with 分类分级管理.",
-        "attestations": [
-          {
-            "quote_zh": "推动建立风险等级测试评估体系，实施敏捷治理，分类分级管理，快速有效响应",
-            "quote_en": "Promote the establishment of a risk-tiered testing and evaluation system, implement agile governance and classified, graded management, and respond quickly and effectively.",
-            "source_title": "《全球人工智能治理倡议》",
-            "publisher": "中华人民共和国外交部",
-            "source_type": "gov",
-            "url": "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
-            "date": "2023-10"
-          },
-          {
-            "quote_zh": "1.2 风险导向、敏捷治理。",
-            "quote_en": "1.2 Risk-oriented, agile governance.",
-            "source_title": "《人工智能安全治理框架》2.0 版",
-            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
-            "source_type": "standard",
-            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
-            "date": "2025-09"
-          },
-          {
-            "quote_zh": "我国坚持统筹发展和安全，呈现出典型的小切口、场景化、精细化特征，逐步构建起一套为新质生产力保驾护航的敏捷治理体系。",
-            "quote_en": "China adheres to coordinating development and security as a whole, showing characteristically narrow-entry, scenario-based and fine-grained features, and has gradually built an agile governance system that safeguards new quality productive forces.",
-            "source_title": "人工智能治理研究报告（2025 年）",
-            "publisher": "中国信息通信研究院（CAICT）政策与经济研究所",
-            "source_type": "report",
-            "url": "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
-            "date": "2026-01"
-          }
-        ]
-      }
-    ],
-    "confidence": "high",
-    "used_by": [
-      {
-        "org": "中华人民共和国外交部",
-        "zh_used": "敏捷治理",
-        "note": "Global AI Governance Initiative"
-      },
-      {
-        "org": "TC260",
-        "zh_used": "风险导向、敏捷治理",
-        "note": "governance principle 1.2 in both framework versions"
-      },
-      {
-        "org": "中国信息通信研究院 (CAICT)",
-        "zh_used": "敏捷治理体系",
-        "note": "characterises China's whole approach"
-      }
-    ],
-    "usage_examples": [
-      {
-        "zh": "敏捷治理在中国的具体含义是“小切口、场景化”，而不是简单的“监管从轻”。",
-        "en": "In China, agile governance specifically means narrow, scenario-based rulemaking — not simply lighter-touch regulation.",
-        "source": "constructed"
-      }
-    ],
-    "related": [
-      "global-ai-governance-initiative",
-      "ai-safety-governance-framework",
-      "risk-classification-grading",
-      "frontier-ai-regulation"
-    ],
-    "sources": [
-      "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
-      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
-      "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf"
-    ],
-    "last_researched": "2026-08-08"
-  },
-  {
     "id": "risk-classification-grading",
     "en": "risk classification and grading",
     "en_aliases": [
@@ -2775,193 +2685,13 @@
       "ai-safety-governance-framework",
       "safety-standard",
       "eu-ai-act",
-      "agile-governance",
+      "agile-governance-prc",
       "national-security"
     ],
     "sources": [
       "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
       "https://www.mfa.gov.cn/web/ziliao_674904/1179_674909/202310/t20231020_11164831.shtml",
       "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
-    ],
-    "last_researched": "2026-08-08"
-  },
-  {
-    "id": "security-assessment",
-    "en": "security assessment",
-    "en_aliases": [],
-    "abbr": null,
-    "category": "governance-policy",
-    "tags": [
-      "prc-native",
-      "regulation",
-      "added-by-research"
-    ],
-    "definition_en": "The PRC's pre-launch review requirement for internet services with public-opinion attributes or social-mobilisation capacity, extended to generative AI by Article 17 of the 2023 Interim Measures. It runs alongside, and is legally distinct from, algorithm filing.",
-    "definition_zh": "中国对具有舆论属性或社会动员能力的互联网服务设定的上线前评估要求，2023 年《生成式人工智能服务管理暂行办法》第十七条将其扩展至生成式人工智能服务。它与算法备案并行，法律性质不同。",
-    "preferred_zh": "安全评估",
-    "translation_difficulty": "high",
-    "pitfalls": "A textbook 安全 ambiguity. In the PRC regulatory sense, 安全评估 means a *security/content* assessment tied to public-opinion and social-mobilisation attributes — closer to a content-and-information-security review than to what AI-safety researchers mean by a safety evaluation. Meanwhile in the technical register the same two characters cover capability and risk evaluation: TC260 uses 安全评估测试 for periodic testing, and the field's usual word for model evaluation is 测评 or 评测. So the same phrase can denote a regulatory filing step or a red-teaming exercise. Disambiguate: 上线前安全评估 for the regulatory step, 安全测评 / 风险评测 for technical evaluation.",
-    "translations": [
-      {
-        "zh": "安全评估",
-        "pinyin": "ānquán pínggū",
-        "status": "established",
-        "literal_back": "security/safety assessment",
-        "notes": "The regulatory instrument named in Article 17 of the Interim Measures, triggered by 舆论属性或者社会动员能力.",
-        "attestations": [
-          {
-            "quote_zh": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估。",
-            "quote_en": "Providers of generative AI services with public-opinion attributes or social-mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions.",
-            "source_title": "《生成式人工智能服务管理暂行办法》第十七条",
-            "publisher": "国家互联网信息办公室等七部门（中国网信网）",
-            "source_type": "gov",
-            "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
-            "date": "2023-07"
-          },
-          {
-            "quote_zh": "定期开展安全评估测试，制定风险分类分级测评与优化机制，测试前明确测试目标、范围和安全维度，构建多样化的测试数据集，涵盖各种应用场景，并制定各类风险的针对性模型优化策略。",
-            "quote_en": "Conduct periodic safety assessment testing; establish mechanisms for risk classification-and-grading evaluation and optimisation; before testing, define objectives, scope and safety dimensions; build diverse test datasets covering varied application scenarios; and set targeted model-optimisation strategies for each risk type.",
-            "source_title": "《人工智能安全治理框架》2.0 版",
-            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
-            "source_type": "standard",
-            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
-            "date": "2025-09"
-          }
-        ]
-      },
-      {
-        "zh": "安全测评",
-        "pinyin": "ānquán cèpíng",
-        "status": "established",
-        "literal_back": "safety testing-and-evaluation",
-        "notes": "The technical-evaluation register, and the better choice when you mean model evaluations rather than a regulatory filing. TC260 lists 人工智能安全测评 as an institution to be built out.",
-        "attestations": [
-          {
-            "quote_zh": "推动人工智能安全相关立法，完善基础设施安全防护、分级分类监管、人工智能安全测评、最终用途管理、重点场景安全应用等制度。",
-            "quote_en": "Advance AI safety legislation, and improve systems for infrastructure security protection, graded and classified oversight, AI safety evaluation, end-use management and safe application in key scenarios.",
-            "source_title": "《人工智能安全治理框架》2.0 版",
-            "publisher": "全国网络安全标准化技术委员会 (TC260) / 国家计算机网络应急技术处理协调中心",
-            "source_type": "standard",
-            "url": "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
-            "date": "2025-09"
-          }
-        ]
-      }
-    ],
-    "confidence": "high",
-    "used_by": [
-      {
-        "org": "国家互联网信息办公室 (CAC)",
-        "zh_used": "安全评估",
-        "note": "Art. 17, Interim Measures for Generative AI"
-      },
-      {
-        "org": "TC260",
-        "zh_used": "安全评估测试 / 人工智能安全测评",
-        "note": "technical evaluation sense"
-      }
-    ],
-    "usage_examples": [
-      {
-        "zh": "这里的“安全评估”是上线前的监管环节，不要与研究意义上的安全测评混为一谈。",
-        "en": "'Security assessment' here is a pre-launch regulatory step, not to be confused with safety evaluations in the research sense.",
-        "source": "constructed"
-      }
-    ],
-    "related": [
-      "generative-ai-measures",
-      "model-registration",
-      "licensing",
-      "verification"
-    ],
-    "sources": [
-      "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
-      "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
-      "https://hankunlaw.com/portal/article/index/cid/8/id/13552.html"
-    ],
-    "last_researched": "2026-08-08"
-  },
-  {
-    "id": "graded-protection",
-    "en": "cybersecurity multi-level protection scheme",
-    "en_aliases": [
-      "MLPS",
-      "classified protection of cybersecurity"
-    ],
-    "abbr": "MLPS",
-    "category": "governance-policy",
-    "tags": [
-      "prc-native",
-      "security",
-      "added-by-research"
-    ],
-    "definition_en": "China's mandatory five-level cybersecurity regime for information systems, grounded in the Cybersecurity Law and specified by GB/T standards. Operators grade a system, file the grading, build controls to that level, undergo grading evaluation, and submit to inspection. Chinese frontier-AI guidance now maps model-weight protection onto it.",
-    "definition_zh": "中国依《网络安全法》及 GB/T 系列标准实施的强制性信息系统安全保护制度，共五级。运营者需完成系统定级、系统备案、系统安全建设、系统等级测评、监督检查五个阶段。中国的前沿人工智能指南已开始将模型权重防护对应到该制度的级别要求。",
-    "preferred_zh": "网络安全等级保护",
-    "translation_difficulty": "high",
-    "pitfalls": "The reason this entry exists: 等级保护 is repeatedly reached for as China's answer to lab security-level schemes (RAND SL1–SL5, Anthropic's ASL), and it is not one. MLPS grades an *information system's* legally required protection obligations under PRC law, on a scale defined by harm to national security, public interest and citizens' rights; SL/ASL scales grade resistance to specified attacker tiers or attach commitments to model *capability*. Equating them will mislead in both directions — an MLPS Level 3 system is not 'SL3', and no ASL commitment discharges an MLPS obligation. Note also that 等级保护 contains 备案 as one of its five stages, a third distinct use of that word alongside algorithm filing and model filing. Short form: 等保.",
-    "translations": [
-      {
-        "zh": "网络安全等级保护",
-        "pinyin": "wǎngluò ānquán děngjí bǎohù",
-        "status": "established",
-        "literal_back": "cybersecurity graded protection",
-        "notes": "Full legal name; universally abbreviated 等级保护 or 等保 in practice. Levels are named, e.g. 三级（监督保护级）.",
-        "attestations": [
-          {
-            "quote_zh": "遵循国家与行业安全标准：遵循《信息安全技术 网络安全等级保护安全设计技术要求》（GB/T 25070-2019）等网络安全保护国家标准，并从系统定级、系统备案、系统安全建设、系统等级测评、监督检查等五个阶段实施等级保护。",
-            "quote_en": "Follow national and sectoral security standards: comply with national cybersecurity protection standards such as GB/T 25070-2019, and implement graded protection across five stages — system grading, system filing, system security construction, system grading evaluation, and supervision and inspection.",
-            "source_title": "《前沿人工智能风险管理框架 2.0》",
-            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
-            "source_type": "report",
-            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
-            "date": "2026-07"
-          }
-        ]
-      },
-      {
-        "zh": "等级保护",
-        "pinyin": "děngjí bǎohù",
-        "status": "established",
-        "literal_back": "graded protection",
-        "notes": "Standard short form; 等保 is shorter still and normal in industry speech. Used as the required baseline for protecting sensitive model assets in Chinese frontier-AI guidance.",
-        "attestations": [
-          {
-            "quote_zh": "实施最高级别访问控制，仅限可信人员/机构访问，严禁对外暴露敏感模型；模型权重采用极端隔离存储策略，使暴露风险最小化；执行全生命周期安全审计与对抗演练；遵循等级保护标准要求。",
-            "quote_en": "Apply the highest level of access control, restricted to trusted personnel and institutions, with sensitive models strictly not exposed externally; store model weights under an extreme isolation policy to minimise exposure risk; conduct full-lifecycle security audits and adversarial exercises; and comply with graded-protection standard requirements.",
-            "source_title": "《前沿人工智能风险管理框架 2.0》",
-            "publisher": "上海人工智能实验室 / 安远 AI (Concordia AI)",
-            "source_type": "report",
-            "url": "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
-            "date": "2026-07"
-          }
-        ]
-      }
-    ],
-    "confidence": "medium",
-    "used_by": [
-      {
-        "org": "上海人工智能实验室 / 安远 AI",
-        "zh_used": "等级保护 / 三级（监督保护级）",
-        "note": "sets MLPS Level 3+ as the floor for models past a risk threshold"
-      }
-    ],
-    "usage_examples": [
-      {
-        "zh": "等级保护是对信息系统的法定分级防护要求，与实验室按攻击者能力划分的安全等级不是一回事。",
-        "en": "MLPS is a statutory graded-protection requirement for information systems, and is not the same thing as lab security levels defined by attacker capability.",
-        "source": "constructed"
-      }
-    ],
-    "related": [
-      "weights-security",
-      "safety-standard",
-      "model-registration",
-      "insider-threat"
-    ],
-    "sources": [
-      "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf",
-      "https://www.rand.org/pubs/research_reports/RRA2849-1.html"
     ],
     "last_researched": "2026-08-08"
   }

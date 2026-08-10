@@ -136,6 +136,26 @@ The English rendering that matters most is the one an English-language reader wi
 meet in translated PRC documents, even when it is a poor rendering. Record that one, say so
 in `notes`, and put the better rendering alongside it rather than instead of it.
 
+## Retiring an entry
+
+Ids are referenced by `related` links, by the site's URL fragments, and by anything built
+on `terms.json`. So an id is never deleted and never reused. When two entries turn out to
+describe one concept, the survivor records the other:
+
+```jsonc
+"retired_ids": ["agile-governance"]
+```
+
+The build resolves those, the site redirects an old fragment to the survivor, and
+`scripts/repoint-retired.mjs` sweeps every raw file to repoint `related` links that still
+name the retired id.
+
+Merging is lossy by nature, so the rule is: carry everything across first, delete second.
+Citations, alternative renderings, and any finding recorded only in the entry being retired
+all move to the survivor. If something genuinely cannot be carried, say so in the merge
+report rather than dropping it quietly — a merge that loses a finding is worse than the
+duplicate it removed.
+
 ## Non-negotiables
 
 0. **Every attestation needs a quote.** `quote_zh` for a Chinese rendering, always. For an

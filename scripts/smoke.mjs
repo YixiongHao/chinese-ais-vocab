@@ -59,6 +59,18 @@ for (const t of terms) {
   for (const r of t.related) check(ids.has(r) || terms.some((x) => x.id === r), at(`related "${r}" unresolved`))
 }
 
+// A retired id must stay retired: never live again, never claimed by two survivors, never
+// self-referential. Any of those breaks the redirect for links shared before a merge.
+const claimedBy = new Map()
+for (const t of terms) {
+  for (const r of t.retired_ids || []) {
+    check(!terms.some((x) => x.id === r), `${t.id}: retired id "${r}" is also a live entry`)
+    check(r !== t.id, `${t.id}: lists itself as retired`)
+    check(!claimedBy.has(r), `retired id "${r}" claimed by both ${claimedBy.get(r)} and ${t.id}`)
+    claimedBy.set(r, t.id)
+  }
+}
+
 const zhCount = terms.filter((t) => t.direction === 'zh-to-en').length
 console.log(`${terms.length} terms (${zhCount} Chinese-origin) · ${categories.length} categories`)
 if (fails.length) {
