@@ -1,0 +1,18 @@
+# Line endings, pinned so that a file built on Windows is byte-identical to the same file
+# built on the Linux CI runner. Without this the Pages workflow's "is the committed data
+# current?" check fails on every run: it rebuilds the outputs and diffs them, and a file
+# whose endings changed on checkout differs on every single line.
+
+# Default: LF in the repository and LF on checkout, everywhere, for everyone.
+* text=auto eol=lf
+
+# Exception. scripts/build.mjs writes exports/terms.csv with a UTF-8 BOM and CRLF endings
+# on purpose — that combination is what Excel needs to open a CSV full of Chinese without
+# mangling it, and this file exists to be handed to a native-speaker reviewer. Forcing
+# CRLF on checkout keeps the build reproducible without giving up the Excel behaviour.
+# The blob in the repository stays LF either way; only the working copy is affected.
+exports/*.csv text eol=crlf
+
+# Binary: never touch these, and never try to diff them as text.
+*.png binary
+*.zip binary
