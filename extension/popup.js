@@ -26,8 +26,12 @@ async function refreshStatus() {
     const res = await chrome.tabs.sendMessage(tab.id, { type: 'caisv-status' })
     if (!res) throw new Error('no response')
     if (!res.enabled) return paintStatus('Off for this page.')
-    const dir = res.direction === 'zh' ? 'Chinese → English' : 'English → 中文'
-    paintStatus(res.count ? `${res.count} highlighted · ${dir}` : `No terms found · ${dir}`)
+    if (!res.count) return paintStatus('No terms found on this page.')
+    const b = res.byDir || { zh: 0, en: 0 }
+    const parts = []
+    if (b.zh) parts.push(`${b.zh} 中文→EN`)
+    if (b.en) parts.push(`${b.en} EN→中文`)
+    paintStatus(parts.join(' · ') || `${res.count} highlighted`)
   } catch (e) {
     paintStatus(isPdf ? 'Not available in the PDF viewer.' : 'Reload the page to start highlighting.')
   }

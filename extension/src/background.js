@@ -28,10 +28,11 @@ chrome.runtime.onMessage.addListener((msg, sender, respond) => {
     const n = msg.count | 0
     chrome.action.setBadgeText({ tabId: sender.tab.id, text: n ? String(n) : '' })
     chrome.action.setBadgeBackgroundColor({ tabId: sender.tab.id, color: '#a03e2f' })
+    const MODE = { auto: 'both directions', zh: 'Chinese terms only', en: 'English terms only' }
     chrome.action.setTitle({
       tabId: sender.tab.id,
       title: n
-        ? `${n} term${n === 1 ? '' : 's'} highlighted — ${msg.direction === 'zh' ? 'Chinese → English' : 'English → 中文'}`
+        ? `${n} term${n === 1 ? '' : 's'} highlighted — ${MODE[msg.mode] || 'both directions'}`
         : 'AI Safety Terminology — no terms found on this page',
     })
     return false

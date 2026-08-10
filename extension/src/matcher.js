@@ -64,32 +64,12 @@
     return out
   }
 
-  // An English word averages a shade under five letters; a Han character is roughly a
-  // whole word on its own. Comparing raw character counts therefore compares two
-  // different units, which is what made earlier versions of this function wrong in both
-  // directions. Everything below is in estimated *words*.
-  const LETTERS_PER_EN_WORD = 4.7
-  const MIN_WORDS = 5
+  // There is deliberately no page-language detection here. An earlier version guessed a
+  // single direction per page by comparing Han-character and Latin-letter counts, and was
+  // wrong in both directions — a short Chinese sentence read as English, an English essay
+  // quoting Chinese read as Chinese. The guess was never necessary: a matched string
+  // already carries its own script, so direction is a property of each match, not of the
+  // document. The content script runs both directions and labels each highlight.
 
-  /**
-   * Guess which direction suits a page from its text.
-   * Returns "zh" when the page carries more meaning in Chinese than in English.
-   */
-  function detectDirection(sample) {
-    if (!sample) return 'en'
-    const s = sample.slice(0, 20000)
-    let cjk = 0, letters = 0
-    for (let i = 0; i < s.length; i++) {
-      const c = s.charCodeAt(i)
-      if (c >= 0x4e00 && c <= 0x9fff) cjk++
-      else if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) letters++
-    }
-    const zhWords = cjk
-    const enWords = letters / LETTERS_PER_EN_WORD
-    // Too little text to judge — an empty shell, or a page that has not hydrated yet.
-    if (zhWords + enWords < MIN_WORDS) return 'en'
-    return zhWords > enWords ? 'zh' : 'en'
-  }
-
-  root.CAISVMatcher = { compile, find, detectDirection, HAS_CJK, SHORT_ZH_LEN }
+  root.CAISVMatcher = { compile, find, HAS_CJK, SHORT_ZH_LEN }
 })(typeof self !== 'undefined' ? self : globalThis)

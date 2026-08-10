@@ -1,4 +1,4 @@
-# AI Safety Terminology — Chrome extension
+﻿# AI Safety Terminology — Chrome extension
 
 Highlights terms from [the database](../README.md) as you browse, and shows a card on
 hover with the translation, who has used that rendering, how certain it is, and a real
@@ -22,17 +22,28 @@ To highlight local files (`file:///…`), also open the extension's details page
 
 ## The two directions
 
-Modes are named for the language of the page you are reading, and the card always answers
-in the *other* language — the half you don't already have.
+Every highlight answers in the language you don't already have: hover a Chinese term and
+the card is in English, hover an English term and it is in Chinese.
 
 | Mode | Highlights | Card shows |
 |---|---|---|
-| **Chinese pages** | Chinese terms | English |
-| **English pages** | English terms | Chinese |
-| **Automatic** | whichever the page is written in | the other one |
+| **Both** (default) | Chinese *and* English terms | the opposite language, per match |
+| **Chinese terms only** | Chinese terms | English |
+| **English terms only** | English terms | Chinese |
 
-Automatic looks at the ratio of Han characters to Latin letters in the page text. A page
-that is substantively Chinese is treated as Chinese even when its navigation is English.
+There is no page-language detection, deliberately. An earlier version guessed one
+direction per page from the ratio of Han characters to Latin letters, and got it wrong
+both ways: a short Chinese sentence fell under a character-count floor and was treated as
+English, while an English essay quoting a few Chinese terms cleared the ratio and was
+treated as Chinese — silently dropping every English term on the page.
+
+The guess was never needed. A matched string already tells you its own script, so
+direction belongs to each match rather than to the document. Both matchers run, overlaps
+resolve longest-first, and each highlight is labelled. Mixed pages — a Chinese post
+writing `RLHF` inline, an English analysis quoting 自主可控 — are the normal case in this
+field, and they now work without anything having to be decided about the page.
+
+The single-direction modes remain for when you want a quieter page.
 
 ## Settings
 
@@ -103,7 +114,7 @@ broad host access take longer.
 manifest.json          MV3 manifest
 data/index.js          GENERATED — match keys only (39 KB, loads on every page)
 data/cards.json        GENERATED — hover-card payload (327 KB, loaded once in the worker)
-src/matcher.js         compile an index direction into a regex; find matches; detect page language
+src/matcher.js         compile an index direction into a regex; find matches
 src/content.js         walk the DOM, wrap matches, build and position the hover card
 src/background.js      service worker; owns the card payload and the toolbar badge
 src/highlight.css      the underline, written to sit quietly inside a host page

@@ -110,24 +110,44 @@ expect(zh, '算法备案制度自2022年起实施。', ['algorithm-filing'], 'zh
   ok(Object.keys(INDEX.zh).indexOf('安全') === -1, 'bare 安全 should not be a match key')
 }
 
-// Direction detection. The unit is estimated words, not characters — a Han character is
-// about a word, a Latin letter is about a fifth of one, and conflating them got this
-// wrong in both directions before.
-const DETECT = [
-  ['zh', '近年来关于人工智能安全治理的讨论显著增加，相关标准也在不断完善之中。', 'a single Chinese sentence'],
-  ['zh', '大模型安全对齐研究进展', 'a bare Chinese headline'],
-  ['zh', '我们使用 SFT 和 RLHF 对模型进行后训练，并通过 scaling law 预测性能。实验表明该方法有效。',
-         'Chinese technical prose that quotes English terms inline'],
-  ['en', 'This is an ordinary English page about machine learning research and evaluation methods.', 'plain English'],
-  ['en', 'The Chinese term is 自主可控, which CSET renders as autonomously controllable. The Politburo readout says 构建自主可控的人工智能基础软硬件系统, a claim about chips rather than agency.',
-         'English analysis quoting Chinese — the case that matters for bilingual readers'],
-  ['en', 'Researchers often translate alignment as 对齐 in Chinese papers.', 'English with one Chinese term'],
-  ['en', '', 'empty'],
-  ['en', '中文', 'too little text to judge'],
-]
-for (const [want, text, label] of DETECT) {
-  const got = M.detectDirection(text)
-  ok(got === want, `detect (${label}): expected ${want}, got ${got}`)
+// Mixed-script pages. There is no page-level language guess any more; both directions run
+// and each match carries its own. These cases are exactly the ones the old heuristic got
+// wrong, so they are pinned as the reason it was removed.
+ok(!M.detectDirection, 'detectDirection should be gone — direction is per match, not per page')
+
+function bothDirs(text) {
+  const all = []
+  for (const [dir, m] of [['zh', zhShort], ['en', en]]) {
+    for (const h of M.find(m, text)) all.push({ ...h, dir })
+  }
+  all.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start))
+  const kept = []
+  let end = -1
+  for (const h of all) if (h.start >= end) { kept.push(h); end = h.end }
+  return kept
+}
+
+{
+  // Chinese prose quoting English terms: both sides should be found.
+  const hits = bothDirs('我们使用 RLHF 对模型进行后训练，并研究其可解释性。')
+  const dirs = new Set(hits.map((h) => h.dir))
+  ok(dirs.has('zh'), `mixed zh-dominant: expected a Chinese match, got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
+  ok(dirs.has('en'), `mixed zh-dominant: expected an English match (RLHF), got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
+}
+{
+  // English analysis quoting Chinese: the old heuristic called this page Chinese and
+  // dropped every English term on it.
+  const hits = bothDirs('The Politburo readout says 自主可控, which is about supply chains, not scalable oversight.')
+  const dirs = new Set(hits.map((h) => h.dir))
+  ok(dirs.has('en'), `mixed en-dominant: expected an English match, got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
+  ok(dirs.has('zh'), `mixed en-dominant: expected a Chinese match, got ${JSON.stringify(hits.map((h) => [h.text, h.dir]))}`)
+}
+{
+  // Overlap resolution: a match must never be emitted inside another match.
+  const hits = bothDirs('我们讨论可扩展监督与人工智能安全治理框架的关系。')
+  for (let i = 1; i < hits.length; i++) {
+    ok(hits[i].start >= hits[i - 1].end, `overlapping matches emitted: ${JSON.stringify(hits.map((h) => h.text))}`)
+  }
 }
 
 // Card payload sanity: every ordinal a match can produce must resolve to a usable card.

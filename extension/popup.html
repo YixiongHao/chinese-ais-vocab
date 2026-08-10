@@ -55,15 +55,16 @@
   <div class="lbl">What to highlight</div>
   <label class="opt">
     <input type="radio" name="mode" value="auto">
-    <span><span class="t">Automatic</span><br><span class="d">Detect the page language and pick the direction.</span></span>
+    <span><span class="t">Both</span><br><span class="d">Chinese terms answer in English, English terms answer in Chinese.
+    Each highlight knows its own language, so mixed pages just work.</span></span>
   </label>
   <label class="opt">
     <input type="radio" name="mode" value="zh">
-    <span><span class="t">Chinese pages</span><br><span class="d">Highlight Chinese terms, answer in English.</span></span>
+    <span><span class="t">Chinese terms only</span><br><span class="d">Answers in English. A quieter page when you only read Chinese sources.</span></span>
   </label>
   <label class="opt">
     <input type="radio" name="mode" value="en">
-    <span><span class="t">English pages</span><br><span class="d">Highlight English terms, answer in Chinese.</span></span>
+    <span><span class="t">English terms only</span><br><span class="d">Answers in Chinese.</span></span>
   </label>
   <div class="pdf" id="pdf">This looks like Chrome's built-in PDF viewer. Extensions can't
     reach text inside it, so nothing will be highlighted here. See the README for why.</div>
