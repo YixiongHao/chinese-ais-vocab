@@ -5,7 +5,8 @@
   "description": "Highlights AI safety terms as you browse and shows the translation, who uses it, how certain it is, and a real example sentence.",
   "homepage_url": "https://github.com/YixiongHao/chinese-ais-vocab",
   "minimum_chrome_version": "111",
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "scripting"],
+  "optional_host_permissions": ["http://*/*", "https://*/*", "file:///*"],
   "background": {
     "service_worker": "src/background.js"
   },
@@ -30,15 +31,6 @@
       "resources": ["data/cards.json"],
       "matches": ["http://*/*", "https://*/*"],
       "use_dynamic_url": true
-    }
-  ],
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*", "file:///*"],
-      "js": ["data/index.js", "src/matcher.js", "src/content.js"],
-      "css": ["src/highlight.css"],
-      "run_at": "document_idle",
-      "all_frames": false
     }
   ]
 }

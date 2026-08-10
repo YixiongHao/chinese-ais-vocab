@@ -15,10 +15,34 @@ The extension is not on the Chrome Web Store. To run it now:
 2. Open `chrome://extensions`
 3. Turn on **Developer mode** (top right)
 4. Click **Load unpacked** and choose the `extension/` folder
-5. Open any page with AI-safety content and look for dotted underlines
+5. Open any page with AI-safety content
+6. Click the toolbar icon and choose **Enable on this site** or **Enable on all sites**
+
+Step 6 is not optional. The extension ships with no site access at all, so nothing is
+highlighted until you grant it. See [Site access](#site-access) below.
 
 To highlight local files (`file:///…`), also open the extension's details page and enable
 **Allow access to file URLs**. Chrome keeps that off by default.
+
+## Site access
+
+The extension asks for nothing at install time. There is no "read and change all your
+data on all websites" warning, because at install it genuinely cannot read anything.
+
+You grant access from the popup, per site or for everything. The service worker then
+registers the content script for exactly the origins you granted, and injects it into
+whatever tabs are already open so the current page lights up straight away. Revoking is
+the same control in reverse, though highlights already drawn on a page stay until it
+reloads — Chrome gives no way to reach into a page the extension no longer owns.
+
+This costs the user one click on first use. It buys two things. Users see an install
+prompt that asks for nothing, and the Chrome Web Store does not route the listing into
+the slow review queue reserved for extensions that require broad host access.
+
+The mechanics live in `src/background.js`: `INJECT_JS` and `INJECT_CSS` are the file list,
+`syncRegistration()` rebuilds the registration from `chrome.permissions.getAll()`, and
+`chrome.permissions.onAdded` triggers both. `scripts/test-extension.mjs` fails the build
+if a static `content_scripts` block or a required `host_permissions` block comes back.
 
 ## The two modes
 
@@ -83,11 +107,15 @@ account sync.
 
 Permissions requested:
 
-| Permission | Why |
-|---|---|
-| `storage` | Remember your mode and coverage settings |
-| `activeTab` | Read the current tab's URL when you open the popup, to detect PDFs |
-| content scripts on `http`/`https`/`file` | Find and underline terms on the page you are reading |
+| Permission | When | Why |
+|---|---|---|
+| `storage` | install | Remember your mode and coverage settings |
+| `activeTab` | install | Read the current tab's URL when you open the popup, to detect PDFs |
+| `scripting` | install | Register and inject the content script once you grant a site |
+| `http`, `https`, `file` origins | only when you ask | Find and underline terms on the page you are reading |
+
+The last row is `optional_host_permissions`. Chrome does not grant it at install and the
+extension cannot request it without a click from you.
 
 ## Publishing to the Chrome Web Store
 

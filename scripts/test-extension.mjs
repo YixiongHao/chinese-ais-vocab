@@ -36,18 +36,41 @@ for (let i = 0; i < INDEX.ids.length; i++) {
 // ---------------------------------------------------------------- manifest integrity
 
 const manifest = JSON.parse(readFileSync(join(EXT, 'manifest.json'), 'utf8'))
+const workerSrc = readFileSync(join(EXT, 'src', 'background.js'), 'utf8')
+
+// The content script is registered at runtime from the arrays in background.js, so the
+// file list lives there rather than in the manifest. Pull it back out and check it.
+const arrayLiteral = (name) => {
+  const m = workerSrc.match(new RegExp(`const ${name} = \\[([^\\]]*)\\]`))
+  if (!m) return null
+  return [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1])
+}
+const injectJs = arrayLiteral('INJECT_JS')
+const injectCss = arrayLiteral('INJECT_CSS')
+ok(!!injectJs && !!injectCss, 'background.js no longer declares INJECT_JS / INJECT_CSS')
+
 const referenced = [
   manifest.background.service_worker,
-  ...manifest.content_scripts.flatMap((c) => [...(c.js || []), ...(c.css || [])]),
+  ...(injectJs || []),
+  ...(injectCss || []),
   manifest.action.default_popup,
   ...Object.values(manifest.action.default_icon),
   ...Object.values(manifest.icons),
 ]
 for (const f of [...new Set(referenced)]) {
-  ok(existsSync(join(EXT, f)), `manifest references missing file: ${f}`)
+  ok(existsSync(join(EXT, f)), `referenced file is missing: ${f}`)
 }
 ok(manifest.manifest_version === 3, 'not manifest v3')
 ok(!JSON.stringify(manifest).includes('"tabs"'), 'manifest requests the broad "tabs" permission')
+
+// Site access is opt-in. Anything below re-introduces the install-time "read all your
+// data on all websites" warning, which is the thing that puts the listing in slow review.
+ok(!manifest.content_scripts, 'manifest declares static content_scripts — that is required host access')
+ok(!manifest.host_permissions, 'manifest declares host_permissions — those are granted at install')
+ok(Array.isArray(manifest.optional_host_permissions),
+  'manifest is missing optional_host_permissions')
+ok((manifest.permissions || []).includes('scripting'),
+  'manifest is missing the "scripting" permission needed to register the content script')
 
 // every JS file must parse
 for (const f of ['src/matcher.js', 'src/content.js', 'src/background.js', 'popup.js', 'data/index.js']) {
