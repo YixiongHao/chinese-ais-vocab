@@ -252,9 +252,9 @@
       {
         "zh": "算力治理",
         "pinyin": "suànlì zhìlǐ",
-        "status": "common",
+        "status": "proposed",
         "literal_back": "compute-power governance",
-        "notes": "Transparent and idiomatic, and the obvious rendering — but I was unable to recover a verbatim occurrence in an authoritative Chinese source within this research pass, so it is recorded without attestation and the entry's confidence is low. Do not upgrade without evidence.",
+        "notes": "Transparent, idiomatic and the obvious compound, but no verbatim occurrence in an authoritative Chinese source was recovered in the research pass or in this audit. Carried as `proposed` rather than `common` because `common` asserts repeated attested use, which we cannot evidence; this is a rendering we are putting forward, not one we have observed. Entry confidence stays low. Promote to `common` or `established` only on attestation.",
         "attestations": []
       },
       {
@@ -2311,7 +2311,7 @@
     "definition_zh": "针对推荐、排序、调度、生成等算法系统本身的治理。中国在这方面制度最为完备，结合了 2022 年《互联网信息服务算法推荐管理规定》、全国统一的算法备案系统、“清朗”专项行动以及平台公开算法规则的要求。",
     "preferred_zh": "算法治理",
     "translation_difficulty": "low",
-    "pitfalls": "This is a case where the Chinese concept is richer than the English one, not poorer. 算法治理 in PRC usage bundles filing, campaign enforcement, platform self-disclosure, court practice and public participation into a single multi-layer regime, and has an explicit normative direction — 算法向上向善 (algorithms oriented upward and toward good) — with no English counterpart. English 'algorithmic governance' is a broader academic term that often includes governance *by* algorithms; 算法治理 in PRC usage means governance *of* algorithms. If you mean the former, say 算法化治理 or paraphrase. Note also that the substantive concerns are distinctively Chinese: 信息茧房 (information cocoons), 大数据杀熟 (price discrimination against loyal customers), and effects on gig workers.",
+    "pitfalls": "This is a case where the Chinese concept is richer than the English one, not poorer. 算法治理 in PRC usage bundles filing, campaign enforcement, platform self-disclosure, court practice and public participation into a single multi-layer regime, and has an explicit normative direction — 算法向上向善 (algorithms oriented upward and toward good) — with no English counterpart. English 'algorithmic governance' is a broader academic term that often includes governance *by* algorithms; 算法治理 in PRC usage means governance *of* algorithms. If you mean the former, say 算法化治理 or paraphrase. Note also that the substantive concerns are distinctively Chinese: 信息茧房 (information cocoons), 大数据杀熟 (price discrimination against loyal customers), and effects on gig workers. Finally, do not treat 算法备案 as an alternative rendering of this headword: filing is one instrument created within the 算法治理 regime — see the algorithm-filing entry.",
     "translations": [
       {
         "zh": "算法治理",
@@ -2337,16 +2337,7 @@
             "source_type": "media",
             "url": "https://www.secrss.com/articles/86826",
             "date": "2026-01"
-          }
-        ]
-      },
-      {
-        "zh": "算法备案",
-        "pinyin": "suànfǎ bèi'àn",
-        "status": "established",
-        "literal_back": "algorithm filing",
-        "notes": "The operative instrument within 算法治理; see the model-registration entry for the full treatment.",
-        "attestations": [
+          },
           {
             "quote_zh": "为应对互联网信息服务领域算法带来的种种乱象，防范化解安全风险，促进算法推荐服务健康发展，2021年9月17日，九部委发布了《关于加强互联网信息服务算法综合治理的指导意见》（以下简称《指导意见》），提出建立算法备案、安全评估等制度，强调“科技向善”的伦理导向。",
             "quote_en": "To address the disorder caused by algorithms in internet information services, forestall and defuse security risks, and promote the healthy development of algorithmic recommendation services, on 17 September 2021 nine ministries issued the Guiding Opinions on Strengthening Comprehensive Governance of Internet Information Service Algorithms, proposing to establish systems such as algorithm filing and security assessment, and stressing an ethical orientation of technology for good.",
@@ -2690,8 +2681,8 @@
       "prc-native",
       "added-by-research"
     ],
-    "definition_en": "The PRC's structural device for calibrating AI oversight: 分类 sorts risks into kinds, 分级 sorts them into severity levels. TC260's 2.0 framework classifies risks as technology-inherent, technology-application and application-derived, and grades them across five levels from low to critical using application scenario, level of autonomy and deployment scale.",
-    "definition_zh": "中国用于调节人工智能监管强度的制度装置：分类是按风险种类划分，分级是按严重程度划分。《人工智能安全治理框架》2.0 版将风险分为技术内生、技术应用、应用衍生三类，并以应用场景、智能化水平、应用规模为要素探索低、一般、重大等五个风险级别。",
+    "definition_en": "The PRC's structural device for calibrating AI oversight: 分类 sorts risks into kinds, 分级 sorts them into severity levels. TC260's 2.0 framework classifies risks as technology-inherent, technology-application and application-derived, and grades them by severity — from 低安全风险 (low) through 一般安全风险 (general) and upward — using application scenario, level of intelligence and deployment scale, with the grading principles set out in an annex for sectors to localise.",
+    "definition_zh": "中国用于调节人工智能监管强度的制度装置：分类是按风险种类划分，分级是按严重程度划分。《人工智能安全治理框架》2.0 版将风险分为技术内生、技术应用、应用衍生三类，并以应用场景、智能化水平、应用规模为要素，按低安全风险、一般安全风险等由低到高的顺序对风险进行分级，分级原则见附件，供行业细化。",
     "preferred_zh": "分类分级",
     "translation_difficulty": "high",
     "pitfalls": "English collapses this into 'risk tiering' or 'risk-based regulation' and loses the two-axis structure that PRC texts insist on: 分类 (by kind) and 分级 (by severity) are separate operations and are often carried out by different bodies — national standards set the method, sectoral regulators instantiate it. It is also the closest PRC analogue to the EU AI Act's risk tiers and to lab safety-level schemes, but it is not equivalent to either: the EU tiers attach fixed legal obligations to a use case, whereas 分类分级 is a method handed down for sectors to localise. Word order varies (分类分级 / 分级分类) with no difference in meaning.",

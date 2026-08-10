@@ -144,8 +144,7 @@
     "en": "computing power",
     "en_aliases": [
       "compute",
-      "computing infrastructure",
-      "intelligent compute"
+      "computing infrastructure"
     ],
     "abbr": null,
     "category": "zh-technical",
@@ -286,8 +285,6 @@
     "pinyin": "zhànlüè qīpiàn",
     "en": "strategic deception",
     "en_aliases": [
-      "scheming",
-      "deceptive alignment",
       "strategic deception behaviour"
     ],
     "abbr": null,
@@ -368,7 +365,9 @@
       "red-line-yellow-line",
       "malfunction-risk",
       "safety-alignment",
-      "controllability"
+      "controllability",
+      "scheming",
+      "deceptive-alignment"
     ],
     "sources": [
       "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",

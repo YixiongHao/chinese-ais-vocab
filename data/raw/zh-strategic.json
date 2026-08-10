@@ -359,8 +359,8 @@
     "direction": "zh-to-en",
     "zh_headword": "总体国家安全观",
     "pinyin": "zǒngtǐ guójiā ānquán guān",
-    "en": "holistic national security concept",
-    "en_aliases": ["holistic approach to national security", "overall national security outlook", "comprehensive national security concept"],
+    "en": "holistic approach to national security",
+    "en_aliases": ["holistic national security concept", "overall national security outlook", "comprehensive national security concept"],
     "abbr": null,
     "category": "zh-strategic",
     "tags": ["doctrine", "national-security", "high-value"],
@@ -401,7 +401,7 @@
         "en": "holistic national security concept",
         "status": "common",
         "literal_back": "overall national-security view",
-        "notes": "Widely used, including as the seed headword here. Weaker than 'approach' because 'concept' suggests a definition rather than a body of doctrine with an enumerated domain list and an institutional apparatus behind it.",
+        "notes": "Widely used, and was this entry's seed headword; demoted to an alias in the 2026-08 audit because it carried no attestation while 'holistic approach to national security' had two. Weaker than 'approach' because 'concept' suggests a definition rather than a body of doctrine with an enumerated domain list and an institutional apparatus behind it.",
         "attestations": []
       }
     ],

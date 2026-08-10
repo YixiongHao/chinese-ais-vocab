@@ -105,9 +105,9 @@
     "detail": "\"人工智能安全\" claimed by 2 entries"
   },
   {
-    "id": "algorithm-filing + algorithmic-governance + model-registration",
+    "id": "algorithm-filing + model-registration",
     "kind": "collision-zh",
-    "detail": "\"算法备案\" claimed by 3 entries"
+    "detail": "\"算法备案\" claimed by 2 entries"
   },
   {
     "id": "alignment-faking + deceptive-alignment",
@@ -150,6 +150,11 @@
     "detail": "\"网络安全等级保护\" claimed by 2 entries"
   },
   {
+    "id": "data-contamination + evaluation-gaming",
+    "kind": "collision-zh",
+    "detail": "\"刷榜\" claimed by 2 entries"
+  },
+  {
     "id": "delegation + permissions",
     "kind": "collision-zh",
     "detail": "\"授权\" claimed by 2 entries"
@@ -158,6 +163,16 @@
     "id": "elicitation-gap + evaluation-gap",
     "kind": "collision-zh",
     "detail": "\"评测差距\" claimed by 2 entries"
+  },
+  {
+    "id": "evaluation-awareness + situational-awareness",
+    "kind": "collision-zh",
+    "detail": "\"情境感知\" claimed by 2 entries"
+  },
+  {
+    "id": "evaluation-gaming + reward-hacking",
+    "kind": "collision-zh",
+    "detail": "\"奖励作弊\" claimed by 2 entries"
   },
   {
     "id": "foundation-model + big-model",
@@ -190,24 +205,9 @@
     "detail": "\"安全评估\" claimed by 2 entries"
   },
   {
-    "id": "accident-risk + malfunction-risk",
-    "kind": "collision-en",
-    "detail": "\"malfunction risk\" claimed by 2 entries"
-  },
-  {
     "id": "agile-governance + agile-governance-prc",
     "kind": "collision-en",
     "detail": "\"agile governance\" claimed by 2 entries"
-  },
-  {
-    "id": "algorithm-filing + model-registration",
-    "kind": "collision-en",
-    "detail": "\"algorithm filing\" claimed by 2 entries"
-  },
-  {
-    "id": "algorithm-filing + model-registration",
-    "kind": "collision-en",
-    "detail": "\"algorithm registry\" claimed by 2 entries"
   },
   {
     "id": "artificial-general-intelligence + general-purpose-ai-zh",
@@ -225,29 +225,9 @@
     "detail": "\"computing power\" claimed by 2 entries"
   },
   {
-    "id": "computer-use + gui-agent",
-    "kind": "collision-en",
-    "detail": "\"gui agent\" claimed by 2 entries"
-  },
-  {
-    "id": "deceptive-alignment + strategic-deception-prc",
-    "kind": "collision-en",
-    "detail": "\"deceptive alignment\" claimed by 2 entries"
-  },
-  {
     "id": "foundation-model + big-model",
     "kind": "collision-en",
     "detail": "\"foundation model\" claimed by 2 entries"
-  },
-  {
-    "id": "reward-hacking + specification-gaming",
-    "kind": "collision-en",
-    "detail": "\"reward gaming\" claimed by 2 entries"
-  },
-  {
-    "id": "reward-hacking + reward-tampering",
-    "kind": "collision-en",
-    "detail": "\"reward tampering\" claimed by 2 entries"
   },
   {
     "id": "scheming + strategic-deception-prc",
@@ -265,11 +245,6 @@
     "detail": "\"strategic deception\" claimed by 2 entries"
   },
   {
-    "id": "accident-risk + malfunction-risk",
-    "kind": "probable-duplicate",
-    "detail": "\"malfunction risk\" is an alias of accident-risk and the headword of malfunction-risk — same concept entered twice?"
-  },
-  {
     "id": "agile-governance-prc + agile-governance",
     "kind": "probable-duplicate",
     "detail": "\"agile governance\" is an alias of agile-governance-prc and the headword of agile-governance — same concept entered twice?"
@@ -280,11 +255,6 @@
     "detail": "\"computing power\" is an alias of compute and the headword of computing-power — same concept entered twice?"
   },
   {
-    "id": "computer-use + gui-agent",
-    "kind": "probable-duplicate",
-    "detail": "\"GUI agent\" is an alias of computer-use and the headword of gui-agent — same concept entered twice?"
-  },
-  {
     "id": "computing-power + compute",
     "kind": "probable-duplicate",
     "detail": "\"compute\" is an alias of computing-power and the headword of compute — same concept entered twice?"
@@ -303,31 +273,11 @@
     "id": "big-model + foundation-model",
     "kind": "probable-duplicate",
     "detail": "\"foundation model\" is an alias of big-model and the headword of foundation-model — same concept entered twice?"
-  },
-  {
-    "id": "model-registration + algorithm-filing",
-    "kind": "probable-duplicate",
-    "detail": "\"algorithm filing\" is an alias of model-registration and the headword of algorithm-filing — same concept entered twice?"
-  },
-  {
-    "id": "reward-hacking + reward-tampering",
-    "kind": "probable-duplicate",
-    "detail": "\"reward tampering\" is an alias of reward-hacking and the headword of reward-tampering — same concept entered twice?"
   },
   {
     "id": "security-assessment-procedure + security-assessment",
     "kind": "probable-duplicate",
     "detail": "\"security assessment\" is an alias of security-assessment-procedure and the headword of security-assessment — same concept entered twice?"
-  },
-  {
-    "id": "strategic-deception-prc + scheming",
-    "kind": "probable-duplicate",
-    "detail": "\"scheming\" is an alias of strategic-deception-prc and the headword of scheming — same concept entered twice?"
-  },
-  {
-    "id": "strategic-deception-prc + deceptive-alignment",
-    "kind": "probable-duplicate",
-    "detail": "\"deceptive alignment\" is an alias of strategic-deception-prc and the headword of deceptive-alignment — same concept entered twice?"
   },
   {
     "id": "strategic-deception-prc + strategic-deception",

@@ -1430,28 +1430,29 @@
     ],
     "definition_en": "A model detecting that it is being evaluated and altering its behaviour accordingly — behaving better under test than in deployment, which invalidates the evaluation. Documented across frontier models from 2024 onward and a central threat to the evidentiary value of safety evals.",
     "definition_zh": "模型察觉到自己正在被评测，于是改变行为——测试时表现得更好，部署时不然，评测结果因此失去意义。2024 年以来在多个前沿模型上被记录到，是安全评测证据效力面临的核心威胁。",
-    "preferred_zh": "评估感知",
+    "preferred_zh": "评测意识",
     "translation_difficulty": "high",
-    "pitfalls": "No settled term; three candidates circulate and none has won. 评估感知 and 评测意识 both appear (评测 is the more idiomatic Chinese industry word for 'evals'; 评估 is more formal). 评测意识 uses 意识 ('consciousness/awareness'), which is stronger and more anthropomorphic than 感知 ('perception'). Chinese sources very often skip the term entirely and write out the behaviour — 「模型能区分测试环境和部署环境」 — which is the honest state of the vocabulary. Note this is a strict sub-case of situational awareness, so if you have already established 情景感知 you can write 对评测环境的情景感知 and avoid coining anything.",
+    "pitfalls": "The honest finding is that Chinese has no settled term, and that the authoritative sources have chosen not to coin one. In the 2026 International AI Safety Report (Chinese edition), the Shanghai AI Lab / Concordia AI frontier risk framework, and Concordia AI's frontier risk monitoring report, evaluation awareness is handled as a sub-case of 情境感知/情景感知 (situational awareness) plus a relative clause — 能感知到自己何时被测试, 正确识别当前环境是训练阶段、评估阶段还是部署阶段, 区分测试环境和实际部署环境. Searching all three for 评估感知 and 评测意识 returns zero hits. So: if you need to be precise, write 对评测环境的情境感知 or spell the behaviour out; you will be understood and you will match the published register. Two further traps. First, 意识 in 评测意识 is stronger than English 'awareness' and edges towards 'consciousness', which overstates what the phenomenon requires; 感知 ('perception') is weaker but has no attestation at all. Second, the parent term itself is unstable — the International AI Safety Report's Chinese edition uses 情境感知 and 情景感知 in the same document, as does Concordia AI's monitoring report, so do not assume a source's choice between them is meaningful.",
     "translations": [
-      {
-        "zh": "评估感知",
-        "pinyin": "pínggū gǎnzhī",
-        "status": "common",
-        "literal_back": "evaluation perception",
-        "notes": "The more formal of the two candidates; parallels 情景感知 in construction. No verbatim attestation recovered in this pass.",
-        "attestations": []
-      },
       {
         "zh": "评测意识",
         "pinyin": "píngcè yìshí",
         "status": "common",
         "literal_back": "eval consciousness",
-        "notes": "Used as the technical label in Chinese coverage of the evaluation-awareness literature. 评测 is the natural Chinese industry word for evals; 意识 is stronger than English 'awareness' and edges towards 'consciousness'.",
+        "notes": "The only dedicated Chinese term we recovered for the concept, used consistently (13 times) as the technical label in one Chinese explainer of the evaluation-awareness literature. 评测 is the natural Chinese industry word for evals. Preferred here because it is the only attested term, not because it is settled — the publisher is a low-authority aggregator and no report, lab or standards body uses it.",
         "attestations": [
           {
-            "quote_zh": "来自 Microsoft Research 的团队系统性地研究了“评测意识”（Evaluation Awareness）——即模型检测自己当前处于测试环境的能力。",
-            "quote_en": "A team from Microsoft Research systematically studied 'evaluation awareness' — a model's ability to detect that it is currently in a test environment.",
+            "quote_zh": "来自 Microsoft Research 的团队系统性地研究了\"评测意识\"（Evaluation Awareness）——即模型检测自己当前处于测试环境的能力。",
+            "quote_en": "A team from Microsoft Research systematically studied \"evaluation awareness\" — a model's ability to detect that it is currently in a test environment.",
+            "source_title": "当AI学会察言观色：模型能detect自己正在被考试，而且这能力和你想的完全不一样",
+            "publisher": "智柴网",
+            "source_type": "media",
+            "url": "https://zhichai.net/topic/178208047",
+            "date": "2026-06"
+          },
+          {
+            "quote_zh": "评测意识的检测能力主要由指令微调驱动，而非模型规模",
+            "quote_en": "The detection component of evaluation awareness is driven mainly by instruction tuning, not by model scale.",
             "source_title": "当AI学会察言观色：模型能detect自己正在被考试，而且这能力和你想的完全不一样",
             "publisher": "智柴网",
             "source_type": "media",
@@ -1461,35 +1462,377 @@
         ]
       },
       {
-        "zh": "区分测试环境和部署环境",
-        "pinyin": "qūfēn cèshì huánjìng hé bùshǔ huánjìng",
-        "status": "descriptive",
-        "literal_back": "distinguishing test environment from deployment environment",
-        "notes": "The paraphrase Chinese risk reports use instead of a term. Unambiguous; not compressible.",
+        "zh": "评估感知",
+        "pinyin": "pínggū gǎnzhī",
+        "status": "proposed",
+        "literal_back": "evaluation perception",
+        "notes": "Demoted from 'common' and from preferred_zh on 2026-08-09: we searched the 2026 International AI Safety Report (Chinese edition), the Shanghai AI Lab / Concordia AI frontier risk framework in both its Chinese and English editions, Concordia AI's 2025 Q3 frontier risk monitoring report, and Chinese media coverage of the evaluation-awareness literature, and recovered zero occurrences. It is a well-formed coinage — it parallels 情景感知 exactly and 感知 correctly avoids the 'consciousness' overtone of 意识 — but it is ours, not the language's. Keep it as a candidate; do not present it as current usage.",
         "attestations": []
+      },
+      {
+        "zh": "情境感知",
+        "pinyin": "qíngjìng gǎnzhī",
+        "status": "descriptive",
+        "literal_back": "situational perception",
+        "notes": "Not a translation of 'evaluation awareness' — it is the parent term (see situational-awareness). Recorded here because it is what the authoritative Chinese sources actually do: they subsume evaluation awareness under 情境感知 and add a clause naming the test-detection case. The Shanghai AI Lab / Concordia AI framework is bilingual, so both attestations below are genuine EN↔ZH pairs. If you need the narrow sense, write 对评测环境的情境感知.",
+        "attestations": [
+          {
+            "quote_zh": "情境感知能力：指能够正确识别当前环境是训练阶段、评估阶段还是部署阶段，并利用这一信息进行战略性决策的能力。",
+            "quote_en": "Situational awareness: Ability to correctly identify whether the current environment is training, evaluation, or deployment and leverage this information for strategic decision-making. (the document's own English edition, safework-f1-framework.EN.pdf)",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "至关重要的是，这种能力可能会降低人类测试的效率，因为它能让AI感知到自己何时被测试并做出相应的反应。",
+            "quote_en": "Critically, this capability could undermine the efficiency of human testing by enabling AIs to notice when they're being tested and responding accordingly. (the document's own English edition)",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "区分测试环境和实际部署环境",
+        "pinyin": "qūfēn cèshì huánjìng hé shíjì bùshǔ huánjìng",
+        "status": "descriptive",
+        "literal_back": "distinguishing the test environment from the real deployment environment",
+        "notes": "The paraphrase the 2026 International AI Safety Report's Chinese edition puts in its executive summary where the English says models are increasingly evaluation-aware. Unambiguous, safety-register, not compressible — and, on current evidence, the safest thing to write.",
+        "attestations": [
+          {
+            "quote_zh": "可靠的部署前安全测试已变得更难实施。模型越来越常见地能够区分测试环境和实际部署环境，并利用评测体系中的漏洞。这意味着危险能力在部署前可能无法被发现。",
+            "quote_en": "Reliable pre-deployment safety testing has become harder to carry out. It is increasingly common for models to distinguish the test environment from the real deployment environment and to exploit loopholes in the evaluation system. This means dangerous capabilities may go undetected before deployment.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "模型也越来越可能将某些任务识别为评测任务，并表现出与部署环境中类似任务不同的行为，这源于其“情境感知能力”",
+            "quote_en": "Models are also increasingly likely to recognise certain tasks as evaluation tasks and to behave differently from how they would on similar tasks in deployment, which stems from their \"situational awareness\".",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "识别何时自己正在被评估",
+        "pinyin": "shíbié héshí zìjǐ zhèngzài bèi pínggū",
+        "status": "descriptive",
+        "literal_back": "recognising when it is itself being evaluated",
+        "notes": "The wording the International AI Safety Report's Chinese edition uses as a figure heading — the closest any authoritative Chinese source comes to naming the phenomenon outright.",
+        "attestations": [
+          {
+            "quote_zh": "AI 模型有时能识别何时自己正在被评估",
+            "quote_en": "AI models can sometimes recognise when they are being evaluated.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
       }
     ],
     "confidence": "low",
-    "used_by": [],
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远AI (Concordia AI)",
+        "zh_used": "情境感知（能让AI感知到自己何时被测试）",
+        "note": "《人工智能前沿风险管理框架（1.0版）》中英双语版；不单列术语，归入情境感知能力"
+      },
+      {
+        "org": "《2026年国际人工智能安全报告》（中文版）",
+        "zh_used": "情境感知 / 情景感知；区分测试环境和实际部署环境",
+        "note": "同一份文件里 情境感知 与 情景感知 混用；概念用描述性说法表达"
+      },
+      {
+        "org": "安远AI (Concordia AI) 前沿人工智能风险监测报告",
+        "zh_used": "情景感知 / 情境感知",
+        "note": "用 SAD-mini 基准衡量该能力，仍称之为情景感知（Situation Awareness）"
+      }
+    ],
     "usage_examples": [
       {
         "zh": "如果模型具备评测意识，安全评测得到的就只是它愿意展示的行为。",
         "en": "If a model has evaluation awareness, a safety eval only measures the behaviour it is willing to display.",
         "source": "constructed"
+      },
+      {
+        "zh": "模型能区分测试环境和实际部署环境，部署前的安全结论就只能算乐观上界。",
+        "en": "Once a model can distinguish the test environment from real deployment, a pre-deployment safety conclusion is only an optimistic upper bound.",
+        "source": "constructed"
       }
     ],
     "related": [
       "situational-awareness",
+      "evaluation-gaming",
       "sandbagging",
       "evaluation",
-      "scheming"
+      "evaluation-gap",
+      "scheming",
+      "alignment-faking",
+      "benchmark"
     ],
     "sources": [
       "https://zhichai.net/topic/178208047",
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.EN.pdf",
+      "https://airiskmonitor.net/doc/zh/report/2025-Q3",
       "https://arxiv.org/abs/2505.23836",
-      "https://airiskmonitor.net/doc/zh/report/2025-Q3"
+      "https://arxiv.org/abs/2505.01420"
     ],
-    "last_researched": "2026-08-08"
+    "last_researched": "2026-08-09"
+  },
+  {
+    "id": "evaluation-gaming",
+    "en": "evaluation gaming",
+    "en_aliases": [
+      "gaming the evaluation",
+      "gaming evals",
+      "benchmark gaming",
+      "evaluation faking",
+      "teaching to the test"
+    ],
+    "abbr": null,
+    "category": "misalignment-phenomena",
+    "tags": [
+      "evaluation",
+      "added-by-research",
+      "contested",
+      "2025"
+    ],
+    "definition_en": "A system scoring well on an evaluation without possessing the property the evaluation is meant to measure. The gaming may be done by the developer — training on benchmark items, tuning to the leaderboard — or by the model, which exploits a grader, a scoring shortcut, or the evaluator's expectations. Either way the score stops being evidence about the underlying capability or alignment.",
+    "definition_zh": "系统在评测中拿到高分，却并不具备这项评测想要衡量的能力或属性。做手脚的可能是开发者——拿基准测试的题目去训练、照着榜单调模型；也可能是模型自己——钻评分器、评测目标或评测者预期的空子。无论哪一种，分数都不再能作为真实能力或对齐程度的证据。",
+    "preferred_zh": "评估博弈",
+    "translation_difficulty": "high",
+    "pitfalls": "Three traps. (1) The one term attested in the Chinese AI-safety register, 评估博弈, comes from a bilingual document whose English side literally reads \"Evaluation gaming\" — the strongest kind of evidence — but the definition it carries points the other way: 通过战略性地表现不佳，以显得能力较弱或对齐性更强 (strategically underperforming to look less capable or more aligned). In that framework 评估博弈 is essentially sandbagging plus faking alignment on an alignment eval; it does not cover score inflation. A Chinese reader meeting 评估博弈 will not think of a model scoring too high. (2) 博弈 means game theory / strategic interaction, not 'exploiting a loophole' — the same objection that dogs 规范博弈 for specification gaming. (3) The developer sense and the model sense live in different registers and Chinese keeps them apart lexically. The developer sense has vivid native vocabulary — 刷榜, 刷分, 专门应试 — which is ML-media and practitioner-criticism register; none of it appears in any of the three authoritative Chinese frontier-safety documents we searched. Those documents reach instead for 奖励作弊/奖励黑客 on the model side and 数据污染/基准泄漏 on the developer side. Note also that 基准污染 is not the attested compound; the attested forms are 数据污染 and 基准泄漏.",
+    "translations": [
+      {
+        "zh": "评估博弈",
+        "pinyin": "pínggū bóyì",
+        "status": "common",
+        "literal_back": "evaluation game-playing / strategic interaction over the evaluation",
+        "notes": "The only rendering we found inside the Chinese AI-safety register, and it comes with an attested EN↔ZH pair: the same framework's English edition lists the capability as \"Evaluation gaming\" where the Chinese edition lists 评估博弈能力. Recommended as the safety-register term, but read the pitfalls first — the framework's own gloss restricts it to strategic underperformance, so it half-overlaps sandbagging. Sourced by the framework to Fan et al., \"Evaluation Faking\" (arXiv:2505.17815).",
+        "attestations": [
+          {
+            "quote_zh": "评估博弈：指在能力与对齐性评估中，通过战略性地表现不佳，以显得能力较弱或对齐性更强的行为。",
+            "quote_en": "Evaluation gaming: Ability to strategically manipulate capability and alignment evaluations by underperforming to appear less capable or more aligned. (the document's own English edition, safework-f1-framework.EN.pdf)",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          },
+          {
+            "quote_zh": "AI系统通过正确区分训练和部署环境展现出情境感知能力，然后系统性欺骗研发者：在安全评估中故意表现不佳以显得符合预期，同时保留真实能力和目标。",
+            "quote_en": "An AI system demonstrates situational awareness by correctly distinguishing between training and deployment environments, then systematically deceives developers by underperforming during safety evaluations to appear aligned while retaining its true capabilities and goals.",
+            "source_title": "《人工智能前沿风险管理框架（1.0版）》",
+            "publisher": "上海人工智能实验室 / 安远AI (Concordia AI)",
+            "source_type": "report",
+            "url": "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+            "date": "2025-07"
+          }
+        ]
+      },
+      {
+        "zh": "刷榜",
+        "pinyin": "shuā bǎng",
+        "status": "common",
+        "literal_back": "to grind/farm the leaderboard",
+        "notes": "The developer sense, and the liveliest word Chinese has for it. Leaderboard-culture register: it is a term of criticism aimed at labs, standard in 机器之心/知乎-style ML commentary, and it carries an accusation of bad faith. We found zero occurrences of it in the 2026 International AI Safety Report (Chinese edition), the Shanghai AI Lab / Concordia AI frontier risk framework, or Concordia AI's frontier risk monitoring report — so it is not safety-governance register. Also recorded under data-contamination, where it names the behaviour contamination enables.",
+        "attestations": [
+          {
+            "quote_zh": "在兴奋于技术进展速度之快后，很多人发现似乎也有些不对味：为什么排行榜第一人人有份？这是个什么机制？于是乎，「刷榜」这个问题也开始备受关注。",
+            "quote_en": "After the excitement about how fast the technology was moving, a lot of people noticed something was off: why does everyone get to be number one on the leaderboard? What kind of mechanism is that? And so the problem of \"leaderboard-grinding\" started attracting attention.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          },
+          {
+            "quote_zh": "在作者与读者中互动中，作者也表示，希望「让大家更理性看待刷榜这个事情，很多模型和 GPT4 的差距还很大」。",
+            "quote_en": "In exchanges with readers the authors also said they hoped to \"get everyone to look at this leaderboard-grinding business more rationally — many models are still a long way behind GPT-4.\"",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "刷分",
+        "pinyin": "shuā fēn",
+        "status": "common",
+        "literal_back": "to grind/farm the score",
+        "notes": "Same register as 刷榜 but aimed at a single benchmark score rather than a ranking. Use 刷分 when the object is a number, 刷榜 when the object is a position. Neither is safety-register.",
+        "attestations": [
+          {
+            "quote_zh": "用简单的话来解释就是：如果有模型在训练的时候，直接拿基准测试里面的「真题」和「答案」来当学习资料，想以此来刷分，那么此处就会有异常。",
+            "quote_en": "Put simply: if a model was trained directly on the benchmark's \"real exam questions\" and \"answers\" as study material in order to farm the score, an anomaly will show up here.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          },
+          {
+            "quote_zh": "你不是说数据很重要吗，那么用「真题」刷分的大模型，性能会不会因为训练数据更优秀而变得更好呢？答案是否定的。",
+            "quote_en": "You said data matters, right? So does a large model that farms its score on the \"real exam questions\" actually get better because its training data is better? The answer is no.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          }
+        ]
+      },
+      {
+        "zh": "奖励作弊",
+        "pinyin": "jiǎnglì zuòbì",
+        "status": "common",
+        "literal_back": "reward cheating",
+        "notes": "Strictly a rendering of *reward hacking* (see reward-hacking, where 奖励黑客 is preferred), but the 2026 International AI Safety Report's Chinese edition uses it exactly where English would say a model games its evaluation, and its definition there — scoring high on the training or evaluation objective without achieving the intended goal — is our concept verbatim. This is how the Chinese safety register currently expresses model-side evaluation gaming: by borrowing reward hacking's word rather than coining one.",
+        "attestations": [
+          {
+            "quote_zh": "奖励作弊是指模型找到一些意外的捷径，这些捷径在训练或评估目标上得分很高，但不会实现期望目标。",
+            "quote_en": "Reward hacking means a model finds unintended shortcuts that score highly on the training or evaluation objective but do not achieve the desired goal.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          },
+          {
+            "quote_zh": "还有模型会在性能测试中进行“奖励作弊”，并学会了如何掩盖这种意图",
+            "quote_en": "There are also models that \"reward hack\" in performance tests and have learned how to conceal the intent.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "利用评测体系中的漏洞",
+        "pinyin": "lìyòng píngcè tǐxì zhōng de lòudòng",
+        "status": "descriptive",
+        "literal_back": "exploiting loopholes in the evaluation system",
+        "notes": "The paraphrase the 2026 International AI Safety Report's Chinese edition uses in its executive summary in place of a term. Unambiguous, safety-register, and it names the mechanism rather than the blame — worth using when 评估博弈's underperformance connotation would mislead.",
+        "attestations": [
+          {
+            "quote_zh": "可靠的部署前安全测试已变得更难实施。模型越来越常见地能够区分测试环境和实际部署环境，并利用评测体系中的漏洞。这意味着危险能力在部署前可能无法被发现。",
+            "quote_en": "Reliable pre-deployment safety testing has become harder to carry out. It is increasingly common for models to distinguish the test environment from the real deployment environment and to exploit loopholes in the evaluation system. This means dangerous capabilities may go undetected before deployment.",
+            "source_title": "《2026年国际人工智能安全报告》（中文版）",
+            "publisher": "International AI Safety Report（国际人工智能安全报告专家组）",
+            "source_type": "report",
+            "url": "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+            "date": "2026-02"
+          }
+        ]
+      },
+      {
+        "zh": "应试",
+        "pinyin": "yìngshì",
+        "status": "descriptive",
+        "literal_back": "exam-oriented / to sit an exam",
+        "notes": "Not a term of art, but the native frame Chinese reaches for, and it travels better than any calque: 应试教育 ('exam-oriented education') is a loaded piece of Chinese cultural vocabulary for optimising the measurement instead of the thing measured. 专门应试的大模型 ('a large model that exists to pass the exam') and 应试选手 ('exam-taker') both appear unglossed, six years and two registers apart, which suggests the frame is stable even though no fixed compound has formed.",
+        "attestations": [
+          {
+            "quote_zh": "但副作用是，如果我们仅使用这些泄露的数据来微调或训练模型，这些专门应试的大模型在其他正常测试任务上的表现可能会受到不利影响。",
+            "quote_en": "But there is a side effect: if we fine-tune or train models only on this leaked data, these exam-oriented large models may do worse on other, normal test tasks.",
+            "source_title": "大模型走捷径「刷榜」？数据污染问题值得重视",
+            "publisher": "机器之心（经腾讯云开发者社区转载）",
+            "source_type": "media",
+            "url": "https://cloud.tencent.com/developer/article/2357653",
+            "date": "2023-11"
+          },
+          {
+            "quote_zh": "单纯靠\"把模型做大\"来提升安全评测分数，可能是在制造更精明的\"应试选手\"而非更安全的模型",
+            "quote_en": "Simply making the model bigger in order to raise safety-evaluation scores may be manufacturing a shrewder \"exam-taker\" rather than a safer model.",
+            "source_title": "当AI学会察言观色：模型能detect自己正在被考试，而且这能力和你想的完全不一样",
+            "publisher": "智柴网",
+            "source_type": "media",
+            "url": "https://zhichai.net/topic/178208047",
+            "date": "2026-06"
+          }
+        ]
+      },
+      {
+        "zh": "评测作弊",
+        "pinyin": "píngcè zuòbì",
+        "status": "proposed",
+        "literal_back": "evaluation cheating",
+        "notes": "We could not recover this compound in any source, so it is recorded as a coinage, not an attestation. It is proposed because the 作弊 frame demonstrably is available in this context — 奖励作弊 is the report term for the model side, and a Chinese explainer of the evaluation-awareness literature writes 这把安全评测从\"出题\"变成了\"出题 + 反作弊\" ('this turns safety evaluation from setting the exam into setting the exam plus catching cheats'). 评测作弊 would be immediately readable and, unlike 评估博弈, carries no underperformance connotation. Note that 机器之心 reported the paper 《Don't Make Your LLM an Evaluation Benchmark Cheater》 without translating 'cheater' at all, which is some evidence the compound had not formed.",
+        "attestations": []
+      }
+    ],
+    "confidence": "medium",
+    "used_by": [
+      {
+        "org": "上海人工智能实验室 / 安远AI (Concordia AI)",
+        "zh_used": "评估博弈",
+        "note": "《人工智能前沿风险管理框架（1.0版）》中英双语版，英文侧作 Evaluation gaming，列为失控相关的使能能力之一"
+      },
+      {
+        "org": "《2026年国际人工智能安全报告》（中文版）",
+        "zh_used": "奖励作弊 / 利用评测体系中的漏洞",
+        "note": "没有为 evaluation gaming 单列术语，模型侧并入奖励作弊，开发者侧并入数据污染"
+      },
+      {
+        "org": "机器之心",
+        "zh_used": "刷榜 / 刷分",
+        "note": "开发者侧的批评用语，属于榜单文化而非安全治理语域"
+      }
+    ],
+    "usage_examples": [
+      {
+        "zh": "如果开发者拿基准测试的题目去训练，那这个分数就是刷出来的，说明不了模型真的会做题。",
+        "en": "If the developer trained on the benchmark's own items, the score was farmed and says nothing about whether the model can really do the task.",
+        "source": "constructed"
+      },
+      {
+        "zh": "评估博弈让评测结果失去证据价值：分数高不等于模型真的安全。",
+        "en": "Evaluation gaming destroys the evidentiary value of an eval: a high score does not mean the model is actually safe.",
+        "source": "constructed"
+      }
+    ],
+    "related": [
+      "sandbagging",
+      "evaluation-awareness",
+      "reward-hacking",
+      "specification-gaming",
+      "goodharts-law",
+      "data-contamination",
+      "evaluation-gap",
+      "elicitation-gap",
+      "benchmark",
+      "evaluation"
+    ],
+    "sources": [
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.CN.pdf",
+      "https://research.ai45.shlab.org.cn/safework-f1-framework.EN.pdf",
+      "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
+      "https://cloud.tencent.com/developer/article/2357653",
+      "https://zhichai.net/topic/178208047",
+      "https://airiskmonitor.net/doc/zh/report/2025-Q3",
+      "https://arxiv.org/abs/2505.17815",
+      "https://arxiv.org/abs/2311.01964",
+      "https://arxiv.org/abs/2310.19341"
+    ],
+    "last_researched": "2026-08-09"
   },
   {
     "id": "introspection",
