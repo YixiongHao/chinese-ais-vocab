@@ -5,9 +5,10 @@
 mark.caisv-hl {
   background: transparent !important;
   color: inherit !important;
-  /* A dotted underline reads as "there is a note here" without shouting like a fill. */
-  border-bottom: 1px dotted rgba(160, 62, 47, .75) !important;
-  box-shadow: inset 0 -0.35em 0 rgba(160, 62, 47, .09) !important;
+  /* Solid rather than dotted, with a visible tint behind the text: it has to be findable
+     by scanning a page, not just noticeable once you are already looking at the word. */
+  border-bottom: 2px solid rgba(160, 62, 47, .6) !important;
+  box-shadow: inset 0 -0.42em 0 rgba(160, 62, 47, .16) !important;
   border-radius: 2px !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -18,17 +19,17 @@ mark.caisv-hl {
 
 mark.caisv-hl:hover {
   border-bottom-color: rgba(160, 62, 47, 1) !important;
-  box-shadow: inset 0 -0.9em 0 rgba(160, 62, 47, .16) !important;
+  box-shadow: inset 0 -1em 0 rgba(160, 62, 47, .24) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   mark.caisv-hl {
-    border-bottom-color: rgba(224, 139, 120, .75) !important;
-    box-shadow: inset 0 -0.35em 0 rgba(224, 139, 120, .12) !important;
+    border-bottom-color: rgba(224, 139, 120, .7) !important;
+    box-shadow: inset 0 -0.42em 0 rgba(224, 139, 120, .2) !important;
   }
   mark.caisv-hl:hover {
     border-bottom-color: rgba(224, 139, 120, 1) !important;
-    box-shadow: inset 0 -0.9em 0 rgba(224, 139, 120, .2) !important;
+    box-shadow: inset 0 -1em 0 rgba(224, 139, 120, .3) !important;
   }
 }
 

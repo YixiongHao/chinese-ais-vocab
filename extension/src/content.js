@@ -148,6 +148,25 @@
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 
+  // Badge colours run green → amber → red as the evidence weakens, so the reliability of
+  // an entry is legible before any of its text is read. The words alone do not carry it:
+  // "common" sounds like praise but is a weaker claim than "established".
+  const STATUS_HELP = {
+    established: 'Widely used in Chinese sources; someone in the field will recognise it.',
+    common: 'Appears repeatedly, but competes with other renderings.',
+    contested: 'Several renderings in active use with no winner — the choice carries meaning.',
+    descriptive: 'Chinese sources explain the concept in a phrase rather than with a fixed term.',
+    proposed: 'Not attested anywhere. Our own coinage.',
+    loanword: 'The English is kept as-is inside Chinese text. Often the honest answer.',
+    transliteration: 'Phonetic rendering of the English.',
+    deprecated: 'Attested, but we recommend against it.',
+  }
+  const CONF_HELP = {
+    high: 'Two or more independent publishers verified for the recommended rendering.',
+    medium: 'One citation, or several weak ones.',
+    low: 'No citation, or the sources disagree and we made a judgement call.',
+  }
+
   function renderCard(t) {
     // `answerIn` is the reader's language. The headline is always the half they do not
     // already have; what they hovered goes underneath as confirmation of what matched.
@@ -156,16 +175,18 @@
     const answer = answerIsZh
       ? (t.z || null)                            // hovered English -> answer in Chinese
       : (zhOrigin ? (t.n || t.e) : t.e)          // hovered Chinese -> answer in English
-    // Pinyin helps an English reader who was given a Chinese answer; a Chinese reader
-    // given an English answer wants the Chinese term they hovered, if it differs.
-    const sub = answerIsZh ? (t.p || null) : (t.z && t.z !== answer ? t.z : null)
     const hovered = answerIsZh ? t.e : (t.z || t.e)
+    // Pinyin belongs beside whichever line holds Chinese, in either mode — the reader
+    // either has to pronounce the answer or the term they just hovered.
+    const pinyin = t.p || null
 
     const badges = [
-      t.s ? `<span class="b s-${esc(t.s)}">${esc(t.s)}</span>` : '',
-      `<span class="b c-${esc(t.c)}">confidence: ${esc(t.c)}</span>`,
-      t.cites ? `<span class="b">${t.cites} citation${t.cites === 1 ? '' : 's'}</span>` : '<span class="b warn">no citation</span>',
-      zhOrigin ? '<span class="b zh">Chinese-origin</span>' : '',
+      t.s ? `<span class="b s-${esc(t.s)}" title="${esc(STATUS_HELP[t.s] || '')}">${esc(t.s)}</span>` : '',
+      `<span class="b c-${esc(t.c)}" title="${esc(CONF_HELP[t.c] || '')}">${esc(t.c)} confidence</span>`,
+      t.cites
+        ? `<span class="b cite" title="Verbatim quotations from real sources backing this rendering.">${t.cites} citation${t.cites === 1 ? '' : 's'}</span>`
+        : '<span class="b warn" title="Nothing in the database evidences this rendering yet.">no citation</span>',
+      zhOrigin ? '<span class="b zh" title="Chinese is the source language here; the English is the approximation.">Chinese-origin</span>' : '',
     ].filter(Boolean).join('')
 
     const ex = t.x ? `
@@ -182,16 +203,25 @@
         <div class="srcs">${t.u.map((u) => `<span class="src">${esc(u)}</span>`).join('')}</div>
       </div>` : ''
 
+    // The commentary sits last, after everything that is sourced. It is our own analysis,
+    // not a citation, and putting it under a label that says so keeps the distinction
+    // between evidence and opinion visible at a glance.
+    const commentary = t.pit ? `
+      <div class="sec">
+        <div class="lbl cmt-lbl">Claude's commentary · not from a source</div>
+        <div class="cmt">${esc(t.pit)}</div>
+      </div>` : ''
+
     card.innerHTML = `
       <div class="hd">
         <div class="ans ${answerIsZh ? 'cjk' : ''}">${answer ? esc(answer) : '<em class="none">no settled rendering</em>'}</div>
-        ${sub ? `<div class="sub ${answerIsZh ? '' : 'cjk'}">${esc(sub)}</div>` : ''}
+        ${answerIsZh && pinyin ? `<div class="pin">${esc(pinyin)}</div>` : ''}
         <div class="from ${answerIsZh ? '' : 'cjk'}">${esc(hovered)}${t.a ? ` · ${esc(t.a)}` : ''}</div>
+        ${!answerIsZh && pinyin ? `<div class="pin">${esc(pinyin)}</div>` : ''}
       </div>
       <div class="badges">${badges}</div>
       ${t.def ? `<div class="def">${esc(t.def)}</div>` : ''}
-      ${t.pit ? `<div class="pit"><b>Pitfall.</b> ${esc(t.pit)}</div>` : ''}
-      ${src}${ex}
+      ${src}${ex}${commentary}
       <div class="ft">${t.r > 1 ? `${t.r} renderings recorded · ` : ''}${esc(t.i)}</div>`
   }
 
@@ -345,32 +375,51 @@
   }
   @media (prefers-color-scheme: dark) {
     .card { background: #191a1e; color: #eceaea; border-color: #33353c; box-shadow: 0 8px 28px rgba(0,0,0,.5); }
-    .sub, .from, .exsrc, .ft, .exen { color: #9a9dab !important; }
+    .pin, .from, .exsrc, .ft, .exen { color: #9a9dab !important; }
     .def { color: #c9c8cc !important; }
-    .b { border-color: #3a3d45 !important; color: #a5a8b6 !important; }
+    .b { border-color: #3a3d45; color: #a5a8b6; background: transparent; }
     .src { background: #24262c !important; color: #c1c3cc !important; }
     .ex { border-left-color: #3a3d45 !important; }
-    .pit { background: #2a1f1c !important; color: #e5c4ba !important; }
+    .cmt { background: #2a1f1c !important; color: #e5c4ba !important; border-left-color: #e08b78 !important; }
+    .cmt-lbl { color: #e08b78 !important; }
+    /* Keep the green/amber/red grading legible on a dark ground rather than letting the
+       generic dark override above flatten every badge to the same grey. */
+    .b.s-established, .b.c-high { border-color: #6aa872 !important; color: #8dc294 !important; background: #1b2620 !important; }
+    .b.s-common      { border-color: #93ad5f !important; color: #a9c37a !important; background: #1f2419 !important; }
+    .b.s-contested, .b.c-medium { border-color: #d09a45 !important; color: #e0b66d !important; background: #2a2317 !important; }
+    .b.s-proposed, .b.s-deprecated, .b.c-low, .b.warn { border-color: #d0685c !important; color: #e59183 !important; background: #2a1b19 !important; }
+    .b.s-loanword    { border-color: #9c8ac8 !important; color: #b5a6db !important; background: #221f2c !important; }
+    .b.zh            { border-color: #7aa2c4 !important; color: #9dbcd8 !important; background: #1a2029 !important; }
   }
   .cjk { font-family: "Source Han Sans SC","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif; }
   .hd { margin-bottom: 8px; }
   .ans { font-size: 19px; font-weight: 650; line-height: 1.3; }
   .ans .none { font-size: 14px; font-weight: 400; color: #8b8fa3; }
-  .sub { font-size: 12.5px; color: #6c7080; font-style: italic; margin-top: 1px; }
   .from { font-size: 11.5px; color: #8b8fa3; margin-top: 3px; }
   .badges { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
   .b { font-size: 10px; text-transform: uppercase; letter-spacing: .04em; font-weight: 600;
        border: 1px solid #ddd9d2; color: #55596a; border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
-  .b.s-established { border-color: #4f8a55; color: #4f8a55; }
-  .b.s-contested   { border-color: #c9762f; color: #c9762f; }
-  .b.s-proposed    { border-color: #a03e2f; color: #a03e2f; }
-  .b.s-deprecated  { text-decoration: line-through; }
-  .b.s-loanword    { border-color: #7d6aa8; color: #7d6aa8; }
-  .b.c-low         { border-color: #c9762f; color: #c9762f; }
-  .b.warn          { border-color: #c0483c; color: #c0483c; }
-  .b.zh            { border-color: #5a7fa8; color: #5a7fa8; }
+  /* Green = safe to use. Amber = check it. Red = weak or actively discouraged.
+     Blue and violet are outside that scale: they classify rather than grade. */
+  .b.s-established { border-color: #3f7d4a; color: #3f7d4a; background: #eef5ef; }
+  .b.s-common      { border-color: #7a9a3f; color: #5d7a2c; background: #f2f5ea; }
+  .b.s-contested   { border-color: #c07a1e; color: #a3660f; background: #fbf2e2; }
+  .b.s-descriptive { border-color: #8b8fa3; color: #6c7080; }
+  .b.s-transliteration { border-color: #8b8fa3; color: #6c7080; }
+  .b.s-proposed    { border-color: #c0483c; color: #b03c31; background: #fbeceb; }
+  .b.s-deprecated  { border-color: #c0483c; color: #b03c31; text-decoration: line-through; }
+  .b.s-loanword    { border-color: #7d6aa8; color: #6d5a98; background: #f2eff8; }
+  .b.c-high        { border-color: #3f7d4a; color: #3f7d4a; background: #eef5ef; }
+  .b.c-medium      { border-color: #c07a1e; color: #a3660f; background: #fbf2e2; }
+  .b.c-low         { border-color: #c0483c; color: #b03c31; background: #fbeceb; }
+  .b.cite          { border-color: #ddd9d2; color: #55596a; }
+  .b.warn          { border-color: #c0483c; color: #b03c31; background: #fbeceb; }
+  .b.zh            { border-color: #5a7fa8; color: #4d7096; background: #eef2f7; }
+  .pin { font-size: 12.5px; color: #6c7080; font-style: italic; margin-top: 2px; letter-spacing: .01em; }
   .def { font-size: 12.5px; color: #3f424f; margin-bottom: 8px; }
-  .pit { font-size: 12px; background: #f6ece9; border-radius: 6px; padding: 7px 9px; margin-bottom: 8px; color: #6b3226; }
+  .cmt-lbl { color: #a03e2f; }
+  .cmt { font-size: 12px; background: #f6ece9; border-left: 3px solid #a03e2f;
+         border-radius: 0 6px 6px 0; padding: 8px 10px; color: #6b3226; }
   .sec { margin-top: 9px; }
   .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: #8b8fa3; font-weight: 600; margin-bottom: 3px; }
   .srcs { display: flex; flex-wrap: wrap; gap: 4px; }

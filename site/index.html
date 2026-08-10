@@ -175,6 +175,7 @@
     font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--ink-3); margin: 0 0 8px; font-weight: 600;
   }
+  section.blk > h3.cmt-lbl { color: var(--accent); }
   .def { max-width: 68ch; }
   .def.zh { font-family: var(--cjk); color: var(--ink-2); margin-top: 8px; }
 
@@ -530,10 +531,12 @@
       </section>`
     }
 
-    if (t.pitfalls) {
-      h += `<section class="blk"><h3>Translation pitfall</h3>
-        <div class="callout">${esc(t.pitfalls)}</div></section>`
-    }
+    // Rendered last, after everything sourced. This is our own analysis rather than a
+    // citation, and it is labelled so the line between evidence and opinion stays visible.
+    const commentary = t.pitfalls
+      ? `<section class="blk"><h3 class="cmt-lbl">Claude's commentary · not from a source</h3>
+           <div class="callout">${esc(t.pitfalls)}</div></section>`
+      : ''
 
     if (t._rend.length) {
       h += `<section class="blk"><h3>${zhOrigin ? 'English renderings' : 'Renderings'}</h3>
@@ -566,6 +569,8 @@
         `<li>${/^https?:/.test(s) ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s)}</a>` : esc(s)}</li>`
       ).join('') + `</ul></section>`
     }
+
+    h += commentary
 
     h += `<div class="lit" style="margin-top:26px">last researched ${esc(t.last_researched || '—')}</div>`
 
