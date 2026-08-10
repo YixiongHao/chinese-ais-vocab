@@ -852,7 +852,7 @@
   {
     "id": "activation-steering",
     "en": "activation steering",
-    "en_aliases": ["representation engineering", "steering vectors"],
+    "en_aliases": ["steering vectors"],
     "abbr": null,
     "category": "alignment-techniques",
     "tags": ["interpretability-adjacent", "loanword"],
@@ -1190,7 +1190,7 @@
     "tags": ["agent-foundations", "false-friend"],
     "definition_en": "The research programme of having an AI system infer what humans actually value — rather than being given a fixed objective — via inverse reinforcement learning, CIRL, preference elicitation and related methods.",
     "definition_zh": "让 AI 自己去推断人类真正看重什么，而不是直接给它一个固定目标的研究路线，具体方法包括逆强化学习、合作逆强化学习（CIRL）、偏好引出等。",
-    "preferred_zh": "价值学习",
+    "preferred_zh": "价值观学习",
     "translation_difficulty": "high",
     "pitfalls": "SERIOUS FALSE FRIEND. 价值学习 already exists in Chinese RL vocabulary as a shorthand for value-function learning / value-based methods (价值函数, Q-learning, 价值网络) — a completely unrelated technical sense. A Chinese ML reader seeing 价值学习 will parse it as 'learning a value function' first. Compounding this, the Chinese alignment literature does not actually use 价值学习 for the alignment sense: it talks about 价值对齐 / 价值观对齐 (value alignment) and describes the mechanism descriptively. If you need the alignment sense unambiguously, write 价值观学习 (using 价值观 = values in the ethical sense, not 价值 = value in the numeric sense) — the extra 观 does real disambiguating work.",
     "translations": [

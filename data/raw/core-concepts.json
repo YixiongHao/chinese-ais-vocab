@@ -78,7 +78,7 @@
         "source": "constructed"
       }
     ],
-    "related": ["artificial-superintelligence", "frontier-model", "foundation-model", "transformative-ai", "intelligence-explosion"],
+    "related": ["artificial-superintelligence", "frontier-model", "foundation-model", "transformative-ai", "intelligence-explosion", "general-purpose-ai-zh"],
     "sources": [
       "https://www.cdut.edu.cn/__local/E/86/75/7AA942C54F37E7A703F4E37FB6F_4CDF5FBA_927CE6.pdf",
       "https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026-zh.pdf",
@@ -1548,7 +1548,7 @@
   {
     "id": "capability-overhang",
     "en": "capability overhang",
-    "en_aliases": ["capability overhang", "compute overhang"],
+    "en_aliases": [],
     "abbr": null,
     "category": "core-concepts",
     "tags": ["forecasting", "gap"],
@@ -1594,7 +1594,7 @@
   {
     "id": "differential-technological-development",
     "en": "differential technological development",
-    "en_aliases": ["differential technology development", "d/acc"],
+    "en_aliases": ["differential technology development"],
     "abbr": "DTD",
     "category": "core-concepts",
     "tags": ["strategy", "gap"],

@@ -420,7 +420,7 @@
     "tags": ["recent", "loanword-heavy", "reasoning"],
     "definition_en": "RL in which the reward comes from a programmatic verifier — a unit test, an exact-match answer checker, a format validator — rather than a learned reward model. The DeepSeek-R1 / Tülu 3 era recipe for training reasoning models.",
     "definition_zh": "奖励信号不来自学出来的奖励模型，而来自可以程序化判定的验证器：数学答案是否匹配、代码是否通过单元测试、输出格式是否合规。这是 DeepSeek-R1、Tülu 3 这一代推理模型的主流后训练做法。",
-    "preferred_zh": "RLVR（可验证奖励的强化学习）",
+    "preferred_zh": "RLVR（基于可验证奖励的强化学习）",
     "translation_difficulty": "low",
     "pitfalls": "Recent enough that the Chinese expansion is still unstable: 可验证奖励的强化学习 and 基于可验证奖励的强化学习 both circulate, and the abbreviation dominates both. Despite Chinese labs (DeepSeek, Moonshot) being central to the technique, the term itself was coined in English (Tülu 3) and Chinese sources import it — so this is NOT a case of Chinese being the source language.",
     "translations": [

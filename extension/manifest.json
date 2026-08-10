@@ -25,6 +25,13 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["data/cards.json"],
+      "matches": ["http://*/*", "https://*/*"],
+      "use_dynamic_url": true
+    }
+  ],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "file:///*"],

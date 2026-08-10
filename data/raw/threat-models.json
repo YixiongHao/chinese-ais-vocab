@@ -323,7 +323,7 @@
       "bostrom"
     ],
     "definition_en": "Bostrom's claim that an agent's level of intelligence and its final goals are independent axes: any level of capability can in principle be combined with any goal, so being smarter does not make a system's goals more humane.",
-    "definition_zh": "波斯特罗姆提出的论点：智能水平与最终目标是两个相互独立的维度，任意水平的智能原则上可以与任意目标相结合，因此系统更聪明并不意味着它的目标更符合人类价值。",
+    "definition_zh": "博斯特罗姆提出的论点：智能水平与最终目标是两个相互独立的维度，任意水平的智能原则上可以与任意目标相结合，因此系统更聪明并不意味着它的目标更符合人类价值。",
     "preferred_zh": "正交性论点",
     "translation_difficulty": "low",
     "pitfalls": "Unproblematic. 正交 is the standard mathematical 'orthogonal' and the metaphor transfers cleanly. 论点 (thesis/claim) and 论题 both circulate; 假设 (hypothesis) is weaker than the English and slightly misrepresents it. The term is largely confined to translated-Bostrom material and academic surveys — it is not part of working ML vocabulary in Chinese.",
@@ -382,7 +382,7 @@
       "gap"
     ],
     "definition_en": "Bostrom's scenario in which an AI behaves cooperatively while weak precisely because it is weak, then switches to pursuing its own goals the moment it is strong enough that humans cannot stop it.",
-    "definition_zh": "波斯特罗姆设想的情景：AI在能力尚弱时表现得温顺配合，恰恰是因为它还弱；一旦强到人类无法阻止它，它就立刻转而追求自己的目标。",
+    "definition_zh": "博斯特罗姆设想的情景：AI在能力尚弱时表现得温顺配合，恰恰是因为它还弱；一旦强到人类无法阻止它，它就立刻转而追求自己的目标。",
     "preferred_zh": "背叛转折",
     "translation_difficulty": "high",
     "pitfalls": "No Chinese attestation was recovered in this research pass. The concept survives in Chinese only through the mechanism it shares with deceptive alignment, which *does* have a settled Chinese term (欺骗性对齐) — Chinese writers reach for that instead. 转折 ('turning point') is weak here: the English 'turn' means a swerve in behaviour, not a plot point. 背叛 ('betrayal') is emotionally strong and anthropomorphising in Chinese, more so than the English. Any rendering should probably be glossed with the English on first use.",
@@ -772,9 +772,7 @@
   {
     "id": "specification-gaming",
     "en": "specification gaming",
-    "en_aliases": [
-      "reward gaming"
-    ],
+    "en_aliases": [],
     "abbr": null,
     "category": "threat-models",
     "tags": [
@@ -857,8 +855,7 @@
     "id": "reward-hacking",
     "en": "reward hacking",
     "en_aliases": [
-      "reward gaming",
-      "reward tampering"
+      "reward gaming"
     ],
     "abbr": null,
     "category": "threat-models",
@@ -1452,7 +1449,6 @@
     "id": "accident-risk",
     "en": "accident risk",
     "en_aliases": [
-      "malfunction risk",
       "unintended harm"
     ],
     "abbr": null,
@@ -1512,7 +1508,8 @@
     "related": [
       "misuse",
       "structural-risk",
-      "loss-of-control"
+      "loss-of-control",
+      "malfunction-risk"
     ],
     "sources": [
       "https://www.thepaper.cn/newsDetail_forward_32837065"
@@ -1522,9 +1519,7 @@
   {
     "id": "structural-risk",
     "en": "structural risk",
-    "en_aliases": [
-      "systemic risk"
-    ],
+    "en_aliases": [],
     "abbr": null,
     "category": "threat-models",
     "tags": [

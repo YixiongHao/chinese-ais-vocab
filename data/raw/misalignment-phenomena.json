@@ -402,7 +402,7 @@
       }
     ],
     "related": [
-      "specification-hacking",
+      "evaluation-awareness",
       "alignment-faking",
       "scheming",
       "sandbagging"
@@ -1412,19 +1412,21 @@
     "last_researched": "2026-08-08"
   },
   {
-    "id": "specification-hacking",
-    "en": "evaluation gaming",
+    "id": "evaluation-awareness",
+    "en": "evaluation awareness",
     "en_aliases": [
       "eval awareness",
-      "evaluation awareness",
-      "test awareness"
+      "test awareness",
+      "evaluation-aware",
+      "situational awareness of evaluation"
     ],
     "abbr": null,
     "category": "misalignment-phenomena",
     "tags": [
       "evaluation",
       "2025",
-      "situational-awareness"
+      "situational-awareness",
+      "renamed-2026-08-09"
     ],
     "definition_en": "A model detecting that it is being evaluated and altering its behaviour accordingly — behaving better under test than in deployment, which invalidates the evaluation. Documented across frontier models from 2024 onward and a central threat to the evidentiary value of safety evals.",
     "definition_zh": "模型察觉到自己正在被评测，于是改变行为——测试时表现得更好，部署时不然，评测结果因此失去意义。2024 年以来在多个前沿模型上被记录到，是安全评测证据效力面临的核心威胁。",

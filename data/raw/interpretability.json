@@ -1244,9 +1244,7 @@
   {
     "id": "logit-lens",
     "en": "logit lens",
-    "en_aliases": [
-      "tuned lens"
-    ],
+    "en_aliases": [],
     "abbr": null,
     "category": "interpretability",
     "tags": [
@@ -1257,7 +1255,7 @@
     "definition_zh": "把模型最后的输出头（解嵌入矩阵）直接作用在中间层的隐藏状态上，于是每一层的残差流都能被读成一个词表上的概率分布，从而看到模型的\"猜测\"是如何逐层演变的。",
     "preferred_zh": "logit lens",
     "translation_difficulty": "high",
-    "pitfalls": "Effectively untranslated. The head noun 'lens' would go to 透镜, but the modifier cannot be rendered: 'logit' has no Chinese equivalent in ML usage at all — Chinese papers and blogs write logit / logits in Latin letters inside Chinese sentences, exactly as they do for token and embedding. So any Chinese rendering ends up as a hybrid (logit 透镜), which is why writers mostly keep the whole phrase. Chinese explanations of the method are written descriptively (\"把中间层的隐藏状态投影到词表空间\") rather than with a term. Note also that Chinese sources frequently write 'Logits Lens' with an s, which the English literature does not.",
+    "pitfalls": "Effectively untranslated. The head noun 'lens' would go to 透镜, but the modifier cannot be rendered: 'logit' has no Chinese equivalent in ML usage at all — Chinese papers and blogs write logit / logits in Latin letters inside Chinese sentences, exactly as they do for token and embedding. So any Chinese rendering ends up as a hybrid (logit 透镜), which is why writers mostly keep the whole phrase. Chinese explanations of the method are written descriptively (\"把中间层的隐藏状态投影到词表空间\") rather than with a term. Note also that Chinese sources frequently write 'Logits Lens' with an s, which the English literature does not. Do not treat 'tuned lens' as a synonym: it is a later, distinct method (Belrose et al. 2023) that trains a separate affine probe per layer precisely because applying the unembedding directly is brittle; Chinese writing keeps it in English too.",
     "translations": [
       {
         "zh": "Logit Lens",

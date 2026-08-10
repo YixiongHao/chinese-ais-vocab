@@ -402,10 +402,7 @@
   {
     "id": "model-registration",
     "en": "model registration",
-    "en_aliases": [
-      "algorithm filing",
-      "algorithm registry"
-    ],
+    "en_aliases": [],
     "abbr": null,
     "category": "governance-policy",
     "tags": [
@@ -2491,8 +2488,8 @@
       "prc-native",
       "political"
     ],
-    "definition_en": "The security of the state. In the PRC this is a defined legal and doctrinal category — the 2015 National Security Law and the 总体国家安全观 (holistic national security outlook) cover political, territorial, military, economic, cultural, social, technological, cyber, ecological and other domains, with AI now explicitly included.",
-    "definition_zh": "国家的安全。在中国这是有明确法律和理论界定的范畴：《国家安全法》与“总体国家安全观”涵盖政治、国土、军事、经济、文化、社会、科技、网络、生态等多个领域，人工智能已被明确纳入其中。",
+    "definition_en": "In the PRC a statutorily defined category. Article 2 of the 2015 National Security Law defines 国家安全 as the state of relative freedom from danger and from internal or external threat to state power, sovereignty, unity and territorial integrity, the people's welfare, sustainable economic and social development and other major national interests — together with the capacity to keep that state secure. The law and the 总体国家安全观 (holistic approach to national security) built on it span political, territorial, military, economic, cultural, social, technological, cyber, ecological, nuclear and further domains. The 2015 law itself does not name artificial intelligence; AI enters the category through the doctrine's later enumerations and through planning documents such as the 2025 Fourth Plenum recommendations, which call for building national security capability in emerging fields including AI.",
+    "definition_zh": "在中国，国家安全是有法律定义的范畴。《国家安全法》第二条规定，国家安全是指国家政权、主权、统一和领土完整、人民福祉、经济社会可持续发展和国家其他重大利益相对处于没有危险和不受内外威胁的状态，以及保障持续安全状态的能力。该法与在其基础上展开的“总体国家安全观”涵盖政治、国土、军事、经济、文化、社会、科技、网络、生态、核等诸多领域。2015 年法律文本本身并未出现“人工智能”；人工智能是通过总体国家安全观后续的领域列举，以及二十届四中全会建议等规划文件中“加强人工智能等新兴领域国家安全能力建设”的表述进入这一范畴的。",
     "preferred_zh": "国家安全",
     "translation_difficulty": "high",
     "pitfalls": "Lexically trivial, politically the most load-bearing term in the category. Three consequences for anyone writing AI-safety arguments in Chinese. (1) 国家安全 in the PRC is a defined legal category with a doctrine (总体国家安全观) and a dedicated legal apparatus; invoking it is not rhetorical framing as it often is in English, it is a jurisdictional claim that pulls a topic into a specific institutional track. (2) It is expressly one of the graded factors in TC260's risk-grading scale, alongside 社会稳定 and 公民权益 — so 'national security risk' has a defined place in Chinese AI risk taxonomy that it lacks in most Western ones. (3) Framing catastrophic-risk arguments as 国家安全 raises their salience but can also make them non-public and non-debatable. Note the systematic pairing with 发展: 统筹发展和安全 and 坚持发展和安全并重 are the standard formulations, and any argument that reads as anti-development will be discounted.",
@@ -2584,6 +2581,7 @@
       "ai-safety-governance-framework"
     ],
     "sources": [
+      "https://www.gov.cn/zhengce/2015-07/01/content_2893902.htm",
       "https://www.tc260.org.cn/upload/2025-09-15/1757911253996041369.pdf",
       "https://www.caict.ac.cn/kxyj/qwfb/ztbg/202602/P020260213607027089305.pdf",
       "https://concordia-ai.com/wp-content/uploads/2026/07/v7.13_Frontier-AI-Risk-Management-Framework-v2.0-CN-2026-07.pdf"
@@ -2799,9 +2797,7 @@
   {
     "id": "security-assessment",
     "en": "security assessment",
-    "en_aliases": [
-      "safety assessment"
-    ],
+    "en_aliases": [],
     "abbr": null,
     "category": "governance-policy",
     "tags": [

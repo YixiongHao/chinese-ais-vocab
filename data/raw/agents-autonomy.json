@@ -163,7 +163,7 @@
     ],
     "definition_en": "Adjective describing a system, workflow or behaviour that plans and acts over multiple steps toward a goal with limited step-by-step human direction. Used gradably in English: systems are 'more' or 'less' agentic.",
     "definition_zh": "形容一个系统、流程或行为具有自主规划并连续执行多步操作的性质，程度可高可低，而非非黑即白的分类。",
-    "preferred_zh": "智能体",
+    "preferred_zh": "智能体（作定语）",
     "translation_difficulty": "high",
     "pitfalls": "This is a genuine, documentable gap. Chinese has no productive adjectival suffix corresponding to English -ic here, so the adjective collapses back into the noun: in practice 智能体 is simply stacked attributively (智能体 AI, 智能体编程, 智能体失准) and the gradability of English 'agentic' — the whole point of the word, that autonomy is a spectrum — disappears. The competing forms each lose something else: 代理式 (\"proxy-style\", used by 百度百科 and much vendor marketing) revives the proxy ambiguity; 主体性的 / 能动的 import philosophy-of-mind vocabulary that no engineer uses; 自主的 is the closest natural adjective but merges with 'autonomous' and so cannot distinguish 'agentic' from 'autonomous'. There is no consensus and Chinese writers frequently just leave 'Agentic' in Latin script. Sentences like 'a more agentic model' have no idiomatic Chinese rendering and are normally rewritten as 自主性更强的模型.",
     "translations": [
@@ -489,7 +489,6 @@
     "id": "computer-use",
     "en": "computer use",
     "en_aliases": [
-      "GUI agent",
       "computer-use agent"
     ],
     "abbr": null,
@@ -566,6 +565,7 @@
     ],
     "related": [
       "ai-agent",
+      "gui-agent",
       "tool-use",
       "sandboxing",
       "permissions"
@@ -753,15 +753,6 @@
             "source_type": "media",
             "url": "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml",
             "date": "2026-07"
-          },
-          {
-            "quote_zh": "长程任务的难点并不只是某一步是否答对，而是大量紧密耦合的步骤必须组成一条连贯轨迹。",
-            "quote_en": "The difficulty of a long-horizon task is not just whether any single step is answered correctly, but that a great many tightly coupled steps must form one coherent trajectory.",
-            "source_title": "迈向长程智能体，人大高瓴发布149页全景综述",
-            "publisher": "新浪科技",
-            "source_type": "media",
-            "url": "https://finance.sina.com.cn/tech/roll/2026-07-25/doc-iniizerf4357053.shtml",
-            "date": "2026-07"
           }
         ]
       },
@@ -810,7 +801,7 @@
         "attestations": []
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "used_by": [
       {
         "org": "安远 AI (Concordia AI)",

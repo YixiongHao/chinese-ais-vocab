@@ -250,6 +250,54 @@
     hideTimer = setTimeout(() => { if (card) { card.hidden = true; currentOrd = -1 } }, 180)
   }
 
+  // Getting the card payload has two ways to fail, and both used to end in `return`,
+  // which looks exactly like a broken extension: the underline is there, hovering does
+  // nothing, no error anywhere a user would see.
+  //
+  //  1. The extension was reloaded while this page stayed open. The content script is
+  //     orphaned, `chrome.runtime.id` is gone, and messaging throws. Only a page reload
+  //     fixes it, so the card has to say that.
+  //  2. The service worker did not answer — asleep, restarting, or its payload fetch
+  //     failed. Recoverable: load the payload here instead.
+  let localCards = null
+
+  async function fetchCard(ord) {
+    if (!chrome.runtime || !chrome.runtime.id) return { problem: 'stale' }
+
+    try {
+      const t = await chrome.runtime.sendMessage({ type: 'caisv-card', ord })
+      if (t) return { term: t }
+    } catch (e) {
+      if (/context invalidated|Receiving end does not exist/i.test(e && e.message || '')) {
+        if (!chrome.runtime.id) return { problem: 'stale' }
+      }
+    }
+
+    try {
+      if (!localCards) {
+        localCards = fetch(chrome.runtime.getURL('data/cards.json'))
+          .then((r) => r.json()).then((d) => d.terms)
+          .catch((e) => { localCards = null; throw e })
+      }
+      const list = await localCards
+      if (list && list[ord]) return { term: list[ord] }
+    } catch (e) { /* fall through to the visible failure */ }
+
+    return { problem: 'unavailable' }
+  }
+
+  function renderProblem(kind) {
+    const body = kind === 'stale'
+      ? `<div class="ans">Reload this page</div>
+         <div class="def">The extension was updated or reloaded while this page was open,
+         so the highlights on it are left over from the previous version and can no longer
+         reach the database. Reloading the page restores them.</div>`
+      : `<div class="ans">Definition unavailable</div>
+         <div class="def">The extension could not load its database just now. Reloading the
+         page usually fixes it; if it persists, the bundled data may be missing.</div>`
+    card.innerHTML = body + `<div class="ft">AI Safety Terminology</div>`
+  }
+
   async function showFor(el) {
     const ord = Number(el.dataset.caisv)
     if (!Number.isFinite(ord)) return
@@ -257,13 +305,11 @@
     clearTimeout(hideTimer)
     const key = ord + ':' + answerIn
     if (key === currentOrd && !card.hidden) { positionCard(el.getBoundingClientRect()); return }
-    let t
-    try {
-      t = await chrome.runtime.sendMessage({ type: 'caisv-card', ord })
-    } catch (e) { return }            // worker asleep or extension reloaded
-    if (!t) return
+
+    const got = await fetchCard(ord)
     currentOrd = key
-    renderCard(t)
+    if (got.term) renderCard(got.term)
+    else renderProblem(got.problem)
     positionCard(el.getBoundingClientRect())
   }
 
