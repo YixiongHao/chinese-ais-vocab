@@ -4,6 +4,9 @@ A vocabulary database for people doing AI safety work across the English/Chinese
 boundary.  Terms run in both directions: English concepts looking for a Chinese rendering, and
 Chinese-origin concepts that English has no clean word
 
+**→ [yixiong.dev/ais-vocab-cn](https://yixiong.dev/ais-vocab-cn/)** — 244 terms, searchable in
+English, Chinese, or pinyin. Published from `site/` on every push to `main`.
+
 # Contributors
 
 [Yixiong Hao](https://yixiong.dev)
@@ -41,6 +44,8 @@ data/
 site/
   index.html          the site: search, filter, term detail. Open it directly.
   terms-data.js       GENERATED — data/terms.json wrapped for file:// loading
+.github/workflows/
+  pages.yml           verifies the committed data is current, then publishes site/
 extension/          Chrome extension — highlights terms as you browse. See extension/README.md
 exports/
   terms.csv           GENERATED — flat sheet for native-speaker review passes
